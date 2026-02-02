@@ -2,62 +2,830 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ASilva Innovations FAQ – Learn about AI-powered resilience tools, Strategic Planner Pro, Real-Time Leadership, SPARC assessments, compliance policies, and sustainability initiatives.">
   <meta name="keywords" content="ASilva Innovations, AI resilience assessment, SPARC tool, Strategic Planner Pro, Real-Time Leadership, ISO 31000 compliance, Philippine DRRM Act, AI compliance, sustainability initiatives">
   <meta name="author" content="ASilva Innovations">
   <title>ASilva Innovations – FAQ</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-blue: #0047AB;
+      --secondary-teal: #00A896;
+      --accent-orange: #FF6B35;
+      --dark-navy: #001F3F;
+      --light-gray: #F5F7FA;
+      --white: #FFFFFF;
+      --text-dark: #1A1A1A;
+      --text-medium: #4A4A4A;
+      --border-color: #E0E4E8;
+      --hover-bg: #F0F4F8;
+      --shadow: 0 2px 8px rgba(0, 71, 171, 0.08);
+      --shadow-lg: 0 8px 24px rgba(0, 71, 171, 0.12);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Roboto Condensed', sans-serif;
+      background: linear-gradient(135deg, var(--light-gray) 0%, #FFFFFF 100%);
+      color: var(--text-dark);
+      line-height: 1.7;
+      min-height: 100vh;
+      padding: 60px 20px;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      animation: fadeIn 0.6s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    header {
+      text-align: center;
+      margin-bottom: 60px;
+      padding-bottom: 40px;
+      border-bottom: 3px solid var(--primary-blue);
+      position: relative;
+    }
+    
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 3px;
+      background: var(--accent-orange);
+    }
+    
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--primary-blue);
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+    }
+    
+    .tagline {
+      font-size: 1.1rem;
+      color: var(--text-medium);
+      font-weight: 300;
+      margin-bottom: 30px;
+    }
+    
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--dark-navy);
+      margin-bottom: 16px;
+    }
+    
+    .category {
+      margin-bottom: 48px;
+      animation: slideIn 0.5s ease-out backwards;
+    }
+    
+    .category:nth-child(1) { animation-delay: 0.1s; }
+    .category:nth-child(2) { animation-delay: 0.2s; }
+    .category:nth-child(3) { animation-delay: 0.3s; }
+    .category:nth-child(4) { animation-delay: 0.4s; }
+    .category:nth-child(5) { animation-delay: 0.5s; }
+    .category:nth-child(6) { animation-delay: 0.6s; }
+    .category:nth-child(7) { animation-delay: 0.7s; }
+    
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    .category-header {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-blue);
+      margin-bottom: 20px;
+      padding-left: 16px;
+      border-left: 4px solid var(--secondary-teal);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .category-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--secondary-teal), var(--primary-blue));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: white;
+    }
+    
+    .faq-item {
+      background: var(--white);
+      border-radius: 12px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border: 1px solid var(--border-color);
+    }
+    
+    .faq-item:hover {
+      box-shadow: var(--shadow-lg);
+      border-color: var(--secondary-teal);
+    }
+    
+    .faq-question {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      padding: 24px 60px 24px 24px;
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .faq-question::before {
+      content: '';
+      width: 4px;
+      height: 24px;
+      background: var(--accent-orange);
+      border-radius: 2px;
+      transition: height 0.3s ease;
+    }
+    
+    .faq-question:hover {
+      background: var(--hover-bg);
+      color: var(--primary-blue);
+    }
+    
+    .faq-question::after {
+      content: '+';
+      position: absolute;
+      right: 24px;
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--secondary-teal);
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    
+    .faq-item.active .faq-question::after {
+      transform: rotate(45deg);
+      color: var(--accent-orange);
+    }
+    
+    .faq-item.active .faq-question::before {
+      height: 100%;
+    }
+    
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      padding: 0 24px;
+    }
+    
+    .faq-item.active .faq-answer {
+      max-height: 1000px;
+      padding: 0 24px 24px 40px;
+    }
+    
+    .faq-answer p {
+      color: var(--text-medium);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    
+    .faq-answer p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .faq-answer a {
+      color: var(--secondary-teal);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+      border-bottom: 2px solid transparent;
+    }
+    
+    .faq-answer a:hover {
+      color: var(--primary-blue);
+      border-bottom-color: var(--primary-blue);
+    }
+    
+    .faq-answer ul {
+      margin: 12px 0;
+      padding-left: 20px;
+    }
+    
+    .faq-answer li {
+      margin-bottom: 8px;
+      color: var(--text-medium);
+    }
+    
+    .highlight {
+      background: linear-gradient(120deg, var(--secondary-teal) 0%, var(--secondary-teal) 100%);
+      background-repeat: no-repeat;
+      background-size: 0% 100%;
+      background-position: 0 100%;
+      transition: background-size 0.3s ease;
+      padding: 2px 4px;
+      border-radius: 3px;
+    }
+    
+    .faq-item.active .highlight {
+      background-size: 100% 100%;
+      color: white;
+    }
+    
+    footer {
+      text-align: center;
+      margin-top: 80px;
+      padding-top: 40px;
+      border-top: 2px solid var(--border-color);
+      color: var(--text-medium);
+      font-size: 0.95rem;
+    }
+    
+    .contact-cta {
+      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+      color: white;
+      padding: 32px;
+      border-radius: 16px;
+      margin: 40px 0;
+      text-align: center;
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .contact-cta h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    
+    .contact-cta p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      opacity: 0.95;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background: var(--accent-orange);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+    }
+    
+    .cta-button:hover {
+      background: #FF8C5A;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4);
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 40px 16px;
+      }
+      
+      .logo {
+        font-size: 2rem;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      .category-header {
+        font-size: 1.3rem;
+      }
+      
+      .faq-question {
+        font-size: 1rem;
+        padding: 20px 50px 20px 20px;
+      }
+      
+      .faq-question::after {
+        font-size: 1.5rem;
+        right: 20px;
+      }
+      
+      .faq-item.active .faq-answer {
+        padding: 0 20px 20px 36px;
+      }
+    }
+  </style>
 </head>
 <body>
-
-  <section id="faq">
-    <h1>Frequently Asked Questions (FAQ)</h1>
-
-    <h2>General Information</h2>
-    <p><strong>What is ASilva Innovations?</strong><br>
-    ASilva Innovations is a Philippines-based technology company specializing in AI-powered resilience, compliance, and strategic planning solutions for LGUs, NGOs, SMEs, and social enterprises.</p>
-
-    <p><strong>Who can benefit from ASilva Innovations’ solutions?</strong><br>
-    Our platforms support Local Government Units, NGOs, SMEs, educators, and researchers seeking adaptive, compliant, and sustainable strategies.</p>
-
-    <h2>Solutions & Platforms</h2>
-    <p><strong>What is the DDRiVE-M Platform?</strong><br>
-    DDRiVE-M is our enterprise risk management system offering real-time risk indexing, compliance tracking, vulnerability mapping, and customizable dashboards.</p>
-
-    <p><strong>What is Strategic Planner Pro?</strong><br>
-    Strategic Planner Pro is an AI-powered planning suite with SWOT analysis, balanced scorecards, portfolio tracking, and compliant plan generators.</p>
-
-    <p><strong>What is Real-Time Leadership (RTL)?</strong><br>
-    RTL is a systems-based leadership framework (MOVE) that enhances situational awareness, ethical decision-making, and adaptive execution for leaders.</p>
-
-    <p><strong>What is SPARC?</strong><br>
-    SPARC (Smart Predictive AI Resilience Calculator) is an AI-driven assessment tool that provides real-time risk and resilience insights.</p>
-
-    <h2>Resources & Support</h2>
-    <p><strong>What resources does ASilva Innovations provide?</strong><br>
-    Our Resources Hub includes blogs, case studies, and white papers on resilience, compliance, and adaptive leadership.</p>
-
-    <p><strong>How can I access training or courses?</strong><br>
-    We offer self-paced courses and group programs under Real-Time Leadership, including SPARC assessments, workbooks, and certification.</p>
-
-    <h2>Compliance & Policies</h2>
-    <p><strong>Is ASilva Innovations compliant with international standards?</strong><br>
-    Yes. Our platforms are ISO 31000 compliant and aligned with the Philippine DRRM Act (RA 10121).</p>
-
-    <p><strong>What are ASilva Innovations’ Terms and Conditions?</strong><br>
-    Users agree to provide accurate information, comply with laws, respect intellectual property, and accept services “as is” without warranties.</p>
-
-    <p><strong>How does ASilva Innovations protect my privacy?</strong><br>
-    We follow GDPR and Philippine data laws, using secure storage, limited cookies, and offering options to access, rectify, or delete personal data.</p>
-
-    <h2>Getting Started</h2>
-    <p><strong>How do I begin using ASilva Innovations’ solutions?</strong><br>
-    You can schedule a demo or consultation via our website. Deployment is rapid—under 30 days—with onboarding and training included.</p>
-
-    <p><strong>How can I contact ASilva Innovations?</strong><br>
-    Email: admin@asilvainnovations.com<br>
-    Contact Page: <a href="https://asilvainnovations.com/contact">asilvainnovations.com/contact</a><br>
-    Headquarters: Quezon City, Philippines</p>
-  </section>
-
+  <div class="container">
+    <header>
+      <div class="logo">ASilva Innovations</div>
+      <p class="tagline">Empowering Resilience Through AI-Driven Solutions</p>
+      <h1>Frequently Asked Questions</h1>
+    </header>
+    
+    <main>
+      <!-- General Information -->
+      <section class="category">
+        <h2 class="category-header">
+          <span class="category-icon">ℹ️</span>
+          General Information
+        </h2>
+        
+        <div class="faq-item">
+          <div class="faq-question">What is ASilva Innovations?</div>
+          <div class="faq-answer">
+            <p>ASilva Innovations is a <span class="highlight">Philippines-based technology company</span> specializing in AI-powered resilience, compliance, and strategic planning solutions. We serve Local Government Units (LGUs), NGOs, SMEs, and social enterprises with innovative tools designed to enhance organizational resilience and adaptive capacity.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Who can benefit from ASilva Innovations' solutions?</div>
+          <div class="faq-answer">
+            <p>Our platforms support a diverse range of organizations and individuals:</p>
+            <ul>
+              <li><strong>Local Government Units (LGUs)</strong> – Risk management and disaster preparedness</li>
+              <li><strong>NGOs and Social Enterprises</strong> – Mission-aligned strategic planning</li>
+              <li><strong>SMEs</strong> – Compliance tracking and business resilience</li>
+              <li><strong>Educators and Researchers</strong> – Data-driven insights and assessment tools</li>
+              <li><strong>Leaders and Decision-Makers</strong> – Adaptive leadership frameworks</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Where is ASilva Innovations located?</div>
+          <div class="faq-answer">
+            <p>Our headquarters is located in <span class="highlight">Quezon City, Philippines</span>. We serve clients across the Philippines and internationally, with a focus on solutions tailored to local regulatory environments while meeting international standards.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">What makes ASilva Innovations different from other tech companies?</div>
+          <div class="faq-answer">
+            <p>ASilva Innovations combines <span class="highlight">AI technology with deep understanding of Philippine regulatory frameworks</span>, including the DRRM Act and international standards like ISO 31000. Our solutions are built with local context in mind while maintaining global best practices, offering rapid deployment (under 30 days) and comprehensive support.</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Solutions & Platforms -->
+      <section class="category">
+        <h2 class="category-header">
+          <span class="category-icon">🚀</span>
+          Solutions & Platforms
+        </h2>
+        
+        <div class="faq-item">
+          <div class="faq-question">What is the DDRiVE-M Platform?</div>
+          <div class="faq-answer">
+            <p><span class="highlight">DDRiVE-M</span> is our comprehensive enterprise risk management system that provides:</p>
+            <ul>
+              <li>Real-time risk indexing and monitoring</li>
+              <li>Compliance tracking with Philippine DRRM Act and ISO 31000</li>
+              <li>Vulnerability mapping and geospatial analysis</li>
+              <li>Customizable dashboards and reporting tools</li>
+              <li>Multi-hazard assessment capabilities</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">What is Strategic Planner Pro?</div>
+          <div class="faq-answer">
+            <p><span class="highlight">Strategic Planner Pro</span> is an AI-powered planning suite designed to streamline organizational strategy development. Features include:</p>
+            <ul>
+              <li>Automated SWOT analysis</li>
+              <li>Balanced scorecard development</li>
+              <li>Portfolio tracking and management</li>
+              <li>Compliant plan generators aligned with regulatory requirements</li>
+              <li>Integration with resilience and risk management tools</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">What is Real-Time Leadership (RTL)?</div>
+          <div class="faq-answer">
+            <p><span class="highlight">Real-Time Leadership</span> is our systems-based leadership framework built on the MOVE methodology:</p>
+            <ul>
+              <li><strong>Monitor</strong> – Enhanced situational awareness</li>
+              <li><strong>Orient</strong> – Contextual understanding and analysis</li>
+              <li><strong>Validate</strong> – Ethical decision-making processes</li>
+              <li><strong>Execute</strong> – Adaptive implementation and feedback loops</li>
+            </ul>
+            <p>RTL empowers leaders to navigate complex challenges with agility, ethics, and effectiveness.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">What is SPARC?</div>
+          <div class="faq-answer">
+            <p><span class="highlight">SPARC (Smart Predictive AI Resilience Calculator)</span> is our flagship AI-driven assessment tool that delivers:</p>
+            <ul>
+              <li>Real-time organizational resilience scoring</li>
+              <li>Predictive risk analytics</li>
+              <li>Actionable insights for improvement</li>
+              <li>Customizable assessment frameworks</li>
+              <li>Integration with strategic planning and risk management platforms</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Can I integrate ASilva Innovations' platforms with existing systems?</div>
+          <div class="faq-answer">
+            <p>Yes! Our platforms are designed with <span class="highlight">flexible integration capabilities</span>. We support API connections, data imports/exports, and can work with your existing tools. During onboarding, our technical team assesses your current infrastructure and develops a customized integration plan.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">How often are the platforms updated?</div>
+          <div class="faq-answer">
+            <p>We release regular updates to ensure our platforms remain <span class="highlight">cutting-edge, secure, and compliant</span> with evolving regulations. Major feature updates occur quarterly, with security patches and minor improvements deployed monthly. All updates are seamlessly integrated with minimal disruption to users.</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Resources & Support -->
+      <section class="category">
+        <h2 class="category-header">
+          <span class="category-icon">📚</span>
+          Resources & Support
+        </h2>
+        
+        <div class="faq-item">
+          <div class="faq-question">What resources does ASilva Innovations provide?</div>
+          <div class="faq-answer">
+            <p>Our <span class="highlight">Resources Hub</span> offers a comprehensive library including:</p>
+            <ul>
+              <li><strong>Blog Articles</strong> – Insights on resilience, AI, and leadership</li>
+              <li><strong>Case Studies</strong> – Real-world success stories from our clients</li>
+              <li><strong>White Papers</strong> – In-depth research on compliance, risk management, and adaptive strategies</li>
+              <li><strong>Webinars and Workshops</strong> – Live and recorded training sessions</li>
+              <li><strong>Implementation Guides</strong> – Step-by-step documentation</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">How can I access training or courses?</div>
+          <div class="faq-answer">
+            <p>We offer multiple training pathways:</p>
+            <ul>
+              <li><strong>Self-Paced Courses</strong> – Online modules available 24/7</li>
+              <li><strong>Group Training Programs</strong> – Customized workshops for teams</li>
+              <li><strong>Real-Time Leadership Certification</strong> – Comprehensive leadership development program</li>
+              <li><strong>SPARC Assessment Training</strong> – Specialized courses on using our assessment tools</li>
+              <li><strong>Workbooks and Guides</strong> – Downloadable resources for continuous learning</li>
+            </ul>
+            <p>Contact us to discuss which training option best fits your organization's needs.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">What kind of support is available after implementation?</div>
+          <div class="faq-answer">
+            <p>We provide <span class="highlight">comprehensive ongoing support</span> including:</p>
+            <ul>
+              <li>24/7 technical support via email and chat</li>
+              <li>Dedicated account manager for enterprise clients</li>
+              <li>Regular check-ins and optimization reviews</li>
+              <li>Access to our knowledge base and documentation</li>
+              <li>Community forums for peer learning</li>
+              <li>Priority response for critical issues</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Do you offer customization services?</div>
+          <div class="faq-answer">
+            <p>Absolutely! We understand that every organization has unique needs. Our team offers <span class="highlight">customization services</span> for workflows, dashboards, reporting templates, assessment criteria, and integration requirements. We work closely with you to ensure our solutions align perfectly with your objectives.</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Compliance & Policies -->
+      <section class="category">
+        <h2 class="category-header">
+          <span class="category-icon">✓</span>
+          Compliance & Policies
+        </h2>
+        
+        <div class="faq-item">
+          <div class="faq-question">Is ASilva Innovations compliant with international standards?</div>
+          <div class="faq-answer">
+            <p>Yes. Our platforms are <span class="highlight">ISO 31000 compliant</span> for risk management and aligned with the <span class="highlight">Philippine DRRM Act (RA 10121)</span>. We continuously monitor regulatory changes to ensure our solutions meet the latest requirements and best practices.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">What are ASilva Innovations' Terms and Conditions?</div>
+          <div class="faq-answer">
+            <p>By using our services, users agree to:</p>
+            <ul>
+              <li>Provide accurate and complete information</li>
+              <li>Comply with applicable laws and regulations</li>
+              <li>Respect intellectual property rights</li>
+              <li>Use services for lawful purposes only</li>
+            </ul>
+            <p>Services are provided "as is" without warranties. Full terms are available on our website and reviewed during onboarding.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">How does ASilva Innovations protect my privacy?</div>
+          <div class="faq-answer">
+            <p>We take privacy seriously and follow <span class="highlight">GDPR and Philippine Data Privacy Act requirements</span>:</p>
+            <ul>
+              <li>Secure, encrypted data storage</li>
+              <li>Limited use of cookies (only essential functionality)</li>
+              <li>No data sharing with third parties without consent</li>
+              <li>Right to access, rectify, or delete your personal data</li>
+              <li>Regular security audits and compliance reviews</li>
+              <li>Transparent privacy policies available on our website</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">How is data secured on ASilva Innovations' platforms?</div>
+          <div class="faq-answer">
+            <p>We employ <span class="highlight">enterprise-grade security measures</span>:</p>
+            <ul>
+              <li>256-bit SSL encryption for data in transit</li>
+              <li>AES-256 encryption for data at rest</li>
+              <li>Multi-factor authentication (MFA)</li>
+              <li>Regular penetration testing and security audits</li>
+              <li>Role-based access controls</li>
+              <li>Automated backup and disaster recovery systems</li>
+              <li>SOC 2 Type II compliance pathway (in progress)</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">What is your data retention policy?</div>
+          <div class="faq-answer">
+            <p>We retain data only as long as necessary for service delivery and legal compliance. <span class="highlight">Active account data is maintained throughout your subscription</span>. Upon account closure, data is retained for 90 days for recovery purposes, then permanently deleted unless legally required to maintain records longer. You can request data deletion at any time.</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Pricing & Licensing -->
+      <section class="category">
+        <h2 class="category-header">
+          <span class="category-icon">💰</span>
+          Pricing & Licensing
+        </h2>
+        
+        <div class="faq-item">
+          <div class="faq-question">What pricing models do you offer?</div>
+          <div class="faq-answer">
+            <p>We offer <span class="highlight">flexible pricing structures</span> to accommodate different organizational needs:</p>
+            <ul>
+              <li><strong>Subscription-Based</strong> – Monthly or annual licensing</li>
+              <li><strong>Tiered Plans</strong> – Scaled by organization size and features</li>
+              <li><strong>Enterprise Licensing</strong> – Custom solutions for large organizations</li>
+              <li><strong>Non-Profit Discounts</strong> – Special rates for NGOs and social enterprises</li>
+              <li><strong>Educational Pricing</strong> – Reduced rates for academic institutions</li>
+            </ul>
+            <p>Contact our sales team for a customized quote based on your requirements.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Is there a free trial available?</div>
+          <div class="faq-answer">
+            <p>Yes! We offer a <span class="highlight">30-day free trial</span> for most of our platforms, giving you full access to features and support. This allows you to evaluate whether our solutions meet your needs before committing. Schedule a demo to get started with your trial today.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Are there any hidden fees?</div>
+          <div class="faq-answer">
+            <p>No. We believe in <span class="highlight">transparent pricing</span>. All costs are clearly outlined in your service agreement, including subscription fees, implementation costs, and training. Optional add-ons like custom development or premium support are discussed upfront, so you'll never encounter unexpected charges.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Can I upgrade or downgrade my plan?</div>
+          <div class="faq-answer">
+            <p>Absolutely! Your plan can be <span class="highlight">adjusted at any time</span> to match your evolving needs. Upgrades take effect immediately, while downgrades are processed at the end of your current billing cycle. Our team will help you transition smoothly between plans with no data loss.</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Getting Started -->
+      <section class="category">
+        <h2 class="category-header">
+          <span class="category-icon">🎯</span>
+          Getting Started
+        </h2>
+        
+        <div class="faq-item">
+          <div class="faq-question">How do I begin using ASilva Innovations' solutions?</div>
+          <div class="faq-answer">
+            <p>Getting started is simple:</p>
+            <ul>
+              <li><strong>Step 1:</strong> Schedule a demo or consultation via our website</li>
+              <li><strong>Step 2:</strong> Discuss your needs with our solutions team</li>
+              <li><strong>Step 3:</strong> Receive a customized proposal and implementation plan</li>
+              <li><strong>Step 4:</strong> Sign the service agreement</li>
+              <li><strong>Step 5:</strong> Begin onboarding and training (completed in under 30 days)</li>
+            </ul>
+            <p>Our team guides you through every step for a smooth, rapid deployment.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">How long does implementation take?</div>
+          <div class="faq-answer">
+            <p>Most implementations are completed in <span class="highlight">under 30 days</span>, including system setup, data migration, customization, and team training. More complex enterprise deployments may take 6-8 weeks depending on integration requirements. We provide a detailed timeline during the proposal phase.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">What do I need to prepare before implementation?</div>
+          <div class="faq-answer">
+            <p>To ensure smooth implementation, prepare:</p>
+            <ul>
+              <li>Inventory of existing systems and data sources</li>
+              <li>List of key stakeholders and users</li>
+              <li>Organizational goals and success metrics</li>
+              <li>Any existing risk assessments or strategic plans</li>
+              <li>IT infrastructure details (for integration planning)</li>
+            </ul>
+            <p>Our team will provide a complete onboarding checklist during kickoff.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">How can I contact ASilva Innovations?</div>
+          <div class="faq-answer">
+            <p><strong>Email:</strong> <a href="mailto:admin@asilvainnovations.com">admin@asilvainnovations.com</a></p>
+            <p><strong>Contact Page:</strong> <a href="https://asilvainnovations.com/contact" target="_blank">asilvainnovations.com/contact</a></p>
+            <p><strong>Headquarters:</strong> Quezon City, Philippines</p>
+            <p>We typically respond to inquiries within 24 hours on business days. For urgent matters, please indicate "URGENT" in your subject line.</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Sustainability & Impact -->
+      <section class="category">
+        <h2 class="category-header">
+          <span class="category-icon">🌱</span>
+          Sustainability & Impact
+        </h2>
+        
+        <div class="faq-item">
+          <div class="faq-question">What are ASilva Innovations' sustainability initiatives?</div>
+          <div class="faq-answer">
+            <p>We're committed to <span class="highlight">sustainable and responsible technology</span>:</p>
+            <ul>
+              <li>Carbon-neutral cloud infrastructure partnerships</li>
+              <li>Energy-efficient platform architecture</li>
+              <li>Support for organizations working on climate resilience</li>
+              <li>Ethical AI development practices</li>
+              <li>Local community engagement and capacity building</li>
+              <li>Paperless operations and digital-first approach</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">How does ASilva Innovations contribute to community resilience?</div>
+          <div class="faq-answer">
+            <p>Community resilience is central to our mission. We contribute through:</p>
+            <ul>
+              <li>Providing affordable solutions to underserved communities</li>
+              <li>Free training programs for LGU personnel</li>
+              <li>Open-access research and white papers</li>
+              <li>Partnerships with disaster risk reduction organizations</li>
+              <li>Pro-bono services for select NGOs and social enterprises</li>
+              <li>Knowledge sharing through webinars and public forums</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">Can ASilva Innovations help with disaster preparedness?</div>
+          <div class="faq-answer">
+            <p>Yes! Our <span class="highlight">DDRiVE-M platform is specifically designed for disaster risk reduction</span> and management. It helps organizations develop comprehensive preparedness plans, conduct vulnerability assessments, monitor real-time risks, coordinate response activities, and track recovery progress—all in compliance with Philippine DRRM Act requirements.</p>
+          </div>
+        </div>
+      </section>
+      
+      <div class="contact-cta">
+        <h3>Still Have Questions?</h3>
+        <p>Our team is ready to help you navigate resilience, compliance, and strategic planning challenges.</p>
+        <a href="https://asilvainnovations.com/contact" class="cta-button">Contact Us Today</a>
+      </div>
+    </main>
+    
+    <footer>
+      <p>&copy; 2026 ASilva Innovations. All rights reserved.</p>
+      <p>Empowering organizations through AI-driven resilience and strategic excellence.</p>
+    </footer>
+  </div>
+  
+  <script>
+    // Collapsible FAQ functionality
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        const wasActive = item.classList.contains('active');
+        
+        // Optional: Close all other items (accordion style)
+        // document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        
+        // Toggle current item
+        if (wasActive) {
+          item.classList.remove('active');
+        } else {
+          item.classList.add('active');
+        }
+      });
+    });
+    
+    // Smooth scroll behavior for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+    
+    // Add entrance animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(20px)';
+      item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(item);
+    });
+  </script>
 </body>
 </html>
