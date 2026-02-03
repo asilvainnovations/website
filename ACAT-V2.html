@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DepEd SDO Absorptive Capacity Assessment Tool (ACAT)</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#0b1121', // Deepest Navy
+                            800: '#162032', // Card Background
+                            700: '#1e293b', // Input Background
+                        },
+                        electric: {
+                            blue: '#0ea5e9',
+                            cyan: '#06b6d4',
+                            purple: '#8b5cf6',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0b1121;
+            color: #e2e8f0;
+            background-image: radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.1) 0%, transparent 20%),
+                              radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.1) 0%, transparent 20%);
+        }
+        .glass-card {
+            background: rgba(22, 32, 50, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+        .slider-thumb::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #0ea5e9;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #0ea5e9;
+        }
+        .step-active {
+            border-bottom: 2px solid #06b6d4;
+            color: #fff;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans">
+
+    <header class="w-full p-6 border-b border-gray-800 bg-navy-900/90 sticky top-0 z-50 backdrop-blur">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-electric-blue to-electric-purple flex items-center justify-center">
+                    <i class="fa-solid fa-layer-group text-white"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight text-white">DepEd SDO <span class="text-electric-cyan">ACAT</span></h1>
+                    <p class="text-xs text-gray-400">Absorptive Capacity Assessment Tool</p>
+                </div>
+            </div>
+            <div class="flex gap-4">
+                <button onclick="resetData()" class="text-xs text-gray-400 hover:text-red-400 transition">Reset Data</button>
+                <div id="user-display" class="hidden text-sm text-gray-300 font-medium"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow p-6 relative">
+        <div class="max-w-5xl mx-auto">
+            
+            <div id="view-welcome" class="glass-card rounded-2xl p-10 max-w-2xl mx-auto text-center fade-in mt-10">
+                <h2 class="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">Ready to Assess Innovation Capability?</h2>
+                <p class="text-gray-400 mb-8">This diagnostic tool evaluates the Schools Division Office's ability to find, assimilate, and use new knowledge (MATATAG, Digital Transformation, etc.) based on the Tidd & Bessant Framework.</p>
+                
+                <div class="space-y-4 text-left max-w-sm mx-auto">
+                    <div>
+                        <label class="block text-xs font-medium text-gray-500 mb-1">Division / Office Name</label>
+                        <input type="text" id="input-division" class="w-full bg-navy-900 border border-gray-700 rounded-lg p-3 text-white focus:border-electric-blue focus:outline-none transition" placeholder="e.g., SDO Quezon City - CID">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-medium text-gray-500 mb-1">Respondent Role</label>
+                        <select id="input-role" class="w-full bg-navy-900 border border-gray-700 rounded-lg p-3 text-white focus:border-electric-blue focus:outline-none transition">
+                            <option value="SDS/ASDS">SDS / ASDS</option>
+                            <option value="CID Chief">CID Chief</option>
+                            <option value="SGOD Chief">SGOD Chief</option>
+                            <option value="EPS/SEPS">EPS / SEPS</option>
+                            <option value="School Head">School Head</option>
+                        </select>
+                    </div>
+                    <button onclick="startAssessment()" class="w-full bg-gradient-to-r from-electric-blue to-electric-cyan hover:shadow-[0_0_20px_rgba(6,182,212,0.4)] text-navy-900 font-bold py-3 rounded-lg transition-all mt-4">
+                        Start Assessment
+                    </button>
+                </div>
+            </div>
+
+            <div id="view-assessment" class="hidden fade-in">
+                <div class="mb-8">
+                    <div class="flex justify-between text-xs text-gray-400 mb-2">
+                        <span>Progress</span>
+                        <span id="progress-text">0%</span>
+                    </div>
+                    <div class="w-full bg-navy-800 rounded-full h-2">
+                        <div id="progress-bar" class="bg-gradient-to-r from-electric-blue to-electric-purple h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="md:col-span-1 space-y-2" id="dimension-nav">
+                        </div>
+
+                    <div class="md:col-span-3">
+                        <div class="glass-card rounded-2xl p-8 min-h-[500px] relative flex flex-col justify-between">
+                            <div id="question-container">
+                                </div>
+                            
+                            <div class="flex justify-between mt-8 border-t border-gray-800 pt-6">
+                                <button onclick="prevDimension()" id="btn-prev" class="px-6 py-2 rounded-lg border border-gray-700 text-gray-400 hover:text-white hover:border-gray-500 transition disabled:opacity-50">Back</button>
+                                <button onclick="nextDimension()" id="btn-next" class="px-6 py-2 rounded-lg bg-electric-blue text-navy-900 font-bold hover:bg-electric-cyan transition">Next Dimension</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="view-results" class="hidden fade-in pb-20">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+                    <div class="glass-card p-6 rounded-2xl lg:col-span-1 flex flex-col justify-center items-center text-center border-l-4 border-electric-purple">
+                        <h3 class="text-gray-400 text-sm uppercase tracking-widest mb-2">Maturity Level</h3>
+                        <div id="result-level" class="text-6xl font-bold text-white mb-2">--</div>
+                        <div id="result-label" class="text-xl text-electric-cyan font-medium mb-4">--</div>
+                        <p id="result-desc" class="text-xs text-gray-400 leading-relaxed px-4">--</p>
+                    </div>
+
+                    <div class="glass-card p-4 rounded-2xl lg:col-span-2 relative">
+                        <h3 class="text-gray-400 text-sm uppercase tracking-widest absolute top-6 left-6">Capacity Profile</h3>
+                        <div class="h-[300px] w-full flex justify-center items-center">
+                            <canvas id="acatChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl mb-6">
+                    <h3 class="text-xl font-bold text-white mb-6 border-b border-gray-800 pb-4">Dimension Breakdown</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left text-gray-400">
+                            <thead class="text-xs text-gray-500 uppercase bg-navy-800/50">
+                                <tr>
+                                    <th class="px-6 py-3 rounded-l-lg">Dimension</th>
+                                    <th class="px-6 py-3">Focus Area</th>
+                                    <th class="px-6 py-3">Score (1-8)</th>
+                                    <th class="px-6 py-3 rounded-r-lg">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-table-body">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="flex justify-end gap-4">
+                    <button onclick="window.print()" class="px-6 py-3 rounded-lg bg-navy-800 text-white hover:bg-navy-700 transition">
+                        <i class="fa-solid fa-print mr-2"></i> Print Report
+                    </button>
+                    <button onclick="location.reload()" class="px-6 py-3 rounded-lg bg-electric-purple text-white hover:bg-purple-500 transition">
+                        <i class="fa-solid fa-rotate-right mr-2"></i> New Assessment
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // --- DATA STRUCTURE: The 33 Items from the Framework ---
+        const dimensions = [
+            {
+                id: 'awareness',
+                title: '1. Awareness',
+                desc: 'Environmental Scanning',
+                items: [
+                    { id: 1, text: "New knowledge plays a central role in our Division Education Development Plan (DEDP)." },
+                    { id: 2, text: "Our SDO is well aware of the global and national trends most important to our schools." },
+                    { id: 3, text: "We are rarely surprised by new DepEd orders or policy shifts; we anticipate them." },
+                    { id: 4, text: "We have a clear understanding of the knowledge resources available in our local community." }
+                ]
+            },
+            {
+                id: 'search',
+                title: '2. Active Search',
+                desc: 'Knowledge Sourcing',
+                items: [
+                    { id: 5, text: "We have our finger on the pulse of technological changes (e.g., AI) in education." },
+                    { id: 6, text: "We regularly assess external threats and opportunities using data from PISA/NAP results." },
+                    { id: 7, text: "Our SDO actively seeks out 'best practices' from other divisions and regions." }
+                ]
+            },
+            {
+                id: 'audit',
+                title: '3. Audit Knowledge',
+                desc: 'Internal Gaps',
+                items: [
+                    { id: 8, text: "We have a clear map of the specialized pedagogical strengths within our division." },
+                    { id: 9, text: "We know our organizational weaknesses and what new knowledge we need to acquire." },
+                    { id: 10, text: "We understand how new knowledge (e.g., MATATAG) will help us improve learner outcomes." }
+                ]
+            },
+            {
+                id: 'align',
+                title: '4. Alignment',
+                desc: 'Strategy Development',
+                items: [
+                    { id: 11, text: "Our management is skilled at using new knowledge to solve local educational problems." },
+                    { id: 12, text: "We have a long-term 'vision' for how our division will exploit knowledge in the future." },
+                    { id: 13, text: "We plan our INSET and training programs based on specific, identified knowledge gaps." }
+                ]
+            },
+            {
+                id: 'assess',
+                title: '5. Assess & Select',
+                desc: 'Filter Mechanism',
+                items: [
+                    { id: 14, text: "We are good at selecting which NGO or industry partners best match our schools' needs." },
+                    { id: 15, text: "We use evidence (e.g., research findings) to decide whether to adopt a new intervention." },
+                    { id: 16, text: "We can assess the 'risk' of adopting a new technology before implementing it." }
+                ]
+            },
+            {
+                id: 'acquire',
+                title: '6. Acquire',
+                desc: 'Knowledge Transfer',
+                items: [
+                    { id: 17, text: "Our procurement and partnership processes are efficient and support rapid learning." },
+                    { id: 18, text: "We successfully secure funding (e.g., BERF) for high-priority research and innovation." },
+                    { id: 19, text: "We have strong links with local HEIs for the transfer of specialized knowledge." }
+                ]
+            },
+            {
+                id: 'assimilate',
+                title: '7. Assimilate',
+                desc: 'Translation',
+                items: [
+                    { id: 20, text: "We are good at translating complex national policies into 'layperson terms' for teachers." },
+                    { id: 21, text: "Our cross-functional teams (CID/SGOD) collaborate effectively to process new ideas." },
+                    { id: 22, text: "We use digital platforms (e.g., E-Saliksik) to share knowledge across all offices." }
+                ]
+            },
+            {
+                id: 'adapt',
+                title: '8. Adapt & Use',
+                desc: 'Innovation',
+                items: [
+                    { id: 23, text: "We are agile in contextualizing the curriculum to meet our local learners' needs." },
+                    { id: 24, text: "We turn research findings into practical tools, like new lesson plans or modules." },
+                    { id: 25, text: "We empower school heads to adapt division-level initiatives to their specific contexts." }
+                ]
+            },
+            {
+                id: 'appropriate',
+                title: '9. Appropriate Benefits',
+                desc: 'Impact M&E',
+                items: [
+                    { id: 26, text: "We regularly measure the impact of our innovations on student achievement." },
+                    { id: 27, text: "We capture and document 'lessons learned' from projects that did not succeed." },
+                    { id: 28, text: "We recognize and reward innovative practices through programs like PRAISE." }
+                ]
+            },
+            {
+                id: 'again',
+                title: '10. Again & Again',
+                desc: 'Institutionalization',
+                items: [
+                    { id: 29, text: "Innovation and research management are permanent agenda items in our meetings." },
+                    { id: 30, text: "Our 'search-absorb-apply' cycle is a regular process, not just a response to crisis." },
+                    { id: 31, text: "We have an institutional memory (e.g., a digital repository) for past innovations." },
+                    { id: 32, text: "Our SDO culture encourages questioning and 'thinking outside the box'." },
+                    { id: 33, text: "We continuously update our knowledge base to keep pace with global standards." }
+                ]
+            }
+        ];
+
+        const maturityLevels = [
+            { level: 1, name: "Initial", range: [0, 2.5], desc: "Reactive/Ad-hoc. Focused on basic compliance and firefighting." },
+            { level: 2, name: "Managed", range: [2.5, 4.0], desc: "Project-Based. Repeatable routines exist but lack strategic integration." },
+            { level: 3, name: "Defined", range: [4.0, 5.5], desc: "Proactive. Standards and DEDP alignment are clear." },
+            { level: 4, name: "Quantitatively Managed", range: [5.5, 7.0], desc: "Data-Driven. Outcomes are measured against metrics." },
+            { level: 5, name: "Optimizing", range: [7.0, 9.0], desc: "Agile/Innovative. Continuous improvement and learning culture." }
+        ];
+
+        // --- STATE MANAGEMENT ---
+        let state = {
+            currentDimIndex: 0,
+            answers: {}, // map itemID -> value
+            divisionName: "",
+            role: ""
+        };
+
+        // --- INITIALIZATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            loadState();
+        });
+
+        function loadState() {
+            const saved = localStorage.getItem('acat_state');
+            if (saved) {
+                state = JSON.parse(saved);
+                if (state.divisionName) {
+                    document.getElementById('input-division').value = state.divisionName;
+                    document.getElementById('input-role').value = state.role;
+                }
+            }
+        }
+
+        function saveState() {
+            localStorage.setItem('acat_state', JSON.stringify(state));
+        }
+
+        function resetData() {
+            if(confirm("Are you sure? This will clear all progress.")) {
+                localStorage.removeItem('acat_state');
+                location.reload();
+            }
+        }
+
+        // --- CORE FUNCTIONS ---
+
+        function startAssessment() {
+            const divName = document.getElementById('input-division').value;
+            const role = document.getElementById('input-role').value;
+
+            if (!divName) {
+                alert("Please enter a Division Name.");
+                return;
+            }
+
+            state.divisionName = divName;
+            state.role = role;
+            saveState();
+
+            // UI Transition
+            document.getElementById('view-welcome').classList.add('hidden');
+            document.getElementById('view-assessment').classList.remove('hidden');
+            
+            document.getElementById('user-display').innerText = `${state.divisionName} (${state.role})`;
+            document.getElementById('user-display').classList.remove('hidden');
+
+            renderSidebar();
+            renderDimension(state.currentDimIndex);
+        }
+
+        function renderSidebar() {
+            const container = document.getElementById('dimension-nav');
+            container.innerHTML = dimensions.map((dim, idx) => `
+                <div class="p-3 rounded-lg text-sm cursor-pointer transition ${idx === state.currentDimIndex ? 'bg-navy-800 text-electric-blue font-bold border-l-4 border-electric-blue' : 'text-gray-500 hover:text-gray-300'}"
+                     onclick="jumpToDimension(${idx})">
+                    ${dim.title}
+                </div>
+            `).join('');
+        }
+
+        function renderDimension(index) {
+            state.currentDimIndex = index;
+            saveState();
+            renderSidebar(); // Update active state
+            
+            const dim = dimensions[index];
+            const container = document.getElementById('question-container');
+
+            // Header for the card
+            let html = `
+                <div class="mb-6 fade-in">
+                    <h2 class="text-2xl font-bold text-white mb-1">${dim.title}</h2>
+                    <p class="text-electric-cyan text-sm uppercase tracking-wider mb-6">${dim.desc}</p>
+                    <div class="bg-navy-900/50 p-4 rounded-lg border border-gray-700/50 mb-6">
+                        <p class="text-xs text-gray-400 italic"><i class="fa-solid fa-circle-info mr-2"></i>Rate on a scale of 1 (Strongly Disagree) to 8 (Strongly Agree).</p>
+                    </div>
+                </div>
+                <div class="space-y-8 fade-in">
+            `;
+
+            // Render Questions
+            dim.items.forEach(item => {
+                const val = state.answers[item.id] || 4; // Default to 4
+                html += `
+                    <div class="group">
+                        <label class="block text-gray-200 text-lg mb-3 leading-snug">${item.text}</label>
+                        <div class="flex items-center gap-4">
+                            <span class="text-xs font-bold text-gray-500 w-6">1</span>
+                            <input type="range" min="1" max="8" value="${val}" class="w-full h-2 bg-navy-900 rounded-lg appearance-none cursor-pointer slider-thumb"
+                                oninput="updateAnswer(${item.id}, this.value, 'disp-${item.id}')">
+                            <span class="text-xs font-bold text-gray-500 w-6">8</span>
+                            <div id="disp-${item.id}" class="w-10 h-10 rounded-full bg-navy-800 border border-electric-blue text-electric-blue flex items-center justify-center font-bold shadow-[0_0_10px_rgba(14,165,233,0.3)]">
+                                ${val}
+                            </div>
+                        </div>
+                        <div class="flex justify-between text-[10px] text-gray-600 mt-1 px-1">
+                            <span>Weak</span>
+                            <span>World Class</span>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += `</div>`;
+            container.innerHTML = html;
+
+            // Handle Buttons
+            document.getElementById('btn-prev').disabled = index === 0;
+            document.getElementById('btn-next').innerText = index === dimensions.length - 1 ? "Finish Assessment" : "Next Dimension";
+
+            // Update Progress
+            const progress = Math.round(((index) / dimensions.length) * 100);
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+            document.getElementById('progress-text').innerText = `${progress}%`;
+        }
+
+        function updateAnswer(itemId, value, displayId) {
+            state.answers[itemId] = parseInt(value);
+            document.getElementById(displayId).innerText = value;
+            saveState();
+        }
+
+        function nextDimension() {
+            if (state.currentDimIndex < dimensions.length - 1) {
+                renderDimension(state.currentDimIndex + 1);
+            } else {
+                calculateResults();
+            }
+        }
+
+        function prevDimension() {
+            if (state.currentDimIndex > 0) {
+                renderDimension(state.currentDimIndex - 1);
+            }
+        }
+
+        function jumpToDimension(idx) {
+            renderDimension(idx);
+        }
+
+        // --- RESULTS & ANALYTICS ---
+
+        function calculateResults() {
+            document.getElementById('view-assessment').classList.add('hidden');
+            document.getElementById('view-results').classList.remove('hidden');
+            
+            // 1. Calculate Dimension Averages
+            const dimScores = dimensions.map(dim => {
+                const total = dim.items.reduce((acc, item) => acc + (state.answers[item.id] || 0), 0);
+                const avg = total / dim.items.length;
+                return { id: dim.id, title: dim.title, score: avg, desc: dim.desc };
+            });
+
+            // 2. Calculate Total Maturity
+            const totalScore = dimScores.reduce((acc, d) => acc + d.score, 0) / dimScores.length;
+            const maturity = maturityLevels.find(m => totalScore >= m.range[0] && totalScore < m.range[1]) || maturityLevels[4];
+
+            // 3. Render Dashboard Metrics
+            const levelColor = totalScore >= 7 ? 'text-green-400' : (totalScore >= 4 ? 'text-electric-blue' : 'text-orange-400');
+            
+            document.getElementById('result-level').innerText = maturity.level;
+            document.getElementById('result-level').className = `text-6xl font-bold mb-2 ${levelColor}`;
+            document.getElementById('result-label').innerText = maturity.name;
+            document.getElementById('result-desc').innerText = maturity.desc;
+
+            // 4. Render Table
+            const tbody = document.getElementById('results-table-body');
+            tbody.innerHTML = dimScores.map(d => `
+                <tr class="border-b border-gray-800 hover:bg-white/5 transition">
+                    <td class="px-6 py-4 font-medium text-white">${d.title}</td>
+                    <td class="px-6 py-4">${d.desc}</td>
+                    <td class="px-6 py-4 font-bold ${d.score < 4 ? 'text-red-400' : 'text-green-400'}">${d.score.toFixed(1)}</td>
+                    <td class="px-6 py-4">
+                        <span class="px-2 py-1 rounded text-xs ${d.score < 4 ? 'bg-red-900/30 text-red-400' : 'bg-green-900/30 text-green-400'}">
+                            ${d.score < 4 ? 'Priority Gap' : 'Functional'}
+                        </span>
+                    </td>
+                </tr>
+            `).join('');
+
+            // 5. Render Chart.js
+            renderChart(dimScores);
+        }
+
+        function renderChart(data) {
+            const ctx = document.getElementById('acatChart').getContext('2d');
+            
+            const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+            gradient.addColorStop(0, 'rgba(14, 165, 233, 0.5)'); // Electric Blue
+            gradient.addColorStop(1, 'rgba(139, 92, 246, 0.1)'); // Purple
+
+            new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: data.map(d => d.title.split('. ')[1]), // Short labels
+                    datasets: [{
+                        label: 'SDO Capacity Score',
+                        data: data.map(d => d.score),
+                        backgroundColor: 'rgba(6, 182, 212, 0.2)',
+                        borderColor: '#06b6d4',
+                        pointBackgroundColor: '#fff',
+                        pointBorderColor: '#0ea5e9',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: '#0ea5e9',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                            pointLabels: {
+                                color: '#94a3b8',
+                                font: { size: 11 }
+                            },
+                            ticks: {
+                                backdropColor: 'transparent',
+                                color: 'transparent', // hide numbers on axis
+                                min: 0,
+                                max: 8
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 8
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
