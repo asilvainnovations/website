@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACAT Tool for SDOs</title>
+    
+    <!-- Tailwind CSS for modern UI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+        }
+
+        input[type="range"] {
+            accent-color: #2563eb;
+        }
+
+        .step-transition {
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .nav-item-active {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+        }
+    </style>
+
+    <!-- Placeholder Comments -->
+    <!-- Chosen Palette: Corporate Systems (Deep Navy, Slate, Professional Blue, Emerald Green) -->
+    <!-- Application Structure Plan: 
+        A structured dashboard-first approach. 
+        1. Setup: Capture SDO details.
+        2. Assessment: Three-pillar survey with interactive 1-8 sliders.
+        3. Analysis: Real-time calculation of EQUIP readiness scores and maturity levels.
+        4. Reporting: Visual summary using Radar and Bar charts.
+        The flow ensures data is captured logically before moving to the 'Systemic Transformation' analysis.
+    -->
+    <!-- Visualization & Content Choices:
+        - Survey: Interactive sliders (1-8) to mirror the framework's scoring logic.
+        - Analysis: Radar Chart to show balance between Political Will, Partnership, and Niche.
+        - Maturity: A visual 5-level scale (Regime Compliance to Systemic Transformation).
+        - Export: Function to print/save the final profile.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+</head>
+<body class="min-h-screen">
+
+    <!-- NAVIGATION -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center gap-3">
+                    <div class="bg-blue-600 p-2 rounded-lg">
+                        <i data-lucide="shield-check" class="text-white w-6 h-6"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight text-slate-900">ACAT <span class="text-blue-600">EQUIP-Ready</span></span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <button onclick="showView('setup')" class="text-sm font-semibold text-slate-600 hover:text-blue-600">Setup</button>
+                    <button onclick="showView('survey')" class="text-sm font-semibold text-slate-600 hover:text-blue-600">Assessment</button>
+                    <button onclick="showView('results')" class="text-sm font-semibold text-slate-600 hover:text-blue-600">Results</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+        
+        <!-- VIEW: SETUP -->
+        <section id="view-setup" class="view-content space-y-6">
+            <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-200">
+                <h2 class="text-2xl font-bold mb-2">SDO Identification</h2>
+                <p class="text-slate-500 mb-8">Establish the administrative context for the EQUIP readiness audit.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Schools Division Office Name</label>
+                        <input type="text" id="sdo-name" placeholder="e.g. SDO Pangasinan" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-1">Region</label>
+                        <select id="sdo-region" class="w-full px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 outline-none bg-white">
+                            <option value="">Select Region</option>
+                            <option value="NCR">NCR</option>
+                            <option value="R1">Region I</option>
+                            <option value="R2">Region II</option>
+                            <option value="R3">Region III</option>
+                            <option value="R4B">Region IV-B</option>
+                            <option value="R7">Region VII</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="mt-8 p-4 bg-blue-50 rounded-xl border border-blue-100 flex gap-4">
+                    <i data-lucide="info" class="text-blue-600 w-6 h-6 shrink-0"></i>
+                    <p class="text-sm text-blue-800 leading-relaxed">
+                        <strong>The Systems Innovation Lens:</strong> This tool measures your SDO's position relative to the "Regime" (status quo) and your potential as a "Niche" innovator. Scoring should be completed by the SDO Executive Committee collectively.
+                    </p>
+                </div>
+
+                <div class="mt-8 flex justify-end">
+                    <button onclick="saveSetupAndNext()" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-bold transition-all shadow-lg shadow-blue-200 flex items-center gap-2">
+                        Begin Assessment <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW: SURVEY -->
+        <section id="view-survey" class="view-content hidden space-y-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-900">Readiness Audit</h2>
+                    <p id="survey-pillar-title" class="text-blue-600 font-bold uppercase tracking-wider text-sm">Pillar 1: Political Will</p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span id="step-indicator" class="text-sm font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">Step 1 of 3</span>
+                </div>
+            </div>
+
+            <div id="survey-questions-container" class="space-y-6">
+                <!-- Questions will be injected here via JS -->
+            </div>
+
+            <div class="flex justify-between items-center pt-8 border-t border-slate-200">
+                <button id="prev-btn" onclick="prevStep()" class="text-slate-600 font-semibold flex items-center gap-2 hover:text-slate-900 transition-colors invisible">
+                    <i data-lucide="chevron-left" class="w-5 h-5"></i> Previous Pillar
+                </button>
+                <button id="next-btn" onclick="nextStep()" class="bg-slate-900 hover:bg-slate-800 text-white px-8 py-3 rounded-xl font-bold transition-all shadow-lg flex items-center gap-2">
+                    Next <i data-lucide="chevron-right" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- VIEW: RESULTS -->
+        <section id="view-results" class="view-content hidden space-y-8">
+            <div class="flex justify-between items-end">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-slate-900">Diagnostic Summary</h2>
+                    <p id="result-sdo-info" class="text-slate-500 font-medium"></p>
+                </div>
+                <button onclick="window.print()" class="hidden md:flex items-center gap-2 text-blue-600 font-bold hover:bg-blue-50 px-4 py-2 rounded-lg transition-all">
+                    <i data-lucide="printer" class="w-5 h-5"></i> Export PDF
+                </button>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- Pillar Scores -->
+                <div class="lg:col-span-4 space-y-6">
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-sm font-bold text-slate-400 uppercase mb-4 tracking-widest">Pillar Scores</h3>
+                        <div id="pillar-results-list" class="space-y-6">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+
+                    <div id="maturity-badge-container" class="p-6 rounded-2xl shadow-sm border-2 text-center">
+                        <span class="text-xs font-black uppercase tracking-[0.2em] mb-2 block" id="maturity-label">Maturity Level</span>
+                        <div id="maturity-level-title" class="text-2xl font-extrabold mb-2">Analyzing...</div>
+                        <p id="maturity-desc" class="text-sm leading-relaxed"></p>
+                    </div>
+                </div>
+
+                <!-- Visualizations -->
+                <div class="lg:col-span-8 space-y-6">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 h-full flex flex-col items-center justify-center">
+                        <h3 class="text-lg font-bold text-slate-900 mb-6 w-full text-center">Systemic Innovation Profile</h3>
+                        <div class="chart-container">
+                            <canvas id="resultsRadar"></canvas>
+                        </div>
+                        <div class="mt-8 w-full grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-4 bg-slate-50 rounded-xl">
+                                <span class="text-xs text-slate-400 block mb-1">EQUIP Readiness Index</span>
+                                <span id="overall-index" class="text-3xl font-black text-slate-900">0.0</span>
+                            </div>
+                            <div class="p-4 bg-slate-50 rounded-xl">
+                                <span class="text-xs text-slate-400 block mb-1">Potential Role</span>
+                                <span id="potential-role" class="text-xl font-bold text-blue-600">Niche Leader</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Iceberg Comparison Table -->
+            <div class="bg-slate-900 text-white rounded-3xl p-8">
+                <h3 class="text-2xl font-bold mb-6">Strategic Synthesis</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h4 class="text-blue-400 font-bold mb-2 uppercase text-xs tracking-widest">The "Regime" Risk</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            A high concentration of scores in technical partnerships without political will indicates an SDO that may be "locked-in" to the regional status quo, serving elite capture rather than transformative student outcomes.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-emerald-400 font-bold mb-2 uppercase text-xs tracking-widest">The "Niche" Opportunity</h4>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            High scores in Pillar 3 (Niche Potential) signify an "outlier" SDO ready to prototype E2E models that diverge from national norms to solve local labor market gaps.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-center pb-12">
+                <button onclick="resetAudit()" class="text-slate-400 hover:text-slate-600 text-sm font-medium flex items-center gap-2">
+                    <i data-lucide="refresh-cw" class="w-4 h-4"></i> Reset Audit Data
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JS Logic -->
+    <script>
+        // --- DATA STRUCTURES ---
+        const framework = [
+            {
+                pillar: "Political Will",
+                desc: "Challenging the 'Regime' norms and institutional lock-ins.",
+                questions: [
+                    "Our leadership is willing to disrupt 'business as usual' even if it causes friction with regional elites.",
+                    "We actively bypass informal political settlements that prevent the efficient allocation of SHS resources.",
+                    "Our strategic planning (DEDP) is driven by labor market gaps rather than just national memos.",
+                    "We have the courage to terminate programs that do not lead to employment, despite local political pressure.",
+                    "Our leaders act as 'systemic champions' for E2E transformation at the Regional Development Council level."
+                ]
+            },
+            {
+                pillar: "Partnership Capacity",
+                desc: "Capacity for Deep Collaboration with LGUs and Industry.",
+                questions: [
+                    "We have a shared incentive structure with our LGU that prioritizes local hire-ability of graduates.",
+                    "Industry partners are active members of our decision-making committees, not just donors.",
+                    "Our division has the administrative agility to formalize multi-actor agreements (MOAs) within 15 days.",
+                    "We have established a 'Learning Hub' that connects TESDA, industry, and schools in a single feedback loop.",
+                    "Our partnership mechanisms effectively move students into certified employment roles."
+                ]
+            },
+            {
+                pillar: "Niche Potential",
+                desc: "Ability to act as a Systemic Prototyping and Scaling hub.",
+                questions: [
+                    "We encourage our schools to operate as 'outliers' by testing E2E models that diverge from national norms.",
+                    "Our SDRIC prioritizes 'Transformative Innovations' over 'Incremental/Process Improvements.'",
+                    "We have the internal capacity to document and package a successful pilot for regional scaling.",
+                    "Our division is recognized as a 'pocket of innovation' that other SDOs benchmark for E2E success.",
+                    "We have established a 'safe space' for teachers to experiment with new pedagogies for Workforce 4.0."
+                ]
+            }
+        ];
+
+        let state = {
+            currentStep: 0,
+            sdoName: "",
+            region: "",
+            scores: [
+                [4, 4, 4, 4, 4],
+                [4, 4, 4, 4, 4],
+                [4, 4, 4, 4, 4]
+            ]
+        };
+
+        // --- CORE NAVIGATION ---
+        function showView(viewId) {
+            document.querySelectorAll('.view-content').forEach(v => v.classList.add('hidden'));
+            document.getElementById(`view-${viewId}`).classList.remove('hidden');
+            window.scrollTo(0,0);
+            
+            if (viewId === 'results') {
+                renderResults();
+            }
+        }
+
+        function saveSetupAndNext() {
+            state.sdoName = document.getElementById('sdo-name').value;
+            state.region = document.getElementById('sdo-region').value;
+            
+            if (!state.sdoName || !state.region) {
+                alert("Please complete the SDO identification fields.");
+                return;
+            }
+            
+            showView('survey');
+            renderSurveyStep();
+        }
+
+        // --- SURVEY LOGIC ---
+        function renderSurveyStep() {
+            const pillar = framework[state.currentStep];
+            document.getElementById('survey-pillar-title').innerText = `Pillar ${state.currentStep + 1}: ${pillar.pillar}`;
+            document.getElementById('step-indicator').innerText = `Step ${state.currentStep + 1} of 3`;
+            
+            const container = document.getElementById('survey-questions-container');
+            container.innerHTML = "";
+            
+            pillar.questions.forEach((q, idx) => {
+                const val = state.scores[state.currentStep][idx];
+                const qDiv = document.createElement('div');
+                qDiv.className = "bg-white p-6 rounded-2xl border border-slate-200 shadow-sm";
+                qDiv.innerHTML = `
+                    <div class="flex justify-between items-start gap-4 mb-4">
+                        <p class="text-slate-800 font-medium leading-relaxed">${q}</p>
+                        <span class="bg-blue-100 text-blue-700 font-bold px-3 py-1 rounded-lg text-lg min-w-[3rem] text-center" id="score-display-${idx}">${val}</span>
+                    </div>
+                    <div class="space-y-4">
+                        <input type="range" min="1" max="8" value="${val}" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer" 
+                            oninput="updateScore(${state.currentStep}, ${idx}, this.value)">
+                        <div class="flex justify-between text-[10px] text-slate-400 font-bold uppercase tracking-widest">
+                            <span>Regime Compliance</span>
+                            <span>Niche Leadership</span>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(qDiv);
+            });
+
+            // Button visibility
+            document.getElementById('prev-btn').style.visibility = state.currentStep === 0 ? 'hidden' : 'visible';
+            document.getElementById('next-btn').innerHTML = state.currentStep === 2 ? 'Finish Diagnostic <i data-lucide="check" class="w-5 h-5"></i>' : 'Next <i data-lucide="chevron-right" class="w-5 h-5"></i>';
+            lucide.createIcons();
+        }
+
+        function updateScore(step, idx, val) {
+            state.scores[step][idx] = parseInt(val);
+            document.getElementById(`score-display-${idx}`).innerText = val;
+            // Local persistence
+            localStorage.setItem('acat-draft', JSON.stringify(state));
+        }
+
+        function nextStep() {
+            if (state.currentStep < 2) {
+                state.currentStep++;
+                renderSurveyStep();
+            } else {
+                showView('results');
+            }
+        }
+
+        function prevStep() {
+            if (state.currentStep > 0) {
+                state.currentStep--;
+                renderSurveyStep();
+            }
+        }
+
+        // --- RESULTS & ANALYTICS ---
+        let radarChart = null;
+
+        function renderResults() {
+            document.getElementById('result-sdo-info').innerText = `${state.sdoName} | ${state.region} Portfolio`;
+            
+            const averages = state.scores.map(s => s.reduce((a, b) => a + b, 0) / s.length);
+            const overall = averages.reduce((a, b) => a + b, 0) / averages.length;
+            
+            // Pillar List
+            const list = document.getElementById('pillar-results-list');
+            list.innerHTML = "";
+            framework.forEach((p, i) => {
+                const score = averages[i].toFixed(1);
+                const pct = (averages[i] / 8) * 100;
+                list.innerHTML += `
+                    <div>
+                        <div class="flex justify-between items-end mb-1">
+                            <span class="text-sm font-bold text-slate-700">${p.pillar}</span>
+                            <span class="text-sm font-black text-blue-600">${score}/8.0</span>
+                        </div>
+                        <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                            <div class="bg-blue-600 h-full" style="width: ${pct}%"></div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            document.getElementById('overall-index').innerText = overall.toFixed(1);
+
+            // Maturity & Role Logic
+            const maturityData = calculateMaturity(overall, averages);
+            const matContainer = document.getElementById('maturity-badge-container');
+            const matTitle = document.getElementById('maturity-level-title');
+            const matDesc = document.getElementById('maturity-desc');
+            const roleEl = document.getElementById('potential-role');
+
+            matTitle.innerText = maturityData.level;
+            matDesc.innerText = maturityData.desc;
+            roleEl.innerText = maturityData.role;
+            matContainer.className = `p-6 rounded-2xl shadow-sm border-2 text-center ${maturityData.style}`;
+
+            // Chart Render
+            const ctx = document.getElementById('resultsRadar').getContext('2d');
+            if (radarChart) radarChart.destroy();
+            
+            radarChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: framework.map(p => p.pillar),
+                    datasets: [{
+                        label: 'Current Readiness',
+                        data: averages,
+                        backgroundColor: 'rgba(37, 99, 235, 0.2)',
+                        borderColor: '#2563eb',
+                        borderWidth: 3,
+                        pointBackgroundColor: '#fff',
+                        pointBorderColor: '#2563eb',
+                        pointRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            min: 0,
+                            max: 8,
+                            ticks: { display: false },
+                            grid: { color: '#e2e8f0' },
+                            angleLines: { color: '#e2e8f0' },
+                            pointLabels: {
+                                font: { size: 12, weight: 'bold', family: 'Plus Jakarta Sans' },
+                                color: '#64748b'
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+            lucide.createIcons();
+        }
+
+        function calculateMaturity(avg, averages) {
+            // Level 5: Systemic Transformation (Avg > 7)
+            // Level 4: Niche Prototyping (Avg > 5.5)
+            // Level 3: Strategic Alignment (Avg > 4)
+            // Level 2: Fragmented Search (Avg > 2.5)
+            // Level 1: Regime Compliance (Avg <= 2.5)
+
+            if (avg > 7) return {
+                level: "Level 5: Systemic Transformation",
+                role: "Niche Leader",
+                style: "bg-emerald-50 border-emerald-200 text-emerald-900",
+                desc: "The SDO acts as a Niche Leader, influencing the regional Regime to adopt transformative E2E models."
+            };
+            if (avg > 5.5) return {
+                level: "Level 4: Niche Prototyping",
+                role: "Agile Innovator",
+                style: "bg-blue-50 border-blue-200 text-blue-900",
+                desc: "Active piloting of outlier models. High data utilization to challenge the Regime status quo."
+            };
+            if (avg > 4) return {
+                level: "Level 3: Strategic Alignment",
+                role: "Emerging Actor",
+                style: "bg-indigo-50 border-indigo-200 text-indigo-900",
+                desc: "Partnerships are aligned with DEDP, but internal lock-ins still prevent systemic disruption."
+            };
+            if (avg > 2.5) return {
+                level: "Level 2: Fragmented Search",
+                role: "Compliance Focus",
+                style: "bg-amber-50 border-amber-200 text-amber-900",
+                desc: "Transactional partnerships (donations). Innovation is ad-hoc rather than systemic."
+            };
+            return {
+                level: "Level 1: Regime Compliance",
+                role: "Status Quo Agent",
+                style: "bg-slate-50 border-slate-200 text-slate-900",
+                desc: "Focus on rule-following. No political will to challenge regional power structures."
+            };
+        }
+
+        function resetAudit() {
+            if (confirm("This will clear all current diagnostic data. Continue?")) {
+                localStorage.removeItem('acat-draft');
+                location.reload();
+            }
+        }
+
+        // --- INIT ---
+        window.onload = () => {
+            lucide.createIcons();
+            const saved = localStorage.getItem('acat-draft');
+            if (saved) {
+                const parsed = JSON.parse(saved);
+                state = {...state, ...parsed};
+                document.getElementById('sdo-name').value = state.sdoName || "";
+                document.getElementById('sdo-region').value = state.region || "";
+            }
+        };
+    </script>
+</body>
+</html>
