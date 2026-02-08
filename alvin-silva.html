@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alvin M. Silva, MDM | Development Management & Resilience Expert</title>
+    <title>Alvin M. Silva, MDM | Development Management Pro & Resilience Expert</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -18,15 +21,27 @@
             --dark-bg: #0a0e27;
             --card-bg: #1a1f3a;
             --text-primary: #ffffff;
-            --text-secondary: #a0aec0;
+            --text-secondary: #e0e6ed;
+            --contrast-bg: #0d1224;
+            --glass-bg: rgba(26, 31, 58, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.18);
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: linear-gradient(135deg, var(--dark-bg) 0%, #0f1428 100%);
             color: var(--text-primary);
             overflow-x: hidden;
             line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .subtitle, .stat-label, .nav-links {
+            font-family: 'Roboto Condensed', sans-serif;
         }
 
         /* Animated Background */
@@ -73,12 +88,14 @@
         /* Header */
         header {
             padding: 2rem 5%;
-            background: rgba(26, 31, 58, 0.8);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 14, 39, 0.85);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             position: sticky;
             top: 0;
             z-index: 1000;
             border-bottom: 2px solid var(--electric-blue);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
             animation: slideDown 0.8s ease-out;
         }
 
@@ -257,7 +274,7 @@
 
         .hero-text p {
             font-size: 1.1rem;
-            color: var(--text-secondary);
+            color: #e0e6ed;
             margin-bottom: 2rem;
             line-height: 1.8;
         }
@@ -330,11 +347,14 @@
         }
 
         .hero-card {
-            background: linear-gradient(135deg, var(--card-bg), rgba(26, 31, 58, 0.8));
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             padding: 3rem;
             border-radius: 20px;
-            border: 2px solid var(--electric-blue);
-            box-shadow: 0 20px 60px rgba(0, 102, 255, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 102, 255, 0.4),
+                        0 20px 60px 0 rgba(0, 0, 0, 0.5);
             position: relative;
         }
 
@@ -391,7 +411,9 @@
         .tooltip .tooltiptext {
             visibility: hidden;
             width: 300px;
-            background: linear-gradient(135deg, var(--card-bg), rgba(26, 31, 58, 0.95));
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             color: var(--text-primary);
             text-align: left;
             border-radius: 10px;
@@ -403,8 +425,9 @@
             margin-left: -150px;
             opacity: 0;
             transition: opacity 0.3s;
-            border: 1px solid var(--electric-blue);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6),
+                        0 4px 16px rgba(0, 102, 255, 0.3);
         }
 
         .tooltip:hover .tooltiptext {
@@ -428,10 +451,13 @@
             text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
             background: linear-gradient(45deg, var(--electric-blue), var(--gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 0 2px 10px rgba(0, 102, 255, 0.3);
         }
 
         .expertise-grid {
@@ -443,10 +469,14 @@
         }
 
         .expertise-card {
-            background: linear-gradient(135deg, var(--card-bg), rgba(26, 31, 58, 0.8));
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             padding: 2.5rem;
             border-radius: 15px;
-            border: 1px solid var(--electric-blue);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 102, 255, 0.3),
+                        0 4px 16px 0 rgba(0, 0, 0, 0.4);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -467,7 +497,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.3), transparent);
             transition: left 0.5s ease;
         }
 
@@ -477,8 +507,10 @@
 
         .expertise-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.4);
-            border-color: var(--gold);
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.5),
+                        0 8px 20px rgba(0, 191, 255, 0.4);
+            border-color: rgba(255, 215, 0, 0.5);
+            background: rgba(26, 31, 58, 0.8);
         }
 
         .expertise-icon {
@@ -494,9 +526,10 @@
         }
 
         .expertise-card h3 {
-            color: var(--sky-blue);
+            color: #4ddbff;
             margin-bottom: 1rem;
             font-size: 1.4rem;
+            font-weight: 700;
         }
 
         .expertise-card p {
@@ -541,17 +574,35 @@
         }
 
         .timeline-content {
-            background: linear-gradient(135deg, var(--card-bg), rgba(26, 31, 58, 0.8));
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             padding: 2rem;
             border-radius: 15px;
-            border: 1px solid var(--electric-blue);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 102, 255, 0.3),
+                        0 4px 16px 0 rgba(0, 0, 0, 0.4);
             position: relative;
             transition: all 0.3s ease;
         }
 
         .timeline-content:hover {
             transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 191, 255, 0.3);
+            box-shadow: 0 15px 40px rgba(0, 191, 255, 0.4),
+                        0 8px 24px rgba(0, 102, 255, 0.5);
+            border-color: rgba(255, 215, 0, 0.4);
+            background: rgba(26, 31, 58, 0.8);
+        }
+
+        .timeline-content h3 {
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .timeline-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
         }
 
         .timeline-dot {
@@ -607,20 +658,34 @@
             gap: 1.5rem;
             margin-bottom: 2rem;
             padding: 1.5rem;
-            background: rgba(26, 31, 58, 0.5);
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
             border-left: 4px solid var(--gold);
+            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease;
         }
 
         .contact-item:hover {
             transform: translateX(10px);
-            background: rgba(26, 31, 58, 0.8);
+            background: rgba(26, 31, 58, 0.85);
+            box-shadow: 0 8px 24px 0 rgba(0, 102, 255, 0.3);
+            border-left-color: var(--electric-blue);
+        }
+
+        .contact-item h4 {
+            color: #ffd700;
+        }
+
+        .contact-item p {
+            color: var(--text-secondary);
         }
 
         .contact-icon {
             font-size: 2rem;
-            color: var(--sky-blue);
+            color: #4ddbff;
         }
 
         .contact-form {
@@ -645,27 +710,38 @@
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
-            color: var(--sky-blue);
+            color: #4ddbff;
             font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
             padding: 1rem;
-            background: rgba(26, 31, 58, 0.8);
-            border: 2px solid var(--electric-blue);
+            background: rgba(26, 31, 58, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
             border-radius: 10px;
             color: var(--text-primary);
             font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
             transition: all 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(224, 230, 237, 0.6);
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--gold);
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+            background: rgba(26, 31, 58, 0.9);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3),
+                        0 4px 16px rgba(0, 102, 255, 0.2);
         }
 
         .form-group textarea {
@@ -676,8 +752,11 @@
         /* Footer */
         footer {
             padding: 3rem 5%;
-            background: rgba(10, 14, 39, 0.9);
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             border-top: 2px solid var(--electric-blue);
+            box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.4);
             text-align: center;
         }
 
@@ -795,6 +874,46 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Accessibility improvements */
+        *:focus {
+            outline: 3px solid var(--gold);
+            outline-offset: 2px;
+        }
+
+        .btn:focus,
+        .nav-links a:focus {
+            outline: 3px solid var(--gold);
+            outline-offset: 4px;
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: high) {
+            .hero-text p,
+            .expertise-card p,
+            .timeline-content p {
+                color: #ffffff;
+            }
+            
+            .hero-card,
+            .expertise-card,
+            .timeline-content,
+            .contact-item {
+                border-width: 2px;
+                border-color: rgba(255, 255, 255, 0.4);
+            }
+        }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -816,7 +935,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#expertise">Expertise</a></li>
                 <li><a href="#achievements">Achievements</a></li>
-                <li><a href="https://asilvainnovations.com/portfolio-of-alvin-silva">Portfolio</a></li>
+                <li><a href="https://asilvainnovations.com/portfolio-of-alvin-silva/">Contact</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -831,7 +950,7 @@
             <div class="hero-text">
                 <h1>Alvin M. Silva, MDM</h1>
                 <p class="subtitle">Certified International Humanitarian & Resilience Consultant</p>
-                <p>Development management professional, systems innovator, and certified international humanitarian practitioner dedicated to co-creating platforms, policies and solutions for <span class="tooltip">sustainability and growth<span class="tooltiptext">Over 15 years of global experience in CCA, DRR, and resilience-building with organizations including ECHO, USAID, World Bank, UNICEF, and more.</span></span>, <span class="tooltip">disaster risk reduction<span class="tooltiptext">Active contributions in cultivating and innovating DRR strategies with diverse institutions and communities worldwide.</span></span>, and <span class="tooltip">social innovation<span class="tooltiptext">Author of "Personal Resilience: The Path To Oneness" and architect of multiple innovation platforms.</span></span>.</p>
+                <p>Development management professional, systems innovator, and certified international humanitarian practitioner dedicated to co-creating policies and solutions for <span class="tooltip">growth and sustainability<span class="tooltiptext">Almost 20 years of global experience in CCA, DRR, and resilience-building with organizations including ECHO, USAID, World Bank, UNICEF, and more.</span></span>, <span class="tooltip">disaster risk reduction<span class="tooltiptext">Active contributions in cultivating and innovating DRR strategies with diverse institutions and communities worldwide.</span></span>, and <span class="tooltip">social innovation<span class="tooltiptext">Author of "Building Resilience: The Path To A More Fulfilling and Resilient Life" and founder of multiple innovation platforms.</span></span>.</p>
                 <div class="cta-buttons">
                     <a href="#contact" class="btn btn-primary"><span>Get In Touch</span></a>
                     <a href="#expertise" class="btn btn-secondary">Explore Expertise</a>
@@ -840,7 +959,7 @@
             <div class="hero-image">
                 <div class="hero-card">
                     <div class="stat-item">
-                        <div class="stat-number">15+</div>
+                        <div class="stat-number">18+</div>
                         <div class="stat-label">Years of Global Experience</div>
                     </div>
                     <div class="stat-item">
@@ -866,7 +985,7 @@
             <div class="expertise-card">
                 <div class="expertise-icon">🌍</div>
                 <h3>Climate Change Adaptation</h3>
-                <p>15+ years of global experience in CCA strategies, working with ECHO, USAID, World Bank, and international organizations to develop sustainable climate solutions.</p>
+                <p>More than 15 years of global experience in CCA strategies, working with ECHO, USAID, World Bank, and international organizations to develop sustainable climate solutions.</p>
             </div>
             <div class="expertise-card">
                 <div class="expertise-icon">🛡️</div>
@@ -962,7 +1081,7 @@
         <h2 class="section-title">Let's Connect</h2>
         <div class="contact-container">
             <div class="contact-info">
-                <h3 style="color: var(--sky-blue); margin-bottom: 2rem; font-size: 1.8rem;">Get in Touch</h3>
+                <h3 style="color: #4ddbff; margin-bottom: 2rem; font-size: 1.8rem; font-family: 'Montserrat', sans-serif; font-weight: 700;">Get in Touch</h3>
                 <div class="contact-item">
                     <div class="contact-icon">📱</div>
                     <div>
@@ -981,8 +1100,8 @@
                     <div class="contact-icon">✉️</div>
                     <div>
                         <h4 style="color: var(--gold); margin-bottom: 0.5rem;">Email</h4>
-                        <p>alvin.silva@asilvainnovations.com</p>
-                        <p>alvin.silva@cognitioplus.com</p>
+                        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7819140e1116560b11140e1938190b11140e19111616170e190c1117160b561b1715">[email&#160;protected]</a></p>
+                        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a1c0cdd7c8cf8fd2c8cdd7c0e1c2cec6cfc8d5c8ced1cdd4d28fc2cecc">[email&#160;protected]</a></p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -994,21 +1113,21 @@
                 </div>
             </div>
             <div class="contact-form">
-                <h3 style="color: var(--sky-blue); margin-bottom: 2rem; font-size: 1.8rem;">Send a Message</h3>
-                <form>
+                <h3 style="color: #4ddbff; margin-bottom: 2rem; font-size: 1.8rem; font-family: 'Montserrat', sans-serif; font-weight: 700;">Send a Message</h3>
+                <form aria-label="Contact form">
                     <div class="form-group">
-                        <label>Your Name</label>
-                        <input type="text" placeholder="Enter your name" required>
+                        <label for="name-input">Your Name</label>
+                        <input type="text" id="name-input" name="name" placeholder="Enter your name" required aria-required="true">
                     </div>
                     <div class="form-group">
-                        <label>Email Address</label>
-                        <input type="email" placeholder="Enter your email" required>
+                        <label for="email-input">Email Address</label>
+                        <input type="email" id="email-input" name="email" placeholder="Enter your email" required aria-required="true">
                     </div>
                     <div class="form-group">
-                        <label>Message</label>
-                        <textarea placeholder="How can I help you?" required></textarea>
+                        <label for="message-input">Message</label>
+                        <textarea id="message-input" name="message" placeholder="How can I help you?" required aria-required="true"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;"><span>Send Message</span></button>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;" aria-label="Send message"><span>Send Message</span></button>
                 </form>
             </div>
         </div>
