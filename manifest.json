@@ -1,0 +1,59 @@
+{
+  "name": "ASilva Innovations - Building Resilient Communities",
+  "short_name": "ASilva Innovations",
+  "description": "Enterprise-grade risk management platforms for Local Government Units, NGOs, and SMEs",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "screenshots": [
+    {
+      "src": "https://appimize.app/assets/apps/user_1097/images/8df0614c4061_739_1097.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "DDRiVE-M Platform",
+      "short_name": "DDRiVE-M",
+      "description": "Enterprise Risk Management System",
+      "url": "/#services",
+      "icons": [
+        {
+          "src": "https://appimize.app/assets/apps/user_1097/images/4750f689086d_379_1097.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Contact Us",
+      "short_name": "Contact",
+      "description": "Get in touch with our team",
+      "url": "/#contact",
+      "icons": [
+        {
+          "src": "https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false
+}
