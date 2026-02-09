@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ASilva Innovations Accessibility Policy - Our commitment to ensuring digital accessibility for people with disabilities and compliance with WCAG 2.1 AA standards.">
+  <meta name="keywords" content="ASilva Innovations accessibility, WCAG compliance, digital accessibility, inclusive design, disability access">
+  <title>Accessibility Policy - ASilva Innovations</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-blue: #0047AB;
+      --secondary-teal: #00A896;
+      --accent-orange: #FF6B35;
+      --dark-navy: #001F3F;
+      --light-gray: #F5F7FA;
+      --white: #FFFFFF;
+      --text-dark: #1A1A1A;
+      --text-medium: #4A4A4A;
+      --border-color: #E0E4E8;
+      --shadow-sm: 0 2px 8px rgba(0, 71, 171, 0.08);
+      --shadow-md: 0 4px 16px rgba(0, 71, 171, 0.12);
+      --shadow-lg: 0 8px 32px rgba(0, 71, 171, 0.16);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Roboto Condensed', sans-serif;
+      background: var(--light-gray);
+      color: var(--text-dark);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+    
+    /* Skip to main content link for screen readers */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent-orange);
+      color: var(--white);
+      padding: 8px 16px;
+      text-decoration: none;
+      font-weight: 700;
+      z-index: 100;
+    }
+    
+    .skip-link:focus {
+      top: 0;
+    }
+    
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--dark-navy) 0%, var(--primary-blue) 100%);
+      color: var(--white);
+      padding: 60px 20px;
+      text-align: center;
+    }
+    
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    
+    .last-updated {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      font-weight: 300;
+    }
+    
+    /* Main Content */
+    main {
+      max-width: 900px;
+      margin: -40px auto 60px;
+      padding: 0 20px;
+      position: relative;
+    }
+    
+    .content-container {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 60px;
+      box-shadow: var(--shadow-lg);
+    }
+    
+    /* Table of Contents */
+    .toc {
+      background: var(--light-gray);
+      border-left: 4px solid var(--secondary-teal);
+      padding: 24px 28px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+    
+    .toc h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--dark-navy);
+      margin-bottom: 16px;
+    }
+    
+    .toc ol {
+      margin-left: 20px;
+      line-height: 2;
+    }
+    
+    .toc a {
+      color: var(--primary-blue);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+    
+    .toc a:hover,
+    .toc a:focus {
+      color: var(--secondary-teal);
+      text-decoration: underline;
+    }
+    
+    /* Section Styling */
+    .section {
+      margin-bottom: 48px;
+      scroll-margin-top: 20px;
+    }
+    
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--dark-navy);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid var(--secondary-teal);
+    }
+    
+    h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--primary-blue);
+      margin: 32px 0 16px;
+    }
+    
+    p {
+      margin-bottom: 16px;
+      color: var(--text-dark);
+    }
+    
+    ul, ol {
+      margin: 16px 0 16px 24px;
+    }
+    
+    li {
+      margin-bottom: 12px;
+      color: var(--text-dark);
+    }
+    
+    strong {
+      color: var(--dark-navy);
+      font-weight: 700;
+    }
+    
+    /* Highlight Box */
+    .highlight-box {
+      background: linear-gradient(135deg, #E8F4F8 0%, #F0F9FF 100%);
+      border-left: 4px solid var(--accent-orange);
+      padding: 24px;
+      border-radius: 8px;
+      margin: 24px 0;
+    }
+    
+    .highlight-box p:last-child {
+      margin-bottom: 0;
+    }
+    
+    /* Contact Box */
+    .contact-box {
+      background: var(--light-gray);
+      padding: 32px;
+      border-radius: 12px;
+      margin: 32px 0;
+      border: 2px solid var(--border-color);
+    }
+    
+    .contact-box h3 {
+      margin-top: 0;
+      color: var(--dark-navy);
+    }
+    
+    .contact-info {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+    
+    .contact-label {
+      font-weight: 700;
+      color: var(--primary-blue);
+      min-width: 100px;
+    }
+    
+    a {
+      color: var(--secondary-teal);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+    }
+    
+    a:hover,
+    a:focus {
+      color: var(--primary-blue);
+      border-bottom-color: var(--primary-blue);
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, var(--dark-navy) 0%, var(--primary-blue) 100%);
+      color: var(--white);
+      padding: 40px 20px;
+      text-align: center;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .footer-link {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.2s ease;
+    }
+    
+    .footer-link:hover,
+    .footer-link:focus {
+      opacity: 0.8;
+      text-decoration: underline;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .content-container {
+        padding: 40px 24px;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      h3 {
+        font-size: 1.2rem;
+      }
+      
+      .contact-item {
+        flex-direction: column;
+        gap: 4px;
+      }
+      
+      .contact-label {
+        min-width: auto;
+      }
+    }
+    
+    /* Print Styles */
+    @media print {
+      body {
+        background: white;
+      }
+      
+      header {
+        background: none;
+        color: black;
+      }
+      
+      .content-container {
+        box-shadow: none;
+      }
+      
+      a {
+        color: black;
+        text-decoration: underline;
+      }
+    }
+    
+    /* High Contrast Mode Support */
+    @media (prefers-contrast: high) {
+      .highlight-box {
+        border-width: 3px;
+      }
+      
+      a {
+        text-decoration: underline;
+      }
+    }
+    
+    /* Focus Styles */
+    *:focus {
+      outline: 3px solid var(--accent-orange);
+      outline-offset: 2px;
+    }
+    
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header role="banner">
+    <div class="logo">ASilva Innovations</div>
+    <h1>Accessibility Policy</h1>
+    <p class="last-updated">Last Updated: February 9, 2026</p>
+  </header>
+  
+  <main id="main-content" role="main">
+    <div class="content-container">
+      <!-- Table of Contents -->
+      <nav class="toc" aria-label="Table of Contents">
+        <h2>Table of Contents</h2>
+        <ol>
+          <li><a href="#commitment">Our Commitment to Accessibility</a></li>
+          <li><a href="#standards">Accessibility Standards</a></li>
+          <li><a href="#features">Accessibility Features</a></li>
+          <li><a href="#testing">Testing and Evaluation</a></li>
+          <li><a href="#third-party">Third-Party Content</a></li>
+          <li><a href="#feedback">Feedback and Contact</a></li>
+          <li><a href="#remediation">Remediation Process</a></li>
+          <li><a href="#ongoing">Ongoing Commitment</a></li>
+        </ol>
+      </nav>
+      
+      <!-- Section 1: Commitment -->
+      <section id="commitment" class="section">
+        <h2>1. Our Commitment to Accessibility</h2>
+        <p>
+          ASilva Innovations is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards to ensure we provide equal access to all our users.
+        </p>
+        <p>
+          We believe that technology should be accessible to everyone, regardless of their abilities or disabilities. Our goal is to create inclusive digital experiences that empower all users to access our AI-powered resilience solutions, strategic planning platforms, and educational resources.
+        </p>
+        <div class="highlight-box">
+          <p><strong>Our Commitment:</strong> We strive to meet or exceed the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards to ensure our digital platforms are accessible to the widest possible audience, including those using assistive technologies.</p>
+        </div>
+      </section>
+      
+      <!-- Section 2: Standards -->
+      <section id="standards" class="section">
+        <h2>2. Accessibility Standards</h2>
+        <p>
+          ASilva Innovations adheres to internationally recognized accessibility standards and best practices:
+        </p>
+        
+        <h3>WCAG 2.1 Level AA Compliance</h3>
+        <p>
+          Our digital platforms conform to the <strong>Web Content Accessibility Guidelines (WCAG) 2.1 Level AA</strong> standards published by the World Wide Web Consortium (W3C). These guidelines are organized around four core principles:
+        </p>
+        <ul>
+          <li><strong>Perceivable:</strong> Information and user interface components must be presentable to users in ways they can perceive (text alternatives, captions, adaptable content, distinguishable elements)</li>
+          <li><strong>Operable:</strong> User interface components and navigation must be operable (keyboard accessible, sufficient time, seizure-safe, navigable, input modalities)</li>
+          <li><strong>Understandable:</strong> Information and the operation of the user interface must be understandable (readable, predictable, input assistance)</li>
+          <li><strong>Robust:</strong> Content must be robust enough to be interpreted reliably by a wide variety of user agents, including assistive technologies</li>
+        </ul>
+        
+        <h3>Additional Standards</h3>
+        <ul>
+          <li><strong>Section 508 of the Rehabilitation Act</strong> (applicable to U.S. federal agencies and contractors)</li>
+          <li><strong>EN 301 549</strong> (European accessibility standard)</li>
+          <li><strong>Philippine Accessibility Law (Batas Pambansa Blg. 344)</strong> and related implementing guidelines</li>
+          <li><strong>ISO 30071-1</strong> (Code of practice for creating accessible ICT products and services)</li>
+        </ul>
+      </section>
+      
+      <!-- Section 3: Features -->
+      <section id="features" class="section">
+        <h2>3. Accessibility Features</h2>
+        <p>
+          Our platforms and websites incorporate the following accessibility features:
+        </p>
+        
+        <h3>Navigation and Structure</h3>
+        <ul>
+          <li>Logical heading hierarchy (H1-H6) for easy navigation with screen readers</li>
+          <li>Skip navigation links to bypass repetitive content</li>
+          <li>Consistent navigation structure across all pages</li>
+          <li>Clear and descriptive page titles</li>
+          <li>Breadcrumb navigation for complex site structures</li>
+          <li>Accessible landmark regions (header, main, navigation, footer)</li>
+        </ul>
+        
+        <h3>Visual Design</h3>
+        <ul>
+          <li>Sufficient color contrast ratios (minimum 4.5:1 for normal text, 3:1 for large text)</li>
+          <li>Information conveyed without relying solely on color</li>
+          <li>Resizable text up to 200% without loss of content or functionality</li>
+          <li>Support for user-defined color schemes and high contrast modes</li>
+          <li>Clear visual focus indicators for keyboard navigation</li>
+          <li>Responsive design that adapts to different screen sizes and orientations</li>
+        </ul>
+        
+        <h3>Content and Media</h3>
+        <ul>
+          <li>Alternative text (alt text) for all meaningful images</li>
+          <li>Captions and transcripts for video and audio content</li>
+          <li>Audio descriptions for video content where applicable</li>
+          <li>Clear and simple language (aiming for Plain Language standards)</li>
+          <li>Descriptive link text (avoiding "click here" or "read more")</li>
+          <li>Accessible PDF documents with proper tagging and structure</li>
+        </ul>
+        
+        <h3>Interactive Elements</h3>
+        <ul>
+          <li>Full keyboard accessibility (all functions available via keyboard)</li>
+          <li>Visible keyboard focus indicators</li>
+          <li>Logical tab order following visual layout</li>
+          <li>ARIA (Accessible Rich Internet Applications) labels and landmarks where appropriate</li>
+          <li>Accessible form controls with clear labels and error messages</li>
+          <li>Time limits that can be extended or disabled</li>
+          <li>Prevention of seizure-inducing content (no flashing more than 3 times per second)</li>
+        </ul>
+        
+        <h3>Assistive Technology Support</h3>
+        <ul>
+          <li>Compatibility with screen readers (JAWS, NVDA, VoiceOver, TalkBack)</li>
+          <li>Support for screen magnification software</li>
+          <li>Compatibility with speech recognition software</li>
+          <li>Support for alternative input devices</li>
+          <li>Semantic HTML markup for proper interpretation by assistive technologies</li>
+        </ul>
+      </section>
+      
+      <!-- Section 4: Testing -->
+      <section id="testing" class="section">
+        <h2>4. Testing and Evaluation</h2>
+        <p>
+          ASilva Innovations employs comprehensive testing methodologies to ensure accessibility:
+        </p>
+        
+        <h3>Testing Methods</h3>
+        <ul>
+          <li><strong>Automated Testing:</strong> Regular use of automated accessibility testing tools (WAVE, Axe, Lighthouse) to identify technical compliance issues</li>
+          <li><strong>Manual Testing:</strong> Human evaluation of user experience, including keyboard-only navigation and screen reader testing</li>
+          <li><strong>Assistive Technology Testing:</strong> Testing with common screen readers (JAWS, NVDA, VoiceOver) and other assistive technologies</li>
+          <li><strong>User Testing:</strong> Involving people with disabilities in usability testing to gain real-world feedback</li>
+          <li><strong>Code Review:</strong> Regular review of HTML, CSS, and JavaScript for accessibility best practices</li>
+          <li><strong>Compliance Audits:</strong> Periodic third-party accessibility audits to ensure ongoing compliance</li>
+        </ul>
+        
+        <h3>Testing Schedule</h3>
+        <ul>
+          <li>Automated testing runs on every code deployment</li>
+          <li>Manual accessibility audits conducted quarterly</li>
+          <li>Full WCAG compliance audits conducted annually</li>
+          <li>User testing with people with disabilities conducted semi-annually</li>
+          <li>New features tested for accessibility before release</li>
+        </ul>
+      </section>
+      
+      <!-- Section 5: Third Party -->
+      <section id="third-party" class="section">
+        <h2>5. Third-Party Content</h2>
+        <p>
+          While we strive to ensure accessibility across our entire digital ecosystem, some content and services may be provided by third parties. We are committed to:
+        </p>
+        <ul>
+          <li>Selecting third-party vendors and partners who share our commitment to accessibility</li>
+          <li>Requiring accessibility conformance in procurement contracts</li>
+          <li>Working with third-party providers to address identified accessibility barriers</li>
+          <li>Providing accessible alternatives where third-party content cannot be made accessible</li>
+          <li>Clearly identifying third-party content and providing contact information for accessibility issues</li>
+        </ul>
+        <p>
+          If you encounter accessibility barriers with third-party content on our platforms, please contact us so we can work with the provider to resolve the issue or provide an accessible alternative.
+        </p>
+      </section>
+      
+      <!-- Section 6: Feedback -->
+      <section id="feedback" class="section">
+        <h2>6. Feedback and Contact</h2>
+        <p>
+          We welcome your feedback on the accessibility of ASilva Innovations' digital platforms. If you encounter accessibility barriers or have suggestions for improvement, please contact us:
+        </p>
+        
+        <div class="contact-box">
+          <h3>Accessibility Coordinator</h3>
+          <div class="contact-info">
+            <div class="contact-item">
+              <span class="contact-label">Email:</span>
+              <a href="mailto:accessibility@asilvainnovations.com">accessibility@asilvainnovations.com</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">General Email:</span>
+              <a href="mailto:admin@asilvainnovations.com">admin@asilvainnovations.com</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Website:</span>
+              <a href="https://asilvainnovations.com/contact" target="_blank" rel="noopener noreferrer">asilvainnovations.com/contact</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Address:</span>
+              <span>ASilva Innovations, Quezon City, Philippines</span>
+            </div>
+          </div>
+        </div>
+        
+        <h3>When Contacting Us</h3>
+        <p>Please provide the following information to help us address your concern efficiently:</p>
+        <ul>
+          <li>Your name and contact information</li>
+          <li>The specific page or feature where you encountered the accessibility barrier</li>
+          <li>The assistive technology you were using (if applicable)</li>
+          <li>A description of the problem and what you were trying to accomplish</li>
+          <li>Any suggestions you have for improvement</li>
+        </ul>
+        <p>
+          We aim to respond to all accessibility feedback within <strong>5 business days</strong> and will work with you to provide an accessible solution or alternative.
+        </p>
+      </section>
+      
+      <!-- Section 7: Remediation -->
+      <section id="remediation" class="section">
+        <h2>7. Remediation Process</h2>
+        <p>
+          When accessibility issues are identified, ASilva Innovations follows a structured remediation process:
+        </p>
+        
+        <h3>Priority Levels</h3>
+        <ul>
+          <li><strong>Critical (Priority 1):</strong> Issues that completely prevent access to core functionality - addressed within 48 hours</li>
+          <li><strong>High (Priority 2):</strong> Issues that significantly impair access - addressed within 1 week</li>
+          <li><strong>Medium (Priority 3):</strong> Issues that cause inconvenience but have workarounds - addressed within 30 days</li>
+          <li><strong>Low (Priority 4):</strong> Minor issues with minimal impact - addressed in next scheduled update</li>
+        </ul>
+        
+        <h3>Remediation Steps</h3>
+        <ol>
+          <li>Issue logged in our accessibility tracking system</li>
+          <li>Issue prioritized based on severity and impact</li>
+          <li>Accessibility team and development team collaborate on solution</li>
+          <li>Fix implemented and tested</li>
+          <li>Reporter notified of resolution (when contact information is provided)</li>
+          <li>Issue documentation updated for future reference</li>
+        </ol>
+        
+        <h3>Interim Solutions</h3>
+        <p>
+          While permanent fixes are being developed, we may provide interim solutions such as:
+        </p>
+        <ul>
+          <li>Alternative accessible formats for content</li>
+          <li>Personal assistance via phone or email</li>
+          <li>Accessible workarounds or alternative pathways</li>
+          <li>Temporary accessible versions of affected pages</li>
+        </ul>
+      </section>
+      
+      <!-- Section 8: Ongoing Commitment -->
+      <section id="ongoing" class="section">
+        <h2>8. Ongoing Commitment</h2>
+        <p>
+          Accessibility is not a one-time effort but an ongoing commitment. ASilva Innovations is dedicated to:
+        </p>
+        
+        <h3>Continuous Improvement</h3>
+        <ul>
+          <li>Regular accessibility training for all team members, including developers, designers, content creators, and product managers</li>
+          <li>Incorporating accessibility into our design and development processes from the beginning (shift-left approach)</li>
+          <li>Staying current with evolving accessibility standards, guidelines, and best practices</li>
+          <li>Monitoring emerging assistive technologies and updating our platforms accordingly</li>
+          <li>Regularly updating this accessibility policy to reflect our current practices and commitments</li>
+        </ul>
+        
+        <h3>Organizational Commitment</h3>
+        <ul>
+          <li>Executive-level support for accessibility initiatives</li>
+          <li>Dedicated accessibility coordinator and team</li>
+          <li>Accessibility requirements in all project specifications</li>
+          <li>Accessibility metrics tracked and reported in quality assurance processes</li>
+          <li>Budget allocation for accessibility improvements and tools</li>
+        </ul>
+        
+        <h3>Community Engagement</h3>
+        <ul>
+          <li>Participating in accessibility communities and forums</li>
+          <li>Contributing to open-source accessibility tools and resources</li>
+          <li>Sharing our accessibility knowledge through blog posts and presentations</li>
+          <li>Collaborating with disability advocacy organizations</li>
+          <li>Engaging with users with disabilities to understand their needs</li>
+        </ul>
+        
+        <div class="highlight-box">
+          <p><strong>Our Promise:</strong> ASilva Innovations is committed to making our digital platforms accessible to all users. We recognize that accessibility is a journey, not a destination, and we are dedicated to continuous improvement in creating inclusive digital experiences.</p>
+        </div>
+      </section>
+      
+      <!-- Legal Disclaimer -->
+      <section class="section">
+        <h2>Legal Information</h2>
+        <p>
+          This accessibility policy is provided for informational purposes and represents ASilva Innovations' good faith efforts to provide accessible digital experiences. This policy does not constitute a legally binding commitment, warranty, or guarantee of accessibility compliance.
+        </p>
+        <p>
+          ASilva Innovations reserves the right to update this policy at any time. Material changes will be communicated through our website. The "Last Updated" date at the top of this page indicates when this policy was last revised.
+        </p>
+        <p>
+          For questions about this accessibility policy or our accessibility practices, please contact us using the information provided in Section 6.
+        </p>
+      </section>
+    </div>
+  </main>
+  
+  <footer role="contentinfo">
+    <nav class="footer-links" aria-label="Footer Navigation">
+      <a href="https://asilvainnovations.com" class="footer-link">Home</a>
+      <a href="https://asilvainnovations.com/privacy" class="footer-link">Privacy Policy</a>
+      <a href="https://asilvainnovations.com/terms" class="footer-link">Terms &amp; Conditions</a>
+      <a href="https://asilvainnovations.com/contact" class="footer-link">Contact</a>
+    </nav>
+    <p>&copy; 2026 ASilva Innovations. All rights reserved.</p>
+  </footer>
+</body>
+</html>
