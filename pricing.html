@@ -2,198 +2,304 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing Plans - ASilva Innovations | Enterprise Risk Management Solutions</title>
-    <meta name="description" content="Transparent, flexible pricing for enterprise-grade risk management platforms. From startups to large LGUs - find the perfect plan for your organization.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#020617">
     
-    <!-- Fonts -->
+    <!-- SEO -->
+    <title>Pricing Plans - ASilva Innovations | Enterprise Risk Management Solutions</title>
+    <meta name="description" content="Transparent, flexible pricing for enterprise-grade risk management platforms. From ₱15,000/month. Perfect for LGUs, NGOs, and social enterprises.">
+    <meta name="keywords" content="pricing, risk management, LGU software, NGO technology, Philippines, DRRM">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="ASilva Innovations Pricing - Starting at ₱15,000/month">
+    <meta property="og:description" content="Transparent pricing for enterprise-grade risk management. 20% discount on annual plans.">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png">
+    
+    <!-- Fonts - with fallbacks -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* ===========================================
+           MOBILE-FIRST BASE STYLES
+           =========================================== */
+        
         :root {
-            --color-bg-primary: #020617;
-            --color-bg-secondary: #0f172a;
-            --color-slate-900: #0f172a;
-            --color-slate-800: #1e293b;
-            --color-slate-700: #334155;
-            --color-slate-600: #475569;
-            --color-slate-500: #64748b;
-            --color-slate-400: #94a3b8;
-            --color-slate-300: #cbd5e1;
-            --color-slate-200: #e2e8f0;
-            --color-slate-100: #f1f5f9;
-            --color-blue-600: #2563eb;
-            --color-blue-500: #3b82f6;
-            --color-blue-400: #60a5fa;
-            --color-blue-300: #93c5fd;
-            --color-indigo-700: #4338ca;
-            --color-indigo-600: #4f46e5;
-            --color-cyan-400: #22d3ee;
-            --color-cyan-300: #67e8f9;
-            --color-emerald-600: #059669;
-            --color-emerald-500: #10b981;
-            --color-emerald-400: #34d399;
-            --color-amber-600: #d97706;
-            --color-amber-500: #f59e0b;
-            --color-violet-600: #7c3aed;
-            --color-rose-600: #e11d48;
-            --font-display: 'Orbitron', system-ui, sans-serif;
-            --font-body: 'Inter', system-ui, sans-serif;
+            /* Colors */
+            --color-bg: #020617;
+            --color-surface: #0f172a;
+            --color-surface-light: #1e293b;
+            --color-text: #f1f5f9;
+            --color-text-muted: #94a3b8;
+            --color-text-dim: #64748b;
+            --color-blue: #3b82f6;
+            --color-blue-dark: #2563eb;
+            --color-cyan: #22d3ee;
+            --color-indigo: #4f46e5;
+            --color-emerald: #10b981;
+            --color-amber: #f59e0b;
+            
+            /* Typography - Mobile First */
+            --font-display: 'Orbitron', system-ui, -apple-system, sans-serif;
+            --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+            --text-xs: 0.75rem;
+            --text-sm: 0.875rem;
+            --text-base: 1rem;
+            --text-lg: 1.125rem;
+            --text-xl: 1.25rem;
+            --text-2xl: 1.5rem;
+            --text-3xl: 1.875rem;
+            --text-4xl: 2.25rem;
+            
+            /* Spacing */
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            
+            /* Touch targets - minimum 44px for mobile */
+            --touch-target: 44px;
+            
+            /* Border radius */
+            --radius-sm: 0.5rem;
+            --radius-md: 0.75rem;
+            --radius-lg: 1rem;
+            --radius-xl: 1.5rem;
+            --radius-full: 9999px;
+            
+            /* Transitions */
+            --transition: 300ms ease;
         }
 
+        /* Reset & Base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: var(--font-body);
-            background: var(--color-bg-primary);
-            color: var(--color-slate-100);
+            background: var(--color-bg);
+            color: var(--color-text);
             line-height: 1.6;
-            padding: 2rem 1rem;
+            font-size: var(--text-base);
+            min-height: 100vh;
+            padding: var(--space-4);
         }
 
+        /* Container - Mobile First */
         .container {
-            max-width: 1400px;
+            width: 100%;
+            max-width: 100%;
             margin: 0 auto;
         }
 
-        /* Header */
+        /* Tablet */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+                padding: 0 var(--space-6);
+            }
+        }
+
+        /* Desktop */
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+
+        /* Large Desktop */
+        @media (min-width: 1280px) {
+            .container {
+                max-width: 1200px;
+            }
+        }
+
+        /* ===========================================
+           HEADER SECTION - Mobile First
+           =========================================== */
+
         .header {
             text-align: center;
-            margin-bottom: 4rem;
-            animation: fadeInUp 0.8s ease-out;
+            margin-bottom: var(--space-8);
+            animation: fadeInUp 0.6s ease-out;
         }
 
         .badge {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
+            gap: var(--space-2);
+            padding: var(--space-2) var(--space-4);
             background: rgba(59, 130, 246, 0.1);
             border: 1px solid rgba(59, 130, 246, 0.3);
-            border-radius: 9999px;
-            color: var(--color-blue-300);
-            font-size: 0.875rem;
+            border-radius: var(--radius-full);
+            color: var(--color-cyan);
+            font-size: var(--text-sm);
             font-weight: 600;
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-4);
         }
 
         h1 {
             font-family: var(--font-display);
-            font-size: 3rem;
+            font-size: var(--text-3xl);
             font-weight: 800;
-            background: linear-gradient(135deg, var(--color-blue-400), var(--color-cyan-400), var(--color-blue-300));
+            background: linear-gradient(135deg, var(--color-blue), var(--color-cyan), var(--color-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 1rem;
-            line-height: 1.1;
+            margin-bottom: var(--space-4);
+            line-height: 1.2;
+            word-wrap: break-word;
         }
 
+        /* Tablet */
         @media (min-width: 768px) {
             h1 {
-                font-size: 4rem;
+                font-size: var(--text-4xl);
+            }
+        }
+
+        /* Desktop */
+        @media (min-width: 1024px) {
+            h1 {
+                font-size: 3.5rem;
             }
         }
 
         .subtitle {
-            font-size: 1.25rem;
-            color: var(--color-slate-300);
-            max-width: 48rem;
-            margin: 0 auto 2rem;
+            font-size: var(--text-base);
+            color: var(--color-text-muted);
+            line-height: 1.7;
+            margin-bottom: var(--space-6);
         }
 
-        /* Billing Toggle */
+        /* Tablet+ */
+        @media (min-width: 768px) {
+            .subtitle {
+                font-size: var(--text-lg);
+                max-width: 48rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        /* ===========================================
+           BILLING TOGGLE - Mobile Optimized
+           =========================================== */
+
         .billing-toggle {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
+            gap: var(--space-3);
+            margin-bottom: var(--space-8);
+            flex-wrap: wrap;
         }
 
         .toggle-label {
             font-weight: 600;
-            color: var(--color-slate-400);
-            transition: color 0.3s ease;
+            font-size: var(--text-sm);
+            color: var(--color-text-dim);
+            transition: color var(--transition);
+            user-select: none;
         }
 
         .toggle-label.active {
-            color: var(--color-blue-400);
+            color: var(--color-blue);
         }
 
         .toggle-switch {
             position: relative;
-            width: 60px;
-            height: 32px;
-            background: var(--color-slate-700);
-            border-radius: 9999px;
+            min-width: 60px;
+            height: var(--touch-target);
+            display: flex;
+            align-items: center;
+            background: var(--color-surface-light);
+            border-radius: var(--radius-full);
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: background var(--transition);
+            padding: 4px;
         }
 
         .toggle-switch.active {
-            background: var(--color-blue-600);
+            background: var(--color-blue);
         }
 
         .toggle-slider {
-            position: absolute;
-            top: 4px;
-            left: 4px;
-            width: 24px;
-            height: 24px;
+            width: 28px;
+            height: 28px;
             background: white;
             border-radius: 50%;
-            transition: transform 0.3s ease;
+            transition: transform var(--transition);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
         }
 
         .toggle-switch.active .toggle-slider {
-            transform: translateX(28px);
+            transform: translateX(24px);
         }
 
         .savings-badge {
-            background: linear-gradient(135deg, var(--color-emerald-600), var(--color-emerald-500));
+            background: linear-gradient(135deg, #059669, var(--color-emerald));
             color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
+            padding: var(--space-1) var(--space-3);
+            border-radius: var(--radius-full);
+            font-size: var(--text-xs);
             font-weight: 700;
             animation: pulse 2s ease-in-out infinite;
         }
 
-        /* Pricing Grid */
+        /* ===========================================
+           PRICING GRID - Mobile First
+           =========================================== */
+
         .pricing-grid {
             display: grid;
-            gap: 2rem;
-            margin-bottom: 4rem;
+            gap: var(--space-6);
+            margin-bottom: var(--space-12);
         }
 
+        /* Tablet - 2 columns */
         @media (min-width: 768px) {
             .pricing-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-6);
             }
         }
 
-        @media (min-width: 1024px) {
+        /* Desktop - 4 columns */
+        @media (min-width: 1280px) {
             .pricing-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
         }
 
+        /* Pricing Card - Mobile Optimized */
         .pricing-card {
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(30, 41, 59, 0.8));
             border: 2px solid rgba(255, 255, 255, 0.1);
-            border-radius: 1.5rem;
-            padding: 2rem;
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
             position: relative;
             overflow: hidden;
-            transition: all 0.3s ease;
-            animation: fadeInUp 0.8s ease-out;
+            transition: all var(--transition);
+            animation: fadeInUp 0.6s ease-out;
             animation-fill-mode: both;
         }
 
@@ -202,76 +308,95 @@
         .pricing-card:nth-child(3) { animation-delay: 0.3s; }
         .pricing-card:nth-child(4) { animation-delay: 0.4s; }
 
-        .pricing-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(59, 130, 246, 0.5);
-            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3);
+        /* Desktop hover effects */
+        @media (hover: hover) {
+            .pricing-card:hover {
+                transform: translateY(-4px);
+                border-color: rgba(59, 130, 246, 0.5);
+                box-shadow: 0 20px 40px rgba(37, 99, 235, 0.3);
+            }
         }
 
+        /* Featured card */
         .pricing-card.featured {
             background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(79, 70, 229, 0.15));
-            border-color: var(--color-blue-500);
-            transform: scale(1.05);
+            border-color: var(--color-blue);
         }
 
-        .pricing-card.featured:hover {
-            transform: translateY(-8px) scale(1.05);
+        /* Desktop only - scale featured card */
+        @media (min-width: 1280px) {
+            .pricing-card.featured {
+                transform: scale(1.05);
+            }
+            
+            .pricing-card.featured:hover {
+                transform: translateY(-4px) scale(1.05);
+            }
         }
 
         .popular-badge {
             position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: linear-gradient(135deg, var(--color-blue-600), var(--color-indigo-600));
+            top: var(--space-4);
+            right: var(--space-4);
+            background: linear-gradient(135deg, var(--color-blue-dark), var(--color-indigo));
             color: white;
-            padding: 0.375rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
+            padding: var(--space-2) var(--space-3);
+            border-radius: var(--radius-full);
+            font-size: var(--text-xs);
             font-weight: 700;
             text-transform: uppercase;
         }
 
         .plan-icon {
-            width: 4rem;
-            height: 4rem;
-            border-radius: 1rem;
+            width: 64px;
+            height: 64px;
+            border-radius: var(--radius-lg);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--color-blue-600), var(--color-indigo-700));
+            margin-bottom: var(--space-4);
+            background: linear-gradient(135deg, var(--color-blue-dark), var(--color-indigo));
             box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
         }
 
         .plan-name {
             font-family: var(--font-display);
-            font-size: 1.75rem;
+            font-size: var(--text-2xl);
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: var(--space-2);
             color: white;
         }
 
         .plan-description {
-            color: var(--color-slate-400);
-            font-size: 0.875rem;
-            margin-bottom: 1.5rem;
+            color: var(--color-text-muted);
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-6);
+            line-height: 1.6;
             min-height: 3rem;
         }
 
         .plan-price {
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-6);
         }
 
         .price-amount {
             font-family: var(--font-display);
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 800;
-            background: linear-gradient(135deg, var(--color-blue-400), var(--color-cyan-400));
+            background: linear-gradient(135deg, var(--color-blue), var(--color-cyan));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             line-height: 1;
+            display: block;
+        }
+
+        /* Desktop */
+        @media (min-width: 768px) {
+            .price-amount {
+                font-size: 3rem;
+            }
         }
 
         .price-currency {
@@ -280,103 +405,140 @@
         }
 
         .price-period {
-            color: var(--color-slate-400);
-            font-size: 1rem;
+            color: var(--color-text-muted);
+            font-size: var(--text-base);
+            margin-top: var(--space-2);
+            display: block;
         }
 
         .price-note {
-            color: var(--color-slate-500);
-            font-size: 0.75rem;
-            margin-top: 0.5rem;
+            color: var(--color-text-dim);
+            font-size: var(--text-xs);
+            margin-top: var(--space-2);
+            display: block;
         }
 
+        /* Features List */
         .plan-features {
             list-style: none;
-            margin-bottom: 2rem;
+            margin-bottom: var(--space-6);
         }
 
         .plan-features li {
             display: flex;
             align-items: flex-start;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-            color: var(--color-slate-300);
-            font-size: 0.875rem;
+            gap: var(--space-3);
+            margin-bottom: var(--space-3);
+            color: var(--color-text-muted);
+            font-size: var(--text-sm);
+            line-height: 1.5;
         }
 
         .feature-icon {
-            color: var(--color-emerald-400);
+            color: var(--color-emerald);
             font-weight: 700;
             flex-shrink: 0;
-            margin-top: 0.125rem;
+            margin-top: 2px;
         }
 
         .feature-icon.disabled {
-            color: var(--color-slate-600);
+            color: var(--color-text-dim);
+            opacity: 0.3;
         }
 
+        /* CTA Button - Touch Optimized */
         .cta-button {
             width: 100%;
-            padding: 1rem;
-            border-radius: 0.75rem;
+            min-height: var(--touch-target);
+            padding: var(--space-4);
+            border-radius: var(--radius-md);
             font-weight: 700;
-            font-size: 1rem;
+            font-size: var(--text-base);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all var(--transition);
             border: none;
             text-align: center;
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            user-select: none;
         }
 
         .cta-button.primary {
-            background: linear-gradient(135deg, var(--color-blue-600), var(--color-indigo-700));
+            background: linear-gradient(135deg, var(--color-blue-dark), var(--color-indigo));
             color: white;
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
         }
 
-        .cta-button.primary:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.6);
+        .cta-button.primary:active {
+            transform: scale(0.98);
+        }
+
+        /* Desktop hover */
+        @media (hover: hover) {
+            .cta-button.primary:hover {
+                transform: scale(1.02);
+                box-shadow: 0 8px 20px rgba(37, 99, 235, 0.6);
+            }
         }
 
         .cta-button.secondary {
             background: rgba(255, 255, 255, 0.05);
-            color: var(--color-slate-300);
+            color: var(--color-text-muted);
             border: 2px solid rgba(255, 255, 255, 0.1);
         }
 
-        .cta-button.secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: var(--color-blue-500);
-            color: white;
+        .cta-button.secondary:active {
+            transform: scale(0.98);
         }
 
-        /* Comparison Table */
+        @media (hover: hover) {
+            .cta-button.secondary:hover {
+                background: rgba(255, 255, 255, 0.1);
+                border-color: var(--color-blue);
+                color: white;
+            }
+        }
+
+        /* ===========================================
+           COMPARISON TABLE - Mobile First
+           =========================================== */
+
         .comparison-section {
-            margin: 6rem 0;
+            margin: var(--space-12) 0;
         }
 
         .section-title {
             font-family: var(--font-display);
-            font-size: 2.5rem;
+            font-size: var(--text-3xl);
             font-weight: 700;
             text-align: center;
-            background: linear-gradient(135deg, var(--color-blue-400), var(--color-cyan-300));
+            background: linear-gradient(135deg, var(--color-blue), var(--color-cyan));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 3rem;
+            margin-bottom: var(--space-8);
+        }
+
+        /* Desktop */
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: var(--text-4xl);
+            }
         }
 
         .comparison-table {
             background: rgba(15, 23, 42, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 1rem;
+            border-radius: var(--radius-lg);
             overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
 
         table {
             width: 100%;
+            min-width: 640px; /* Ensure horizontal scroll on mobile */
             border-collapse: collapse;
         }
 
@@ -385,59 +547,80 @@
         }
 
         th {
-            padding: 1.5rem 1rem;
+            padding: var(--space-4);
             text-align: left;
             font-weight: 700;
-            color: var(--color-blue-300);
+            font-size: var(--text-sm);
+            color: var(--color-cyan);
             border-bottom: 2px solid rgba(37, 99, 235, 0.3);
+            white-space: nowrap;
         }
 
         th:first-child {
             color: white;
+            position: sticky;
+            left: 0;
+            background: rgba(37, 99, 235, 0.1);
+            z-index: 1;
         }
 
         td {
-            padding: 1rem;
+            padding: var(--space-4);
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: var(--text-sm);
         }
 
-        tr:hover {
+        td:first-child {
+            position: sticky;
+            left: 0;
+            background: rgba(15, 23, 42, 0.95);
+            z-index: 1;
+        }
+
+        tr:hover td:not(:first-child) {
             background: rgba(255, 255, 255, 0.02);
         }
 
         .check {
-            color: var(--color-emerald-400);
+            color: var(--color-emerald);
             font-weight: 700;
             text-align: center;
         }
 
         .cross {
-            color: var(--color-slate-600);
+            color: var(--color-text-dim);
             text-align: center;
+            opacity: 0.3;
         }
 
         .feature-value {
             text-align: center;
-            color: var(--color-slate-300);
+            color: var(--color-text-muted);
             font-weight: 600;
         }
 
-        /* Add-ons */
+        /* ===========================================
+           ADD-ONS SECTION - Mobile First
+           =========================================== */
+
         .addons-section {
-            margin: 6rem 0;
+            margin: var(--space-12) 0;
         }
 
         .addons-grid {
             display: grid;
-            gap: 1.5rem;
+            gap: var(--space-4);
         }
 
+        /* Tablet */
         @media (min-width: 768px) {
             .addons-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-6);
             }
         }
 
+        /* Desktop */
         @media (min-width: 1024px) {
             .addons-grid {
                 grid-template-columns: repeat(3, 1fr);
@@ -447,155 +630,257 @@
         .addon-card {
             background: linear-gradient(135deg, rgba(15, 23, 42, 0.6), rgba(30, 41, 59, 0.6));
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
+            border-radius: var(--radius-lg);
+            padding: var(--space-4);
+            transition: all var(--transition);
         }
 
-        .addon-card:hover {
-            border-color: var(--color-blue-500);
-            transform: translateY(-4px);
+        @media (hover: hover) {
+            .addon-card:hover {
+                border-color: var(--color-blue);
+                transform: translateY(-2px);
+            }
         }
 
         .addon-header {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
+            gap: var(--space-3);
+            margin-bottom: var(--space-3);
         }
 
         .addon-icon {
-            width: 3rem;
-            height: 3rem;
-            border-radius: 0.75rem;
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
-            background: linear-gradient(135deg, var(--color-violet-600), var(--color-blue-600));
+            background: linear-gradient(135deg, #7c3aed, var(--color-blue-dark));
         }
 
         .addon-title {
-            font-size: 1.25rem;
+            font-size: var(--text-lg);
             font-weight: 700;
             color: white;
+            line-height: 1.3;
         }
 
         .addon-price {
             font-family: var(--font-display);
-            font-size: 1.5rem;
+            font-size: var(--text-xl);
             font-weight: 700;
-            color: var(--color-blue-400);
-            margin-bottom: 0.5rem;
+            color: var(--color-blue);
+            margin-bottom: var(--space-2);
         }
 
         .addon-description {
-            color: var(--color-slate-400);
-            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            font-size: var(--text-sm);
+            line-height: 1.6;
         }
 
-        /* FAQ Section */
+        /* ===========================================
+           FAQ SECTION - Mobile First
+           =========================================== */
+
         .faq-section {
-            margin: 6rem 0;
+            margin: var(--space-12) 0;
         }
 
         .faq-grid {
             display: grid;
-            gap: 1.5rem;
-            max-width: 56rem;
-            margin: 0 auto;
+            gap: var(--space-4);
+        }
+
+        /* Desktop center content */
+        @media (min-width: 768px) {
+            .faq-grid {
+                max-width: 56rem;
+                margin: 0 auto;
+            }
         }
 
         .faq-item {
             background: rgba(15, 23, 42, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
+            border-radius: var(--radius-lg);
+            padding: var(--space-4);
+            transition: all var(--transition);
         }
 
-        .faq-item:hover {
-            border-color: var(--color-blue-500);
+        @media (hover: hover) {
+            .faq-item:hover {
+                border-color: var(--color-blue);
+            }
         }
 
         .faq-question {
-            font-size: 1.125rem;
+            font-size: var(--text-lg);
             font-weight: 700;
             color: white;
-            margin-bottom: 0.75rem;
+            margin-bottom: var(--space-3);
+            line-height: 1.4;
         }
 
         .faq-answer {
-            color: var(--color-slate-400);
+            color: var(--color-text-muted);
             line-height: 1.7;
+            font-size: var(--text-sm);
         }
 
-        /* CTA Section */
+        /* ===========================================
+           CTA SECTION - Mobile First
+           =========================================== */
+
         .cta-section {
             background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(79, 70, 229, 0.15));
             border: 2px solid rgba(37, 99, 235, 0.3);
-            border-radius: 1.5rem;
-            padding: 3rem 2rem;
+            border-radius: var(--radius-xl);
+            padding: var(--space-8) var(--space-4);
             text-align: center;
-            margin: 4rem 0;
+            margin: var(--space-8) 0;
+        }
+
+        /* Desktop */
+        @media (min-width: 768px) {
+            .cta-section {
+                padding: var(--space-12) var(--space-6);
+            }
         }
 
         .cta-title {
             font-family: var(--font-display);
-            font-size: 2rem;
+            font-size: var(--text-2xl);
             font-weight: 700;
             color: white;
-            margin-bottom: 1rem;
+            margin-bottom: var(--space-4);
+            line-height: 1.2;
+        }
+
+        /* Desktop */
+        @media (min-width: 768px) {
+            .cta-title {
+                font-size: var(--text-3xl);
+            }
         }
 
         .cta-description {
-            color: var(--color-slate-300);
-            font-size: 1.125rem;
-            margin-bottom: 2rem;
-            max-width: 36rem;
-            margin-left: auto;
-            margin-right: auto;
+            color: var(--color-text-muted);
+            font-size: var(--text-base);
+            margin-bottom: var(--space-6);
+            line-height: 1.7;
+        }
+
+        /* Desktop */
+        @media (min-width: 768px) {
+            .cta-description {
+                font-size: var(--text-lg);
+                max-width: 36rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: var(--space-3);
+        }
+
+        /* Tablet */
+        @media (min-width: 640px) {
+            .cta-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
         }
 
         .cta-btn {
-            padding: 1rem 2rem;
-            border-radius: 0.75rem;
+            min-height: var(--touch-target);
+            padding: var(--space-4) var(--space-6);
+            border-radius: var(--radius-md);
             font-weight: 700;
-            font-size: 1rem;
+            font-size: var(--text-base);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all var(--transition);
             border: none;
             text-decoration: none;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .cta-btn.primary {
-            background: linear-gradient(135deg, var(--color-blue-600), var(--color-indigo-700));
+            background: linear-gradient(135deg, var(--color-blue-dark), var(--color-indigo));
             color: white;
         }
 
-        .cta-btn.primary:hover {
-            transform: scale(1.05);
+        .cta-btn.primary:active {
+            transform: scale(0.98);
+        }
+
+        @media (hover: hover) {
+            .cta-btn.primary:hover {
+                transform: scale(1.02);
+            }
         }
 
         .cta-btn.secondary {
             background: transparent;
-            color: var(--color-blue-300);
-            border: 2px solid var(--color-blue-500);
+            color: var(--color-cyan);
+            border: 2px solid var(--color-blue);
         }
 
-        .cta-btn.secondary:hover {
-            background: rgba(37, 99, 235, 0.1);
+        .cta-btn.secondary:active {
+            transform: scale(0.98);
         }
 
-        /* Animations */
+        @media (hover: hover) {
+            .cta-btn.secondary:hover {
+                background: rgba(37, 99, 235, 0.1);
+            }
+        }
+
+        /* ===========================================
+           FOOTER NOTE
+           =========================================== */
+
+        .footer-note {
+            text-align: center;
+            margin-top: var(--space-12);
+            padding-top: var(--space-6);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-note p {
+            color: var(--color-text-dim);
+            font-size: var(--text-sm);
+            line-height: 1.7;
+        }
+
+        .footer-note strong {
+            color: var(--color-blue);
+        }
+
+        /* ===========================================
+           UTILITY CLASSES
+           =========================================== */
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-4 {
+            margin-bottom: var(--space-8);
+        }
+
+        /* ===========================================
+           ANIMATIONS
+           =========================================== */
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -612,22 +897,58 @@
             50% { opacity: 0.8; }
         }
 
-        /* Utility */
-        .text-center {
-            text-align: center;
+        /* ===========================================
+           ACCESSIBILITY
+           =========================================== */
+
+        /* Focus styles */
+        *:focus-visible {
+            outline: 2px solid var(--color-blue);
+            outline-offset: 2px;
         }
 
-        .mb-4 {
-            margin-bottom: 2rem;
+        /* Reduce motion for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Dark mode support (already dark, but future-proof) */
+        @media (prefers-color-scheme: light) {
+            /* Light mode overrides if needed */
+        }
+
+        /* ===========================================
+           LOADING STATE (Progressive Enhancement)
+           =========================================== */
+
+        .loading {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .pricing-card {
+                page-break-inside: avoid;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <!-- Header -->
-        <div class="header">
-            <div class="badge">
-                <span>💰</span>
+        <header class="header" role="banner">
+            <div class="badge" role="img" aria-label="Transparent pricing indicator">
+                <span aria-hidden="true">💰</span>
                 <span>Transparent Pricing</span>
             </div>
             <h1>Choose Your Resilience Plan</h1>
@@ -637,462 +958,470 @@
             </p>
 
             <!-- Billing Toggle -->
-            <div class="billing-toggle">
+            <div class="billing-toggle" role="group" aria-label="Billing frequency selection">
                 <span class="toggle-label active" id="monthly-label">Monthly</span>
-                <div class="toggle-switch" id="billing-toggle">
-                    <div class="toggle-slider"></div>
-                </div>
+                <button 
+                    class="toggle-switch" 
+                    id="billing-toggle"
+                    role="switch"
+                    aria-checked="false"
+                    aria-labelledby="annual-label"
+                >
+                    <span class="toggle-slider" aria-hidden="true"></span>
+                </button>
                 <span class="toggle-label" id="annual-label">Annual</span>
-                <span class="savings-badge">Save 20%</span>
+                <span class="savings-badge" role="status">Save 20%</span>
             </div>
-        </div>
+        </header>
 
         <!-- Pricing Cards -->
-        <div class="pricing-grid">
-            <!-- Starter Plan -->
-            <div class="pricing-card">
-                <div class="plan-icon">🌱</div>
-                <h3 class="plan-name">Starter</h3>
-                <p class="plan-description">Perfect for small LGUs and emerging NGOs getting started with risk management</p>
+        <main>
+            <section class="pricing-grid" role="list" aria-label="Pricing plans">
+                <!-- Starter Plan -->
+                <article class="pricing-card" role="listitem">
+                    <div class="plan-icon" aria-hidden="true">🌱</div>
+                    <h2 class="plan-name">Starter</h2>
+                    <p class="plan-description">Perfect for small LGUs and emerging NGOs getting started with risk management</p>
+                    
+                    <div class="plan-price">
+                        <div class="price-amount">
+                            <span class="price-currency">₱</span><span class="monthly-price">15,000</span><span class="annual-price" style="display: none;">12,000</span>
+                        </div>
+                        <span class="price-period">/month</span>
+                        <span class="price-note">Billed <span class="billing-period">monthly</span></span>
+                    </div>
+
+                    <ul class="plan-features" aria-label="Plan features">
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Up to 5 users</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> DDRiVE-M Lite (Core features)</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Basic risk mapping</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Monthly reports</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Email support</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> 5GB storage</li>
+                        <li><span class="feature-icon disabled" aria-label="Not included">✗</span> Real-time alerts</li>
+                        <li><span class="feature-icon disabled" aria-label="Not included">✗</span> Custom integrations</li>
+                        <li><span class="feature-icon disabled" aria-label="Not included">✗</span> AI predictions</li>
+                    </ul>
+
+                    <a href="#contact" class="cta-button secondary">Get Started</a>
+                </article>
+
+                <!-- Professional Plan -->
+                <article class="pricing-card" role="listitem">
+                    <div class="plan-icon" aria-hidden="true">💼</div>
+                    <h2 class="plan-name">Professional</h2>
+                    <p class="plan-description">Ideal for growing organizations needing advanced analytics and collaboration tools</p>
+                    
+                    <div class="plan-price">
+                        <div class="price-amount">
+                            <span class="price-currency">₱</span><span class="monthly-price">35,000</span><span class="annual-price" style="display: none;">28,000</span>
+                        </div>
+                        <span class="price-period">/month</span>
+                        <span class="price-note">Billed <span class="billing-period">monthly</span></span>
+                    </div>
+
+                    <ul class="plan-features" aria-label="Plan features">
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Up to 20 users</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Full DDRiVE-M Platform</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Advanced risk analytics</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Real-time alerts & notifications</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Strategic Planner Pro</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Priority support (24/7)</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> 50GB storage</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> API access</li>
+                        <li><span class="feature-icon disabled" aria-label="Not included">✗</span> White-label options</li>
+                    </ul>
+
+                    <a href="#contact" class="cta-button secondary">Get Started</a>
+                </article>
+
+                <!-- Enterprise Plan (Featured) -->
+                <article class="pricing-card featured" role="listitem" aria-label="Most popular plan">
+                    <span class="popular-badge" role="status">Most Popular</span>
+                    <div class="plan-icon" aria-hidden="true">🏢</div>
+                    <h2 class="plan-name">Enterprise</h2>
+                    <p class="plan-description">Comprehensive solution for large LGUs and organizations managing complex operations</p>
+                    
+                    <div class="plan-price">
+                        <div class="price-amount">
+                            <span class="price-currency">₱</span><span class="monthly-price">75,000</span><span class="annual-price" style="display: none;">60,000</span>
+                        </div>
+                        <span class="price-period">/month</span>
+                        <span class="price-note">Billed <span class="billing-period">monthly</span></span>
+                    </div>
+
+                    <ul class="plan-features" aria-label="Plan features">
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Unlimited users</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Full platform access (all modules)</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Real-Time Leadership</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> AI & Automation Suite</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Predictive crisis modeling</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Dedicated account manager</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> 500GB storage</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Custom integrations</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> White-label options</li>
+                    </ul>
+
+                    <a href="#contact" class="cta-button primary">Get Started</a>
+                </article>
+
+                <!-- Custom Plan -->
+                <article class="pricing-card" role="listitem">
+                    <div class="plan-icon" aria-hidden="true">⚙️</div>
+                    <h2 class="plan-name">Custom</h2>
+                    <p class="plan-description">Tailored solutions for multi-agency networks and specialized requirements</p>
+                    
+                    <div class="plan-price">
+                        <div class="price-amount">
+                            <span style="font-size: 1.75rem;">Custom</span>
+                        </div>
+                        <span class="price-period">Contact us for pricing</span>
+                        <span class="price-note">Flexible terms available</span>
+                    </div>
+
+                    <ul class="plan-features" aria-label="Plan features">
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Everything in Enterprise</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Multi-tenant architecture</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Custom AI model training</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Bespoke feature development</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> On-premise deployment option</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> SLA guarantees (99.9% uptime)</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Unlimited storage</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Direct engineering support</li>
+                        <li><span class="feature-icon" aria-label="Included">✓</span> Compliance consulting</li>
+                    </ul>
+
+                    <a href="#contact" class="cta-button secondary">Contact Sales</a>
+                </article>
+            </section>
+
+            <!-- Comparison Table -->
+            <section class="comparison-section" aria-labelledby="comparison-title">
+                <h2 id="comparison-title" class="section-title">Feature Comparison</h2>
                 
-                <div class="plan-price">
-                    <div class="price-amount">
-                        <span class="price-currency">₱</span><span class="monthly-price">15,000</span><span class="annual-price" style="display: none;">12,000</span>
-                    </div>
-                    <div class="price-period">/month</div>
-                    <div class="price-note">Billed <span class="billing-period">monthly</span></div>
+                <div class="comparison-table" role="region" aria-label="Scrollable comparison table" tabindex="0">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Features</th>
+                                <th scope="col">Starter</th>
+                                <th scope="col">Professional</th>
+                                <th scope="col">Enterprise</th>
+                                <th scope="col">Custom</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Users</th>
+                                <td class="feature-value">Up to 5</td>
+                                <td class="feature-value">Up to 20</td>
+                                <td class="feature-value">Unlimited</td>
+                                <td class="feature-value">Unlimited</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Storage</th>
+                                <td class="feature-value">5GB</td>
+                                <td class="feature-value">50GB</td>
+                                <td class="feature-value">500GB</td>
+                                <td class="feature-value">Unlimited</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">DDRiVE-M Platform</th>
+                                <td class="feature-value">Lite</td>
+                                <td class="check" aria-label="Included">✓</td>
+                                <td class="check" aria-label="Included">✓</td>
+                                <td class="check" aria-label="Included">✓</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Strategic Planner Pro</th>
+                                <td class="cross" aria-label="Not included">✗</td>
+                                <td class="check" aria-label="Included">✓</td>
+                                <td class="check" aria-label="Included">✓</td>
+                                <td class="check" aria-label="Included">✓</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Real-Time Leadership</th>
+                                <td class="cross" aria-label="Not included">✗</td>
+                                <td class="cross" aria-label="Not included">✗</td>
+                                <td class="check" aria-label="Included">✓</td>
+                                <td class="check" aria-label="Included">✓</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">AI & Automation Suite</th>
+                                <td class="cross" aria-label="Not included">✗</td>
+                                <td class="cross" aria-label="Not included">✗</td>
+                                <td class="check" aria-label="Included">✓</td>
+                                <td class="check" aria-label="Included">✓</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Real-time Alerts</th>
+                                <td class="cross" aria-label="Not included">✗</td>
+                                <td class="check" aria-label="Included">✓</td>
+                                <td class="check" aria-label="Included">✓</td>
+                                <td class="check" aria-label="Included">✓</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">API Access</th>
+                                <td class="cross" aria-label="Not included">✗</td>
+                                <td class="check" aria-label="Included">✓</td>
+                                <td class="check" aria-label="Included">✓</td>
+                                <td class="check" aria-label="Included">✓</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Custom Integrations</th>
+                                <td class="cross" aria-label="Not included">✗</td>
+                                <td class="cross" aria-label="Not included">✗</td>
+                                <td class="check" aria-label="Included">✓</td>
+                                <td class="check" aria-label="Included">✓</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Support</th>
+                                <td class="feature-value">Email</td>
+                                <td class="feature-value">24/7</td>
+                                <td class="feature-value">Dedicated</td>
+                                <td class="feature-value">Engineering</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">SLA</th>
+                                <td class="cross" aria-label="Not included">✗</td>
+                                <td class="feature-value">99.5%</td>
+                                <td class="feature-value">99.9%</td>
+                                <td class="feature-value">99.99%</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
+            </section>
 
-                <ul class="plan-features">
-                    <li><span class="feature-icon">✓</span> Up to 5 users</li>
-                    <li><span class="feature-icon">✓</span> DDRiVE-M Lite (Core features)</li>
-                    <li><span class="feature-icon">✓</span> Basic risk mapping</li>
-                    <li><span class="feature-icon">✓</span> Monthly reports</li>
-                    <li><span class="feature-icon">✓</span> Email support</li>
-                    <li><span class="feature-icon">✓</span> 5GB storage</li>
-                    <li><span class="feature-icon disabled">✗</span> Real-time alerts</li>
-                    <li><span class="feature-icon disabled">✗</span> Custom integrations</li>
-                    <li><span class="feature-icon disabled">✗</span> AI predictions</li>
-                </ul>
+            <!-- Add-ons Section -->
+            <section class="addons-section" aria-labelledby="addons-title">
+                <h2 id="addons-title" class="section-title">Add-on Services</h2>
+                <p class="subtitle text-center mb-4">
+                    Enhance your plan with specialized services and additional capacity
+                </p>
 
-                <button class="cta-button secondary">Get Started</button>
-            </div>
+                <div class="addons-grid">
+                    <article class="addon-card">
+                        <div class="addon-header">
+                            <div class="addon-icon" aria-hidden="true">📚</div>
+                            <div>
+                                <h3 class="addon-title">Training & Onboarding</h3>
+                                <div class="addon-price">₱50,000</div>
+                            </div>
+                        </div>
+                        <p class="addon-description">
+                            Comprehensive 3-day training program for your team including hands-on workshops, documentation, and certification.
+                        </p>
+                    </article>
 
-            <!-- Professional Plan -->
-            <div class="pricing-card">
-                <div class="plan-icon">💼</div>
-                <h3 class="plan-name">Professional</h3>
-                <p class="plan-description">Ideal for growing organizations needing advanced analytics and collaboration tools</p>
+                    <article class="addon-card">
+                        <div class="addon-header">
+                            <div class="addon-icon" aria-hidden="true">🔧</div>
+                            <div>
+                                <h3 class="addon-title">Custom Integration</h3>
+                                <div class="addon-price">₱75,000+</div>
+                            </div>
+                        </div>
+                        <p class="addon-description">
+                            Connect ASilva platforms with your existing systems (ERP, GIS, communication tools). Price varies by complexity.
+                        </p>
+                    </article>
+
+                    <article class="addon-card">
+                        <div class="addon-header">
+                            <div class="addon-icon" aria-hidden="true">📊</div>
+                            <div>
+                                <h3 class="addon-title">Data Migration</h3>
+                                <div class="addon-price">₱35,000</div>
+                            </div>
+                        </div>
+                        <p class="addon-description">
+                            Professional migration of your historical risk data, ensuring data integrity and proper formatting.
+                        </p>
+                    </article>
+
+                    <article class="addon-card">
+                        <div class="addon-header">
+                            <div class="addon-icon" aria-hidden="true">🎨</div>
+                            <div>
+                                <h3 class="addon-title">Custom Branding</h3>
+                                <div class="addon-price">₱25,000</div>
+                            </div>
+                        </div>
+                        <p class="addon-description">
+                            Full white-label customization with your organization's branding, colors, and logo integration.
+                        </p>
+                    </article>
+
+                    <article class="addon-card">
+                        <div class="addon-header">
+                            <div class="addon-icon" aria-hidden="true">📱</div>
+                            <div>
+                                <h3 class="addon-title">Mobile App Access</h3>
+                                <div class="addon-price">₱5,000/mo</div>
+                            </div>
+                        </div>
+                        <p class="addon-description">
+                            Native iOS and Android apps for field data collection and real-time monitoring on the go.
+                        </p>
+                    </article>
+
+                    <article class="addon-card">
+                        <div class="addon-header">
+                            <div class="addon-icon" aria-hidden="true">🎓</div>
+                            <div>
+                                <h3 class="addon-title">Ongoing Consultation</h3>
+                                <div class="addon-price">₱15,000/mo</div>
+                            </div>
+                        </div>
+                        <p class="addon-description">
+                            Monthly strategy sessions with disaster risk experts to optimize your resilience planning.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section" aria-labelledby="faq-title">
+                <h2 id="faq-title" class="section-title">Frequently Asked Questions</h2>
                 
-                <div class="plan-price">
-                    <div class="price-amount">
-                        <span class="price-currency">₱</span><span class="monthly-price">35,000</span><span class="annual-price" style="display: none;">28,000</span>
-                    </div>
-                    <div class="price-period">/month</div>
-                    <div class="price-note">Billed <span class="billing-period">monthly</span></div>
+                <div class="faq-grid">
+                    <article class="faq-item">
+                        <h3 class="faq-question">What payment methods do you accept?</h3>
+                        <p class="faq-answer">
+                            We accept bank transfers, checks, and government purchase orders. For LGUs, we work within GPPB procurement guidelines. Annual subscriptions can be paid quarterly for budget flexibility.
+                        </p>
+                    </article>
+
+                    <article class="faq-item">
+                        <h3 class="faq-question">Can I change plans later?</h3>
+                        <p class="faq-answer">
+                            Absolutely! You can upgrade or downgrade your plan at any time. When upgrading, you'll get immediate access to new features. When downgrading, changes take effect at the next billing cycle.
+                        </p>
+                    </article>
+
+                    <article class="faq-item">
+                        <h3 class="faq-question">Is there a free trial available?</h3>
+                        <p class="faq-answer">
+                            Yes! We offer a 30-day free trial of the Professional plan for qualified organizations. This includes full access to all features, onboarding support, and sample data to help you explore the platform.
+                        </p>
+                    </article>
+
+                    <article class="faq-item">
+                        <h3 class="faq-question">What about data security and compliance?</h3>
+                        <p class="faq-answer">
+                            All plans include enterprise-grade security with SSL encryption, regular backups, and compliance with Philippine Data Privacy Act. Enterprise and Custom plans include additional security certifications and audit logs.
+                        </p>
+                    </article>
+
+                    <article class="faq-item">
+                        <h3 class="faq-question">Do you offer discounts for NGOs or non-profits?</h3>
+                        <p class="faq-answer">
+                            Yes! Registered NGOs and non-profit organizations receive a 20% discount on all plans. Multi-year commitments receive an additional 10% discount. Contact our sales team for details.
+                        </p>
+                    </article>
+
+                    <article class="faq-item">
+                        <h3 class="faq-question">How quickly can we get started?</h3>
+                        <p class="faq-answer">
+                            Most organizations are up and running within 7-14 days. Starter and Professional plans can be activated immediately. Enterprise deployments typically take 2-4 weeks including customization and training.
+                        </p>
+                    </article>
                 </div>
+            </section>
 
-                <ul class="plan-features">
-                    <li><span class="feature-icon">✓</span> Up to 20 users</li>
-                    <li><span class="feature-icon">✓</span> Full DDRiVE-M Platform</li>
-                    <li><span class="feature-icon">✓</span> Advanced risk analytics</li>
-                    <li><span class="feature-icon">✓</span> Real-time alerts & notifications</li>
-                    <li><span class="feature-icon">✓</span> Strategic Planner Pro</li>
-                    <li><span class="feature-icon">✓</span> Priority support (24/7)</li>
-                    <li><span class="feature-icon">✓</span> 50GB storage</li>
-                    <li><span class="feature-icon">✓</span> API access</li>
-                    <li><span class="feature-icon disabled">✗</span> White-label options</li>
-                </ul>
-
-                <button class="cta-button secondary">Get Started</button>
-            </div>
-
-            <!-- Enterprise Plan (Featured) -->
-            <div class="pricing-card featured">
-                <span class="popular-badge">Most Popular</span>
-                <div class="plan-icon">🏢</div>
-                <h3 class="plan-name">Enterprise</h3>
-                <p class="plan-description">Comprehensive solution for large LGUs and organizations managing complex operations</p>
-                
-                <div class="plan-price">
-                    <div class="price-amount">
-                        <span class="price-currency">₱</span><span class="monthly-price">75,000</span><span class="annual-price" style="display: none;">60,000</span>
-                    </div>
-                    <div class="price-period">/month</div>
-                    <div class="price-note">Billed <span class="billing-period">monthly</span></div>
+            <!-- CTA Section -->
+            <section class="cta-section" id="contact">
+                <h2 class="cta-title">Ready to Build Resilience?</h2>
+                <p class="cta-description">
+                    Join 50+ organizations across Southeast Asia protecting their communities with ASilva Innovations. 
+                    Start your free trial today or schedule a personalized demo.
+                </p>
+                <div class="cta-buttons">
+                    <a href="mailto:sales@asilvainnovations.com?subject=Free%20Trial%20Request" class="cta-btn primary">Start Free Trial</a>
+                    <a href="mailto:sales@asilvainnovations.com?subject=Demo%20Request" class="cta-btn secondary">Schedule Demo</a>
                 </div>
-
-                <ul class="plan-features">
-                    <li><span class="feature-icon">✓</span> Unlimited users</li>
-                    <li><span class="feature-icon">✓</span> Full platform access (all modules)</li>
-                    <li><span class="feature-icon">✓</span> Real-Time Leadership</li>
-                    <li><span class="feature-icon">✓</span> AI & Automation Suite</li>
-                    <li><span class="feature-icon">✓</span> Predictive crisis modeling</li>
-                    <li><span class="feature-icon">✓</span> Dedicated account manager</li>
-                    <li><span class="feature-icon">✓</span> 500GB storage</li>
-                    <li><span class="feature-icon">✓</span> Custom integrations</li>
-                    <li><span class="feature-icon">✓</span> White-label options</li>
-                </ul>
-
-                <button class="cta-button primary">Get Started</button>
-            </div>
-
-            <!-- Custom Plan -->
-            <div class="pricing-card">
-                <div class="plan-icon">⚙️</div>
-                <h3 class="plan-name">Custom</h3>
-                <p class="plan-description">Tailored solutions for multi-agency networks and specialized requirements</p>
-                
-                <div class="plan-price">
-                    <div class="price-amount">
-                        <span style="font-size: 2rem;">Custom</span>
-                    </div>
-                    <div class="price-period">Contact us for pricing</div>
-                    <div class="price-note">Flexible terms available</div>
-                </div>
-
-                <ul class="plan-features">
-                    <li><span class="feature-icon">✓</span> Everything in Enterprise</li>
-                    <li><span class="feature-icon">✓</span> Multi-tenant architecture</li>
-                    <li><span class="feature-icon">✓</span> Custom AI model training</li>
-                    <li><span class="feature-icon">✓</span> Bespoke feature development</li>
-                    <li><span class="feature-icon">✓</span> On-premise deployment option</li>
-                    <li><span class="feature-icon">✓</span> SLA guarantees (99.9% uptime)</li>
-                    <li><span class="feature-icon">✓</span> Unlimited storage</li>
-                    <li><span class="feature-icon">✓</span> Direct engineering support</li>
-                    <li><span class="feature-icon">✓</span> Compliance consulting</li>
-                </ul>
-
-                <button class="cta-button secondary">Contact Sales</button>
-            </div>
-        </div>
-
-        <!-- Comparison Table -->
-        <div class="comparison-section">
-            <h2 class="section-title">Feature Comparison</h2>
-            
-            <div class="comparison-table">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Features</th>
-                            <th>Starter</th>
-                            <th>Professional</th>
-                            <th>Enterprise</th>
-                            <th>Custom</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Users</strong></td>
-                            <td class="feature-value">Up to 5</td>
-                            <td class="feature-value">Up to 20</td>
-                            <td class="feature-value">Unlimited</td>
-                            <td class="feature-value">Unlimited</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Storage</strong></td>
-                            <td class="feature-value">5GB</td>
-                            <td class="feature-value">50GB</td>
-                            <td class="feature-value">500GB</td>
-                            <td class="feature-value">Unlimited</td>
-                        </tr>
-                        <tr>
-                            <td><strong>DDRiVE-M Platform</strong></td>
-                            <td class="feature-value">Lite</td>
-                            <td class="check">✓</td>
-                            <td class="check">✓</td>
-                            <td class="check">✓</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Strategic Planner Pro</strong></td>
-                            <td class="cross">✗</td>
-                            <td class="check">✓</td>
-                            <td class="check">✓</td>
-                            <td class="check">✓</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Real-Time Leadership</strong></td>
-                            <td class="cross">✗</td>
-                            <td class="cross">✗</td>
-                            <td class="check">✓</td>
-                            <td class="check">✓</td>
-                        </tr>
-                        <tr>
-                            <td><strong>AI & Automation Suite</strong></td>
-                            <td class="cross">✗</td>
-                            <td class="cross">✗</td>
-                            <td class="check">✓</td>
-                            <td class="check">✓</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Real-time Alerts</strong></td>
-                            <td class="cross">✗</td>
-                            <td class="check">✓</td>
-                            <td class="check">✓</td>
-                            <td class="check">✓</td>
-                        </tr>
-                        <tr>
-                            <td><strong>API Access</strong></td>
-                            <td class="cross">✗</td>
-                            <td class="check">✓</td>
-                            <td class="check">✓</td>
-                            <td class="check">✓</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Custom Integrations</strong></td>
-                            <td class="cross">✗</td>
-                            <td class="cross">✗</td>
-                            <td class="check">✓</td>
-                            <td class="check">✓</td>
-                        </tr>
-                        <tr>
-                            <td><strong>White-label Options</strong></td>
-                            <td class="cross">✗</td>
-                            <td class="cross">✗</td>
-                            <td class="check">✓</td>
-                            <td class="check">✓</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Support</strong></td>
-                            <td class="feature-value">Email</td>
-                            <td class="feature-value">24/7 Priority</td>
-                            <td class="feature-value">Dedicated Manager</td>
-                            <td class="feature-value">Engineering Team</td>
-                        </tr>
-                        <tr>
-                            <td><strong>On-premise Deployment</strong></td>
-                            <td class="cross">✗</td>
-                            <td class="cross">✗</td>
-                            <td class="cross">✗</td>
-                            <td class="check">✓</td>
-                        </tr>
-                        <tr>
-                            <td><strong>SLA Guarantee</strong></td>
-                            <td class="cross">✗</td>
-                            <td class="feature-value">99.5%</td>
-                            <td class="feature-value">99.9%</td>
-                            <td class="feature-value">99.99%</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- Add-ons Section -->
-        <div class="addons-section">
-            <h2 class="section-title">Add-on Services</h2>
-            <p class="subtitle text-center mb-4">
-                Enhance your plan with specialized services and additional capacity
-            </p>
-
-            <div class="addons-grid">
-                <div class="addon-card">
-                    <div class="addon-header">
-                        <div class="addon-icon">📚</div>
-                        <div>
-                            <div class="addon-title">Training & Onboarding</div>
-                            <div class="addon-price">₱50,000</div>
-                        </div>
-                    </div>
-                    <p class="addon-description">
-                        Comprehensive 3-day training program for your team including hands-on workshops, documentation, and certification.
-                    </p>
-                </div>
-
-                <div class="addon-card">
-                    <div class="addon-header">
-                        <div class="addon-icon">🔧</div>
-                        <div>
-                            <div class="addon-title">Custom Integration</div>
-                            <div class="addon-price">₱75,000+</div>
-                        </div>
-                    </div>
-                    <p class="addon-description">
-                        Connect ASilva platforms with your existing systems (ERP, GIS, communication tools). Price varies by complexity.
-                    </p>
-                </div>
-
-                <div class="addon-card">
-                    <div class="addon-header">
-                        <div class="addon-icon">📊</div>
-                        <div>
-                            <div class="addon-title">Data Migration</div>
-                            <div class="addon-price">₱35,000</div>
-                        </div>
-                    </div>
-                    <p class="addon-description">
-                        Professional migration of your historical risk data, ensuring data integrity and proper formatting.
-                    </p>
-                </div>
-
-                <div class="addon-card">
-                    <div class="addon-header">
-                        <div class="addon-icon">🎨</div>
-                        <div>
-                            <div class="addon-title">Custom Branding</div>
-                            <div class="addon-price">₱25,000</div>
-                        </div>
-                    </div>
-                    <p class="addon-description">
-                        Full white-label customization with your organization's branding, colors, and logo integration.
-                    </p>
-                </div>
-
-                <div class="addon-card">
-                    <div class="addon-header">
-                        <div class="addon-icon">📱</div>
-                        <div>
-                            <div class="addon-title">Mobile App Access</div>
-                            <div class="addon-price">₱5,000/mo</div>
-                        </div>
-                    </div>
-                    <p class="addon-description">
-                        Native iOS and Android apps for field data collection and real-time monitoring on the go.
-                    </p>
-                </div>
-
-                <div class="addon-card">
-                    <div class="addon-header">
-                        <div class="addon-icon">🎓</div>
-                        <div>
-                            <div class="addon-title">Ongoing Consultation</div>
-                            <div class="addon-price">₱15,000/mo</div>
-                        </div>
-                    </div>
-                    <p class="addon-description">
-                        Monthly strategy sessions with disaster risk experts to optimize your resilience planning.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- FAQ Section -->
-        <div class="faq-section">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <div class="faq-question">What payment methods do you accept?</div>
-                    <div class="faq-answer">
-                        We accept bank transfers, checks, and government purchase orders. For LGUs, we work within GPPB procurement guidelines. Annual subscriptions can be paid quarterly for budget flexibility.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">Can I change plans later?</div>
-                    <div class="faq-answer">
-                        Absolutely! You can upgrade or downgrade your plan at any time. When upgrading, you'll get immediate access to new features. When downgrading, changes take effect at the next billing cycle.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">Is there a free trial available?</div>
-                    <div class="faq-answer">
-                        Yes! We offer a 30-day free trial of the Professional plan for qualified organizations. This includes full access to all features, onboarding support, and sample data to help you explore the platform.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">What about data security and compliance?</div>
-                    <div class="faq-answer">
-                        All plans include enterprise-grade security with SSL encryption, regular backups, and compliance with Philippine Data Privacy Act. Enterprise and Custom plans include additional security certifications and audit logs.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">Do you offer discounts for NGOs or non-profits?</div>
-                    <div class="faq-answer">
-                        Yes! Registered NGOs and non-profit organizations receive a 20% discount on all plans. Multi-year commitments receive an additional 10% discount. Contact our sales team for details.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">What's included in implementation and training?</div>
-                    <div class="faq-answer">
-                        All paid plans include basic onboarding (2-4 hours). Professional and above include dedicated implementation support. Custom training packages are available as add-ons for comprehensive team enablement.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">How quickly can we get started?</div>
-                    <div class="faq-answer">
-                        Most organizations are up and running within 7-14 days. Starter and Professional plans can be activated immediately. Enterprise deployments typically take 2-4 weeks including customization and training.
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">What if we need features not in any plan?</div>
-                    <div class="faq-answer">
-                        We offer custom development for unique requirements. Our engineering team can build specialized modules, integrations, or workflows tailored to your needs. Contact us to discuss your requirements.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- CTA Section -->
-        <div class="cta-section">
-            <h2 class="cta-title">Ready to Build Resilience?</h2>
-            <p class="cta-description">
-                Join 50+ organizations across Southeast Asia protecting their communities with ASilva Innovations. 
-                Start your free trial today or schedule a personalized demo.
-            </p>
-            <div class="cta-buttons">
-                <a href="#" class="cta-btn primary">Start Free Trial</a>
-                <a href="#" class="cta-btn secondary">Schedule Demo</a>
-            </div>
-        </div>
+            </section>
+        </main>
 
         <!-- Footer Note -->
-        <div style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
-            <p style="color: var(--color-slate-500); font-size: 0.875rem;">
+        <footer class="footer-note" role="contentinfo">
+            <p>
                 All prices are in Philippine Peso (₱) and exclude VAT. Enterprise and Custom pricing available upon request.<br>
-                For government procurement inquiries, please contact our public sector team at <strong style="color: var(--color-blue-400);">gov@asilvainnovations.com</strong>
+                For government procurement inquiries, contact our public sector team at <strong>gov@asilvainnovations.com</strong>
             </p>
-        </div>
+        </footer>
     </div>
 
     <script>
-        // Billing toggle functionality
-        const billingToggle = document.getElementById('billing-toggle');
-        const monthlyLabel = document.getElementById('monthly-label');
-        const annualLabel = document.getElementById('annual-label');
-        const monthlyPrices = document.querySelectorAll('.monthly-price');
-        const annualPrices = document.querySelectorAll('.annual-price');
-        const billingPeriods = document.querySelectorAll('.billing-period');
-        
-        let isAnnual = false;
-        
-        billingToggle.addEventListener('click', function() {
-            isAnnual = !isAnnual;
-            billingToggle.classList.toggle('active');
-            
-            if (isAnnual) {
-                monthlyLabel.classList.remove('active');
-                annualLabel.classList.add('active');
-                monthlyPrices.forEach(el => el.style.display = 'none');
-                annualPrices.forEach(el => el.style.display = 'inline');
-                billingPeriods.forEach(el => el.textContent = 'annually');
-            } else {
-                monthlyLabel.classList.add('active');
-                annualLabel.classList.remove('active');
-                monthlyPrices.forEach(el => el.style.display = 'inline');
-                annualPrices.forEach(el => el.style.display = 'none');
-                billingPeriods.forEach(el => el.textContent = 'monthly');
-            }
-        });
+        // Progressive enhancement - only runs if JavaScript is enabled
+        (function() {
+            'use strict';
 
-        // Button click handlers (for demo purposes)
-        document.querySelectorAll('.cta-button, .cta-btn').forEach(button => {
-            button.addEventListener('click', function(e) {
-                if (this.href === '#' || !this.href) {
+            // Billing toggle functionality
+            const billingToggle = document.getElementById('billing-toggle');
+            const monthlyLabel = document.getElementById('monthly-label');
+            const annualLabel = document.getElementById('annual-label');
+            const monthlyPrices = document.querySelectorAll('.monthly-price');
+            const annualPrices = document.querySelectorAll('.annual-price');
+            const billingPeriods = document.querySelectorAll('.billing-period');
+            
+            let isAnnual = false;
+            
+            function updateBilling() {
+                isAnnual = !isAnnual;
+                billingToggle.classList.toggle('active');
+                billingToggle.setAttribute('aria-checked', isAnnual.toString());
+                
+                if (isAnnual) {
+                    monthlyLabel.classList.remove('active');
+                    annualLabel.classList.add('active');
+                    monthlyPrices.forEach(el => el.style.display = 'none');
+                    annualPrices.forEach(el => el.style.display = 'inline');
+                    billingPeriods.forEach(el => el.textContent = 'annually');
+                } else {
+                    monthlyLabel.classList.add('active');
+                    annualLabel.classList.remove('active');
+                    monthlyPrices.forEach(el => el.style.display = 'inline');
+                    annualPrices.forEach(el => el.style.display = 'none');
+                    billingPeriods.forEach(el => el.textContent = 'monthly');
+                }
+            }
+
+            billingToggle.addEventListener('click', updateBilling);
+            billingToggle.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
-                    alert('Thank you for your interest! Our sales team will contact you shortly.');
+                    updateBilling();
                 }
             });
-        });
 
-        console.log('%c ASilva Innovations Pricing ', 'background: linear-gradient(135deg, #2563eb, #4f46e5); color: white; padding: 10px 20px; font-size: 16px; font-weight: bold;');
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#' || href === '#contact') {
+                        const target = document.querySelector(href);
+                        if (target) {
+                            e.preventDefault();
+                            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                });
+            });
+
+            // Button click tracking (can be connected to analytics)
+            document.querySelectorAll('.cta-button, .cta-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Analytics tracking would go here
+                    console.log('CTA clicked:', this.textContent.trim());
+                });
+            });
+
+            // Log page load for monitoring
+            console.log('%c ASilva Innovations Pricing ', 'background: linear-gradient(135deg, #2563eb, #4f46e5); color: white; padding: 8px 16px; font-size: 14px; font-weight: bold; border-radius: 4px;');
+            console.log('Mobile-first, production-ready pricing page loaded');
+        })();
     </script>
 </body>
 </html>
