@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ASilva Innovations Privacy Policy - How we collect, use, protect, and manage your personal data in compliance with Philippine Data Privacy Act and GDPR.">
+  <meta name="keywords" content="ASilva Innovations privacy, data protection, privacy policy, Philippine Data Privacy Act, GDPR compliance, personal information">
+  <title>Privacy Policy - ASilva Innovations</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-blue: #0047AB;
+      --secondary-teal: #00A896;
+      --accent-orange: #FF6B35;
+      --dark-navy: #001F3F;
+      --light-gray: #F5F7FA;
+      --white: #FFFFFF;
+      --text-dark: #1A1A1A;
+      --text-medium: #4A4A4A;
+      --border-color: #E0E4E8;
+      --shadow-sm: 0 2px 8px rgba(0, 71, 171, 0.08);
+      --shadow-md: 0 4px 16px rgba(0, 71, 171, 0.12);
+      --shadow-lg: 0 8px 32px rgba(0, 71, 171, 0.16);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Roboto Condensed', sans-serif;
+      background: var(--light-gray);
+      color: var(--text-dark);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+    
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent-orange);
+      color: var(--white);
+      padding: 8px 16px;
+      text-decoration: none;
+      font-weight: 700;
+      z-index: 100;
+    }
+    
+    .skip-link:focus {
+      top: 0;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--dark-navy) 0%, var(--primary-blue) 100%);
+      color: var(--white);
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(0, 168, 150, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.15) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    
+    .header-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    
+    .last-updated {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      font-weight: 300;
+      margin-top: 8px;
+    }
+    
+    .effective-date {
+      font-size: 1rem;
+      opacity: 0.85;
+      margin-top: 4px;
+    }
+    
+    main {
+      max-width: 900px;
+      margin: -40px auto 60px;
+      padding: 0 20px;
+      position: relative;
+    }
+    
+    .content-container {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 60px;
+      box-shadow: var(--shadow-lg);
+    }
+    
+    .intro-box {
+      background: linear-gradient(135deg, #E8F4F8 0%, #F0F9FF 100%);
+      border-left: 4px solid var(--primary-blue);
+      padding: 28px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+    
+    .intro-box p {
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+    }
+    
+    .intro-box p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .policy-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 24px 0;
+      padding: 20px;
+      background: var(--light-gray);
+      border-radius: 8px;
+    }
+    
+    .policy-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--white);
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: var(--text-dark);
+    }
+    
+    .policy-link:hover {
+      border-color: var(--secondary-teal);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+      color: var(--primary-blue);
+    }
+    
+    .toc {
+      background: var(--light-gray);
+      border-left: 4px solid var(--secondary-teal);
+      padding: 24px 28px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+    
+    .toc h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--dark-navy);
+      margin-bottom: 16px;
+      border: none;
+      padding: 0;
+    }
+    
+    .toc ol {
+      margin-left: 20px;
+      line-height: 2;
+    }
+    
+    .toc a {
+      color: var(--primary-blue);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+    
+    .toc a:hover,
+    .toc a:focus {
+      color: var(--secondary-teal);
+      text-decoration: underline;
+    }
+    
+    .section {
+      margin-bottom: 48px;
+      scroll-margin-top: 20px;
+    }
+    
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--dark-navy);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 3px solid var(--secondary-teal);
+    }
+    
+    h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--primary-blue);
+      margin: 28px 0 16px;
+    }
+    
+    h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin: 20px 0 12px;
+    }
+    
+    p {
+      margin-bottom: 16px;
+      color: var(--text-dark);
+    }
+    
+    ul, ol {
+      margin: 16px 0 16px 28px;
+    }
+    
+    li {
+      margin-bottom: 12px;
+      color: var(--text-dark);
+    }
+    
+    strong {
+      color: var(--dark-navy);
+      font-weight: 700;
+    }
+    
+    .highlight-box {
+      background: linear-gradient(135deg, #FFF4E6 0%, #FFF9F0 100%);
+      border-left: 4px solid var(--accent-orange);
+      padding: 24px;
+      border-radius: 8px;
+      margin: 24px 0;
+    }
+    
+    .highlight-box p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .info-box {
+      background: var(--light-gray);
+      border: 2px solid var(--border-color);
+      padding: 24px;
+      border-radius: 8px;
+      margin: 24px 0;
+    }
+    
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .data-table th {
+      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+      color: var(--white);
+      padding: 16px;
+      text-align: left;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    
+    .data-table td {
+      padding: 16px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: top;
+    }
+    
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .data-table tr:hover {
+      background: var(--light-gray);
+    }
+    
+    .contact-box {
+      background: var(--light-gray);
+      padding: 32px;
+      border-radius: 12px;
+      margin: 32px 0;
+      border: 2px solid var(--border-color);
+    }
+    
+    .contact-box h3 {
+      margin-top: 0;
+      color: var(--dark-navy);
+    }
+    
+    .contact-info {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+    
+    .contact-label {
+      font-weight: 700;
+      color: var(--primary-blue);
+      min-width: 140px;
+    }
+    
+    a {
+      color: var(--secondary-teal);
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+    }
+    
+    a:hover,
+    a:focus {
+      color: var(--primary-blue);
+      border-bottom-color: var(--primary-blue);
+    }
+    
+    footer {
+      background: linear-gradient(135deg, var(--dark-navy) 0%, var(--primary-blue) 100%);
+      color: var(--white);
+      padding: 40px 20px;
+      text-align: center;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .footer-link {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.2s ease;
+      border-bottom: none;
+    }
+    
+    .footer-link:hover,
+    .footer-link:focus {
+      opacity: 0.8;
+      text-decoration: underline;
+      color: var(--white);
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .content-container {
+        padding: 40px 24px;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      h3 {
+        font-size: 1.2rem;
+      }
+      
+      .contact-item {
+        flex-direction: column;
+        gap: 4px;
+      }
+      
+      .contact-label {
+        min-width: auto;
+      }
+      
+      .policy-links {
+        flex-direction: column;
+      }
+      
+      .data-table {
+        font-size: 0.9rem;
+      }
+      
+      .data-table th,
+      .data-table td {
+        padding: 12px;
+      }
+    }
+    
+    @media print {
+      body {
+        background: white;
+      }
+      
+      header {
+        background: none;
+        color: black;
+      }
+      
+      .content-container {
+        box-shadow: none;
+      }
+      
+      a {
+        color: black;
+        text-decoration: underline;
+      }
+    }
+    
+    *:focus {
+      outline: 3px solid var(--accent-orange);
+      outline-offset: 2px;
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header role="banner">
+    <div class="header-content">
+      <div class="logo">ASilva Innovations</div>
+      <h1>Privacy Policy</h1>
+      <p class="effective-date">Effective Date: February 1, 2026</p>
+      <p class="last-updated">Last Updated: February 9, 2026</p>
+    </div>
+  </header>
+  
+  <main id="main-content" role="main">
+    <div class="content-container">
+      <!-- Introduction -->
+      <div class="intro-box">
+        <p><strong>Your Privacy Matters to Us</strong></p>
+        <p>ASilva Innovations ("we", "us", "our", or "Company") is committed to protecting your privacy and safeguarding your personal information. This Privacy Policy explains how we collect, use, disclose, store, and protect your personal data when you use our Platform and Services.</p>
+        <p><strong>This Privacy Policy applies to all users of ASilva Innovations' websites, platforms, applications, and services. By using our Platform, you consent to the data practices described in this Privacy Policy.</strong></p>
+        <p>This Privacy Policy should be read in conjunction with our <a href="https://asilvainnovations.com/terms">Terms and Conditions</a> and <a href="https://asilvainnovations.com/cookie-policy">Cookie Policy</a>.</p>
+      </div>
+      
+      <!-- Related Policies -->
+      <div class="policy-links" role="navigation" aria-label="Related Policies">
+        <a href="https://asilvainnovations.com/terms" class="policy-link">
+          <span>📄</span>
+          <span>Terms &amp; Conditions</span>
+        </a>
+        <a href="https://asilvainnovations.com/cookie-policy" class="policy-link">
+          <span>🍪</span>
+          <span>Cookie Policy</span>
+        </a>
+        <a href="https://asilvainnovations.com/accessibility" class="policy-link">
+          <span>♿</span>
+          <span>Accessibility Policy</span>
+        </a>
+      </div>
+      
+      <!-- Table of Contents -->
+      <nav class="toc" aria-label="Table of Contents">
+        <h2>Table of Contents</h2>
+        <ol>
+          <li><a href="#controller">Data Controller Information</a></li>
+          <li><a href="#definitions">Key Definitions</a></li>
+          <li><a href="#collection">Information We Collect</a></li>
+          <li><a href="#usage">How We Use Your Information</a></li>
+          <li><a href="#legal-basis">Legal Basis for Processing</a></li>
+          <li><a href="#sharing">Information Sharing and Disclosure</a></li>
+          <li><a href="#retention">Data Retention</a></li>
+          <li><a href="#security">Data Security</a></li>
+          <li><a href="#rights">Your Privacy Rights</a></li>
+          <li><a href="#international">International Data Transfers</a></li>
+          <li><a href="#children">Children's Privacy</a></li>
+          <li><a href="#cookies">Cookies and Tracking Technologies</a></li>
+          <li><a href="#third-party">Third-Party Services</a></li>
+          <li><a href="#compliance">Philippine Data Privacy Compliance</a></li>
+          <li><a href="#gdpr">GDPR Compliance</a></li>
+          <li><a href="#changes">Changes to This Privacy Policy</a></li>
+          <li><a href="#contact">Contact Information</a></li>
+        </ol>
+      </nav>
+      
+      <!-- Section 1 -->
+      <section id="controller" class="section">
+        <h2>1. Data Controller Information</h2>
+        <p>
+          For the purposes of applicable data protection laws, including the Philippine Data Privacy Act of 2012 (RA 10173) and the General Data Protection Regulation (GDPR), ASilva Innovations is the data controller responsible for your personal information.
+        </p>
+        
+        <div class="contact-box">
+          <h3>Data Controller Contact Details</h3>
+          <div class="contact-info">
+            <div class="contact-item">
+              <span class="contact-label">Company Name:</span>
+              <span>ASilva Innovations</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Address:</span>
+              <span>Quezon City, Philippines</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Email:</span>
+              <a href="mailto:privacy@asilvainnovations.com">privacy@asilvainnovations.com</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">General Contact:</span>
+              <a href="mailto:admin@asilvainnovations.com">admin@asilvainnovations.com</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Website:</span>
+              <a href="https://asilvainnovations.com" target="_blank" rel="noopener noreferrer">asilvainnovations.com</a>
+            </div>
+          </div>
+        </div>
+        
+        <h3>Data Protection Officer</h3>
+        <p>
+          In compliance with the Philippine Data Privacy Act, we have appointed a Data Protection Officer (DPO) who is responsible for overseeing our data protection strategy and ensuring compliance with applicable privacy laws.
+        </p>
+        <p>
+          <strong>DPO Email:</strong> <a href="mailto:dpo@asilvainnovations.com">dpo@asilvainnovations.com</a>
+        </p>
+      </section>
+      
+      <!-- Section 2 -->
+      <section id="definitions" class="section">
+        <h2>2. Key Definitions</h2>
+        <p>For the purposes of this Privacy Policy:</p>
+        <ul>
+          <li><strong>"Personal Information" or "Personal Data"</strong> means any information relating to an identified or identifiable natural person, as defined under Philippine and international data protection laws.</li>
+          <li><strong>"Sensitive Personal Information"</strong> means personal information about an individual's race, ethnic origin, marital status, age, color, religious, philosophical or political affiliations, health, education, genetic or sexual life, or any proceeding for any offense committed or alleged to have been committed.</li>
+          <li><strong>"Processing"</strong> means any operation performed on personal data, including collection, recording, organization, storage, adaptation, retrieval, use, disclosure, and erasure.</li>
+          <li><strong>"Platform"</strong> refers to all ASilva Innovations websites, applications, software, and services.</li>
+          <li><strong>"Services"</strong> means all products and services offered by ASilva Innovations.</li>
+          <li><strong>"User", "you", "your"</strong> refers to any individual using our Platform or Services.</li>
+        </ul>
+      </section>
+      
+      <!-- Section 3 -->
+      <section id="collection" class="section">
+        <h2>3. Information We Collect</h2>
+        
+        <h3>3.1 Information You Provide Directly</h3>
+        <p>We collect personal information that you voluntarily provide to us when you:</p>
+        <ul>
+          <li><strong>Create an Account:</strong> Name, email address, phone number, job title, organization name, password</li>
+          <li><strong>Use Our Services:</strong> Risk assessments, strategic plans, organizational data, project information, disaster resilience data</li>
+          <li><strong>Make Payments:</strong> Billing name, billing address, payment card information (processed by third-party payment processors)</li>
+          <li><strong>Contact Us:</strong> Name, email address, phone number, message content, support tickets</li>
+          <li><strong>Participate in Training:</strong> Educational background, professional certifications, training completion data</li>
+          <li><strong>Complete Assessments:</strong> SPARC assessment responses, organizational resilience data, risk evaluation information</li>
+          <li><strong>Subscribe to Communications:</strong> Email address, communication preferences</li>
+        </ul>
+        
+        <h3>3.2 Information Collected Automatically</h3>
+        <p>When you access our Platform, we automatically collect certain information:</p>
+        <ul>
+          <li><strong>Device Information:</strong> IP address, browser type and version, operating system, device type, unique device identifiers</li>
+          <li><strong>Usage Information:</strong> Pages visited, time spent on pages, links clicked, referring URL, search terms, date and time stamps</li>
+          <li><strong>Location Information:</strong> General geographic location derived from IP address</li>
+          <li><strong>Technical Information:</strong> Cookie data, web beacons, pixel tags, log files, crash reports</li>
+        </ul>
+        
+        <h3>3.3 Information from Third Parties</h3>
+        <p>We may receive information about you from third-party sources, including:</p>
+        <ul>
+          <li>Public databases and government agencies (for verification purposes)</li>
+          <li>Social media platforms (if you connect your account)</li>
+          <li>Analytics providers</li>
+          <li>Marketing partners</li>
+          <li>Security service providers</li>
+        </ul>
+        
+        <h3>3.4 Sensitive Personal Information</h3>
+        <div class="highlight-box">
+          <p><strong>Important:</strong> We do not intentionally collect Sensitive Personal Information as defined under Philippine law unless explicitly required for specific Services and with your express consent. If collection of Sensitive Personal Information is necessary, we will:</p>
+          <ul>
+            <li>Obtain your explicit, informed consent</li>
+            <li>Clearly explain the purpose of collection</li>
+            <li>Implement enhanced security measures</li>
+            <li>Limit access to authorized personnel only</li>
+          </ul>
+        </div>
+      </section>
+      
+      <!-- Section 4 -->
+      <section id="usage" class="section">
+        <h2>4. How We Use Your Information</h2>
+        
+        <p>We use your personal information for the following purposes:</p>
+        
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Purpose</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Service Delivery</strong></td>
+              <td>To provide, maintain, and improve our Platform and Services, including DDRiVE-M, Strategic Planner Pro, RTL programs, and SPARC assessments</td>
+            </tr>
+            <tr>
+              <td><strong>Account Management</strong></td>
+              <td>To create and manage your account, authenticate your identity, and provide customer support</td>
+            </tr>
+            <tr>
+              <td><strong>Payment Processing</strong></td>
+              <td>To process transactions, send billing invoices, and manage subscriptions</td>
+            </tr>
+            <tr>
+              <td><strong>Communication</strong></td>
+              <td>To send service-related notifications, updates, security alerts, and respond to your inquiries</td>
+            </tr>
+            <tr>
+              <td><strong>Personalization</strong></td>
+              <td>To customize your experience, provide personalized recommendations, and tailor content to your interests</td>
+            </tr>
+            <tr>
+              <td><strong>Analytics &amp; Improvement</strong></td>
+              <td>To analyze usage patterns, measure service effectiveness, and improve Platform functionality</td>
+            </tr>
+            <tr>
+              <td><strong>Security</strong></td>
+              <td>To detect, prevent, and respond to fraud, security incidents, and other harmful activities</td>
+            </tr>
+            <tr>
+              <td><strong>Legal Compliance</strong></td>
+              <td>To comply with legal obligations, enforce our Terms and Conditions, and respond to legal requests</td>
+            </tr>
+            <tr>
+              <td><strong>Marketing</strong></td>
+              <td>To send promotional materials, newsletters, and marketing communications (with your consent where required)</td>
+            </tr>
+            <tr>
+              <td><strong>Research &amp; Development</strong></td>
+              <td>To develop new products, services, and features, and conduct research to improve disaster resilience solutions</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      
+      <!-- Section 5 -->
+      <section id="legal-basis" class="section">
+        <h2>5. Legal Basis for Processing</h2>
+        
+        <p>Under applicable data protection laws, we process your personal information based on the following legal grounds:</p>
+        
+        <h3>5.1 Consent</h3>
+        <p>
+          We process personal information when you have given clear, informed consent for specific purposes, such as:
+        </p>
+        <ul>
+          <li>Marketing communications</li>
+          <li>Optional data collection for service improvements</li>
+          <li>Collection of Sensitive Personal Information (when applicable)</li>
+        </ul>
+        <p>You have the right to withdraw consent at any time.</p>
+        
+        <h3>5.2 Contractual Necessity</h3>
+        <p>
+          Processing is necessary to perform our contract with you, including:
+        </p>
+        <ul>
+          <li>Providing the Services you requested</li>
+          <li>Managing your account</li>
+          <li>Processing payments</li>
+          <li>Providing customer support</li>
+        </ul>
+        
+        <h3>5.3 Legal Obligation</h3>
+        <p>
+          Processing is necessary to comply with legal and regulatory requirements, such as:
+        </p>
+        <ul>
+          <li>Tax and accounting obligations</li>
+          <li>Responding to lawful government requests</li>
+          <li>Compliance with court orders</li>
+          <li>Meeting data protection and security requirements</li>
+        </ul>
+        
+        <h3>5.4 Legitimate Interests</h3>
+        <p>
+          Processing is necessary for our legitimate business interests, provided these interests do not override your rights and freedoms:
+        </p>
+        <ul>
+          <li>Improving and developing our Services</li>
+          <li>Ensuring Platform security and preventing fraud</li>
+          <li>Conducting analytics and research</li>
+          <li>Marketing our Services to existing customers</li>
+          <li>Operating and managing our business efficiently</li>
+        </ul>
+        
+        <h3>5.5 Vital Interests</h3>
+        <p>
+          In rare circumstances, processing may be necessary to protect vital interests, such as preventing serious harm or danger to individuals.
+        </p>
+      </section>
+      
+      <!-- Section 6 -->
+      <section id="sharing" class="section">
+        <h2>6. Information Sharing and Disclosure</h2>
+        
+        <div class="highlight-box">
+          <p><strong>We do not sell, rent, or trade your personal information to third parties for their marketing purposes.</strong></p>
+        </div>
+        
+        <p>We may share your personal information in the following circumstances:</p>
+        
+        <h3>6.1 Service Providers</h3>
+        <p>
+          We engage trusted third-party service providers to perform functions on our behalf, including:
+        </p>
+        <ul>
+          <li><strong>Cloud Hosting Providers:</strong> Data storage and infrastructure services</li>
+          <li><strong>Payment Processors:</strong> Secure payment transaction processing</li>
+          <li><strong>Email Service Providers:</strong> Sending service notifications and marketing communications</li>
+          <li><strong>Analytics Providers:</strong> Usage analysis and service improvement</li>
+          <li><strong>Customer Support Tools:</strong> Help desk and ticketing systems</li>
+          <li><strong>Security Providers:</strong> Fraud detection and prevention services</li>
+        </ul>
+        <p>
+          These service providers have access to personal information only as necessary to perform their functions and are contractually obligated to maintain confidentiality and security.
+        </p>
+        
+        <h3>6.2 Business Transfers</h3>
+        <p>
+          If ASilva Innovations is involved in a merger, acquisition, asset sale, or bankruptcy, your personal information may be transferred as part of that transaction. We will notify you of any such change and provide choices regarding your personal information.
+        </p>
+        
+        <h3>6.3 Legal Requirements</h3>
+        <p>
+          We may disclose your personal information if required to do so by law or in response to:
+        </p>
+        <ul>
+          <li>Court orders or legal processes</li>
+          <li>Government or regulatory requests</li>
+          <li>Law enforcement investigations</li>
+          <li>National Privacy Commission (NPC) inquiries</li>
+        </ul>
+        
+        <h3>6.4 Protection of Rights</h3>
+        <p>
+          We may disclose personal information to:
+        </p>
+        <ul>
+          <li>Enforce our Terms and Conditions</li>
+          <li>Protect our rights, property, or safety</li>
+          <li>Protect the rights, property, or safety of our users</li>
+          <li>Prevent or investigate fraud, security issues, or technical problems</li>
+        </ul>
+        
+        <h3>6.5 With Your Consent</h3>
+        <p>
+          We may share your information with third parties when you have given us explicit consent to do so.
+        </p>
+        
+        <h3>6.6 Aggregated or De-identified Information</h3>
+        <p>
+          We may share aggregated or de-identified information that cannot reasonably be used to identify you for research, marketing, analytics, or other purposes.
+        </p>
+      </section>
+      
+      <!-- Section 7 -->
+      <section id="retention" class="section">
+        <h2>7. Data Retention</h2>
+        
+        <p>
+          We retain your personal information only for as long as necessary to fulfill the purposes for which it was collected and to comply with legal, regulatory, accounting, or reporting requirements.
+        </p>
+        
+        <h3>7.1 Retention Periods</h3>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Data Type</th>
+              <th>Retention Period</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Account Information</strong></td>
+              <td>Duration of active account plus 90 days after account closure</td>
+            </tr>
+            <tr>
+              <td><strong>Transaction Records</strong></td>
+              <td>7 years (tax and accounting compliance)</td>
+            </tr>
+            <tr>
+              <td><strong>Service Usage Data</strong></td>
+              <td>3 years from collection</td>
+            </tr>
+            <tr>
+              <td><strong>Marketing Data</strong></td>
+              <td>Until consent is withdrawn or 3 years of inactivity</td>
+            </tr>
+            <tr>
+              <td><strong>Support Tickets</strong></td>
+              <td>5 years from case closure</td>
+            </tr>
+            <tr>
+              <td><strong>Backup Copies</strong></td>
+              <td>Up to 90 days (automatic deletion cycle)</td>
+            </tr>
+            <tr>
+              <td><strong>Legal Hold Data</strong></td>
+              <td>Duration of legal proceedings plus applicable statute of limitations</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h3>7.2 Deletion and Anonymization</h3>
+        <p>
+          When personal information is no longer needed, we will:
+        </p>
+        <ul>
+          <li>Securely delete or destroy the data</li>
+          <li>Anonymize the data so it cannot be associated with you</li>
+          <li>Retain only what is legally required</li>
+        </ul>
+        
+        <h3>7.3 Exceptions</h3>
+        <p>
+          We may retain certain information beyond the standard retention periods when:
+        </p>
+        <ul>
+          <li>Required by law or regulation</li>
+          <li>Necessary for legal proceedings or investigations</li>
+          <li>Needed to exercise or defend legal claims</li>
+          <li>Required to comply with National Privacy Commission orders</li>
+        </ul>
+      </section>
+      
+      <!-- Section 8 -->
+      <section id="security" class="section">
+        <h2>8. Data Security</h2>
+        
+        <p>
+          We implement comprehensive technical, organizational, and physical security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.
+        </p>
+        
+        <h3>8.1 Technical Safeguards</h3>
+        <ul>
+          <li><strong>Encryption:</strong> Data in transit is protected using TLS/SSL encryption (256-bit); data at rest is encrypted using AES-256 encryption</li>
+          <li><strong>Access Controls:</strong> Role-based access control (RBAC) limits data access to authorized personnel only</li>
+          <li><strong>Authentication:</strong> Multi-factor authentication (MFA) for administrative access</li>
+          <li><strong>Firewalls:</strong> Network-level and application-level firewalls protect against unauthorized access</li>
+          <li><strong>Intrusion Detection:</strong> Real-time monitoring systems detect and respond to security threats</li>
+          <li><strong>Vulnerability Management:</strong> Regular security scans and penetration testing</li>
+          <li><strong>Secure Development:</strong> Security-by-design principles in software development</li>
+        </ul>
+        
+        <h3>8.2 Organizational Safeguards</h3>
+        <ul>
+          <li><strong>Security Policies:</strong> Comprehensive information security policies and procedures</li>
+          <li><strong>Employee Training:</strong> Regular security awareness and data protection training</li>
+          <li><strong>Background Checks:</strong> Screening of employees with access to sensitive data</li>
+          <li><strong>Confidentiality Agreements:</strong> All employees and contractors sign confidentiality agreements</li>
+          <li><strong>Incident Response:</strong> Documented incident response plan and procedures</li>
+          <li><strong>Third-Party Management:</strong> Vendor security assessments and contractual data protection requirements</li>
+        </ul>
+        
+        <h3>8.3 Physical Safeguards</h3>
+        <ul>
+          <li>Secure data center facilities with restricted access</li>
+          <li>Environmental controls (fire suppression, climate control)</li>
+          <li>Video surveillance and access logging</li>
+          <li>Secure disposal of physical media containing personal information</li>
+        </ul>
+        
+        <h3>8.4 Data Breach Response</h3>
+        <p>
+          In the event of a data breach affecting your personal information:
+        </p>
+        <ul>
+          <li>We will investigate and contain the breach immediately</li>
+          <li>We will notify affected individuals within 72 hours of discovery (as required by law)</li>
+          <li>We will notify the National Privacy Commission as required</li>
+          <li>We will provide information about the breach, its impact, and remedial measures</li>
+          <li>We will offer assistance and support to affected individuals</li>
+        </ul>
+        
+        <div class="highlight-box">
+          <p><strong>Important Security Reminder:</strong> While we implement industry-leading security measures, no method of transmission over the Internet or electronic storage is 100% secure. You are responsible for maintaining the confidentiality of your account credentials and should notify us immediately of any unauthorized access.</p>
+        </div>
+      </section>
+      
+      <!-- Section 9 -->
+      <section id="rights" class="section">
+        <h2>9. Your Privacy Rights</h2>
+        
+        <p>
+          Under the Philippine Data Privacy Act and other applicable laws, you have the following rights regarding your personal information:
+        </p>
+        
+        <h3>9.1 Right to Information</h3>
+        <p>
+          You have the right to be informed about the collection and processing of your personal data, including the purposes, legal basis, and your rights.
+        </p>
+        
+        <h3>9.2 Right of Access</h3>
+        <p>
+          You have the right to obtain confirmation of whether we process your personal information and to access such information, including:
+        </p>
+        <ul>
+          <li>Categories of personal information collected</li>
+          <li>Purposes of processing</li>
+          <li>Recipients or categories of recipients</li>
+          <li>Retention period</li>
+          <li>Source of the information (if not collected from you)</li>
+        </ul>
+        
+        <h3>9.3 Right to Rectification</h3>
+        <p>
+          You have the right to correct inaccurate or incomplete personal information. You can update most information through your account settings or by contacting us.
+        </p>
+        
+        <h3>9.4 Right to Erasure ("Right to be Forgotten")</h3>
+        <p>
+          You have the right to request deletion of your personal information when:
+        </p>
+        <ul>
+          <li>The data is no longer necessary for the purpose it was collected</li>
+          <li>You withdraw consent and there is no other legal basis for processing</li>
+          <li>You object to processing and there are no overriding legitimate grounds</li>
+          <li>The data has been unlawfully processed</li>
+          <li>Deletion is required to comply with legal obligations</li>
+        </ul>
+        
+        <h3>9.5 Right to Object</h3>
+        <p>
+          You have the right to object to processing of your personal information for:
+        </p>
+        <ul>
+          <li>Direct marketing purposes (at any time)</li>
+          <li>Processing based on legitimate interests (unless we demonstrate compelling legitimate grounds)</li>
+          <li>Scientific, historical research, or statistical purposes</li>
+        </ul>
+        
+        <h3>9.6 Right to Data Portability</h3>
+        <p>
+          You have the right to receive your personal information in a structured, commonly used, machine-readable format and to transmit that data to another controller.
+        </p>
+        
+        <h3>9.7 Right to Restrict Processing</h3>
+        <p>
+          You have the right to request restriction of processing when:
+        </p>
+        <ul>
+          <li>You contest the accuracy of the data</li>
+          <li>Processing is unlawful but you oppose erasure</li>
+          <li>We no longer need the data but you need it for legal claims</li>
+          <li>You have objected to processing pending verification of grounds</li>
+        </ul>
+        
+        <h3>9.8 Right to Withdraw Consent</h3>
+        <p>
+          Where processing is based on consent, you have the right to withdraw consent at any time. Withdrawal does not affect the lawfulness of processing before withdrawal.
+        </p>
+        
+        <h3>9.9 Right to Lodge a Complaint</h3>
+        <p>
+          You have the right to lodge a complaint with the National Privacy Commission (NPC) of the Philippines if you believe your privacy rights have been violated.
+        </p>
+        <p>
+          <strong>National Privacy Commission:</strong><br>
+          Website: <a href="https://www.privacy.gov.ph" target="_blank" rel="noopener noreferrer">www.privacy.gov.ph</a><br>
+          Email: info@privacy.gov.ph
+        </p>
+        
+        <h3>9.10 Exercising Your Rights</h3>
+        <p>
+          To exercise any of these rights, please contact us at:
+        </p>
+        <ul>
+          <li>Email: <a href="mailto:privacy@asilvainnovations.com">privacy@asilvainnovations.com</a></li>
+          <li>Subject line: "Privacy Rights Request"</li>
+          <li>Include: Your name, email address, and specific request</li>
+        </ul>
+        <p>
+          We will respond to your request within <strong>15 days</strong> as required by Philippine law. For complex requests, we may extend this period by an additional 15 days with notice.
+        </p>
+      </section>
+      
+      <!-- Section 10 -->
+      <section id="international" class="section">
+        <h2>10. International Data Transfers</h2>
+        
+        <p>
+          Your personal information may be transferred to, stored, and processed in countries other than the Philippines, including countries that may not provide the same level of data protection.
+        </p>
+        
+        <h3>10.1 Transfer Safeguards</h3>
+        <p>
+          When transferring personal information internationally, we implement appropriate safeguards, including:
+        </p>
+        <ul>
+          <li><strong>Standard Contractual Clauses:</strong> Approved by the European Commission and Philippine NPC</li>
+          <li><strong>Adequacy Decisions:</strong> Transfers to countries deemed to provide adequate protection</li>
+          <li><strong>Privacy Shield Frameworks:</strong> Where applicable and recognized</li>
+          <li><strong>Binding Corporate Rules:</strong> For intra-group transfers</li>
+          <li><strong>Encryption:</strong> Data encrypted during transfer and storage</li>
+        </ul>
+        
+        <h3>10.2 NPC Authorization</h3>
+        <p>
+          For transfers outside the Philippines, we comply with National Privacy Commission requirements, including obtaining necessary authorizations for transfers to countries without adequate data protection.
+        </p>
+        
+        <h3>10.3 Your Rights</h3>
+        <p>
+          You have the right to obtain information about international transfers and the safeguards in place. Contact us for more details about specific transfers.
+        </p>
+      </section>
+      
+      <!-- Section 11 -->
+      <section id="children" class="section">
+        <h2>11. Children's Privacy</h2>
+        
+        <div class="highlight-box">
+          <p><strong>Our Platform and Services are not intended for children under the age of 18.</strong></p>
+        </div>
+        
+        <p>
+          We do not knowingly collect, use, or disclose personal information from children under 18 years of age without verifiable parental consent. If we become aware that we have collected personal information from a child under 18 without parental consent, we will take steps to delete such information.
+        </p>
+        
+        <h3>Parental Rights</h3>
+        <p>
+          If you are a parent or guardian and believe your child has provided us with personal information without your consent, please contact us immediately at <a href="mailto:privacy@asilvainnovations.com">privacy@asilvainnovations.com</a>.
+        </p>
+        
+        <p>
+          Parents and guardians have the right to:
+        </p>
+        <ul>
+          <li>Review personal information collected from their child</li>
+          <li>Request deletion of their child's personal information</li>
+          <li>Refuse further collection or use of their child's information</li>
+        </ul>
+      </section>
+      
+      <!-- Section 12 -->
+      <section id="cookies" class="section">
+        <h2>12. Cookies and Tracking Technologies</h2>
+        
+        <p>
+          We use cookies and similar tracking technologies to enhance your experience, analyze usage, and deliver personalized content. For detailed information about our use of cookies, please see our <a href="https://asilvainnovations.com/cookie-policy">Cookie Policy</a>.
+        </p>
+        
+        <h3>Types of Cookies We Use</h3>
+        <ul>
+          <li><strong>Essential Cookies:</strong> Required for Platform functionality and security</li>
+          <li><strong>Performance Cookies:</strong> Help us understand how visitors use our Platform</li>
+          <li><strong>Functional Cookies:</strong> Remember your preferences and settings</li>
+          <li><strong>Advertising Cookies:</strong> Deliver relevant advertisements (with your consent)</li>
+        </ul>
+        
+        <h3>Managing Cookies</h3>
+        <p>
+          You can control cookies through:
+        </p>
+        <ul>
+          <li>Our cookie consent banner</li>
+          <li>Your browser settings</li>
+          <li>Third-party opt-out tools</li>
+        </ul>
+        <p>
+          Note that disabling cookies may affect Platform functionality.
+        </p>
+      </section>
+      
+      <!-- Section 13 -->
+      <section id="third-party" class="section">
+        <h2>13. Third-Party Services</h2>
+        
+        <h3>13.1 Third-Party Links</h3>
+        <p>
+          Our Platform may contain links to third-party websites, applications, or services. We are not responsible for the privacy practices of these third parties. We encourage you to review their privacy policies before providing any personal information.
+        </p>
+        
+        <h3>13.2 Third-Party Service Providers</h3>
+        <p>
+          We work with the following categories of third-party service providers:
+        </p>
+        <ul>
+          <li><strong>Cloud Infrastructure:</strong> Data hosting and storage services</li>
+          <li><strong>Payment Processing:</strong> Secure payment transaction services</li>
+          <li><strong>Analytics:</strong> Website and application analytics</li>
+          <li><strong>Communication:</strong> Email and messaging services</li>
+          <li><strong>Customer Support:</strong> Help desk and ticketing systems</li>
+          <li><strong>Marketing:</strong> Email marketing and advertising platforms</li>
+        </ul>
+        
+        <h3>13.3 Social Media Integration</h3>
+        <p>
+          Our Platform may include social media features and widgets. These features may collect your IP address, track which pages you visit, and set cookies. Your interactions with these features are governed by the privacy policies of the social media companies.
+        </p>
+      </section>
+      
+      <!-- Section 14 -->
+      <section id="compliance" class="section">
+        <h2>14. Philippine Data Privacy Compliance</h2>
+        
+        <p>
+          ASilva Innovations is committed to full compliance with the <strong>Data Privacy Act of 2012 (Republic Act No. 10173)</strong> and its Implementing Rules and Regulations (IRR).
+        </p>
+        
+        <h3>14.1 National Privacy Commission Registration</h3>
+        <p>
+          As required by the Data Privacy Act, ASilva Innovations is registered with the National Privacy Commission as a Personal Information Controller (PIC).
+        </p>
+        
+        <h3>14.2 Data Protection Principles</h3>
+        <p>
+          We adhere to the following data protection principles under Philippine law:
+        </p>
+        <ul>
+          <li><strong>Transparency:</strong> Clear communication about data processing activities</li>
+          <li><strong>Legitimate Purpose:</strong> Processing only for declared, specified, and legitimate purposes</li>
+          <li><strong>Proportionality:</strong> Collecting only data that is adequate, relevant, and necessary</li>
+          <li><strong>Accountability:</strong> Demonstrating compliance with data protection obligations</li>
+          <li><strong>Security:</strong> Implementing appropriate organizational, physical, and technical measures</li>
+          <li><strong>Rights Protection:</strong> Respecting and facilitating data subject rights</li>
+        </ul>
+        
+        <h3>14.3 Sensitive Personal Information Handling</h3>
+        <p>
+          For Sensitive Personal Information, we:
+        </p>
+        <ul>
+          <li>Obtain explicit consent before collection</li>
+          <li>Limit access to authorized personnel with legitimate need</li>
+          <li>Implement enhanced security measures</li>
+          <li>Maintain detailed processing records</li>
+          <li>Conduct privacy impact assessments</li>
+        </ul>
+        
+        <h3>14.4 Data Breach Notification</h3>
+        <p>
+          In accordance with NPC Circular No. 16-03, we will:
+        </p>
+        <ul>
+          <li>Notify the National Privacy Commission within 72 hours of breach discovery</li>
+          <li>Notify affected individuals when the breach is likely to pose a real risk of serious harm</li>
+          <li>Provide details about the nature of the breach, affected data, and remedial measures</li>
+          <li>Maintain records of all data breaches</li>
+        </ul>
+        
+        <h3>14.5 Cross-Border Data Transfer Compliance</h3>
+        <p>
+          We comply with NPC Circular No. 16-01 on cross-border data transfers, ensuring:
+        </p>
+        <ul>
+          <li>Adequacy of protection in the recipient country</li>
+          <li>Appropriate contractual safeguards</li>
+          <li>NPC authorization when required</li>
+          <li>Accountability for transferred data</li>
+        </ul>
+      </section>
+      
+      <!-- Section 15 -->
+      <section id="gdpr" class="section">
+        <h2>15. GDPR Compliance (for EU Users)</h2>
+        
+        <p>
+          For users located in the European Union, we comply with the General Data Protection Regulation (GDPR). In addition to the rights described in Section 9, EU users have:
+        </p>
+        
+        <h3>15.1 Legal Basis for Processing</h3>
+        <p>
+          We process EU users' data based on the legal bases described in Section 5, ensuring compliance with Article 6 of the GDPR.
+        </p>
+        
+        <h3>15.2 Data Protection Officer</h3>
+        <p>
+          EU users can contact our Data Protection Officer at <a href="mailto:dpo@asilvainnovations.com">dpo@asilvainnovations.com</a>.
+        </p>
+        
+        <h3>15.3 Supervisory Authority</h3>
+        <p>
+          EU users have the right to lodge a complaint with their local Data Protection Authority if they believe we have violated their privacy rights.
+        </p>
+        
+        <h3>15.4 Data Transfer Mechanisms</h3>
+        <p>
+          We transfer EU personal data using appropriate safeguards, including:
+        </p>
+        <ul>
+          <li>Standard Contractual Clauses approved by the European Commission</li>
+          <li>Adequacy decisions</li>
+          <li>Binding Corporate Rules (where applicable)</li>
+        </ul>
+      </section>
+      
+      <!-- Section 16 -->
+      <section id="changes" class="section">
+        <h2>16. Changes to This Privacy Policy</h2>
+        
+        <h3>16.1 Right to Modify</h3>
+        <p>
+          We reserve the right to update or modify this Privacy Policy at any time to reflect changes in our practices, technology, legal requirements, or other factors.
+        </p>
+        
+        <h3>16.2 Notification of Changes</h3>
+        <p>
+          When we make changes to this Privacy Policy, we will:
+        </p>
+        <ul>
+          <li>Update the "Last Updated" date at the top of this page</li>
+          <li>Post the revised Privacy Policy on our Platform</li>
+          <li>For material changes, provide notice through:
+            <ul>
+              <li>Email notification to registered users</li>
+              <li>Prominent notice on our Platform</li>
+              <li>Pop-up notification upon login</li>
+            </ul>
+          </li>
+        </ul>
+        
+        <h3>16.3 Acceptance of Changes</h3>
+        <p>
+          Your continued use of the Platform after changes to this Privacy Policy constitutes acceptance of the updated policy. If you do not agree with the changes, you should discontinue use of the Platform and contact us to close your account.
+        </p>
+        
+        <h3>16.4 Review Responsibility</h3>
+        <p>
+          We encourage you to review this Privacy Policy periodically to stay informed about how we protect your personal information. The "Last Updated" date indicates when the policy was last revised.
+        </p>
+      </section>
+      
+      <!-- Section 17 -->
+      <section id="contact" class="section">
+        <h2>17. Contact Information</h2>
+        
+        <p>
+          If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:
+        </p>
+        
+        <div class="contact-box">
+          <h3>Privacy Inquiries</h3>
+          <div class="contact-info">
+            <div class="contact-item">
+              <span class="contact-label">Privacy Email:</span>
+              <a href="mailto:info@asilvainnovations.com">info@asilvainnovations.com</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Data Protection Officer:</span>
+              <a href="mailto:alvin.silva@asilvainnovations.com">alvin.silva@asilvainnovations.com</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">General Contact:</span>
+              <a href="mailto:admin@asilvainnovations.com">admin@asilvainnovations.com</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Website:</span>
+              <a href="https://asilvainnovations.com" target="_blank" rel="noopener noreferrer">asilvainnovations.com</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Contact Page:</span>
+              <a href="https://asilvainnovations.com/contact" target="_blank" rel="noopener noreferrer">asilvainnovations.com/contact</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Mailing Address:</span>
+              <span>ASilva Innovations<br>Alabang Muntinlupa City, Philippines</span>
+            </div>
+          </div>
+        </div>
+        
+        <h3>Response Time</h3>
+        <p>
+          We aim to respond to all privacy inquiries within:
+        </p>
+        <ul>
+          <li><strong>General Questions:</strong> 5 business days</li>
+          <li><strong>Privacy Rights Requests:</strong> 15 days (as required by Philippine law)</li>
+          <li><strong>Data Breach Inquiries:</strong> 48 hours</li>
+          <li><strong>Urgent Matters:</strong> Indicate "URGENT" in the subject line for priority handling</li>
+        </ul>
+        
+        <h3>Regulatory Authority</h3>
+        <p>
+          For complaints or concerns not resolved to your satisfaction, you may contact:
+        </p>
+        <p>
+          <strong>National Privacy Commission (Philippines)</strong><br>
+          Website: <a href="https://www.privacy.gov.ph" target="_blank" rel="noopener noreferrer">www.privacy.gov.ph</a><br>
+          Email: info@privacy.gov.ph<br>
+          Address: 5th Floor, Delegation Building, PICC Complex, Pasay City, Philippines
+        </p>
+      </section>
+      
+      <!-- Acknowledgment -->
+      <div class="info-box">
+        <p><strong>Acknowledgment:</strong> By using the ASilva Innovations Platform, you acknowledge that you have read, understood, and agree to the collection, use, and disclosure of your personal information as described in this Privacy Policy.</p>
+      </div>
+    </div>
+  </main>
+  
+  <footer role="contentinfo">
+    <nav class="footer-links" aria-label="Footer Navigation">
+      <a href="https://asilvainnovations.com" class="footer-link">Home</a>
+      <a href="https://asilvainnovations.com/terms" class="footer-link">Terms &amp; Conditions</a>
+      <a href="https://asilvainnovations.com/cookie-policy" class="footer-link">Cookie Policy</a>
+      <a href="https://asilvainnovations.com/accessibility" class="footer-link">Accessibility</a>
+      <a href="https://asilvainnovations.com/contact" class="footer-link">Contact</a>
+    </nav>
+    <p></p>
+  </footer>
+</body>
+</html>
