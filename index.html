@@ -30,18 +30,10 @@
     <link rel="icon" type="image/png" href="https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png">
     <link rel="apple-touch-icon" href="https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png">
     
-    <!-- Preload Critical Assets -->
-    <link rel="preload" href="https://appimize.app/assets/apps/user_1097/images/8df0614c4061_739_1097.jpg" as="image">
-    <link rel="preload" href="styles.css" as="style">
-    <link rel="preload" href="script.js" as="script">
-    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="styles.css">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -54,58 +46,1193 @@
       "description": "Enterprise-grade risk management platforms for Local Government Units, NGOs, and SMEs",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Muntinlupa City",
+        "addressLocality": "Quezon City",
         "addressRegion": "National Capital Region",
         "addressCountry": "PH"
       },
       "contactPoint": {
         "@type": "ContactPoint",
-        "contactType": "Information",
-        "email": "info@asilvainnovations.com"
+        "contactType": "Sales",
+        "email": "contact@asilvainnovations.com"
       },
       "sameAs": [
-        "https://linkedin.asilvainnovations.com",
+        "https://linkedin.asilva-innovations.com",
         "https://facebook.asilvainnovations.com",
         "https://instagram.asilvainnovations.com"
       ]
     }
     </script>
+
+    <style>
+        /* ============================================
+           ASilva Innovations - Complete Styles
+           ============================================ */
+
+        :root {
+            --color-bg-primary: #020617;
+            --color-bg-secondary: #0f172a;
+            --color-slate-900: #0f172a;
+            --color-slate-800: #1e293b;
+            --color-slate-700: #334155;
+            --color-slate-600: #475569;
+            --color-slate-500: #64748b;
+            --color-slate-400: #94a3b8;
+            --color-slate-300: #cbd5e1;
+            --color-slate-200: #e2e8f0;
+            --color-slate-100: #f1f5f9;
+            --color-blue-600: #2563eb;
+            --color-blue-500: #3b82f6;
+            --color-blue-400: #60a5fa;
+            --color-blue-300: #93c5fd;
+            --color-indigo-700: #4338ca;
+            --color-indigo-600: #4f46e5;
+            --color-cyan-400: #22d3ee;
+            --color-cyan-300: #67e8f9;
+            --color-emerald-600: #059669;
+            --color-emerald-500: #10b981;
+            --color-emerald-400: #34d399;
+            --color-emerald-300: #6ee7b7;
+            --color-amber-600: #d97706;
+            --color-amber-500: #f59e0b;
+            --color-amber-400: #fbbf24;
+            --color-amber-300: #fcd34d;
+            --color-rose-600: #e11d48;
+            --font-display: 'Orbitron', system-ui, sans-serif;
+            --font-body: 'Inter', system-ui, sans-serif;
+            --transition-normal: 300ms ease;
+            --transition-slow: 500ms ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg-primary);
+            color: var(--color-slate-100);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        .skip-link {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            background: var(--color-blue-600);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            z-index: 100;
+            transform: translateY(-200%);
+            transition: transform var(--transition-normal);
+        }
+
+        .skip-link:focus {
+            transform: translateY(0);
+            outline: 2px solid var(--color-blue-400);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            inset: 0;
+            background: var(--color-bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loading-logo {
+            width: 6rem;
+            height: 6rem;
+            background: linear-gradient(135deg, var(--color-blue-600), var(--color-indigo-700));
+            border-radius: 50%;
+            padding: 0.375rem;
+            box-shadow: 0 0 40px rgba(37, 99, 235, 0.5);
+            margin: 0 auto 1.5rem;
+            animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        .logo-inner {
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.375rem;
+        }
+
+        .loading-dots {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .dot {
+            width: 0.75rem;
+            height: 0.75rem;
+            background: var(--color-blue-500);
+            border-radius: 50%;
+            animation: bounce 1.4s ease-in-out infinite;
+        }
+
+        .dot:nth-child(1) { animation-delay: 0s; }
+        .dot:nth-child(2) { animation-delay: 0.2s; }
+        .dot:nth-child(3) { animation-delay: 0.4s; }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background: transparent;
+            padding: 1.5rem 0;
+            transition: all var(--transition-normal);
+        }
+
+        .navbar.scrolled {
+            background: rgba(2, 6, 23, 0.95);
+            backdrop-filter: blur(16px);
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(37, 99, 235, 0.3);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-circle {
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, var(--color-blue-600), var(--color-indigo-700));
+            border-radius: 50%;
+            padding: 0.375rem;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+            border: 3px solid white;
+            transition: transform var(--transition-normal);
+        }
+
+        .logo-link:hover .logo-circle {
+            transform: scale(1.1);
+        }
+
+        .logo-circle-inner {
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.375rem;
+        }
+
+        .logo-circle-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .logo-highlight {
+            color: var(--color-blue-400);
+        }
+
+        .logo-tagline {
+            font-size: 0.563rem;
+            color: var(--color-slate-400);
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .logo-tagline {
+                display: block;
+            }
+        }
+
+        .nav-menu {
+            display: none;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .nav-menu {
+                display: flex;
+            }
+        }
+
+        .nav-link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-slate-300);
+            padding: 0.5rem 0.25rem;
+            border-bottom: 2px solid transparent;
+            transition: all var(--transition-normal);
+        }
+
+        .nav-link:hover {
+            color: var(--color-blue-300);
+            border-bottom-color: var(--color-blue-400);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-blue-600), var(--color-indigo-700));
+            color: white;
+            padding: 0.625rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            transition: all var(--transition-normal);
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(37, 99, 235, 0.4);
+        }
+
+        .mobile-menu-btn {
+            display: block;
+            color: var(--color-slate-100);
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        .menu-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .menu-close {
+            display: none;
+        }
+
+        .mobile-menu-btn[aria-expanded="true"] .menu-open {
+            display: none;
+        }
+
+        .mobile-menu-btn[aria-expanded="true"] .menu-close {
+            display: block;
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 60;
+            opacity: 0;
+            visibility: hidden;
+            transition: all var(--transition-normal);
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            max-width: 24rem;
+            background: var(--color-bg-primary);
+            z-index: 70;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transform: translateX(100%);
+            transition: transform var(--transition-normal);
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--color-blue-400), var(--color-cyan-300));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .mobile-menu-close {
+            padding: 0.5rem;
+            color: var(--color-slate-300);
+        }
+
+        .mobile-menu-close svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            margin-top: 2rem;
+        }
+
+        .mobile-nav-link {
+            font-size: 1.25rem;
+            font-weight: 700;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all var(--transition-normal);
+        }
+
+        .mobile-nav-link:hover {
+            color: var(--color-blue-400);
+            transform: translateX(0.5rem);
+        }
+
+        .mobile-cta-btn {
+            background: linear-gradient(135deg, var(--color-blue-600), var(--color-indigo-700));
+            color: white;
+            padding: 1rem;
+            border-radius: 0.75rem;
+            text-align: center;
+            font-weight: 700;
+            margin-top: 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding-top: 8rem;
+            padding-bottom: 7rem;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                padding-top: 12rem;
+            }
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(2, 6, 23, 0.95), rgba(2, 6, 23, 0.85), rgba(2, 6, 23, 0.90));
+        }
+
+        .hero-overlay-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, var(--color-bg-primary), transparent, var(--color-bg-primary));
+        }
+
+        .hero-accents {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .accent {
+            position: absolute;
+            width: 24rem;
+            height: 24rem;
+            border-radius: 50%;
+            filter: blur(64px);
+            opacity: 0.1;
+        }
+
+        .accent-1 {
+            top: 25%;
+            left: 25%;
+            background: var(--color-blue-600);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .accent-2 {
+            bottom: 25%;
+            right: 25%;
+            background: var(--color-indigo-600);
+            animation: float 6s ease-in-out 3s infinite;
+        }
+
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            position: relative;
+            z-index: 10;
+            width: 100%;
+        }
+
+        .hero-content {
+            max-width: 64rem;
+            margin: 0 auto;
+            text-align: center;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.625rem 1.25rem;
+            border-radius: 9999px;
+            background: rgba(59, 130, 246, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            color: var(--color-blue-300);
+            font-size: 0.875rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .badge-icon {
+            font-size: 1.25rem;
+            animation: bounce 1s ease-in-out infinite;
+        }
+
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 3.75rem;
+            }
+        }
+
+        .title-line-1 {
+            display: block;
+            color: white;
+        }
+
+        .title-line-2 {
+            display: block;
+            background: linear-gradient(135deg, var(--color-blue-400), var(--color-cyan-400), var(--color-blue-300));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            padding: 0.5rem 0;
+            background-size: 200% 200%;
+            animation: gradient 3s ease infinite;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: var(--color-slate-200);
+            max-width: 48rem;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .description-highlight {
+            color: var(--color-blue-300);
+            font-weight: 600;
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding-top: 1rem;
+            justify-content: center;
+        }
+
+        @media (min-width: 640px) {
+            .hero-cta {
+                flex-direction: row;
+            }
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, var(--color-blue-600), var(--color-indigo-700));
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            font-size: 1.125rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.4);
+            transition: all var(--transition-normal);
+        }
+
+        .cta-primary:hover {
+            transform: scale(1.05);
+        }
+
+        .cta-secondary {
+            background: rgba(15, 23, 42, 0.9);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: 700;
+            font-size: 1.125rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+            text-align: center;
+            transition: all var(--transition-normal);
+        }
+
+        .cta-secondary:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding-top: 1rem;
+            justify-content: center;
+            font-size: 0.875rem;
+        }
+
+        .cert-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            border: 1px solid;
+            backdrop-filter: blur(4px);
+        }
+
+        .cert-badge-1 {
+            color: var(--color-emerald-400);
+            background: rgba(5, 150, 105, 0.3);
+            border-color: rgba(5, 150, 105, 0.3);
+        }
+
+        .cert-badge-2 {
+            color: var(--color-amber-300);
+            background: rgba(217, 119, 6, 0.3);
+            border-color: rgba(217, 119, 6, 0.3);
+        }
+
+        .badge-pulse {
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+            background: currentColor;
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 5rem 1.5rem;
+            background: linear-gradient(180deg, var(--color-slate-900), var(--color-bg-primary));
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        @media (min-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 1rem;
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all var(--transition-slow);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .stat-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stat-card:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(0) scale(1.05);
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--color-blue-400), var(--color-cyan-300));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .stat-value {
+                font-size: 3rem;
+            }
+        }
+
+        .stat-label {
+            color: var(--color-slate-400);
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 6rem 1.5rem;
+            background: linear-gradient(180deg, var(--color-bg-primary), var(--color-slate-900));
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-blue-400), var(--color-cyan-400), var(--color-blue-300));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 3rem;
+            }
+        }
+
+        .section-divider {
+            height: 0.375rem;
+            width: 8rem;
+            background: linear-gradient(90deg, var(--color-blue-500), var(--color-cyan-400), var(--color-blue-500));
+            margin: 0 auto 1.5rem;
+            border-radius: 9999px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .section-description {
+            font-size: 1.25rem;
+            color: var(--color-slate-300);
+            max-width: 48rem;
+            margin: 0 auto;
+            font-weight: 500;
+            line-height: 1.7;
+        }
+
+        .services-grid {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (min-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .services-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .service-card {
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(15, 23, 42, 0.5);
+            display: flex;
+            flex-direction: column;
+            transition: all var(--transition-slow);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            background: var(--color-slate-900);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+            transform: translateY(-0.5rem) scale(1.05);
+        }
+
+        .service-image {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16/9;
+            margin-bottom: 1.5rem;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(30, 41, 59, 0.5);
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-icon-wrapper {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(30, 41, 59, 0.7);
+            margin-bottom: 1.5rem;
+            font-size: 1.875rem;
+            transition: all var(--transition-slow);
+        }
+
+        .service-card:hover .service-icon-wrapper {
+            background: linear-gradient(135deg, var(--color-blue-600), var(--color-indigo-700));
+            transform: scale(1.1);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .service-description {
+            color: var(--color-slate-300);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            flex-grow: 1;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--color-slate-200);
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-check {
+            font-size: 1.125rem;
+            color: var(--color-blue-400);
+        }
+
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 700;
+            color: var(--color-slate-400);
+            transition: all var(--transition-normal);
+        }
+
+        .service-card:hover .service-link {
+            color: var(--color-blue-300);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 6rem 1.5rem;
+            background: linear-gradient(180deg, var(--color-slate-900), var(--color-bg-primary));
+        }
+
+        .contact-grid {
+            display: grid;
+            gap: 4rem;
+        }
+
+        @media (min-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .contact-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, var(--color-blue-400), var(--color-cyan-300), var(--color-blue-400));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-description {
+            color: var(--color-slate-300);
+            font-size: 1.125rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .contact-form-wrapper {
+            background: var(--color-slate-900);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-label {
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-slate-400);
+        }
+
+        .required {
+            color: #f87171;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            padding: 1rem 1.25rem;
+            color: white;
+            font-weight: 500;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all var(--transition-normal);
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--color-blue-500);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .form-select {
+            cursor: pointer;
+        }
+
+        .form-textarea {
+            resize: none;
+            min-height: 6rem;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--color-blue-600), var(--color-indigo-700));
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 1.25rem;
+            border-radius: 0.75rem;
+            transition: all var(--transition-normal);
+            cursor: pointer;
+        }
+
+        .form-submit:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 4rem 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background: #010409;
+        }
+
+        .footer-grid {
+            display: grid;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .footer-logo-text {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.25rem;
+            background: linear-gradient(135deg, var(--color-blue-400), var(--color-cyan-300));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-description {
+            color: var(--color-slate-400);
+            line-height: 1.7;
+            margin: 1rem 0;
+        }
+
+        .footer-heading {
+            font-size: 1.125rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--color-slate-400);
+            transition: color var(--transition-normal);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-blue-300);
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--color-slate-500);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-25%);
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Skip Navigation -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
     
     <!-- Loading Screen -->
     <div id="loading-screen" class="loading-screen">
-        <div class="loading-content">
+        <div>
             <div class="loading-logo">
-                <div class="logo-outer">
-                    <div class="logo-inner">
-                        <img src="https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png" 
-                             alt="ASilva Innovations" 
-                             class="logo-img"
-                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'logo-fallback\'>A</div>'">
-                    </div>
+                <div class="logo-inner">
+                    <img src="https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png" alt="ASilva Innovations">
                 </div>
             </div>
             <div class="loading-dots">
-                <div class="dot" style="animation-delay: 0s"></div>
-                <div class="dot" style="animation-delay: 0.2s"></div>
-                <div class="dot" style="animation-delay: 0.4s"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
             </div>
         </div>
     </div>
 
     <!-- Navigation -->
-    <nav id="navbar" class="navbar" role="navigation" aria-label="Main navigation">
+    <nav id="navbar" class="navbar">
         <div class="nav-container">
-            <a href="#hero" class="logo-link" aria-label="ASilva Innovations homepage">
+            <a href="#hero" class="logo-link">
                 <div class="logo-circle">
                     <div class="logo-circle-inner">
-                        <img src="https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png" 
-                             alt="ASilva Innovations logo" 
-                             class="logo-img"
-                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'logo-fallback\'>A</div>'">
+                        <img src="https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png" alt="ASilva Innovations logo">
                     </div>
                 </div>
                 <div class="logo-text">
@@ -114,21 +1241,17 @@
                 </div>
             </a>
 
-            <!-- Desktop Navigation -->
             <div class="nav-menu">
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#impact" class="nav-link">Impact</a>
                 <a href="#contact" class="nav-link">Contact</a>
-                <a href="https://asilvainnovations.com/blog" target="_blank" rel="noopener noreferrer" class="nav-link">
-                    Blog <span class="external-icon">↗</span>
-                </a>
+                <a href="https://asilvainnovations.com/blog" target="_blank" rel="noopener noreferrer" class="nav-link">Blog ↗</a>
                 <a href="#contact" class="btn-primary">
                     <span>Get Started</span>
-                    <span class="btn-arrow">→</span>
+                    <span>→</span>
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
             <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
                 <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <path class="menu-open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -138,60 +1261,37 @@
         </div>
     </nav>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
-    
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="mobile-menu" role="dialog" aria-modal="true">
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
+    <div id="mobile-menu" class="mobile-menu">
         <div class="mobile-menu-header">
             <h2 class="mobile-menu-title">Menu</h2>
-            <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Close menu">
+            <button class="mobile-menu-close" id="mobile-menu-close">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
         </div>
         
-        <div class="mobile-menu-logo">
-            <div class="logo-circle">
-                <div class="logo-circle-inner">
-                    <img src="https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png" 
-                         alt="ASilva Innovations logo"
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'logo-fallback\'>A</div>'">
-                </div>
-            </div>
-            <span class="mobile-logo-text">ASilva Innovations</span>
-        </div>
-
         <nav class="mobile-nav">
             <a href="#services" class="mobile-nav-link">Services</a>
             <a href="#impact" class="mobile-nav-link">Impact</a>
             <a href="#contact" class="mobile-nav-link">Contact</a>
-            <a href="https://asilvainnovations.com/blog" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
-                Blog <span class="external-icon">↗</span>
-            </a>
+            <a href="https://asilvainnovations.com/blog" target="_blank" class="mobile-nav-link">Blog ↗</a>
         </nav>
         
         <a href="#contact" class="mobile-cta-btn">Get Started Today</a>
-        
-        <div class="mobile-menu-footer">
-            <p>Building resilient communities</p>
-            <p>© <span id="footer-year"></span> ASilva Innovations</p>
-        </div>
     </div>
 
     <!-- Hero Section -->
     <header id="hero" class="hero" tabindex="-1">
         <div class="hero-bg">
-            <img src="https://appimize.app/assets/apps/user_1097/images/8df0614c4061_739_1097.jpg" 
-                 alt="Hero background" 
-                 class="hero-bg-img"
-                 onerror="this.style.display='none'">
+            <img src="https://appimize.app/assets/apps/user_1097/images/8df0614c4061_739_1097.jpg" alt="Hero background">
             <div class="hero-overlay"></div>
             <div class="hero-overlay-gradient"></div>
         </div>
 
-        <div class="hero-accents" aria-hidden="true">
+        <div class="hero-accents">
             <div class="accent accent-1"></div>
             <div class="accent accent-2"></div>
         </div>
@@ -216,7 +1316,7 @@
                 <div class="hero-cta">
                     <a href="#contact" class="cta-primary">
                         <span>Schedule a Demo</span>
-                        <span class="cta-arrow">→</span>
+                        <span>→</span>
                     </a>
                     <a href="#services" class="cta-secondary">View All Solutions</a>
                 </div>
@@ -236,39 +1336,35 @@
     </header>
 
     <!-- Stats Section -->
-    <section class="stats-section" aria-labelledby="stats-heading">
+    <section class="stats-section">
         <div class="container">
-            <h2 id="stats-heading" class="sr-only">Impact Statistics</h2>
+            <h2 class="sr-only">Impact Statistics</h2>
             <div class="stats-grid">
-                <div class="stat-card" data-index="0">
+                <div class="stat-card">
                     <div class="stat-icon">🏛️</div>
                     <div class="stat-value">
-                        <span class="counter" data-target="15">0</span>
-                        <span class="stat-suffix">+</span>
+                        <span class="counter" data-target="15">0</span><span>+</span>
                     </div>
                     <div class="stat-label">Government Partners</div>
                 </div>
-                <div class="stat-card" data-index="1">
+                <div class="stat-card">
                     <div class="stat-icon">🛡️</div>
                     <div class="stat-value">
-                        <span class="counter" data-target="3200">0</span>
-                        <span class="stat-suffix">+</span>
+                        <span class="counter" data-target="3200">0</span><span>+</span>
                     </div>
                     <div class="stat-label">Lives Protected</div>
                 </div>
-                <div class="stat-card" data-index="2">
+                <div class="stat-card">
                     <div class="stat-icon">⚡</div>
                     <div class="stat-value">
-                        <span class="counter" data-target="70">0</span>
-                        <span class="stat-suffix">%</span>
+                        <span class="counter" data-target="70">0</span><span>%</span>
                     </div>
                     <div class="stat-label">Faster Response Time</div>
                 </div>
-                <div class="stat-card" data-index="3">
+                <div class="stat-card">
                     <div class="stat-icon">⭐</div>
                     <div class="stat-value">
-                        <span class="counter" data-target="98">0</span>
-                        <span class="stat-suffix">%</span>
+                        <span class="counter" data-target="98">0</span><span>%</span>
                     </div>
                     <div class="stat-label">Client Retention</div>
                 </div>
@@ -277,10 +1373,10 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services-section" aria-labelledby="services-heading">
+    <section id="services" class="services-section">
         <div class="container">
             <div class="section-header">
-                <h2 id="services-heading" class="section-title">Purpose-Built Solutions</h2>
+                <h2 class="section-title">Purpose-Built Solutions</h2>
                 <div class="section-divider"></div>
                 <p class="section-description">
                     Enterprise-grade platforms designed specifically for resource-constrained environments.
@@ -289,22 +1385,11 @@
             </div>
 
             <div class="services-grid">
-                <!-- DDRiVE-M Platform -->
-                <div class="service-card" data-service="ddrive" tabindex="0">
+                <div class="service-card">
                     <div class="service-image">
-                        <img src="https://appimize.app/assets/apps/user_1097/images/4750f689086d_379_1097.png" 
-                             alt="DDRiVE-M Platform Dashboard Interface"
-                             loading="lazy"
-                             onerror="this.parentElement.classList.add('service-image-error')">
-                        <div class="service-image-overlay"></div>
-                        <div class="service-image-label">
-                            <span class="service-icon">🎯</span>
-                            <span>DDRiVE-M Platform</span>
-                        </div>
+                        <img src="https://appimize.app/assets/apps/user_1097/images/4750f689086d_379_1097.png" alt="DDRiVE-M Platform">
                     </div>
-                    <div class="service-icon-wrapper">
-                        <span class="service-icon-lg">🎯</span>
-                    </div>
+                    <div class="service-icon-wrapper">🎯</div>
                     <h3 class="service-title">DDRiVE-M Platform</h3>
                     <p class="service-description">
                         Flagship Enterprise Risk Management system delivering real-time vulnerability mapping, compliance tracking, and predictive analytics for LGUs and NGOs.
@@ -315,28 +1400,17 @@
                         <li><span class="feature-check">✓</span> Predictive Vulnerability Mapping</li>
                         <li><span class="feature-check">✓</span> Customizable Dashboards</li>
                     </ul>
-                    <a href="https://asilvainnovations.com/ddrive-m" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <a href="https://asilvainnovations.com/ddrive-m" target="_blank" class="service-link">
                         <span>Explore Solution</span>
-                        <span class="link-arrow">→</span>
+                        <span>→</span>
                     </a>
                 </div>
 
-                <!-- Strategic Planner Pro -->
-                <div class="service-card" data-service="stratplanner" tabindex="0">
+                <div class="service-card">
                     <div class="service-image">
-                        <img src="https://appimize.app/assets/apps/user_1097/images/d6780c531792_34_1097.png" 
-                             alt="Strategic Planner Pro Interface"
-                             loading="lazy"
-                             onerror="this.parentElement.classList.add('service-image-error')">
-                        <div class="service-image-overlay"></div>
-                        <div class="service-image-label">
-                            <span class="service-icon">📊</span>
-                            <span>Strategic Planner Pro</span>
-                        </div>
+                        <img src="https://appimize.app/assets/apps/user_1097/images/d6780c531792_34_1097.png" alt="Strategic Planner Pro">
                     </div>
-                    <div class="service-icon-wrapper">
-                        <span class="service-icon-lg">📊</span>
-                    </div>
+                    <div class="service-icon-wrapper">📊</div>
                     <h3 class="service-title">Strategic Planner Pro</h3>
                     <p class="service-description">
                         AI-powered strategic planning suite that transforms complex data into actionable roadmaps with automated analysis and performance tracking.
@@ -347,28 +1421,17 @@
                         <li><span class="feature-check">✓</span> Portfolio Tracking</li>
                         <li><span class="feature-check">✓</span> Stakeholder Alignment</li>
                     </ul>
-                    <a href="https://asilvainnovations.com/strat-planner-pro/" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <a href="https://asilvainnovations.com/strat-planner-pro/" target="_blank" class="service-link">
                         <span>Explore Solution</span>
-                        <span class="link-arrow">→</span>
+                        <span>→</span>
                     </a>
                 </div>
 
-                <!-- Real-Time Leadership -->
-                <div class="service-card" data-service="rtl" tabindex="0">
+                <div class="service-card">
                     <div class="service-image">
-                        <img src="https://appimize.app/assets/apps/user_1097/images/d479ce1cc4b2_113_1097.png" 
-                             alt="Real-Time Leadership Dashboard"
-                             loading="lazy"
-                             onerror="this.parentElement.classList.add('service-image-error')">
-                        <div class="service-image-overlay"></div>
-                        <div class="service-image-label">
-                            <span class="service-icon">🧠</span>
-                            <span>Real-Time Leadership</span>
-                        </div>
+                        <img src="https://appimize.app/assets/apps/user_1097/images/d479ce1cc4b2_113_1097.png" alt="Real-Time Leadership">
                     </div>
-                    <div class="service-icon-wrapper">
-                        <span class="service-icon-lg">🧠</span>
-                    </div>
+                    <div class="service-icon-wrapper">🧠</div>
                     <h3 class="service-title">Real-Time Leadership</h3>
                     <p class="service-description">
                         Actionable intelligence platform converting environmental data into life-saving decisions for NGOs and SMEs in high-risk regions.
@@ -379,28 +1442,17 @@
                         <li><span class="feature-check">✓</span> Impact Reporting Suite</li>
                         <li><span class="feature-check">✓</span> Cross-Agency Collaboration</li>
                     </ul>
-                    <a href="https://asilvainnovations.com/rtl" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <a href="https://asilvainnovations.com/rtl" target="_blank" class="service-link">
                         <span>Explore Solution</span>
-                        <span class="link-arrow">→</span>
+                        <span>→</span>
                     </a>
                 </div>
 
-                <!-- AI & Automation Suite -->
-                <div class="service-card" data-service="ai-solutions" tabindex="0">
+                <div class="service-card">
                     <div class="service-image">
-                        <img src="https://appimize.app/assets/apps/user_1097/images/055b612d128d_302_1097.png" 
-                             alt="AI Solutions Platform"
-                             loading="lazy"
-                             onerror="this.parentElement.classList.add('service-image-error')">
-                        <div class="service-image-overlay"></div>
-                        <div class="service-image-label">
-                            <span class="service-icon">🤖</span>
-                            <span>AI & Automation Suite</span>
-                        </div>
+                        <img src="https://appimize.app/assets/apps/user_1097/images/055b612d128d_302_1097.png" alt="AI Solutions">
                     </div>
-                    <div class="service-icon-wrapper">
-                        <span class="service-icon-lg">🤖</span>
-                    </div>
+                    <div class="service-icon-wrapper">🤖</div>
                     <h3 class="service-title">AI & Automation Suite</h3>
                     <p class="service-description">
                         Specialized AI solutions for public sector challenges including flood prediction, damage assessment, and intelligent resource routing.
@@ -411,311 +1463,54 @@
                         <li><span class="feature-check">✓</span> Intelligent Resource Routing</li>
                         <li><span class="feature-check">✓</span> Custom AI Training</li>
                     </ul>
-                    <a href="https://asilvainnovations.com/ai-solutions" target="_blank" rel="noopener noreferrer" class="service-link">
+                    <a href="https://asilvainnovations.com/ai-solutions" target="_blank" class="service-link">
                         <span>Explore Solution</span>
-                        <span class="link-arrow">→</span>
+                        <span>→</span>
                     </a>
-                </div>
-            </div>
-
-            <!-- Key Features -->
-            <div class="key-features">
-                <h3 class="features-title">Why Organizations Choose Us</h3>
-                <div class="features-grid">
-                    <div class="feature-card" data-index="0">
-                        <div class="feature-icon">🎯</div>
-                        <h4 class="feature-title">Rapid Deployment</h4>
-                        <p class="feature-description">Get up and running in under 30 days with our proven implementation methodology</p>
-                        <ul class="feature-benefits">
-                            <li><span class="benefit-arrow">→</span> Minimal infrastructure required</li>
-                            <li><span class="benefit-arrow">→</span> Comprehensive training included</li>
-                            <li><span class="benefit-arrow">→</span> Dedicated onboarding support</li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-card" data-index="1">
-                        <div class="feature-icon">📊</div>
-                        <h4 class="feature-title">Real-Time Intelligence</h4>
-                        <p class="feature-description">Make data-driven decisions with live vulnerability mapping and predictive analytics</p>
-                        <ul class="feature-benefits">
-                            <li><span class="benefit-arrow">→</span> 24/7 monitoring capabilities</li>
-                            <li><span class="benefit-arrow">→</span> Automated alerts and notifications</li>
-                            <li><span class="benefit-arrow">→</span> Historical data analysis</li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-card" data-index="2">
-                        <div class="feature-icon">🔒</div>
-                        <h4 class="feature-title">Compliance Ready</h4>
-                        <p class="feature-description">Built-in compliance with Philippine DRRM Act (RA 10121) and ISO 31000 standards</p>
-                        <ul class="feature-benefits">
-                            <li><span class="benefit-arrow">→</span> Automated reporting</li>
-                            <li><span class="benefit-arrow">→</span> Audit trail functionality</li>
-                            <li><span class="benefit-arrow">→</span> Regular compliance updates</li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-card" data-index="3">
-                        <div class="feature-icon">💡</div>
-                        <h4 class="feature-title">Continuous Innovation</h4>
-                        <p class="feature-description">Regular updates with the latest AI models and disaster response best practices</p>
-                        <ul class="feature-benefits">
-                            <li><span class="benefit-arrow">→</span> Quarterly feature releases</li>
-                            <li><span class="benefit-arrow">→</span> Community-driven improvements</li>
-                            <li><span class="benefit-arrow">→</span> Free platform upgrades</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section-footer">
-                <a href="https://asilvainnovations.com/solutions" target="_blank" rel="noopener noreferrer" class="portfolio-link">
-                    <span>See Full Solution Portfolio</span>
-                    <span class="link-arrow">↗</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Impact Section -->
-    <section id="impact" class="impact-section" aria-labelledby="impact-heading">
-        <div class="container">
-            <div class="impact-card">
-                <div class="impact-pattern" aria-hidden="true"></div>
-                
-                <div class="impact-content">
-                    <div class="impact-info">
-                        <div class="impact-header">
-                            <h2 id="impact-heading" class="impact-title">Real Impact in Vulnerable Communities</h2>
-                            <p class="impact-description">
-                                We measure success by <span class="impact-highlight blue">lives protected</span>,
-                                <span class="impact-highlight emerald">resources optimized</span>, and
-                                <span class="impact-highlight amber">communities empowered</span>—not just software deployed.
-                            </p>
-                        </div>
-                        
-                        <div class="personas-grid">
-                            <div class="persona-card" data-index="0">
-                                <div class="persona-icon blue">🏛️</div>
-                                <h3 class="persona-title">Local Government Units</h3>
-                                <p class="persona-description">End-to-end digital transformation for disaster resilience, compliance management, and community protection. Deployable in 30 days.</p>
-                                <div class="persona-stat blue">
-                                    <div class="stat-pulse"></div>
-                                    12+ Philippine LGUs
-                                </div>
-                            </div>
-
-                            <div class="persona-card" data-index="1">
-                                <div class="persona-icon rose">🤝</div>
-                                <h3 class="persona-title">NGOs & Development Agencies</h3>
-                                <p class="persona-description">Maximize field impact with predictive analytics and resource optimization tools for humanitarian operations.</p>
-                                <div class="persona-stat rose">
-                                    <div class="stat-pulse"></div>
-                                    37% faster deployment
-                                </div>
-                            </div>
-
-                            <div class="persona-card" data-index="2">
-                                <div class="persona-icon amber">💼</div>
-                                <h3 class="persona-title">SMEs & Social Enterprises</h3>
-                                <p class="persona-description">Enterprise-grade risk intelligence at accessible pricing. Protect operations and demonstrate resilience.</p>
-                                <div class="persona-stat amber">
-                                    <div class="stat-pulse"></div>
-                                    ROI in 6 months
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonials">
-                        <!-- Testimonial 1 -->
-                        <div class="testimonial" data-index="0">
-                            <div class="testimonial-bg">
-                                <img src="https://appimize.app/assets/apps/user_1097/images/d6780c531792_34_1097.png" 
-                                     alt="Strategic Planner Pro" 
-                                     loading="lazy">
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="rating">
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                </div>
-                                <blockquote>
-                                    <div class="quote-mark quote-open">"</div>
-                                    <p class="testimonial-text">
-                                        ASilva Innovations' approach in updating our Comprehensive Development Plan into a Risk-Informed Strategic Plan has truly been a game-changer for Salcedo. It gave us a clear and practical framework that integrates disaster risk reduction into our local development priorities.
-                                    </p>
-                                    <div class="quote-mark quote-close">"</div>
-                                </blockquote>
-                                <div class="testimonial-author">
-                                    <div class="author-avatar">👤</div>
-                                    <div class="author-info">
-                                        <div class="author-name">Arnold Pica</div>
-                                        <div class="author-title">Municipal Disaster Risk Reduction and Management Officer</div>
-                                        <div class="author-org">Salcedo, Eastern Samar</div>
-                                    </div>
-                                </div>
-                                <footer class="testimonial-footer">
-                                    <div class="verified-badge"></div>
-                                    Verified client testimonial • December 2025
-                                </footer>
-                            </div>
-                        </div>
-
-                        <!-- Testimonial 2 -->
-                        <div class="testimonial" data-index="1">
-                            <div class="testimonial-bg">
-                                <img src="https://appimize.app/assets/apps/user_1097/images/055b612d128d_302_1097.png" 
-                                     alt="AI Solutions" 
-                                     loading="lazy">
-                            </div>
-                            <div class="testimonial-content">
-                                <div class="rating">
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                    <span class="star">★</span>
-                                </div>
-                                <blockquote>
-                                    <div class="quote-mark quote-open">"</div>
-                                    <p class="testimonial-text">
-                                        ASilva Innovations' customized Integrated Risk and Resilience Management (IRRM) has been transformative for Bangsamoro communities and civil society organizations. Their approach not only strengthened our capacity to anticipate and manage risks but also empowered local stakeholders to build resilience from the ground up.
-                                    </p>
-                                    <div class="quote-mark quote-close">"</div>
-                                </blockquote>
-                                <div class="testimonial-author">
-                                    <div class="author-avatar">👤</div>
-                                    <div class="author-info">
-                                        <div class="author-name">Rhadzni Taalim</div>
-                                        <div class="author-title">Executive Director</div>
-                                        <div class="author-org">Bangsamoro Development Agency (BDA), Cotabato City</div>
-                                    </div>
-                                </div>
-                                <footer class="testimonial-footer">
-                                    <div class="verified-badge"></div>
-                                    Verified client testimonial • January 2026
-                                </footer>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+    <section id="contact" class="contact-section">
         <div class="container">
             <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-header">
-                        <h2 id="contact-heading" class="contact-title">Start Your Resilience Journey</h2>
-                        <p class="contact-description">
-                            Join <span class="contact-highlight blue">50+ forward-thinking organizations</span> across Southeast Asia who trust ASilva Innovations to protect their communities and optimize their operations.
-                            <span class="contact-highlight emerald">Let's build your custom solution.</span>
-                        </p>
-                    </div>
-
-                    <div class="rtl-showcase">
-                        <img src="https://appimize.app/assets/apps/user_1097/images/d479ce1cc4b2_113_1097.png" 
-                             alt="Real-Time Leadership Platform" 
-                             loading="lazy">
-                        <div class="showcase-overlay"></div>
-                        <div class="showcase-label">
-                            <div class="showcase-subtitle">
-                                <span class="showcase-icon">🧠</span>
-                                <span>Real-Time Leadership</span>
-                            </div>
-                            <div class="showcase-title">Actionable Intelligence for Life-Saving Decisions</div>
-                        </div>
-                    </div>
-
-                    <div class="contact-benefits">
-                        <div class="benefit-item" data-index="0">
-                            <div class="benefit-icon blue">📅</div>
-                            <div class="benefit-content">
-                                <div class="benefit-title">Schedule a Consultation</div>
-                                <div class="benefit-description">Free 60-minute strategy session with our resilience experts</div>
-                            </div>
-                        </div>
-
-                        <div class="benefit-item" data-index="1">
-                            <div class="benefit-icon amber">💡</div>
-                            <div class="benefit-content">
-                                <div class="benefit-title">Custom Solution Design</div>
-                                <div class="benefit-description">Tailored implementation roadmap for your organization's unique challenges</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="why-partner">
-                        <h3 class="why-title">
-                            <div class="why-icon">✓</div>
-                            Why Partner With Us?
-                        </h3>
-                        <ul class="why-list">
-                            <li><span class="list-bullet">•</span> Philippine-based team with deep LGU/NGO experience</li>
-                            <li><span class="list-bullet">•</span> 98% client retention rate since 2020</li>
-                            <li><span class="list-bullet">•</span> Compliance with Philippine DRRM Act (RA 10121)</li>
-                            <li><span class="list-bullet">•</span> Transparent pricing with no hidden fees</li>
-                        </ul>
-                    </div>
+                <div>
+                    <h2 class="contact-title">Start Your Resilience Journey</h2>
+                    <p class="contact-description">
+                        Join 50+ forward-thinking organizations across Southeast Asia who trust ASilva Innovations to protect their communities and optimize their operations.
+                    </p>
                 </div>
 
                 <div class="contact-form-wrapper">
-                    <form id="contact-form" class="contact-form" aria-label="Contact form">
+                    <form id="contact-form" class="contact-form">
                         <div class="form-group">
                             <label for="name" class="form-label">
                                 Full Name <span class="required">*</span>
                             </label>
-                            <input type="text" 
-                                   id="name" 
-                                   name="name" 
-                                   class="form-input" 
-                                   placeholder="Maria Santos" 
-                                   required 
-                                   aria-required="true">
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Maria Santos" required>
                         </div>
 
                         <div class="form-group">
                             <label for="email" class="form-label">
                                 Email Address <span class="required">*</span>
                             </label>
-                            <input type="email" 
-                                   id="email" 
-                                   name="email" 
-                                   class="form-input" 
-                                   placeholder="maria.santos@lgu-salcedo.gov.ph" 
-                                   required 
-                                   aria-required="true">
+                            <input type="email" id="email" name="email" class="form-input" placeholder="maria.santos@lgu-salcedo.gov.ph" required>
                         </div>
 
                         <div class="form-group">
                             <label for="organization" class="form-label">
                                 Organization <span class="required">*</span>
                             </label>
-                            <input type="text" 
-                                   id="organization" 
-                                   name="organization" 
-                                   class="form-input" 
-                                   placeholder="LGU Salcedo, Eastern Samar" 
-                                   required 
-                                   aria-required="true">
+                            <input type="text" id="organization" name="organization" class="form-input" placeholder="LGU Salcedo, Eastern Samar" required>
                         </div>
 
                         <div class="form-group">
                             <label for="inquiry" class="form-label">
                                 Inquiry Type <span class="required">*</span>
                             </label>
-                            <select id="inquiry" 
-                                    name="inquiry" 
-                                    class="form-select" 
-                                    required 
-                                    aria-required="true">
+                            <select id="inquiry" name="inquiry" class="form-select" required>
                                 <option value="">Select an option</option>
                                 <option value="ddrive">DDRiVE-M Implementation</option>
                                 <option value="stratplanner">Strategic Planner Pro Integration</option>
@@ -727,24 +1522,10 @@
 
                         <div class="form-group">
                             <label for="message" class="form-label">Message (Optional)</label>
-                            <textarea id="message" 
-                                      name="message" 
-                                      class="form-textarea" 
-                                      rows="4" 
-                                      placeholder="Tell us about your organization's needs..."></textarea>
+                            <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Tell us about your organization's needs..."></textarea>
                         </div>
 
-                        <button type="submit" class="form-submit">
-                            <span>Request Consultation</span>
-                            <span class="submit-arrow">→</span>
-                        </button>
-
-                        <p class="form-privacy">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" class="privacy-icon">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                            </svg>
-                            We respect your privacy. Your information is secure and will only be used to contact you.
-                        </p>
+                        <button type="submit" class="form-submit">Request Consultation →</button>
                     </form>
                 </div>
             </div>
@@ -752,17 +1533,14 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer" aria-label="Site footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="footer-logo">
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
                         <div class="logo-circle">
                             <div class="logo-circle-inner">
-                                <img src="https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png" 
-                                     alt="ASilva Innovations logo"
-                                     loading="lazy"
-                                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'logo-fallback\'>A</div>'">
+                                <img src="https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png" alt="ASilva Innovations">
                             </div>
                         </div>
                         <span class="footer-logo-text">ASilva Innovations</span>
@@ -770,58 +1548,168 @@
                     <p class="footer-description">
                         Building resilient communities through ethical AI and human-centered design since 2020. Headquartered in Quezon City, Philippines.
                     </p>
-                    <div class="social-links">
-                        <a href="https://linkedin.asilva-innovations.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">in</a>
-                        <a href="https://facebook.asilvainnovations.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">f</a>
-                        <a href="https://instagram.asilvainnovations.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">ig</a>
-                    </div>
                 </div>
 
-                <div class="footer-column">
+                <div>
                     <h3 class="footer-heading">Solutions</h3>
                     <ul class="footer-links">
-                        <li><a href="https://asilvainnovations.com/ddrive-m" target="_blank" rel="noopener noreferrer">→ DDRiVE-M Platform</a></li>
-                        <li><a href="https://asilvainnovations.com/strat-planner-pro/" target="_blank" rel="noopener noreferrer">→ Strategic Planner Pro</a></li>
-                        <li><a href="https://asilvainnovations.com/rtl" target="_blank" rel="noopener noreferrer">→ Real-Time Leadership</a></li>
-                        <li><a href="https://asilvainnovations.com/ai-solutions" target="_blank" rel="noopener noreferrer">→ AI & Automation Suite</a></li>
+                        <li><a href="https://asilvainnovations.com/ddrive-m" target="_blank">→ DDRiVE-M Platform</a></li>
+                        <li><a href="https://asilvainnovations.com/strat-planner-pro/" target="_blank">→ Strategic Planner Pro</a></li>
+                        <li><a href="https://asilvainnovations.com/rtl" target="_blank">→ Real-Time Leadership</a></li>
+                        <li><a href="https://asilvainnovations.com/ai-solutions" target="_blank">→ AI & Automation Suite</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-column">
+                <div>
                     <h3 class="footer-heading">Company</h3>
                     <ul class="footer-links">
-                        <li><a href="https://asilvainnovations.com/about" target="_blank" rel="noopener noreferrer">→ About Us</a></li>
-                        <li><a href="https://asilvainnovations.com/blog" target="_blank" rel="noopener noreferrer">→ Resilience Insights</a></li>
-                        <li><a href="https://asilvainnovations.com/contact" target="_blank" rel="noopener noreferrer">→ Contact Us</a></li>
-                        <li><a href="https://asilvainnovations.com/contact" target="_blank" rel="noopener noreferrer">→ Partnerships</a></li>
+                        <li><a href="https://asilvainnovations.com/about" target="_blank">→ About Us</a></li>
+                        <li><a href="https://asilvainnovations.com/blog" target="_blank">→ Resilience Insights</a></li>
+                        <li><a href="https://asilvainnovations.com/contact" target="_blank">→ Contact Us</a></li>
+                        <li><a href="https://asilvainnovations.com/contact" target="_blank">→ Partnerships</a></li>
                     </ul>
                 </div>
 
-                <div class="footer-column">
+                <div>
                     <h3 class="footer-heading">Resources</h3>
                     <ul class="footer-links">
-                        <li><a href="https://asilvainnovations.com/blog" target="_blank" rel="noopener noreferrer">→ Blog</a></li>
-                        <li><a href="https://asilvainnovations.com/resources/drrm-guide" target="_blank" rel="noopener noreferrer">→ DRRM Compliance Guide</a></li>
-                        <li><a href="https://asilvainnovations.com/ddrive-m" target="_blank" rel="noopener noreferrer">→ Integrated Risk Management</a></li>
-                        <li><a href="https://asilvainnovations.com/rtl" target="_blank" rel="noopener noreferrer">→ Learning Opportunities</a></li>
+                        <li><a href="https://asilvainnovations.com/blog" target="_blank">→ Blog</a></li>
+                        <li><a href="https://asilvainnovations.com/resources/drrm-guide" target="_blank">→ DRRM Compliance Guide</a></li>
+                        <li><a href="https://asilvainnovations.com/ddrive-m" target="_blank">→ Risk Management</a></li>
+                        <li><a href="https://asilvainnovations.com/rtl" target="_blank">→ Learning Resources</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p class="footer-copyright">© <span id="copyright-year"></span> ASilva Innovations. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="https://asilvainnovations.com/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-                    <a href="https://asilvainnovations.com/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a>
-                    <a href="https://asilvainnovations.com/accessibility" target="_blank" rel="noopener noreferrer">Accessibility</a>
-                    <a href="https://asilvainnovations.com/sitemap.xml" target="_blank" rel="noopener noreferrer">Sitemap</a>
-                </div>
+                <p>© <span id="footer-year">2026</span> ASilva Innovations. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="script.js"></script>
-    <manifest src="manifest.json"></manifest>
+    <script>
+        // Initialize
+        (function() {
+            'use strict';
+
+            // Update year
+            document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+            // Loading screen
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    document.getElementById('loading-screen').classList.add('hidden');
+                }, 1000);
+            });
+
+            // Navbar scroll
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 20) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // Mobile menu
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+            function openMenu() {
+                mobileMenu.classList.add('active');
+                mobileMenuOverlay.classList.add('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            }
+
+            function closeMenu() {
+                mobileMenu.classList.remove('active');
+                mobileMenuOverlay.classList.remove('active');
+                mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            }
+
+            mobileMenuBtn.addEventListener('click', function() {
+                if (mobileMenu.classList.contains('active')) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            mobileMenuClose.addEventListener('click', closeMenu);
+            mobileMenuOverlay.addEventListener('click', closeMenu);
+
+            document.querySelectorAll('.mobile-nav-link, .mobile-cta-btn').forEach(function(link) {
+                link.addEventListener('click', closeMenu);
+            });
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#') return;
+                    
+                    const target = document.querySelector(href);
+                    if (target) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Animated counters
+            function animateCounter(element, target) {
+                let current = 0;
+                const increment = target / 100;
+                const timer = setInterval(function() {
+                    current += increment;
+                    if (current >= target) {
+                        element.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        element.textContent = Math.floor(current);
+                    }
+                }, 20);
+            }
+
+            // Intersection Observer
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        if (entry.target.classList.contains('stat-card')) {
+                            const counter = entry.target.querySelector('.counter');
+                            if (counter && !counter.hasAttribute('data-animated')) {
+                                const target = parseInt(counter.getAttribute('data-target'));
+                                animateCounter(counter, target);
+                                counter.setAttribute('data-animated', 'true');
+                            }
+                        }
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.stat-card, .service-card').forEach(function(el) {
+                observer.observe(el);
+            });
+
+            // Contact form
+            const contactForm = document.getElementById('contact-form');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your inquiry! Our team will contact you within 24 business hours.');
+                contactForm.reset();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
 </body>
 </html>
