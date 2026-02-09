@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Partner with ASilva Innovations to build resilient futures through AI-powered disaster resilience, smart flood detection, and sustainable innovation solutions.">
+  <meta name="keywords" content="ASilva Innovations partnerships, disaster resilience collaboration, smart flood detection, AI solutions partnership, climate technology, sustainability partners">
+  <title>Partnerships - ASilva Innovations</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-blue: #0047AB;
+      --secondary-teal: #00A896;
+      --accent-orange: #FF6B35;
+      --dark-navy: #001F3F;
+      --light-gray: #F5F7FA;
+      --white: #FFFFFF;
+      --text-dark: #1A1A1A;
+      --text-medium: #4A4A4A;
+      --text-light: #7A7A7A;
+      --border-color: #E0E4E8;
+      --shadow-sm: 0 2px 8px rgba(0, 71, 171, 0.08);
+      --shadow-md: 0 4px 16px rgba(0, 71, 171, 0.12);
+      --shadow-lg: 0 8px 32px rgba(0, 71, 171, 0.16);
+      --shadow-xl: 0 12px 48px rgba(0, 71, 171, 0.2);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Roboto Condensed', sans-serif;
+      background: var(--light-gray);
+      color: var(--text-dark);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--dark-navy) 0%, var(--primary-blue) 50%, var(--secondary-teal) 100%);
+      color: var(--white);
+      padding: 100px 20px 120px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 15% 30%, rgba(0, 168, 150, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 85% 70%, rgba(255, 107, 53, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(0, 71, 171, 0.1) 0%, transparent 60%);
+      animation: pulse 15s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.8; }
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(180deg, transparent 0%, var(--light-gray) 100%);
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 30px;
+      background: linear-gradient(135deg, var(--white) 0%, var(--secondary-teal) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+      letter-spacing: -1.5px;
+      line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.5rem;
+      font-weight: 300;
+      opacity: 0.95;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+    
+    .hero-description {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      opacity: 0.9;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    /* Stats Section */
+    .stats-section {
+      background: var(--white);
+      padding: 60px 20px;
+      margin: -60px auto 60px;
+      max-width: 1200px;
+      border-radius: 24px;
+      box-shadow: var(--shadow-xl);
+      position: relative;
+      z-index: 2;
+      animation: slideUp 0.8s ease-out 0.3s backwards;
+    }
+    
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      text-align: center;
+    }
+    
+    .stat-item {
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+    
+    .stat-item:hover {
+      transform: translateY(-8px);
+    }
+    
+    .stat-number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+    
+    .stat-label {
+      font-size: 1rem;
+      color: var(--text-medium);
+      font-weight: 600;
+    }
+    
+    /* Main Content */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+    
+    /* Section Styling */
+    .section {
+      margin-bottom: 80px;
+      opacity: 0;
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+    
+    .section:nth-child(1) { animation-delay: 0.2s; }
+    .section:nth-child(2) { animation-delay: 0.4s; }
+    .section:nth-child(3) { animation-delay: 0.6s; }
+    
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--dark-navy);
+      margin-bottom: 16px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-orange), var(--secondary-teal));
+      border-radius: 2px;
+    }
+    
+    .section-description {
+      font-size: 1.15rem;
+      color: var(--text-medium);
+      max-width: 700px;
+      margin: 24px auto 0;
+      line-height: 1.8;
+    }
+    
+    /* Why Partner Cards */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid transparent;
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: linear-gradient(90deg, var(--primary-blue), var(--secondary-teal));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--secondary-teal);
+    }
+    
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .card-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, var(--secondary-teal), var(--primary-blue));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 20px rgba(0, 168, 150, 0.3);
+      transition: transform 0.3s ease;
+    }
+    
+    .card:hover .card-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+    
+    .card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--dark-navy);
+      margin-bottom: 16px;
+    }
+    
+    .card-description {
+      font-size: 1.05rem;
+      color: var(--text-medium);
+      line-height: 1.8;
+    }
+    
+    /* Collaboration Opportunities */
+    .opportunities-list {
+      display: grid;
+      gap: 24px;
+      margin-top: 40px;
+    }
+    
+    .opportunity-item {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+      transition: all 0.3s ease;
+      border-left: 6px solid var(--secondary-teal);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 30px;
+      align-items: start;
+    }
+    
+    .opportunity-item:hover {
+      transform: translateX(8px);
+      box-shadow: var(--shadow-lg);
+      border-left-color: var(--accent-orange);
+    }
+    
+    .opportunity-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--light-gray), var(--white));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      flex-shrink: 0;
+      border: 2px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+    
+    .opportunity-item:hover .opportunity-icon {
+      background: linear-gradient(135deg, var(--secondary-teal), var(--primary-blue));
+      border-color: transparent;
+      transform: scale(1.1);
+    }
+    
+    .opportunity-content h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--dark-navy);
+      margin-bottom: 12px;
+    }
+    
+    .opportunity-content p {
+      font-size: 1.05rem;
+      color: var(--text-medium);
+      line-height: 1.8;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-teal) 100%);
+      color: var(--white);
+      padding: 80px 40px;
+      border-radius: 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 60px;
+    }
+    
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      animation: float 20s ease-in-out infinite;
+    }
+    
+    .cta-section::after {
+      content: '';
+      position: absolute;
+      bottom: -50%;
+      left: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
+      animation: float 15s ease-in-out infinite reverse;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      50% { transform: translate(-30px, -30px) rotate(180deg); }
+    }
+    
+    .cta-content {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .cta-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    
+    .cta-section p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      opacity: 0.95;
+      line-height: 1.8;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 18px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-primary {
+      background: var(--accent-orange);
+      color: var(--white);
+      box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+    }
+    
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .btn-primary:hover::before {
+      left: 100%;
+    }
+    
+    .btn-primary:hover {
+      background: #FF8C5A;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(255, 107, 53, 0.5);
+    }
+    
+    .btn-secondary {
+      background: var(--white);
+      color: var(--primary-blue);
+      box-shadow: 0 4px 16px rgba(255, 255, 255, 0.3);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--light-gray);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 24px rgba(255, 255, 255, 0.4);
+    }
+    
+    .btn svg {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s ease;
+    }
+    
+    .btn:hover svg {
+      transform: translateX(5px);
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, var(--dark-navy) 0%, var(--primary-blue) 100%);
+      color: var(--white);
+      padding: 60px 20px 40px;
+      text-align: center;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .footer-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    
+    .footer-tagline {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    
+    .footer-link {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+      padding-bottom: 4px;
+    }
+    
+    .footer-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-orange);
+      transition: width 0.3s ease;
+    }
+    
+    .footer-link:hover::after {
+      width: 100%;
+    }
+    
+    .footer-copyright {
+      font-size: 0.95rem;
+      opacity: 0.8;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+      
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .opportunity-item {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 30px;
+      }
+      
+      .cta-section {
+        padding: 60px 30px;
+      }
+      
+      .cta-section h2 {
+        font-size: 2rem;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .btn {
+        justify-content: center;
+      }
+    }
+    
+    /* Accessibility */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    
+    /* Focus styles for accessibility */
+    a:focus,
+    button:focus {
+      outline: 3px solid var(--accent-orange);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="logo">ASilva Innovations</div>
+      <h1>Partnerships with ASilva Innovations</h1>
+      <p class="hero-subtitle">Building Resilient Futures Together</p>
+      <p class="hero-description">
+        At ASilva Innovations, we believe that strong partnerships drive meaningful change. By collaborating with forward‑thinking organizations, governments, and communities, we deliver cutting‑edge solutions in smart flood detection, AI‑powered disaster resilience, and sustainable innovation.
+      </p>
+    </div>
+  </section>
+  
+  <!-- Stats Section -->
+  <div class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">10,000+</div>
+        <div class="stat-label">App Installs</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">Client Satisfaction</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">30</div>
+        <div class="stat-label">Days to Deploy</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">Support Available</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Why Partner With Us Section -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Why Partner with Us</h2>
+      </div>
+      
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-icon">🏆</div>
+          <h3 class="card-title">Proven Expertise</h3>
+          <p class="card-description">
+            With over 10,000+ app installs and growing engagement across industries, we've demonstrated our commitment to delivering solutions that make a real-world impact. Our track record speaks to the trust organizations place in our technology.
+          </p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">💡</div>
+          <h3 class="card-title">Innovative Solutions</h3>
+          <p class="card-description">
+            From DDRiVE‑M, our AI‑powered disaster resilience platform, to advanced Smart Flood Detection Systems, we provide technology that safeguards lives and infrastructure. Our solutions combine cutting-edge AI with practical, scalable implementation.
+          </p>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🤝</div>
+          <h3 class="card-title">Shared Impact</h3>
+          <p class="card-description">
+            Partnerships with ASilva Innovations are built on trust, transparency, and a shared mission to protect communities and create sustainable futures. Together, we transform challenges into opportunities for meaningful change.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Collaboration Opportunities Section -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Collaboration Opportunities</h2>
+        <p class="section-description">
+          We welcome partnerships across diverse sectors, each bringing unique perspectives and capabilities to our shared mission of building resilient, sustainable communities.
+        </p>
+      </div>
+      
+      <div class="opportunities-list">
+        <div class="opportunity-item">
+          <div class="opportunity-icon">🏛️</div>
+          <div class="opportunity-content">
+            <h3>Public Sector</h3>
+            <p>
+              Partner with governments and agencies seeking scalable disaster resilience solutions. We provide comprehensive platforms that enable Local Government Units to meet DRRM compliance requirements, monitor real-time risks, and protect citizens through data-driven decision-making.
+            </p>
+          </div>
+        </div>
+        
+        <div class="opportunity-item">
+          <div class="opportunity-icon">🏢</div>
+          <div class="opportunity-content">
+            <h3>Private Sector</h3>
+            <p>
+              Collaborate with businesses aiming to integrate smart monitoring and sustainability into operations. Our solutions help organizations reduce operational risks, enhance business continuity, improve ESG performance, and demonstrate corporate responsibility through measurable impact.
+            </p>
+          </div>
+        </div>
+        
+        <div class="opportunity-item">
+          <div class="opportunity-icon">🎓</div>
+          <div class="opportunity-content">
+            <h3>Research & Academia</h3>
+            <p>
+              Join institutions exploring next‑generation climate technology and data analytics. We offer access to real-world datasets, collaborative research opportunities, student internship programs, and joint development of innovative resilience solutions that advance the field.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2>Join Us in Innovation</h2>
+        <p>
+          Partnering with ASilva Innovations means joining a network committed to climate resilience, smart technology adoption, and community empowerment. Together, we can transform challenges into opportunities and build a safer, smarter world.
+        </p>
+        <div class="cta-buttons">
+          <a href="https://asilvainnovations.com/contact" class="btn btn-primary">
+            <span>Start a Partnership</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="https://asilvainnovations.com/solutions" class="btn btn-secondary">
+            <span>Explore Solutions</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">ASilva Innovations</div>
+      <p class="footer-tagline">Building Resilient Organizations Through Innovation</p>
+      
+      <div class="footer-links">
+        <a href="https://asilvainnovations.com" class="footer-link">Home</a>
+        <a href="https://asilvainnovations.com/solutions" class="footer-link">Solutions</a>
+        <a href="https://asilvainnovations.com/case-studies" class="footer-link">Case Studies</a>
+        <a href="https://asilvainnovations.com/resources" class="footer-link">Resources</a>
+        <a href="https://asilvainnovations.com/contact" class="footer-link">Contact</a>
+      </div>
+      
+      <p class="footer-copyright">
+        &copy; 2026 ASilva Innovations. All rights reserved. | Quezon City, Philippines
+      </p>
+    </footer-content>
+  </footer>
+</body>
+</html>
