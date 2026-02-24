@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ASilva Innovations AI Ethics and Policy - Our commitment to building ethical, transparent, and human-centered AI solutions for disaster risk reduction and community resilience in the Philippines and Southeast Asia.">
+  <meta name="keywords" content="AI ethics, ethical AI, responsible AI, AI policy, ASilva Innovations, disaster risk reduction AI, Philippines AI ethics, DRRM technology ethics, AI governance">
+  <title>AI Ethics and Policy - ASilva Innovations</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png" sizes="180x180">
+  <style>
+    :root {
+      --brand-primary: #0A2463;
+      --brand-secondary: #0D3B66;
+      --brand-accent: #00B4D8;
+      --color-bg-primary: #0A2463;
+      --color-bg-secondary: #0D3B66;
+      --color-slate-900: #0F172A;
+      --color-slate-800: #1E293B;
+      --color-slate-700: #334155;
+      --color-slate-600: #475569;
+      --color-slate-500: #64748B;
+      --color-slate-400: #94A3B8;
+      --color-slate-300: #CBD5E1;
+      --color-slate-200: #E2E8F0;
+      --color-slate-100: #F1F5F9;
+      --color-blue-600: #2563EB;
+      --color-blue-500: #3B82F6;
+      --color-blue-400: #60A5FA;
+      --color-blue-300: #93C5FD;
+      --color-indigo-700: #4338CA;
+      --color-indigo-600: #4F46E5;
+      --color-cyan-400: #22D3EE;
+      --color-cyan-300: #67E8F9;
+      --color-emerald-600: #059669;
+      --color-emerald-500: #10B981;
+      --color-emerald-400: #34D399;
+      --color-amber-600: #D97706;
+      --color-amber-500: #F59E0B;
+      --color-amber-400: #FBBF24;
+      --color-amber-300: #FCD34D;
+      --color-rose-600: #E11D48;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-display: 'Orbitron', system-ui, sans-serif;
+      --font-serif: 'Merriweather', Georgia, serif;
+      --transition-normal: 300ms ease;
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+      --space-10: 2.5rem;
+      --space-12: 3rem;
+      --radius-sm: 0.5rem;
+      --radius-md: 0.75rem;
+      --radius-lg: 1rem;
+      --radius-xl: 1.5rem;
+      --radius-2xl: 2rem;
+      --radius-full: 9999px;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-size-adjust: 100%;
+    }
+    
+    body {
+      font-family: var(--font-body);
+      background: var(--color-bg-primary);
+      color: var(--color-slate-100);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    a {
+      text-decoration: none;
+      color: var(--brand-accent);
+      transition: color var(--transition-normal);
+    }
+    
+    a:hover {
+      color: var(--color-cyan-300);
+    }
+    
+    button {
+      font-family: inherit;
+      border: none;
+      background: none;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+    
+    .skip-link {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background: var(--brand-accent);
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      z-index: 100;
+      transform: translateY(-200%);
+      transition: transform var(--transition-normal);
+      box-shadow: 0 4px 6px rgba(0, 180, 216, 0.3);
+    }
+    
+    .skip-link:focus {
+      transform: translateY(0);
+      outline: 2px solid var(--brand-accent);
+      outline-offset: 2px;
+    }
+    
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      width: 100%;
+    }
+    
+    header[role="banner"] {
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+      padding: var(--space-8) 0;
+      border-bottom: 1px solid rgba(0, 180, 216, 0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-4);
+      text-align: center;
+    }
+    
+    .logo {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: var(--space-4);
+      background: linear-gradient(135deg, var(--brand-accent), var(--color-cyan-400));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.5px;
+    }
+    
+    h1 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin: var(--space-2) 0 var(--space-4);
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+    }
+    
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 3rem;
+      }
+    }
+    
+    .effective-date,
+    .last-updated {
+      font-size: 1.125rem;
+      color: var(--color-slate-300);
+      margin: var(--space-2) 0;
+    }
+    
+    .last-updated {
+      color: var(--brand-accent);
+      font-weight: 600;
+    }
+    
+    main[role="main"] {
+      flex: 1;
+      padding: var(--space-10) 0;
+    }
+    
+    .content-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 var(--space-4);
+    }
+    
+    .intro-box {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      margin-bottom: var(--space-8);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .intro-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--brand-primary), var(--brand-accent));
+    }
+    
+    .intro-box p {
+      margin-bottom: var(--space-4);
+      font-size: 1.125rem;
+      line-height: 1.7;
+    }
+    
+    .intro-box p:last-child {
+      margin-bottom: 0;
+      font-weight: 600;
+      color: var(--color-slate-200);
+    }
+    
+    .intro-box strong {
+      color: var(--brand-accent);
+    }
+    
+    .policy-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      justify-content: center;
+      margin: var(--space-8) 0;
+    }
+    
+    .policy-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-4);
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      transition: all var(--transition-normal);
+    }
+    
+    .policy-link:hover {
+      background: rgba(0, 180, 216, 0.1);
+      border-color: rgba(0, 180, 216, 0.3);
+      transform: translateY(-2px);
+    }
+    
+    .policy-link span:first-child {
+      font-size: 1.5rem;
+    }
+    
+    .toc {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      margin: var(--space-8) 0;
+    }
+    
+    .toc h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: var(--space-4);
+      color: var(--brand-accent);
+      text-align: center;
+    }
+    
+    .toc ol {
+      list-style: none;
+      padding-left: 0;
+      columns: 1;
+      column-gap: var(--space-6);
+    }
+    
+    @media (min-width: 768px) {
+      .toc ol {
+        columns: 2;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .toc ol {
+        columns: 3;
+      }
+    }
+    
+    .toc li {
+      break-inside: avoid;
+      margin-bottom: var(--space-3);
+    }
+    
+    .toc a {
+      display: block;
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-md);
+      transition: all var(--transition-normal);
+    }
+    
+    .toc a:hover {
+      background: rgba(0, 180, 216, 0.1);
+      color: var(--brand-accent);
+      transform: translateX(4px);
+    }
+    
+    .section {
+      margin-bottom: var(--space-10);
+      padding-bottom: var(--space-8);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    .section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    h2 {
+      font-family: var(--font-display);
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin: 0 0 var(--space-5);
+      color: white;
+      position: relative;
+      padding-left: 1.25rem;
+    }
+    
+    h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 28px;
+      background: linear-gradient(to bottom, var(--brand-primary), var(--brand-accent));
+      border-radius: 3px;
+    }
+    
+    h3 {
+      font-size: 1.375rem;
+      font-weight: 700;
+      margin: var(--space-6) 0 var(--space-3);
+      color: var(--color-slate-100);
+    }
+    
+    p {
+      margin-bottom: var(--space-4);
+      line-height: 1.7;
+      color: var(--color-slate-300);
+    }
+    
+    ul,
+    ol {
+      margin: var(--space-4) 0 var(--space-6) var(--space-6);
+      padding-left: var(--space-6);
+    }
+    
+    li {
+      margin-bottom: var(--space-3);
+      line-height: 1.7;
+      color: var(--color-slate-300);
+    }
+    
+    ul ul,
+    ol ul,
+    ul ol,
+    ol ol {
+      margin-top: var(--space-3);
+      margin-bottom: var(--space-3);
+    }
+    
+    .highlight-box {
+      background: rgba(10, 36, 99, 0.4);
+      border-left: 4px solid var(--brand-accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: var(--space-5) var(--space-6);
+      margin: var(--space-6) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .highlight-box::before {
+      content: '✦';
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      font-size: 4rem;
+      color: rgba(0, 180, 216, 0.1);
+      font-family: var(--font-display);
+      line-height: 1;
+    }
+    
+    .highlight-box p {
+      margin-bottom: var(--space-3);
+      font-weight: 500;
+      color: var(--color-slate-200);
+    }
+    
+    .highlight-box p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .highlight-box strong {
+      color: var(--brand-accent);
+    }
+    
+    .pledge-box {
+      background: linear-gradient(135deg, rgba(10, 36, 99, 0.3), rgba(0, 180, 216, 0.15));
+      border: 1px solid rgba(0, 180, 216, 0.3);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      margin: var(--space-8) 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .pledge-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--brand-accent), var(--color-cyan-300));
+    }
+    
+    .pledge-box h3 {
+      text-align: center;
+      font-size: 1.75rem;
+      margin-bottom: var(--space-5);
+      color: white;
+      font-style: italic;
+    }
+    
+    .pledge-box ul {
+      list-style: none;
+      padding-left: 0;
+      margin: var(--space-4) 0;
+    }
+    
+    .pledge-box li {
+      position: relative;
+      padding-left: 1.75rem;
+      margin-bottom: var(--space-4);
+      font-weight: 500;
+      color: var(--color-slate-200);
+    }
+    
+    .pledge-box li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--brand-accent);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+    
+    .contact-box {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      margin: var(--space-8) 0;
+    }
+    
+    .contact-box h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: var(--space-4);
+      color: white;
+      text-align: center;
+    }
+    
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .contact-item {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      align-items: center;
+      padding: var(--space-3);
+      border-radius: var(--radius-md);
+      background: rgba(30, 41, 59, 0.5);
+    }
+    
+    .contact-label {
+      font-weight: 600;
+      color: var(--brand-accent);
+      min-width: 80px;
+    }
+    
+    .info-box {
+      background: rgba(13, 59, 102, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      margin: var(--space-8) 0;
+      text-align: center;
+    }
+    
+    .info-box p {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--color-slate-200);
+    }
+    
+    .info-box strong {
+      color: var(--brand-accent);
+      display: block;
+      margin-bottom: var(--space-2);
+    }
+    
+    footer[role="contentinfo"] {
+      background: var(--color-slate-900);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding: var(--space-8) 0;
+      margin-top: auto;
+    }
+    
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-4);
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 var(--space-4);
+    }
+    
+    .footer-link {
+      display: inline-block;
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-md);
+      font-weight: 500;
+      transition: all var(--transition-normal);
+    }
+    
+    .footer-link:hover {
+      background: rgba(0, 180, 216, 0.1);
+      color: var(--brand-accent);
+    }
+    
+    footer p {
+      text-align: center;
+      color: var(--color-slate-500);
+      font-size: 0.95rem;
+      margin-top: var(--space-6);
+      padding: 0 var(--space-4);
+    }
+    
+    @media (max-width: 768px) {
+      .header-content,
+      .content-container {
+        padding: 0 var(--space-3);
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      h2 {
+        font-size: 1.625rem;
+      }
+      
+      .toc ol {
+        columns: 1;
+      }
+      
+      .policy-links {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    
+    /* Focus styles for accessibility */
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible {
+      outline: 2px solid var(--brand-accent);
+      outline-offset: 2px;
+    }
+    
+    /* Print styles */
+    @media print {
+      body {
+        background: white;
+        color: #1f2937;
+      }
+      
+      a {
+        color: #0A2463;
+      }
+      
+      .skip-link,
+      footer {
+        display: none;
+      }
+      
+      .intro-box,
+      .highlight-box,
+      .pledge-box,
+      .contact-box,
+      .info-box {
+        border: 1px solid #e2e8f0;
+        background: #f8fafc;
+      }
+      
+      h2::before {
+        background: #0A2463;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
+  <header role="banner">
+    <div class="header-content">
+      <div class="logo">ASilva Innovations</div>
+      <h1>AI Ethics and Policy</h1>
+      <p class="effective-date">Effective Date: February 24, 2026</p>
+      <p class="last-updated">Last Updated: February 24, 2026</p>
+    </div>
+  </header>
+  
+  <main id="main-content" role="main">
+    <div class="content-container">
+      <!-- Introduction -->
+      <div class="intro-box">
+        <p><strong>Our Ethical Commitment</strong></p>
+        <p>At ASilva Innovations, we believe that artificial intelligence must serve humanity—not replace it. Our mission to build resilient communities through technology demands an unwavering commitment to ethical AI development and deployment. This framework establishes our principles, practices, and accountability mechanisms to ensure our AI solutions protect vulnerable populations, respect human dignity, and advance the public good—especially in high-risk environments where failure carries human consequences.</p>
+        <p><strong>"Technology that builds unbreakable communities must itself be built on unbreakable ethical foundations."</strong><br><em>— ASilva Innovations Ethical AI Manifesto</em></p>
+      </div>
+      
+      <!-- Related Policies -->
+      <div class="policy-links" role="navigation" aria-label="Related Policies">
+        <a href="https://asilvainnovations.com/terms" class="policy-link">
+          <span>📜</span>
+          <span>Terms & Conditions</span>
+        </a>
+        <a href="https://asilvainnovations.com/privacy-policy" class="policy-link">
+          <span>🔒</span>
+          <span>Privacy Policy</span>
+        </a>
+        <a href="https://asilvainnovations.com/cookie-policy" class="policy-link">
+          <span>🍪</span>
+          <span>Cookie Policy</span>
+        </a>
+        <a href="https://asilvainnovations.com/accessibility" class="policy-link">
+          <span>♿</span>
+          <span>Accessibility Policy</span>
+        </a>
+      </div>
+      
+      <!-- Table of Contents -->
+      <nav class="toc" aria-label="Table of Contents">
+        <h2>Table of Contents</h2>
+        <ol>
+          <li><a href="#principles">Core Ethical Principles</a></li>
+          <li><a href="#governance">Governance Framework</a></li>
+          <li><a href="#protocols">Sector-Specific Protocols</a></li>
+          <li><a href="#compliance">Compliance Framework</a></li>
+          <li><a href="#improvement">Continuous Improvement</a></li>
+          <li><a href="#pledge">Our Pledge to Vulnerable Communities</a></li>
+          <li><a href="#accountability">Accountability</a></li>
+          <li><a href="#review">Policy Review</a></li>
+          <li><a href="#contact">Contact Information</a></li>
+        </ol>
+      </nav>
+      
+      <!-- Section 1: Core Ethical Principles -->
+      <section id="principles" class="section">
+        <h2>1. Core Ethical Principles</h2>
+        
+        <h3>1.1 Human-Centered Design</h3>
+        <p><strong>Human-in-Command:</strong> AI systems augment human decision-making; they never replace human judgment in life-critical decisions. All ASilva AI solutions maintain meaningful human oversight, especially in disaster response scenarios.</p>
+        <p><strong>Contextual Intelligence:</strong> Our AI assistants (including DDRiVER AI) are designed with cultural awareness and contextual understanding of Philippine communities, LGU workflows, and disaster response protocols.</p>
+        <p><strong>Accessibility First:</strong> All AI interfaces meet WCAG 2.1 AA standards and support low-bandwidth environments common in rural Philippines.</p>
+        
+        <h3>1.2 Justice and Fairness</h3>
+        <p><strong>Bias Mitigation:</strong> We actively identify and mitigate biases in training data that could disadvantage marginalized communities, indigenous populations, or geographically isolated areas.</p>
+        <p><strong>Equitable Access:</strong> Our pricing models (including NGO discounts and LGU procurement pathways) ensure life-saving AI tools reach resource-constrained organizations.</p>
+        <p><strong>Distributional Justice:</strong> AI risk assessments prioritize protection of vulnerable populations (elderly, persons with disabilities, informal settlers) in disaster planning.</p>
+        
+        <h3>1.3 Transparency and Explainability</h3>
+        <p><strong>Right to Explanation:</strong> Users receive clear, accessible explanations for AI-generated recommendations (e.g., "Why did the system prioritize evacuation Zone B?").</p>
+        <p><strong>Model Documentation:</strong> All production AI models include Model Cards documenting capabilities, limitations, training data sources, and known failure modes.</p>
+        <p><strong>No Black Boxes in Crisis:</strong> During emergencies, our AI systems provide interpretable outputs—not opaque predictions—so responders understand the "why" behind recommendations.</p>
+        
+        <h3>1.4 Privacy and Data Sovereignty</h3>
+        <p><strong>Data Minimization:</strong> We collect only data essential for resilience outcomes. No surveillance capabilities are built into our platforms.</p>
+        <p><strong>Philippine Data Residency:</strong> All personal data from Philippine users remains stored within the Philippines, complying with the Data Privacy Act of 2012 (RA 10173).</p>
+        <p><strong>Community Consent:</strong> For community-level risk mapping, we implement participatory consent processes—not just individual opt-ins—respecting <em>bayanihan</em> (community solidarity) values.</p>
+        <p><strong>Anonymization by Design:</strong> Public risk maps use differential privacy techniques to prevent re-identification of vulnerable households.</p>
+        
+        <h3>1.5 Safety and Reliability</h3>
+        <p><strong>Fail-Safe Design:</strong> All AI systems default to human-led protocols when confidence thresholds are not met or connectivity is lost.</p>
+        <p><strong>Adversarial Testing:</strong> We simulate edge cases including:</p>
+        <ul>
+          <li>Sensor failures during typhoons</li>
+          <li>Misinformation propagation during crises</li>
+          <li>Resource scarcity scenarios</li>
+        </ul>
+        <p><strong>Red Team Exercises:</strong> Independent experts attempt to "break" our AI systems quarterly, with findings addressed within 30 days.</p>
+        
+        <h3>1.6 Environmental Sustainability</h3>
+        <p><strong>Green AI Commitment:</strong> Our algorithms optimize for energy efficiency, reducing carbon footprint by 40% compared to industry baselines.</p>
+        <p><strong>Hardware Lifecycle:</strong> We partner with LGUs on device recycling programs for field sensors and mobile equipment.</p>
+        <p><strong>Climate Alignment:</strong> All AI development supports UN SDGs 11 (Sustainable Cities) and 13 (Climate Action).</p>
+      </section>
+      
+      <!-- Section 2: Governance Framework -->
+      <section id="governance" class="section">
+        <h2>2. Governance Framework</h2>
+        
+        <h3>2.1 AI Ethics Board</h3>
+        <p><strong>Composition:</strong> 7 members including:</p>
+        <ul>
+          <li>2 external ethicists (one specializing in Global South contexts)</li>
+          <li>1 disaster response practitioner (former NDRRMC official)</li>
+          <li>1 community representative from a typhoon-prone municipality</li>
+          <li>1 data privacy expert certified by NPC Philippines</li>
+          <li>2 ASilva technical leads (rotating membership)</li>
+        </ul>
+        <p><strong>Authority:</strong> Can halt deployment of any AI feature pending ethical review</p>
+        <p><strong>Meetings:</strong> Quarterly public sessions with published minutes</p>
+        
+        <h3>2.2 Ethical Impact Assessments (EIAs)</h3>
+        <p>Required before deploying any new AI capability:</p>
+        <table style="width:100%; border-collapse: collapse; margin: var(--space-4) 0;">
+          <thead>
+            <tr>
+              <th style="text-align: left; padding: var(--space-3); border-bottom: 1px solid rgba(255,255,255,0.1);">Assessment Area</th>
+              <th style="text-align: left; padding: var(--space-3); border-bottom: 1px solid rgba(255,255,255,0.1);">Key Questions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: var(--space-3); border-bottom: 1px solid rgba(255,255,255,0.05);">Human Rights</td>
+              <td style="padding: var(--space-3); border-bottom: 1px solid rgba(255,255,255,0.05);">Could this system violate rights to life, safety, or dignity during disasters?</td>
+            </tr>
+            <tr>
+              <td style="padding: var(--space-3); border-bottom: 1px solid rgba(255,255,255,0.05);">Power Dynamics</td>
+              <td style="padding: var(--space-3); border-bottom: 1px solid rgba(255,255,255,0.05);">Does this shift decision-making away from affected communities toward distant technocrats?</td>
+            </tr>
+            <tr>
+              <td style="padding: var(--space-3); border-bottom: 1px solid rgba(255,255,255,0.05);">Cultural Safety</td>
+              <td style="padding: var(--space-3); border-bottom: 1px solid rgba(255,255,255,0.05);">Does the AI respect indigenous knowledge systems and local response protocols?</td>
+            </tr>
+            <tr>
+              <td style="padding: var(--space-3); border-bottom: 1px solid rgba(255,255,255,0.05);">Long-term Effects</td>
+              <td style="padding: var(--space-3); border-bottom: 1px solid rgba(255,255,255,0.05);">Might reliance on this AI erode community self-organization capacity?</td>
+            </tr>
+            <tr>
+              <td style="padding: var(--space-3);">Exit Strategy</td>
+              <td style="padding: var(--space-3);">How will communities transition if ASilva discontinues support?</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h3>2.3 Redress Mechanisms</h3>
+        <p><strong>AI Incident Reporting:</strong> Public portal for reporting AI harms (available in English, Filipino, and major Philippine languages)</p>
+        <p><strong>48-Hour Triage:</strong> All safety-critical reports receive human review within 48 hours</p>
+        <p><strong>Right to Human Review:</strong> Any AI-generated decision affecting resource allocation can be appealed to human reviewers</p>
+      </section>
+      
+      <!-- Section 3: Sector-Specific Protocols -->
+      <section id="protocols" class="section">
+        <h2>3. Sector-Specific Protocols</h2>
+        
+        <h3>3.1 Disaster Risk Reduction (DRRM)</h3>
+        <ul>
+          <li><strong>Pre-Event:</strong> AI predictions must include confidence intervals and alternative scenarios—never single-point forecasts</li>
+          <li><strong>During Events:</strong> Systems must degrade gracefully during connectivity loss (offline-capable core functions)</li>
+          <li><strong>Post-Event:</strong> Damage assessment AI must be validated against ground truth within 72 hours; unverified predictions carry clear uncertainty labels</li>
+        </ul>
+        
+        <h3>3.2 Government Procurement (LGUs)</h3>
+        <ul>
+          <li><strong>No Vendor Lock-in:</strong> All data exports in open formats; APIs documented for third-party integration</li>
+          <li><strong>Procurement Transparency:</strong> AI capabilities clearly distinguished from human services in proposals</li>
+          <li><strong>Capacity Building:</strong> Mandatory training for LGU staff on AI limitations—not just features</li>
+        </ul>
+        
+        <h3>3.3 NGO Partnerships</h3>
+        <ul>
+          <li><strong>Mission Alignment Review:</strong> We decline partnerships where AI might enable surveillance of vulnerable populations</li>
+          <li><strong>Beneficiary Consent:</strong> NGOs must demonstrate community consent processes before deploying our tools</li>
+          <li><strong>Exit Planning:</strong> Contracts include 12-month transition plans if partnership ends</li>
+        </ul>
+      </section>
+      
+      <!-- Section 4: Compliance Framework -->
+      <section id="compliance" class="section">
+        <h2>4. Compliance Framework</h2>
+        
+        <h3>4.1 Philippine Legal Compliance</h3>
+        <ul>
+          <li><strong>Data Privacy Act (RA 10173):</strong> Appoint Data Protection Officer; conduct Privacy Impact Assessments for all AI systems</li>
+          <li><strong>DRRM Act (RA 10121):</strong> Align AI capabilities with National DRRM Framework; coordinate with OCD/NDRRMC</li>
+          <li><strong>Local Government Code:</strong> Respect LGU autonomy in AI deployment decisions</li>
+        </ul>
+        
+        <h3>4.2 International Standards</h3>
+        <ul>
+          <li><strong>ISO/IEC 23894:</strong> AI risk management aligned with international standard</li>
+          <li><strong>EU AI Act:</strong> High-risk classification for all disaster response AI; conformity assessments conducted annually</li>
+          <li><strong>UN Guiding Principles:</strong> Human rights due diligence for all AI deployments</li>
+        </ul>
+        
+        <h3>4.3 Industry Certifications</h3>
+        <ul>
+          <li>Annual third-party audits by accredited firms</li>
+          <li>SOC 2 Type II certification for all AI infrastructure</li>
+          <li>Public scorecards rating our ethical performance (updated quarterly)</li>
+        </ul>
+      </section>
+      
+      <!-- Section 5: Continuous Improvement -->
+      <section id="improvement" class="section">
+        <h2>5. Continuous Improvement</h2>
+        
+        <h3>5.1 Learning from Failure</h3>
+        <ul>
+          <li><strong>Public Incident Database:</strong> Anonymized records of AI failures and lessons learned (modeled on aviation safety systems)</li>
+          <li><strong>Post-Mortem Culture:</strong> Blameless analysis of incidents with focus on systemic fixes</li>
+          <li><strong>Community Feedback Loops:</strong> Quarterly town halls in partner LGUs to gather frontline perspectives</li>
+        </ul>
+        
+        <h3>5.2 Research Commitments</h3>
+        <ul>
+          <li><strong>20% R&D Allocation:</strong> Minimum 20% of AI research budget dedicated to safety, fairness, and robustness</li>
+          <li><strong>Open Publications:</strong> Publish negative results and failure modes to advance field knowledge</li>
+          <li><strong>Philippine AI Ethics Research:</strong> Partner with key stakeholders on context-specific AI ethics </li>
+        </ul>
+        
+        <h3>5.3 Transparency Reporting</h3>
+        <p>Annual public report including:</p>
+        <ul>
+          <li>AI systems deployed and their risk classifications</li>
+          <li>Bias audit results (disaggregated by geography, gender, age)</li>
+          <li>Redress cases handled and outcomes</li>
+          <li>Environmental impact metrics</li>
+          <li>Community feedback summary</li>
+        </ul>
+      </section>
+      
+      <!-- Section 6: Pledge to Vulnerable Communities -->
+      <section id="pledge" class="section">
+        <h2>6. Our Pledge to Vulnerable Communities</h2>
+        <div class="pledge-box">
+          <h3>We recognize that our AI tools operate in contexts where errors can cost lives. Therefore, we pledge:</h3>
+          <ul>
+            <li><strong>No Exploitation:</strong> We will never monetize crisis data or sell predictions about vulnerable populations</li>
+            <li><strong>No Abandonment:</strong> We commit to minimum 5-year support for AI systems deployed in disaster-prone areas</li>
+            <li><strong>No Opacity:</strong> We will explain our AI's limitations in plain language before deployment—not in fine print after harm occurs</li>
+            <li><strong>No Extraction:</strong> We compensate communities for data contributions through capacity building and infrastructure support</li>
+            <li><strong>No Exceptionalism:</strong> During emergencies, we uphold—not suspend—ethical safeguards</li>
+          </ul>
+        </div>
+      </section>
+      
+      <!-- Section 7: Accountability -->
+      <section id="accountability" class="section">
+        <h2>7. Accountability</h2>
+        <p>This policy is binding on all ASilva Innovations personnel, contractors, and partners. Violations may result in:</p>
+        <ul>
+          <li>Immediate suspension of AI deployment</li>
+          <li>Termination of employment/contracts</li>
+          <li>Public disclosure of violations</li>
+          <li>Financial penalties directed to affected communities</li>
+        </ul>
+        
+        <div class="highlight-box">
+          <p><strong>Ethics Violation Reporting:</strong></p>
+          <p>Email: <a href="mailto:info@asilvainnovations.com">info@asilvainnovations.com</a><br>
+          Hotline: +63 917 855 5134 (available 24/7)<br>
+          <em>All reports handled confidentially with anti-retaliation protections</em></p>
+        </div>
+      </section>
+      
+      <!-- Section 8: Policy Review -->
+      <section id="review" class="section">
+        <h2>8. Policy Review</h2>
+        <p>This framework will be reviewed annually by our AI Ethics Board with mandatory community consultation. The next review date is February 24, 2027.</p>
+        <p>ASilva Innovations is committed to building AI that serves humanity—especially those most vulnerable to climate change and disasters. This policy reflects our belief that ethical constraints don't limit innovation; they make innovation worthy of trust.</p>
+        
+        <div class="info-box">
+          <p><strong>Signed,</strong><br>
+          <em>Alvin Silva</em><br>
+          Chief Executive Officer<br>
+          ASilva Innovations</p>
+        </div>
+        
+        <div class="highlight-box">
+          <p><strong>License Notice:</strong> This document is licensed under Creative Commons Attribution-ShareAlike 4.0 International. We encourage other Philippine tech companies to adapt this framework for their contexts.</p>
+        </div>
+      </section>
+      
+      <!-- Section 9: Contact Information -->
+      <section id="contact" class="section">
+        <h2>9. Contact Information</h2>
+        <div class="contact-box">
+          <h3>ASilva Innovations AI Ethics Office</h3>
+          <div class="contact-info">
+            <div class="contact-item">
+              <span class="contact-label">Email:</span>
+              <a href="mailto:info@asilvainnovations.com">info@asilvainnovations.com</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Ethics Hotline:</span>
+              <span>+63 917 855 5134 (24/7)</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Website:</span>
+              <a href="https://asilvainnovations.com" target="_blank" rel="noopener noreferrer">asilvainnovations.com</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Ethics Portal:</span>
+              <a href="https://asilvainnovations.com/ai-ethics" target="_blank" rel="noopener noreferrer">asilvainnovations.com/ai-ethics</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-label">Address:</span>
+              <span>Muntinlupa City 1780, Philippines</span>
+            </div>
+          </div>
+        </div>
+        <p>We aim to respond to all ethics inquiries within 24 business hours. For urgent safety concerns, please call our Ethics Hotline and state "URGENT SAFETY CONCERN" to receive immediate attention.</p>
+      </section>
+      
+      <!-- Acknowledgment -->
+      <div class="info-box">
+        <p><strong>Acknowledgment:</strong> By using ASilva Innovations AI-powered platforms and services, you acknowledge that you have read, understood, and agree to be bound by this AI Ethics and Policy framework, our Terms and Conditions, Privacy Policy, and Cookie Policy.</p>
+      </div>
+    </div>
+  </main>
+  
+  <footer role="contentinfo">
+    <nav class="footer-links" aria-label="Footer Navigation">
+      <a href="https://asilvainnovations.com" class="footer-link">Home</a>
+      <a href="https://asilvainnovations.com/terms" class="footer-link">Terms & Conditions</a>
+      <a href="https://asilvainnovations.com/privacy-policy" class="footer-link">Privacy Policy</a>
+      <a href="https://asilvainnovations.com/cookie-policy" class="footer-link">Cookie Policy</a>
+      <a href="https://asilvainnovations.com/ai-ethics" class="footer-link">AI Ethics Policy</a>
+      <a href="https://asilvainnovations.com/accessibility" class="footer-link">Accessibility</a>
+      <a href="https://asilvainnovations.com/contact" class="footer-link">Contact</a>
+    </nav>
+    <p>&copy; 2026 ASilva Innovations. All rights reserved. Building resilient communities through ethical AI and human-centered design.</p>
+  </footer>
+  
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // Focus management for skip link
+    document.querySelector('.skip-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector('#main-content').focus();
+    });
+  </script>
+</body>
+</html>
