@@ -1,1187 +1,1058 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alvin M. Silva, MDM | Development Management Professional & Resilience Expert</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --electric-blue: #0066FF;
-            --sky-blue: #00BFFF;
-            --gold: #FFD700;
-            --dark-bg: #0a0e27;
-            --card-bg: #1a1f3a;
-            --text-primary: #ffffff;
-            --text-secondary: #e0e6ed;
-            --contrast-bg: #0d1224;
-            --glass-bg: rgba(26, 31, 58, 0.7);
-            --glass-border: rgba(255, 255, 255, 0.18);
-        }
-
-        body {
-            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, var(--dark-bg) 0%, #0f1428 100%);
-            color: var(--text-primary);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-        }
-
-        .subtitle, .stat-label, .nav-links {
-            font-family: 'Roboto Condensed', sans-serif;
-        }
-
-        /* Animated Background */
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .bg-animation::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, var(--electric-blue) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: backgroundMove 20s linear infinite;
-            opacity: 0.1;
-        }
-
-        @keyframes backgroundMove {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
-        }
-
-        /* Floating particles */
-        .particle {
-            position: absolute;
-            background: var(--sky-blue);
-            border-radius: 50%;
-            opacity: 0.3;
-            animation: float 6s infinite ease-in-out;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) translateX(0); }
-            50% { transform: translateY(-30px) translateX(20px); }
-        }
-
-        /* Header */
-        header {
-            padding: 2rem 5%;
-            background: rgba(10, 14, 39, 0.85);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 2px solid var(--electric-blue);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            animation: slideDown 0.8s ease-out;
-        }
-
-        @keyframes slideDown {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .logo {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            border: 3px solid var(--gold);
-            padding: 5px;
-            background: white;
-            animation: rotateLogo 10s linear infinite;
-        }
-
-        @keyframes rotateLogo {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .brand-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, var(--electric-blue), var(--sky-blue), var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-primary);
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-links a:hover {
-            color: var(--gold);
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 4rem 5%;
-            position: relative;
-        }
-
-        .hero-banner {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 60%;
-            overflow: hidden;
-            z-index: 0;
-        }
-
-        .banner-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            animation: bannerZoom 20s ease-in-out infinite alternate;
-            filter: brightness(0.9);
-        }
-
-        @keyframes bannerZoom {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.05); }
-        }
-
-        .banner-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent 0%, rgba(10, 14, 39, 0.3) 40%, rgba(10, 14, 39, 0.95) 100%);
-            pointer-events: none;
-        }
-
-        .hero-content {
-            max-width: 1400px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            animation: fadeInUp 1s ease-out;
-            position: relative;
-            z-index: 1;
-            margin-top: 20%;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-text h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, var(--electric-blue), var(--sky-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        .hero-text .subtitle {
-            font-size: 1.3rem;
-            color: var(--gold);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-            color: #e0e6ed;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .btn-primary {
-            background: linear-gradient(45deg, var(--electric-blue), var(--sky-blue));
-            color: white;
-            border: none;
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, var(--sky-blue), var(--gold));
-            transition: left 0.3s ease;
-        }
-
-        .btn-primary:hover::before {
-            left: 0;
-        }
-
-        .btn-primary span {
-            position: relative;
-            z-index: 1;
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--gold);
-            border: 2px solid var(--gold);
-        }
-
-        .btn-secondary:hover {
-            background: var(--gold);
-            color: var(--dark-bg);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
-        }
-
-        .hero-image {
-            position: relative;
-            animation: floatImage 3s ease-in-out infinite;
-        }
-
-        @keyframes floatImage {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .hero-card {
-            background: rgba(26, 31, 58, 0.6);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            padding: 3rem;
-            border-radius: 20px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px 0 rgba(0, 102, 255, 0.4),
-                        0 20px 60px 0 rgba(0, 0, 0, 0.5);
-            position: relative;
-        }
-
-        .hero-card::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, var(--electric-blue), var(--sky-blue), var(--gold));
-            border-radius: 20px;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .hero-card:hover::before {
-            opacity: 1;
-            animation: borderGlow 2s linear infinite;
-        }
-
-        @keyframes borderGlow {
-            0%, 100% { filter: hue-rotate(0deg); }
-            50% { filter: hue-rotate(180deg); }
-        }
-
-        .stat-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            background: linear-gradient(45deg, var(--gold), var(--sky-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* Tooltip */
-        .tooltip {
-            position: relative;
-            display: inline-block;
-            cursor: help;
-            border-bottom: 2px dotted var(--sky-blue);
-        }
-
-        .tooltip .tooltiptext {
-            visibility: hidden;
-            width: 300px;
-            background: rgba(10, 14, 39, 0.95);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            color: var(--text-primary);
-            text-align: left;
-            border-radius: 10px;
-            padding: 1rem;
-            position: absolute;
-            z-index: 1;
-            bottom: 125%;
-            left: 50%;
-            margin-left: -150px;
-            opacity: 0;
-            transition: opacity 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6),
-                        0 4px 16px rgba(0, 102, 255, 0.3);
-        }
-
-        .tooltip:hover .tooltiptext {
-            visibility: visible;
-            opacity: 1;
-            animation: tooltipFade 0.3s ease-in;
-        }
-
-        @keyframes tooltipFade {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Expertise Section */
-        .expertise {
-            padding: 5rem 5%;
-            background: rgba(15, 20, 40, 0.5);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            background: linear-gradient(45deg, var(--electric-blue), var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 0 2px 10px rgba(0, 102, 255, 0.3);
-        }
-
-        .expertise-grid {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .expertise-card {
-            background: rgba(26, 31, 58, 0.6);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            padding: 2.5rem;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            box-shadow: 0 8px 32px 0 rgba(0, 102, 255, 0.3),
-                        0 4px 16px 0 rgba(0, 0, 0, 0.4);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            animation: fadeInUp 0.8s ease-out backwards;
-        }
-
-        .expertise-card:nth-child(1) { animation-delay: 0.1s; }
-        .expertise-card:nth-child(2) { animation-delay: 0.2s; }
-        .expertise-card:nth-child(3) { animation-delay: 0.3s; }
-        .expertise-card:nth-child(4) { animation-delay: 0.4s; }
-        .expertise-card:nth-child(5) { animation-delay: 0.5s; }
-        .expertise-card:nth-child(6) { animation-delay: 0.6s; }
-
-        .expertise-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .expertise-card:hover::before {
-            left: 100%;
-        }
-
-        .expertise-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.5),
-                        0 8px 20px rgba(0, 191, 255, 0.4);
-            border-color: rgba(255, 215, 0, 0.5);
-            background: rgba(26, 31, 58, 0.8);
-        }
-
-        .expertise-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        .expertise-card h3 {
-            color: #4ddbff;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-            font-weight: 700;
-        }
-
-        .expertise-card p {
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-
-        /* Achievements Section */
-        .achievements {
-            padding: 5rem 5%;
-        }
-
-        .timeline {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 3px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--electric-blue), var(--sky-blue), var(--gold));
-        }
-
-        .timeline-item {
-            margin-bottom: 3rem;
-            position: relative;
-            animation: fadeInUp 0.8s ease-out backwards;
-        }
-
-        .timeline-item:nth-child(odd) {
-            padding-right: 55%;
-            text-align: right;
-        }
-
-        .timeline-item:nth-child(even) {
-            padding-left: 55%;
-        }
-
-        .timeline-content {
-            background: rgba(26, 31, 58, 0.6);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            box-shadow: 0 8px 32px 0 rgba(0, 102, 255, 0.3),
-                        0 4px 16px 0 rgba(0, 0, 0, 0.4);
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .timeline-content:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 191, 255, 0.4),
-                        0 8px 24px rgba(0, 102, 255, 0.5);
-            border-color: rgba(255, 215, 0, 0.4);
-            background: rgba(26, 31, 58, 0.8);
-        }
-
-        .timeline-content h3 {
-            color: #ffffff;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        .timeline-content p {
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background: var(--gold);
-            border-radius: 50%;
-            border: 4px solid var(--dark-bg);
-            top: 0;
-            animation: dotPulse 2s infinite;
-        }
-
-        @keyframes dotPulse {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
-            50% { box-shadow: 0 0 0 15px rgba(255, 215, 0, 0); }
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 5rem 5%;
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(0, 191, 255, 0.1));
-        }
-
-        .contact-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .contact-info {
-            animation: fadeInLeft 1s ease-out;
-        }
-
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: rgba(26, 31, 58, 0.6);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            border-left: 4px solid var(--gold);
-            box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateX(10px);
-            background: rgba(26, 31, 58, 0.85);
-            box-shadow: 0 8px 24px 0 rgba(0, 102, 255, 0.3);
-            border-left-color: var(--electric-blue);
-        }
-
-        .contact-item h4 {
-            color: #ffd700;
-        }
-
-        .contact-item p {
-            color: var(--text-secondary);
-        }
-
-        .contact-icon {
-            font-size: 2rem;
-            color: #4ddbff;
-        }
-
-        .contact-form {
-            animation: fadeInRight 1s ease-out;
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #4ddbff;
-            font-weight: 600;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(26, 31, 58, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            color: var(--text-primary);
-            font-size: 1rem;
-            font-family: 'Poppins', sans-serif;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: rgba(224, 230, 237, 0.6);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--gold);
-            background: rgba(26, 31, 58, 0.9);
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.3),
-                        0 4px 16px rgba(0, 102, 255, 0.2);
-        }
-
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        /* Footer */
-        footer {
-            padding: 3rem 5%;
-            background: rgba(10, 14, 39, 0.95);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border-top: 2px solid var(--electric-blue);
-            box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.4);
-            text-align: center;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .social-links a {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, var(--electric-blue), var(--sky-blue));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-5px) rotate(360deg);
-            box-shadow: 0 10px 30px rgba(0, 191, 255, 0.5);
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                margin-top: 25%;
-            }
-
-            .hero-banner {
-                height: 50%;
-            }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline::before {
-                left: 0;
-            }
-
-            .timeline-item:nth-child(odd),
-            .timeline-item:nth-child(even) {
-                padding-left: 2rem;
-                padding-right: 0;
-                text-align: left;
-            }
-
-            .timeline-dot {
-                left: 0;
-                transform: translateX(-50%);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-banner {
-                height: 40%;
-            }
-
-            .hero-content {
-                margin-top: 30%;
-            }
-
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-
-            .brand-name {
-                font-size: 1.2rem;
-            }
-
-            .logo {
-                width: 50px;
-                height: 50px;
-            }
-        }
-
-        /* Scroll animations */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease-out;
-        }
-
-        .scroll-reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Accessibility improvements */
-        *:focus {
-            outline: 3px solid var(--gold);
-            outline-offset: 2px;
-        }
-
-        .btn:focus,
-        .nav-links a:focus {
-            outline: 3px solid var(--gold);
-            outline-offset: 4px;
-        }
-
-        /* High contrast mode support */
-        @media (prefers-contrast: high) {
-            .hero-text p,
-            .expertise-card p,
-            .timeline-content p {
-                color: #ffffff;
-            }
-            
-            .hero-card,
-            .expertise-card,
-            .timeline-content,
-            .contact-item {
-                border-width: 2px;
-                border-color: rgba(255, 255, 255, 0.4);
-            }
-        }
-
-        /* Reduced motion support */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alvin M. Silva, MDM | Development Management Professional & Resilience Expert</title>
+<link rel="preconnect" href="https://fonts.googleapis.com ">
+<link rel="preconnect" href="https://fonts.gstatic.com " crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+:root {
+--electric-blue: #0066FF;
+--sky-blue: #00BFFF;
+--gold: #FFD700;
+--dark-bg: #0a0e27;
+--card-bg: #1a1f3a;
+--text-primary: #ffffff;
+--text-secondary: #e0e6ed;
+--contrast-bg: #0d1224;
+--glass-bg: rgba(26, 31, 58, 0.7);
+--glass-border: rgba(255, 255, 255, 0.18);
+}
+body {
+font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+background: linear-gradient(135deg, var(--dark-bg) 0%, #0f1428 100%);
+color: var(--text-primary);
+overflow-x: hidden;
+line-height: 1.6;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Montserrat', sans-serif;
+font-weight: 700;
+}
+.subtitle, .stat-label, .nav-links {
+font-family: 'Roboto Condensed', sans-serif;
+}
+/* Animated Background */
+.bg-animation {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+overflow: hidden;
+}
+.bg-animation::before {
+content: '';
+position: absolute;
+width: 200%;
+height: 200%;
+background: radial-gradient(circle, var(--electric-blue) 1px, transparent 1px);
+background-size: 50px 50px;
+animation: backgroundMove 20s linear infinite;
+opacity: 0.1;
+}
+@keyframes backgroundMove {
+0% { transform: translate(0, 0); }
+100% { transform: translate(50px, 50px); }
+}
+/* Floating particles */
+.particle {
+position: absolute;
+background: var(--sky-blue);
+border-radius: 50%;
+opacity: 0.3;
+animation: float 6s infinite ease-in-out;
+}
+@keyframes float {
+0%, 100% { transform: translateY(0) translateX(0); }
+50% { transform: translateY(-30px) translateX(20px); }
+}
+/* Header */
+header {
+padding: 2rem 5%;
+background: rgba(10, 14, 39, 0.85);
+backdrop-filter: blur(20px) saturate(180%);
+-webkit-backdrop-filter: blur(20px) saturate(180%);
+position: sticky;
+top: 0;
+z-index: 1000;
+border-bottom: 2px solid var(--electric-blue);
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+animation: slideDown 0.8s ease-out;
+}
+@keyframes slideDown {
+from {
+transform: translateY(-100%);
+opacity: 0;
+}
+to {
+transform: translateY(0);
+opacity: 1;
+}
+}
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+max-width: 1400px;
+margin: 0 auto;
+}
+.logo-container {
+display: flex;
+align-items: center;
+gap: 1rem;
+}
+.logo {
+width: 60px;
+height: 60px;
+border-radius: 50%;
+border: 3px solid var(--gold);
+padding: 5px;
+background: white;
+animation: rotateLogo 10s linear infinite;
+}
+@keyframes rotateLogo {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+.brand-name {
+font-size: 1.5rem;
+font-weight: bold;
+background: linear-gradient(45deg, var(--electric-blue), var(--sky-blue), var(--gold));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+.nav-links {
+display: flex;
+gap: 2rem;
+list-style: none;
+}
+.nav-links a {
+color: var(--text-primary);
+text-decoration: none;
+padding: 0.5rem 1rem;
+border-radius: 5px;
+transition: all 0.3s ease;
+position: relative;
+}
+.nav-links a::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 50%;
+width: 0;
+height: 2px;
+background: var(--gold);
+transition: all 0.3s ease;
+transform: translateX(-50%);
+}
+.nav-links a:hover::after {
+width: 100%;
+}
+.nav-links a:hover {
+color: var(--gold);
+}
+/* Hero Section */
+.hero {
+min-height: 90vh;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 4rem 5%;
+position: relative;
+}
+.hero-banner {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 60%;
+overflow: hidden;
+z-index: 0;
+}
+.banner-image {
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: center;
+animation: bannerZoom 20s ease-in-out infinite alternate;
+filter: brightness(0.9);
+}
+@keyframes bannerZoom {
+0% { transform: scale(1); }
+100% { transform: scale(1.05); }
+}
+.banner-overlay {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(to bottom, transparent 0%, rgba(10, 14, 39, 0.3) 40%, rgba(10, 14, 39, 0.95) 100%);
+pointer-events: none;
+}
+.hero-content {
+max-width: 1400px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 4rem;
+align-items: center;
+animation: fadeInUp 1s ease-out;
+position: relative;
+z-index: 1;
+margin-top: 20%;
+}
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(40px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+.hero-text h1 {
+font-size: 3.5rem;
+margin-bottom: 1rem;
+color: #ffffff !important; /* CHANGED TO WHITE */
+animation: shimmer 3s infinite;
+}
+@keyframes shimmer {
+0%, 100% { opacity: 1; }
+50% { opacity: 0.7; }
+}
+.hero-text .subtitle {
+font-size: 1.3rem;
+color: var(--gold);
+margin-bottom: 1.5rem;
+font-weight: 600;
+}
+.hero-text p {
+font-size: 1.1rem;
+color: #e0e6ed;
+margin-bottom: 2rem;
+line-height: 1.8;
+}
+.cta-buttons {
+display: flex;
+gap: 1.5rem;
+flex-wrap: wrap;
+}
+.btn {
+padding: 1rem 2.5rem;
+border-radius: 50px;
+text-decoration: none;
+font-weight: 600;
+transition: all 0.3s ease;
+position: relative;
+overflow: hidden;
+display: inline-block;
+cursor: pointer;
+}
+.btn-primary {
+background: linear-gradient(45deg, var(--electric-blue), var(--sky-blue));
+color: white;
+border: none;
+}
+.btn-primary::before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(45deg, var(--sky-blue), var(--gold));
+transition: left 0.3s ease;
+}
+.btn-primary:hover::before {
+left: 0;
+}
+.btn-primary span {
+position: relative;
+z-index: 1;
+}
+.btn-secondary {
+background: transparent;
+color: var(--gold);
+border: 2px solid var(--gold);
+}
+.btn-secondary:hover {
+background: var(--gold);
+color: var(--dark-bg);
+transform: translateY(-3px);
+box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+.hero-image {
+position: relative;
+animation: floatImage 3s ease-in-out infinite;
+}
+@keyframes floatImage {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(-20px); }
+}
+.hero-card {
+background: rgba(26, 31, 58, 0.6);
+backdrop-filter: blur(20px) saturate(180%);
+-webkit-backdrop-filter: blur(20px) saturate(180%);
+padding: 3rem;
+border-radius: 20px;
+border: 2px solid rgba(255, 255, 255, 0.2);
+box-shadow: 0 8px 32px 0 rgba(0, 102, 255, 0.4),
+0 20px 60px 0 rgba(0, 0, 0, 0.5);
+position: relative;
+}
+.hero-card::before {
+content: '';
+position: absolute;
+top: -2px;
+left: -2px;
+right: -2px;
+bottom: -2px;
+background: linear-gradient(45deg, var(--electric-blue), var(--sky-blue), var(--gold));
+border-radius: 20px;
+z-index: -1;
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+.hero-card:hover::before {
+opacity: 1;
+animation: borderGlow 2s linear infinite;
+}
+@keyframes borderGlow {
+0%, 100% { filter: hue-rotate(0deg); }
+50% { filter: hue-rotate(180deg); }
+}
+.stat-item {
+margin-bottom: 1.5rem;
+}
+.stat-number {
+font-size: 2.5rem;
+font-weight: bold;
+background: linear-gradient(45deg, var(--gold), var(--sky-blue));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+.stat-label {
+color: var(--text-secondary);
+font-size: 0.95rem;
+}
+/* Tooltip */
+.tooltip {
+position: relative;
+display: inline-block;
+cursor: help;
+border-bottom: 2px dotted var(--sky-blue);
+}
+.tooltip .tooltiptext {
+visibility: hidden;
+width: 300px;
+background: rgba(10, 14, 39, 0.95);
+backdrop-filter: blur(20px) saturate(180%);
+-webkit-backdrop-filter: blur(20px) saturate(180%);
+color: var(--text-primary);
+text-align: left;
+border-radius: 10px;
+padding: 1rem;
+position: absolute;
+z-index: 1;
+bottom: 125%;
+left: 50%;
+margin-left: -150px;
+opacity: 0;
+transition: opacity 0.3s;
+border: 1px solid rgba(255, 255, 255, 0.2);
+box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6),
+0 4px 16px rgba(0, 102, 255, 0.3);
+}
+.tooltip:hover .tooltiptext {
+visibility: visible;
+opacity: 1;
+animation: tooltipFade 0.3s ease-in;
+}
+@keyframes tooltipFade {
+from { opacity: 0; transform: translateY(10px); }
+to { opacity: 1; transform: translateY(0); }
+}
+/* Expertise Section */
+.expertise {
+padding: 5rem 5%;
+background: rgba(15, 20, 40, 0.5);
+}
+.section-title {
+text-align: center;
+font-size: 2.5rem;
+margin-bottom: 3rem;
+font-family: 'Montserrat', sans-serif;
+font-weight: 800;
+background: linear-gradient(45deg, var(--electric-blue), var(--gold));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-shadow: 0 2px 10px rgba(0, 102, 255, 0.3);
+}
+.expertise-grid {
+max-width: 1400px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 2rem;
+}
+.expertise-card {
+background: rgba(26, 31, 58, 0.6);
+backdrop-filter: blur(20px) saturate(180%);
+-webkit-backdrop-filter: blur(20px) saturate(180%);
+padding: 2.5rem;
+border-radius: 15px;
+border: 1px solid rgba(255, 255, 255, 0.18);
+box-shadow: 0 8px 32px 0 rgba(0, 102, 255, 0.3),
+0 4px 16px 0 rgba(0, 0, 0, 0.4);
+transition: all 0.3s ease;
+position: relative;
+overflow: hidden;
+animation: fadeInUp 0.8s ease-out backwards;
+}
+.expertise-card:nth-child(1) { animation-delay: 0.1s; }
+.expertise-card:nth-child(2) { animation-delay: 0.2s; }
+.expertise-card:nth-child(3) { animation-delay: 0.3s; }
+.expertise-card:nth-child(4) { animation-delay: 0.4s; }
+.expertise-card:nth-child(5) { animation-delay: 0.5s; }
+.expertise-card:nth-child(6) { animation-delay: 0.6s; }
+.expertise-card:nth-child(7) { animation-delay: 0.7s; }
+.expertise-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.3), transparent);
+transition: left 0.5s ease;
+}
+.expertise-card:hover::before {
+left: 100%;
+}
+.expertise-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 20px 40px rgba(0, 102, 255, 0.5),
+0 8px 20px rgba(0, 191, 255, 0.4);
+border-color: rgba(255, 215, 0, 0.5);
+background: rgba(26, 31, 58, 0.8);
+}
+.expertise-icon {
+font-size: 3rem;
+margin-bottom: 1rem;
+display: inline-block;
+animation: pulse 2s infinite;
+}
+@keyframes pulse {
+0%, 100% { transform: scale(1); }
+50% { transform: scale(1.1); }
+}
+.expertise-card h3 {
+color: #4ddbff;
+margin-bottom: 1rem;
+font-size: 1.4rem;
+font-weight: 700;
+}
+.expertise-card p {
+color: var(--text-secondary);
+line-height: 1.8;
+}
+/* Achievements Section */
+.achievements {
+padding: 5rem 5%;
+}
+.timeline {
+max-width: 1200px;
+margin: 0 auto;
+position: relative;
+}
+.timeline::before {
+content: '';
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+width: 3px;
+height: 100%;
+background: linear-gradient(180deg, var(--electric-blue), var(--sky-blue), var(--gold));
+}
+.timeline-item {
+margin-bottom: 3rem;
+position: relative;
+animation: fadeInUp 0.8s ease-out backwards;
+}
+.timeline-item:nth-child(odd) {
+padding-right: 55%;
+text-align: right;
+}
+.timeline-item:nth-child(even) {
+padding-left: 55%;
+}
+.timeline-content {
+background: rgba(26, 31, 58, 0.6);
+backdrop-filter: blur(20px) saturate(180%);
+-webkit-backdrop-filter: blur(20px) saturate(180%);
+padding: 2rem;
+border-radius: 15px;
+border: 1px solid rgba(255, 255, 255, 0.18);
+box-shadow: 0 8px 32px 0 rgba(0, 102, 255, 0.3),
+0 4px 16px 0 rgba(0, 0, 0, 0.4);
+position: relative;
+transition: all 0.3s ease;
+}
+.timeline-content:hover {
+transform: scale(1.05);
+box-shadow: 0 15px 40px rgba(0, 191, 255, 0.4),
+0 8px 24px rgba(0, 102, 255, 0.5);
+border-color: rgba(255, 215, 0, 0.4);
+background: rgba(26, 31, 58, 0.8);
+}
+.timeline-content h3 {
+color: #ffffff;
+margin-bottom: 0.5rem;
+font-weight: 700;
+}
+.timeline-content p {
+color: var(--text-secondary);
+line-height: 1.8;
+}
+.timeline-dot {
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+width: 20px;
+height: 20px;
+background: var(--gold);
+border-radius: 50%;
+border: 4px solid var(--dark-bg);
+top: 0;
+animation: dotPulse 2s infinite;
+}
+@keyframes dotPulse {
+0%, 100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
+50% { box-shadow: 0 0 0 15px rgba(255, 215, 0, 0); }
+}
+/* Contact Section */
+.contact {
+padding: 5rem 5%;
+background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(0, 191, 255, 0.1));
+}
+.contact-container {
+max-width: 1200px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 4rem;
+}
+.contact-info {
+animation: fadeInLeft 1s ease-out;
+}
+@keyframes fadeInLeft {
+from {
+opacity: 0;
+transform: translateX(-50px);
+}
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+.contact-item {
+display: flex;
+align-items: center;
+gap: 1.5rem;
+margin-bottom: 2rem;
+padding: 1.5rem;
+background: rgba(26, 31, 58, 0.6);
+backdrop-filter: blur(20px) saturate(180%);
+-webkit-backdrop-filter: blur(20px) saturate(180%);
+border-radius: 10px;
+border: 1px solid rgba(255, 255, 255, 0.18);
+border-left: 4px solid var(--gold);
+box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.3);
+transition: all 0.3s ease;
+}
+.contact-item:hover {
+transform: translateX(10px);
+background: rgba(26, 31, 58, 0.85);
+box-shadow: 0 8px 24px 0 rgba(0, 102, 255, 0.3);
+border-left-color: var(--electric-blue);
+}
+.contact-item h4 {
+color: #ffd700;
+}
+.contact-item p {
+color: var(--text-secondary);
+}
+.contact-icon {
+font-size: 2rem;
+color: #4ddbff;
+}
+.contact-form {
+animation: fadeInRight 1s ease-out;
+}
+@keyframes fadeInRight {
+from {
+opacity: 0;
+transform: translateX(50px);
+}
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+.form-group {
+margin-bottom: 1.5rem;
+}
+.form-group label {
+display: block;
+margin-bottom: 0.5rem;
+color: #4ddbff;
+font-weight: 600;
+font-family: 'Montserrat', sans-serif;
+}
+.form-group input,
+.form-group textarea {
+width: 100%;
+padding: 1rem;
+background: rgba(26, 31, 58, 0.7);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+border: 2px solid rgba(255, 255, 255, 0.2);
+border-radius: 10px;
+color: var(--text-primary);
+font-size: 1rem;
+font-family: 'Poppins', sans-serif;
+transition: all 0.3s ease;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+color: rgba(224, 230, 237, 0.6);
+}
+.form-group input:focus,
+.form-group textarea:focus {
+outline: none;
+border-color: var(--gold);
+background: rgba(26, 31, 58, 0.9);
+box-shadow: 0 0 20px rgba(255, 215, 0, 0.3),
+0 4px 16px rgba(0, 102, 255, 0.2);
+}
+.form-group textarea {
+min-height: 150px;
+resize: vertical;
+}
+/* Footer */
+footer {
+padding: 3rem 5%;
+background: rgba(10, 14, 39, 0.95);
+backdrop-filter: blur(20px) saturate(180%);
+-webkit-backdrop-filter: blur(20px) saturate(180%);
+border-top: 2px solid var(--electric-blue);
+box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.4);
+text-align: center;
+}
+.social-links {
+display: flex;
+justify-content: center;
+gap: 2rem;
+margin-bottom: 2rem;
+}
+.social-links a {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+background: linear-gradient(45deg, var(--electric-blue), var(--sky-blue));
+display: flex;
+align-items: center;
+justify-content: center;
+color: white;
+font-size: 1.5rem;
+text-decoration: none;
+transition: all 0.3s ease;
+}
+.social-links a:hover {
+transform: translateY(-5px) rotate(360deg);
+box-shadow: 0 10px 30px rgba(0, 191, 255, 0.5);
+}
+/* Responsive */
+@media (max-width: 1024px) {
+.hero-content {
+grid-template-columns: 1fr;
+text-align: center;
+margin-top: 25%;
+}
+.hero-banner {
+height: 50%;
+}
+.hero-text h1 {
+font-size: 2.5rem;
+}
+.contact-container {
+grid-template-columns: 1fr;
+}
+.timeline::before {
+left: 0;
+}
+.timeline-item:nth-child(odd),
+.timeline-item:nth-child(even) {
+padding-left: 2rem;
+padding-right: 0;
+text-align: left;
+}
+.timeline-dot {
+left: 0;
+transform: translateX(-50%);
+}
+}
+@media (max-width: 768px) {
+.nav-links {
+display: none;
+}
+.hero-banner {
+height: 40%;
+}
+.hero-content {
+margin-top: 30%;
+}
+.hero-text h1 {
+font-size: 2rem;
+}
+.section-title {
+font-size: 2rem;
+}
+.cta-buttons {
+flex-direction: column;
+}
+.btn {
+width: 100%;
+text-align: center;
+}
+.brand-name {
+font-size: 1.2rem;
+}
+.logo {
+width: 50px;
+height: 50px;
+}
+}
+/* Scroll animations */
+.scroll-reveal {
+opacity: 0;
+transform: translateY(50px);
+transition: all 0.8s ease-out;
+}
+.scroll-reveal.active {
+opacity: 1;
+transform: translateY(0);
+}
+/* Accessibility improvements */
+*:focus {
+outline: 3px solid var(--gold);
+outline-offset: 2px;
+}
+.btn:focus,
+.nav-links a:focus {
+outline: 3px solid var(--gold);
+outline-offset: 4px;
+}
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+.hero-text p,
+.expertise-card p,
+.timeline-content p {
+color: #ffffff;
+}
+.hero-card,
+.expertise-card,
+.timeline-content,
+.contact-item {
+border-width: 2px;
+border-color: rgba(255, 255, 255, 0.4);
+}
+}
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+*,
+*::before,
+*::after {
+animation-duration: 0.01ms !important;
+animation-iteration-count: 1 !important;
+transition-duration: 0.01ms !important;
+}
+}
+</style>
 </head>
 <body>
-    <div class="bg-animation">
-        <div class="particle" style="width: 4px; height: 4px; top: 20%; left: 10%;"></div>
-        <div class="particle" style="width: 6px; height: 6px; top: 60%; left: 80%; animation-delay: 2s;"></div>
-        <div class="particle" style="width: 3px; height: 3px; top: 40%; left: 50%; animation-delay: 4s;"></div>
-        <div class="particle" style="width: 5px; height: 5px; top: 80%; left: 20%; animation-delay: 1s;"></div>
-        <div class="particle" style="width: 4px; height: 4px; top: 30%; left: 70%; animation-delay: 3s;"></div>
-    </div>
-
-    <header>
-        <nav>
-            <div class="logo-container">
-                <img src="https://appimize.app/assets/apps/user_1097/images/288dd899974a_850_1097.png" alt="Alvin Silva Logo" class="logo">
-                <div class="brand-name">ALVIN M. SILVA</div>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="https://asilvainnovations.com/portfolio-of-alvin-silva/">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="hero" id="about">
-        <div class="hero-banner">
-            <img src="https://appimize.app/assets/apps/user_1097/images/102a77146921_587_1097.png" alt="Enhance. Adapt. Thrive - Alvin Silva" class="banner-image">
-            <div class="banner-overlay"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Alvin M. Silva, MDM</h1>
-                <p class="subtitle">Development Management Professional & Resilience Consultant</p>
-                <p>Development management professional, systems innovator, and certified international humanitarian practitioner dedicated to co-creating policies and solutions for <span class="tooltip">growth and sustainability<span class="tooltiptext">Almost 20 years of global experience in CCA, DRR, and resilience-building with organizations including ECHO, USAID, World Bank, UNICEF, and more.</span></span>, <span class="tooltip">disaster risk reduction<span class="tooltiptext">Active contributions in cultivating and innovating DRR strategies with diverse institutions and communities worldwide.</span></span>, and <span class="tooltip">social innovation<span class="tooltiptext">Author of "Building Resilience: The Path To A More Fulfilling and Resilient Life" and founder of multiple innovation platforms.</span></span>.</p>
-                <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary"><span>Get In Touch</span></a>
-                    <a href="#expertise" class="btn btn-secondary">Explore Expertise</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="hero-card">
-                    <div class="stat-item">
-                        <div class="stat-number">18+</div>
-                        <div class="stat-label">Years of Global Experience</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">50+</div>
-                        <div class="stat-label">International Projects</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">100+</div>
-                        <div class="stat-label">Organizations Served</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">Published Books & Research</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="expertise" id="expertise">
-        <h2 class="section-title">Core Expertise</h2>
-        <div class="expertise-grid">
-            <div class="expertise-card">
-                <div class="expertise-icon">🌍</div>
-                <h3>Climate Change Adaptation</h3>
-                <p>More than 15 years of global experience in CCA strategies, working with ECHO, USAID, World Bank, and international organizations to develop sustainable climate solutions.</p>
-            </div>
-            <div class="expertise-card">
-                <div class="expertise-icon">🛡️</div>
-                <h3>Disaster Risk Reduction</h3>
-                <p>Certified DRR practitioner with proven track record in implementing resilience projects across communities, institutions, and government agencies worldwide.</p>
-            </div>
-            <div class="expertise-card">
-                <div class="expertise-icon">💡</div>
-                <h3>Systems Innovation</h3>
-                <p>Designer and developer of DDRiVE-M platform, Strategic Planner Pro, and Cognitio+ digital ecosystem for data-driven risk management and evaluation.</p>
-            </div>
-            <div class="expertise-card">
-                <div class="expertise-icon">📊</div>
-                <h3>Strategic Planning</h3>
-                <p>Expert in organizational development, strategic management, and policy formulation for government agencies, NGOs, and international development organizations.</p>
-            </div>
-            <div class="expertise-card">
-                <div class="expertise-icon">🎓</div>
-                <h3>Capacity Building</h3>
-                <p>Experienced trainer and facilitator with MDM from Asian Institute of Management, conducting workshops and mentoring programs globally.</p>
-            </div>
-            <div class="expertise-card">
-                <div class="expertise-icon">🔒</div>
-                <h3>Security Risk Management</h3>
-                <p>Certified Security Risk Management Professional (SRMP) specializing in humanitarian operations and emergency response coordination.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="achievements" id="achievements">
-        <h2 class="section-title">Key Achievements & Milestones</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>WorldSkills Philippines Strategic Plan 2026-2030</h3>
-                    <p>Authored and developed strategic options and strategy map for WSP-TESDA, integrating current context and national priorities for skills development excellence.</p>
-                    <small style="color: var(--gold);">2026</small>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>Published "Personal Resilience: The Path to Oneness"</h3>
-                    <p>Latest contribution to resilience literature, empowering individuals and organizations with transformative approaches to building personal and collective resilience.</p>
-                    <small style="color: var(--gold);">April 2025</small>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>Climate-Smart Resilience Project Design</h3>
-                    <p>Developed innovative community-based climate-smart resilience project worth PHP190M for Balatan, Camarines Sur in partnership with SOLHUM.</p>
-                    <small style="color: var(--gold);">2024-2025</small>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>WHO Emergency Medical Responders Program</h3>
-                    <p>Developed comprehensive Mental Health and Psychosocial Support intervention module for PEMAT members in collaboration with Department of Health.</p>
-                    <small style="color: var(--gold);">2023</small>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>Published "Building Resilience"</h3>
-                    <p>Authored groundbreaking book "Building Resilience: The Path To A More Fulfilling and Resilient Life" through Cognitio+.</p>
-                    <small style="color: var(--gold);">September 2023</small>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>BARMM Integrated Risk Management</h3>
-                    <p>Led systems innovation for Food Security, Livelihoods, DRR and WASH in Bangsamoro region, partnering with USAID and Action Against Hunger.</p>
-                    <small style="color: var(--gold);">2022</small>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <h3>MMDA Development Management Consultant</h3>
-                    <p>Provided strategic guidance on DRRM, urban resiliency, and corporate planning for Metro Manila Development Authority for over 3 years.</p>
-                    <small style="color: var(--gold);">2017-2020</small>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact" id="contact">
-        <h2 class="section-title">Let's Connect</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3 style="color: #4ddbff; margin-bottom: 2rem; font-size: 1.8rem; font-family: 'Montserrat', sans-serif; font-weight: 700;">Get in Touch</h3>
-                <div class="contact-item">
-                    <div class="contact-icon">📱</div>
-                    <div>
-                        <h4 style="color: var(--gold); margin-bottom: 0.5rem;">Mobile</h4>
-                        <p>+639178555134</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📞</div>
-                    <div>
-                        <h4 style="color: var(--gold); margin-bottom: 0.5rem;">Landline</h4>
-                        <p>(028) 7915-1796</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">✉️</div>
-                    <div>
-                        <h4 style="color: var(--gold); margin-bottom: 0.5rem;">Email</h4>
-                        <p><a href="mailto://alvin.silva@asilvainnovations.com" class="__cf_email__" data-cfemail="alvin.silva@asilvainnovations.com</a></p>
-                        <p><a href="mailto://alvin.silva@cognitioplus.com" class="__cf_email__" data-cfemail="alvin.silva@cognitioplus.com"</a></p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">🌐</div>
-                    <div>
-                        <h4 style="color: var(--gold); margin-bottom: 0.5rem;">Email</h4>
-                        <p><a href="mailto://alvin.silva@asilvainnovations.com" target="_blank" style="color: var(--sky-blue); text-decoration: none;">alvin.silva@asilvainnovations.com</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="contact-form">
-                <h3 style="color: #4ddbff; margin-bottom: 2rem; font-size: 1.8rem; font-family: 'Montserrat', sans-serif; font-weight: 700;">Send a Message</h3>
-                <form aria-label="Contact form">
-                    <div class="form-group">
-                        <label for="name-input">Your Name</label>
-                        <input type="text" id="name-input" name="name" placeholder="Enter your name" required aria-required="true">
-                    </div>
-                    <div class="form-group">
-                        <label for="email-input">Email Address</label>
-                        <input type="email" id="email-input" name="email" placeholder="Enter your email" required aria-required="true">
-                    </div>
-                    <div class="form-group">
-                        <label for="message-input">Message</label>
-                        <textarea id="message-input" name="message" placeholder="How can I help you?" required aria-required="true"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;" aria-label="Send message"><span>Send Message</span></button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/alvinsilva777/" title="LinkedIn">in</a>
-            <a href="https://www.facebook.com/a7vinsi7va/" title="Facebook">f</a>
-            <a href="mailto://alvin.silva@asilvainnovations.com" title="Email">✉</a>
-            <a href="https://alvin.asilvainnovations.com" title="Website">🌐</a>
-        </div>
-        <p style="color: var(--text-secondary);">© 2026 Alvin M. Silva, MDM. All rights reserved.</p>
-        <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.9rem;"></p>
-    </footer>
-
-    <script>
-        // Scroll reveal animation
-        const scrollReveal = () => {
-            const reveals = document.querySelectorAll('.scroll-reveal');
-            reveals.forEach(element => {
-                const windowHeight = window.innerHeight;
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < windowHeight - elementVisible) {
-                    element.classList.add('active');
-                }
-            });
-        };
-
-        window.addEventListener('scroll', scrollReveal);
-        
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll reveal class to elements
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.expertise-card, .timeline-item').forEach(el => {
-                el.classList.add('scroll-reveal');
-            });
-            scrollReveal();
-        });
-    </script>
+<div class="bg-animation">
+<div class="particle" style="width: 4px; height: 4px; top: 20%; left: 10%;"></div>
+<div class="particle" style="width: 6px; height: 6px; top: 60%; left: 80%; animation-delay: 2s;"></div>
+<div class="particle" style="width: 3px; height: 3px; top: 40%; left: 50%; animation-delay: 4s;"></div>
+<div class="particle" style="width: 5px; height: 5px; top: 80%; left: 20%; animation-delay: 1s;"></div>
+<div class="particle" style="width: 4px; height: 4px; top: 30%; left: 70%; animation-delay: 3s;"></div>
+</div>
+<header>
+<nav>
+<div class="logo-container">
+<img src="https://appimize.app/assets/apps/user_1097/images/288dd899974a_850_1097.png " alt="Alvin Silva Logo" class="logo">
+<div class="brand-name">ALVIN M. SILVA</div>
+</div>
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#expertise">Expertise</a></li>
+<li><a href="#achievements">Achievements</a></li>
+<li><a href="https://asilvainnovations.com/portfolio-of-alvin-silva/ ">Portfolio</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
+<section class="hero" id="about">
+<div class="hero-banner">
+<img src="https://appimize.app/assets/apps/user_1097/images/102a77146921_587_1097.png " alt="Enhance. Adapt. Thrive - Alvin Silva" class="banner-image">
+<div class="banner-overlay"></div>
+</div>
+<div class="hero-content">
+<div class="hero-text">
+<h1>Alvin M. Silva, MDM</h1> <!-- CHANGED TO WHITE -->
+<p class="subtitle">Development Management Professional & Resilience Consultant</p>
+<p>Development management professional, systems innovator, and certified international humanitarian practitioner dedicated to co-creating policies and solutions for <span class="tooltip">growth and sustainability<span class="tooltiptext">Almost 20 years of global experience in CCA, DRR, and resilience-building with organizations including ECHO, USAID, World Bank, UNICEF, and more.</span></span>, <span class="tooltip">disaster risk reduction<span class="tooltiptext">Active contributions in cultivating and innovating DRR strategies with diverse institutions and communities worldwide.</span></span>, and <span class="tooltip">social innovation<span class="tooltiptext">Author of "Building Resilience: The Path To A More Fulfilling and Resilient Life" and founder of multiple innovation platforms.</span></span>.</p>
+<div class="cta-buttons">
+<a href="#contact" class="btn btn-primary"><span>Get In Touch</span></a>
+<a href="#expertise" class="btn btn-secondary">Explore Expertise</a>
+</div>
+</div>
+<div class="hero-image">
+<div class="hero-card">
+<div class="stat-item">
+<div class="stat-number">18+</div>
+<div class="stat-label">Years of Global Experience</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">50+</div>
+<div class="stat-label">International Projects</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">100+</div>
+<div class="stat-label">Organizations Served</div>
+</div>
+<div class="stat-item">
+<div class="stat-number">10+</div>
+<div class="stat-label">Published Books & Research</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="expertise" id="expertise">
+<h2 class="section-title">Core Expertise</h2>
+<div class="expertise-grid">
+<div class="expertise-card">
+<div class="expertise-icon">🌍</div>
+<h3>Climate Change Adaptation</h3>
+<p>More than 15 years of global experience in CCA strategies, working with ECHO, USAID, World Bank, and international organizations to develop sustainable climate solutions.</p>
+</div>
+<div class="expertise-card">
+<div class="expertise-icon">🛡️</div>
+<h3>Disaster Risk Reduction</h3>
+<p>Certified DRR practitioner with proven track record in implementing resilience projects across communities, institutions, and government agencies worldwide.</p>
+</div>
+<div class="expertise-card">
+<div class="expertise-icon">💡</div>
+<h3>Systems Innovation</h3>
+<p>Designer and developer of DDRiVE-M platform, Strategic Planner Pro, and Cognitio+ digital ecosystem for data-driven risk management and evaluation.</p>
+</div>
+<div class="expertise-card">
+<div class="expertise-icon">📊</div>
+<h3>Strategic Planning</h3>
+<p>Expert in organizational development, strategic management, and policy formulation for government agencies, NGOs, and international development organizations.</p>
+</div>
+<div class="expertise-card">
+<div class="expertise-icon">🎯</div>
+<h3>Strategic Thinking and Planning</h3>
+<p>Leads in anticipating future challenges and opportunities to set clear, long-term goals requiring aligning resources, partnerships, and actions to achieve sustainable impact. He emphasizes foresight, adaptability, and collaboration to drive meaningful outcomes.</p>
+</div>
+<div class="expertise-card">
+<div class="expertise-icon">🎓</div>
+<h3>Capacity Building</h3>
+<p>Experienced trainer and facilitator with MDM from Asian Institute of Management, conducting workshops and mentoring programs globally.</p>
+</div>
+<div class="expertise-card">
+<div class="expertise-icon">🔒</div>
+<h3>Security Risk Management</h3>
+<p>Certified Security Risk Management Professional (SRMP) specializing in humanitarian operations and emergency response coordination.</p>
+</div>
+</div>
+</section>
+<section class="achievements" id="achievements">
+<h2 class="section-title">Key Achievements & Milestones</h2>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h3>WorldSkills Philippines Strategic Plan 2026-2030</h3>
+<p>Authored and developed strategic options and strategy map for WSP-TESDA, integrating current context and national priorities for skills development excellence.</p>
+<small style="color: var(--gold);">2026</small>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h3>Published "Personal Resilience: The Path to Oneness"</h3>
+<p>Latest contribution to resilience literature, empowering individuals and organizations with transformative approaches to building personal and collective resilience.</p>
+<small style="color: var(--gold);">April 2025</small>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h3>Climate-Smart Resilience Project Design</h3>
+<p>Developed innovative community-based climate-smart resilience project worth PHP190M for Balatan, Camarines Sur in partnership with SOLHUM.</p>
+<small style="color: var(--gold);">2024-2025</small>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h3>WHO Emergency Medical Responders Program</h3>
+<p>Developed comprehensive Mental Health and Psychosocial Support intervention module for PEMAT members in collaboration with Department of Health.</p>
+<small style="color: var(--gold);">2023</small>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h3>Published "Building Resilience"</h3>
+<p>Authored groundbreaking book "Building Resilience: The Path To A More Fulfilling and Resilient Life" through Cognitio+.</p>
+<small style="color: var(--gold);">September 2023</small>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h3>BARMM Integrated Risk Management</h3>
+<p>Led systems innovation for Food Security, Livelihoods, DRR and WASH in Bangsamoro region, partnering with USAID and Action Against Hunger.</p>
+<small style="color: var(--gold);">2022</small>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-dot"></div>
+<div class="timeline-content">
+<h3>MMDA Development Management Consultant</h3>
+<p>Provided strategic guidance on DRRM, urban resiliency, and corporate planning for Metro Manila Development Authority for over 3 years.</p>
+<small style="color: var(--gold);">2017-2020</small>
+</div>
+</div>
+</div>
+</section>
+<section class="contact" id="contact">
+<h2 class="section-title">Let's Connect</h2>
+<div class="contact-container">
+<div class="contact-info">
+<h3 style="color: #4ddbff; margin-bottom: 2rem; font-size: 1.8rem; font-family: 'Montserrat', sans-serif; font-weight: 700;">Get in Touch</h3>
+<div class="contact-item">
+<div class="contact-icon">📱</div>
+<div>
+<h4 style="color: var(--gold); margin-bottom: 0.5rem;">Mobile</h4>
+<p>+639178555134</p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">📞</div>
+<div>
+<h4 style="color: var(--gold); margin-bottom: 0.5rem;">Landline</h4>
+<p>(028) 7915-1796</p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">✉️</div>
+<div>
+<h4 style="color: var(--gold); margin-bottom: 0.5rem;">Email</h4>
+<p><a href="mailto://alvin.silva@asilvainnovations.com" class="__cf_email__" data-cfemail="alvin.silva@asilvainnovations.com</a></p>
+<p><a href="mailto://alvin.silva@cognitioplus.com" class="__cf_email__" data-cfemail="alvin.silva@cognitioplus.com"</a></p>
+</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">🌐</div>
+<div>
+<h4 style="color: var(--gold); margin-bottom: 0.5rem;">Email</h4>
+<p><a href="mailto://alvin.silva@asilvainnovations.com" target="_blank" style="color: var(--sky-blue); text-decoration: none;">alvin.silva@asilvainnovations.com</a></p>
+</div>
+</div>
+</div>
+<div class="contact-form">
+<h3 style="color: #4ddbff; margin-bottom: 2rem; font-size: 1.8rem; font-family: 'Montserrat', sans-serif; font-weight: 700;">Send a Message</h3>
+<form aria-label="Contact form">
+<div class="form-group">
+<label for="name-input">Your Name</label>
+<input type="text" id="name-input" name="name" placeholder="Enter your name" required aria-required="true">
+</div>
+<div class="form-group">
+<label for="email-input">Email Address</label>
+<input type="email" id="email-input" name="email" placeholder="Enter your email" required aria-required="true">
+</div>
+<div class="form-group">
+<label for="message-input">Message</label>
+<textarea id="message-input" name="message" placeholder="How can I help you?" required aria-required="true"></textarea>
+</div>
+<button type="submit" class="btn btn-primary" style="width: 100%;" aria-label="Send message"><span>Send Message</span></button>
+</form>
+</div>
+</div>
+</section>
+<footer>
+<div class="social-links">
+<a href="https://www.linkedin.com/in/alvinsilva777/ " title="LinkedIn">in</a>
+<a href="https://www.facebook.com/a7vinsi7va/ " title="Facebook">f</a>
+<a href="mailto://alvin.silva@asilvainnovations.com" title="Email">✉</a>
+<a href="https://alvin.asilvainnovations.com " title="Website">🌐</a>
+</div>
+<p style="color: var(--text-secondary);">© 2026 Alvin M. Silva, MDM. All rights reserved.</p>
+<p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.9rem;"></p>
+</footer>
+<script>
+// Scroll reveal animation
+const scrollReveal = () => {
+const reveals = document.querySelectorAll('.scroll-reveal');
+reveals.forEach(element => {
+const windowHeight = window.innerHeight;
+const elementTop = element.getBoundingClientRect().top;
+const elementVisible = 150;
+if (elementTop < windowHeight - elementVisible) {
+element.classList.add('active');
+}
+});
+};
+window.addEventListener('scroll', scrollReveal);
+// Smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+target.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+}
+});
+});
+// Add scroll reveal class to elements
+document.addEventListener('DOMContentLoaded', () => {
+document.querySelectorAll('.expertise-card, .timeline-item').forEach(el => {
+el.classList.add('scroll-reveal');
+});
+scrollReveal();
+});
+</script>
 </body>
 </html>
