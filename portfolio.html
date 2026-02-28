@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Alvin Silva - Building Resilience</title>
+  <meta name="description" content="Alvin Silva portfolio showcasing digital platforms, publications, and impactful projects in resilience, disaster risk reduction, and climate adaptation." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat+Classical:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'deep-blue': '#1a365d',
+            'sky-blue': '#5dade2',
+            'neon-blue': '#00d4ff',
+          },
+          fontFamily: {
+            'primary': ['Poppins', 'sans-serif'],
+            'secondary': ['Montserrat Classical', 'serif'],
+            'accent': ['Roboto Condensed', 'sans-serif'],
+          },
+          boxShadow: {
+            'neon-blue': '0 0 20px rgba(0, 212, 255, 0.5)',
+            'glass': '0 8px 32px rgba(0, 0, 0, 0.3)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --deep-blue: #1a365d;
+      --sky-blue: #5dade2;
+      --neon-blue: #00d4ff;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 0%, #5dade2 50%, #00d4ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .liquid-glass {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .liquid-glass-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .liquid-glass-hover:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0, 212, 255, 0.2);
+      border-color: rgba(0, 212, 255, 0.5);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fadeIn {
+      animation: fadeIn 0.4s ease-out forwards;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .orbit-bg {
+      position: fixed;
+      width: 800px;
+      height: 800px;
+      border: 1px solid rgba(0, 212, 255, 0.1);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    body::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background: var(--neon-blue);
+      border-radius: 10px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-950 via-slate-900 to-blue-950 text-white font-primary antialiased selection:bg-neon-blue selection:text-white">
+
+  <!-- Sticky Header -->
+  <header id="header" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex items-center space-x-4 group cursor-pointer hover-opacity transition-all">
+          <img 
+            src="https://appimize.app/assets/apps/user_1097/images/288dd899974a_850_1097.png"
+            alt="Alvin Silva Logo"
+            class="w-14 h-14 rounded-full object-cover shadow-lg group-hover:shadow-neon-blue/50 transition-all duration-300 border-2 border-white/30"
+          />
+          <div>
+            <h1 class="text-xl md:text-2xl font-semibold gradient-text tracking-wide">Alvin Silva, MDM</h1>
+            <p class="text-xs text-gray-400 hidden md:block">Development Management Professional</p>
+          </div>
+        </div>
+
+        <div class="hidden md:flex space-x-8">
+          <a href="#home" class="text-gray-300 hover:text-white relative px-2 py-1 transition-colors group">Home</a>
+          <a href="#services" class="text-gray-300 hover:text-white relative px-2 py-1 transition-colors group">Services</a>
+          <a href="#portfolio" class="text-gray-300 hover:text-white relative px-2 py-1 transition-colors group">Portfolio</a>
+          <a href="#publications" class="text-gray-300 hover:text-white relative px-2 py-1 transition-colors group">Publications</a>
+          <a href="#contact" class="text-gray-300 hover:text-white relative px-2 py-1 transition-colors group">Contact</a>
+        </div>
+
+        <button id="mobile-menu-btn" class="md:hidden p-2 bg-white/10 backdrop-blur rounded-lg hover:bg-white/20 transition-colors">
+          <i data-lucide="menu" class="h-6 w-6 text-white"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-blue-950/95 backdrop-blur-xl border-t border-white/10">
+      <div class="px-4 py-4 space-y-2">
+        <a href="#home" class="block w-full text-left text-gray-300 hover:text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors">Home</a>
+        <a href="#services" class="block w-full text-left text-gray-300 hover:text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors">Services</a>
+        <a href="#portfolio" class="block w-full text-left text-gray-300 hover:text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors">Portfolio</a>
+        <a href="#publications" class="block w-full text-left text-gray-300 hover:text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors">Publications</a>
+        <a href="#contact" class="block w-full text-left text-gray-300 hover:text-white px-4 py-3 rounded-lg hover:bg-white/10 transition-colors">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 relative overflow-hidden min-h-screen flex items-center">
+      <div class="orbit-bg" style="top: -20%; left: -20%;"></div>
+      <div class="orbit-bg" style="top: 50%; right: -20%;"></div>
+      
+      <div class="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-slate-900/60 to-blue-900/40 z-0"></div>
+      
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-fadeIn">
+        <span class="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-sky-500 to-blue-600 rounded-full text-sm font-semibold mb-4 animate-float">
+          <i data-lucide="sparkles" class="h-4 w-4 text-white"></i>
+          <span>Featured Work & Publications</span>
+        </span>
+        
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 font-secondary">
+          <span class="gradient-text">Portfolio of Impact</span>
+        </h1>
+        
+        <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-primary mb-8">
+          Over 15 years delivering measurable results across 15+ countries through innovative solutions in resilience, risk management, and sustainable development.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#portfolio" class="group relative px-8 py-4 bg-gradient-to-r from-sky-500 to-blue-600 rounded-xl font-semibold hover:from-sky-400 hover:to-blue-500 transition-all duration-300 shadow-lg hover:shadow-neon-blue overflow-hidden">
+            <span class="relative z-10 flex items-center justify-center space-x-2">
+              View Portfolio
+              <i data-lucide="arrow-right" class="h-5 w-5 group-hover:translate-x-1 transition-transform"></i>
+            </span>
+          </a>
+          <a href="#contact" class="px-8 py-4 bg-white/10 backdrop-blur rounded-xl font-semibold hover:bg-white/20 transition-all duration-300">
+            Get In Touch
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Tabs -->
+    <section class="py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-wrap justify-center gap-2" id="filter-tabs">
+          <button class="filter-btn active px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-lg" data-category="all">All</button>
+          <button class="filter-btn px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-white/10 text-gray-300 hover:bg-white/20" data-category="platforms">Platforms</button>
+          <button class="filter-btn px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-white/10 text-gray-300 hover:bg-white/20" data-category="consulting">Consulting</button>
+          <button class="filter-btn px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 bg-white/10 text-gray-300 hover:bg-white/20" data-category="publications">Publications</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section id="portfolio" class="py-20 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
+          
+          <!-- DDRiVE-M Platform -->
+          <div class="portfolio-item liquid-glass rounded-2xl overflow-hidden group animate-fadeIn" data-category="platforms">
+            <div class="relative h-48 overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900">
+              <img src="https://appimize.app/assets/apps/user_1097/images/4750f689086d_379_1097.png" alt="DDRiVE-M Platform" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+              <div class="absolute top-4 right-4 bg-gradient-to-r from-sky-500 to-blue-600 px-3 py-1 rounded-full text-xs font-semibold text-white">Platform</div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors font-secondary mb-2">DDRiVE-M Platform</h3>
+              <p class="text-sm text-gray-400 mb-3">AIWA Apps</p>
+              <p class="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3">Comprehensive intelligence platform compliant with RA 10121, ISO 31000, and UNDRR frameworks. AI-powered disaster risk management.</p>
+              <a href="https://asilvainnovations.com/ddrive-m" target="_blank" class="inline-flex items-center text-sm text-sky-400 hover:text-neon-blue transition-colors font-medium">
+                Learn More <i data-lucide="external-link" class="h-4 w-4 ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Strat Planner Pro -->
+          <div class="portfolio-item liquid-glass rounded-2xl overflow-hidden group animate-fadeIn" data-category="platforms">
+            <div class="relative h-48 overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900">
+              <img src="https://appimize.app/assets/apps/user_1097/images/d6780c531792_34_1097.png" alt="Strat Planner Pro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+              <div class="absolute top-4 right-4 bg-gradient-to-r from-sky-500 to-blue-600 px-3 py-1 rounded-full text-xs font-semibold text-white">Platform</div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors font-secondary mb-2">Strat Planner Pro</h3>
+              <p class="text-sm text-gray-400 mb-3">ASILVA Innovations</p>
+              <p class="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3">AI-powered progressive web app for deep systems diagnosis, structured planning, and disciplined execution. Works offline.</p>
+              <a href="https://asilvainnovations.com/strat-planner-pro" target="_blank" class="inline-flex items-center text-sm text-sky-400 hover:text-neon-blue transition-colors font-medium">
+                Get Started <i data-lucide="external-link" class="h-4 w-4 ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Cognitio+ -->
+          <div class="portfolio-item liquid-glass rounded-2xl overflow-hidden group animate-fadeIn" data-category="platforms">
+            <div class="relative h-48 overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900">
+              <img src="https://appimize.app/assets/apps/user_1097/images/c74671719bdd_217_1097.png" alt="Cognitio+" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+              <div class="absolute top-4 right-4 bg-gradient-to-r from-sky-500 to-blue-600 px-3 py-1 rounded-full text-xs font-semibold text-white">Health</div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors font-secondary mb-2">Cognitio+</h3>
+              <p class="text-sm text-gray-400 mb-3">ASILVA Innovations</p>
+              <p class="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3">Digital architecture providing accessible and affordable mental health and well-being services ecosystem for communities nationwide.</p>
+              <a href="https://cognitio-plus.com" target="_blank" class="inline-flex items-center text-sm text-sky-400 hover:text-neon-blue transition-colors font-medium">
+                Visit Site <i data-lucide="external-link" class="h-4 w-4 ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Balatan Climate Hub -->
+          <div class="portfolio-item liquid-glass rounded-2xl overflow-hidden group animate-fadeIn" data-category="consulting">
+            <div class="relative h-48 overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900">
+              <img src="https://appimize.app/assets/apps/user_1097/images/d175a75903fb_125_1097.png" alt="Balatan Climate Hub" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+              <div class="absolute top-4 right-4 bg-gradient-to-r from-sky-500 to-blue-600 px-3 py-1 rounded-full text-xs font-semibold text-white">Climate</div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors font-secondary mb-2">Balatan Climate Resilience Hub</h3>
+              <p class="text-sm text-gray-400 mb-3">SOLHUM | Dec 2024 – Jan 2025</p>
+              <p class="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3">Pioneering model funded by People's Survival Fund (PSF), driving climate-smart agriculture and sustainable development.</p>
+              <a href="https://balatan-psf.aiwaapp.live/" target="_blank" class="inline-flex items-center text-sm text-sky-400 hover:text-neon-blue transition-colors font-medium">
+                Learn More <i data-lucide="external-link" class="h-4 w-4 ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- WorldSkills Strategic Plan -->
+          <div class="portfolio-item liquid-glass rounded-2xl overflow-hidden group animate-fadeIn" data-category="consulting">
+            <div class="relative h-48 overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900">
+              <img src="https://appimize.app/assets/apps/user_1097/images/b674645e08fd_199_1097.png" alt="WorldSkills Strategic Plan" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+              <div class="absolute top-4 right-4 bg-gradient-to-r from-sky-500 to-blue-600 px-3 py-1 rounded-full text-xs font-semibold text-white">Strategy</div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors font-secondary mb-2">WorldSkills Philippines Strategic Plan</h3>
+              <p class="text-sm text-gray-400 mb-3">TESDA | 2026 - 2030</p>
+              <p class="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3">National Quality Engine Strategic Plan mapping out clear vision and mission, aligning organizational goals with long-term resilience.</p>
+              <a href="https://asilvainnovations.com/wsp-strategic-plan" target="_blank" class="inline-flex items-center text-sm text-sky-400 hover:text-neon-blue transition-colors font-medium">
+                View Plan <i data-lucide="external-link" class="h-4 w-4 ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Seamless Care Guidebook -->
+          <div class="portfolio-item liquid-glass rounded-2xl overflow-hidden group animate-fadeIn" data-category="consulting">
+            <div class="relative h-48 overflow-hidden bg-gradient-to-br from-slate-800 to-slate-900">
+              <img src="https://appimize.app/assets/apps/user_1097/images/d4ff156ea5e3_667_1097.png" alt="Seamless Care Guidebook" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+              <div class="absolute top-4 right-4 bg-gradient-to-r from-sky-500 to-blue-600 px-3 py-1 rounded-full text-xs font-semibold text-white">Health</div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors font-secondary mb-2">Seamless Care Guidebook</h3>
+              <p class="text-sm text-gray-400 mb-3">Philippine Health Sector | 2024</p>
+              <p class="text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3">Guidebook presenting rigorous analysis of Philippine health sector as a Complex Adaptive System (CAS), identifying systemic barriers.</p>
+              <a href="https://asilvainnovations.com/seamless-care" target="_blank" class="inline-flex items-center text-sm text-sky-400 hover:text-neon-blue transition-colors font-medium">
+                Read Guidebook <i data-lucide="external-link" class="h-4 w-4 ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 relative bg-blue-950/30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span class="inline-block px-4 py-2 bg-gradient-to-r from-sky-500 to-blue-600 rounded-full text-sm font-semibold mb-4">Research & Insights</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-secondary">Key Publications</h2>
+          <div class="w-20 h-1 bg-gradient-to-r from-sky-400 to-neon-blue mx-auto"></div>
+        </div>
+
+        <div class="bg-white/10 backdrop-blur p-8 md:p-12 rounded-2xl">
+          <div class="space-y-6">
+            
+            <!-- Personal Resilience Book -->
+            <div class="border-l-4 border-sky-400 pl-4 py-2 hover:bg-white/5 transition-colors group">
+              <h3 class="text-lg font-semibold text-white font-secondary group-hover:text-sky-400 transition-colors">Personal Resilience: The Path to Oneness</h3>
+              <p class="text-sm text-sky-400 font-accent mb-2">2025 • COGNITIO+</p>
+              <p class="text-sm text-gray-400 font-primary">Explores deeper ground of human experience—spiritual space beyond psychological resilience. Timeless wisdom for personal transformation.</p>
+              <a href="https://resilienceone.appimize.app/" target="_blank" class="text-xs text-sky-400 mt-2 inline-block hover:text-neon-blue transition-colors">Learn More →</a>
+            </div>
+
+            <!-- Building Resilience Book -->
+            <div class="border-l-4 border-sky-400 pl-4 py-2 hover:bg-white/5 transition-colors group">
+              <h3 class="text-lg font-semibold text-white font-secondary group-hover:text-sky-400 transition-colors">Building Resilience: The Path to a More Fulfilling Life</h3>
+              <p class="text-sm text-sky-400 font-accent mb-2">2023 • COGNITIO+</p>
+              <p class="text-sm text-gray-400 font-primary">Ultimate guide to building and sustaining resilience. Gain knowledge, tools, and mindsets to thrive in an ever-changing world.</p>
+              <a href="https://building-resilience.aiwaapp.live/" target="_blank" class="text-xs text-sky-400 mt-2 inline-block hover:text-neon-blue transition-colors">Get Guide →</a>
+            </div>
+
+            <!-- Resilient Futures Book -->
+            <div class="border-l-4 border-sky-400 pl-4 py-2 hover:bg-white/5 transition-colors group">
+              <h3 class="text-lg font-semibold text-white font-secondary group-hover:text-sky-400 transition-colors">Resilient Futures: Nurturing Oneness in Education</h3>
+              <p class="text-sm text-sky-400 font-accent mb-2">2024 • ASILVA Innovations</p>
+              <p class="text-sm text-gray-400 font-primary">Extension exploring resilience in education and beyond. For adapting, recovering, and thriving amid rapid change and uncertainty.</p>
+              <a href="https://asilvainnovations.com/resilient-futures" target="_blank" class="text-xs text-sky-400 mt-2 inline-block hover:text-neon-blue transition-colors">Explore Edition →</a>
+            </div>
+
+            <!-- Performance Management Report -->
+            <div class="border-l-4 border-sky-400 pl-4 py-2 hover:bg-white/5 transition-colors group">
+              <h3 class="text-lg font-semibold text-white font-secondary group-hover:text-sky-400 transition-colors">Enhancing Performance Management at DLSU</h3>
+              <p class="text-sm text-sky-400 font-accent mb-2">2024 • COGNITIO+</p>
+              <p class="text-sm text-gray-400 font-primary">Comprehensive baseline and needs assessment report for organizational performance improvement with sustainability integration.</p>
+              <a href="https://oupms-dlsu.aiwaapp.live/" target="_blank" class="text-xs text-sky-400 mt-2 inline-block hover:text-neon-blue transition-colors">Access Hub →</a>
+            </div>
+
+            <!-- Risk-Informed CDP Salcedo -->
+            <div class="border-l-4 border-sky-400 pl-4 py-2 hover:bg-white/5 transition-colors group">
+              <h3 class="text-lg font-semibold text-white font-secondary group-hover:text-sky-400 transition-colors">Risk-Informed CDP of Salcedo, Eastern Samar</h3>
+              <p class="text-sm text-sky-400 font-accent mb-2">2024 • LGU of Salcedo</p>
+              <p class="text-sm text-gray-400 font-primary">Development plan integrating CCA/DRR and sustainability measures (2023–2028) grounded in rigorous analysis and community engagement.</p>
+              <a href="https://asilvainnovations.com/salcedo-cdp" target="_blank" class="text-xs text-sky-400 mt-2 inline-block hover:text-neon-blue transition-colors">View CDP →</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section id="contact" class="py-20 relative">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="liquid-glass p-8 md:p-12 rounded-3xl relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-sky-500/20 to-blue-600/20"></div>
+          
+          <div class="relative z-10 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 font-secondary">Ready to Collaborate?</h2>
+            <div class="w-20 h-1 bg-gradient-to-r from-sky-400 to-neon-blue mx-auto mb-6"></div>
+            
+            <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-10 font-primary">
+              Let's build resilience together. Reach out for consultations, partnerships, or collaborative opportunities.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+              <a href="tel:+639178555134" class="liquid-glass-hover flex items-center space-x-4 p-6 rounded-xl hover:bg-white/20 transition-colors">
+                <div class="w-14 h-14 bg-gradient-to-br from-sky-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <i data-lucide="phone" class="h-6 w-6 text-white"></i>
+                </div>
+                <div class="text-left">
+                  <p class="text-sm text-gray-400 mb-1 font-primary">Phone</p>
+                  <p class="text-lg font-semibold text-white font-secondary">+63 917 855 5134</p>
+                </div>
+              </a>
+              
+              <a href="mailto:alvin.silva@asilvainnovations.com" class="liquid-glass-hover flex items-center space-x-4 p-6 rounded-xl hover:bg-white/20 transition-colors">
+                <div class="w-14 h-14 bg-gradient-to-br from-sky-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <i data-lucide="mail" class="h-6 w-6 text-white"></i>
+                </div>
+                <div class="text-left">
+                  <p class="text-sm text-gray-400 mb-1 font-primary">Email</p>
+                  <p class="text-lg font-semibold text-white font-secondary">alvin.silva@asilvainnovations.com</p>
+                </div>
+              </a>
+
+              <a href="https://m.me/2271401083690501" target="_blank" class="liquid-glass-hover flex items-center space-x-4 p-6 rounded-xl hover:bg-white/20 transition-colors">
+                <div class="w-14 h-14 bg-gradient-to-br from-sky-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <i data-lucide="message-circle" class="h-6 w-6 text-white"></i>
+                </div>
+                <div class="text-left">
+                  <p class="text-sm text-gray-400 mb-1 font-primary">DDSiVER Chat</p>
+                  <p class="text-lg font-semibold text-white font-secondary">AI Assistant</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white/5 backdrop-blur border-t border-white/10 py-8 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gray-400 text-sm font-primary">&copy; 2026 Alvin Silva, MDM. All rights reserved.</p>
+      <p class="text-gray-500 text-xs mt-2 font-primary">Mandaluyong City, Philippines | Developed with systems innovation</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Mobile menu toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Sticky header
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('bg-blue-950/95', 'backdrop-blur-xl', 'border-b', 'border-white/10');
+        header.classList.remove('bg-transparent');
+      } else {
+        header.classList.remove('bg-blue-950/95', 'backdrop-blur-xl', 'border-b', 'border-white/10');
+        header.classList.add('bg-transparent');
+      }
+    });
+
+    // Filter functionality
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        // Remove active class from all buttons
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('active', 'bg-gradient-to-r', 'from-sky-500', 'to-blue-600', 'text-white', 'shadow-lg');
+          b.classList.add('bg-white/10', 'text-gray-300');
+        });
+
+        // Add active class to clicked button
+        this.classList.remove('bg-white/10', 'text-gray-300');
+        this.classList.add('active', 'bg-gradient-to-r', 'from-sky-500', 'to-blue-600', 'text-white', 'shadow-lg');
+
+        // Filter items
+        const category = this.dataset.category;
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+          if (category === 'all' || item.dataset.category === category) {
+            item.style.display = 'block';
+            setTimeout(() => {
+              item.classList.add('opacity-100');
+            }, 50);
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
