@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Form No. 212 (Revised 2025) - Personal Data Sheet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 11pt;
+            line-height: 1.3;
+            color: #000;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .document-container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: #fff;
+            padding: 0.5in;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #000;
+            padding-bottom: 10px;
+        }
+
+        .header h1 {
+            font-size: 14pt;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .header h2 {
+            font-size: 12pt;
+            font-weight: bold;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 8px;
+            margin-bottom: 15px;
+            font-size: 9pt;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .section {
+            margin-bottom: 20px;
+            border: 1px solid #000;
+        }
+
+        .section-header {
+            background: #e9ecef;
+            padding: 5px 10px;
+            font-weight: bold;
+            font-size: 11pt;
+            border-bottom: 1px solid #000;
+        }
+
+        .section-content {
+            padding: 10px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 30% 70%;
+            gap: 0;
+        }
+
+        .info-grid-full {
+            display: grid;
+            grid-template-columns: 100%;
+        }
+
+        .label {
+            background: #f8f9fa;
+            padding: 5px;
+            font-weight: bold;
+            border: 1px solid #dee2e6;
+            font-size: 10pt;
+        }
+
+        .value {
+            padding: 5px;
+            border: 1px solid #dee2e6;
+            font-size: 10pt;
+        }
+
+        .name-section {
+            display: grid;
+            grid-template-columns: 15% 25% 25% 20% 15%;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .name-box {
+            border: 1px solid #000;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .name-label {
+            font-size: 8pt;
+            color: #666;
+            margin-bottom: 3px;
+        }
+
+        .name-value {
+            font-weight: bold;
+            font-size: 11pt;
+            text-transform: uppercase;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9pt;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 5px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background: #e9ecef;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .sub-header {
+            background: #f8f9fa;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: 80% 10% 10%;
+            gap: 5px;
+            align-items: center;
+            margin: 5px 0;
+        }
+
+        .yes-no {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .references-table th, .references-table td {
+            font-size: 10pt;
+        }
+
+        .signature-section {
+            margin-top: 20px;
+            border-top: 2px solid #000;
+            padding-top: 15px;
+        }
+
+        .govt-id {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            gap: 10px;
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px solid #000;
+        }
+
+        .photo-box {
+            float: right;
+            width: 1.2in;
+            height: 1.4in;
+            border: 1px solid #000;
+            margin-left: 15px;
+            margin-bottom: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8pt;
+            color: #666;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .three-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+
+        .children-table {
+            margin-top: 10px;
+        }
+
+        .children-table th {
+            background: #e9ecef;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+            .document-container {
+                box-shadow: none;
+                max-width: 100%;
+                padding: 0.3in;
+            }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <div class="document-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>CS Form No. 212</h1>
+            <h2>Revised 2025</h2>
+            <h1 style="margin-top: 5px;">PERSONAL DATA SHEET</h1>
+        </div>
+
+        <div class="warning">
+            <strong>WARNING:</strong> Any misrepresentation made in the Personal Data Sheet and the Work Experience Sheet shall cause the filing of administrative/criminal case/s against the person concerned.
+        </div>
+
+        <!-- Section I: Personal Information -->
+        <div class="section">
+            <div class="section-header">I. PERSONAL INFORMATION</div>
+            <div class="section-content">
+                <div class="photo-box">ID Photo<br>(Passport Size)</div>
+
+                <div class="name-section clearfix">
+                    <div style="grid-column: 1; display: flex; align-items: center; font-weight: bold;">2. NAME:</div>
+                    <div class="name-box" style="grid-column: 2;">
+                        <div class="name-label">SURNAME</div>
+                        <div class="name-value">SILVA</div>
+                    </div>
+                    <div class="name-box" style="grid-column: 3;">
+                        <div class="name-label">FIRST NAME</div>
+                        <div class="name-value">ALVIN</div>
+                    </div>
+                    <div class="name-box" style="grid-column: 4;">
+                        <div class="name-label">MIDDLE NAME</div>
+                        <div class="name-value">MARGALLO</div>
+                    </div>
+                    <div class="name-box" style="grid-column: 5;">
+                        <div class="name-label">NAME EXTENSION (JR., SR.)</div>
+                        <div class="name-value">&nbsp;</div>
+                    </div>
+                </div>
+
+                <div class="info-grid">
+                    <div class="label">3. DATE OF BIRTH (mm/dd/yyyy)</div>
+                    <div class="value">04/30/1980</div>
+
+                    <div class="label">4. PLACE OF BIRTH</div>
+                    <div class="value">PALO, LEYTE</div>
+
+                    <div class="label">5. SEX</div>
+                    <div class="value">Male</div>
+
+                    <div class="label">6. CIVIL STATUS</div>
+                    <div class="value">Other</div>
+
+                    <div class="label">7. HEIGHT (m)</div>
+                    <div class="value">5' 4"</div>
+
+                    <div class="label">8. WEIGHT (kg)</div>
+                    <div class="value">67</div>
+
+                    <div class="label">9. BLOOD TYPE</div>
+                    <div class="value">O</div>
+
+                    <div class="label">10. GSIS ID NO.</div>
+                    <div class="value">&nbsp;</div>
+
+                    <div class="label">11. PAG-IBIG ID NO.</div>
+                    <div class="value">&nbsp;</div>
+
+                    <div class="label">12. PHILHEALTH NO.</div>
+                    <div class="value">130500460793</div>
+
+                    <div class="label">13. SSS NO.</div>
+                    <div class="value">06-2462082-4</div>
+
+                    <div class="label">14. TIN NO.</div>
+                    <div class="value">935-575-599-000</div>
+
+                    <div class="label">15. AGENCY EMPLOYEE NO.</div>
+                    <div class="value">&nbsp;</div>
+
+                    <div class="label">16. CITIZENSHIP</div>
+                    <div class="value">Filipino</div>
+
+                    <div class="label">17. RESIDENTIAL ADDRESS</div>
+                    <div class="value">Tower 2, Pioneer St., Pioneer Woodlands, Barangka Ilaya, Mandaluyong City, Metro Manila, 1550</div>
+
+                    <div class="label">18. PERMANENT ADDRESS</div>
+                    <div class="value">15T Tower 2, Pioneer St., Pioneer Woodlands, Barangka Ilaya, Mandaluyong City, Metro Manila, 1550</div>
+
+                    <div class="label">19. TELEPHONE NO.</div>
+                    <div class="value">7915 1796</div>
+
+                    <div class="label">20. MOBILE NO.</div>
+                    <div class="value">+63 917 855 5134</div>
+
+                    <div class="label">21. E-MAIL ADDRESS</div>
+                    <div class="value">alvin.silva@cognitioplus.com; alvinsilva77777@gmail.com</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section II: Family Background -->
+        <div class="section">
+            <div class="section-header">II. FAMILY BACKGROUND</div>
+            <div class="section-content">
+                <div class="two-col">
+                    <div>
+                        <table>
+                            <tr>
+                                <th colspan="2">22. SPOUSE'S INFORMATION</th>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%;">SURNAME</td>
+                                <td>ALMADEN</td>
+                            </tr>
+                            <tr>
+                                <td>FIRST NAME</td>
+                                <td>JACKLYN MARIE</td>
+                            </tr>
+                            <tr>
+                                <td>MIDDLE NAME</td>
+                                <td>MACASERO</td>
+                            </tr>
+                            <tr>
+                                <td>NAME EXTENSION</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>OCCUPATION</td>
+                                <td>GOVERNMENT EMPLOYEE</td>
+                            </tr>
+                            <tr>
+                                <td>EMPLOYER/BUSINESS NAME</td>
+                                <td>NATIONAL FOOD AUTHORITY - REGION VIII</td>
+                            </tr>
+                            <tr>
+                                <td>BUSINESS ADDRESS</td>
+                                <td>PAWING, PALO, LEYTE</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div>
+                        <table>
+                            <tr>
+                                <th colspan="2">24. FATHER'S INFORMATION</th>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%;">SURNAME</td>
+                                <td>SILVA (Deceased)</td>
+                            </tr>
+                            <tr>
+                                <td>FIRST NAME</td>
+                                <td>ANTERO</td>
+                            </tr>
+                            <tr>
+                                <td>MIDDLE NAME</td>
+                                <td>PIASTRO</td>
+                            </tr>
+                            <tr>
+                                <td>NAME EXTENSION</td>
+                                <td>JR.</td>
+                            </tr>
+                        </table>
+                        <table style="margin-top: 10px;">
+                            <tr>
+                                <th colspan="2">25. MOTHER'S MAIDEN NAME</th>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%;">SURNAME</td>
+                                <td>MARGALLO</td>
+                            </tr>
+                            <tr>
+                                <td>FIRST NAME</td>
+                                <td>YOLANDA</td>
+                            </tr>
+                            <tr>
+                                <td>MIDDLE NAME</td>
+                                <td>ARELLANO</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <table class="children-table">
+                    <tr>
+                        <th colspan="2">23. NAME OF CHILDREN (Write full name and list all)</th>
+                    </tr>
+                    <tr>
+                        <td style="width: 70%;"><strong>FULL NAME</strong></td>
+                        <td style="width: 30%;"><strong>DATE OF BIRTH (mm/dd/yyyy)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>HENDRICH SILVA</td>
+                        <td>07/20/2001</td>
+                    </tr>
+                    <tr>
+                        <td>HENDERXON SILVA</td>
+                        <td>02/09/2013</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section III: Educational Background -->
+        <div class="section">
+            <div class="section-header">III. EDUCATIONAL BACKGROUND</div>
+            <div class="section-content">
+                <table>
+                    <tr>
+                        <th style="width: 12%;">26. LEVEL</th>
+                        <th style="width: 25%;">NAME OF SCHOOL<br>(Write in full)</th>
+                        <th style="width: 25%;">BASIC EDUCATION/DEGREE/COURSE<br>(Write in full)</th>
+                        <th style="width: 10%;">PERIOD OF<br>ATTENDANCE<br>From</th>
+                        <th style="width: 10%;">PERIOD OF<br>ATTENDANCE<br>To</th>
+                        <th style="width: 8%;">YEAR<br>GRADUATED</th>
+                        <th style="width: 10%;">SCHOLARSHIP/<br>ACADEMIC HONORS</th>
+                    </tr>
+                    <tr>
+                        <td>ELEMENTARY</td>
+                        <td>TANAUAN I CENTRAL SCHOOL</td>
+                        <td>&nbsp;</td>
+                        <td>1987</td>
+                        <td>1993</td>
+                        <td>1993</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>SECONDARY</td>
+                        <td>LEYTE SCHOOL OF ARTS AND TRADES</td>
+                        <td>&nbsp;</td>
+                        <td>1993</td>
+                        <td>1997</td>
+                        <td>1997</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>VOCATIONAL/TRADE COURSE</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>COLLEGE</td>
+                        <td>UP IN THE VISAYAS TACLOBAN</td>
+                        <td>BACHELOR OF ARTS IN SOCIAL SCIENCES (POL SCI)</td>
+                        <td>1997</td>
+                        <td>2002</td>
+                        <td>2002</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>COLLEGE OF LAW</td>
+                        <td>DVOREF</td>
+                        <td>BACHELOR OF LAWS</td>
+                        <td>2004</td>
+                        <td>2005</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>GRADUATE STUDIES</td>
+                        <td>EASTERN VISAYAS STATE UNIVERSITY</td>
+                        <td>MASTER IN RURAL DEVELOPMENT</td>
+                        <td>2009</td>
+                        <td>2010</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>GRADUATE STUDIES</td>
+                        <td>ASIAN INSTITUTE OF MANAGEMENT</td>
+                        <td>MASTER IN DEVELOPMENT MANAGEMENT</td>
+                        <td>2011</td>
+                        <td>2011</td>
+                        <td>2011</td>
+                        <td>**WITH ADB-JAPAN SCHOLARSHIP</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section IV: Civil Service Eligibility -->
+        <div class="section">
+            <div class="section-header">IV. CIVIL SERVICE ELIGIBILITY</div>
+            <div class="section-content">
+                <table>
+                    <tr>
+                        <th style="width: 30%;">29. CAREER SERVICE/ RA 1080 (BOARD/ BAR) UNDER SPECIAL LAWS/ CES/ CSEE</th>
+                        <th style="width: 10%;">RATING</th>
+                        <th style="width: 15%;">DATE OF EXAMINATION/ CONFERMENT</th>
+                        <th style="width: 25%;">PLACE OF EXAMINATION/ CONFERMENT</th>
+                        <th style="width: 12%;">LICENSE NUMBER</th>
+                        <th style="width: 8%;">DATE OF RELEASE</th>
+                    </tr>
+                    <tr>
+                        <td>Career Service Professional</td>
+                        <td>81.62</td>
+                        <td>10/17/2004</td>
+                        <td>Leyte National High School</td>
+                        <td>04-26064</td>
+                        <td>01/06/2005</td>
+                    </tr>
+                    <tr>
+                        <td>CES Written Examination</td>
+                        <td>82.79</td>
+                        <td>09/01/2013</td>
+                        <td>CESB Office, Diliman Quezon City</td>
+                        <td>&nbsp;</td>
+                        <td>10/25/2013</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section V: Work Experience -->
+        <div class="section">
+            <div class="section-header">V. WORK EXPERIENCE (Include private employment. Start from your current work)</div>
+            <div class="section-content">
+                <table>
+                    <tr>
+                        <th style="width: 8%;">30. INCLUSIVE DATES<br>From</th>
+                        <th style="width: 8%;">30. INCLUSIVE DATES<br>To</th>
+                        <th style="width: 20%;">POSITION TITLE<br>(Write in full)</th>
+                        <th style="width: 25%;">DEPARTMENT/ AGENCY/ OFFICE/ COMPANY<br>(Write in full)</th>
+                        <th style="width: 12%;">MONTHLY SALARY</th>
+                        <th style="width: 8%;">SALARY GRADE & STEP</th>
+                        <th style="width: 10%;">STATUS OF<br>APPOINTMENT</th>
+                        <th style="width: 9%;">GOV'T SERVICE<br>(Yes/No)</th>
+                    </tr>
+                    <tr>
+                        <td>07/17/20</td>
+                        <td>Present</td>
+                        <td>CEO / Founder</td>
+                        <td>Cognitio+ (Cognitio Plus)</td>
+                        <td>PHP177,777.00</td>
+                        <td>&nbsp;</td>
+                        <td>Contract</td>
+                        <td>NO</td>
+                    </tr>
+                    <tr>
+                        <td>02/2025</td>
+                        <td>Present</td>
+                        <td>Consultant - Bureau of Investments - Ministry of Trade, Industry and Tourism - BARMM</td>
+                        <td>Investment Roadmapping: Architecting the Bangsamoro Investment Roadmap Development (BIRD) 2026-2035</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>Contract</td>
+                        <td>NO</td>
+                    </tr>
+                    <tr>
+                        <td>01/2025</td>
+                        <td>02/2025</td>
+                        <td>Facilitator-Author (2026-2030 Strategic Plan)</td>
+                        <td>WorldSkills Philippines - TESDA</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>Contract</td>
+                        <td>NO</td>
+                    </tr>
+                    <tr>
+                        <td>05/2025</td>
+                        <td>08/2025</td>
+                        <td>Resource Expert on Systems Thinking</td>
+                        <td>BLGA-Philippine Tax Academy - DOF</td>
+                        <td>PHP15,000/day</td>
+                        <td>&nbsp;</td>
+                        <td>Contract</td>
+                        <td>NO</td>
+                    </tr>
+                    <tr>
+                        <td>06/2025</td>
+                        <td>06/2025</td>
+                        <td>Resource Person on Policy Communications</td>
+                        <td>National Productivity and Wage Board</td>
+                        <td>PHP10,000/day</td>
+                        <td>&nbsp;</td>
+                        <td>Contract</td>
+                        <td>NO</td>
+                    </tr>
+                    <tr>
+                        <td>12/2024</td>
+                        <td>02/2025</td>
+                        <td>Consultant for Climate Change Action Innovations</td>
+                        <td>Fundacion de Religiosos para la Salud / LGU of Balatan, Cam Sur</td>
+                        <td>PHP250,000</td>
+                        <td>&nbsp;</td>
+                        <td>Contract</td>
+                        <td>NO</td>
+                    </tr>
+                    <tr>
+                        <td>11/2024</td>
+                        <td>11/2024</td>
+                        <td>Subject Matter Expert on Effective Customer Relationships</td>
+                        <td>Center for International Trade Expositions and Missions- DTI</td>
+                        <td>PHP15,000/day</td>
+                        <td>&nbsp;</td>
+                        <td>Contract</td>
+                        <td>NO</td>
+                    </tr>
+                    <tr>
+                        <td>05/2024</td>
+                        <td>11/2024</td>
+                        <td>Lead Consultant for Organizational Unit Performance Management</td>
+                        <td>DLSU - Manila</td>
+                        <td>PHP1,125,600.00</td>
+                        <td>&nbsp;</td>
+                        <td>Contract</td>
+                        <td>NO</td>
+                    </tr>
+                    <tr>
+                        <td>02/2024</td>
+                        <td>05/2024</td>
+                        <td>Lead Consultant on Updating Risk-Informed CDP</td>
+                        <td>LGU of Salcedo, E.Samar</td>
+                        <td>PHP750,000</td>
+                        <td>&nbsp;</td>
+                        <td>Contract</td>
+                        <td>NO</td>
+                    </tr>
+                    <tr>
+                        <td>08/2023</td>
+                        <td>12/2023</td>
+                        <td>Consultant - Platforms, Systems, Training, and M&E</td>
+                        <td>World Health Organization - PH Country Office</td>
+                        <td>PHP1,520,000.00</td>
+                        <td>&nbsp;</td>
+                        <td>Contract</td>
+                        <td>NO</td>
+                    </tr>
+                    <tr>
+                        <td>07/2022</td>
+                        <td>10/2023</td>
+                        <td>Consultant on BARMM Integrated Risk and Resilience Management</td>
+                        <td>European Union (EU) & Spanish Agency for International Development Cooperation (AECID)</td>
+                        <td>PHP500,000</td>
+                        <td>&nbsp;</td>
+                        <td>Contract</td>
+                        <td>NO</td>
+                    </tr>
+                    <tr>
+                        <td>07/2022</td>
+                        <td>08/2022</td>
+                        <td>Lead Consultant on Strategic Management of Bangsamoro Development Agency</td>
+                        <td>The Asia Foundation, USAID through the FORWARD Project</td>
+                        <td>PHP250,000.00</td>
+                        <td>&nbsp;</td>
+                        <td>Contract</td>
+                        <td>NO</td>
+                    </tr>
+                    <tr>
+                        <td>03/2022</td>
+                        <td>05/2022</td>
+                        <td>Lead Consultant for Systems Innovation of Food Security, Livelihoods, and DRR in Mindanao</td>
+                        <td>USAID and Action Against Hunger - Philippine Mission</td>
+                        <td>PHP400,000.00</td>
+                        <td>&nbsp;</td>
+                        <td>Contract</td>
+                        <td>NO</td>
+                    </tr>
+                    <tr>
+                        <td>01/2022</td>
+                        <td>04/2022</td>
+                        <td>Lead Consultant for Mid-Term Review of CONSENT DRR II</td>
+                        <td>German Red Cross and Philippine Red Cross</td>
+                        <td>EURO14,900</td>
+                        <td>&nbsp;</td>
+                        <td>Contract</td>
+                        <td>NO</td>
+                    </tr>
+                    <tr>
+                        <td>02/2021</td>
+                        <td>05/2021</td>
+                        <td>Lead Consultant, MOVE UP (4) Mindanao Project</td>
+                        <td>Action Against Hunger/ European Union Civil Protection and Humanitarian Aid</td>
+                        <td>PHP1,240,000.00</td>
+                        <td>&nbsp;</td>
+                        <td>Contract</td>
+                        <td>NO</td>
+                    </tr>
+                    <tr>
+                        <td>09/2019</td>
+                        <td>02/2020</td>
+                        <td>Lead Consultant, Moving Urban Poor Communities Towards Resilience in Metro Manila</td>
+                        <td>Action Against Hunger/ European Union Civil Protection and Humanitarian Aid</td>
+                        <td>PHP1,460,000.00</td>
+                        <td>&nbsp;</td>
+                        <td>Contract</td>
+                        <td>NO</td>
+                    </tr>
+                    <tr>
+                        <td>2017</td>
+                        <td>2020</td>
+                        <td>Consultant – Office of the Chairman</td>
+                        <td>Metro Manila Development Authority (MMDA)</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>Contract</td>
+                        <td>NO</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section VI: Voluntary Work -->
+        <div class="section">
+            <div class="section-header">VI. VOLUNTARY WORK OR INVOLVEMENT IN CIVIC/ NON-GOVERNMENT/ PEOPLE/ VOLUNTARY ORGANIZATION/S</div>
+            <div class="section-content">
+                <table>
+                    <tr>
+                        <th style="width: 35%;">31. NAME & ADDRESS OF ORGANIZATION<br>(Write in full)</th>
+                        <th style="width: 12%;">INCLUSIVE DATES<br>From</th>
+                        <th style="width: 12%;">INCLUSIVE DATES<br>To</th>
+                        <th style="width: 12%;">NUMBER OF<br>HOURS</th>
+                        <th style="width: 29%;">POSITION/ NATURE OF WORK</th>
+                    </tr>
+                    <tr>
+                        <td>Alpha Phi Omega PASAKA Alumni Association of Tanauan, Leyte</td>
+                        <td>03/05/19</td>
+                        <td>07/ /22</td>
+                        <td>&nbsp;</td>
+                        <td>Board Chairman and President</td>
+                    </tr>
+                    <tr>
+                        <td>Alpha Phi Omega Theta Zeta Alumni Association of UP Tacloban, Tacloban City</td>
+                        <td>04/15/20</td>
+                        <td>07/ /22</td>
+                        <td>&nbsp;</td>
+                        <td>Board Chairman</td>
+                    </tr>
+                    <tr>
+                        <td>Samahan ng Alpha Phi Omega sa Makati (Alumni Association of APO in Makati City)</td>
+                        <td>01/15/20</td>
+                        <td>07/ /22</td>
+                        <td>&nbsp;</td>
+                        <td>Board Chairman</td>
+                    </tr>
+                    <tr>
+                        <td>Bayanihan para sa Katatagan at Kapayapaan (BABANGON TAYO) or Cooperation for Resilience and Peace, General Santos City</td>
+                        <td>04/15/21</td>
+                        <td>07/ /22</td>
+                        <td>&nbsp;</td>
+                        <td>National Secretary-General</td>
+                    </tr>
+                    <tr>
+                        <td>Asian Institute of Management Alumni Association, Makati City</td>
+                        <td>10/15/21</td>
+                        <td>07/ /22</td>
+                        <td>&nbsp;</td>
+                        <td>Member of the Membership Committee</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section VII: Training Programs -->
+        <div class="section">
+            <div class="section-header">VII. LEARNING AND DEVELOPMENT INTERVENTIONS (Start from the most recent L&D)</div>
+            <div class="section-content">
+                <table>
+                    <tr>
+                        <th style="width: 40%;">32. TITLE OF SEMINAR/CONFERENCE/WORKSHOP/SHORT COURSES<br>(Write in full)</th>
+                        <th style="width: 12%;">INCLUSIVE DATES<br>From</th>
+                        <th style="width: 12%;">INCLUSIVE DATES<br>To</th>
+                        <th style="width: 10%;">NUMBER OF<br>HOURS</th>
+                        <th style="width: 26%;">CONDUCTED/ SPONSORED BY<br>(Write in full)</th>
+                    </tr>
+                    <tr class="sub-header">
+                        <td colspan="5">I. LEADERSHIP, MANAGEMENT, AND ANALYTICS</td>
+                    </tr>
+                    <tr>
+                        <td>Psychological First Aid Facilitator Part 1 and Part 2</td>
+                        <td>08/17/21</td>
+                        <td>08/22/21</td>
+                        <td>8</td>
+                        <td>DisasterReady.Org / Humanitarian U</td>
+                    </tr>
+                    <tr>
+                        <td>Mental Health and Wellbeing Facilitator Course</td>
+                        <td>10/ /21</td>
+                        <td>10/ /21</td>
+                        <td>16</td>
+                        <td>NZFAT Aid Program & PDRF</td>
+                    </tr>
+                    <tr>
+                        <td>Certified Test Passer of Disaster Response Simulation</td>
+                        <td>08/ /21</td>
+                        <td>08/10/21</td>
+                        <td>10</td>
+                        <td>DisasterReady.Org / Humanitarian U</td>
+                    </tr>
+                    <tr>
+                        <td>Certified Test Passer of Building Blocks of Humanitarian Practice</td>
+                        <td>08/ /21</td>
+                        <td>08/ /21</td>
+                        <td>10</td>
+                        <td>DisasterReady.Org / Humanitarian U</td>
+                    </tr>
+                    <tr>
+                        <td>Certified Test Passer of Humanitarian Context, Systems, and Standards</td>
+                        <td>07/ /21</td>
+                        <td>07/ /21</td>
+                        <td>10</td>
+                        <td>DisasterReady.Org / Humanitarian U</td>
+                    </tr>
+                    <tr>
+                        <td>Emergency Operations Design and Management Practitioner</td>
+                        <td>07/ /21</td>
+                        <td>07/ /21</td>
+                        <td>8</td>
+                        <td>PDRF</td>
+                    </tr>
+                    <tr>
+                        <td>Business Continuity Champion and Planning Facilitator Course</td>
+                        <td>07/26/21</td>
+                        <td>07/27/21</td>
+                        <td>8</td>
+                        <td>USAID, PDRF, and CRS</td>
+                    </tr>
+                    <tr>
+                        <td>Public Service Continuity Planning (PSCP) Facilitator Course</td>
+                        <td>07/26/21</td>
+                        <td>07/27/21</td>
+                        <td>8</td>
+                        <td>USAID, NZFAT, PDRF, NDRRMC, & OCD</td>
+                    </tr>
+                    <tr class="sub-header">
+                        <td colspan="5">II. RISK GOVERNANCE AND RESILIENCE-BUILDING</td>
+                    </tr>
+                    <tr>
+                        <td>Security Risk Management Professional (SRMP) – Country Level Certification</td>
+                        <td>&nbsp;</td>
+                        <td>02/17/22</td>
+                        <td>10</td>
+                        <td>International Safety & Security Assoc.</td>
+                    </tr>
+                    <tr>
+                        <td>U.Lab - Leading the Emerging Future</td>
+                        <td>&nbsp;</td>
+                        <td>12/15/21</td>
+                        <td>50</td>
+                        <td>MIT-Presencing Institute</td>
+                    </tr>
+                    <tr>
+                        <td>Technology Entrepreneurship: Lab to Market</td>
+                        <td>&nbsp;</td>
+                        <td>08/13/21</td>
+                        <td>25</td>
+                        <td>Online Learning Initiative of Harvard University</td>
+                    </tr>
+                    <tr>
+                        <td>Getting Grounded in Analytics</td>
+                        <td>&nbsp;</td>
+                        <td>11/20/20</td>
+                        <td>3</td>
+                        <td>Development Academy of the Phils.</td>
+                    </tr>
+                    <tr>
+                        <td>Essential Excel Skills for Data Preparation & Analysis</td>
+                        <td>&nbsp;</td>
+                        <td>12/22/21</td>
+                        <td>10</td>
+                        <td>Development Academy of the Phils.</td>
+                    </tr>
+                    <tr>
+                        <td>Data Management Fundamentals</td>
+                        <td>&nbsp;</td>
+                        <td>10/21/21</td>
+                        <td>10</td>
+                        <td>Development Academy of the Phils.</td>
+                    </tr>
+                    <tr>
+                        <td>Fostering Growth and Inclusions in Asia's Cities</td>
+                        <td>10/24/21</td>
+                        <td>10/24/21</td>
+                        <td>5</td>
+                        <td>Asian Development Bank Institute</td>
+                    </tr>
+                    <tr>
+                        <td>Financial Inclusion, Literacy & Education</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>16</td>
+                        <td>ADB</td>
+                    </tr>
+                    <tr>
+                        <td>Discover the Sustainability Compass</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>8</td>
+                        <td>Sustainability Compass</td>
+                    </tr>
+                    <tr class="sub-header">
+                        <td colspan="5">III. HEALTH RESILIENCE AND SPECIALIZED RESEARCH</td>
+                    </tr>
+                    <tr>
+                        <td>Security Risk Management Toolkit</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>8</td>
+                        <td>INNSA</td>
+                    </tr>
+                    <tr>
+                        <td>Do No Harm: Practical Framework on Conflict</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>8</td>
+                        <td>CDA Collaborative</td>
+                    </tr>
+                    <tr>
+                        <td>Adolescent-Friendly Health Facilities</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>8</td>
+                        <td>Johns Hopkins</td>
+                    </tr>
+                    <tr>
+                        <td>Resilient Mental Health and Wellbeing</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>8</td>
+                        <td>Cognitio+ / Partners</td>
+                    </tr>
+                    <tr>
+                        <td>HCLTech Code4Youth</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>8</td>
+                        <td>HCLTech</td>
+                    </tr>
+                    <tr>
+                        <td>Capability to Conduct Research (Technical)</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>NRCP-DOST</td>
+                    </tr>
+                    <tr style="background: #e9ecef; font-weight: bold;">
+                        <td colspan="3" style="text-align: right;">TOTAL ACCUMULATED HOURS</td>
+                        <td>386 Hours</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section VIII: Other Information -->
+        <div class="section">
+            <div class="section-header">VIII. OTHER INFORMATION</div>
+            <div class="section-content">
+                <table>
+                    <tr>
+                        <th style="width: 33%;">33. SPECIAL SKILLS/ HOBBIES</th>
+                        <th style="width: 33%;">34. NON-ACADEMIC DISTINCTIONS/ RECOGNITION<br>(Write in full)</th>
+                        <th style="width: 34%;">35. MEMBERSHIP IN ASSOCIATION/ORGANIZATION<br>(Write in full)</th>
+                    </tr>
+                    <tr>
+                        <td>Design and Development of Websites & Mobile Apps</td>
+                        <td>Grant Awardee of DLSU Animo Labs for the LIVABLE App</td>
+                        <td>Member, National Research Council of the Philippines</td>
+                    </tr>
+                    <tr>
+                        <td>Systems Modeling in Risk Management and Scenarios</td>
+                        <td>Incubatee of Nova Health Tech Program, November 2021 Cohort</td>
+                        <td>Member, Systems Innovation Global Network</td>
+                    </tr>
+                    <tr>
+                        <td>Data Analytics and Training of Algorithms in Python</td>
+                        <td>Incubatee at MIT - uLab for Emerging Leaders</td>
+                        <td>Member, Philippine Council for Mental Health</td>
+                    </tr>
+                    <tr>
+                        <td>Run a Behavior Designing Sessions</td>
+                        <td>&nbsp;</td>
+                        <td>Life Member, Philippine Mental Health Association</td>
+                    </tr>
+                    <tr>
+                        <td>Promoting Growth-Mindset and Personal Resilience</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Customizing Digital Platforms for Scaling Up</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section IX: Questions & References -->
+        <div class="section">
+            <div class="section-header">QUESTIONS 34-41</div>
+            <div class="section-content">
+                <table style="font-size: 10pt;">
+                    <tr>
+                        <td style="width: 80%;">34. Are you related by consanguinity or affinity to the appointing authority?</td>
+                        <td style="width: 20%; text-align: center; font-weight: bold;">NO</td>
+                    </tr>
+                    <tr>
+                        <td>37a. Have you ever been formally charged?</td>
+                        <td style="text-align: center; font-weight: bold;">NO</td>
+                    </tr>
+                    <tr>
+                        <td>37b. Have you ever been guilty of any administrative offense?</td>
+                        <td style="text-align: center; font-weight: bold;">NO</td>
+                    </tr>
+                    <tr>
+                        <td>38. Have you ever been convicted of any crime?</td>
+                        <td style="text-align: center; font-weight: bold;">NO</td>
+                    </tr>
+                    <tr>
+                        <td>39. Have you ever been separated from the service?</td>
+                        <td style="text-align: center; font-weight: bold;">NO</td>
+                    </tr>
+                    <tr>
+                        <td>40. Have you ever been a candidate in a national or local election?</td>
+                        <td style="text-align: center; font-weight: bold;">NO</td>
+                    </tr>
+                    <tr>
+                        <td>41a. Are you a member of any indigenous group?</td>
+                        <td style="text-align: center; font-weight: bold;">NO</td>
+                    </tr>
+                    <tr>
+                        <td>41b. Are you differently abled?</td>
+                        <td style="text-align: center; font-weight: bold;">NO</td>
+                    </tr>
+                    <tr>
+                        <td>41c. Are you a solo parent?</td>
+                        <td style="text-align: center; font-weight: bold;">NO</td>
+                    </tr>
+                </table>
+
+                <div style="margin-top: 15px;">
+                    <strong>42. REFERENCES (Person not related by consanguinity or affinity to applicant)</strong>
+                    <table class="references-table" style="margin-top: 5px;">
+                        <tr>
+                            <th style="width: 40%;">NAME</th>
+                            <th style="width: 40%;">ADDRESS</th>
+                            <th style="width: 20%;">TEL. NO.</th>
+                        </tr>
+                        <tr>
+                            <td>Dr. Rufo Mendoza, CPA, Former Commissioner</td>
+                            <td>Philippine Tax Academy</td>
+                            <td>09171629000</td>
+                        </tr>
+                        <tr>
+                            <td>Prof. Nihal Amerasinghe, Former ADB Director General</td>
+                            <td>&nbsp;</td>
+                            <td>0917892291</td>
+                        </tr>
+                        <tr>
+                            <td>Dr. Gerardo Petilla, Chief Admin Officer, NRCP</td>
+                            <td>&nbsp;</td>
+                            <td>09178712420</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Government ID Section -->
+        <div class="govt-id">
+            <div>
+                <strong>GOVERNMENT ID</strong><br><br>
+                <div class="info-grid" style="margin-top: 10px;">
+                    <div class="label">Community Tax Certificate No.</div>
+                    <div class="value">07707369</div>
+                    <div class="label">Issued At</div>
+                    <div class="value">Mandaluyong City</div>
+                    <div class="label">Issued On (mm/dd/yyyy)</div>
+                    <div class="value">01/07/2026</div>
+                </div>
+            </div>
+            <div style="border: 1px solid #000; padding: 10px; text-align: center; height: 150px; display: flex; flex-direction: column; justify-content: flex-end;">
+                <div style="border-top: 1px solid #000; padding-top: 5px; margin-top: auto;">
+                    <strong>SIGNATURE OVER PRINTED NAME</strong><br>
+                    <span style="font-size: 9pt;">Date Accomplished: 02/25/2026</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px; text-align: center; font-size: 9pt; color: #666;">
+            <em>CS Form No. 212 (Revised 2025) - Page 1 of 1</em>
+        </div>
+    </div>
+</body>
+</html>
