@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ASilva Innovations - Systems and Strategic Thinking, Disaster Risk Reduction-Climate Change Adaptation (DRR-CCA), and Real-Time Leadership.">
+    <meta property="og:title" content="ASilva Innovations | Systems Thinking & Strategic Innovation">
+    <meta property="og:image" content="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1772636202">
+    <meta property="og:type" content="website">
+    <title>ASilva Innovations | Systems Thinking & Strategic Innovation</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Merriweather"', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                            gold: '#f59e0b',
+                            accent: '#06b6d4',
+                            dark: '#0f172a'
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Editor Styles */
+        .editor-content:empty:before {
+            content: attr(placeholder);
+            color: #94a3b8;
+            pointer-events: none;
+            display: block;
+        }
+        
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .dark .glass {
+            background: rgba(15, 23, 42, 0.85);
+        }
+
+        /* Typography Scale */
+        .prose-custom {
+            line-height: 1.7;
+            font-size: 1.125rem;
+        }
+        
+        /* Drag and Drop Visuals */
+        .draggable-source {
+            opacity: 0.4;
+            border: 2px dashed #0284c7;
+        }
+        .drop-target {
+            border-top: 3px solid #0284c7;
+            margin-top: 10px;
+        }
+
+        /* Custom Gradient Text */
+        .text-gradient {
+            background: linear-gradient(135deg, #0284c7 0%, #06b6d4 50%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+<base target="_blank">
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-brand-dark dark:text-slate-100 transition-colors duration-300 font-sans antialiased">
+
+    <!-- App Container -->
+    <div id="app" class="min-h-screen flex flex-col">
+        
+        <!-- Navigation -->
+        <nav class="fixed w-full z-50 glass border-b border-slate-200 dark:border-slate-800 transition-all duration-300" id="navbar">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16 items-center">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="router.navigate('home')">
+                        <div class="h-10 w-10 rounded-full bg-gradient-to-br from-brand-600 to-brand-accent flex items-center justify-center text-white font-bold text-xl shadow-lg mr-3 overflow-hidden">
+                            <img src="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1772636202" alt="ASilva Innovations Logo" class="h-full w-full object-contain">
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-bold text-lg tracking-tight leading-none text-slate-900 dark:text-white">ASilva</span>
+                            <span class="text-xs text-brand-600 dark:text-brand-400 font-medium uppercase tracking-wider">Innovations</span>
+                        </div>
+                    </div>
+
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#" onclick="router.navigate('home')" class="nav-link text-sm font-semibold hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Home</a>
+                        <a href="#" onclick="router.navigate('blog')" class="nav-link text-sm font-semibold hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Insights</a>
+                        <div class="relative group">
+                            <button class="nav-link text-sm font-semibold hover:text-brand-600 dark:hover:text-brand-400 transition-colors flex items-center">
+                                Solutions <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                            </button>
+                            <div class="absolute left-0 mt-2 w-64 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                                <a href="https://asilvainnovations.com/strat-plan-pro" target="_blank" class="block px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700 first:rounded-t-xl transition-colors">
+                                    <div class="font-semibold text-slate-900 dark:text-white">StratPlan Pro</div>
+                                    <div class="text-xs text-slate-500 dark:text-slate-400">Systems & Strategic Thinking</div>
+                                </a>
+                                <a href="https://asilvainnovations.com/ddrive-m" target="_blank" class="block px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                                    <div class="font-semibold text-slate-900 dark:text-white">DDRIVE-M</div>
+                                    <div class="text-xs text-slate-500 dark:text-slate-400">DRR-CCA Solutions</div>
+                                </a>
+                                <a href="https://asilvainnovations.com/rtl" target="_blank" class="block px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700 last:rounded-b-xl transition-colors">
+                                    <div class="font-semibold text-slate-900 dark:text-white">RTL</div>
+                                    <div class="text-xs text-slate-500 dark:text-slate-400">Real-Time Leadership</div>
+                                </a>
+                            </div>
+                        </div>
+                        <a href="#" onclick="router.navigate('dashboard')" class="nav-link text-sm font-semibold hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Dashboard</a>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="flex items-center space-x-4">
+                        <button onclick="theme.toggle()" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors focus:outline-none">
+                            <i class="fas fa-moon dark:hidden text-slate-600"></i>
+                            <i class="fas fa-sun hidden dark:block text-brand-gold"></i>
+                        </button>
+                        <button onclick="router.navigate('editor')" class="hidden md:flex items-center px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium rounded-full transition-all shadow-lg hover:shadow-brand-500/30">
+                            <i class="fas fa-pen-nib mr-2"></i> Write
+                        </button>
+                        <button class="md:hidden p-2 text-slate-600 dark:text-slate-300" onclick="toggleMobileMenu()">
+                            <i class="fas fa-bars text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="#" onclick="router.navigate('home')" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Home</a>
+                    <a href="#" onclick="router.navigate('blog')" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Insights</a>
+                    <div class="px-3 py-2 text-sm font-semibold text-slate-500 uppercase">Solutions</div>
+                    <a href="https://asilvainnovations.com/strat-plan-pro" target="_blank" class="block px-3 py-2 pl-6 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800 text-brand-600">StratPlan Pro</a>
+                    <a href="https://asilvainnovations.com/ddrive-m" target="_blank" class="block px-3 py-2 pl-6 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800 text-brand-600">DDRIVE-M</a>
+                    <a href="https://asilvainnovations.com/rtl" target="_blank" class="block px-3 py-2 pl-6 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800 text-brand-600">RTL</a>
+                    <a href="#" onclick="router.navigate('editor')" class="block px-3 py-2 rounded-md text-base font-medium text-brand-600">Write Post</a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main id="main-content" class="flex-grow pt-16">
+            <!-- Views will be injected here via JS -->
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-auto">
+            <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="col-span-1 md:col-span-2">
+                        <div class="flex items-center mb-4">
+                            <div class="h-10 w-10 rounded-full bg-gradient-to-br from-brand-600 to-brand-accent flex items-center justify-center text-white font-bold mr-3 overflow-hidden">
+                                <img src="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1772636202" alt="Logo" class="h-full w-full object-contain">
+                            </div>
+                            <span class="font-bold text-xl text-slate-900 dark:text-white">ASilva Innovations</span>
+                        </div>
+                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed max-w-sm mb-4">
+                            Pioneering excellence in Systems Thinking, Disaster Risk Reduction, Climate Change Adaptation, and Real-Time Leadership development.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="https://asilvainnovations.com/strat-plan-pro" target="_blank" class="text-xs px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-900 text-brand-700 dark:text-brand-300 hover:bg-brand-200 transition-colors">StratPlan Pro</a>
+                            <a href="https://asilvainnovations.com/ddrive-m" target="_blank" class="text-xs px-3 py-1 rounded-full bg-cyan-100 dark:bg-cyan-900 text-cyan-700 dark:text-cyan-300 hover:bg-cyan-200 transition-colors">DDRIVE-M</a>
+                            <a href="https://asilvainnovations.com/rtl" target="_blank" class="text-xs px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-900 text-amber-700 dark:text-amber-300 hover:bg-amber-200 transition-colors">RTL</a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">Platform</h3>
+                        <ul class="space-y-3">
+                            <li><a href="#" onclick="router.navigate('blog')" class="text-base hover:text-brand-600 transition-colors">Insights</a></li>
+                            <li><a href="#" onclick="router.navigate('categories')" class="text-base hover:text-brand-600 transition-colors">Topics</a></li>
+                            <li><a href="#" class="text-base hover:text-brand-600 transition-colors">Newsletter</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">Connect</h3>
+                        <div class="flex space-x-6">
+                            <a href="#" class="text-slate-400 hover:text-brand-600 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
+                            <a href="#" class="text-slate-400 hover:text-brand-600 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+                            <a href="#" class="text-slate-400 hover:text-brand-600 transition-colors"><i class="fab fa-youtube text-xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-sm text-slate-400">&copy; 2026 ASilva Innovations. All rights reserved.</p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="https://asilvainnovations.com" target="_blank" class="text-sm text-slate-400 hover:text-brand-600">Main Website</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 transition-all duration-300 z-50 bg-slate-800 text-white px-6 py-3 rounded-lg shadow-2xl flex items-center">
+        <i class="fas fa-check-circle text-green-400 mr-3"></i>
+        <span id="toast-message">Operation successful</span>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // --- Data Store (Simulated Backend) ---
+        const store = {
+            user: {
+                name: "Admin User",
+                role: "administrator",
+                avatar: "https://ui-avatars.com/api/?name=Admin+User&background=0284c7&color=fff"
+            },
+            categories: [
+                { id: 'strategic', name: 'Systems & Strategic Thinking', shortName: 'StratPlan Pro', color: 'bg-sky-100 text-sky-800 dark:bg-sky-900 dark:text-sky-200', icon: 'fa-chess', count: 12, url: 'https://asilvainnovations.com/strat-plan-pro' },
+                { id: 'drr', name: 'DRR-CCA', shortName: 'DDRIVE-M', color: 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200', icon: 'fa-shield-halved', count: 8, url: 'https://asilvainnovations.com/ddrive-m' },
+                { id: 'leadership', name: 'Real-Time Leadership', shortName: 'RTL', color: 'bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200', icon: 'fa-bolt', count: 15, url: 'https://asilvainnovations.com/rtl' }
+            ],
+            posts: [
+                {
+                    id: 1,
+                    title: "Architecting Resilience: Systems Thinking in DRR-CCA",
+                    excerpt: "How integrated systems approaches can transform disaster risk reduction and climate adaptation strategies for sustainable development.",
+                    content: "<p>Disaster Risk Reduction (DRR) and Climate Change Adaptation (CCA) are no longer siloed disciplines. Through the <strong>DDRIVE-M</strong> framework, we explore how systems thinking creates resilient communities...</p><h3>The Interconnected Nature of Risk</h3><p>Understanding the feedback loops between environmental, social, and economic systems is crucial for preventing systemic collapse...</p>",
+                    author: "ASilva",
+                    date: "2026-03-01",
+                    category: "drr",
+                    tags: ["systems", "resilience", "climate"],
+                    image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80",
+                    status: "published",
+                    views: 1240,
+                    slug: "systems-thinking-drr-cca"
+                },
+                {
+                    id: 2,
+                    title: "StratPlan Pro: Strategic Foresight in Uncertain Times",
+                    excerpt: "Leveraging systems thinking methodologies to anticipate disruptions and build robust strategic plans that adapt to volatile environments.",
+                    content: "<p>Traditional strategic planning fails in VUCA environments. <strong>StratPlan Pro</strong> introduces dynamic scenario modeling...</p>",
+                    author: "ASilva",
+                    date: "2026-02-28",
+                    category: "strategic",
+                    tags: ["strategy", "foresight", "planning"],
+                    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+                    status: "published",
+                    views: 1850,
+                    slug: "stratplan-pro-foresight"
+                },
+                {
+                    id: 3,
+                    title: "Real-Time Leadership: Decisions at the Speed of Change",
+                    excerpt: "Developing leadership capabilities for immediate response and adaptive management in crisis situations.",
+                    content: "<p>The <strong>RTL (Real-Time Leadership)</strong> framework empowers leaders to make high-stakes decisions with limited information...</p>",
+                    author: "ASilva",
+                    date: "2026-02-25",
+                    category: "leadership",
+                    tags: ["leadership", "crisis", "decision-making"],
+                    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+                    status: "published",
+                    views: 2100,
+                    slug: "real-time-leadership-rtl"
+                },
+                {
+                    id: 4,
+                    title: "Integrating DRR-CCA into National Development Plans",
+                    excerpt: "Practical approaches for mainstreaming disaster risk reduction and climate adaptation into policy frameworks.",
+                    content: "<p>Mainstreaming requires systems-level coordination across government agencies...</p>",
+                    author: "ASilva",
+                    date: "2026-02-20",
+                    category: "drr",
+                    tags: ["policy", "governance", "integration"],
+                    image: "https://images.unsplash.com/photo-1569163139599-0f4517e36f51?auto=format&fit=crop&w=1200&q=80",
+                    status: "published",
+                    views: 980,
+                    slug: "integrating-drr-cca"
+                },
+                {
+                    id: 5,
+                    title: "Complex Adaptive Systems in Organizational Strategy",
+                    excerpt: "Understanding how organizations function as complex adaptive systems to drive innovation and strategic agility.",
+                    content: "<p>Organizations are living systems. This article explores emergence, self-organization, and co-evolution...</p>",
+                    author: "ASilva",
+                    date: "2026-02-15",
+                    category: "strategic",
+                    tags: ["complexity", "organizations", "agility"],
+                    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
+                    status: "published",
+                    views: 1560,
+                    slug: "complex-adaptive-systems"
+                },
+                {
+                    id: 6,
+                    title: "Crisis Leadership: The RTL Methodology in Action",
+                    excerpt: "Case studies demonstrating Real-Time Leadership principles during critical incidents and emergency response.",
+                    content: "<p>When crisis hits, traditional hierarchies often fail. RTL provides the framework for distributed leadership...</p>",
+                    author: "ASilva",
+                    date: "2026-02-10",
+                    category: "leadership",
+                    tags: ["crisis", "emergency", "case-study"],
+                    image: "https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?auto=format&fit=crop&w=1200&q=80",
+                    status: "published",
+                    views: 1340,
+                    slug: "crisis-leadership-rtl"
+                }
+            ],
+            drafts: [],
+            stats: {
+                subscribers: 3420,
+                monthlyViews: 45000,
+                avgReadTime: "6m 15s"
+            }
+        };
+
+        // --- Theme Manager ---
+        const theme = {
+            init() {
+                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+            },
+            toggle() {
+                document.documentElement.classList.toggle('dark');
+                localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+            }
+        };
+
+        // --- Router ---
+        const router = {
+            currentPage: 'home',
+            navigate(page, params = {}) {
+                this.currentPage = page;
+                window.scrollTo(0, 0);
+                const main = document.getElementById('main-content');
+                
+                main.style.opacity = '0';
+                setTimeout(() => {
+                    main.innerHTML = '';
+                    switch(page) {
+                        case 'home': main.appendChild(views.home()); break;
+                        case 'blog': main.appendChild(views.blog()); break;
+                        case 'post': main.appendChild(views.post(params.id)); break;
+                        case 'editor': main.appendChild(views.editor(params.id)); break;
+                        case 'dashboard': main.appendChild(views.dashboard()); break;
+                        case 'categories': main.appendChild(views.categories()); break;
+                        default: main.appendChild(views.home());
+                    }
+                    main.style.opacity = '1';
+                    main.className = "flex-grow pt-16 animate-fade-in";
+                }, 200);
+            }
+        };
+
+        // --- UI Components Generators ---
+        const components = {
+            badge(text, colorClass) {
+                return `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${colorClass}">${text}</span>`;
+            },
+            card(post) {
+                const category = store.categories.find(c => c.id === post.category);
+                return `
+                <article class="flex flex-col bg-white dark:bg-slate-800 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 dark:border-slate-700 group h-full">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4">
+                            ${this.badge(category.name, category.color)}
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow">
+                        <div class="flex items-center text-xs text-slate-500 dark:text-slate-400 mb-3">
+                            <span>${new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                            <span class="mx-2">•</span>
+                            <span>${post.views} views</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors leading-tight text-slate-900 dark:text-white">
+                            <a href="#" onclick="router.navigate('post', {id: ${post.id}}); return false;">${post.title}</a>
+                        </h3>
+                        <p class="text-slate-600 dark:text-slate-300 text-sm line-clamp-3 mb-4 flex-grow">${post.excerpt}</p>
+                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
+                            <div class="flex items-center">
+                                <div class="h-6 w-6 rounded-full bg-brand-100 dark:bg-brand-900 flex items-center justify-center text-xs font-bold text-brand-700 dark:text-brand-300 mr-2">
+                                    ${post.author.charAt(0)}
+                                </div>
+                                <span class="text-xs font-medium text-slate-700 dark:text-slate-300">${post.author}</span>
+                            </div>
+                            <button onclick="router.navigate('post', {id: ${post.id}})" class="text-brand-600 hover:text-brand-700 text-sm font-semibold flex items-center">
+                                Read <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>`;
+            }
+        };
+
+        // --- Views ---
+        const views = {
+            home() {
+                const container = document.createElement('div');
+                
+                // Hero Section
+                const hero = document.createElement('section');
+                hero.className = "relative bg-slate-900 text-white overflow-hidden";
+                hero.innerHTML = `
+                    <div class="absolute inset-0">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=80" class="w-full h-full object-cover opacity-30">
+                        <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-900/70"></div>
+                    </div>
+                    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+                        <div class="md:w-2/3 animate-slide-up">
+                            <div class="inline-flex items-center px-3 py-1 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-300 text-sm font-medium mb-6 backdrop-blur-sm">
+                                <span class="flex h-2 w-2 rounded-full bg-brand-400 mr-2 animate-pulse"></span>
+                                Systems Innovation Hub
+                            </div>
+                            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                                Mastering <span class="text-gradient">Complexity</span> Through Strategic Innovation
+                            </h1>
+                            <p class="text-xl text-slate-300 mb-8 max-w-2xl leading-relaxed">
+                                Expert insights on Systems Thinking, Disaster Risk Reduction-Climate Change Adaptation (DRR-CCA), and Real-Time Leadership.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <button onclick="router.navigate('blog')" class="px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white rounded-full font-semibold transition-all shadow-lg shadow-brand-600/30 flex items-center justify-center">
+                                    Explore Insights <i class="fas fa-arrow-right ml-2"></i>
+                                </button>
+                                <button onclick="document.getElementById('solutions').scrollIntoView({behavior: 'smooth'})" class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white rounded-full font-semibold transition-all flex items-center justify-center">
+                                    Our Solutions
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(hero);
+
+                // Solutions Section
+                const solutions = document.createElement('section');
+                solutions.id = "solutions";
+                solutions.className = "py-20 bg-slate-50 dark:bg-slate-900";
+                solutions.innerHTML = `
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="text-center mb-16">
+                            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Our Core Solutions</h2>
+                            <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Integrated frameworks designed for complex challenges</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            ${store.categories.map(cat => `
+                                <a href="${cat.url}" target="_blank" class="group bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:border-brand-500 transition-all duration-300 transform hover:-translate-y-1">
+                                    <div class="w-14 h-14 rounded-xl ${cat.color} flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                                        <i class="fas ${cat.icon}"></i>
+                                    </div>
+                                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">${cat.shortName}</h3>
+                                    <p class="text-slate-500 dark:text-slate-400 mb-4 font-medium">${cat.name}</p>
+                                    <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
+                                        ${cat.id === 'strategic' ? 'Advanced strategic planning tools leveraging systems thinking for organizational transformation.' : 
+                                          cat.id === 'drr' ? 'Comprehensive disaster risk reduction and climate change adaptation management systems.' : 
+                                          'Dynamic leadership development for high-stakes, time-critical decision making.'}
+                                    </p>
+                                    <span class="inline-flex items-center text-brand-600 font-semibold text-sm group-hover:translate-x-2 transition-transform">
+                                        Learn more <i class="fas fa-external-link-alt ml-2 text-xs"></i>
+                                    </span>
+                                </a>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+                container.appendChild(solutions);
+
+                // Featured Section
+                const featured = document.createElement('section');
+                featured.className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16";
+                featured.innerHTML = `
+                    <div class="flex justify-between items-end mb-8">
+                        <div>
+                            <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Latest Insights</h2>
+                            <p class="mt-2 text-slate-600 dark:text-slate-400">Thought leadership on systems and resilience.</p>
+                        </div>
+                        <a href="#" onclick="router.navigate('blog')" class="hidden md:flex items-center text-brand-600 font-semibold hover:text-brand-700">
+                            View all insights <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        ${store.posts.slice(0, 3).map(post => components.card(post)).join('')}
+                    </div>
+                `;
+                container.appendChild(featured);
+
+                // Newsletter Section
+                const newsletter = document.createElement('section');
+                newsletter.className = "bg-brand-900 py-16 relative overflow-hidden";
+                newsletter.innerHTML = `
+                    <div class="absolute inset-0 opacity-10">
+                        <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+                    </div>
+                    <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+                        <h2 class="text-3xl font-bold text-white mb-4">Join the Systems Thinkers</h2>
+                        <p class="text-brand-200 mb-8 text-lg">Get weekly insights on resilience, strategy, and leadership delivered to your inbox.</p>
+                        <form onsubmit="event.preventDefault(); showToast('Successfully subscribed to ASilva Innovations!');" class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                            <input type="email" placeholder="Enter your email" required class="flex-1 px-6 py-4 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-400 text-slate-900">
+                            <button type="submit" class="px-8 py-4 bg-brand-gold hover:bg-yellow-600 text-white font-bold rounded-full transition-colors shadow-lg">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                `;
+                container.appendChild(newsletter);
+
+                return container;
+            },
+
+            blog() {
+                const container = document.createElement('div');
+                container.className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-fade-in";
+                
+                const header = document.createElement('div');
+                header.className = "mb-12 text-center";
+                header.innerHTML = `
+                    <h1 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Knowledge Hub</h1>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Expert perspectives on Systems Thinking, DRR-CCA, and Real-Time Leadership.</p>
+                `;
+                container.appendChild(header);
+
+                const filterContainer = document.createElement('div');
+                filterContainer.className = "flex flex-wrap justify-center gap-2 mb-12";
+                filterContainer.innerHTML = `
+                    <button onclick="filterPosts('all')" class="filter-btn active px-4 py-2 rounded-full text-sm font-medium bg-brand-600 text-white transition-all">All Insights</button>
+                    ${store.categories.map(cat => `
+                        <button onclick="filterPosts('${cat.id}')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-500 transition-all">${cat.name}</button>
+                    `).join('')}
+                `;
+                container.appendChild(filterContainer);
+
+                const grid = document.createElement('div');
+                grid.id = "blog-grid";
+                grid.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8";
+                grid.innerHTML = store.posts.map(post => components.card(post)).join('');
+                container.appendChild(grid);
+
+                window.filterPosts = (category) => {
+                    const buttons = document.querySelectorAll('.filter-btn');
+                    buttons.forEach(btn => {
+                        if ((category === 'all' && btn.innerText === 'All Insights') || btn.innerText === store.categories.find(c => c.id === category)?.name) {
+                            btn.className = "filter-btn active px-4 py-2 rounded-full text-sm font-medium bg-brand-600 text-white transition-all shadow-md";
+                        } else {
+                            btn.className = "filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-500 transition-all";
+                        }
+                    });
+
+                    const filtered = category === 'all' ? store.posts : store.posts.filter(p => p.category === category);
+                    grid.innerHTML = filtered.map(post => components.card(post)).join('');
+                };
+
+                return container;
+            },
+
+            post(id) {
+                const post = store.posts.find(p => p.id === id) || store.posts[0];
+                const category = store.categories.find(c => c.id === post.category);
+                const container = document.createElement('div');
+                container.className = "animate-fade-in";
+
+                const hero = document.createElement('div');
+                hero.className = "w-full h-[50vh] relative";
+                hero.innerHTML = `
+                    <img src="${post.image}" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 w-full p-8 md:p-16">
+                        <div class="max-w-4xl mx-auto">
+                            ${components.badge(category.name, category.color)}
+                            <h1 class="text-3xl md:text-5xl font-bold text-white mt-4 mb-4 leading-tight">${post.title}</h1>
+                            <div class="flex items-center text-slate-300 text-sm">
+                                <span class="font-semibold text-white mr-2">${post.author}</span>
+                                <span>•</span>
+                                <span class="mx-2">${new Date(post.date).toLocaleDateString()}</span>
+                                <span>•</span>
+                                <span class="mx-2">6 min read</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(hero);
+
+                const contentWrapper = document.createElement('div');
+                contentWrapper.className = "max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12";
+                contentWrapper.innerHTML = `
+                    <article class="prose-custom prose-slate dark:prose-invert max-w-none">
+                        <p class="text-xl text-slate-600 dark:text-slate-300 leading-relaxed mb-8 font-serif italic border-l-4 border-brand-500 pl-4">
+                            ${post.excerpt}
+                        </p>
+                        <div class="font-serif text-slate-800 dark:text-slate-200">
+                            ${post.content}
+                        </div>
+                        
+                        <div class="mt-12 p-6 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
+                            <h4 class="font-bold text-slate-900 dark:text-white mb-2">Explore this topic further</h4>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Deep dive into our specialized solutions for ${category.name}.</p>
+                            <a href="${category.url}" target="_blank" class="inline-flex items-center px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium rounded-lg transition-colors">
+                                Visit ${category.shortName} <i class="fas fa-external-link-alt ml-2"></i>
+                            </a>
+                        </div>
+
+                        <div class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-700">
+                            <h3 class="text-lg font-bold mb-4 text-slate-900 dark:text-white">Share this insight</h3>
+                            <div class="flex space-x-4">
+                                <button class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-colors"><i class="fab fa-twitter"></i></button>
+                                <button class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></button>
+                                <button class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-colors"><i class="fas fa-link"></i></button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="mt-12 bg-brand-50 dark:bg-slate-800/50 rounded-2xl p-8 border border-brand-100 dark:border-slate-700">
+                        <div class="flex flex-col md:flex-row items-center justify-between">
+                            <div class="mb-6 md:mb-0 md:mr-8">
+                                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Stay ahead with ASilva</h3>
+                                <p class="text-slate-600 dark:text-slate-300">Join 3,400+ leaders receiving our weekly systems thinking newsletter.</p>
+                            </div>
+                            <button onclick="document.getElementById('newsletter').scrollIntoView({behavior: 'smooth'})" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-lg shadow-lg transition-all whitespace-nowrap">
+                                Subscribe Now
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(contentWrapper);
+
+                return container;
+            },
+
+            editor(id) {
+                const container = document.createElement('div');
+                container.className = "max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in h-[calc(100vh-4rem)] flex flex-col";
+                
+                const toolbar = document.createElement('div');
+                toolbar.className = "flex items-center justify-between mb-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 sticky top-20 z-30";
+                toolbar.innerHTML = `
+                    <div class="flex items-center space-x-4">
+                        <input type="text" id="post-title-input" placeholder="Post Title" class="text-2xl font-bold bg-transparent border-none focus:ring-0 text-slate-900 dark:text-white placeholder-slate-400 w-full md:w-96">
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <span class="text-sm text-slate-500 hidden md:inline">Saved just now</span>
+                        <button onclick="savePost()" class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg font-medium hover:bg-slate-200 transition-colors">Save Draft</button>
+                        <button onclick="publishPost()" class="px-4 py-2 bg-brand-600 text-white rounded-lg font-medium hover:bg-brand-700 shadow-lg shadow-brand-500/30 transition-all">Publish</button>
+                    </div>
+                `;
+                container.appendChild(toolbar);
+
+                const layout = document.createElement('div');
+                layout.className = "flex flex-col lg:flex-row gap-8 flex-grow overflow-hidden";
+                
+                const canvas = document.createElement('div');
+                canvas.className = "flex-1 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-y-auto p-8";
+                canvas.innerHTML = `
+                    <div id="editor-blocks" class="space-y-4 max-w-3xl mx-auto pb-20">
+                        <div class="editor-block group relative p-2 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-lg transition-colors" draggable="true">
+                            <div class="absolute left-0 top-2 opacity-0 group-hover:opacity-100 cursor-move text-slate-400 px-2 py-1">
+                                <i class="fas fa-grip-vertical"></i>
+                            </div>
+                            <div contenteditable="true" class="editor-content outline-none pl-8 min-h-[2rem] prose dark:prose-invert" placeholder="Start writing or type '/' for commands..."></div>
+                        </div>
+                    </div>
+                `;
+                layout.appendChild(canvas);
+
+                const sidebar = document.createElement('div');
+                sidebar.className = "w-full lg:w-64 flex-shrink-0 space-y-6 overflow-y-auto pb-20";
+                sidebar.innerHTML = `
+                    <div class="bg-white dark:bg-slate-800 p-5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+                        <h3 class="font-bold text-slate-900 dark:text-white mb-4 text-sm uppercase tracking-wider">Post Settings</h3>
+                        
+                        <div class="mb-4">
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Category</label>
+                            <select id="post-category" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                                ${store.categories.map(c => `<option value="${c.id}">${c.name}</option>`).join('')}
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Featured Image</label>
+                            <div class="border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-lg p-4 text-center cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
+                                <i class="fas fa-image text-slate-400 mb-2"></i>
+                                <span class="block text-xs text-slate-500">Click to upload</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-medium text-slate-500 mb-1">Tags</label>
+                            <input type="text" placeholder="Add tag..." class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                        </div>
+                    </div>
+
+                    <div class="bg-brand-50 dark:bg-slate-800/50 p-5 rounded-xl border border-brand-100 dark:border-slate-700">
+                        <h3 class="font-bold text-brand-900 dark:text-brand-400 mb-2 text-sm">SEO Analysis</h3>
+                        <div class="space-y-2">
+                            <div class="flex items-center text-xs text-green-600 dark:text-green-400">
+                                <i class="fas fa-check-circle mr-2"></i> Title length optimal
+                            </div>
+                            <div class="flex items-center text-xs text-yellow-600 dark:text-yellow-400">
+                                <i class="fas fa-exclamation-circle mr-2"></i> Add meta description
+                            </div>
+                        </div>
+                    </div>
+                `;
+                layout.appendChild(sidebar);
+                container.appendChild(layout);
+
+                setTimeout(() => {
+                    const editorBlocks = document.getElementById('editor-blocks');
+                    
+                    editorBlocks.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' && !e.shiftKey) {
+                            e.preventDefault();
+                            createNewBlock(editorBlocks);
+                        }
+                    });
+
+                    let draggedItem = null;
+                    editorBlocks.addEventListener('dragstart', (e) => {
+                        if(e.target.classList.contains('editor-block')) {
+                            draggedItem = e.target;
+                            e.target.classList.add('draggable-source');
+                        }
+                    });
+                    editorBlocks.addEventListener('dragend', (e) => {
+                        if(e.target.classList.contains('editor-block')) {
+                            e.target.classList.remove('draggable-source');
+                        }
+                    });
+                    editorBlocks.addEventListener('dragover', (e) => {
+                        e.preventDefault();
+                        const afterElement = getDragAfterElement(editorBlocks, e.clientY);
+                        if (afterElement == null) {
+                            editorBlocks.appendChild(draggedItem);
+                        } else {
+                            editorBlocks.insertBefore(draggedItem, afterElement);
+                        }
+                    });
+                }, 0);
+
+                return container;
+            },
+
+            dashboard() {
+                const container = document.createElement('div');
+                container.className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in";
+                
+                container.innerHTML = `
+                    <div class="mb-8">
+                        <h1 class="text-3xl font-bold text-slate-900 dark:text-white">Dashboard</h1>
+                        <p class="text-slate-500 dark:text-slate-400">Overview of your content performance.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase">Total Views</h3>
+                                <span class="p-2 bg-sky-100 dark:bg-sky-900 text-sky-600 dark:text-sky-300 rounded-lg"><i class="fas fa-eye"></i></span>
+                            </div>
+                            <div class="text-3xl font-bold text-slate-900 dark:text-white">${store.stats.monthlyViews.toLocaleString()}</div>
+                            <div class="text-sm text-green-500 mt-2 flex items-center">
+                                <i class="fas fa-arrow-up mr-1"></i> 12% <span class="text-slate-400 ml-1">vs last month</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase">Subscribers</h3>
+                                <span class="p-2 bg-cyan-100 dark:bg-cyan-900 text-cyan-600 dark:text-cyan-300 rounded-lg"><i class="fas fa-users"></i></span>
+                            </div>
+                            <div class="text-3xl font-bold text-slate-900 dark:text-white">${store.stats.subscribers.toLocaleString()}</div>
+                            <div class="text-sm text-green-500 mt-2 flex items-center">
+                                <i class="fas fa-arrow-up mr-1"></i> 5.4% <span class="text-slate-400 ml-1">vs last month</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase">Avg. Read Time</h3>
+                                <span class="p-2 bg-amber-100 dark:bg-amber-900 text-amber-600 dark:text-amber-300 rounded-lg"><i class="fas fa-clock"></i></span>
+                            </div>
+                            <div class="text-3xl font-bold text-slate-900 dark:text-white">${store.stats.avgReadTime}</div>
+                            <div class="text-sm text-slate-400 mt-2">
+                                Industry avg: 3m 12s
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+                        <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center">
+                            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Recent Posts</h3>
+                            <button onclick="router.navigate('editor')" class="text-sm text-brand-600 font-medium hover:underline">Create New</button>
+                        </div>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left text-sm">
+                                <thead class="bg-slate-50 dark:bg-slate-900/50 text-slate-500 dark:text-slate-400">
+                                    <tr>
+                                        <th class="px-6 py-3 font-medium">Title</th>
+                                        <th class="px-6 py-3 font-medium">Solution</th>
+                                        <th class="px-6 py-3 font-medium">Status</th>
+                                        <th class="px-6 py-3 font-medium">Date</th>
+                                        <th class="px-6 py-3 font-medium text-right">Views</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
+                                    ${store.posts.map(post => {
+                                        const cat = store.categories.find(c => c.id === post.category);
+                                        return `
+                                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
+                                            <td class="px-6 py-4 font-medium text-slate-900 dark:text-white">
+                                                <div class="flex items-center">
+                                                    <img src="${post.image}" class="h-10 w-10 rounded object-cover mr-3">
+                                                    ${post.title}
+                                                </div>
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                <a href="${cat.url}" target="_blank" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${cat.color} hover:opacity-80 transition-opacity">
+                                                    ${cat.shortName}
+                                                </a>
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                                                    Published
+                                                </span>
+                                            </td>
+                                            <td class="px-6 py-4 text-slate-500 dark:text-slate-400">${new Date(post.date).toLocaleDateString()}</td>
+                                            <td class="px-6 py-4 text-right font-medium text-slate-900 dark:text-white">${post.views}</td>
+                                        </tr>
+                                        `;
+                                    }).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                `;
+                return container;
+            },
+            
+            categories() {
+                const container = document.createElement('div');
+                container.className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-fade-in";
+                container.innerHTML = `
+                    <div class="text-center mb-12">
+                        <h1 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Our Solutions</h1>
+                        <p class="text-lg text-slate-600 dark:text-slate-400">Explore our specialized knowledge domains and frameworks.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                        ${store.categories.map(cat => `
+                            <a href="${cat.url}" target="_blank" class="group block bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-2xl hover:border-brand-500 transition-all duration-300 text-center">
+                                <div class="w-16 h-16 rounded-2xl ${cat.color} flex items-center justify-center text-3xl mx-auto mb-6 group-hover:scale-110 transition-transform">
+                                    <i class="fas ${cat.icon}"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">${cat.shortName}</h3>
+                                <p class="text-slate-500 dark:text-slate-400 mb-4 font-medium">${cat.name}</p>
+                                <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
+                                    ${cat.id === 'strategic' ? 'Master complexity with our advanced strategic planning and systems thinking methodologies.' : 
+                                      cat.id === 'drr' ? 'Build resilience through integrated disaster risk reduction and climate adaptation frameworks.' : 
+                                      'Lead effectively in real-time with dynamic decision-making and crisis management capabilities.'}
+                                </p>
+                                <span class="inline-flex items-center text-brand-600 font-semibold group-hover:translate-x-1 transition-transform">
+                                    Explore Solution <i class="fas fa-arrow-right ml-2"></i>
+                                </span>
+                            </a>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="mt-16 text-center">
+                        <p class="text-slate-600 dark:text-slate-400 mb-6">Visit our main website for complete solution details</p>
+                        <a href="https://asilvainnovations.com" target="_blank" class="inline-flex items-center px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-full transition-all shadow-lg">
+                            asilvainnovations.com <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                `;
+                return container;
+            }
+        };
+
+        // --- Helper Functions ---
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').innerText = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        function createNewBlock(container) {
+            const block = document.createElement('div');
+            block.className = "editor-block group relative p-2 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-lg transition-colors animate-slide-up";
+            block.draggable = true;
+            block.innerHTML = `
+                <div class="absolute left-0 top-2 opacity-0 group-hover:opacity-100 cursor-move text-slate-400 px-2 py-1">
+                    <i class="fas fa-grip-vertical"></i>
+                </div>
+                <div contenteditable="true" class="editor-content outline-none pl-8 min-h-[2rem] prose dark:prose-invert" placeholder="Type something..."></div>
+            `;
+            container.appendChild(block);
+            block.querySelector('.editor-content').focus();
+        }
+
+        function getDragAfterElement(container, y) {
+            const draggableElements = [...container.querySelectorAll('.editor-block:not(.draggable-source)')];
+            return draggableElements.reduce((closest, child) => {
+                const box = child.getBoundingClientRect();
+                const offset = y - box.top - box.height / 2;
+                if (offset < 0 && offset > closest.offset) {
+                    return { offset: offset, element: child };
+                } else {
+                    return closest;
+                }
+            }, { offset: Number.NEGATIVE_INFINITY }).element;
+        }
+
+        function savePost() {
+            showToast('Draft saved successfully');
+        }
+
+        function publishPost() {
+            const title = document.getElementById('post-title-input').value;
+            if(!title) {
+                alert("Please enter a title");
+                return;
+            }
+            showToast('Post published to ASilva Innovations!');
+            setTimeout(() => router.navigate('blog'), 1000);
+        }
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            theme.init();
+            router.navigate('home');
+        });
+
+    </script>
+</body>
+</html>
