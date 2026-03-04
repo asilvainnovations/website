@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ASilva Innovations - Systems and Strategic Thinking, Disaster Risk Reduction-Climate Change Adaptation (DRR-CCA), and Real-Time Leadership.">
+    <meta name="description" content="ASilva Innovations - Systems and Strategic Thinking, Disaster Risk Reduction-Climate Change Adaptation (DRR-CCA), and Real-Time Leadership. Building Resilient Communities Through Technology.">
     <meta property="og:title" content="ASilva Innovations | Systems Thinking & Strategic Innovation">
     <meta property="og:image" content="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1772636202">
     <meta property="og:type" content="website">
-    <title>ASilva Innovations | Systems Thinking & Strategic Innovation</title>
+    <title>ASilva Innovations | Insights & Knowledge Hub</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,7 +15,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -26,7 +26,7 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        sans: ['"Inter"', 'sans-serif'],
                         serif: ['"Merriweather"', 'serif'],
                     },
                     colors: {
@@ -38,9 +38,16 @@
                             700: '#0369a1',
                             800: '#075985',
                             900: '#0c4a6e',
-                            gold: '#f59e0b',
                             accent: '#06b6d4',
-                            dark: '#0f172a'
+                            dark: '#0f172a',
+                            light: '#f8fafc'
+                        },
+                        asilva: {
+                            primary: '#0284c7',
+                            secondary: '#06b6d4',
+                            accent: '#0ea5e9',
+                            dark: '#1e293b',
+                            light: '#f1f5f9'
                         }
                     },
                     animation: {
@@ -92,12 +99,12 @@
         
         /* Glassmorphism */
         .glass {
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
         }
         .dark .glass {
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(15, 23, 42, 0.9);
         }
 
         /* Typography Scale */
@@ -118,15 +125,37 @@
 
         /* Custom Gradient Text */
         .text-gradient {
-            background: linear-gradient(135deg, #0284c7 0%, #06b6d4 50%, #f59e0b 100%);
+            background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
+        /* Image Upload Zone */
+        .upload-zone {
+            border: 2px dashed #cbd5e1;
+            transition: all 0.3s ease;
+        }
+        .upload-zone:hover, .upload-zone.dragover {
+            border-color: #0284c7;
+            background-color: #f0f9ff;
+        }
+        .dark .upload-zone:hover, .dark .upload-zone.dragover {
+            background-color: rgba(2, 132, 199, 0.1);
+        }
+
+        /* Modal Animation */
+        .modal-enter {
+            animation: modalEnter 0.3s ease-out;
+        }
+        @keyframes modalEnter {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
     </style>
 <base target="_blank">
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-brand-dark dark:text-slate-100 transition-colors duration-300 font-sans antialiased">
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 font-sans antialiased">
 
     <!-- App Container -->
     <div id="app" class="min-h-screen flex flex-col">
@@ -137,7 +166,7 @@
                 <div class="flex justify-between h-16 items-center">
                     <!-- Logo -->
                     <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="router.navigate('home')">
-                        <div class="h-10 w-10 rounded-full bg-gradient-to-br from-brand-600 to-brand-accent flex items-center justify-center text-white font-bold text-xl shadow-lg mr-3 overflow-hidden">
+                        <div class="h-10 w-10 rounded-lg bg-gradient-to-br from-brand-600 to-brand-accent flex items-center justify-center text-white font-bold text-xl shadow-lg mr-3 overflow-hidden">
                             <img src="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1772636202" alt="ASilva Innovations Logo" class="h-full w-full object-contain">
                         </div>
                         <div class="flex flex-col">
@@ -155,17 +184,17 @@
                                 Solutions <i class="fas fa-chevron-down ml-1 text-xs"></i>
                             </button>
                             <div class="absolute left-0 mt-2 w-64 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                                <a href="https://asilvainnovations.com/strat-planner-pro" target="_blank" class="block px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700 first:rounded-t-xl transition-colors">
-                                    <div class="font-semibold text-slate-900 dark:text-white">Strat Planner Pro</div>
+                                <a href="https://asilvainnovations.com/strat-plan-pro" target="_blank" class="block px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700 first:rounded-t-xl transition-colors">
+                                    <div class="font-semibold text-slate-900 dark:text-white">StratPlan Pro</div>
                                     <div class="text-xs text-slate-500 dark:text-slate-400">Systems & Strategic Thinking</div>
                                 </a>
                                 <a href="https://asilvainnovations.com/ddrive-m" target="_blank" class="block px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
-                                    <div class="font-semibold text-slate-900 dark:text-white">DDRIVE-M</div>
-                                    <div class="text-xs text-slate-500 dark:text-slate-400">DRR-CCA Solutions</div>
+                                    <div class="font-semibold text-slate-900 dark:text-white">DDRiVE-M</div>
+                                    <div class="text-xs text-slate-500 dark:text-slate-400">DRR-CCA Platform</div>
                                 </a>
                                 <a href="https://asilvainnovations.com/rtl" target="_blank" class="block px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-700 last:rounded-b-xl transition-colors">
-                                    <div class="font-semibold text-slate-900 dark:text-white">RTL</div>
-                                    <div class="text-xs text-slate-500 dark:text-slate-400">Real-Time Leadership</div>
+                                    <div class="font-semibold text-slate-900 dark:text-white">Real-Time Leadership</div>
+                                    <div class="text-xs text-slate-500 dark:text-slate-400">Emergency Leadership Framework</div>
                                 </a>
                             </div>
                         </div>
@@ -176,9 +205,9 @@
                     <div class="flex items-center space-x-4">
                         <button onclick="theme.toggle()" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors focus:outline-none">
                             <i class="fas fa-moon dark:hidden text-slate-600"></i>
-                            <i class="fas fa-sun hidden dark:block text-brand-gold"></i>
+                            <i class="fas fa-sun hidden dark:block text-brand-600"></i>
                         </button>
-                        <button onclick="router.navigate('editor')" class="hidden md:flex items-center px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium rounded-full transition-all shadow-lg hover:shadow-brand-500/30">
+                        <button onclick="router.navigate('editor')" class="hidden md:flex items-center px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium rounded-lg transition-all shadow-lg hover:shadow-brand-500/30">
                             <i class="fas fa-pen-nib mr-2"></i> Write
                         </button>
                         <button class="md:hidden p-2 text-slate-600 dark:text-slate-300" onclick="toggleMobileMenu()">
@@ -194,9 +223,9 @@
                     <a href="#" onclick="router.navigate('home')" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Home</a>
                     <a href="#" onclick="router.navigate('blog')" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Insights</a>
                     <div class="px-3 py-2 text-sm font-semibold text-slate-500 uppercase">Solutions</div>
-                    <a href="https://asilvainnovations.com/strat-planner-pro" target="_blank" class="block px-3 py-2 pl-6 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800 text-brand-600">Strat Planner Pro</a>
-                    <a href="https://asilvainnovations.com/ddrive-m" target="_blank" class="block px-3 py-2 pl-6 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800 text-brand-600">DDRIVE-M</a>
-                    <a href="https://asilvainnovations.com/rtl" target="_blank" class="block px-3 py-2 pl-6 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800 text-brand-600">RTL</a>
+                    <a href="https://asilvainnovations.com/strat-plan-pro" target="_blank" class="block px-3 py-2 pl-6 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800 text-brand-600">StratPlan Pro</a>
+                    <a href="https://asilvainnovations.com/ddrive-m" target="_blank" class="block px-3 py-2 pl-6 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800 text-brand-600">DDRiVE-M</a>
+                    <a href="https://asilvainnovations.com/rtl" target="_blank" class="block px-3 py-2 pl-6 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800 text-brand-600">Real-Time Leadership</a>
                     <a href="#" onclick="router.navigate('editor')" class="block px-3 py-2 rounded-md text-base font-medium text-brand-600">Write Post</a>
                 </div>
             </div>
@@ -213,34 +242,34 @@
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                     <div class="col-span-1 md:col-span-2">
                         <div class="flex items-center mb-4">
-                            <div class="h-10 w-10 rounded-full bg-gradient-to-br from-brand-600 to-brand-accent flex items-center justify-center text-white font-bold mr-3 overflow-hidden">
+                            <div class="h-10 w-10 rounded-lg bg-gradient-to-br from-brand-600 to-brand-accent flex items-center justify-center text-white font-bold mr-3 overflow-hidden">
                                 <img src="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1772636202" alt="Logo" class="h-full w-full object-contain">
                             </div>
                             <span class="font-bold text-xl text-slate-900 dark:text-white">ASilva Innovations</span>
                         </div>
                         <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed max-w-sm mb-4">
-                            Pioneering excellence in Systems Thinking, Disaster Risk Reduction, Climate Change Adaptation, and Real-Time Leadership development.
+                            Building Resilient Communities Through Technology. Enterprise-grade risk intelligence platforms for LGUs, NGOs, and social enterprises across Southeast Asia.
                         </p>
-                        <div class="flex space-x-4">
-                            <a href="https://asilvainnovations.com/strat-plan-pro" target="_blank" class="text-xs px-3 py-1 rounded-full bg-brand-100 dark:bg-brand-900 text-brand-700 dark:text-brand-300 hover:bg-brand-200 transition-colors">StratPlan Pro</a>
-                            <a href="https://asilvainnovations.com/ddrive-m" target="_blank" class="text-xs px-3 py-1 rounded-full bg-cyan-100 dark:bg-cyan-900 text-cyan-700 dark:text-cyan-300 hover:bg-cyan-200 transition-colors">DDRIVE-M</a>
-                            <a href="https://asilvainnovations.com/rtl" target="_blank" class="text-xs px-3 py-1 rounded-full bg-amber-100 dark:bg-amber-900 text-amber-700 dark:text-amber-300 hover:bg-amber-200 transition-colors">RTL</a>
+                        <div class="flex space-x-3">
+                            <a href="https://asilvainnovations.com/strat-plan-pro" target="_blank" class="text-xs px-3 py-1.5 rounded-full bg-sky-100 dark:bg-sky-900 text-sky-700 dark:text-sky-300 hover:bg-sky-200 transition-colors font-medium">StratPlan Pro</a>
+                            <a href="https://asilvainnovations.com/ddrive-m" target="_blank" class="text-xs px-3 py-1.5 rounded-full bg-cyan-100 dark:bg-cyan-900 text-cyan-700 dark:text-cyan-300 hover:bg-cyan-200 transition-colors font-medium">DDRiVE-M</a>
+                            <a href="https://asilvainnovations.com/rtl" target="_blank" class="text-xs px-3 py-1.5 rounded-full bg-amber-100 dark:bg-amber-900 text-amber-700 dark:text-amber-300 hover:bg-amber-200 transition-colors font-medium">RTL</a>
                         </div>
                     </div>
                     <div>
                         <h3 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">Platform</h3>
                         <ul class="space-y-3">
-                            <li><a href="https://asilvainnovations.com/blog" onclick="router.navigate('blog')" class="text-base hover:text-brand-600 transition-colors">Insights</a></li>
-                            <li><a href="https://asilvainnovations.com/case-studies" onclick="router.navigate('categories')" class="text-base hover:text-brand-600 transition-colors">Case Studies</a></li>
-                            <li><a href="https://asilvainnovations.com/white-papers" class="text-base hover:text-brand-600 transition-colors">White Papers</a></li>
+                            <li><a href="#" onclick="router.navigate('blog')" class="text-base hover:text-brand-600 transition-colors">Insights</a></li>
+                            <li><a href="#" onclick="router.navigate('categories')" class="text-base hover:text-brand-600 transition-colors">Solutions</a></li>
+                            <li><a href="#" onclick="router.navigate('dashboard')" class="text-base hover:text-brand-600 transition-colors">Dashboard</a></li>
                         </ul>
                     </div>
                     <div>
                         <h3 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">Connect</h3>
-                        <div class="flex space-x-6">
-                            <a href="https://twitter.asilvainnovations.com" class="text-slate-400 hover:text-brand-600 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
-                            <a href="https://linkedin.asilvainnovations.com" class="text-slate-400 hover:text-brand-600 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
-                            <a href="https://youtube.asilvainovations.com" class="text-slate-400 hover:text-brand-600 transition-colors"><i class="fab fa-youtube text-xl"></i></a>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-slate-400 hover:text-brand-600 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
+                            <a href="#" class="text-slate-400 hover:text-brand-600 transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
+                            <a href="#" class="text-slate-400 hover:text-brand-600 transition-colors"><i class="fab fa-youtube text-xl"></i></a>
                         </div>
                     </div>
                 </div>
@@ -254,6 +283,65 @@
         </footer>
     </div>
 
+    <!-- Image Upload Modal -->
+    <div id="image-modal" class="fixed inset-0 z-[60] hidden">
+        <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" onclick="closeImageModal()"></div>
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl w-full max-w-lg modal-enter overflow-hidden">
+                <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white">Add Featured Image</h3>
+                    <button onclick="closeImageModal()" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <!-- Upload Zone -->
+                    <div id="upload-zone" class="upload-zone rounded-xl p-8 text-center cursor-pointer mb-4" onclick="document.getElementById('file-input').click()">
+                        <input type="file" id="file-input" class="hidden" accept="image/png,image/jpeg,image/jpg" onchange="handleFileSelect(event)">
+                        <div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-cloud-upload-alt text-2xl text-brand-600"></i>
+                        </div>
+                        <p class="text-sm font-medium text-slate-900 dark:text-white mb-1">Click to upload or drag and drop</p>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">PNG, JPG up to 5MB</p>
+                    </div>
+                    
+                    <div class="relative my-6">
+                        <div class="absolute inset-0 flex items-center">
+                            <div class="w-full border-t border-slate-200 dark:border-slate-700"></div>
+                        </div>
+                        <div class="relative flex justify-center text-sm">
+                            <span class="px-2 bg-white dark:bg-slate-800 text-slate-500">Or</span>
+                        </div>
+                    </div>
+                    
+                    <!-- URL Input -->
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Image URL</label>
+                        <div class="flex space-x-2">
+                            <input type="url" id="image-url-input" placeholder="https://example.com/image.png" class="flex-1 px-4 py-2 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-900 dark:text-white focus:ring-2 focus:ring-brand-500 focus:border-transparent">
+                            <button onclick="confirmImageUrl()" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-lg font-medium transition-colors">Add</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Preview -->
+                    <div id="image-preview-container" class="hidden mt-4">
+                        <p class="text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Preview</p>
+                        <div class="relative rounded-lg overflow-hidden bg-slate-100 dark:bg-slate-700">
+                            <img id="image-preview" src="" alt="Preview" class="w-full h-48 object-cover">
+                            <button onclick="clearImagePreview()" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-red-500 hover:bg-red-600 text-white flex items-center justify-center transition-colors">
+                                <i class="fas fa-times text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="px-6 py-4 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-200 dark:border-slate-700 flex justify-end space-x-3">
+                    <button onclick="closeImageModal()" class="px-4 py-2 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg transition-colors">Cancel</button>
+                    <button onclick="confirmImageSelection()" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-lg font-medium transition-colors">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Toast Notification -->
     <div id="toast" class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 transition-all duration-300 z-50 bg-slate-800 text-white px-6 py-3 rounded-lg shadow-2xl flex items-center">
         <i class="fas fa-check-circle text-green-400 mr-3"></i>
@@ -262,7 +350,7 @@
 
     <!-- JavaScript Application Logic -->
     <script>
-        // --- Data Store (Simulated Backend) ---
+        // --- Data Store ---
         const store = {
             user: {
                 name: "Admin User",
@@ -271,7 +359,7 @@
             },
             categories: [
                 { id: 'strategic', name: 'Systems & Strategic Thinking', shortName: 'StratPlan Pro', color: 'bg-sky-100 text-sky-800 dark:bg-sky-900 dark:text-sky-200', icon: 'fa-chess', count: 12, url: 'https://asilvainnovations.com/strat-plan-pro' },
-                { id: 'drr', name: 'DRR-CCA', shortName: 'DDRIVE-M', color: 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200', icon: 'fa-shield-halved', count: 8, url: 'https://asilvainnovations.com/ddrive-m' },
+                { id: 'drr', name: 'DRR-CCA', shortName: 'DDRiVE-M', color: 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200', icon: 'fa-shield-halved', count: 8, url: 'https://asilvainnovations.com/ddrive-m' },
                 { id: 'leadership', name: 'Real-Time Leadership', shortName: 'RTL', color: 'bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200', icon: 'fa-bolt', count: 15, url: 'https://asilvainnovations.com/rtl' }
             ],
             posts: [
@@ -279,7 +367,7 @@
                     id: 1,
                     title: "Architecting Resilience: Systems Thinking in DRR-CCA",
                     excerpt: "How integrated systems approaches can transform disaster risk reduction and climate adaptation strategies for sustainable development.",
-                    content: "<p>Disaster Risk Reduction (DRR) and Climate Change Adaptation (CCA) are no longer siloed disciplines. Through the <strong>DDRIVE-M</strong> framework, we explore how systems thinking creates resilient communities...</p><h3>The Interconnected Nature of Risk</h3><p>Understanding the feedback loops between environmental, social, and economic systems is crucial for preventing systemic collapse...</p>",
+                    content: "<p>Disaster Risk Reduction (DRR) and Climate Change Adaptation (CCA) are no longer siloed disciplines. Through the <strong>DDRiVE-M</strong> platform, we explore how systems thinking creates resilient communities...</p><h3>The Interconnected Nature of Risk</h3><p>Understanding the feedback loops between environmental, social, and economic systems is crucial for preventing systemic collapse...</p>",
                     author: "ASilva",
                     date: "2026-03-01",
                     category: "drr",
@@ -312,55 +400,14 @@
                     date: "2026-02-25",
                     category: "leadership",
                     tags: ["leadership", "crisis", "decision-making"],
-                    image: "https://appimize.app/assets/apps/user_1097/images/6ec964f59211_588_1097.png",
+                    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
                     status: "published",
                     views: 2100,
                     slug: "real-time-leadership-rtl"
-                },
-                {
-                    id: 4,
-                    title: "Integrating DRR-CCA into National Development Plans",
-                    excerpt: "Practical approaches for mainstreaming disaster risk reduction and climate adaptation into policy frameworks.",
-                    content: "<p>Mainstreaming requires systems-level coordination across government agencies...</p>",
-                    author: "ASilva",
-                    date: "2026-02-20",
-                    category: "drr",
-                    tags: ["policy", "governance", "integration"],
-                    image: "https://images.unsplash.com/photo-1569163139599-0f4517e36f51?auto=format&fit=crop&w=1200&q=80",
-                    status: "published",
-                    views: 980,
-                    slug: "integrating-drr-cca"
-                },
-                {
-                    id: 5,
-                    title: "Complex Adaptive Systems in Organizational Strategy",
-                    excerpt: "Understanding how organizations function as complex adaptive systems to drive innovation and strategic agility.",
-                    content: "<p>Organizations are living systems. This article explores emergence, self-organization, and co-evolution...</p>",
-                    author: "ASilva",
-                    date: "2026-02-15",
-                    category: "strategic",
-                    tags: ["complexity", "organizations", "agility"],
-                    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80",
-                    status: "published",
-                    views: 1560,
-                    slug: "complex-adaptive-systems"
-                },
-                {
-                    id: 6,
-                    title: "Crisis Leadership: The RTL Methodology in Action",
-                    excerpt: "Case studies demonstrating Real-Time Leadership principles during critical incidents and emergency response.",
-                    content: "<p>When crisis hits, traditional hierarchies often fail. RTL provides the framework for distributed leadership...</p>",
-                    author: "ASilva",
-                    date: "2026-02-10",
-                    category: "leadership",
-                    tags: ["crisis", "emergency", "case-study"],
-                    image: "https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?auto=format&fit=crop&w=1200&q=80",
-                    status: "published",
-                    views: 1340,
-                    slug: "crisis-leadership-rtl"
                 }
             ],
-            drafts: [],
+            currentEditId: null,
+            tempImage: null,
             stats: {
                 subscribers: 3420,
                 monthlyViews: 45000,
@@ -409,7 +456,115 @@
             }
         };
 
-        // --- UI Components Generators ---
+        // --- Image Upload Functions ---
+        let currentImageCallback = null;
+
+        function openImageModal(callback) {
+            currentImageCallback = callback;
+            store.tempImage = null;
+            document.getElementById('image-modal').classList.remove('hidden');
+            document.getElementById('image-preview-container').classList.add('hidden');
+            document.getElementById('image-url-input').value = '';
+            document.getElementById('file-input').value = '';
+        }
+
+        function closeImageModal() {
+            document.getElementById('image-modal').classList.add('hidden');
+            currentImageCallback = null;
+            store.tempImage = null;
+        }
+
+        function handleFileSelect(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            
+            if (!file.type.match('image.*')) {
+                showToast('Please select an image file');
+                return;
+            }
+            
+            if (file.size > 5 * 1024 * 1024) {
+                showToast('File size must be less than 5MB');
+                return;
+            }
+            
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                store.tempImage = e.target.result;
+                showImagePreview(e.target.result);
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function confirmImageUrl() {
+            const url = document.getElementById('image-url-input').value.trim();
+            if (!url) {
+                showToast('Please enter an image URL');
+                return;
+            }
+            
+            // Validate URL
+            const img = new Image();
+            img.onload = () => {
+                store.tempImage = url;
+                showImagePreview(url);
+            };
+            img.onerror = () => {
+                showToast('Invalid image URL');
+            };
+            img.src = url;
+        }
+
+        function showImagePreview(src) {
+            const preview = document.getElementById('image-preview');
+            preview.src = src;
+            document.getElementById('image-preview-container').classList.remove('hidden');
+        }
+
+        function clearImagePreview() {
+            store.tempImage = null;
+            document.getElementById('image-preview-container').classList.add('hidden');
+            document.getElementById('file-input').value = '';
+            document.getElementById('image-url-input').value = '';
+        }
+
+        function confirmImageSelection() {
+            if (!store.tempImage) {
+                showToast('Please select an image first');
+                return;
+            }
+            
+            if (currentImageCallback) {
+                currentImageCallback(store.tempImage);
+            }
+            closeImageModal();
+        }
+
+        // Drag and drop for upload zone
+        document.addEventListener('DOMContentLoaded', () => {
+            const uploadZone = document.getElementById('upload-zone');
+            if (uploadZone) {
+                uploadZone.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    uploadZone.classList.add('dragover');
+                });
+                uploadZone.addEventListener('dragleave', () => {
+                    uploadZone.classList.remove('dragover');
+                });
+                uploadZone.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    uploadZone.classList.remove('dragover');
+                    const files = e.dataTransfer.files;
+                    if (files.length > 0) {
+                        const fileInput = document.getElementById('file-input');
+                        fileInput.files = files;
+                        handleFileSelect({ target: fileInput });
+                    }
+                });
+            }
+        });
+
+        // --- UI Components ---
         const components = {
             badge(text, colorClass) {
                 return `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${colorClass}">${text}</span>`;
@@ -455,7 +610,6 @@
             home() {
                 const container = document.createElement('div');
                 
-                // Hero Section
                 const hero = document.createElement('section');
                 hero.className = "relative bg-slate-900 text-white overflow-hidden";
                 hero.innerHTML = `
@@ -467,19 +621,19 @@
                         <div class="md:w-2/3 animate-slide-up">
                             <div class="inline-flex items-center px-3 py-1 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-300 text-sm font-medium mb-6 backdrop-blur-sm">
                                 <span class="flex h-2 w-2 rounded-full bg-brand-400 mr-2 animate-pulse"></span>
-                                Systems Innovation Hub
+                                Knowledge Hub
                             </div>
                             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                                Mastering <span class="text-gradient">Complexity</span> Through Strategic Innovation
+                                Insights on <span class="text-gradient">Resilience</span> & Innovation
                             </h1>
                             <p class="text-xl text-slate-300 mb-8 max-w-2xl leading-relaxed">
-                                Expert insights on Systems Thinking, Disaster Risk Reduction-Climate Change Adaptation (DRR-CCA), and Real-Time Leadership.
+                                Expert perspectives on Systems Thinking, DRR-CCA, and Real-Time Leadership for building resilient communities.
                             </p>
                             <div class="flex flex-col sm:flex-row gap-4">
-                                <button onclick="router.navigate('blog')" class="px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white rounded-full font-semibold transition-all shadow-lg shadow-brand-600/30 flex items-center justify-center">
+                                <button onclick="router.navigate('blog')" class="px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white rounded-lg font-semibold transition-all shadow-lg shadow-brand-600/30 flex items-center justify-center">
                                     Explore Insights <i class="fas fa-arrow-right ml-2"></i>
                                 </button>
-                                <button onclick="document.getElementById('solutions').scrollIntoView({behavior: 'smooth'})" class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white rounded-full font-semibold transition-all flex items-center justify-center">
+                                <button onclick="document.getElementById('solutions').scrollIntoView({behavior: 'smooth'})" class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white rounded-lg font-semibold transition-all flex items-center justify-center">
                                     Our Solutions
                                 </button>
                             </div>
@@ -488,7 +642,6 @@
                 `;
                 container.appendChild(hero);
 
-                // Solutions Section
                 const solutions = document.createElement('section');
                 solutions.id = "solutions";
                 solutions.className = "py-20 bg-slate-50 dark:bg-slate-900";
@@ -496,7 +649,7 @@
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="text-center mb-16">
                             <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Our Core Solutions</h2>
-                            <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Integrated frameworks designed for complex challenges</p>
+                            <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Enterprise-grade platforms designed for complex challenges</p>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                             ${store.categories.map(cat => `
@@ -507,9 +660,9 @@
                                     <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">${cat.shortName}</h3>
                                     <p class="text-slate-500 dark:text-slate-400 mb-4 font-medium">${cat.name}</p>
                                     <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
-                                        ${cat.id === 'strategic' ? 'Advanced strategic planning tools leveraging systems thinking for organizational transformation.' : 
-                                          cat.id === 'drr' ? 'Comprehensive disaster risk reduction and climate change adaptation management systems.' : 
-                                          'Dynamic leadership development for high-stakes, time-critical decision making.'}
+                                        ${cat.id === 'strategic' ? 'AI-powered strategic planning suite with systems-driven context analysis and automated monitoring.' : 
+                                          cat.id === 'drr' ? 'Multi-hazard detection and ISO 31000-compliant risk management with AI services.' : 
+                                          'Systems-based emergency leadership framework for high-stakes decision making.'}
                                     </p>
                                     <span class="inline-flex items-center text-brand-600 font-semibold text-sm group-hover:translate-x-2 transition-transform">
                                         Learn more <i class="fas fa-external-link-alt ml-2 text-xs"></i>
@@ -521,7 +674,6 @@
                 `;
                 container.appendChild(solutions);
 
-                // Featured Section
                 const featured = document.createElement('section');
                 featured.className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16";
                 featured.innerHTML = `
@@ -540,7 +692,6 @@
                 `;
                 container.appendChild(featured);
 
-                // Newsletter Section
                 const newsletter = document.createElement('section');
                 newsletter.className = "bg-brand-900 py-16 relative overflow-hidden";
                 newsletter.innerHTML = `
@@ -551,8 +702,8 @@
                         <h2 class="text-3xl font-bold text-white mb-4">Join the Systems Thinkers</h2>
                         <p class="text-brand-200 mb-8 text-lg">Get weekly insights on resilience, strategy, and leadership delivered to your inbox.</p>
                         <form onsubmit="event.preventDefault(); showToast('Successfully subscribed to ASilva Innovations!');" class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-                            <input type="email" placeholder="Enter your email" required class="flex-1 px-6 py-4 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-400 text-slate-900">
-                            <button type="submit" class="px-8 py-4 bg-brand-gold hover:bg-yellow-600 text-white font-bold rounded-full transition-colors shadow-lg">
+                            <input type="email" placeholder="Enter your email" required class="flex-1 px-6 py-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-400 text-slate-900">
+                            <button type="submit" class="px-8 py-4 bg-brand-accent hover:bg-cyan-600 text-white font-bold rounded-lg transition-colors shadow-lg">
                                 Subscribe
                             </button>
                         </form>
@@ -647,8 +798,8 @@
                         </div>
                         
                         <div class="mt-12 p-6 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700">
-                            <h4 class="font-bold text-slate-900 dark:text-white mb-2">Explore this topic further</h4>
-                            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Deep dive into our specialized solutions for ${category.name}.</p>
+                            <h4 class="font-bold text-slate-900 dark:text-white mb-2">Explore this solution</h4>
+                            <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">Deep dive into ${category.name}.</p>
                             <a href="${category.url}" target="_blank" class="inline-flex items-center px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium rounded-lg transition-colors">
                                 Visit ${category.shortName} <i class="fas fa-external-link-alt ml-2"></i>
                             </a>
@@ -670,7 +821,7 @@
                                 <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Stay ahead with ASilva</h3>
                                 <p class="text-slate-600 dark:text-slate-300">Join 3,400+ leaders receiving our weekly systems thinking newsletter.</p>
                             </div>
-                            <button onclick="document.getElementById('newsletter').scrollIntoView({behavior: 'smooth'})" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-lg shadow-lg transition-all whitespace-nowrap">
+                            <button onclick="document.querySelector('.bg-brand-900').scrollIntoView({behavior: 'smooth'})" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-lg shadow-lg transition-all whitespace-nowrap">
                                 Subscribe Now
                             </button>
                         </div>
@@ -682,114 +833,167 @@
             },
 
             editor(id) {
-                const container = document.createElement('div');
-                container.className = "max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in h-[calc(100vh-4rem)] flex flex-col";
+                // Check if editing existing post
+                const isEditing = id !== undefined;
+                const post = isEditing ? store.posts.find(p => p.id === id) : null;
+                store.currentEditId = isEditing ? id : null;
                 
-                const toolbar = document.createElement('div');
-                toolbar.className = "flex items-center justify-between mb-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 sticky top-20 z-30";
-                toolbar.innerHTML = `
+                const container = document.createElement('div');
+                container.className = "max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in h-[calc(100vh-4rem)] flex flex-col";
+                
+                // Header
+                const header = document.createElement('div');
+                header.className = "flex items-center justify-between mb-6";
+                header.innerHTML = `
                     <div class="flex items-center space-x-4">
-                        <input type="text" id="post-title-input" placeholder="Post Title" class="text-2xl font-bold bg-transparent border-none focus:ring-0 text-slate-900 dark:text-white placeholder-slate-400 w-full md:w-96">
+                        <button onclick="router.navigate('dashboard')" class="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg transition-colors">
+                            <i class="fas fa-arrow-left text-slate-600 dark:text-slate-400"></i>
+                        </button>
+                        <div>
+                            <h1 class="text-2xl font-bold text-slate-900 dark:text-white">${isEditing ? 'Edit Article' : 'New Article'}</h1>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">${isEditing ? 'Updating: ' + post.title : 'Create a new insight'}</p>
+                        </div>
                     </div>
                     <div class="flex items-center space-x-3">
-                        <span class="text-sm text-slate-500 hidden md:inline">Saved just now</span>
-                        <button onclick="savePost()" class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg font-medium hover:bg-slate-200 transition-colors">Save Draft</button>
-                        <button onclick="publishPost()" class="px-4 py-2 bg-brand-600 text-white rounded-lg font-medium hover:bg-brand-700 shadow-lg shadow-brand-500/30 transition-all">Publish</button>
+                        <span id="save-status" class="text-sm text-slate-500 hidden md:inline">All changes saved</span>
+                        <button onclick="saveDraft()" class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg font-medium hover:bg-slate-200 transition-colors">Save Draft</button>
+                        <button onclick="publishArticle()" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-lg font-medium shadow-lg transition-all">${isEditing ? 'Update' : 'Publish'}</button>
                     </div>
                 `;
-                container.appendChild(toolbar);
+                container.appendChild(header);
 
+                // Main Editor Layout
                 const layout = document.createElement('div');
-                layout.className = "flex flex-col lg:flex-row gap-8 flex-grow overflow-hidden";
+                layout.className = "flex flex-col lg:flex-row gap-6 flex-grow overflow-hidden";
                 
-                const canvas = document.createElement('div');
-                canvas.className = "flex-1 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-y-auto p-8";
-                canvas.innerHTML = `
-                    <div id="editor-blocks" class="space-y-4 max-w-3xl mx-auto pb-20">
-                        <div class="editor-block group relative p-2 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-lg transition-colors" draggable="true">
-                            <div class="absolute left-0 top-2 opacity-0 group-hover:opacity-100 cursor-move text-slate-400 px-2 py-1">
+                // Left: Content Editor
+                const editorPanel = document.createElement('div');
+                editorPanel.className = "flex-1 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden flex flex-col";
+                
+                // Title Input
+                const titleSection = document.createElement('div');
+                titleSection.className = "p-6 border-b border-slate-200 dark:border-slate-700";
+                titleSection.innerHTML = `
+                    <input type="text" id="editor-title" placeholder="Article Title" value="${isEditing ? post.title : ''}" 
+                        class="w-full text-3xl font-bold bg-transparent border-none focus:ring-0 text-slate-900 dark:text-white placeholder-slate-400">
+                `;
+                editorPanel.appendChild(titleSection);
+                
+                // Excerpt Input
+                const excerptSection = document.createElement('div');
+                excerptSection.className = "px-6 py-4 border-b border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50";
+                excerptSection.innerHTML = `
+                    <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Excerpt</label>
+                    <textarea id="editor-excerpt" rows="2" placeholder="Brief summary of the article..." 
+                        class="w-full bg-transparent border-none focus:ring-0 text-slate-700 dark:text-slate-300 placeholder-slate-400 resize-none text-sm">${isEditing ? post.excerpt : ''}</textarea>
+                `;
+                editorPanel.appendChild(excerptSection);
+                
+                // Content Blocks
+                const blocksContainer = document.createElement('div');
+                blocksContainer.className = "flex-1 overflow-y-auto p-6";
+                blocksContainer.innerHTML = `
+                    <div id="editor-blocks" class="space-y-4 max-w-3xl mx-auto">
+                        ${isEditing ? renderBlocksFromContent(post.content) : `
+                        <div class="editor-block group relative p-2 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-lg transition-colors border-l-2 border-transparent hover:border-brand-300" draggable="true">
+                            <div class="absolute left-0 top-2 opacity-0 group-hover:opacity-100 cursor-move text-slate-400 px-2 py-1 drag-handle">
                                 <i class="fas fa-grip-vertical"></i>
                             </div>
-                            <div contenteditable="true" class="editor-content outline-none pl-8 min-h-[2rem] prose dark:prose-invert" placeholder="Start writing or type '/' for commands..."></div>
+                            <div contenteditable="true" class="editor-content outline-none pl-8 min-h-[2rem] prose dark:prose-invert text-slate-800 dark:text-slate-200" placeholder="Start writing your article..."></div>
+                        </div>
+                        `}
+                    </div>
+                    <button onclick="addNewBlock()" class="mt-4 ml-8 text-slate-400 hover:text-brand-600 transition-colors flex items-center text-sm">
+                        <i class="fas fa-plus-circle mr-2"></i> Add new block
+                    </button>
+                `;
+                editorPanel.appendChild(blocksContainer);
+                layout.appendChild(editorPanel);
+
+                // Right: Settings Panel
+                const settingsPanel = document.createElement('div');
+                settingsPanel.className = "w-full lg:w-80 flex-shrink-0 space-y-4 overflow-y-auto pb-4";
+                
+                // Featured Image
+                const imageCard = document.createElement('div');
+                imageCard.className = "bg-white dark:bg-slate-800 p-5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700";
+                const currentImage = isEditing ? post.image : '';
+                imageCard.innerHTML = `
+                    <h3 class="font-bold text-slate-900 dark:text-white mb-4 text-sm uppercase tracking-wider">Featured Image</h3>
+                    <div id="featured-image-container" class="${currentImage ? '' : 'hidden'} mb-4">
+                        <div class="relative rounded-lg overflow-hidden">
+                            <img id="featured-image-preview" src="${currentImage}" class="w-full h-40 object-cover">
+                            <button onclick="removeFeaturedImage()" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-red-500 hover:bg-red-600 text-white flex items-center justify-center transition-colors shadow-lg">
+                                <i class="fas fa-times text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <button onclick="openImageModal(setFeaturedImage)" class="w-full py-3 border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-lg text-slate-600 dark:text-slate-400 hover:border-brand-500 hover:text-brand-600 transition-all flex items-center justify-center">
+                        <i class="fas fa-image mr-2"></i> ${currentImage ? 'Change Image' : 'Add Image'}
+                    </button>
+                `;
+                settingsPanel.appendChild(imageCard);
+                
+                // Category & Tags
+                const metaCard = document.createElement('div');
+                metaCard.className = "bg-white dark:bg-slate-800 p-5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700";
+                metaCard.innerHTML = `
+                    <h3 class="font-bold text-slate-900 dark:text-white mb-4 text-sm uppercase tracking-wider">Publishing</h3>
+                    
+                    <div class="mb-4">
+                        <label class="block text-xs font-medium text-slate-500 mb-2">Category</label>
+                        <select id="editor-category" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-brand-500 outline-none text-slate-900 dark:text-white">
+                            ${store.categories.map(c => `
+                                <option value="${c.id}" ${(isEditing && post.category === c.id) ? 'selected' : ''}>${c.name}</option>
+                            `).join('')}
+                        </select>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="block text-xs font-medium text-slate-500 mb-2">Tags (comma separated)</label>
+                        <input type="text" id="editor-tags" value="${isEditing ? post.tags.join(', ') : ''}" 
+                            class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-brand-500 outline-none text-slate-900 dark:text-white" 
+                            placeholder="strategy, resilience, leadership">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-xs font-medium text-slate-500 mb-2">Status</label>
+                        <select id="editor-status" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-brand-500 outline-none text-slate-900 dark:text-white">
+                            <option value="draft" ${(isEditing && post.status === 'draft') ? 'selected' : ''}>Draft</option>
+                            <option value="published" ${(isEditing && post.status === 'published') ? 'selected' : ''}>Published</option>
+                        </select>
+                    </div>
+                `;
+                settingsPanel.appendChild(metaCard);
+                
+                // SEO Card
+                const seoCard = document.createElement('div');
+                seoCard.className = "bg-brand-50 dark:bg-slate-800/50 p-5 rounded-xl border border-brand-100 dark:border-slate-700";
+                seoCard.innerHTML = `
+                    <h3 class="font-bold text-brand-900 dark:text-brand-400 mb-3 text-sm uppercase tracking-wider">SEO Health</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center text-xs text-green-600 dark:text-green-400">
+                            <i class="fas fa-check-circle mr-2"></i> Title length optimal
+                        </div>
+                        <div class="flex items-center text-xs ${isEditing ? 'text-green-600 dark:text-green-400' : 'text-yellow-600 dark:text-yellow-400'}">
+                            <i class="fas ${isEditing ? 'fa-check-circle' : 'fa-exclamation-circle'} mr-2"></i> 
+                            ${isEditing ? 'Content structure good' : 'Add content blocks'}
+                        </div>
+                        <div class="flex items-center text-xs ${currentImage ? 'text-green-600 dark:text-green-400' : 'text-yellow-600 dark:text-yellow-400'}">
+                            <i class="fas ${currentImage ? 'fa-check-circle' : 'fa-exclamation-circle'} mr-2"></i> 
+                            ${currentImage ? 'Featured image set' : 'Add featured image'}
                         </div>
                     </div>
                 `;
-                layout.appendChild(canvas);
-
-                const sidebar = document.createElement('div');
-                sidebar.className = "w-full lg:w-64 flex-shrink-0 space-y-6 overflow-y-auto pb-20";
-                sidebar.innerHTML = `
-                    <div class="bg-white dark:bg-slate-800 p-5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
-                        <h3 class="font-bold text-slate-900 dark:text-white mb-4 text-sm uppercase tracking-wider">Post Settings</h3>
-                        
-                        <div class="mb-4">
-                            <label class="block text-xs font-medium text-slate-500 mb-1">Category</label>
-                            <select id="post-category" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                                ${store.categories.map(c => `<option value="${c.id}">${c.name}</option>`).join('')}
-                            </select>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="block text-xs font-medium text-slate-500 mb-1">Featured Image</label>
-                            <div class="border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-lg p-4 text-center cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
-                                <i class="fas fa-image text-slate-400 mb-2"></i>
-                                <span class="block text-xs text-slate-500">Click to upload</span>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-medium text-slate-500 mb-1">Tags</label>
-                            <input type="text" placeholder="Add tag..." class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                        </div>
-                    </div>
-
-                    <div class="bg-brand-50 dark:bg-slate-800/50 p-5 rounded-xl border border-brand-100 dark:border-slate-700">
-                        <h3 class="font-bold text-brand-900 dark:text-brand-400 mb-2 text-sm">SEO Analysis</h3>
-                        <div class="space-y-2">
-                            <div class="flex items-center text-xs text-green-600 dark:text-green-400">
-                                <i class="fas fa-check-circle mr-2"></i> Title length optimal
-                            </div>
-                            <div class="flex items-center text-xs text-yellow-600 dark:text-yellow-400">
-                                <i class="fas fa-exclamation-circle mr-2"></i> Add meta description
-                            </div>
-                        </div>
-                    </div>
-                `;
-                layout.appendChild(sidebar);
+                settingsPanel.appendChild(seoCard);
+                
+                layout.appendChild(settingsPanel);
                 container.appendChild(layout);
 
+                // Initialize editor functionality
                 setTimeout(() => {
-                    const editorBlocks = document.getElementById('editor-blocks');
-                    
-                    editorBlocks.addEventListener('keydown', (e) => {
-                        if (e.key === 'Enter' && !e.shiftKey) {
-                            e.preventDefault();
-                            createNewBlock(editorBlocks);
-                        }
-                    });
-
-                    let draggedItem = null;
-                    editorBlocks.addEventListener('dragstart', (e) => {
-                        if(e.target.classList.contains('editor-block')) {
-                            draggedItem = e.target;
-                            e.target.classList.add('draggable-source');
-                        }
-                    });
-                    editorBlocks.addEventListener('dragend', (e) => {
-                        if(e.target.classList.contains('editor-block')) {
-                            e.target.classList.remove('draggable-source');
-                        }
-                    });
-                    editorBlocks.addEventListener('dragover', (e) => {
-                        e.preventDefault();
-                        const afterElement = getDragAfterElement(editorBlocks, e.clientY);
-                        if (afterElement == null) {
-                            editorBlocks.appendChild(draggedItem);
-                        } else {
-                            editorBlocks.insertBefore(draggedItem, afterElement);
-                        }
-                    });
-                }, 0);
+                    initEditorBlocks();
+                }, 100);
 
                 return container;
             },
@@ -799,9 +1003,14 @@
                 container.className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in";
                 
                 container.innerHTML = `
-                    <div class="mb-8">
-                        <h1 class="text-3xl font-bold text-slate-900 dark:text-white">Dashboard</h1>
-                        <p class="text-slate-500 dark:text-slate-400">Overview of your content performance.</p>
+                    <div class="mb-8 flex justify-between items-center">
+                        <div>
+                            <h1 class="text-3xl font-bold text-slate-900 dark:text-white">Content Dashboard</h1>
+                            <p class="text-slate-500 dark:text-slate-400">Manage your articles and insights.</p>
+                        </div>
+                        <button onclick="router.navigate('editor')" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white rounded-lg font-medium shadow-lg transition-all flex items-center">
+                            <i class="fas fa-plus mr-2"></i> New Article
+                        </button>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -818,52 +1027,55 @@
 
                         <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
                             <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase">Subscribers</h3>
-                                <span class="p-2 bg-cyan-100 dark:bg-cyan-900 text-cyan-600 dark:text-cyan-300 rounded-lg"><i class="fas fa-users"></i></span>
+                                <h3 class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase">Published</h3>
+                                <span class="p-2 bg-cyan-100 dark:bg-cyan-900 text-cyan-600 dark:text-cyan-300 rounded-lg"><i class="fas fa-file-alt"></i></span>
                             </div>
-                            <div class="text-3xl font-bold text-slate-900 dark:text-white">${store.stats.subscribers.toLocaleString()}</div>
-                            <div class="text-sm text-green-500 mt-2 flex items-center">
-                                <i class="fas fa-arrow-up mr-1"></i> 5.4% <span class="text-slate-400 ml-1">vs last month</span>
-                            </div>
+                            <div class="text-3xl font-bold text-slate-900 dark:text-white">${store.posts.length}</div>
+                            <div class="text-sm text-slate-400 mt-2">Articles live</div>
                         </div>
 
                         <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
                             <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase">Avg. Read Time</h3>
-                                <span class="p-2 bg-amber-100 dark:bg-amber-900 text-amber-600 dark:text-amber-300 rounded-lg"><i class="fas fa-clock"></i></span>
+                                <h3 class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase">Subscribers</h3>
+                                <span class="p-2 bg-amber-100 dark:bg-amber-900 text-amber-600 dark:text-amber-300 rounded-lg"><i class="fas fa-users"></i></span>
                             </div>
-                            <div class="text-3xl font-bold text-slate-900 dark:text-white">${store.stats.avgReadTime}</div>
-                            <div class="text-sm text-slate-400 mt-2">
-                                Industry avg: 3m 12s
+                            <div class="text-3xl font-bold text-slate-900 dark:text-white">${store.stats.subscribers.toLocaleString()}</div>
+                            <div class="text-sm text-green-500 mt-2 flex items-center">
+                                <i class="fas fa-arrow-up mr-1"></i> 5.4%
                             </div>
                         </div>
                     </div>
 
                     <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
                         <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center">
-                            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Recent Posts</h3>
-                            <button onclick="router.navigate('editor')" class="text-sm text-brand-600 font-medium hover:underline">Create New</button>
+                            <h3 class="font-bold text-lg text-slate-900 dark:text-white">All Articles</h3>
+                            <div class="flex space-x-2">
+                                <input type="text" placeholder="Search articles..." class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
+                            </div>
                         </div>
                         <div class="overflow-x-auto">
                             <table class="w-full text-left text-sm">
                                 <thead class="bg-slate-50 dark:bg-slate-900/50 text-slate-500 dark:text-slate-400">
                                     <tr>
-                                        <th class="px-6 py-3 font-medium">Title</th>
-                                        <th class="px-6 py-3 font-medium">Solution</th>
+                                        <th class="px-6 py-3 font-medium">Article</th>
+                                        <th class="px-6 py-3 font-medium">Category</th>
                                         <th class="px-6 py-3 font-medium">Status</th>
                                         <th class="px-6 py-3 font-medium">Date</th>
-                                        <th class="px-6 py-3 font-medium text-right">Views</th>
+                                        <th class="px-6 py-3 font-medium text-right">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
                                     ${store.posts.map(post => {
                                         const cat = store.categories.find(c => c.id === post.category);
                                         return `
-                                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
-                                            <td class="px-6 py-4 font-medium text-slate-900 dark:text-white">
+                                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors group">
+                                            <td class="px-6 py-4">
                                                 <div class="flex items-center">
-                                                    <img src="${post.image}" class="h-10 w-10 rounded object-cover mr-3">
-                                                    ${post.title}
+                                                    <img src="${post.image}" class="h-12 w-12 rounded-lg object-cover mr-4 border border-slate-200 dark:border-slate-700">
+                                                    <div>
+                                                        <div class="font-semibold text-slate-900 dark:text-white">${post.title}</div>
+                                                        <div class="text-xs text-slate-500">${post.views} views</div>
+                                                    </div>
                                                 </div>
                                             </td>
                                             <td class="px-6 py-4">
@@ -872,12 +1084,24 @@
                                                 </a>
                                             </td>
                                             <td class="px-6 py-4">
-                                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
-                                                    Published
+                                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${post.status === 'published' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200'}">
+                                                    ${post.status === 'published' ? 'Published' : 'Draft'}
                                                 </span>
                                             </td>
                                             <td class="px-6 py-4 text-slate-500 dark:text-slate-400">${new Date(post.date).toLocaleDateString()}</td>
-                                            <td class="px-6 py-4 text-right font-medium text-slate-900 dark:text-white">${post.views}</td>
+                                            <td class="px-6 py-4 text-right">
+                                                <div class="flex items-center justify-end space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                    <button onclick="router.navigate('post', {id: ${post.id}})" class="p-2 text-slate-400 hover:text-brand-600 transition-colors" title="View">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                    <button onclick="router.navigate('editor', {id: ${post.id}})" class="p-2 text-slate-400 hover:text-brand-600 transition-colors" title="Edit">
+                                                        <i class="fas fa-edit"></i>
+                                                    </button>
+                                                    <button onclick="deleteArticle(${post.id})" class="p-2 text-slate-400 hover:text-red-600 transition-colors" title="Delete">
+                                                        <i class="fas fa-trash"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
                                         </tr>
                                         `;
                                     }).join('')}
@@ -895,7 +1119,7 @@
                 container.innerHTML = `
                     <div class="text-center mb-12">
                         <h1 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Our Solutions</h1>
-                        <p class="text-lg text-slate-600 dark:text-slate-400">Explore our specialized knowledge domains and frameworks.</p>
+                        <p class="text-lg text-slate-600 dark:text-slate-400">Enterprise-grade platforms for resilient communities.</p>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                         ${store.categories.map(cat => `
@@ -906,9 +1130,9 @@
                                 <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">${cat.shortName}</h3>
                                 <p class="text-slate-500 dark:text-slate-400 mb-4 font-medium">${cat.name}</p>
                                 <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed mb-6">
-                                    ${cat.id === 'strategic' ? 'Master complexity with our advanced strategic planning and systems thinking methodologies.' : 
-                                      cat.id === 'drr' ? 'Build resilience through integrated disaster risk reduction and climate adaptation frameworks.' : 
-                                      'Lead effectively in real-time with dynamic decision-making and crisis management capabilities.'}
+                                    ${cat.id === 'strategic' ? 'AI-powered strategic planning with systems-driven analysis and automated monitoring dashboards.' : 
+                                      cat.id === 'drr' ? 'ISO 31000-compliant risk management with multi-hazard detection and AI-powered resilience tools.' : 
+                                      'Emergency leadership framework for high-stakes decision making and cross-agency collaboration.'}
                                 </p>
                                 <span class="inline-flex items-center text-brand-600 font-semibold group-hover:translate-x-1 transition-transform">
                                     Explore Solution <i class="fas fa-arrow-right ml-2"></i>
@@ -918,15 +1142,197 @@
                     </div>
                     
                     <div class="mt-16 text-center">
-                        <p class="text-slate-600 dark:text-slate-400 mb-6">Visit our main website for complete solution details</p>
-                        <a href="https://asilvainnovations.com" target="_blank" class="inline-flex items-center px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-full transition-all shadow-lg">
-                            asilvainnovations.com <i class="fas fa-external-link-alt ml-2"></i>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6">Trusted by 15+ LGUs Across Southeast Asia</p>
+                        <a href="https://asilvainnovations.com" target="_blank" class="inline-flex items-center px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-lg transition-all shadow-lg">
+                            Visit Main Website <i class="fas fa-external-link-alt ml-2"></i>
                         </a>
                     </div>
                 `;
                 return container;
             }
         };
+
+        // --- Editor Helper Functions ---
+        function renderBlocksFromContent(content) {
+            // Simple parser to convert HTML content to blocks
+            const div = document.createElement('div');
+            div.innerHTML = content;
+            const elements = Array.from(div.children);
+            
+            if (elements.length === 0) {
+                return createBlockHTML('');
+            }
+            
+            return elements.map(el => createBlockHTML(el.innerHTML || el.textContent)).join('');
+        }
+
+        function createBlockHTML(content) {
+            return `
+            <div class="editor-block group relative p-2 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-lg transition-colors border-l-2 border-transparent hover:border-brand-300" draggable="true">
+                <div class="absolute left-0 top-2 opacity-0 group-hover:opacity-100 cursor-move text-slate-400 px-2 py-1 drag-handle">
+                    <i class="fas fa-grip-vertical"></i>
+                </div>
+                <div contenteditable="true" class="editor-content outline-none pl-8 min-h-[2rem] prose dark:prose-invert text-slate-800 dark:text-slate-200">${content}</div>
+            </div>`;
+        }
+
+        function initEditorBlocks() {
+            const container = document.getElementById('editor-blocks');
+            if (!container) return;
+            
+            // Add new block on Enter
+            container.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    addNewBlock();
+                }
+            });
+            
+            // Drag and drop
+            let draggedItem = null;
+            container.addEventListener('dragstart', (e) => {
+                if (e.target.classList.contains('editor-block')) {
+                    draggedItem = e.target;
+                    e.target.style.opacity = '0.5';
+                }
+            });
+            container.addEventListener('dragend', (e) => {
+                if (e.target.classList.contains('editor-block')) {
+                    e.target.style.opacity = '1';
+                }
+            });
+            container.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                const afterElement = getDragAfterElement(container, e.clientY);
+                if (draggedItem) {
+                    if (afterElement == null) {
+                        container.appendChild(draggedItem);
+                    } else {
+                        container.insertBefore(draggedItem, afterElement);
+                    }
+                }
+            });
+        }
+
+        function addNewBlock() {
+            const container = document.getElementById('editor-blocks');
+            const div = document.createElement('div');
+            div.className = "editor-block group relative p-2 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-lg transition-colors border-l-2 border-transparent hover:border-brand-300 animate-slide-up";
+            div.draggable = true;
+            div.innerHTML = `
+                <div class="absolute left-0 top-2 opacity-0 group-hover:opacity-100 cursor-move text-slate-400 px-2 py-1 drag-handle">
+                    <i class="fas fa-grip-vertical"></i>
+                </div>
+                <div contenteditable="true" class="editor-content outline-none pl-8 min-h-[2rem] prose dark:prose-invert text-slate-800 dark:text-slate-200" placeholder="Type something..."></div>
+            `;
+            container.appendChild(div);
+            div.querySelector('.editor-content').focus();
+            
+            // Re-init drag for new element
+            initEditorBlocks();
+        }
+
+        function setFeaturedImage(url) {
+            const container = document.getElementById('featured-image-container');
+            const preview = document.getElementById('featured-image-preview');
+            if (container && preview) {
+                preview.src = url;
+                container.classList.remove('hidden');
+            }
+        }
+
+        function removeFeaturedImage() {
+            const container = document.getElementById('featured-image-container');
+            if (container) {
+                container.classList.add('hidden');
+            }
+        }
+
+        function getEditorContent() {
+            const blocks = document.querySelectorAll('.editor-content');
+            let content = '';
+            blocks.forEach(block => {
+                if (block.innerHTML.trim()) {
+                    content += `<p>${block.innerHTML}</p>`;
+                }
+            });
+            return content;
+        }
+
+        function saveDraft() {
+            showToast('Draft saved successfully');
+            const status = document.getElementById('save-status');
+            if (status) {
+                status.textContent = 'Saved just now';
+                status.classList.remove('hidden');
+            }
+        }
+
+        function publishArticle() {
+            const title = document.getElementById('editor-title').value;
+            if (!title.trim()) {
+                alert('Please enter a title');
+                return;
+            }
+            
+            const excerpt = document.getElementById('editor-excerpt').value;
+            const content = getEditorContent();
+            const category = document.getElementById('editor-category').value;
+            const tags = document.getElementById('editor-tags').value.split(',').map(t => t.trim()).filter(t => t);
+            const status = document.getElementById('editor-status').value;
+            const imagePreview = document.getElementById('featured-image-preview');
+            const image = imagePreview && !document.getElementById('featured-image-container').classList.contains('hidden') 
+                ? imagePreview.src 
+                : 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80';
+            
+            const isEditing = store.currentEditId !== null;
+            
+            if (isEditing) {
+                // Update existing
+                const post = store.posts.find(p => p.id === store.currentEditId);
+                if (post) {
+                    post.title = title;
+                    post.excerpt = excerpt;
+                    post.content = content;
+                    post.category = category;
+                    post.tags = tags;
+                    post.status = status;
+                    post.image = image;
+                    showToast('Article updated successfully');
+                }
+            } else {
+                // Create new
+                const newPost = {
+                    id: Date.now(),
+                    title,
+                    excerpt,
+                    content,
+                    author: "ASilva",
+                    date: new Date().toISOString().split('T')[0],
+                    category,
+                    tags,
+                    image,
+                    status,
+                    views: 0,
+                    slug: title.toLowerCase().replace(/\s+/g, '-')
+                };
+                store.posts.unshift(newPost);
+                showToast('Article published successfully');
+            }
+            
+            setTimeout(() => router.navigate('dashboard'), 1000);
+        }
+
+        function deleteArticle(id) {
+            if (confirm('Are you sure you want to delete this article?')) {
+                const index = store.posts.findIndex(p => p.id === id);
+                if (index > -1) {
+                    store.posts.splice(index, 1);
+                    showToast('Article deleted');
+                    router.navigate('dashboard');
+                }
+            }
+        }
 
         // --- Helper Functions ---
         function toggleMobileMenu() {
@@ -943,22 +1349,8 @@
             }, 3000);
         }
 
-        function createNewBlock(container) {
-            const block = document.createElement('div');
-            block.className = "editor-block group relative p-2 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-lg transition-colors animate-slide-up";
-            block.draggable = true;
-            block.innerHTML = `
-                <div class="absolute left-0 top-2 opacity-0 group-hover:opacity-100 cursor-move text-slate-400 px-2 py-1">
-                    <i class="fas fa-grip-vertical"></i>
-                </div>
-                <div contenteditable="true" class="editor-content outline-none pl-8 min-h-[2rem] prose dark:prose-invert" placeholder="Type something..."></div>
-            `;
-            container.appendChild(block);
-            block.querySelector('.editor-content').focus();
-        }
-
         function getDragAfterElement(container, y) {
-            const draggableElements = [...container.querySelectorAll('.editor-block:not(.draggable-source)')];
+            const draggableElements = [...container.querySelectorAll('.editor-block:not([style*="opacity: 0.5"])')];
             return draggableElements.reduce((closest, child) => {
                 const box = child.getBoundingClientRect();
                 const offset = y - box.top - box.height / 2;
@@ -968,20 +1360,6 @@
                     return closest;
                 }
             }, { offset: Number.NEGATIVE_INFINITY }).element;
-        }
-
-        function savePost() {
-            showToast('Draft saved successfully');
-        }
-
-        function publishPost() {
-            const title = document.getElementById('post-title-input').value;
-            if(!title) {
-                alert("Please enter a title");
-                return;
-            }
-            showToast('Post published to ASilva Innovations!');
-            setTimeout(() => router.navigate('blog'), 1000);
         }
 
         // --- Initialization ---
