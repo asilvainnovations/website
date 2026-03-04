@@ -1,873 +1,1422 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ASilva Innovations - Systems Innovations on Strategic Thinking, Real-Time Leadership, DRR-CCA, and Resilience.">
-    <meta property="og:title" content="ASilva Innovations | Systems Thinking Blog">
-    <meta property="og:image" content="https://cognitio-plus.appimize.app/assets/apps/user_1097/app_3046/draft/icon/app_logo.png?1769949977">
-    <meta property="og:type" content="website">
-    <title>ASilva Innovations | Systems & Strategic Innovation</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>ASilva Innovations | Systems Thinking & Personal Growth</title>
+    <meta name="description" content="Explore systems thinking, personal growth, resilience, and mental well-being — practical frameworks for meaningful transformation.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js for Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        serif: ['"Merriweather"', 'serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#f5f3ff',
-                            100: '#ede9fe',
-                            500: '#8b5cf6',
-                            600: '#7c3aed',
-                            700: '#6d28d9',
-                            800: '#5b21b6',
-                            900: '#4c1d95',
-                            gold: '#d97706',
-                            dark: '#0f172a'
-                        }
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.5s ease-out',
-                        'slide-up': 'slideUp 0.5s ease-out',
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(20px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-
+    
     <style>
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
+        /* ─────────────────────────────────────────────────────────────
+           ROOT VARIABLES & THEME SETTINGS
+           ───────────────────────────────────────────────────────────── */
+        :root {
+            --color-primary: #2D6A4F;
+            --color-primary-dark: #1B4332;
+            --color-accent: #D4921E;
+            --color-surface: #FFFFFF;
+            --color-surface-alt: #F3EFE8;
+            --color-text: #1C1C1E;
+            --color-text-muted: #6B6B7B;
+            --color-border: #E5E0D8;
+            --color-white: #FFFFFF;
+            --font-poppins: 'Poppins', system-ui, sans-serif;
+            --font-condensed: 'Roboto Condensed', system-ui, sans-serif;
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
         }
-        ::-webkit-scrollbar-track {
+
+        [data-theme="dark"] {
+            --color-bg: #0C1A12;
+            --color-surface: #142018;
+            --color-surface-alt: #1A2E20;
+            --color-text: #E8E4DC;
+            --color-text-muted: #7FA88A;
+            --color-border: #1F3525;
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           RESET & GLOBAL STYLES
+           ───────────────────────────────────────────────────────────── */
+        *, *::before, *::after { box-sizing: border-box; }
+        
+        html { 
+            scroll-behavior: smooth; 
+            font-size: 16px;
+        }
+
+        body { 
+            margin: 0; 
+            font-family: var(--font-poppins);
+            background-color: var(--color-bg, #F9F5EE);
+            color: var(--color-text, #1C1C1E);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 { 
+            font-family: var(--font-condensed);
+            font-weight: 700;
+            margin-top: 0;
+        }
+
+        p { margin-bottom: 1rem; }
+        
+        img { max-width: 100%; height: auto; display: block; }
+        
+        button { cursor: pointer; font-family: inherit; }
+        
+        a { text-decoration: none; color: inherit; transition: var(--transition-fast); }
+        
+        input, textarea, select { font-family: inherit; outline: none; }
+
+        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #2D6A4F55; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #2D6A4F; }
+
+        /* ─────────────────────────────────────────────────────────────
+           UTILITY CLASSES
+           ───────────────────────────────────────────────────────────── */
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+        .text-muted { color: var(--color-text-muted); }
+        .flex { display: flex; align-items: center; }
+        .flex-col { display: flex; flex-direction: column; }
+        .grid { display: grid; gap: 24px; }
+        .gap-md { gap: 24px; }
+        .gap-sm { gap: 12px; }
+        .mt-2 { margin-top: 0.5rem; }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .btn { 
+            padding: 10px 20px; 
+            border-radius: 6px; 
+            border: none; 
+            font-weight: 600; 
+            transition: var(--transition-fast);
+        }
+        .btn-primary { background: var(--color-primary); color: white; }
+        .btn-primary:hover { background: var(--color-primary-dark); }
+        .btn-secondary { background: var(--color-surface-alt); border: 1px solid var(--color-border); color: var(--color-text); }
+        .fade-in { animation: fadeIn 0.4s ease both; }
+        .fade-up { animation: fadeUp 0.55s ease both; }
+        
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeUp { 
+            from { opacity: 0; transform: translateY(18px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           HEADER & NAVIGATION
+           ───────────────────────────────────────────────────────────── */
+        .site-header { 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            background: var(--color-primary-dark, #1B3A2D);
+            transition: background var(--transition-normal);
+        }
+        
+        .header-top { 
+            padding: 6px 32px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            font-size: 12px; 
+            color: rgba(255,255,255,.7);
+        }
+        
+        .header-main { 
+            max-width: 1280px; 
+            margin: 0 auto; 
+            padding: 0 32px; 
+            height: 64px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            gap: 24px; 
+        }
+        
+        .logo-btn { 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            background: none; 
+            border: none; 
+            cursor: pointer;
+        }
+        
+        .logo-img { 
+            height: 40px; 
+            width: 40px; 
+            border-radius: 10px; 
+            object-fit: cover; 
+        }
+        
+        .logo-text div:first-child { 
+            font-size: 18px; 
+            font-weight: 700; 
+            color: white; 
+            line-height: 1.1;
+        }
+        
+        .logo-text div:last-child { 
+            font-size: 10px; 
+            color: rgba(255,255,255,.65); 
+            letter-spacing: .12em; 
+            text-transform: uppercase; 
+        }
+        
+        .nav-menu { display: flex; gap: 4px; align-items: center; }
+        
+        .nav-item { 
+            background: none; 
+            border: none; 
+            cursor: pointer; 
+            color: rgba(255,255,255,.85); 
+            font-size: 13px; 
+            font-weight: 500; 
+            padding: 6px 12px; 
+            border-radius: 6px; 
+            transition: background var(--transition-fast);
+        }
+        
+        .nav-item:hover { background: rgba(255,255,255,.12); }
+        
+        .search-bar { 
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
+            background: rgba(255,255,255,.15); 
+            border-radius: 20px; 
+            padding: 6px 14px; 
+            border: 1px solid rgba(255,255,255,.25);
+        }
+        
+        .search-input { 
+            background: none; 
+            border: none; 
+            outline: none; 
+            color: white; 
+            font-size: 13px; 
+            width: 180px; 
+        }
+        
+        .subscribe-btn { 
+            background: var(--color-accent); 
+            color: white; 
+            border: none; 
+            border-radius: 20px; 
+            padding: 8px 18px; 
+            font-weight: 600; 
+            cursor: pointer; 
+            font-size: 13px;
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           HERO SECTION
+           ───────────────────────────────────────────────────────────── */
+        .hero-section { 
+            position: relative; 
+            height: 600px; 
+            overflow: hidden; 
+            cursor: pointer;
+        }
+        
+        .hero-image { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+        }
+        
+        .hero-overlay { 
+            position: absolute; 
+            inset: 0; 
+            background: linear-gradient(to top, rgba(0,0,0,.85) 0%, rgba(0,0,0,.35) 55%, transparent 100%);
+        }
+        
+        .hero-content { 
+            position: absolute; 
+            bottom: 0; 
+            left: 0; 
+            right: 0; 
+            padding: 48px 64px;
+        }
+        
+        .category-pill {
+            display: inline-block; 
+            border-radius: 999px;
+            font-size: 11px; 
+            font-weight: 600; 
+            letter-spacing: .06em; 
+            text-transform: uppercase;
+            padding: 3px 10px; 
+            font-family: var(--font-poppins);
+        }
+        
+        .hero-title { 
+            font-size: clamp(28px, 4vw, 44px); 
+            font-weight: 700; 
+            color: white; 
+            line-height: 1.2; 
+            margin-bottom: 16px; 
+            max-width: 750px;
+        }
+        
+        .hero-excerpt { 
+            font-size: 16px; 
+            color: rgba(255,255,255,.8); 
+            line-height: 1.65; 
+            max-width: 620px; 
+            margin-bottom: 24px;
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           POST CARDS
+           ───────────────────────────────────────────────────────────── */
+        .post-card { 
+            background: var(--color-surface); 
+            border-radius: 12px; 
+            overflow: hidden; 
+            border: 1px solid var(--color-border); 
+            cursor: pointer;
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+        }
+        
+        .post-card:hover { 
+            transform: translateY(-4px); 
+            box-shadow: 0 16px 48px rgba(0,0,0,.13); 
+        }
+        
+        .post-image { 
+            width: 100%; 
+            height: 210px; 
+            object-fit: cover; 
+        }
+        
+        .post-content { 
+            padding: 20px 22px;
+        }
+        
+        .post-title { 
+            font-size: 18px; 
+            font-weight: 600; 
+            line-height: 1.35; 
+            margin-bottom: 10px; 
+        }
+        
+        .post-excerpt { 
+            font-size: 14px; 
+            color: var(--color-text-muted); 
+            line-height: 1.65; 
+            margin-bottom: 14px; 
+            display: -webkit-box; 
+            -webkit-line-clamp: 2; 
+            -webkit-box-orient: vertical; 
+            overflow: hidden;
+        }
+        
+        .post-meta { 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+            font-size: 12px; 
+            color: var(--color-text-muted); 
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           ARTICLES PAGE
+           ───────────────────────────────────────────────────────────── */
+        .article-hero { 
+            position: relative; 
+            height: 460px; 
+            overflow: hidden;
+        }
+        
+        .reading-progress { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            height: 3px; 
+            background: var(--color-primary); 
+            z-index: 1000; 
+            width: 0;
+            transition: width 0.1s linear;
+        }
+        
+        .article-reader-controls { 
+            background: var(--color-surface); 
+            border-bottom: 1px solid var(--color-border); 
+            padding: 10px 32px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            position: sticky; 
+            top: 64px; 
+            z-index: 90;
+        }
+        
+        .article-content { 
+            font-size: 17px; 
+            line-height: 1.8; 
+            color: var(--color-text);
+        }
+        
+        .article-heading { 
+            font-size: 26px; 
+            font-weight: 700; 
+            color: var(--color-text); 
+            margin: 36px 0 14px; 
+        }
+        
+        .article-quote { 
+            background: var(--color-surface-alt); 
+            border-left: 4px solid var(--color-primary); 
+            margin: 28px 0; 
+            padding: 20px 24px; 
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .author-card { 
+            background: var(--color-surface-alt); 
+            border-radius: 12px; 
+            padding: 28px; 
+            border: 1px solid var(--color-border); 
+            margin-top: 48px; 
+            display: flex; 
+            gap: 20px; 
+            align-items: flex-start;
+        }
+        
+        .sidebar { 
+            position: sticky; 
+            top: 120px; 
+            align-self: start; 
+        }
+        
+        .toc-item { 
+            padding: 6px 0; 
+            border-bottom: 1px solid var(--color-border); 
+            font-size: 13px; 
+            color: var(--color-primary); 
+            font-family: var(--font-poppins); 
+            cursor: pointer;
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           SIDEBAR COMPONENTS
+           ───────────────────────────────────────────────────────────── */
+        .sidebar-widget { 
+            background: var(--color-surface); 
+            border-radius: 12px; 
+            padding: 24px; 
+            border: 1px solid var(--color-border); 
+            margin-bottom: 24px;
+        }
+        
+        .sidebar-title { 
+            font-size: 18px; 
+            font-weight: 700; 
+            color: var(--color-text); 
+            margin-bottom: 16px; 
+            padding-bottom: 12px; 
+            border-bottom: 2px solid var(--color-primary);
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           ADMIN DASHBOARD
+           ───────────────────────────────────────────────────────────── */
+        .admin-layout { 
+            display: flex; 
+            height: 100vh; 
+            overflow: hidden;
+        }
+        
+        .admin-sidebar { 
+            width: 220px; 
+            background: #0F2318; 
+            display: flex; 
+            flex-direction: column; 
+            flex-shrink: 0;
+        }
+        
+        .admin-nav-item { 
+            width: 100%; 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+            padding: 10px 12px; 
+            border-radius: 6px; 
+            background: transparent; 
+            border: 1px solid transparent; 
+            color: rgba(255,255,255,.6); 
+            font-size: 13px; 
+            text-align: left;
+            transition: all var(--transition-fast);
+        }
+        
+        .admin-nav-item.active { 
+            background: rgba(45,106,79,.35); 
+            border: 1px solid rgba(45,106,79,.5); 
+            color: white;
+        }
+        
+        .admin-main { 
+            flex: 1; 
+            background: var(--color-bg); 
+            overflow-y: auto;
+        }
+        
+        .admin-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            font-family: var(--font-poppins);
+        }
+        
+        .admin-table th, 
+        .admin-table td { 
+            padding: 12px 14px; 
+            border-bottom: 1px solid var(--color-border); 
+            text-align: left;
+        }
+        
+        .admin-table th { 
+            font-size: 11px; 
+            font-weight: 700; 
+            letter-spacing: .07em; 
+            text-transform: uppercase; 
+            color: var(--color-text-muted);
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           ANALYTICS CHARTS
+           ───────────────────────────────────────────────────────────── */
+        .analytics-stats { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 16px; 
+            margin-bottom: 28px;
+        }
+        
+        .stat-card { 
+            background: var(--color-surface); 
+            border-radius: 10px; 
+            padding: 20px 22px; 
+            border: 1px solid var(--color-border);
+        }
+        
+        .stat-value { 
+            font-size: 26px; 
+            font-weight: 700; 
+            margin-bottom: 4px;
+        }
+        
+        .chart-container { 
+            background: var(--color-surface); 
+            border-radius: 10px; 
+            padding: 24px; 
+            border: 1px solid var(--color-border);
+            height: 220px;
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           EDITOR PANEL
+           ───────────────────────────────────────────────────────────── */
+        .editor-toolbar { 
+            background: var(--color-surface); 
+            border: 1px solid var(--color-border); 
+            border-radius: 10px; 
+            padding: 10px 14px; 
+            margin-bottom: 16px; 
+            display: flex; 
+            gap: 10px; 
+            flex-wrap: wrap;
+        }
+        
+        .block-editor { 
+            background: var(--color-surface); 
+            border: 1px solid var(--color-border); 
+            border-radius: 10px; 
+            padding: 16px; 
+            min-height: 200px;
+        }
+        
+        .content-field { 
+            width: 100%; 
+            border: none; 
+            outline: none; 
+            resize: vertical; 
             background: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
-        .dark ::-webkit-scrollbar-thumb {
-            background: #475569;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
+            font-family: inherit;
         }
 
-        /* Editor Styles */
-        .editor-content:empty:before {
-            content: attr(placeholder);
-            color: #94a3b8;
-            pointer-events: none;
-            display: block; /* For Firefox */
+        /* ─────────────────────────────────────────────────────────────
+           NEWSLETTER & CTA SECTIONS
+           ───────────────────────────────────────────────────────────── */
+        .newsletter-section { 
+            background: linear-gradient(135deg, #1B3A2D 0%, #2D6A4F 100%); 
+            padding: 64px 32px; 
+            text-align: center;
         }
         
-        /* Glassmorphism */
-        .glass {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+        .newsletter-form { 
+            display: flex; 
+            gap: 10px; 
+            max-width: 460px; 
+            margin: 0 auto; 
+            flex-wrap: wrap; 
+            justify-content: center;
         }
-        .dark .glass {
-            background: rgba(15, 23, 42, 0.7);
+        
+        .newsletter-input { 
+            flex: 1; 
+            min-width: 220px; 
+            padding: 13px 18px; 
+            border-radius: 4px; 
+            border: none; 
+            background: rgba(255,255,255,.15); 
+            color: white; 
+            font-size: 14px;
+        }
+        
+        .cta-block { 
+            background: var(--color-surface-alt); 
+            border-radius: 16px; 
+            padding: 40px 48px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            gap: 24px; 
+            margin: 48px 0; 
+            border: 2px solid var(--color-border);
         }
 
-        /* Typography Scale */
-        .prose-custom {
-            line-height: 1.7;
-            font-size: 1.125rem;
+        /* ─────────────────────────────────────────────────────────────
+           FOOTER
+           ───────────────────────────────────────────────────────────── */
+        footer { 
+            background: #0F2318; 
+            padding: 48px 32px 24px; 
         }
         
-        /* Drag and Drop Visuals */
-        .draggable-source {
-            opacity: 0.4;
-            border: 2px dashed #7c3aed;
+        .footer-grid { 
+            display: grid; 
+            grid-template-columns: 2fr 1fr 1fr 1fr; 
+            gap: 40px; 
+            margin-bottom: 40px;
         }
-        .drop-target {
-            border-top: 3px solid #7c3aed;
-            margin-top: 10px;
+        
+        .footer-links a { 
+            color: rgba(255,255,255,.65); 
+            font-size: 13px; 
+            display: block; 
+            margin-bottom: 8px;
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           MODAL & NOTIFICATIONS
+           ───────────────────────────────────────────────────────────── */
+        .modal-overlay { 
+            position: fixed; 
+            inset: 0; 
+            background: rgba(0,0,0,.6); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            z-index: 2000;
+        }
+        
+        .modal-content { 
+            background: var(--color-surface); 
+            border-radius: 12px; 
+            padding: 32px; 
+            max-width: 500px; 
+            width: 90%; 
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .toast { 
+            position: fixed; 
+            bottom: 24px; 
+            right: 24px; 
+            background: var(--color-primary); 
+            color: white; 
+            padding: 16px 24px; 
+            border-radius: 8px; 
+            z-index: 3000; 
+            animation: fadeIn 0.3s ease;
+        }
+
+        /* ─────────────────────────────────────────────────────────────
+           RESPONSIVE DESIGN
+           ───────────────────────────────────────────────────────────── */
+        @media (max-width: 1024px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .analytics-stats { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 16px; }
+            .header-top, .header-main { padding: 0 16px; }
+            .hero-content { padding: 32px 24px; }
+            .article-reader-controls { padding: 10px 16px; }
+            .admin-layout { flex-direction: column; }
+            .admin-sidebar { width: 100%; flex-direction: row; overflow-x: auto; }
+            .cta-block { flex-direction: column; text-align: center; }
+            .search-bar { display: none; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title { font-size: 28px; }
+            .analytics-stats { grid-template-columns: 1fr; }
         }
     </style>
-<base target="_blank">
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-brand-dark dark:text-slate-100 transition-colors duration-300 font-sans antialiased">
+<body data-theme="light">
 
-    <!-- App Container -->
-    <div id="app" class="min-h-screen flex flex-col">
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress" id="readingProgress"></div>
+
+    <!-- Site Header -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-top" id="utilityBar">
+            <span style="font-family: var(--font-poppins)">Systems Innovations • Personal Growth • Resilience • Well-Being • Mental Health</span>
+            <div class="flex" style="gap: 16px; align-items: center;">
+                <button onclick="toggleDarkMode()" style="background:none;border:none;cursor:pointer;color:rgba(255,255,255,.8);display:flex;align-items:center;gap:5;font-size:12;">
+                    <i class="fas fa-moon" id="themeIcon" style="color:rgba(255,255,255,.8)"></i>
+                    <span id="themeText">Light</span>
+                </button>
+                <span style="color:rgba(255,255,255,.3)">|</span>
+                <span style="font-family: var(--font-poppins)">Font:</span>
+                <div class="flex" id="fontControls" style="gap:5;">
+                    <button onclick="setFontScale(0.9)" style="background:var(--color-surface);border:none;cursor:pointer;color:var(--color-text);padding:1px 5px;border-radius:3;font-size:11;font-family:var(--font-poppins);">A-</button>
+                    <button onclick="setFontScale(1)" style="background:var(--color-primary);border:none;cursor:pointer;color:white;padding:1px 5px;border-radius:3;font-size:11;font-family:var(--font-poppins);">A</button>
+                    <button onclick="setFontScale(1.1)" style="background:var(--color-surface);border:none;cursor:pointer;color:var(--color-text);padding:1px 5px;border-radius:3;font-size:11;font-family:var(--font-poppins);">A+</button>
+                </div>
+                <span style="color:rgba(255,255,255,.3)">|</span>
+                <button onclick="navigateTo('admin')" style="background:none;border:none;cursor:pointer;color:rgba(255,255,255,.8);font-size:12;display:flex;align-items:center;gap:4;">
+                    <i class="fas fa-cog" style="color:rgba(255,255,255,.8)"></i> Admin
+                </button>
+            </div>
+        </div>
         
-        <!-- Navigation -->
-        <nav class="fixed w-full z-50 glass border-b border-slate-200 dark:border-slate-800 transition-all duration-300" id="navbar">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between h-16 items-center">
-                    <!-- Logo -->
-                    <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="router.navigate('home')">
-                        <div class="h-10 w-10 rounded-full bg-gradient-to-br from-brand-600 to-brand-gold flex items-center justify-center text-white font-bold text-xl shadow-lg mr-3">
-                            <img src="https://cognitio-plus.appimize.app/assets/apps/user_1097/app_3046/draft/icon/app_logo.png?1769949977" alt="Logo" class="h-8 w-8 object-contain mix-blend-overlay">
-                        </div>
-                        <div class="flex flex-col">
-                            <span class="font-bold text-lg tracking-tight leading-none">ASilva</span>
-                            <span class="text-xs text-brand-600 dark:text-brand-400 font-medium uppercase tracking-wider">Innovations</span>
-                        </div>
-                    </div>
-
-                    <!-- Desktop Menu -->
-                    <div class="hidden md:flex items-center space-x-8">
-                        <a href="#" onclick="router.navigate('home')" class="nav-link text-sm font-semibold hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Home</a>
-                        <a href="#" onclick="router.navigate('blog')" class="nav-link text-sm font-semibold hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Articles</a>
-                        <a href="#" onclick="router.navigate('categories')" class="nav-link text-sm font-semibold hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Topics</a>
-                        <a href="#" onclick="router.navigate('dashboard')" class="nav-link text-sm font-semibold hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Dashboard</a>
-                    </div>
-
-                    <!-- Actions -->
-                    <div class="flex items-center space-x-4">
-                        <button onclick="theme.toggle()" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors focus:outline-none">
-                            <i class="fas fa-moon dark:hidden text-slate-600"></i>
-                            <i class="fas fa-sun hidden dark:block text-yellow-400"></i>
-                        </button>
-                        <button onclick="router.navigate('editor')" class="hidden md:flex items-center px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-medium rounded-full transition-all shadow-lg hover:shadow-brand-500/30">
-                            <i class="fas fa-pen-nib mr-2"></i> Write
-                        </button>
-                        <button class="md:hidden p-2 text-slate-600 dark:text-slate-300" onclick="toggleMobileMenu()">
-                            <i class="fas fa-bars text-xl"></i>
-                        </button>
-                    </div>
+        <div class="header-main">
+            <button class="logo-btn" onclick="navigateTo('home')">
+                <img src="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1772638774" alt="ASilva Innovations Logo" class="logo-img" onerror="this.style.display='none'">
+                <div class="logo-text">
+                    <div style="font-family: var(--font-condensed)">ASilva</div>
+                    <div>Innovations</div>
                 </div>
-            </div>
+            </button>
             
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
-                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <a href="#" onclick="router.navigate('home')" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Home</a>
-                    <a href="#" onclick="router.navigate('blog')" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-100 dark:hover:bg-slate-800">Articles</a>
-                    <a href="#" onclick="router.navigate('editor')" class="block px-3 py-2 rounded-md text-base font-medium text-brand-600">Write Post</a>
+            <nav class="nav-menu">
+                <button class="nav-item" onclick="filterByCategory('systems')">Systems Innovations</button>
+                <button class="nav-item" onclick="filterByCategory('growth')">Personal Growth</button>
+                <button class="nav-item" onclick="filterByCategory('resilience')">Resilience</button>
+                <button class="nav-item" onclick="filterByCategory('wellbeing')">Well-Being</button>
+                <button class="nav-item" onclick="filterByCategory('mental')">Mental Health</button>
+            </nav>
+            
+            <div class="flex" style="gap:12;align-items:center;">
+                <div class="search-bar" id="searchBar">
+                    <i class="fas fa-search" style="color:rgba(255,255,255,.8)"></i>
+                    <input type="text" class="search-input" placeholder="Search articles..." id="searchInput" oninput="handleSearch()">
+                    <button onclick="closeSearch()" style="background:none;border:none;cursor:pointer;"><i class="fas fa-times" style="color:rgba(255,255,255,.7)"></i></button>
+                </div>
+                <button class="subscribe-btn" onclick="showNewsletterModal()">Subscribe</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main id="mainContent">
+        <!-- Home/Blog View -->
+        <div id="homeView" class="view-container">
+            <!-- Hero Section -->
+            <section class="hero-section fade-up" onclick="openArticle(1)">
+                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80" alt="Featured Article" class="hero-image">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <span class="category-pill" style="background:#D8F3DC;color:#1B4332">Systems Innovations</span>
+                    <h1 class="hero-title">Building Antifragile Systems: How Organizations Grow Stronger Under Pressure</h1>
+                    <p class="hero-excerpt">Discover how biological systems handle chaos and uncertainty, and how we can apply these principles to build organizations and personal habits that thrive because of disruption.</p>
+                    <button class="btn btn-primary" style="background:var(--color-primary);color:white;display:inline-flex;align-items:center;gap:8;font-size:14;">
+                        Read Article <i class="fas fa-arrow-right" style="color:white;"></i>
+                    </button>
+                    <div style="position:absolute;top:24px;right:32px;background:#D4921E;color:white;border-radius:4;padding:4px 10px;font-size:11;font-weight:700;text-transform:uppercase;">Featured</div>
+                </div>
+            </section>
+
+            <!-- Main Content Area -->
+            <div class="container" style="padding:48px 32px;">
+                <!-- Category Filters -->
+                <div style="padding:28px 0 20px;display:flex;gap:8;overflow-x:auto;scrollbar-width:none;margin-bottom:28px;">
+                    <button class="cat-filter active" onclick="filterByCategory('all')" style="background:var(--color-primary);color:white;border:none;border-radius:20;padding:7px 16px;font-size:13;font-weight:500;white-space:nowrap;">All Topics</button>
+                    <button class="cat-filter" onclick="filterByCategory('systems')" style="background:var(--color-surface);color:var(--color-text-muted);border:1px solid var(--color-border);border-radius:20;padding:7px 16px;font-size:13;font-weight:500;white-space:nowrap;">Systems Innovations</button>
+                    <button class="cat-filter" onclick="filterByCategory('growth')" style="background:var(--color-surface);color:var(--color-text-muted);border:1px solid var(--color-border);border-radius:20;padding:7px 16px;font-size:13;font-weight:500;white-space:nowrap;">Personal Growth</button>
+                    <button class="cat-filter" onclick="filterByCategory('resilience')" style="background:var(--color-surface);color:var(--color-text-muted);border:1px solid var(--color-border);border-radius:20;padding:7px 16px;font-size:13;font-weight:500;white-space:nowrap;">Resilience</button>
+                    <button class="cat-filter" onclick="filterByCategory('wellbeing')" style="background:var(--color-surface);color:var(--color-text-muted);border:1px solid var(--color-border);border-radius:20;padding:7px 16px;font-size:13;font-weight:500;white-space:nowrap;">Well-Being</button>
+                    <button class="cat-filter" onclick="filterByCategory('mental')" style="background:var(--color-surface);color:var(--color-text-muted);border:1px solid var(--color-border);border-radius:20;padding:7px 16px;font-size:13;font-weight:500;white-space:nowrap;">Mental Health</button>
+                </div>
+
+                <!-- Latest Articles Heading -->
+                <div class="flex" style="align-items:baseline;justify-content:space-between;margin-bottom:28px;">
+                    <div>
+                        <h2 class="serif" style="font-size:28px;font-weight:700;margin-bottom:4px;">Latest Articles</h2>
+                        <div style="width:40px;height:3px;background:var(--color-primary);border-radius:2;"></div>
+                    </div>
+                    <span style="font-size:13;color:var(--color-text-muted);" id="articleCount">9 articles</span>
+                </div>
+
+                <!-- Posts Grid -->
+                <div id="postsGrid" class="grid" style="grid-template-columns:repeat(2,1fr);gap:20;margin-bottom:40px;"></div>
+
+                <!-- Second Featured Post -->
+                <div style="margin-bottom:32px;" class="post-card fade-up">
+                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80" alt="Post Image" style="width:100%;height:260px;object-fit:cover;">
+                    <div style="padding:32px 28px;">
+                        <span class="category-pill" style="background:#E0F4E8;color:#2D6A4F">Personal Growth</span>
+                        <h3 class="post-title" style="font-size:22px;font-weight:700;margin:12px 0 10px;">The Compound Effect: Why Small Daily Habits Outperform Drastic Life Changes</h3>
+                        <p class="post-excerpt">Science confirms what elite performers have known for decades: marginal gains compound into extraordinary outcomes. Here's the framework for designing a habit architecture.</p>
+                        <div style="font-size:12;color:var(--color-text-muted)">6 min read • 6,241 views</div>
+                    </div>
                 </div>
             </div>
-        </nav>
 
-        <!-- Main Content Area -->
-        <main id="main-content" class="flex-grow pt-16">
-            <!-- Views will be injected here via JS -->
-        </main>
-
-        <!-- Footer -->
-        <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 mt-auto">
-            <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <div class="col-span-1 md:col-span-2">
-                        <div class="flex items-center mb-4">
-                            <div class="h-8 w-8 rounded-full bg-brand-600 flex items-center justify-center text-white font-bold mr-2">A</div>
-                            <span class="font-bold text-xl">ASilva Innovations</span>
-                        </div>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed max-w-xs">
-                            Pioneering Systems Innovations in Strategic Thinking, Real-Time Leadership, and Resilience. Building frameworks for a sustainable future.
-                        </p>
-                    </div>
-                    <div>
-                        <h3 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">Platform</h3>
-                        <ul class="space-y-3">
-                            <li><a href="#" onclick="router.navigate('blog')" class="text-base hover:text-brand-600">Articles</a></li>
-                            <li><a href="#" onclick="router.navigate('categories')" class="text-base hover:text-brand-600">Categories</a></li>
-                            <li><a href="#" class="text-base hover:text-brand-600">Newsletter</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-4">Connect</h3>
-                        <div class="flex space-x-6">
-                            <a href="#" class="text-slate-400 hover:text-brand-600"><i class="fab fa-twitter text-xl"></i></a>
-                            <a href="#" class="text-slate-400 hover:text-brand-600"><i class="fab fa-linkedin text-xl"></i></a>
-                            <a href="#" class="text-slate-400 hover:text-brand-600"><i class="fab fa-github text-xl"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-8 border-t border-slate-200 dark:border-slate-800 pt-8 text-center">
-                    <p class="text-sm text-slate-400">&copy; 2026 ASilva Innovations. All rights reserved.</p>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-5 right-5 transform translate-y-20 opacity-0 transition-all duration-300 z-50 bg-slate-800 text-white px-6 py-3 rounded-lg shadow-2xl flex items-center">
-        <i class="fas fa-check-circle text-green-400 mr-3"></i>
-        <span id="toast-message">Operation successful</span>
-    </div>
-
-    <!-- JavaScript Application Logic -->
-    <script>
-        // --- Data Store (Simulated Backend) ---
-        const store = {
-            user: {
-                name: "Admin User",
-                role: "administrator", // administrator, editor, author
-                avatar: "https://ui-avatars.com/api/?name=Admin+User&background=7c3aed&color=fff"
-            },
-            categories: [
-                { id: 'strategic', name: 'Strategic Innovation', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200', count: 12 },
-                { id: 'systems', name: 'Systems Thinking', color: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200', count: 8 },
-                { id: 'leadership', name: 'Real-Time Leadership', color: 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200', count: 15 },
-                { id: 'drr', name: 'DRR & CCA', color: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200', count: 6 },
-                { id: 'resilience', name: 'Resilience', color: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200', count: 9 }
-            ],
-            posts: [
-                {
-                    id: 1,
-                    title: "The Architecture of Resilience: Systems Thinking in Crisis",
-                    excerpt: "Exploring how complex adaptive systems theory can inform our approach to disaster risk reduction and climate change adaptation.",
-                    content: "<p>In an era defined by volatility, uncertainty, complexity, and ambiguity (VUCA), traditional linear planning models fail. We must adopt a <strong>systems lens</strong> to understand the interdependencies that govern our socio-ecological systems.</p><h3>Feedback Loops</h3><p>Understanding reinforcing and balancing feedback loops is crucial for preventing systemic collapse...</p>",
-                    author: "ASilva",
-                    date: "2026-03-01",
-                    category: "resilience",
-                    tags: ["systems", "vuca", "planning"],
-                    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
-                    status: "published",
-                    views: 1240,
-                    slug: "architecture-of-resilience"
-                },
-                {
-                    id: 2,
-                    title: "Real-Time Leadership: Decisions in the Blink of an Eye",
-                    excerpt: "How modern leaders leverage data streams and intuition to make high-stakes decisions faster than the competition.",
-                    content: "<p>Leadership is no longer about the 5-year plan. It's about the <em>5-minute reaction</em>. In this post, we dissect the cognitive frameworks used by elite leaders.</p>",
-                    author: "ASilva",
-                    date: "2026-02-28",
-                    category: "leadership",
-                    tags: ["agile", "decision-making"],
-                    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
-                    status: "published",
-                    views: 850,
-                    slug: "real-time-leadership"
-                },
-                {
-                    id: 3,
-                    title: "Strategic Innovation: Beyond the Buzzword",
-                    excerpt: "Moving past 'innovation theater' to build core capabilities that drive sustainable competitive advantage.",
-                    content: "<p>True innovation isn't about ping-pong tables. It's about <strong>organizational capability</strong> and the disciplined management of the innovation portfolio.</p>",
-                    author: "ASilva",
-                    date: "2026-02-25",
-                    category: "strategic",
-                    tags: ["strategy", "innovation"],
-                    image: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80",
-                    status: "published",
-                    views: 2100,
-                    slug: "strategic-innovation"
-                }
-            ],
-            drafts: [],
-            stats: {
-                subscribers: 3420,
-                monthlyViews: 45000,
-                avgReadTime: "4m 30s"
-            }
-        };
-
-        // --- Theme Manager ---
-        const theme = {
-            init() {
-                if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                    document.documentElement.classList.add('dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                }
-            },
-            toggle() {
-                document.documentElement.classList.toggle('dark');
-                localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-            }
-        };
-
-        // --- Router ---
-        const router = {
-            currentPage: 'home',
-            navigate(page, params = {}) {
-                this.currentPage = page;
-                window.scrollTo(0, 0);
-                const main = document.getElementById('main-content');
-                
-                // Simple fade out/in effect
-                main.style.opacity = '0';
-                setTimeout(() => {
-                    main.innerHTML = '';
-                    switch(page) {
-                        case 'home': main.appendChild(views.home()); break;
-                        case 'blog': main.appendChild(views.blog()); break;
-                        case 'post': main.appendChild(views.post(params.id)); break;
-                        case 'editor': main.appendChild(views.editor(params.id)); break;
-                        case 'dashboard': main.appendChild(views.dashboard()); break;
-                        case 'categories': main.appendChild(views.categories()); break;
-                        default: main.appendChild(views.home());
-                    }
-                    main.style.opacity = '1';
-                    main.className = "flex-grow pt-16 animate-fade-in";
-                }, 200);
-            }
-        };
-
-        // --- UI Components Generators ---
-        const components = {
-            badge(text, colorClass) {
-                return `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${colorClass}">${text}</span>`;
-            },
-            card(post) {
-                const category = store.categories.find(c => c.id === post.category);
-                return `
-                <article class="flex flex-col bg-white dark:bg-slate-800 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-slate-100 dark:border-slate-700 group h-full">
-                    <div class="relative h-48 overflow-hidden">
-                        <img src="${post.image}" alt="${post.title}" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute top-4 left-4">
-                            ${this.badge(category.name, category.color)}
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow">
-                        <div class="flex items-center text-xs text-slate-500 dark:text-slate-400 mb-3">
-                            <span>${new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-                            <span class="mx-2">•</span>
-                            <span>${post.views} views</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors leading-tight">
-                            <a href="#" onclick="router.navigate('post', {id: ${post.id}}); return false;">${post.title}</a>
-                        </h3>
-                        <p class="text-slate-600 dark:text-slate-300 text-sm line-clamp-3 mb-4 flex-grow">${post.excerpt}</p>
-                        <div class="flex items-center justify-between mt-auto pt-4 border-t border-slate-100 dark:border-slate-700">
-                            <div class="flex items-center">
-                                <div class="h-6 w-6 rounded-full bg-slate-200 dark:bg-slate-600 flex items-center justify-center text-xs font-bold text-slate-600 dark:text-slate-300 mr-2">
-                                    ${post.author.charAt(0)}
-                                </div>
-                                <span class="text-xs font-medium text-slate-700 dark:text-slate-300">${post.author}</span>
-                            </div>
-                            <button onclick="router.navigate('post', {id: ${post.id}})" class="text-brand-600 hover:text-brand-700 text-sm font-semibold flex items-center">
-                                Read <i class="fas fa-arrow-right ml-1 text-xs"></i>
-                            </button>
-                        </div>
-                    </div>
-                </article>`;
-            }
-        };
-
-        // --- Views ---
-        const views = {
-            home() {
-                const container = document.createElement('div');
-                
-                // Hero Section
-                const hero = document.createElement('section');
-                hero.className = "relative bg-slate-900 text-white overflow-hidden";
-                hero.innerHTML = `
-                    <div class="absolute inset-0">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80" class="w-full h-full object-cover opacity-20">
-                        <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent"></div>
-                    </div>
-                    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-                        <div class="md:w-2/3 animate-slide-up">
-                            <div class="inline-flex items-center px-3 py-1 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-300 text-sm font-medium mb-6 backdrop-blur-sm">
-                                <span class="flex h-2 w-2 rounded-full bg-brand-400 mr-2 animate-pulse"></span>
-                                Systems Innovation Hub
-                            </div>
-                            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                                Mastering <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand-gold">Complexity</span> Through Strategic Thinking
-                            </h1>
-                            <p class="text-xl text-slate-300 mb-8 max-w-2xl leading-relaxed">
-                                Insights on Real-Time Leadership, Disaster Risk Reduction (DRR-CCA), and building resilient organizations for the modern era.
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-4">
-                                <button onclick="router.navigate('blog')" class="px-8 py-4 bg-brand-600 hover:bg-brand-700 text-white rounded-full font-semibold transition-all shadow-lg shadow-brand-600/30 flex items-center justify-center">
-                                    Explore Articles <i class="fas fa-arrow-right ml-2"></i>
-                                </button>
-                                <button onclick="document.getElementById('newsletter').scrollIntoView({behavior: 'smooth'})" class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white rounded-full font-semibold transition-all flex items-center justify-center">
-                                    Subscribe Newsletter
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                container.appendChild(hero);
-
-                // Featured Section
-                const featured = document.createElement('section');
-                featured.className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16";
-                featured.innerHTML = `
-                    <div class="flex justify-between items-end mb-8">
+            <!-- Sidebar -->
+            <aside style="max-width:1280px;margin:0 auto;padding:0 32px;">
+                <div class="grid" style="grid-template-columns:1fr 320px;gap:40;align-items:start;">
+                    <!-- CTA Block -->
+                    <div class="cta-block">
                         <div>
-                            <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Latest Insights</h2>
-                            <p class="mt-2 text-slate-600 dark:text-slate-400">Curated thinking on systems and strategy.</p>
+                            <div style="font-size:11;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--color-primary);margin-bottom:8px;">Free Resource</div>
+                            <h3 style="font-size:24px;font-weight:700;margin-bottom:8px;">The Resilience Toolkit: 30-Day Action Plan</h3>
+                            <p style="color:var(--color-text-muted);font-size:15;line-height:1.6;max-width:500;">A practical, research-backed guide to building unshakeable mental and emotional resilience — one day at a time.</p>
                         </div>
-                        <a href="#" onclick="router.navigate('blog')" class="hidden md:flex items-center text-brand-600 font-semibold hover:text-brand-700">
-                            View all posts <i class="fas fa-arrow-right ml-2"></i>
-                        </a>
+                        <button class="btn btn-primary" style="background:var(--color-primary);color:white;">Download Free eBook</button>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        ${store.posts.slice(0, 3).map(post => components.card(post)).join('')}
-                    </div>
-                `;
-                container.appendChild(featured);
 
-                // Newsletter Section
-                const newsletter = document.createElement('section');
-                newsletter.id = "newsletter";
-                newsletter.className = "bg-brand-900 py-16";
-                newsletter.innerHTML = `
-                    <div class="max-w-4xl mx-auto px-4 text-center">
-                        <h2 class="text-3xl font-bold text-white mb-4">Join the Systems Thinkers</h2>
-                        <p class="text-brand-200 mb-8 text-lg">Get weekly insights on resilience, strategy, and leadership delivered to your inbox. No spam, just value.</p>
-                        <form onsubmit="event.preventDefault(); showToast('Successfully subscribed!');" class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-                            <input type="email" placeholder="Enter your email" required class="flex-1 px-6 py-4 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-400 text-slate-900">
-                            <button type="submit" class="px-8 py-4 bg-brand-gold hover:bg-yellow-600 text-white font-bold rounded-full transition-colors shadow-lg">
-                                Subscribe
-                            </button>
-                        </form>
-                    </div>
-                `;
-                container.appendChild(newsletter);
-
-                return container;
-            },
-
-            blog() {
-                const container = document.createElement('div');
-                container.className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-fade-in";
-                
-                // Header
-                const header = document.createElement('div');
-                header.className = "mb-12 text-center";
-                header.innerHTML = `
-                    <h1 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Knowledge Base</h1>
-                    <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Deep dives into Systems Thinking, Strategic Innovation, and Resilience.</p>
-                `;
-                container.appendChild(header);
-
-                // Filters
-                const filterContainer = document.createElement('div');
-                filterContainer.className = "flex flex-wrap justify-center gap-2 mb-12";
-                filterContainer.innerHTML = `
-                    <button onclick="filterPosts('all')" class="filter-btn active px-4 py-2 rounded-full text-sm font-medium bg-brand-600 text-white transition-all">All</button>
-                    ${store.categories.map(cat => `
-                        <button onclick="filterPosts('${cat.id}')" class="filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-500 transition-all">${cat.name}</button>
-                    `).join('')}
-                `;
-                container.appendChild(filterContainer);
-
-                // Grid
-                const grid = document.createElement('div');
-                grid.id = "blog-grid";
-                grid.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8";
-                grid.innerHTML = store.posts.map(post => components.card(post)).join('');
-                container.appendChild(grid);
-
-                // Filter Logic
-                window.filterPosts = (category) => {
-                    const buttons = document.querySelectorAll('.filter-btn');
-                    buttons.forEach(btn => {
-                        if ((category === 'all' && btn.innerText === 'All') || btn.innerText === store.categories.find(c => c.id === category)?.name) {
-                            btn.className = "filter-btn active px-4 py-2 rounded-full text-sm font-medium bg-brand-600 text-white transition-all shadow-md";
-                        } else {
-                            btn.className = "filter-btn px-4 py-2 rounded-full text-sm font-medium bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-500 transition-all";
-                        }
-                    });
-
-                    const filtered = category === 'all' ? store.posts : store.posts.filter(p => p.category === category);
-                    grid.innerHTML = filtered.map(post => components.card(post)).join('');
-                };
-
-                return container;
-            },
-
-            post(id) {
-                const post = store.posts.find(p => p.id === id) || store.posts[0];
-                const container = document.createElement('div');
-                container.className = "animate-fade-in";
-
-                // Hero Image
-                const hero = document.createElement('div');
-                hero.className = "w-full h-[50vh] relative";
-                hero.innerHTML = `
-                    <img src="${post.image}" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 w-full p-8 md:p-16">
-                        <div class="max-w-4xl mx-auto">
-                            ${components.badge(store.categories.find(c => c.id === post.category).name, store.categories.find(c => c.id === post.category).color)}
-                            <h1 class="text-3xl md:text-5xl font-bold text-white mt-4 mb-4 leading-tight">${post.title}</h1>
-                            <div class="flex items-center text-slate-300 text-sm">
-                                <span class="font-semibold text-white mr-2">${post.author}</span>
-                                <span>•</span>
-                                <span class="mx-2">${new Date(post.date).toLocaleDateString()}</span>
-                                <span>•</span>
-                                <span class="mx-2">5 min read</span>
+                    <!-- Popular Posts -->
+                    <div class="sidebar-widget" style="position:sticky;top:80px;">
+                        <h4 class="sidebar-title" style="font-size:18px;font-weight:700;margin-bottom:16px;">Most Popular</h4>
+                        <div class="popular-list">
+                            <div class="popular-item" style="display:flex;gap:12;cursor:pointer;align-items:center;margin-bottom:12px;">
+                                <div style="font-size:22;font-weight:800;color:var(--color-border);min-width:28;line-height:1;">01</div>
+                                <div>
+                                    <h5 style="font-size:13;font-weight:600;cursor:pointer;color:var(--color-text);line-height:1.4;" onclick="openArticle(6)">Second-Order Thinking</h5>
+                                    <span style="font-size:11;color:var(--color-text-muted);">7,234 views</span>
+                                </div>
+                            </div>
+                            <div class="popular-item" style="display:flex;gap:12;cursor:pointer;align-items:center;margin-bottom:12px;">
+                                <div style="font-size:22;font-weight:800;color:var(--color-border);min-width:28;line-height:1;">02</div>
+                                <div>
+                                    <h5 style="font-size:13;font-weight:600;cursor:pointer;color:var(--color-text);line-height:1.4;" onclick="openArticle(8)">Identity-Based Growth</h5>
+                                    <span style="font-size:11;color:var(--color-text-muted);">6,890 views</span>
+                                </div>
+                            </div>
+                            <div class="popular-item" style="display:flex;gap:12;cursor:pointer;align-items:center;margin-bottom:12px;">
+                                <div style="font-size:22;font-weight:800;color:var(--color-border);min-width:28;line-height:1;">03</div>
+                                <div>
+                                    <h5 style="font-size:13;font-weight:600;cursor:pointer;color:var(--color-text);line-height:1.4;" onclick="openArticle(2)">Compound Effect</h5>
+                                    <span style="font-size:11;color:var(--color-text-muted);">6,241 views</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                `;
-                container.appendChild(hero);
 
-                // Content
-                const contentWrapper = document.createElement('div');
-                contentWrapper.className = "max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12";
-                contentWrapper.innerHTML = `
-                    <article class="prose-custom prose-slate dark:prose-invert max-w-none">
-                        <p class="text-xl text-slate-600 dark:text-slate-300 leading-relaxed mb-8 font-serif italic border-l-4 border-brand-500 pl-4">
-                            ${post.excerpt}
-                        </p>
-                        <div class="font-serif text-slate-800 dark:text-slate-200">
-                            ${post.content}
+                    <!-- About Section -->
+                    <div class="sidebar-widget" style="background:linear-gradient(135deg,#1B3A2D 0%,#2D6A4F 100%);color:white;">
+                        <img src="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1772638774" alt="A. Silva" style="width:56px;height:56px;border-radius:50%;object-fit:cover;margin-bottom:12px;border:3px solid rgba(255,255,255,.25);">
+                        <h4 class="sidebar-title" style="color:white;border-bottom:2px solid rgba(255,255,255,.25);">About A. Silva</h4>
+                        <p style="font-size:13;color:rgba(255,255,255,.8);line-height:1.65;margin-bottom:16px;">Systems thinker, resilience coach, and wellness advocate. I write about the intersection of innovation, growth, and human flourishing.</p>
+                        <button class="btn" style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:white;width:100%;">Follow Along →</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Article Detail View -->
+        <div id="articleView" class="view-container" style="display:none;">
+            <div id="articleHeroSection">
+                <img id="articleHeroImage" src="" alt="Article Hero" style="width:100%;height:460px;object-fit:cover;">
+                <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.3) 0%,rgba(0,0,0,.7) 100%)"></div>
+                <div style="position:absolute;inset:0;display:flex;align-items:flex-end;padding:0 0 40px;">
+                    <div style="max-width:780;margin:0 auto;width:100%;padding:0 32px;">
+                        <button onclick="navigateTo('home')" style="background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:white;border-radius:4;padding:6px 14px;cursor:pointer;font-size:13;margin-bottom:16px;display:flex;align-items:center;gap:6;">
+                            <i class="fas fa-arrow-left" style="color:white;"></i> Back to Blog
+                        </button>
+                        <span id="articleCategory" class="category-pill" style="margin-bottom:12px;display:block;"></span>
+                        <h1 id="articleTitle" style="font-size:clamp(24px,3.5vw,40px);font-weight:700;color:white;line-height:1.25;margin:14px 0 12px;"></h1>
+                        <div style="display:flex;align-items:center;gap:16;font-size:13;color:rgba(255,255,255,.75);">
+                            <img src="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1772638774" alt="Author" style="width:32px;height:32px;border-radius:50%;border:2px solid rgba(255,255,255,.4);">
+                            <span>A. Silva</span>
+                            <span>•</span>
+                            <span id="articleDate"></span>
+                            <span>•</span>
+                            <span id="articleReadTime"></span> min read
+                            <span>•</span>
+                            <span id="articleViews"></span> views
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reader Controls -->
+            <div class="article-reader-controls">
+                <div class="flex" style="gap:4;align-items:center;">
+                    <span style="font-size:12;color:var(--color-text-muted);margin-right:8px;font-family:var(--font-poppins);">Font Size:</span>
+                    <button onclick="setFontSize(15)" style="padding:3px 8px;font-size:12;border-radius:4;border:1px solid var(--color-primary);background:var(--color-primary);color:white;cursor:pointer;">A-</button>
+                    <button onclick="setFontSize(17)" style="padding:3px 8px;font-size:12;border-radius:4;border:1px solid var(--color-border);background:none;color:var(--color-text-muted);cursor:pointer;">A</button>
+                    <button onclick="setFontSize(19)" style="padding:3px 8px;font-size:12;border-radius:4;border:1px solid var(--color-border);background:none;color:var(--color-text-muted);cursor:pointer;">A+</button>
+                    <button onclick="toggleDarkMode()" style="margin-left:12px;display:flex;align-items:center;gap:5;padding:4px 10px;border-radius:4;border:1px solid var(--color-border);background:none;cursor:pointer;color:var(--color-text-muted);font-size:12;">
+                        <i id="articleThemeIcon" class="fas fa-moon" style="color:var(--color-text-muted);"></i>
+                        <span id="articleThemeText">Light</span> Mode
+                    </button>
+                </div>
+                <div class="flex" style="gap:8;align-items:center;">
+                    <div style="background:var(--color-surface-alt);border-radius:999px;height:6;width:140;overflow:hidden;">
+                        <div id="progressBarFill" style="background:var(--color-primary);height:100%;width:0%;transition:width 0.1s;"></div>
+                    </div>
+                    <span style="font-size:11;color:var(--color-text-muted);" id="progressPercent">0%</span>
+                    <button style="background:#2D6A4F11;border:1px solid #2D6A4F;border-radius:4;padding:4px 8px;cursor:pointer;"><i class="fas fa-bookmark" style="color:#2D6A4F;"></i></button>
+                    <button class="btn" style="background:#2D6A4F;color:white;border:none;padding:6px 12px;font-size:12;font-weight:600;white-space:nowrap;display:flex;align-items:center;gap:5;">
+                        <i class="fas fa-share" style="color:white;"></i> Share
+                    </button>
+                </div>
+            </div>
+
+            <!-- Article Content -->
+            <div class="container" style="padding:48px 32px;">
+                <div class="grid" style="grid-template-columns:1fr 280px;gap:48;align-items:start;">
+                    <article>
+                        <p style="font-size:19;font-family:'Lora',serif;line-height:1.75;margin-bottom:36;font-style:italic;border-left:3px solid var(--color-primary);padding-left:20;">
+                            <span id="articleExcerpt"></span>
+                        </p>
                         
-                        <!-- Engagement Section -->
-                        <div class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-700">
-                            <h3 class="text-lg font-bold mb-4">Share this insight</h3>
-                            <div class="flex space-x-4">
-                                <button class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-colors"><i class="fab fa-twitter"></i></button>
-                                <button class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></button>
-                                <button class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-brand-600 hover:text-white transition-colors"><i class="fas fa-link"></i></button>
+                        <div style="display:flex;gap:8;flex-wrap:wrap;margin-bottom:32px;">
+                            <span style="background:var(--color-surface-alt);color:var(--color-text-muted);border:1px solid var(--color-border);padding:4px 12px;border-radius:999px;font-size:12;" class="tag">Antifragility</span>
+                            <span style="background:var(--color-surface-alt);color:var(--color-text-muted);border:1px solid var(--color-border);padding:4px 12px;border-radius:999px;font-size:12;" class="tag">Systems Thinking</span>
+                        </div>
+
+                        <div id="articleBody" class="article-content" style="font-family:'Lora',serif;font-size:17px;line-height:1.8;"></div>
+
+                        <div class="author-card">
+                            <img src="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1772638774" alt="A. Silva" style="width:64px;height:64px;border-radius:50%;border:3px solid var(--color-border);object-fit:cover;">
+                            <div>
+                                <div style="font-size:11;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--color-primary);margin-bottom:4px;">Written by</div>
+                                <h4 style="font-size:20px;font-weight:700;margin-bottom:6px;">A. Silva</h4>
+                                <p style="font-size:14;color:var(--color-text-muted);line-height:1.65;margin-bottom:12px;">Founder of ASilva Innovations. Systems thinker, resilience strategist, and wellness advocate with 15+ years of experience helping individuals and organizations unlock their full potential.</p>
+                                <button class="btn" style="background:var(--color-primary);color:white;border:none;padding:7px 16px;font-size:13;font-weight:600;">Follow A. Silva</button>
                             </div>
                         </div>
                     </article>
 
-                    <!-- CTA Block -->
-                    <div class="mt-12 bg-brand-50 dark:bg-slate-800/50 rounded-2xl p-8 border border-brand-100 dark:border-slate-700">
-                        <div class="flex flex-col md:flex-row items-center justify-between">
-                            <div class="mb-6 md:mb-0 md:mr-8">
-                                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">Enjoyed this analysis?</h3>
-                                <p class="text-slate-600 dark:text-slate-300">Join 3,400+ systems thinkers getting our weekly newsletter.</p>
+                    <!-- Article Sidebar -->
+                    <aside class="sidebar">
+                        <div class="sidebar-widget">
+                            <h5 style="font-size:12;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:12px;">Table of Contents</h5>
+                            <div class="toc-list">
+                                <div class="toc-item">1. Introduction</div>
+                                <div class="toc-item">2. The Nature of Antifragility</div>
+                                <div class="toc-item">3. Applying This to Organizations</div>
+                                <div class="toc-item">4. The Personal Dimension</div>
                             </div>
-                            <button onclick="document.getElementById('newsletter').scrollIntoView({behavior: 'smooth'})" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-lg shadow-lg transition-all whitespace-nowrap">
-                                Subscribe Now
+                        </div>
+
+                        <div class="sidebar-widget">
+                            <div style="font-size:10;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:10px;">🔍 Google Preview</div>
+                            <div style="border:1px solid #e0e0e0;border-radius:8;padding:10px 12px;background:#fff;">
+                                <div style="font-size:11;color:#006621;font-family:Arial,sans-serif;">asilva-innovations.com › building-antifragile-systems</div>
+                                <div style="font-size:14;color:#1a0dab;font-family:Arial,sans-serif;margin-top:2;font-weight:500;" id="seoPreviewTitle"></div>
+                                <div style="font-size:12;color:#545454;font-family:Arial,sans-serif;margin-top:3;line-height:1.5;" id="seoPreviewDesc"></div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+                <!-- Related Posts -->
+                <div style="border-top:1px solid var(--color-border);background:var(--color-surface);padding:48px 32px;margin-top:48px;">
+                    <h3 style="font-size:24px;font-weight:700;margin-bottom:8px;">Related Articles</h3>
+                    <div style="width:40px;height:3px;background:var(--color-primary);border-radius:2;margin-bottom:28px;"></div>
+                    <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:20;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin Dashboard View -->
+        <div id="adminView" class="view-container" style="display:none;">
+            <div class="admin-layout">
+                <!-- Admin Sidebar -->
+                <aside class="admin-sidebar">
+                    <div style="padding:20px 16px 16px;border-bottom:1px solid rgba(255,255,255,.08);">
+                        <div style="display:flex;align-items:center;gap:10;">
+                            <img src="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1772638774" alt="Logo" style="width:36px;height:36px;border-radius:8;">
+                            <div>
+                                <div style="font-size:15;font-weight:700;color:white;font-family:var(--font-condensed);">ASilva</div>
+                                <div style="font-size:10;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase;">Admin Console</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <nav style="flex:1;padding:12px 8px;overflow-y:auto;">
+                        <button class="admin-nav-item active" onclick="switchAdminTab('dashboard')" id="adminTab-dashboard">
+                            <i class="fas fa-home" style="color:var(--color-primary);"></i> Dashboard
+                        </button>
+                        <button class="admin-nav-item" onclick="switchAdminTab('posts')" id="adminTab-posts">
+                            <i class="fas fa-newspaper" style="color:var(--color-primary);"></i> All Posts
+                        </button>
+                        <button class="admin-nav-item" onclick="switchAdminTab('editor')" id="adminTab-editor">
+                            <i class="fas fa-edit" style="color:var(--color-primary);"></i> New Post
+                        </button>
+                        <button class="admin-nav-item" onclick="switchAdminTab('analytics')" id="adminTab-analytics">
+                            <i class="fas fa-chart-area" style="color:var(--color-primary);"></i> Analytics
+                        </button>
+                        <button class="admin-nav-item" onclick="switchAdminTab('settings')" id="adminTab-settings">
+                            <i class="fas fa-cog" style="color:var(--color-primary);"></i> Settings
+                        </button>
+                    </nav>
+                    
+                    <div style="padding:12px 8px;border-top:1px solid rgba(255,255,255,.08);">
+                        <button onclick="navigateTo('home')" class="btn btn-secondary" style="width:100%;">View Public Site</button>
+                    </div>
+                </aside>
+
+                <!-- Admin Main Content -->
+                <main class="admin-main">
+                    <div style="background:var(--color-surface);border-bottom:1px solid var(--color-border);padding:0 28px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:50;">
+                        <h1 style="font-size:18px;font-weight:600;" id="adminTitle">Dashboard</h1>
+                        <div class="flex" style="gap:10;align-items:center;">
+                            <button onclick="toggleDarkMode()" class="btn btn-secondary" style="background:none;">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                            <button class="btn btn-primary" onclick="switchAdminTab('editor');">
+                                <i class="fas fa-plus"></i> New Post
                             </button>
                         </div>
                     </div>
-                `;
-                container.appendChild(contentWrapper);
 
-                return container;
-            },
-
-            editor(id) {
-                const container = document.createElement('div');
-                container.className = "max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in h-[calc(100vh-4rem)] flex flex-col";
-                
-                // Toolbar
-                const toolbar = document.createElement('div');
-                toolbar.className = "flex items-center justify-between mb-6 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 sticky top-20 z-30";
-                toolbar.innerHTML = `
-                    <div class="flex items-center space-x-4">
-                        <input type="text" id="post-title-input" placeholder="Post Title" class="text-2xl font-bold bg-transparent border-none focus:ring-0 text-slate-900 dark:text-white placeholder-slate-400 w-full md:w-96">
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <span class="text-sm text-slate-500 hidden md:inline">Saved just now</span>
-                        <button onclick="savePost()" class="px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 rounded-lg font-medium hover:bg-slate-200 transition-colors">Save Draft</button>
-                        <button onclick="publishPost()" class="px-4 py-2 bg-brand-600 text-white rounded-lg font-medium hover:bg-brand-700 shadow-lg shadow-brand-500/30 transition-all">Publish</button>
-                    </div>
-                `;
-                container.appendChild(toolbar);
-
-                // Editor Layout
-                const layout = document.createElement('div');
-                layout.className = "flex flex-col lg:flex-row gap-8 flex-grow overflow-hidden";
-                
-                // Main Canvas
-                const canvas = document.createElement('div');
-                canvas.className = "flex-1 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-y-auto p-8";
-                canvas.innerHTML = `
-                    <div id="editor-blocks" class="space-y-4 max-w-3xl mx-auto pb-20">
-                        <!-- Initial Block -->
-                        <div class="editor-block group relative p-2 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-lg transition-colors" draggable="true">
-                            <div class="absolute left-0 top-2 opacity-0 group-hover:opacity-100 cursor-move text-slate-400 px-2 py-1">
-                                <i class="fas fa-grip-vertical"></i>
-                            </div>
-                            <div contenteditable="true" class="editor-content outline-none pl-8 min-h-[2rem] prose dark:prose-invert" placeholder="Start writing or type '/' for commands..."></div>
-                        </div>
-                    </div>
-                `;
-                layout.appendChild(canvas);
-
-                // Sidebar Tools
-                const sidebar = document.createElement('div');
-                sidebar.className = "w-full lg:w-64 flex-shrink-0 space-y-6 overflow-y-auto pb-20";
-                sidebar.innerHTML = `
-                    <div class="bg-white dark:bg-slate-800 p-5 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
-                        <h3 class="font-bold text-slate-900 dark:text-white mb-4 text-sm uppercase tracking-wider">Post Settings</h3>
-                        
-                        <div class="mb-4">
-                            <label class="block text-xs font-medium text-slate-500 mb-1">Category</label>
-                            <select id="post-category" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                                ${store.categories.map(c => `<option value="${c.id}">${c.name}</option>`).join('')}
-                            </select>
-                        </div>
-
-                        <div class="mb-4">
-                            <label class="block text-xs font-medium text-slate-500 mb-1">Featured Image</label>
-                            <div class="border-2 border-dashed border-slate-300 dark:border-slate-600 rounded-lg p-4 text-center cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors">
-                                <i class="fas fa-image text-slate-400 mb-2"></i>
-                                <span class="block text-xs text-slate-500">Click to upload</span>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs font-medium text-slate-500 mb-1">Tags</label>
-                            <input type="text" placeholder="Add tag..." class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-brand-500 outline-none">
-                        </div>
-                    </div>
-
-                    <div class="bg-brand-50 dark:bg-slate-800/50 p-5 rounded-xl border border-brand-100 dark:border-slate-700">
-                        <h3 class="font-bold text-brand-900 dark:text-brand-400 mb-2 text-sm">SEO Analysis</h3>
-                        <div class="space-y-2">
-                            <div class="flex items-center text-xs text-green-600 dark:text-green-400">
-                                <i class="fas fa-check-circle mr-2"></i> Title length optimal
-                            </div>
-                            <div class="flex items-center text-xs text-yellow-600 dark:text-yellow-400">
-                                <i class="fas fa-exclamation-circle mr-2"></i> Add meta description
-                            </div>
-                        </div>
-                    </div>
-                `;
-                layout.appendChild(sidebar);
-                container.appendChild(layout);
-
-                // Initialize Editor Logic
-                setTimeout(() => {
-                    const editorBlocks = document.getElementById('editor-blocks');
-                    
-                    // Simple Block Logic
-                    editorBlocks.addEventListener('keydown', (e) => {
-                        if (e.key === 'Enter' && !e.shiftKey) {
-                            e.preventDefault();
-                            createNewBlock(editorBlocks);
-                        }
-                    });
-
-                    // Drag and Drop (Simplified)
-                    let draggedItem = null;
-                    editorBlocks.addEventListener('dragstart', (e) => {
-                        if(e.target.classList.contains('editor-block')) {
-                            draggedItem = e.target;
-                            e.target.classList.add('draggable-source');
-                        }
-                    });
-                    editorBlocks.addEventListener('dragend', (e) => {
-                        if(e.target.classList.contains('editor-block')) {
-                            e.target.classList.remove('draggable-source');
-                        }
-                    });
-                    editorBlocks.addEventListener('dragover', (e) => {
-                        e.preventDefault();
-                        const afterElement = getDragAfterElement(editorBlocks, e.clientY);
-                        if (afterElement == null) {
-                            editorBlocks.appendChild(draggedItem);
-                        } else {
-                            editorBlocks.insertBefore(draggedItem, afterElement);
-                        }
-                    });
-                }, 0);
-
-                return container;
-            },
-
-            dashboard() {
-                const container = document.createElement('div');
-                container.className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in";
-                
-                container.innerHTML = `
-                    <div class="mb-8">
-                        <h1 class="text-3xl font-bold text-slate-900 dark:text-white">Dashboard</h1>
-                        <p class="text-slate-500 dark:text-slate-400">Overview of your content performance.</p>
-                    </div>
-
-                    <!-- Stats Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase">Total Views</h3>
-                                <span class="p-2 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-lg"><i class="fas fa-eye"></i></span>
-                            </div>
-                            <div class="text-3xl font-bold text-slate-900 dark:text-white">${store.stats.monthlyViews.toLocaleString()}</div>
-                            <div class="text-sm text-green-500 mt-2 flex items-center">
-                                <i class="fas fa-arrow-up mr-1"></i> 12% <span class="text-slate-400 ml-1">vs last month</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase">Subscribers</h3>
-                                <span class="p-2 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 rounded-lg"><i class="fas fa-users"></i></span>
-                            </div>
-                            <div class="text-3xl font-bold text-slate-900 dark:text-white">${store.stats.subscribers.toLocaleString()}</div>
-                            <div class="text-sm text-green-500 mt-2 flex items-center">
-                                <i class="fas fa-arrow-up mr-1"></i> 5.4% <span class="text-slate-400 ml-1">vs last month</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
-                            <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-slate-500 dark:text-slate-400 text-sm font-medium uppercase">Avg. Read Time</h3>
-                                <span class="p-2 bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-300 rounded-lg"><i class="fas fa-clock"></i></span>
-                            </div>
-                            <div class="text-3xl font-bold text-slate-900 dark:text-white">${store.stats.avgReadTime}</div>
-                            <div class="text-sm text-slate-400 mt-2">
-                                Industry avg: 3m 12s
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Content Management Table -->
-                    <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
-                        <div class="px-6 py-4 border-b border-slate-200 dark:border-slate-700 flex justify-between items-center">
-                            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Recent Posts</h3>
-                            <button onclick="router.navigate('editor')" class="text-sm text-brand-600 font-medium hover:underline">Create New</button>
-                        </div>
-                        <div class="overflow-x-auto">
-                            <table class="w-full text-left text-sm">
-                                <thead class="bg-slate-50 dark:bg-slate-900/50 text-slate-500 dark:text-slate-400">
-                                    <tr>
-                                        <th class="px-6 py-3 font-medium">Title</th>
-                                        <th class="px-6 py-3 font-medium">Category</th>
-                                        <th class="px-6 py-3 font-medium">Status</th>
-                                        <th class="px-6 py-3 font-medium">Date</th>
-                                        <th class="px-6 py-3 font-medium text-right">Views</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="divide-y divide-slate-200 dark:divide-slate-700">
-                                    ${store.posts.map(post => `
-                                        <tr class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
-                                            <td class="px-6 py-4 font-medium text-slate-900 dark:text-white">
-                                                <div class="flex items-center">
-                                                    <img src="${post.image}" class="h-10 w-10 rounded object-cover mr-3">
-                                                    ${post.title}
-                                                </div>
-                                            </td>
-                                            <td class="px-6 py-4">
-                                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${store.categories.find(c => c.id === post.category).color}">
-                                                    ${store.categories.find(c => c.id === post.category).name}
-                                                </span>
-                                            </td>
-                                            <td class="px-6 py-4">
-                                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
-                                                    Published
-                                                </span>
-                                            </td>
-                                            <td class="px-6 py-4 text-slate-500 dark:text-slate-400">${new Date(post.date).toLocaleDateString()}</td>
-                                            <td class="px-6 py-4 text-right font-medium text-slate-900 dark:text-white">${post.views}</td>
-                                        </tr>
-                                    `).join('')}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                `;
-                return container;
-            },
-            
-            categories() {
-                const container = document.createElement('div');
-                container.className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-fade-in";
-                container.innerHTML = `
-                    <div class="text-center mb-12">
-                        <h1 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">Content Topics</h1>
-                        <p class="text-lg text-slate-600 dark:text-slate-400">Explore our specialized knowledge domains.</p>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        ${store.categories.map(cat => `
-                            <div onclick="router.navigate('blog')" class="group cursor-pointer bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-lg hover:border-brand-500 transition-all duration-300">
-                                <div class="w-12 h-12 rounded-lg ${cat.color} flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition-transform">
-                                    <i class="fas fa-layer-group"></i>
+                    <div id="adminContent" style="padding:28px;">
+                        <!-- Dashboard Stats -->
+                        <div class="analytics-stats" style="margin-bottom:28px;">
+                            <div class="stat-card">
+                                <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+                                    <div style="width:40px;height:40px;border-radius:8;background:#2D6A4F15;display:flex;align-items:center;justify-content:center;">
+                                        <i class="fas fa-newspaper" style="color:#2D6A4F;"></i>
+                                    </div>
                                 </div>
-                                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">${cat.name}</h3>
-                                <p class="text-slate-500 dark:text-slate-400 mb-4">Deep dives into ${cat.name.toLowerCase()} frameworks and applications.</p>
-                                <span class="text-brand-600 font-semibold text-sm group-hover:translate-x-2 transition-transform inline-block">Explore ${cat.count} articles <i class="fas fa-arrow-right ml-1"></i></span>
+                                <div class="stat-value" style="color:var(--color-text);">9</div>
+                                <div style="font-size:13;color:var(--color-text-muted);">Total Articles</div>
                             </div>
-                        `).join('')}
+                            <div class="stat-card">
+                                <div style="width:40px;height:40px;border-radius:8;background:#40916C15;display:flex;align-items:center;justify-content:center;">
+                                    <i class="fas fa-check" style="color:#40916C;"></i>
+                                </div>
+                                <div class="stat-value" style="color:var(--color-text);">8</div>
+                                <div style="font-size:13;color:var(--color-text-muted);">Published</div>
+                            </div>
+                            <div class="stat-card">
+                                <div style="width:40px;height:40px;border-radius:8;background:#D4921E15;display:flex;align-items:center;justify-content:center;">
+                                    <i class="fas fa-eye" style="color:#D4921E;"></i>
+                                </div>
+                                <div class="stat-value" style="color:var(--color-text);">54,323</div>
+                                <div style="font-size:13;color:var(--color-text-muted);">Total Page Views</div>
+                            </div>
+                            <div class="stat-card">
+                                <div style="width:40px;height:40px;border-radius:8;background:#1B433215;display:flex;align-items:center;justify-content:center;">
+                                    <i class="fas fa-envelope" style="color:#1B4332;"></i>
+                                </div>
+                                <div class="stat-value" style="color:var(--color-text);">2,847</div>
+                                <div style="font-size:13;color:var(--color-text-muted);">Subscribers</div>
+                            </div>
+                        </div>
+
+                        <!-- Analytics Chart -->
+                        <div class="chart-container">
+                            <h3 style="font-size:16px;font-weight:600;margin-bottom:20px;">Traffic — Last 12 Weeks</h3>
+                            <canvas id="trafficChart" width="100%" height="220"></canvas>
+                        </div>
                     </div>
-                `;
-                return container;
-            }
+                </main>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div style="display:flex;align-items:center;gap:10;margin-bottom:16;">
+                        <img src="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1772638774" alt="Logo" style="height:36px;width:36px;border-radius:8;">
+                        <span style="font-family: var(--font-condensed);font-size:20px;font-weight:700;color:white;">ASilva Innovations</span>
+                    </div>
+                    <p style="color:rgba(255,255,255,.55);font-size:13;line-height:1.7;max-width:280px;">Exploring the intersection of systems thinking, human resilience, and holistic well-being — for a life of meaningful growth.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h5 style="font-size:12;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px;">Topics</h5>
+                    <a href="#" onclick="filterByCategory('systems')">Systems Innovations</a>
+                    <a href="#" onclick="filterByCategory('growth')">Personal Growth</a>
+                    <a href="#" onclick="filterByCategory('resilience')">Resilience</a>
+                    <a href="#" onclick="filterByCategory('wellbeing')">Well-Being</a>
+                    <a href="#" onclick="filterByCategory('mental')">Mental Health</a>
+                </div>
+                
+                <div class="footer-links">
+                    <h5 style="font-size:12;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px;">Resources</h5>
+                    <a href="#">Free eBook</a>
+                    <a href="#" onclick="showNewsletterModal()">Newsletter</a>
+                    <a href="#">Podcast</a>
+                    <a href="#">Courses</a>
+                    <a href="#">Coaching</a>
+                </div>
+                
+                <div class="footer-links">
+                    <h5 style="font-size:12;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:14px;">Company</h5>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+            
+            <div style="border-top:1px solid rgba(255,255,255,.08);padding-top:20;display:flex;justify-content:space-between;align-items:center;">
+                <span style="color:rgba(255,255,255,.35);font-size:12;font-family:var(--font-poppins);">© 2025 ASilva Innovations. All rights reserved. • SSL Secured 🔒</span>
+                <div style="display:flex;gap:16;">
+                    <a href="#" style="color:rgba(255,255,255,.45);font-size:12;">LinkedIn</a>
+                    <a href="#" style="color:rgba(255,255,255,.45);font-size:12;">Twitter</a>
+                    <a href="#" style="color:rgba(255,255,255,.45);font-size:12;">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Newsletter Modal -->
+    <div id="newsletterModal" class="modal-overlay" style="display:none;">
+        <div class="modal-content fade-up">
+            <div style="width:48px;height:48px;background:rgba(255,255,255,.12);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">
+                <i class="fas fa-envelope" style="color:white;font-size:22px;"></i>
+            </div>
+            <h2 style="font-size:32px;font-weight:700;color:var(--color-primary);margin-bottom:12;text-align:center;">Join 2,800+ Readers</h2>
+            <p style="color:rgba(255,255,255,.78);font-size:16;line-height:1.65;margin-bottom:32;text-align:center;">Get weekly insights on systems thinking, personal growth, and mental well-being — delivered every Tuesday morning.</p>
+            
+            <div id="subscribeForm">
+                <input type="email" id="emailInput" placeholder="Your best email address" style="width:100%;padding:13px 18px;border-radius:4;border:1px solid var(--color-border);background:var(--color-surface);margin-bottom:12px;font-size:14;font-family:var(--font-poppins);">
+                <button class="btn btn-primary" onclick="subscribeNewsletter()" style="width:100%;background:var(--color-primary);color:white;border:none;padding:13px 24px;font-weight:700;">Subscribe Free →</button>
+            </div>
+            
+            <div id="subscribedMessage" style="display:none;background:rgba(255,255,255,.12);border-radius:8;padding:16px 24px;color:white;text-align:center;">
+                <i class="fas fa-check" style="color:#74C69D;margin-right:8;"></i>You're subscribed! Welcome to the community.
+            </div>
+            
+            <p style="color:rgba(255,255,255,.45);font-size:12;margin-top:14;text-align:center;">No spam. Unsubscribe at any time. GDPR compliant.</p>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toastContainer" style="position:fixed;bottom:24px;right:24px;z-index:3000;"></div>
+
+    <!-- Application JavaScript -->
+    <script>
+        // ───────────────────────────────────────────────────────────
+        // STATE MANAGEMENT
+        // ───────────────────────────────────────────────────────────
+        let state = {
+            view: 'home',
+            darkMode: false,
+            fontScale: 1,
+            fontSize: 17,
+            currentCategory: 'all',
+            searchQuery: '',
+            featuredPosts: [1, 2],
+            posts: []
         };
 
-        // --- Helper Functions ---
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+        const POSTS_DATA = [
+            { id: 1, title: "Building Antifragile Systems", category: "systems", views: 4823, publishedAt: "January 15, 2025", readTime: 8, image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80", excerpt: "Discover how biological systems handle chaos and uncertainty." },
+            { id: 2, title: "The Compound Effect", category: "growth", views: 6241, publishedAt: "January 28, 2025", readTime: 6, image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&q=80", excerpt: "Science confirms what elite performers have known for decades." },
+            { id: 3, title: "Radical Acceptance", category: "mental", views: 5102, publishedAt: "February 5, 2025", readTime: 7, image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80", excerpt: "Borrowed from Dialectical Behavior Therapy." },
+            { id: 4, title: "Post-Traumatic Growth", category: "resilience", views: 3889, publishedAt: "February 12, 2025", readTime: 10, image: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?w=1200&q=80", excerpt: "Resilience isn't just bouncing back." },
+            { id: 5, title: "Environment Design", category: "wellbeing", views: 4156, publishedAt: "February 20, 2025", readTime: 9, image: "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=1200&q=80", excerpt: "Your environment shapes your behavior more powerfully than willpower." },
+            { id: 6, title: "Second-Order Thinking", category: "systems", views: 7234, publishedAt: "March 1, 2025", readTime: 7, image: "https://images.unsplash.com/photo-1534278854415-1c5d2e04dc6b?w=1200&q=80", excerpt: "Elite decision-makers think about consequences of consequences." },
+            { id: 7, title: "Nervous System Reset", category: "wellbeing", views: 5567, publishedAt: "March 8, 2025", readTime: 11, image: "https://images.unsplash.com/photo-1447452001602-7090c7ab2db3?w=1200&q=80", excerpt: "Chronic stress reshapes the architecture of your brain." },
+            { id: 8, title: "Identity-Based Growth", category: "growth", views: 6890, publishedAt: "March 15, 2025", readTime: 8, image: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=1200&q=80", excerpt: "Goal-setting fails because it focuses on achievements." },
+            { id: 9, title: "Digital Detox Protocol", category: "mental", views: 4421, publishedAt: "March 22, 2025", readTime: 9, image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=1200&q=80", excerpt: "Your attention is the most valuable resource you own." }
+        ];
+
+        // ───────────────────────────────────────────────────────────
+        // INITIALIZATION
+        // ───────────────────────────────────────────────────────────
+        document.addEventListener('DOMContentLoaded', function() {
+            initCharts();
+            loadPosts();
+            setupScrollListener();
+            loadSavedSettings();
+            renderPosts();
+        });
+
+        // ───────────────────────────────────────────────────────────
+        // THEME & DISPLAY SETTINGS
+        // ───────────────────────────────────────────────────────────
+        function toggleDarkMode() {
+            state.darkMode = !state.darkMode;
+            document.body.setAttribute('data-theme', state.darkMode ? 'dark' : 'light');
+            localStorage.setItem('theme', state.darkMode ? 'dark' : 'light');
+            updateThemeIcons();
         }
 
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toast-message').innerText = message;
-            toast.classList.remove('translate-y-20', 'opacity-0');
+        function setFontScale(scale) {
+            state.fontScale = scale;
+            document.documentElement.style.fontSize = scale + 'rem';
+            localStorage.setItem('fontScale', scale);
+            updateFontButtons();
+        }
+
+        function setFontSize(size) {
+            state.fontSize = size;
+            const articleContent = document.getElementById('articleBody');
+            if (articleContent) articleContent.style.fontSize = size + 'px';
+            updateFontButtons();
+        }
+
+        function updateThemeIcons() {
+            const mode = state.darkMode ? 'sun' : 'moon';
+            document.querySelectorAll('#siteHeader #themeIcon, #articleThemeIcon').forEach(icon => icon.className = `fas fa-${mode}`);
+            const text = state.darkMode ? 'Light' : 'Dark';
+            document.getElementById('themeText').textContent = text;
+            document.getElementById('articleThemeText').textContent = text;
+        }
+
+        function updateFontButtons() {
+            const buttons = document.querySelectorAll('#fontControls button, .article-font-control');
+            buttons.forEach((btn, idx) => {
+                const targetScale = [0.9, 1, 1.1];
+                if (Math.abs(targetScale[idx] - state.fontScale) < 0.01) {
+                    btn.style.background = 'var(--color-primary)';
+                    btn.style.color = 'white';
+                } else {
+                    btn.style.background = '';
+                    btn.style.color = '';
+                }
+            });
+        }
+
+        function loadSavedSettings() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                state.darkMode = savedTheme === 'dark';
+                document.body.setAttribute('data-theme', savedTheme);
+            }
+            const savedFont = localStorage.getItem('fontScale');
+            if (savedFont) {
+                state.fontScale = parseFloat(savedFont);
+                document.documentElement.style.fontSize = savedFont + 'rem';
+            }
+            updateThemeIcons();
+            updateFontButtons();
+        }
+
+        function saveSettings() {
+            localStorage.setItem('theme', state.darkMode ? 'dark' : 'light');
+            localStorage.setItem('fontScale', state.fontScale);
+        }
+
+        // ───────────────────────────────────────────────────────────
+        // NAVIGATION & ROUTING
+        // ───────────────────────────────────────────────────────────
+        function navigateTo(viewName) {
+            document.querySelectorAll('.view-container').forEach(container => container.style.display = 'none');
+            document.getElementById(`${viewName}View`).style.display = 'block';
+            window.scrollTo(0, 0);
+            state.view = viewName;
+            
+            if (viewName === 'home') {
+                renderPosts();
+            } else if (viewName === 'admin') {
+                initCharts();
+            }
+        }
+
+        function openArticle(postId) {
+            const post = POSTS_DATA.find(p => p.id === postId);
+            if (!post) return;
+            
+            document.getElementById('articleHeroImage').src = post.image;
+            document.getElementById('articleCategory').textContent = post.category.toUpperCase();
+            document.getElementById('articleTitle').textContent = post.title;
+            document.getElementById('articleDate').textContent = post.publishedAt;
+            document.getElementById('articleReadTime').textContent = post.readTime;
+            document.getElementById('articleViews').textContent = post.views.toLocaleString();
+            document.getElementById('articleExcerpt').textContent = post.excerpt;
+            document.getElementById('seoPreviewTitle').textContent = post.title.slice(0, 60);
+            document.getElementById('seoPreviewDesc').textContent = post.excerpt.slice(0, 150) + "...";
+            
+            document.getElementById('mainContent').querySelectorAll('.view-container').forEach(el => el.style.display = 'none');
+            document.getElementById('articleView').style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        // ───────────────────────────────────────────────────────────
+        // POST MANAGEMENT
+        // ───────────────────────────────────────────────────────────
+        function loadPosts() {
+            state.posts = POSTS_DATA;
+        }
+
+        function renderPosts() {
+            const grid = document.getElementById('postsGrid');
+            if (!grid) return;
+            
+            const filtered = state.posts.filter(post => {
+                if (state.currentCategory !== 'all' && post.category !== state.currentCategory) return false;
+                if (state.searchQuery && !post.title.toLowerCase().includes(state.searchQuery.toLowerCase())) return false;
+                return true;
+            });
+            
+            grid.innerHTML = filtered.map(post => createPostCardHTML(post)).join('');
+            document.getElementById('articleCount').textContent = `${filtered.length} articles`;
+        }
+
+        function createPostCardHTML(post) {
+            return `
+                <div class="post-card fade-up" onclick="openArticle(${post.id})">
+                    <img src="${post.image}" alt="${post.title}" class="post-image">
+                    <div class="post-content">
+                        <span class="category-pill" style="background:var(--color-surface-alt);color:var(--color-text);">${post.category}</span>
+                        <h3 class="post-title">${post.title}</h3>
+                        <p class="post-excerpt">${post.excerpt}</p>
+                        <div class="post-meta">
+                            <span><i class="fas fa-clock"></i> ${post.readTime} min</span>
+                            <span><i class="fas fa-eye"></i> ${post.views.toLocaleString()}</span>
+                            <span>${post.publishedAt}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function filterByCategory(category) {
+            state.currentCategory = category;
+            document.querySelectorAll('.cat-filter').forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.toLowerCase().includes(category === 'all' ? 'all' : category));
+            });
+            renderPosts();
+        }
+
+        function handleSearch() {
+            const query = document.getElementById('searchInput').value;
+            state.searchQuery = query.toLowerCase();
+            renderPosts();
+        }
+
+        function closeSearch() {
+            document.getElementById('searchBar').style.display = 'none';
+            document.getElementById('searchInput').value = '';
+            state.searchQuery = '';
+            renderPosts();
+        }
+
+        // ───────────────────────────────────────────────────────────
+        // SCROLL PROGRESS TRACKING
+        // ───────────────────────────────────────────────────────────
+        function setupScrollListener() {
+            const progressEl = document.getElementById('readingProgress');
+            const fillEl = document.getElementById('progressBarFill');
+            const percentEl = document.getElementById('progressPercent');
+            
+            window.addEventListener('scroll', () => {
+                const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (window.scrollY / docHeight) * 100;
+                progressEl.style.width = scrolled + '%';
+                fillEl.style.width = scrolled + '%';
+                percentEl.textContent = Math.round(scrolled) + '%';
+            });
+        }
+
+        // ───────────────────────────────────────────────────────────
+        // CHARTS & ANALYTICS
+        // ───────────────────────────────────────────────────────────
+        function initCharts() {
+            if (document.getElementById('trafficChart')) {
+                const ctx = document.getElementById('trafficChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                     {
+                        labels: ['Jan 1', 'Jan 8', 'Jan 15', 'Jan 22', 'Jan 29', 'Feb 5', 'Feb 12', 'Feb 19', 'Feb 26', 'Mar 5', 'Mar 12', 'Mar 19'],
+                        datasets: [{
+                            label: 'Page Views',
+                            data: [1200, 1850, 2400, 2100, 3200, 3800, 4200, 3900, 5100, 5800, 6200, 7100],
+                            borderColor: '#2D6A4F',
+                            backgroundColor: 'rgba(45, 106, 79, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            x: { ticks: { font: { family: 'var(--font-poppins)' }, color: 'var(--color-text-muted)' } },
+                            y: { ticks: { font: { family: 'var(--font-poppins)' }, color: 'var(--color-text-muted)' } }
+                        }
+                    }
+                });
+            }
+        }
+
+        // ───────────────────────────────────────────────────────────
+        // NEWSLETTER & SUBSCRIPTION
+        // ───────────────────────────────────────────────────────────
+        function showNewsletterModal() {
+            document.getElementById('newsletterModal').style.display = 'flex';
+        }
+
+        function subscribeNewsletter() {
+            const email = document.getElementById('emailInput').value;
+            if (!email || !email.includes('@')) {
+                showToast('Please enter a valid email address');
+                return;
+            }
+            document.getElementById('subscribeForm').style.display = 'none';
+            document.getElementById('subscribedMessage').style.display = 'block';
             setTimeout(() => {
-                toast.classList.add('translate-y-20', 'opacity-0');
+                document.getElementById('newsletterModal').style.display = 'none';
             }, 3000);
         }
 
-        // Editor Helpers
-        function createNewBlock(container) {
-            const block = document.createElement('div');
-            block.className = "editor-block group relative p-2 hover:bg-slate-50 dark:hover:bg-slate-700/50 rounded-lg transition-colors animate-slide-up";
-            block.draggable = true;
-            block.innerHTML = `
-                <div class="absolute left-0 top-2 opacity-0 group-hover:opacity-100 cursor-move text-slate-400 px-2 py-1">
-                    <i class="fas fa-grip-vertical"></i>
-                </div>
-                <div contenteditable="true" class="editor-content outline-none pl-8 min-h-[2rem] prose dark:prose-invert" placeholder="Type something..."></div>
-            `;
-            container.appendChild(block);
-            block.querySelector('.editor-content').focus();
+        function showToast(message) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            container.appendChild(toast);
+            setTimeout(() => {
+                container.removeChild(toast);
+            }, 3000);
         }
 
-        function getDragAfterElement(container, y) {
-            const draggableElements = [...container.querySelectorAll('.editor-block:not(.draggable-source)')];
-            return draggableElements.reduce((closest, child) => {
-                const box = child.getBoundingClientRect();
-                const offset = y - box.top - box.height / 2;
-                if (offset < 0 && offset > closest.offset) {
-                    return { offset: offset, element: child };
-                } else {
-                    return closest;
-                }
-            }, { offset: Number.NEGATIVE_INFINITY }).element;
+        // ───────────────────────────────────────────────────────────
+        // ADMIN TAB SWITCHING
+        // ───────────────────────────────────────────────────────────
+        function switchAdminTab(tab) {
+            document.querySelectorAll('.admin-nav-item').forEach(item => item.classList.remove('active'));
+            document.getElementById(`adminTab-${tab}`).classList.add('active');
+            document.getElementById('adminTitle').textContent = tab.charAt(0).toUpperCase() + tab.slice(1);
         }
-
-        function savePost() {
-            showToast('Draft saved successfully');
-        }
-
-        function publishPost() {
-            const title = document.getElementById('post-title-input').value;
-            if(!title) {
-                alert("Please enter a title");
-                return;
-            }
-            showToast('Post published!');
-            setTimeout(() => router.navigate('blog'), 1000);
-        }
-
-        // --- Initialization ---
-        document.addEventListener('DOMContentLoaded', () => {
-            theme.init();
-            router.navigate('home');
-        });
-
     </script>
 </body>
 </html>
