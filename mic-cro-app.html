@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Alvin M. Silva — Chief Risk Officer | Maharlika Investment Corporation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #05213A;
+    --navy-mid: #0A3255;
+    --navy-light: #0E4272;
+    --gold: #C9922A;
+    --gold-light: #E8B84B;
+    --gold-pale: #F5DFA0;
+    --gold-faint: #FDF4E0;
+    --cream: #FAF7F2;
+    --white: #FFFFFF;
+    --text-dark: #0D1B2A;
+    --text-mid: #2E4A62;
+    --text-muted: #5C7A94;
+    --text-light: #8FA8BE;
+    --border: rgba(201,146,42,0.2);
+    --border-subtle: rgba(5,33,58,0.1);
+    --shadow-card: 0 4px 32px rgba(5,33,58,0.10);
+    --shadow-gold: 0 8px 48px rgba(201,146,42,0.18);
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAVIGATION ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(5,33,58,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,146,42,0.25);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-brand {
+    display: flex; align-items: center; gap: 12px;
+  }
+  .nav-logo { height: 36px; width: auto; border-radius: 4px; }
+  .nav-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px; font-weight: 600; color: var(--gold-pale);
+    letter-spacing: 0.04em;
+  }
+  .nav-links {
+    display: flex; gap: 0; list-style: none;
+  }
+  .nav-links a {
+    display: block; padding: 8px 14px;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.07em;
+    text-transform: uppercase; color: rgba(245,223,160,0.7);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+  .nav-cta {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--navy) !important;
+    background: var(--gold); padding: 7px 16px !important;
+    border-radius: 3px; transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--gold-light) !important; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+    padding-top: 64px;
+  }
+  .hero-geo {
+    position: absolute; inset: 0; pointer-events: none; overflow: hidden;
+  }
+  .geo-ring {
+    position: absolute; border-radius: 50%;
+    border: 1px solid rgba(201,146,42,0.12);
+  }
+  .geo-ring:nth-child(1) { width: 600px; height: 600px; top: -100px; right: -100px; }
+  .geo-ring:nth-child(2) { width: 900px; height: 900px; top: -250px; right: -250px; }
+  .geo-ring:nth-child(3) { width: 1200px; height: 1200px; top: -400px; right: -400px; }
+  .geo-line {
+    position: absolute; bottom: 0; left: 50%;
+    width: 1px; height: 80px;
+    background: linear-gradient(to bottom, rgba(201,146,42,0.5), transparent);
+  }
+  .hero-left {
+    display: flex; flex-direction: column;
+    justify-content: center; padding: 6rem 4rem 4rem 5rem;
+    position: relative; z-index: 2;
+  }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-bottom: 1.8rem;
+  }
+  .eyebrow-line {
+    width: 32px; height: 1px; background: var(--gold);
+  }
+  .eyebrow-text {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold);
+  }
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(44px, 5vw, 68px);
+    font-weight: 700; color: var(--white);
+    line-height: 1.05; margin-bottom: 0.5rem;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-mdm {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 400; font-style: italic;
+    color: var(--gold-light); margin-bottom: 1rem;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+  .hero-role {
+    font-size: 13px; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5); margin-bottom: 2.2rem;
+    animation: fadeUp 0.8s 0.15s ease both;
+  }
+  .hero-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px; font-style: italic; font-weight: 400;
+    color: rgba(245,223,160,0.85);
+    line-height: 1.65;
+    border-left: 2px solid var(--gold);
+    padding-left: 1.2rem; margin-bottom: 2.8rem;
+    max-width: 460px;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(4,1fr);
+    gap: 1rem; margin-bottom: 2.5rem;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+  .stat-box {
+    border: 1px solid rgba(201,146,42,0.25);
+    border-radius: 6px; padding: 1rem 0.8rem; text-align: center;
+    transition: border-color 0.2s;
+  }
+  .stat-box:hover { border-color: rgba(201,146,42,0.6); }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-weight: 700; color: var(--gold-light);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 10px; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: rgba(255,255,255,0.4);
+    margin-top: 4px;
+  }
+  .hero-pills {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+  .pill {
+    font-size: 11px; font-weight: 500; padding: 5px 12px;
+    border-radius: 20px; border: 1px solid;
+    letter-spacing: 0.04em;
+  }
+  .pill-gold {
+    background: rgba(201,146,42,0.15); border-color: rgba(201,146,42,0.4);
+    color: var(--gold-pale);
+  }
+  .pill-navy {
+    background: rgba(14,66,114,0.5); border-color: rgba(14,66,114,0.8);
+    color: rgba(255,255,255,0.7);
+  }
+  .hero-right {
+    display: flex; align-items: center; justify-content: center;
+    position: relative; z-index: 2; padding: 6rem 4rem 4rem 2rem;
+  }
+  .photo-wrap {
+    position: relative;
+    animation: fadeIn 1s 0.3s ease both;
+  }
+  .photo-frame {
+    width: 340px; height: 420px;
+    border-radius: 8px; overflow: hidden;
+    border: 2px solid rgba(201,146,42,0.4);
+    box-shadow: 0 24px 80px rgba(0,0,0,0.5), 0 0 0 8px rgba(5,33,58,0.8);
+    position: relative; z-index: 1;
+  }
+  .photo-frame img {
+    width: 100%; height: 100%; object-fit: cover; object-position: top center;
+  }
+  .photo-deco-1 {
+    position: absolute; top: -16px; left: -16px;
+    width: 100px; height: 100px;
+    border-top: 2px solid var(--gold); border-left: 2px solid var(--gold);
+    border-radius: 2px;
+  }
+  .photo-deco-2 {
+    position: absolute; bottom: -16px; right: -16px;
+    width: 100px; height: 100px;
+    border-bottom: 2px solid var(--gold); border-right: 2px solid var(--gold);
+    border-radius: 2px;
+  }
+  .photo-badge {
+    position: absolute; bottom: -32px; left: 50%; transform: translateX(-50%);
+    background: var(--gold); color: var(--navy);
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; padding: 7px 20px; border-radius: 3px;
+    white-space: nowrap; z-index: 2;
+    box-shadow: 0 4px 16px rgba(201,146,42,0.4);
+  }
+  .hero-mic-logo {
+    position: absolute; bottom: 3rem; right: 4rem;
+    text-align: right;
+  }
+  .mic-label {
+    font-size: 9px; font-weight: 600; letter-spacing: 0.15em;
+    text-transform: uppercase; color: rgba(255,255,255,0.3);
+    margin-bottom: 4px;
+  }
+  .mic-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px; font-weight: 600; color: rgba(201,146,42,0.6);
+  }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 100px 0; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 3rem; }
+  .section-tag {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-bottom: 1rem;
+  }
+  .tag-line { width: 28px; height: 1px; background: var(--gold); }
+  .tag-text {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold);
+  }
+  .section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 46px); font-weight: 700;
+    color: var(--navy); line-height: 1.1; margin-bottom: 0.6rem;
+  }
+  .section-heading.light { color: var(--white); }
+  .section-sub {
+    font-size: 15px; color: var(--text-muted); line-height: 1.6;
+    max-width: 560px; margin-bottom: 3.5rem;
+  }
+  .section-sub.light { color: rgba(255,255,255,0.5); }
+
+  /* ── ABOUT ── */
+  #about { background: var(--white); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    align-items: start;
+  }
+  .about-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 500; line-height: 1.55;
+    color: var(--text-dark); margin-bottom: 1.5rem;
+  }
+  .about-body {
+    font-size: 14px; line-height: 1.8; color: var(--text-mid);
+    margin-bottom: 2rem;
+  }
+  .credential-stack { display: flex; flex-direction: column; gap: 0.6rem; }
+  .cred-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-subtle); border-radius: 6px;
+    background: var(--cream);
+  }
+  .cred-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--gold); flex-shrink: 0; margin-top: 5px;
+  }
+  .cred-text { font-size: 13px; color: var(--text-mid); line-height: 1.4; }
+  .cred-text strong { color: var(--navy); font-weight: 600; }
+  .institutions {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+  .inst-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--text-light);
+    margin-bottom: 0.75rem;
+  }
+  .inst-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .inst-pill {
+    font-size: 11px; font-weight: 500; padding: 4px 10px;
+    border-radius: 3px; background: var(--cream);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-mid);
+  }
+  .about-right { }
+  .profile-card {
+    background: var(--navy);
+    border-radius: 10px; overflow: hidden;
+    box-shadow: var(--shadow-card);
+  }
+  .profile-card-img {
+    width: 100%; height: 260px; object-fit: cover; object-position: top;
+    display: block;
+  }
+  .profile-card-body { padding: 1.5rem; }
+  .profile-card-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 3px;
+  }
+  .profile-card-title {
+    font-size: 12px; color: var(--gold-light); font-weight: 500;
+    letter-spacing: 0.06em; margin-bottom: 1rem;
+  }
+  .profile-card-links { display: flex; flex-direction: column; gap: 0.5rem; }
+  .contact-row {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 12px; color: rgba(255,255,255,0.6);
+  }
+  .contact-icon {
+    width: 28px; height: 28px; border-radius: 4px;
+    background: rgba(201,146,42,0.15); border: 1px solid rgba(201,146,42,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; flex-shrink: 0;
+  }
+  .contact-val { color: rgba(255,255,255,0.85); }
+  .books-strip {
+    margin-top: 1.5rem; padding-top: 1.25rem;
+    border-top: 1px solid rgba(201,146,42,0.2);
+  }
+  .books-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+  .book-item {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px; font-style: italic; color: rgba(245,223,160,0.8);
+    padding: 4px 0; border-bottom: 1px solid rgba(201,146,42,0.1);
+  }
+  .book-item:last-child { border-bottom: none; }
+
+  /* ── EXPERTISE ── */
+  #expertise { background: var(--cream); }
+  .exp-grid {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+  }
+  .exp-card {
+    background: var(--white);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px; padding: 1.5rem;
+    transition: box-shadow 0.25s, border-color 0.25s, transform 0.25s;
+    position: relative; overflow: hidden;
+  }
+  .exp-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: var(--gold);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .exp-card:hover {
+    box-shadow: var(--shadow-card); border-color: rgba(201,146,42,0.3);
+    transform: translateY(-3px);
+  }
+  .exp-card:hover::before { transform: scaleX(1); }
+  .exp-icon {
+    font-size: 24px; margin-bottom: 0.8rem;
+  }
+  .exp-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 600; color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+  .exp-body {
+    font-size: 13px; line-height: 1.65; color: var(--text-muted);
+  }
+  .exp-bar-wrap {
+    margin-top: 1rem; background: var(--border-subtle);
+    border-radius: 2px; height: 2px; overflow: hidden;
+  }
+  .exp-bar {
+    height: 2px; background: var(--gold); border-radius: 2px;
+    transition: width 1s ease;
+  }
+
+  /* ── PILLARS ── */
+  #pillars { background: var(--navy); position: relative; overflow: hidden; }
+  #pillars::before {
+    content: ''; position: absolute;
+    top: 0; right: 0; width: 50%; height: 100%;
+    background: rgba(14,66,114,0.3); pointer-events: none;
+  }
+  .pillars-intro {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    margin-bottom: 4rem; align-items: end;
+  }
+  .pillars-grid {
+    display: flex; flex-direction: column; gap: 0;
+  }
+  .pillar-item {
+    display: grid; grid-template-columns: 72px 1fr;
+    gap: 0;
+    border-bottom: 1px solid rgba(201,146,42,0.12);
+    padding: 1.8rem 0; cursor: default;
+    transition: background 0.2s;
+    border-radius: 6px;
+  }
+  .pillar-item:hover { background: rgba(201,146,42,0.04); }
+  .pillar-item:last-child { border-bottom: none; }
+  .pillar-num-wrap {
+    padding-top: 4px;
+  }
+  .pillar-num {
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 1px solid rgba(201,146,42,0.4);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 600; color: var(--gold);
+  }
+  .pillar-content { }
+  .pillar-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 600; color: var(--white);
+    margin-bottom: 0.5rem; line-height: 1.2;
+  }
+  .pillar-body {
+    font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.55);
+  }
+  .pillar-tag {
+    display: inline-block; margin-top: 0.6rem;
+    font-size: 10px; font-weight: 600; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold);
+    background: rgba(201,146,42,0.12); padding: 3px 10px;
+    border-radius: 2px;
+  }
+
+  /* ── COMPETENCIES ── */
+  #competencies { background: var(--white); }
+  .comp-layout {
+    display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start;
+  }
+  .comp-sidebar { position: sticky; top: 80px; }
+  .comp-eval-badge {
+    background: var(--navy);
+    border-radius: 8px; padding: 1.5rem;
+    margin-top: 2rem;
+  }
+  .eval-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem;
+  }
+  .eval-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px; font-style: italic;
+    color: rgba(255,255,255,0.8); line-height: 1.65;
+  }
+  .qa-stack { display: flex; flex-direction: column; gap: 1.2rem; }
+  .qa-card {
+    border: 1px solid var(--border-subtle); border-radius: 8px;
+    overflow: hidden; background: var(--white);
+    transition: box-shadow 0.2s;
+  }
+  .qa-card:hover { box-shadow: var(--shadow-card); }
+  .qa-header {
+    background: var(--cream); padding: 1rem 1.25rem;
+    display: flex; align-items: center; gap: 12px;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .qa-badge {
+    width: 32px; height: 32px; border-radius: 4px;
+    background: var(--navy); display: flex; align-items: center;
+    justify-content: center; font-size: 11px; font-weight: 700;
+    color: var(--gold); flex-shrink: 0;
+  }
+  .qa-comp-name {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--text-mid);
+  }
+  .qa-q-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px; font-style: italic; color: var(--text-dark);
+    padding: 1rem 1.25rem; border-bottom: 1px solid var(--border-subtle);
+    line-height: 1.5;
+  }
+  .qa-ans-body {
+    padding: 1rem 1.25rem;
+  }
+  .qa-ans-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .qa-ans-text {
+    font-size: 13px; line-height: 1.7; color: var(--text-muted);
+  }
+  .spot-badge {
+    display: inline-block; margin-top: 0.75rem;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; background: #E8F5E9;
+    color: #2E7D32; padding: 3px 10px; border-radius: 2px;
+  }
+
+  /* ── ACHIEVEMENTS ── */
+  #achievements { background: var(--cream); }
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: ''; position: absolute;
+    left: 0; top: 8px; bottom: 0;
+    width: 1px; background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+  .timeline-item {
+    position: relative; padding: 0 0 2.5rem 2rem;
+    cursor: default;
+  }
+  .timeline-dot {
+    position: absolute; left: -2rem; top: 5px;
+    transform: translateX(-50%);
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--gold); border: 2px solid var(--cream);
+  }
+  .timeline-year {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+  .timeline-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px; font-weight: 600; color: var(--navy);
+    margin-bottom: 0.4rem; line-height: 1.3;
+  }
+  .timeline-body {
+    font-size: 13px; line-height: 1.65; color: var(--text-muted);
+  }
+  .timeline-2col {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0 4rem;
+  }
+
+  /* ── RECOMMENDATIONS ── */
+  #recommendations { background: var(--navy); }
+  .rec-grid {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem;
+    margin-top: 3rem;
+  }
+  .rec-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201,146,42,0.18);
+    border-radius: 8px; padding: 1.5rem;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .rec-card:hover {
+    background: rgba(201,146,42,0.07);
+    border-color: rgba(201,146,42,0.4);
+  }
+  .rec-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px; font-weight: 700; color: rgba(201,146,42,0.2);
+    line-height: 1; margin-bottom: 0.8rem;
+  }
+  .rec-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 600; color: var(--white);
+    margin-bottom: 0.6rem; line-height: 1.2;
+  }
+  .rec-body {
+    font-size: 13px; line-height: 1.65; color: rgba(255,255,255,0.5);
+    margin-bottom: 0.8rem;
+  }
+  .rec-value-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem;
+  }
+  .rec-value {
+    font-size: 12px; color: rgba(201,146,42,0.7);
+  }
+
+  /* ── COLLABORATIVE QUESTIONS ── */
+  #questions { background: var(--white); }
+  .cq-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  }
+  .cq-card {
+    border-left: 3px solid var(--gold);
+    background: var(--cream);
+    border-radius: 0 6px 6px 0;
+    padding: 1.25rem 1.25rem;
+    transition: background 0.2s;
+  }
+  .cq-card:hover { background: var(--gold-faint); }
+  .cq-topic {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .cq-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px; font-style: italic; color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  /* ── VERDICT ── */
+  #verdict { background: var(--navy); text-align: center; padding: 120px 0; }
+  .verdict-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(24px, 3vw, 36px);
+    font-style: italic; font-weight: 400;
+    color: var(--white); line-height: 1.55;
+    max-width: 740px; margin: 0 auto 1rem;
+  }
+  .verdict-attr {
+    font-size: 12px; color: rgba(201,146,42,0.7);
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 4rem;
+  }
+  .verdict-stats {
+    display: grid; grid-template-columns: repeat(6,1fr);
+    gap: 1px; background: rgba(201,146,42,0.15);
+    border: 1px solid rgba(201,146,42,0.2);
+    border-radius: 8px; overflow: hidden;
+    max-width: 900px; margin: 0 auto 3rem;
+  }
+  .vs-cell {
+    background: var(--navy);
+    padding: 1.5rem 1rem; text-align: center;
+    transition: background 0.2s;
+  }
+  .vs-cell:hover { background: rgba(201,146,42,0.08); }
+  .vs-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px; font-weight: 700; color: var(--gold-light);
+    line-height: 1;
+  }
+  .vs-label {
+    font-size: 10px; color: rgba(255,255,255,0.35);
+    text-transform: uppercase; letter-spacing: 0.1em;
+    margin-top: 4px;
+  }
+  .verdict-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--gold); color: var(--navy);
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; padding: 14px 28px; border-radius: 4px;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(201,146,42,0.35);
+    transition: background 0.2s, transform 0.2s;
+  }
+  .verdict-cta:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #030F1B;
+    padding: 2.5rem 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px; color: rgba(201,146,42,0.6);
+  }
+  .footer-note {
+    font-size: 11px; color: rgba(255,255,255,0.2);
+    text-align: right;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+  }
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    #hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 3rem 1.5rem 2rem; }
+    .hero-stats { grid-template-columns: repeat(2,1fr); }
+    .about-grid, .comp-layout, .pillars-intro,
+    .cq-grid, .timeline-2col { grid-template-columns: 1fr; }
+    .exp-grid, .rec-grid { grid-template-columns: 1fr; }
+    .verdict-stats { grid-template-columns: repeat(3,1fr); }
+    .nav-links { display: none; }
+    .container { padding: 0 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ NAVIGATION ══ -->
+<nav>
+  <div class="nav-brand">
+    <img src="https://appimize.app/assets/apps/user_1097/images/288dd899974a_850_1097.png" alt="Alvin Silva Logo" class="nav-logo"/>
+    <span class="nav-name">Alvin M. Silva, MDM</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">Profile</a></li>
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#pillars">CRO Vision</a></li>
+    <li><a href="#competencies">Competencies</a></li>
+    <li><a href="#recommendations">Recommendations</a></li>
+    <li><a href="#verdict">Verdict</a></li>
+    <li><a href="mailto:alvin.silva@asilvainnovations.com" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-geo">
+    <div class="geo-ring"></div>
+    <div class="geo-ring"></div>
+    <div class="geo-ring"></div>
+    <div class="geo-line"></div>
+  </div>
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Chief Risk Officer Application — Maharlika Investment Corporation</span>
+    </div>
+    <h1 class="hero-name">Alvin M. Silva</h1>
+    <div class="hero-mdm">Master in Development Management, AIM</div>
+    <div class="hero-role">Development Management Professional &amp; Resilience Expert</div>
+    <blockquote class="hero-quote">
+      "Risk management should move beyond mere protection — it must serve as a catalyst for informed, courageous decision-making that drives national progress and long-term stability."
+    </blockquote>
+    <div class="hero-stats">
+      <div class="stat-box">
+        <div class="stat-num">18+</div>
+        <div class="stat-label">Years Global Experience</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">50+</div>
+        <div class="stat-label">International Projects</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">100+</div>
+        <div class="stat-label">Organizations Served</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Books &amp; Research</div>
+      </div>
+    </div>
+    <div class="hero-pills">
+      <span class="pill pill-gold">DDRiVE-M Architect</span>
+      <span class="pill pill-gold">ESG &amp; DRR Expert</span>
+      <span class="pill pill-gold">BIRD 2026–2035 Co-Architect</span>
+      <span class="pill pill-navy">ADB · WHO · World Bank · USAID</span>
+      <span class="pill pill-navy">Harvard · MIT Certified</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="photo-wrap">
+      <div class="photo-deco-1"></div>
+      <div class="photo-frame">
+        <img src="https://appimize.app/assets/apps/user_1097/images/102a77146921_587_1097.png" alt="Alvin M. Silva"/>
+      </div>
+      <div class="photo-deco-2"></div>
+      <div class="photo-badge">CRO Candidate</div>
+    </div>
+    <div class="hero-mic-logo">
+      <div class="mic-label">Applying to</div>
+      <div class="mic-name">Maharlika Investment<br/>Corporation</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="section-tag reveal"><div class="tag-line"></div><span class="tag-text">Executive Profile</span></div>
+        <h2 class="section-heading reveal">The Strategic Catalyst MIC Needs</h2>
+        <p class="about-intro reveal">
+          A development management professional who re-engineers how institutions think about, measure, and act on risk — turning uncertainty into strategic advantage.
+        </p>
+        <p class="about-body reveal">
+          Alvin Silva brings nearly two decades of co-architecting resilience frameworks for global and national institutions. His philosophy treats risk management not as a defensive shield but as the engine of informed, courageous institutional action — precisely the mandate the Maharlika Investment Corporation requires as the Philippines' first sovereign wealth fund.
+        </p>
+        <p class="about-body reveal">
+          Currently co-architecting the <strong>Bangsamoro Investment Roadmap Development (BIRD) 2026–2035</strong> — a 10-year framework attracting high-impact investments to complex post-conflict economic landscapes — Silva's work maps directly onto MIC's challenge of balancing national development with rigorous financial safeguards in a volatile global economy.
+        </p>
+        <div class="credential-stack reveal">
+          <div class="cred-item">
+            <div class="cred-dot"></div>
+            <div class="cred-text"><strong>Master in Development Management</strong> — Asian Institute of Management</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-dot"></div>
+            <div class="cred-text"><strong>Certified Security Risk Management Professional (SRMP)</strong> — Emergency Response &amp; Public Service Continuity</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-dot"></div>
+            <div class="cred-text"><strong>Certifications</strong> — Harvard University · MIT · Development Academy of the Philippines</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-dot"></div>
+            <div class="cred-text"><strong>Business Continuity Champion</strong> — Certified BCM Facilitator &amp; PSCP Trainer</div>
+          </div>
+          <div class="cred-item">
+            <div class="cred-dot"></div>
+            <div class="cred-text"><strong>Published Author</strong> — "Building Resilience" &amp; "Personal Resilience: The Path to Oneness"</div>
+          </div>
+        </div>
+        <div class="institutions reveal">
+          <div class="inst-label">Institutions &amp; Partners</div>
+          <div class="inst-pills">
+            <span class="inst-pill">ADB</span><span class="inst-pill">WHO</span><span class="inst-pill">World Bank</span>
+            <span class="inst-pill">USAID</span><span class="inst-pill">UNICEF</span><span class="inst-pill">ECHO</span>
+            <span class="inst-pill">MMDA</span><span class="inst-pill">DOF</span><span class="inst-pill">BARMM</span>
+            <span class="inst-pill">TESDA</span><span class="inst-pill">German Red Cross</span><span class="inst-pill">Action Against Hunger</span>
+            <span class="inst-pill">TAF</span><span class="inst-pill">AIM</span><span class="inst-pill">De La Salle University</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-right reveal">
+        <div class="profile-card">
+          <img src="https://appimize.app/assets/apps/user_1097/images/102a77146921_587_1097.png" alt="Alvin M. Silva" class="profile-card-img"/>
+          <div class="profile-card-body">
+            <div class="profile-card-name">Alvin M. Silva, MDM</div>
+            <div class="profile-card-title">Development Management Professional &amp; Resilience Expert</div>
+            <div class="profile-card-links">
+              <div class="contact-row">
+                <div class="contact-icon">📱</div>
+                <span class="contact-val">+63 917 855 5134</span>
+              </div>
+              <div class="contact-row">
+                <div class="contact-icon">✉️</div>
+                <span class="contact-val">alvin.silva@asilvainnovations.com</span>
+              </div>
+              <div class="contact-row">
+                <div class="contact-icon">🌐</div>
+                <span class="contact-val">alvin.asilvainnovations.com</span>
+              </div>
+            </div>
+            <div class="books-strip">
+              <div class="books-label">Published Works</div>
+              <div class="book-item">"Building Resilience: The Path to a More Fulfilling and Resilient Life"</div>
+              <div class="book-item">"Personal Resilience: The Path to Oneness"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EXPERTISE ══ -->
+<section id="expertise">
+  <div class="container">
+    <div class="section-tag reveal"><div class="tag-line"></div><span class="tag-text">Core Expertise</span></div>
+    <h2 class="section-heading reveal">Eight Domains of Mastery</h2>
+    <p class="section-sub reveal">Each competency directly maps to MIC's mandate for optimal risk management, sustainable investment, and national development leadership.</p>
+    <div class="exp-grid">
+      <div class="exp-card reveal">
+        <div class="exp-icon">🌍</div>
+        <div class="exp-title">Climate Change Adaptation</div>
+        <div class="exp-body">More than 15 years of global CCA strategy with ECHO, USAID, World Bank, and international organizations — treating climate risk as core financial risk, not a compliance footnote.</div>
+        <div class="exp-bar-wrap"><div class="exp-bar" style="width:95%"></div></div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">🛡️</div>
+        <div class="exp-title">Disaster Risk Reduction</div>
+        <div class="exp-body">Certified DRR practitioner with a proven track record implementing resilience projects across communities, institutions, and government agencies worldwide, including PHP 190M project design.</div>
+        <div class="exp-bar-wrap"><div class="exp-bar" style="width:97%"></div></div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">💡</div>
+        <div class="exp-title">Systems Innovation</div>
+        <div class="exp-body">Designer and architect of the DDRiVE-M platform — a data-driven ERM architecture built on BCM principles enabling multi-stakeholder, enterprise-scale risk oversight with AI/ML dashboards.</div>
+        <div class="exp-bar-wrap"><div class="exp-bar" style="width:92%"></div></div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">📊</div>
+        <div class="exp-title">Organizational Development</div>
+        <div class="exp-body">Expert in performance management systems with intuitive dashboards for government agencies, NGOs, and IFIs — translating complex risk landscapes into actionable executive intelligence.</div>
+        <div class="exp-bar-wrap"><div class="exp-bar" style="width:90%"></div></div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">🎯</div>
+        <div class="exp-title">Strategic Thinking &amp; Planning</div>
+        <div class="exp-body">Leads by anticipating future challenges, setting clear long-term goals, and aligning resources, partnerships, and actions across complex environments — the BIRD 2026–2035 as testament.</div>
+        <div class="exp-bar-wrap"><div class="exp-bar" style="width:93%"></div></div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">🎓</div>
+        <div class="exp-title">Capacity Building</div>
+        <div class="exp-body">Experienced trainer with MDM from AIM; conducts workshops and mentoring globally — including training senior Department of Finance officials in risk governance and systems thinking.</div>
+        <div class="exp-bar-wrap"><div class="exp-bar" style="width:88%"></div></div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">🔒</div>
+        <div class="exp-title">Security Risk Management</div>
+        <div class="exp-body">Certified Security Risk Management Professional (SRMP) specializing in humanitarian operations and emergency response coordination — ensuring institutional continuity under crisis conditions.</div>
+        <div class="exp-bar-wrap"><div class="exp-bar" style="width:91%"></div></div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">🌱</div>
+        <div class="exp-title">ESG &amp; Sustainability Policy</div>
+        <div class="exp-body">Expert in GHG Emission Inventory, E&S accountability frameworks, and ESG reporting — embedding sustainability into investment valuation at DLSU, MMDA, and across global IFI partnerships.</div>
+        <div class="exp-bar-wrap"><div class="exp-bar" style="width:96%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CRO PILLARS ══ -->
+<section id="pillars">
+  <div class="container">
+    <div class="pillars-intro">
+      <div>
+        <div class="section-tag reveal"><div class="tag-line" style="background:var(--gold-light)"></div><span class="tag-text" style="color:var(--gold-light)">CRO Vision</span></div>
+        <h2 class="section-heading light reveal">Five Strategic Pillars for MIC</h2>
+      </div>
+      <div>
+        <p class="section-sub light reveal">
+          Silva's CRO philosophy reframes risk as an engine — not a brake — for the Philippines' sovereign wealth fund. Each pillar is grounded in proven, deployable experience rather than theory.
+        </p>
+      </div>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-item reveal">
+        <div class="pillar-num-wrap"><div class="pillar-num">01</div></div>
+        <div class="pillar-content">
+          <div class="pillar-title">Risk as an Enabler of Courageous Decision-Making</div>
+          <div class="pillar-body">Silva redefines the CRO role as a strategic catalyst. Rather than constraining MIC's mandate, his risk-informed planning enables the fund to pivot and thrive during global market disruptions — not merely survive them. Risk intelligence becomes the basis for bold, evidence-backed investment action.</div>
+          <span class="pillar-tag">Strategic Catalyst</span>
+        </div>
+      </div>
+      <div class="pillar-item reveal">
+        <div class="pillar-num-wrap"><div class="pillar-num">02</div></div>
+        <div class="pillar-content">
+          <div class="pillar-title">Navigating Complex Economic Landscapes</div>
+          <div class="pillar-body">His current co-architecture of BIRD 2026–2035 — a 10-year framework for attracting high-impact investments to a complex, post-conflict economic landscape — maps directly onto MIC's challenge. Conflict-sensitive programming and multi-sector partnerships reveal risks that traditional financial models overlook entirely.</div>
+          <span class="pillar-tag">BIRD Methodology</span>
+        </div>
+      </div>
+      <div class="pillar-item reveal">
+        <div class="pillar-num-wrap"><div class="pillar-num">03</div></div>
+        <div class="pillar-content">
+          <div class="pillar-title">ESG as a Core Financial Guardrail</div>
+          <div class="pillar-body">With 15+ years in Climate Change Adaptation and Disaster Risk Reduction, Silva treats climate risk as financial risk. His E&amp;S accountability frameworks — deployed at De La Salle University and the MMDA — serve as operational models for embedding ESG into MIC's portfolio valuation and global investor transparency standards.</div>
+          <span class="pillar-tag">ESG Integration</span>
+        </div>
+      </div>
+      <div class="pillar-item reveal">
+        <div class="pillar-num-wrap"><div class="pillar-num">04</div></div>
+        <div class="pillar-content">
+          <div class="pillar-title">Systems Innovation for Real-Time Oversight</div>
+          <div class="pillar-body">The DDRiVE-M platform — powered by AI and machine learning, built on BCM principles — provides the MIC Board with real-time foresight into portfolio volatility and institutional resilience. This moves MIC beyond static quarterly reporting toward a living, adaptive, data-driven risk architecture at enterprise scale.</div>
+          <span class="pillar-tag">DDRiVE-M Platform</span>
+        </div>
+      </div>
+      <div class="pillar-item reveal">
+        <div class="pillar-num-wrap"><div class="pillar-num">05</div></div>
+        <div class="pillar-content">
+          <div class="pillar-title">Bridging Public Policy and Global Finance</div>
+          <div class="pillar-body">Having trained DOF senior officials and advised the MMDA for over three years, Silva understands the nuances of Philippine public sector governance. As CRO, he ensures that MIC's investments — from strategic port acquisitions to high-impact sectors — align with national priorities while satisfying the transparency and governance standards demanded by global partners.</div>
+          <span class="pillar-tag">Policy-Finance Bridge</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COMPETENCIES Q&A ══ -->
+<section id="competencies">
+  <div class="container">
+    <div class="comp-layout">
+      <div class="comp-sidebar">
+        <div class="section-tag reveal"><div class="tag-line"></div><span class="tag-text">Competency Assessment</span></div>
+        <h2 class="section-heading reveal">Interview Q&amp;A Preview</h2>
+        <p style="font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:1.5rem" class="reveal">
+          All five MIC-required competencies assessed against Silva's direct, verifiable experience. Each response is anchored in deployable projects and measurable institutional outcomes.
+        </p>
+        <div class="comp-eval-badge reveal">
+          <div class="eval-label">Evaluator's Assessment</div>
+          <div class="eval-text">"Alvin Silva presents a unique blend of technical ERM mastery and deep sustainability expertise. His experience architecting long-term investment roadmaps and training DOF officials makes him a spot-on fit for the MIC CRO role."</div>
+        </div>
+      </div>
+      <div class="qa-stack">
+        <div class="qa-card reveal">
+          <div class="qa-header">
+            <div class="qa-badge">C1</div>
+            <div class="qa-comp-name">Strategic Risk Architecting &amp; Investment Foresight</div>
+          </div>
+          <div class="qa-q-text">"MIC is tasked with managing the Philippines' first sovereign wealth fund in a complex global economy. Can you demonstrate your ability to architect a long-term risk-informed investment framework for high-impact sectors?"</div>
+          <div class="qa-ans-body">
+            <div class="qa-ans-label">Silva's Response</div>
+            <div class="qa-ans-text">He draws directly on the Bangsamoro Investment Roadmap Development (BIRD) 2026–2035 — a 10-year strategic framework to secure investments in a complex, post-conflict landscape. This demonstrates his capacity to balance aggressive growth with rigorous risk-informed safeguards through foresight and adaptability, precisely mirroring MIC's mandate for long-term value creation.</div>
+            <span class="spot-badge">Spot-On Match</span>
+          </div>
+        </div>
+        <div class="qa-card reveal">
+          <div class="qa-header">
+            <div class="qa-badge">C2</div>
+            <div class="qa-comp-name">Enterprise Risk Management &amp; Systems Innovation</div>
+          </div>
+          <div class="qa-q-text">"As CRO, you must oversee a 'rigorous framework' for investment decisions. How have you utilized technology and systems innovation to institutionalize ERM principles?"</div>
+          <div class="qa-ans-body">
+            <div class="qa-ans-label">Silva's Response</div>
+            <div class="qa-ans-text">He presents the DDRiVE-M platform — a Data-Driven Risk &amp; Vulnerability Evaluation and Management architecture built on BCM principles for multi-stakeholder collaboration. His AI/ML background enables intuitive dashboards that track performance and risk in real-time for large-scale organizations, transforming MIC's risk posture from reactive to anticipatory.</div>
+            <span class="spot-badge">Spot-On Match</span>
+          </div>
+        </div>
+        <div class="qa-card reveal">
+          <div class="qa-header">
+            <div class="qa-badge">C3</div>
+            <div class="qa-comp-name">ESG Leadership &amp; Sustainability</div>
+          </div>
+          <div class="qa-q-text">"MIC prioritizes 'sustainable investments' and transparency. How will you integrate ESG principles into our core risk assessments to ensure we meet international standards?"</div>
+          <div class="qa-ans-body">
+            <div class="qa-ans-label">Silva's Response</div>
+            <div class="qa-ans-text">Citing 15 years in CCA/DRR, DLSU E&amp;S accountability frameworks, ESG reporting expertise, and DOF risk governance training, Silva argues that ESG is a financial guardrail — not a compliance checkbox. Climate risk is portfolio risk, and his track record embeds this thinking into institutional financial operations from inception.</div>
+            <span class="spot-badge">Spot-On Match</span>
+          </div>
+        </div>
+        <div class="qa-card reveal">
+          <div class="qa-header">
+            <div class="qa-badge">C4</div>
+            <div class="qa-comp-name">Public Sector Governance &amp; Stakeholder Engagement</div>
+          </div>
+          <div class="qa-q-text">"The CRO must navigate the intersection of public policy and finance. How have you managed risk-informed planning while maintaining accountability to diverse government and international stakeholders?"</div>
+          <div class="qa-ans-body">
+            <div class="qa-ans-label">Silva's Response</div>
+            <div class="qa-ans-text">With 15+ years managing complex risk landscapes for the World Bank, USAID, and WHO; three years as MMDA consultant providing resilience-rooted policy advisory; and direct training of DOF senior officials — Silva's multi-sector experience ensures MIC's risk strategies are both inclusive and globally compliant.</div>
+            <span class="spot-badge">Spot-On Match</span>
+          </div>
+        </div>
+        <div class="qa-card reveal">
+          <div class="qa-header">
+            <div class="qa-badge">C5</div>
+            <div class="qa-comp-name">Adaptive Leadership &amp; Institutional Resilience</div>
+          </div>
+          <div class="qa-q-text">"Sovereign wealth funds often face sudden, volatile shifts. Describe your experience in building institutional resilience during a crisis."</div>
+          <div class="qa-ans-body">
+            <div class="qa-ans-label">Silva's Response</div>
+            <div class="qa-ans-text">He references WHO health resilience programs, PHP 190M climate-smart project design, his SRMP certification in emergency response, and his two published books on resilience — framing his approach as building systems that allow MIC to thrive through disruption, not merely endure it. Resilience is his professional identity, not just a skill.</div>
+            <span class="spot-badge">Spot-On Match</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ACHIEVEMENTS TIMELINE ══ -->
+<section id="achievements">
+  <div class="container">
+    <div class="section-tag reveal"><div class="tag-line"></div><span class="tag-text">Key Milestones</span></div>
+    <h2 class="section-heading reveal">A Track Record Built Over Two Decades</h2>
+    <p class="section-sub reveal">Selected achievements demonstrating systems-level thinking, institutional trust, and deployable impact — each directly relevant to the MIC CRO mandate.</p>
+    <div class="timeline-2col">
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2026</div>
+          <div class="timeline-title">WorldSkills Philippines — TESDA Strategic Plan 2026–2030</div>
+          <div class="timeline-body">Authored and developed strategic options and strategy map for WSP-TESDA, integrating national priorities for skills development excellence — demonstrating public sector strategic planning at the highest level.</div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2025 (Present)</div>
+          <div class="timeline-title">Co-Architect — BIRD 2026–2035, Bangsamoro Region</div>
+          <div class="timeline-body">Designing a 10-year investment roadmap to attract high-impact investments to a complex, post-conflict economic landscape — the most direct analogue to MIC's sovereign wealth fund mandate.</div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">April 2025</div>
+          <div class="timeline-title">Published "Personal Resilience: The Path to Oneness"</div>
+          <div class="timeline-body">Latest contribution to resilience literature — reinforcing his identity as the foremost practitioner-author on institutional and personal resilience in the Philippine development sector.</div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2024–2025</div>
+          <div class="timeline-title">PHP 190M Climate-Smart Resilience Project, Camarines Sur</div>
+          <div class="timeline-body">Designed an innovative community-based climate-smart resilience project in partnership with SOLHUM — evidence of his capacity to architect high-value, climate-risk-informed investment frameworks.</div>
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2023</div>
+          <div class="timeline-title">WHO Emergency Medical Responders Program</div>
+          <div class="timeline-body">Developed the comprehensive Mental Health and Psychosocial Support intervention module for PEMAT members in collaboration with the Department of Health — delivering at global health institutional standards.</div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">September 2023</div>
+          <div class="timeline-title">Published "Building Resilience"</div>
+          <div class="timeline-body">Authored groundbreaking book through Cognitio+ — establishing him as the "Resilience Authority" in the Philippines and a practitioner-thought leader recognized beyond the development sector.</div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2022</div>
+          <div class="timeline-title">BARMM Integrated Risk &amp; Resilience Management</div>
+          <div class="timeline-body">Led systems innovation for Food Security, Livelihoods, DRR, and WASH in the Bangsamoro region, partnering with USAID and Action Against Hunger — multi-sector partnership management at its most complex.</div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2017–2020</div>
+          <div class="timeline-title">MMDA Development Management Consultant (3+ Years)</div>
+          <div class="timeline-body">Provided strategic guidance on DRRM, urban resiliency, and corporate planning for Metro Manila Development Authority — over three years of direct national public sector policy advisory experience.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RECOMMENDATIONS ══ -->
+<section id="recommendations">
+  <div class="container">
+    <div class="section-tag reveal"><div class="tag-line" style="background:var(--gold-light)"></div><span class="tag-text" style="color:var(--gold-light)">CRO Recommendations</span></div>
+    <h2 class="section-heading light reveal">Five Instruments Silva Would Deploy at MIC</h2>
+    <p class="section-sub light reveal">Not theoretical proposals — each tool is already operational in Silva's portfolio, ready to be adapted and institutionalized within MIC's risk governance architecture.</p>
+    <div class="rec-grid">
+      <div class="rec-card reveal">
+        <div class="rec-num">01</div>
+        <div class="rec-title">DDRiVE-M Platform Adoption</div>
+        <div class="rec-body">Deploy the Data-Driven Risk &amp; Vulnerability Evaluation &amp; Management architecture — enabling enterprise-scale, real-time risk monitoring for the MIC Board with AI/ML dashboards built on BCM principles.</div>
+        <div class="rec-value-label">Value to MIC</div>
+        <div class="rec-value">Replaces static reporting with live institutional risk foresight</div>
+      </div>
+      <div class="rec-card reveal">
+        <div class="rec-num">02</div>
+        <div class="rec-title">ESG &amp; Sustainability Guardrails</div>
+        <div class="rec-body">Embed GHG Emission Inventory, Risk Analysis, and E&amp;S accountability frameworks into core investment valuation — ensuring MIC's portfolio is resilient against climate vulnerabilities and aligned with global investor standards.</div>
+        <div class="rec-value-label">Value to MIC</div>
+        <div class="rec-value">Attracts ESG-aligned global capital; strengthens portfolio resilience</div>
+      </div>
+      <div class="rec-card reveal">
+        <div class="rec-num">03</div>
+        <div class="rec-title">Investment Roadmapping for Complex Landscapes</div>
+        <div class="rec-body">Apply BIRD-methodology strategic foresight to MIC's portfolio — designing risk-return thresholds for national development projects with longer gestation but high social-resilience and strategic national value.</div>
+        <div class="rec-value-label">Value to MIC</div>
+        <div class="rec-value">Enables principled engagement in complex, high-impact sectors</div>
+      </div>
+      <div class="rec-card reveal">
+        <div class="rec-num">04</div>
+        <div class="rec-title">Business Continuity Management Framework</div>
+        <div class="rec-body">Build MIC's ERM architecture on BCM principles — ensuring operational stability and institutional continuity during global market disruptions or national crises, critical for a state-led entity managing national wealth.</div>
+        <div class="rec-value-label">Value to MIC</div>
+        <div class="rec-value">Guarantees sovereign fund continuity regardless of external shocks</div>
+      </div>
+      <div class="rec-card reveal">
+        <div class="rec-num">05</div>
+        <div class="rec-title">Systems Thinking &amp; Risk Governance Training</div>
+        <div class="rec-body">Institutionalize systems thinking within the MIC Board and executive leadership — aligning risk appetite with national resilience and socioeconomic development goals through proven training methodologies used with DOF officials.</div>
+        <div class="rec-value-label">Value to MIC</div>
+        <div class="rec-value">Embeds risk culture into decision-making at every leadership level</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COLLABORATIVE QUESTIONS ══ -->
+<section id="questions">
+  <div class="container">
+    <div class="section-tag reveal"><div class="tag-line"></div><span class="tag-text">Questions for MIC</span></div>
+    <h2 class="section-heading reveal">Silva's Collaborative Questions to the Board</h2>
+    <p class="section-sub reveal">These are not candidate inquiries — they are strategic provocation, signaling a CRO who thinks at the level of institutional design rather than role compliance.</p>
+    <div class="cq-grid">
+      <div class="cq-card reveal">
+        <div class="cq-topic">ESG &amp; Investment Strategy</div>
+        <div class="cq-text">"How does the Board envision the CRO collaborating with the investment team to quantify climate-related and social risks as core investment valuation components — rather than just compliance metrics?"</div>
+      </div>
+      <div class="cq-card reveal">
+        <div class="cq-topic">Data-Driven Risk Innovation</div>
+        <div class="cq-text">"What is MIC's appetite for adopting AI-driven risk architectures to provide leadership with real-time foresight into portfolio volatility and institutional resilience?"</div>
+      </div>
+      <div class="cq-card reveal">
+        <div class="cq-topic">Development vs. Financial Returns</div>
+        <div class="cq-text">"How does MIC define the risk-return threshold for national development projects that may have high social-resilience value but longer financial gestation periods?"</div>
+      </div>
+      <div class="cq-card reveal">
+        <div class="cq-topic">Institutional Trust &amp; Global Investors</div>
+        <div class="cq-text">"What role do you see the CRO playing in communicating MIC's risk transparency and resilience-building efforts to global investors to build long-term institutional trust?"</div>
+      </div>
+      <div class="cq-card reveal">
+        <div class="cq-topic">Proactive Resilience vs. Defensive Risk</div>
+        <div class="cq-text">"How should the CRO's office collaborate with the COO to ensure our risk strategy acts as an enabler of growth — helping MIC pivot and thrive during disruptions — rather than a defensive constraint?"</div>
+      </div>
+      <div class="cq-card reveal">
+        <div class="cq-topic">Alignment with National Policy</div>
+        <div class="cq-text">"How closely will the CRO be expected to collaborate with other government agencies to ensure MIC's risk appetite remains aligned with the Philippines' broader national resilience and DRR goals?"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VERDICT ══ -->
+<section id="verdict">
+  <div class="container">
+    <div class="section-tag reveal" style="justify-content:center"><div class="tag-line" style="background:var(--gold-light)"></div><span class="tag-text" style="color:var(--gold-light)">Evaluator's Verdict</span><div class="tag-line" style="background:var(--gold-light)"></div></div>
+    <blockquote class="verdict-quote reveal">
+      "Alvin Silva presents a unique blend of technical ERM mastery and deep sustainability expertise. His experience architecting long-term investment roadmaps and training DOF officials makes him a <em>spot-on</em> fit for the MIC CRO role."
+    </blockquote>
+    <div class="verdict-attr reveal">— Internal Evaluator's Assessment</div>
+    <div class="verdict-stats reveal">
+      <div class="vs-cell"><div class="vs-num">18+</div><div class="vs-label">Years Global Experience</div></div>
+      <div class="vs-cell"><div class="vs-num">50+</div><div class="vs-label">International Projects</div></div>
+      <div class="vs-cell"><div class="vs-num">100+</div><div class="vs-label">Organizations Served</div></div>
+      <div class="vs-cell"><div class="vs-num">5/5</div><div class="vs-label">CRO Competencies</div></div>
+      <div class="vs-cell"><div class="vs-num">₱190M</div><div class="vs-label">Climate Projects Led</div></div>
+      <div class="vs-cell"><div class="vs-num">10+</div><div class="vs-label">Books &amp; Research</div></div>
+    </div>
+    <a href="mailto:alvin.silva@asilvainnovations.com" class="verdict-cta reveal">
+      Connect with Alvin Silva →
+    </a>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-brand">Alvin M. Silva, MDM — CRO Application, Maharlika Investment Corporation</div>
+  <div class="footer-note">
+    alvin.silva@asilvainnovations.com<br/>
+    +63 917 855 5134 · alvin.asilvainnovations.com
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
+</body>
+</html>
