@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alvin Silva | Chief Risk Officer Application - Maharlika Investment Corporation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --navy-900: #0a0e1f;
+            --navy-800: #0f172a;
+            --navy-700: #1e293b;
+            --gold-400: #d4af37;
+            --gold-500: #c9a227;
+            --gold-300: #e5c76b;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--navy-900);
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+        
+        .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .gold-gradient-text {
+            background: linear-gradient(135deg, var(--gold-300) 0%, var(--gold-400) 50%, var(--gold-500) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .gold-border {
+            border-color: var(--gold-400);
+        }
+        
+        .gold-bg {
+            background-color: var(--gold-400);
+        }
+        
+        .navy-glass {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .hero-pattern {
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 40%),
+                linear-gradient(to bottom, transparent, var(--navy-900)),
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .section-fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .section-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .line-draw {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: draw 2s ease-out forwards;
+        }
+        
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        
+        .pulse-gold {
+            animation: pulse-gold 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse-gold {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+            }
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-400);
+            box-shadow: 0 20px 40px -15px rgba(212, 175, 55, 0.15);
+        }
+        
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+        
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+        
+        .timeline-line {
+            background: linear-gradient(to bottom, var(--gold-400), transparent);
+        }
+        
+        .quote-mark {
+            font-size: 6rem;
+            line-height: 1;
+            opacity: 0.1;
+            position: absolute;
+            top: -2rem;
+            left: -1rem;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--gold-400);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .grid-pattern {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
+        }
+        
+        .mic-logo-placeholder {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+    </style>
+<base target="_blank">
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 navy-glass border-b border-yellow-600/10 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full gold-bg flex items-center justify-center">
+                        <span class="text-navy-900 font-bold text-lg font-serif">AS</span>
+                    </div>
+                    <div class="hidden md:block">
+                        <p class="text-xs text-yellow-600/60 uppercase tracking-widest">Application for</p>
+                        <p class="text-sm font-medium text-yellow-500">Chief Risk Officer</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#vision" class="nav-link text-sm text-gray-300 hover:text-yellow-400 transition-colors">Vision</a>
+                    <a href="#philosophy" class="nav-link text-sm text-gray-300 hover:text-yellow-400 transition-colors">Philosophy</a>
+                    <a href="#competencies" class="nav-link text-sm text-gray-300 hover:text-yellow-400 transition-colors">Competencies</a>
+                    <a href="#framework" class="nav-link text-sm text-gray-300 hover:text-yellow-400 transition-colors">Framework</a>
+                    <a href="#recommendations" class="nav-link text-sm text-gray-300 hover:text-yellow-400 transition-colors">Recommendations</a>
+                </div>
+                <button class="md:hidden text-yellow-500" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 navy-glass hidden md:hidden pt-20">
+        <div class="flex flex-col items-center space-y-6 py-8">
+            <a href="#vision" class="text-lg text-gray-300 hover:text-yellow-400" onclick="toggleMobileMenu()">Vision</a>
+            <a href="#philosophy" class="text-lg text-gray-300 hover:text-yellow-400" onclick="toggleMobileMenu()">Philosophy</a>
+            <a href="#competencies" class="text-lg text-gray-300 hover:text-yellow-400" onclick="toggleMobileMenu()">Competencies</a>
+            <a href="#framework" class="text-lg text-gray-300 hover:text-yellow-400" onclick="toggleMobileMenu()">Framework</a>
+            <a href="#recommendations" class="text-lg text-gray-300 hover:text-yellow-400" onclick="toggleMobileMenu()">Recommendations</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center hero-pattern overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-navy-900/50 to-navy-900"></div>
+        
+        <!-- Animated Background Elements -->
+        <div class="absolute top-1/4 left-10 w-64 h-64 bg-yellow-500/5 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-yellow-600/5 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        
+        <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 text-center section-fade visible">
+            <div class="mb-6 inline-block">
+                <span class="px-4 py-2 rounded-full border border-yellow-500/30 text-yellow-500 text-xs uppercase tracking-[0.2em] bg-yellow-500/5">
+                    Maharlika Investment Corporation
+                </span>
+            </div>
+            
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-light mb-6 leading-tight">
+                <span class="block text-white">Risk as</span>
+                <span class="gold-gradient-text italic">Strategic Foresight</span>
+            </h1>
+            
+            <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-light">
+                Alvin Silva's application for Chief Risk Officer — Bridging sovereign wealth management with resilience architecture for the Philippines' first sovereign wealth fund.
+            </p>
+            
+            <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+                <div class="flex items-center space-x-2 text-yellow-600/80">
+                    <i data-lucide="shield" class="w-5 h-5"></i>
+                    <span class="text-sm uppercase tracking-wider">Risk Architecture</span>
+                </div>
+                <div class="hidden md:block w-px h-4 bg-yellow-600/30"></div>
+                <div class="flex items-center space-x-2 text-yellow-600/80">
+                    <i data-lucide="trending-up" class="w-5 h-5"></i>
+                    <span class="text-sm uppercase tracking-wider">ESG Integration</span>
+                </div>
+                <div class="hidden md:block w-px h-4 bg-yellow-600/30"></div>
+                <div class="flex items-center space-x-2 text-yellow-600/80">
+                    <i data-lucide="globe" class="w-5 h-5"></i>
+                    <span class="text-sm uppercase tracking-wider">Systems Innovation</span>
+                </div>
+            </div>
+            
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
+                <i data-lucide="chevron-down" class="w-6 h-6 text-yellow-600/50"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section id="vision" class="relative py-24 md:py-32 grid-pattern">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="section-fade">
+                    <h2 class="font-serif text-4xl md:text-5xl font-light mb-6 text-white">
+                        Architecting <span class="gold-gradient-text italic">Resilience</span>
+                    </h2>
+                    <div class="w-20 h-px gold-bg mb-8"></div>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        I am a development management professional and resilience expert with a 15-year track record of co-architecting strategic frameworks for global institutions including the ADB, WHO, MMDA, and the Bangsamoro Government.
+                    </p>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                        Currently co-architecting the <strong class="text-yellow-500">Bangsamoro Investment Roadmap Development (BIRD) 2026–2035</strong>, a 10-year framework designed to attract high-impact investments to complex economic landscapes.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mt-8">
+                        <div class="navy-glass p-4 rounded-lg border border-yellow-600/10">
+                            <p class="text-3xl font-serif gold-gradient-text stat-number" data-target="15">0</p>
+                            <p class="text-sm text-gray-500 mt-1">Years Experience</p>
+                        </div>
+                        <div class="navy-glass p-4 rounded-lg border border-yellow-600/10">
+                            <p class="text-3xl font-serif gold-gradient-text">BIRD</p>
+                            <p class="text-sm text-gray-500 mt-1">2026-2035 Framework</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-fade relative">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-yellow-600/10 to-transparent rounded-2xl blur-xl"></div>
+                    <div class="relative navy-glass p-8 rounded-2xl border border-yellow-600/20">
+                        <span class="quote-mark font-serif gold-gradient-text">"</span>
+                        <p class="text-xl md:text-2xl font-serif italic text-gray-300 leading-relaxed relative z-10">
+                            Risk management should move beyond mere protection; it must serve as a catalyst for informed, courageous decision-making that drives national progress and long-term stability.
+                        </p>
+                        <div class="mt-6 flex items-center space-x-3">
+                            <div class="w-12 h-px gold-bg"></div>
+                            <p class="text-yellow-500 font-medium">Alvin Silva</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Key Credentials -->
+                    <div class="mt-8 space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-yellow-600 mt-0.5 flex-shrink-0"></i>
+                            <div>
+                                <p class="text-white font-medium">Master in Development Management</p>
+                                <p class="text-sm text-gray-500">Asian Institute of Management</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-yellow-600 mt-0.5 flex-shrink-0"></i>
+                            <div>
+                                <p class="text-white font-medium">Certified Security Risk Management Professional</p>
+                                <p class="text-sm text-gray-500">Specializing in Emergency Response</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="check-circle" class="w-5 h-5 text-yellow-600 mt-0.5 flex-shrink-0"></i>
+                            <div>
+                                <p class="text-white font-medium">Published Author</p>
+                                <p class="text-sm text-gray-500">"Building Resilience" & "Personal Resilience"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="philosophy" class="relative py-24 md:py-32 bg-navy-800/30">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 section-fade">
+                <h2 class="font-serif text-4xl md:text-5xl font-light mb-4 text-white">
+                    Risk as <span class="gold-gradient-text italic">Enabler</span>
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Navigating the polycrisis era requires reimagining risk management from defensive shield to strategic compass.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="section-fade card-hover navy-glass p-8 rounded-xl border border-yellow-600/10 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 rounded-full blur-2xl group-hover:bg-yellow-500/10 transition-all"></div>
+                    <div class="w-12 h-12 rounded-lg gold-bg/10 border border-yellow-500/20 flex items-center justify-center mb-6">
+                        <i data-lucide="compass" class="w-6 h-6 text-yellow-500"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl mb-3 text-white">Courageous Decision-Making</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Risk management as a tool for enabling informed, courageous decisions—not just playing it safe. For MIC to fulfill its mandate, we must take calculated risks in a volatile global economy.
+                    </p>
+                </div>
+                
+                <div class="section-fade card-hover navy-glass p-8 rounded-xl border border-yellow-600/10 relative overflow-hidden group" style="transition-delay: 100ms;">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 rounded-full blur-2xl group-hover:bg-yellow-500/10 transition-all"></div>
+                    <div class="w-12 h-12 rounded-lg gold-bg/10 border border-yellow-500/20 flex items-center justify-center mb-6">
+                        <i data-lucide="leaf" class="w-6 h-6 text-yellow-500"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl mb-3 text-white">ESG as Core Guardrail</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Climate risk is financial risk. With 15 years in CCA and DRR, I embed Environmental & Social accountability into financial operations—essential for state-led entities to maintain global trust.
+                    </p>
+                </div>
+                
+                <div class="section-fade card-hover navy-glass p-8 rounded-xl border border-yellow-600/10 relative overflow-hidden group" style="transition-delay: 200ms;">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 rounded-full blur-2xl group-hover:bg-yellow-500/10 transition-all"></div>
+                    <div class="w-12 h-12 rounded-lg gold-bg/10 border border-yellow-500/20 flex items-center justify-center mb-6">
+                        <i data-lucide="cpu" class="w-6 h-6 text-yellow-500"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl mb-3 text-white">Systems Innovation</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        The DDRiVE-M platform represents the future: AI-driven, real-time risk architectures that provide the Board with foresight into portfolio volatility and institutional resilience.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- MIC Context -->
+            <div class="mt-16 section-fade">
+                <div class="navy-glass rounded-2xl p-8 md:p-12 border border-yellow-600/10 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-500/50 to-transparent"></div>
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h3 class="font-serif text-3xl mb-4 text-white">Understanding the MIC Mandate</h3>
+                            <p class="text-gray-400 mb-4 leading-relaxed">
+                                The Maharlika Investment Corporation operates with a dual mandate: generating sustainable, optimal risk-adjusted financial returns while serving as a catalyst for long-term socioeconomic development [^1^].
+                            </p>
+                            <p class="text-gray-400 leading-relaxed">
+                                As CRO, I view this through the lens of <strong class="text-yellow-500">strategic safeguards</strong>—ensuring that risk management enables rather than constrains the fund's ability to fulfill its sovereign wealth mission.
+                            </p>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center py-3 border-b border-yellow-600/10">
+                                <span class="text-gray-400">Established</span>
+                                <span class="text-white font-medium">July 2023</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-yellow-600/10">
+                                <span class="text-gray-400">2024 Comprehensive Income</span>
+                                <span class="text-white font-medium">PHP 2.68 Billion</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-yellow-600/10">
+                                <span class="text-gray-400">Dividends to National Treasury</span>
+                                <span class="text-white font-medium">PHP 1.45 Billion</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3">
+                                <span class="text-gray-400">Core Values</span>
+                                <span class="text-yellow-500 text-sm">Resilience • Integrity • Transparency • Excellence</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competencies Section -->
+    <section id="competencies" class="relative py-24 md:py-32 grid-pattern">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 section-fade">
+                <h2 class="font-serif text-4xl md:text-5xl font-light mb-4 text-white">
+                    Core <span class="gold-gradient-text italic">Competencies</span>
+                </h2>
+                <p class="text-gray-400">Five pillars of expertise aligned with MIC's rigorous investment framework</p>
+            </div>
+            
+            <div class="space-y-6">
+                <!-- Competency 1 -->
+                <div class="section-fade navy-glass rounded-xl border border-yellow-600/10 overflow-hidden card-hover">
+                    <div class="p-8 md:p-10">
+                        <div class="flex flex-col md:flex-row md:items-start gap-6">
+                            <div class="flex-shrink-0">
+                                <div class="w-16 h-16 rounded-full gold-bg/10 border border-yellow-500/30 flex items-center justify-center">
+                                    <span class="font-serif text-2xl gold-gradient-text">01</span>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-serif text-2xl md:text-3xl mb-3 text-white">Strategic Risk Architecting & Investment Foresight</h3>
+                                <p class="text-gray-400 mb-4 leading-relaxed">
+                                    <span class="text-yellow-500 font-medium">Q:</span> "MIC is tasked with managing the Philippines' first sovereign wealth fund in a complex global economy. Can you demonstrate your ability to architect a long-term risk-informed investment framework for high-impact sectors?"
+                                </p>
+                                <div class="bg-navy-900/50 rounded-lg p-6 border-l-2 border-yellow-500">
+                                    <p class="text-gray-300 italic">
+                                        "I am currently architecting the <strong>Bangsamoro Investment Roadmap Development (BIRD) 2026–2035</strong>. This involves designing a 10-year strategic framework to secure investments in a complex, post-conflict landscape—a task that requires balancing aggressive growth with rigorous risk-informed safeguards."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Competency 2 -->
+                <div class="section-fade navy-glass rounded-xl border border-yellow-600/10 overflow-hidden card-hover" style="transition-delay: 100ms;">
+                    <div class="p-8 md:p-10">
+                        <div class="flex flex-col md:flex-row md:items-start gap-6">
+                            <div class="flex-shrink-0">
+                                <div class="w-16 h-16 rounded-full gold-bg/10 border border-yellow-500/30 flex items-center justify-center">
+                                    <span class="font-serif text-2xl gold-gradient-text">02</span>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-serif text-2xl md:text-3xl mb-3 text-white">Enterprise Risk Management & Systems Innovation</h3>
+                                <p class="text-gray-400 mb-4 leading-relaxed">
+                                    <span class="text-yellow-500 font-medium">Q:</span> "As CRO, you must oversee a 'rigorous framework' for investment decisions. How have you utilized technology and systems innovation to institutionalize ERM principles?"
+                                </p>
+                                <div class="bg-navy-900/50 rounded-lg p-6 border-l-2 border-yellow-500">
+                                    <p class="text-gray-300 italic">
+                                        "I designed and deployed the <strong>DDRiVE-M platform</strong>—an ERM architecture built on Business Continuity Management principles. Beyond protection, risk management enables informed, courageous decision-making through AI-driven dashboards that track performance and risk in real-time."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Competency 3 -->
+                <div class="section-fade navy-glass rounded-xl border border-yellow-600/10 overflow-hidden card-hover" style="transition-delay: 200ms;">
+                    <div class="p-8 md:p-10">
+                        <div class="flex flex-col md:flex-row md:items-start gap-6">
+                            <div class="flex-shrink-0">
+                                <div class="w-16 h-16 rounded-full gold-bg/10 border border-yellow-500/30 flex items-center justify-center">
+                                    <span class="font-serif text-2xl gold-gradient-text">03</span>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-serif text-2xl md:text-3xl mb-3 text-white">ESG Leadership & Sustainability Integration</h3>
+                                <p class="text-gray-400 mb-4 leading-relaxed">
+                                    <span class="text-yellow-500 font-medium">Q:</span> "MIC prioritizes 'sustainable investments' and transparency. How will you integrate ESG principles into our core risk assessments to ensure we meet international standards?"
+                                </p>
+                                <div class="bg-navy-900/50 rounded-lg p-6 border-l-2 border-yellow-500">
+                                    <p class="text-gray-300 italic">
+                                        "Sustainability is at the core of my 15-year career in Climate Change Adaptation and Disaster Risk Reduction. I have embedded E&S accountability frameworks into financial operations for institutions like De La Salle University, ensuring portfolios generate returns while remaining resilient against climate-related vulnerabilities."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Competency 4 -->
+                <div class="section-fade navy-glass rounded-xl border border-yellow-600/10 overflow-hidden card-hover" style="transition-delay: 300ms;">
+                    <div class="p-8 md:p-10">
+                        <div class="flex flex-col md:flex-row md:items-start gap-6">
+                            <div class="flex-shrink-0">
+                                <div class="w-16 h-16 rounded-full gold-bg/10 border border-yellow-500/30 flex items-center justify-center">
+                                    <span class="font-serif text-2xl gold-gradient-text">04</span>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-serif text-2xl md:text-3xl mb-3 text-white">Public Sector Governance & Stakeholder Engagement</h3>
+                                <p class="text-gray-400 mb-4 leading-relaxed">
+                                    <span class="text-yellow-500 font-medium">Q:</span> "The CRO must navigate the intersection of public policy and finance. How have you managed risk-informed planning while maintaining accountability to diverse government and international stakeholders?"
+                                </p>
+                                <div class="bg-navy-900/50 rounded-lg p-6 border-l-2 border-yellow-500">
+                                    <p class="text-gray-300 italic">
+                                        "I have trained senior officials from the Department of Finance and served as consultant at the Office of the Chairman of MMDA. My experience with multi-sector partnerships—including IFIs, NGOs, and the private sector—ensures MIC's risk strategies will be both inclusive and compliant with global standards."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Competency 5 -->
+                <div class="section-fade navy-glass rounded-xl border border-yellow-600/10 overflow-hidden card-hover" style="transition-delay: 400ms;">
+                    <div class="p-8 md:p-10">
+                        <div class="flex flex-col md:flex-row md:items-start gap-6">
+                            <div class="flex-shrink-0">
+                                <div class="w-16 h-16 rounded-full gold-bg/10 border border-yellow-500/30 flex items-center justify-center">
+                                    <span class="font-serif text-2xl gold-gradient-text">05</span>
+                                </div>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-serif text-2xl md:text-3xl mb-3 text-white">Adaptive Leadership & Institutional Resilience</h3>
+                                <p class="text-gray-400 mb-4 leading-relaxed">
+                                    <span class="text-yellow-500 font-medium">Q:</span> "Sovereign wealth funds often face sudden, volatile shifts. Describe your experience in building institutional resilience during a crisis."
+                                </p>
+                                <div class="bg-navy-900/50 rounded-lg p-6 border-l-2 border-yellow-500">
+                                    <p class="text-gray-300 italic">
+                                        "My expertise is in building resilience, documented in my books and applied through comprehensive health resilience programs for WHO and climate-smart projects worth PHP190M. For MIC, this means building systems that allow the corporation to thrive and pivot during global market disruptions."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Framework Section -->
+    <section id="framework" class="relative py-24 md:py-32 bg-navy-800/30">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 section-fade">
+                <h2 class="font-serif text-4xl md:text-5xl font-light mb-4 text-white">
+                    The <span class="gold-gradient-text italic">DDRiVE-M</span> Architecture
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Data-Driven Risk & Vulnerability Evaluation and Management — A proprietary platform for enterprise-scale resilience
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="section-fade space-y-6">
+                    <div class="navy-glass p-6 rounded-xl border border-yellow-600/10 flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-lg gold-bg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="database" class="w-5 h-5 text-navy-900"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium mb-1">Data-Driven Evaluation</h4>
+                            <p class="text-gray-400 text-sm">Real-time risk architecture providing continuous monitoring of portfolio volatility and institutional resilience metrics.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="navy-glass p-6 rounded-xl border border-yellow-600/10 flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-lg gold-bg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="users" class="w-5 h-5 text-navy-900"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium mb-1">Multi-Stakeholder Collaboration</h4>
+                            <p class="text-gray-400 text-sm">Built on Business Continuity Management principles to enable enterprise-scale mitigation across diverse institutional partners.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="navy-glass p-6 rounded-xl border border-yellow-600/10 flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-lg gold-bg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="brain" class="w-5 h-5 text-navy-900"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium mb-1">AI & Machine Learning Integration</h4>
+                            <p class="text-gray-400 text-sm">Intuitive dashboards that leverage predictive analytics for foresight into emerging risks and opportunities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="navy-glass p-6 rounded-xl border border-yellow-600/10 flex items-start space-x-4">
+                        <div class="w-10 h-10 rounded-lg gold-bg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-navy-900"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-medium mb-1">BCM-Anchored Resilience</h4>
+                            <p class="text-gray-400 text-sm">Business Continuity Management principles ensure operational stability during global disruptions or national crises.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-fade relative">
+                    <div class="relative rounded-2xl overflow-hidden border border-yellow-600/20 bg-navy-900/50 p-8">
+                        <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent"></div>
+                        
+                        <!-- Visual Representation -->
+                        <div class="relative z-10">
+                            <div class="text-center mb-8">
+                                <h3 class="font-serif text-3xl gold-gradient-text mb-2">DDRiVE-M</h3>
+                                <p class="text-xs text-yellow-600/60 uppercase tracking-widest">Platform Architecture</p>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between p-4 rounded-lg bg-navy-800/50 border border-yellow-600/10">
+                                    <span class="text-gray-300 text-sm">Data Ingestion Layer</span>
+                                    <div class="flex space-x-1">
+                                        <div class="w-2 h-2 rounded-full gold-bg animate-pulse"></div>
+                                        <div class="w-2 h-2 rounded-full gold-bg animate-pulse" style="animation-delay: 0.2s"></div>
+                                        <div class="w-2 h-2 rounded-full gold-bg animate-pulse" style="animation-delay: 0.4s"></div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between p-4 rounded-lg bg-navy-800/50 border border-yellow-600/10">
+                                    <span class="text-gray-300 text-sm">Risk Analytics Engine</span>
+                                    <span class="text-xs text-yellow-500">AI/ML Powered</span>
+                                </div>
+                                <div class="flex items-center justify-between p-4 rounded-lg bg-navy-800/50 border border-yellow-600/10">
+                                    <span class="text-gray-300 text-sm">Vulnerability Assessment</span>
+                                    <span class="text-xs text-green-500">Real-time</span>
+                                </div>
+                                <div class="flex items-center justify-between p-4 rounded-lg bg-navy-800/50 border border-yellow-600/10">
+                                    <span class="text-gray-300 text-sm">Strategic Dashboard</span>
+                                    <span class="text-xs text-yellow-500">Executive View</span>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-8 pt-6 border-t border-yellow-600/10 text-center">
+                                <p class="text-sm text-gray-400">Enabling <span class="text-yellow-500">informed, courageous</span> decision-making through data transparency</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section id="recommendations" class="relative py-24 md:py-32 grid-pattern">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16 section-fade">
+                <h2 class="font-serif text-4xl md:text-5xl font-light mb-4 text-white">
+                    Strategic <span class="gold-gradient-text italic">Recommendations</span>
+                </h2>
+                <p class="text-gray-400">Five instruments to institutionalize risk governance at MIC</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="section-fade navy-glass p-6 rounded-xl border border-yellow-600/10 card-hover lg:col-span-2">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center flex-shrink-0 border border-yellow-500/20">
+                            <i data-lucide="layout-dashboard" class="w-6 h-6 text-yellow-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-xl mb-2 text-white">1. DDRiVE-M Enterprise Deployment</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-3">
+                                Adopt the Data-Driven Risk & Vulnerability Evaluation and Management platform as MIC's core ERM architecture. This provides a "rigorous framework" for real-time evaluation and mitigation at enterprise scale.
+                            </p>
+                            <div class="flex items-center space-x-2 text-xs text-yellow-600/80">
+                                <i data-lucide="check" class="w-3 h-3"></i>
+                                <span>Real-time portfolio monitoring</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-fade navy-glass p-6 rounded-xl border border-yellow-600/10 card-hover" style="transition-delay: 100ms;">
+                    <div class="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center mb-4 border border-yellow-500/20">
+                        <i data-lucide="leaf" class="w-6 h-6 text-yellow-500"></i>
+                    </div>
+                    <h3 class="font-serif text-xl mb-2 text-white">2. ESG Guardrails</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Integrate GHG Emission Inventory and E&S accountability frameworks into core financial risk assessments.
+                    </p>
+                </div>
+                
+                <div class="section-fade navy-glass p-6 rounded-xl border border-yellow-600/10 card-hover" style="transition-delay: 200ms;">
+                    <div class="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center mb-4 border border-yellow-500/20">
+                        <i data-lucide="map" class="w-6 h-6 text-yellow-500"></i>
+                    </div>
+                    <h3 class="font-serif text-xl mb-2 text-white">3. Investment Roadmapping</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Apply BIRD methodology to navigate complex political-economic contexts while maintaining long-term value creation.
+                    </p>
+                </div>
+                
+                <div class="section-fade navy-glass p-6 rounded-xl border border-yellow-600/10 card-hover" style="transition-delay: 300ms;">
+                    <div class="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center mb-4 border border-yellow-500/20">
+                        <i data-lucide="refresh-cw" class="w-6 h-6 text-yellow-500"></i>
+                    </div>
+                    <h3 class="font-serif text-xl mb-2 text-white">4. BCM Integration</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Build ERM architectures on Business Continuity Management principles to ensure institutional stability during crises.
+                    </p>
+                </div>
+                
+                <div class="section-fade navy-glass p-6 rounded-xl border border-yellow-600/10 card-hover" style="transition-delay: 400ms;">
+                    <div class="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center mb-4 border border-yellow-500/20">
+                        <i data-lucide="graduation-cap" class="w-6 h-6 text-yellow-500"></i>
+                    </div>
+                    <h3 class="font-serif text-xl mb-2 text-white">5. Systems Thinking Training</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Institutionalize Systems Thinking within the MIC board to align risk appetite with national development goals.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Collaborative Questions -->
+            <div class="mt-16 section-fade">
+                <div class="navy-glass rounded-2xl p-8 md:p-12 border border-yellow-600/10">
+                    <h3 class="font-serif text-3xl mb-8 text-center text-white">Questions for the MIC Board</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-lg bg-navy-900/30 border-l-2 border-yellow-500/50">
+                                <p class="text-gray-300 text-sm italic">"How does the Board envision the CRO collaborating with the investment team to quantify climate-related risks as core components of valuation?"</p>
+                            </div>
+                            <div class="p-4 rounded-lg bg-navy-900/30 border-l-2 border-yellow-500/50">
+                                <p class="text-gray-300 text-sm italic">"What is MIC's appetite for adopting automated, AI-driven risk architectures for real-time portfolio foresight?"</p>
+                            </div>
+                            <div class="p-4 rounded-lg bg-navy-900/30 border-l-2 border-yellow-500/50">
+                                <p class="text-gray-300 text-sm italic">"How does MIC define the risk-return threshold for national development projects with high social-resilience value?"</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="p-4 rounded-lg bg-navy-900/30 border-l-2 border-yellow-500/50">
+                                <p class="text-gray-300 text-sm italic">"What role do you see the CRO playing in communicating risk transparency to global investors?"</p>
+                            </div>
+                            <div class="p-4 rounded-lg bg-navy-900/30 border-l-2 border-yellow-500/50">
+                                <p class="text-gray-300 text-sm italic">"How should the CRO's office collaborate with the COO to ensure risk management enables growth rather than constraining it?"</p>
+                            </div>
+                            <div class="p-4 rounded-lg bg-navy-900/30 border-l-2 border-yellow-500/50">
+                                <p class="text-gray-300 text-sm italic">"How will we measure the success of the risk function—through loss minimization or successful execution of complex partnerships?"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing Section -->
+    <section class="relative py-24 md:py-32 bg-navy-800/30">
+        <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center section-fade">
+            <div class="w-20 h-px gold-bg mx-auto mb-8"></div>
+            <h2 class="font-serif text-4xl md:text-5xl font-light mb-6 text-white">
+                Ready to Serve the <span class="gold-gradient-text italic">Philippines</span>
+            </h2>
+            <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                As Chief Risk Officer, I commit to ensuring that MIC's risk management function serves as a strategic catalyst—enabling the fund to navigate the polycrisis era while fulfilling its mandate to generate sustainable returns and foster national socioeconomic development.
+            </p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6 text-sm text-gray-500">
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="mail" class="w-4 h-4 text-yellow-600"></i>
+                    <span>Professional Credentials Available Upon Request</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-yellow-600/10 py-12 bg-navy-900">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                <div class="w-8 h-8 rounded-full gold-bg flex items-center justify-center">
+                    <span class="text-navy-900 font-bold text-sm font-serif">AS</span>
+                </div>
+                <span class="text-gray-500 text-sm">Alvin Silva for MIC Chief Risk Officer</span>
+            </div>
+            <div class="text-gray-600 text-xs">
+                <p>Application for Maharlika Investment Corporation • 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Animate counters if present
+                    const counters = entry.target.querySelectorAll('.stat-number[data-target]');
+                    counters.forEach(counter => {
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        animateCounter(counter, target);
+                    });
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.section-fade').forEach((el) => observer.observe(el));
+        
+        // Counter animation
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 50;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 30);
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+        
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+                navbar.style.background = 'rgba(10, 14, 31, 0.95)';
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.style.background = 'rgba(15, 23, 42, 0.7)';
+            }
+        });
+    </script>
+</body>
+</html>
