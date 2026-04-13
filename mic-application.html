@@ -3,62 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alvin Silva | Chief Risk Officer Application - Maharlika Investment Corporation</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="description" content="Alvin M. Silva, MDM - Chief Risk Officer Application for Maharlika Investment Corporation. Strategic risk architecture for the Philippines' first sovereign wealth fund.">
+    <meta name="author" content="Alvin M. Silva, MDM">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Alvin M. Silva, MDM | CRO Application - Maharlika Investment Corporation">
+    <meta property="og:description" content="Strategic Risk Architecture for the Philippines' First Sovereign Wealth Fund">
+    <meta property="og:image" content="https://appimize.app/assets/apps/user_1097/images/288dd899974a_850_1097.png">
+    
+    <title>Alvin M. Silva, MDM | Chief Risk Officer Application - MIC</title>
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
         :root {
+            /* Alvin Silva Brand Colors */
+            --electric-blue: #0066FF;
+            --sky-blue: #00BFFF;
+            --gold: #FFD700;
+            --dark-bg: #0a0e27;
+            --card-bg: #1a1f3a;
+            
+            /* Executive Enhancement */
             --navy-900: #0a0e1f;
             --navy-800: #0f172a;
             --navy-700: #1e293b;
             --gold-400: #d4af37;
             --gold-500: #c9a227;
-            --gold-300: #e5c76b;
+            
+            /* Glass Effect */
+            --glass-bg: rgba(26, 31, 58, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.18);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--navy-900);
-            color: #f8fafc;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #0f1428 100%);
+            color: #ffffff;
             overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
         }
         
         .font-serif {
             font-family: 'Cormorant Garamond', serif;
         }
         
+        .font-condensed {
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+        
+        /* Animated Background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--electric-blue) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: backgroundMove 20s linear infinite;
+            opacity: 0.08;
+        }
+        
+        @keyframes backgroundMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+        
+        /* Floating Particles */
+        .particle {
+            position: absolute;
+            background: var(--sky-blue);
+            border-radius: 50%;
+            opacity: 0.2;
+            animation: float 6s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-30px) translateX(20px); }
+        }
+        
+        /* Gold Gradient Text */
         .gold-gradient-text {
-            background: linear-gradient(135deg, var(--gold-300) 0%, var(--gold-400) 50%, var(--gold-500) 100%);
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-400) 50%, var(--sky-blue) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         
-        .gold-border {
-            border-color: var(--gold-400);
+        /* Glass Morphism */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 8px 32px 0 rgba(0, 102, 255, 0.3),
+                        0 4px 16px 0 rgba(0, 0, 0, 0.4);
         }
         
-        .gold-bg {
-            background-color: var(--gold-400);
+        /* Card Hover Effects */
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        .navy-glass {
-            background: rgba(15, 23, 42, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.1);
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 102, 255, 0.4),
+                        0 8px 20px rgba(0, 191, 255, 0.3);
+            border-color: rgba(255, 215, 0, 0.5);
         }
         
-        .hero-pattern {
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 40%),
-                linear-gradient(to bottom, transparent, var(--navy-900)),
-                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        /* Border Glow Animation */
+        .border-glow {
+            position: relative;
         }
         
+        .border-glow::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--electric-blue), var(--sky-blue), var(--gold));
+            border-radius: inherit;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .border-glow:hover::before {
+            opacity: 1;
+            animation: borderGlow 2s linear infinite;
+        }
+        
+        @keyframes borderGlow {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(180deg); }
+        }
+        
+        /* Timeline */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--electric-blue), var(--sky-blue), var(--gold));
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--gold);
+            border-radius: 50%;
+            border: 4px solid var(--dark-bg);
+            animation: dotPulse 2s infinite;
+        }
+        
+        @keyframes dotPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
+            50% { box-shadow: 0 0 0 15px rgba(255, 215, 0, 0); }
+        }
+        
+        /* Shimmer Effect */
+        .shimmer {
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        /* Section Fade */
         .section-fade {
             opacity: 0;
             transform: translateY(30px);
@@ -70,129 +224,152 @@
             transform: translateY(0);
         }
         
-        .line-draw {
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            animation: draw 2s ease-out forwards;
-        }
-        
-        @keyframes draw {
-            to {
-                stroke-dashoffset: 0;
-            }
-        }
-        
-        .pulse-gold {
-            animation: pulse-gold 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        
-        @keyframes pulse-gold {
-            0%, 100% {
-                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
-            }
-            50% {
-                box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
-            }
-        }
-        
-        .card-hover {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            border-color: var(--gold-400);
-            box-shadow: 0 20px 40px -15px rgba(212, 175, 55, 0.15);
-        }
-        
-        .stat-number {
-            font-variant-numeric: tabular-nums;
-        }
-        
-        .scroll-indicator {
-            animation: bounce 2s infinite;
-        }
-        
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-        
-        .timeline-line {
-            background: linear-gradient(to bottom, var(--gold-400), transparent);
-        }
-        
-        .quote-mark {
-            font-size: 6rem;
-            line-height: 1;
-            opacity: 0.1;
-            position: absolute;
-            top: -2rem;
-            left: -1rem;
-        }
-        
+        /* Navigation */
         .nav-link {
             position: relative;
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 500;
         }
         
         .nav-link::after {
             content: '';
             position: absolute;
+            bottom: 0;
+            left: 50%;
             width: 0;
-            height: 1px;
-            bottom: -2px;
-            left: 0;
-            background-color: var(--gold-400);
-            transition: width 0.3s ease;
+            height: 2px;
+            background: var(--gold);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
         }
         
         .nav-link:hover::after {
             width: 100%;
         }
         
-        .grid-pattern {
-            background-size: 40px 40px;
-            background-image: linear-gradient(to right, rgba(212, 175, 55, 0.03) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
+        /* Logo Animation */
+        .logo-spin {
+            animation: rotateLogo 10s linear infinite;
         }
         
-        .mic-logo-placeholder {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.05));
-            border: 1px solid rgba(212, 175, 55, 0.2);
+        @keyframes rotateLogo {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Stat Number Animation */
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+            background: linear-gradient(45deg, var(--gold), var(--sky-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Tooltip */
+        .tooltip {
+            position: relative;
+            cursor: help;
+            border-bottom: 2px dotted var(--sky-blue);
+        }
+        
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 300px;
+            max-width: 90vw;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(20px);
+            color: #fff;
+            text-align: left;
+            border-radius: 10px;
+            padding: 1rem;
+            position: absolute;
+            z-index: 100;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -150px;
+            opacity: 0;
+            transition: opacity 0.3s, visibility 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .tooltip:hover .tooltiptext,
+        .tooltip:focus .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 60px !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+            .timeline-dot {
+                left: 20px !important;
+            }
+        }
+        
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Focus Styles */
+        *:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 2px;
         }
     </style>
 <base target="_blank">
 </head>
-<body class="antialiased">
+<body>
+
+    <!-- Animated Background -->
+    <div class="bg-animation" aria-hidden="true">
+        <div class="particle" style="width: 4px; height: 4px; top: 20%; left: 10%;"></div>
+        <div class="particle" style="width: 6px; height: 6px; top: 60%; left: 80%; animation-delay: 2s;"></div>
+        <div class="particle" style="width: 3px; height: 3px; top: 40%; left: 50%; animation-delay: 4s;"></div>
+        <div class="particle" style="width: 5px; height: 5px; top: 80%; left: 20%; animation-delay: 1s;"></div>
+        <div class="particle" style="width: 4px; height: 4px; top: 30%; left: 70%; animation-delay: 3s;"></div>
+    </div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 navy-glass border-b border-yellow-600/10 transition-all duration-300" id="navbar">
+    <nav class="fixed top-0 w-full z-50 glass-card border-b border-yellow-500/20 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-full gold-bg flex items-center justify-center">
-                        <span class="text-navy-900 font-bold text-lg font-serif">AS</span>
-                    </div>
+                    <img src="https://appimize.app/assets/apps/user_1097/images/288dd899974a_850_1097.png" 
+                         alt="Alvin Silva Logo" 
+                         class="w-12 h-12 rounded-full border-2 border-yellow-500 logo-spin"
+                         style="animation-play-state: paused;"
+                         onmouseover="this.style.animationPlayState='running'"
+                         onmouseout="this.style.animationPlayState='paused'">
                     <div class="hidden md:block">
-                        <p class="text-xs text-yellow-600/60 uppercase tracking-widest">Application for</p>
-                        <p class="text-sm font-medium text-yellow-500">Chief Risk Officer</p>
+                        <p class="text-xs text-yellow-500/60 uppercase tracking-widest font-condensed">Application for</p>
+                        <p class="text-sm font-medium text-yellow-400 font-condensed">Chief Risk Officer</p>
                     </div>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#vision" class="nav-link text-sm text-gray-300 hover:text-yellow-400 transition-colors">Vision</a>
-                    <a href="#philosophy" class="nav-link text-sm text-gray-300 hover:text-yellow-400 transition-colors">Philosophy</a>
-                    <a href="#competencies" class="nav-link text-sm text-gray-300 hover:text-yellow-400 transition-colors">Competencies</a>
-                    <a href="#framework" class="nav-link text-sm text-gray-300 hover:text-yellow-400 transition-colors">Framework</a>
-                    <a href="#recommendations" class="nav-link text-sm text-gray-300 hover:text-yellow-400 transition-colors">Recommendations</a>
+                    <a href="#vision" class="nav-link text-sm text-gray-300 hover:text-yellow-400 transition-colors py-2">Vision</a>
+                    <a href="#philosophy" class="nav-link text-sm text-gray-300 hover:text-yellow-400 transition-colors py-2">Philosophy</a>
+                    <a href="#competencies" class="nav-link text-sm text-gray-300 hover:text-yellow-400 transition-colors py-2">Competencies</a>
+                    <a href="#framework" class="nav-link text-sm text-gray-300 hover:text-yellow-400 transition-colors py-2">DDRiVE-M</a>
+                    <a href="#recommendations" class="nav-link text-sm text-gray-300 hover:text-yellow-400 transition-colors py-2">Strategy</a>
                 </div>
-                <button class="md:hidden text-yellow-500" onclick="toggleMobileMenu()">
+                <button class="md:hidden text-yellow-500" onclick="toggleMobileMenu()" aria-label="Toggle menu">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
@@ -200,126 +377,187 @@
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="fixed inset-0 z-40 navy-glass hidden md:hidden pt-20">
+    <div id="mobile-menu" class="fixed inset-0 z-40 glass-card hidden md:hidden pt-20">
         <div class="flex flex-col items-center space-y-6 py-8">
             <a href="#vision" class="text-lg text-gray-300 hover:text-yellow-400" onclick="toggleMobileMenu()">Vision</a>
             <a href="#philosophy" class="text-lg text-gray-300 hover:text-yellow-400" onclick="toggleMobileMenu()">Philosophy</a>
             <a href="#competencies" class="text-lg text-gray-300 hover:text-yellow-400" onclick="toggleMobileMenu()">Competencies</a>
-            <a href="#framework" class="text-lg text-gray-300 hover:text-yellow-400" onclick="toggleMobileMenu()">Framework</a>
-            <a href="#recommendations" class="text-lg text-gray-300 hover:text-yellow-400" onclick="toggleMobileMenu()">Recommendations</a>
+            <a href="#framework" class="text-lg text-gray-300 hover:text-yellow-400" onclick="toggleMobileMenu()">DDRiVE-M</a>
+            <a href="#recommendations" class="text-lg text-gray-300 hover:text-yellow-400" onclick="toggleMobileMenu()">Strategy</a>
         </div>
     </div>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center hero-pattern overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-navy-900/50 to-navy-900"></div>
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-navy-900/30 to-navy-900"></div>
         
-        <!-- Animated Background Elements -->
-        <div class="absolute top-1/4 left-10 w-64 h-64 bg-yellow-500/5 rounded-full blur-3xl animate-pulse"></div>
-        <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-yellow-600/5 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center section-fade visible">
+            <div class="text-center lg:text-left">
+                <div class="mb-4 inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border-yellow-500/30">
+                    <span class="w-2 h-2 rounded-full bg-yellow-500 animate-pulse"></span>
+                    <span class="text-yellow-500 text-xs uppercase tracking-[0.2em] font-condensed">Maharlika Investment Corporation</span>
+                </div>
+                
+                <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-light mb-4 leading-tight shimmer">
+                    <span class="block text-white">Risk as</span>
+                    <span class="gold-gradient-text italic">Strategic Foresight</span>
+                </h1>
+                
+                <p class="text-lg text-gray-400 mb-2 font-light">
+                    Alvin M. Silva, <span class="tooltip text-sky-400">MDM<span class="tooltiptext">Master in Development Management from Asian Institute of Management (AIM)</span></span>
+                </p>
+                
+                <p class="text-gray-400 max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+                    Chief Risk Officer Application — Bridging sovereign wealth management with 
+                    <span class="tooltip text-sky-400">resilience architecture<span class="tooltiptext">18+ years of global experience in Climate Change Adaptation (CCA), Disaster Risk Reduction (DRR), and systems innovation</span></span> 
+                    for the Philippines' first sovereign wealth fund.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+                    <a href="#vision" class="px-8 py-3 rounded-full bg-gradient-to-r from-blue-600 to-sky-500 text-white font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-all transform hover:-translate-y-1">
+                        Explore Vision
+                    </a>
+                    <a href="#contact" class="px-8 py-3 rounded-full border-2 border-yellow-500 text-yellow-500 font-medium hover:bg-yellow-500 hover:text-navy-900 transition-all transform hover:-translate-y-1">
+                        Contact
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Hero Stats Card -->
+            <div class="relative">
+                <div class="glass-card rounded-2xl p-8 border-glow relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent"></div>
+                    <div class="relative z-10">
+                        <h3 class="text-xl font-serif mb-6 text-center gold-gradient-text">Professional Footprint</h3>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center p-4 rounded-lg bg-navy-900/30 border border-white/5">
+                                <p class="text-4xl font-bold stat-number mb-1">18+</p>
+                                <p class="text-xs text-gray-400 uppercase tracking-wider font-condensed">Years Global Experience</p>
+                            </div>
+                            <div class="text-center p-4 rounded-lg bg-navy-900/30 border border-white/5">
+                                <p class="text-4xl font-bold stat-number mb-1">50+</p>
+                                <p class="text-xs text-gray-400 uppercase tracking-wider font-condensed">International Projects</p>
+                            </div>
+                            <div class="text-center p-4 rounded-lg bg-navy-900/30 border border-white/5">
+                                <p class="text-4xl font-bold stat-number mb-1">100+</p>
+                                <p class="text-xs text-gray-400 uppercase tracking-wider font-condensed">Organizations Served</p>
+                            </div>
+                            <div class="text-center p-4 rounded-lg bg-navy-900/30 border border-white/5">
+                                <p class="text-4xl font-bold stat-number mb-1">10+</p>
+                                <p class="text-xs text-gray-400 uppercase tracking-wider font-condensed">Published Works</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 pt-6 border-t border-white/10">
+                            <div class="flex items-center justify-center space-x-4 text-sm text-gray-400">
+                                <span class="flex items-center gap-1"><i data-lucide="shield" class="w-4 h-4 text-yellow-500"></i> SRMP Certified</span>
+                                <span class="w-px h-4 bg-white/20"></span>
+                                <span class="flex items-center gap-1"><i data-lucide="award" class="w-4 h-4 text-yellow-500"></i> MDM AIM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
-        <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 text-center section-fade visible">
-            <div class="mb-6 inline-block">
-                <span class="px-4 py-2 rounded-full border border-yellow-500/30 text-yellow-500 text-xs uppercase tracking-[0.2em] bg-yellow-500/5">
-                    Maharlika Investment Corporation
-                </span>
-            </div>
-            
-            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-light mb-6 leading-tight">
-                <span class="block text-white">Risk as</span>
-                <span class="gold-gradient-text italic">Strategic Foresight</span>
-            </h1>
-            
-            <p class="mt-6 text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-light">
-                Alvin Silva's application for Chief Risk Officer — Bridging sovereign wealth management with resilience architecture for the Philippines' first sovereign wealth fund.
-            </p>
-            
-            <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
-                <div class="flex items-center space-x-2 text-yellow-600/80">
-                    <i data-lucide="shield" class="w-5 h-5"></i>
-                    <span class="text-sm uppercase tracking-wider">Risk Architecture</span>
-                </div>
-                <div class="hidden md:block w-px h-4 bg-yellow-600/30"></div>
-                <div class="flex items-center space-x-2 text-yellow-600/80">
-                    <i data-lucide="trending-up" class="w-5 h-5"></i>
-                    <span class="text-sm uppercase tracking-wider">ESG Integration</span>
-                </div>
-                <div class="hidden md:block w-px h-4 bg-yellow-600/30"></div>
-                <div class="flex items-center space-x-2 text-yellow-600/80">
-                    <i data-lucide="globe" class="w-5 h-5"></i>
-                    <span class="text-sm uppercase tracking-wider">Systems Innovation</span>
-                </div>
-            </div>
-            
-            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
-                <i data-lucide="chevron-down" class="w-6 h-6 text-yellow-600/50"></i>
-            </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i data-lucide="chevron-down" class="w-6 h-6 text-yellow-500/50"></i>
         </div>
     </section>
 
     <!-- Introduction Section -->
-    <section id="vision" class="relative py-24 md:py-32 grid-pattern">
+    <section id="vision" class="relative py-24">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="section-fade">
                     <h2 class="font-serif text-4xl md:text-5xl font-light mb-6 text-white">
                         Architecting <span class="gold-gradient-text italic">Resilience</span>
                     </h2>
-                    <div class="w-20 h-px gold-bg mb-8"></div>
+                    <div class="w-20 h-1 bg-gradient-to-r from-yellow-500 to-sky-500 mb-8"></div>
+                    
                     <p class="text-gray-400 text-lg leading-relaxed mb-6">
-                        I am a development management professional and resilience expert with a 15-year track record of co-architecting strategic frameworks for global institutions including the ADB, WHO, MMDA, and the Bangsamoro Government.
-                    </p>
-                    <p class="text-gray-400 text-lg leading-relaxed mb-8">
-                        Currently co-architecting the <strong class="text-yellow-500">Bangsamoro Investment Roadmap Development (BIRD) 2026–2035</strong>, a 10-year framework designed to attract high-impact investments to complex economic landscapes.
+                        I am a development management professional and 
+                        <span class="tooltip text-sky-400">resilience expert<span class="tooltiptext">Certified Security Risk Management Professional (SRMP) specializing in emergency response and public service continuity</span></span> 
+                        with an 18-year track record of co-architecting strategic frameworks for global institutions including the 
+                        <strong class="text-white">ADB, WHO, MMDA, USAID, World Bank</strong>, and the 
+                        <strong class="text-white">Bangsamoro Government</strong>.
                     </p>
                     
-                    <div class="grid grid-cols-2 gap-6 mt-8">
-                        <div class="navy-glass p-4 rounded-lg border border-yellow-600/10">
-                            <p class="text-3xl font-serif gold-gradient-text stat-number" data-target="15">0</p>
-                            <p class="text-sm text-gray-500 mt-1">Years Experience</p>
-                        </div>
-                        <div class="navy-glass p-4 rounded-lg border border-yellow-600/10">
-                            <p class="text-3xl font-serif gold-gradient-text">BIRD</p>
-                            <p class="text-sm text-gray-500 mt-1">2026-2035 Framework</p>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                        Currently co-architecting the <strong class="text-yellow-400">Bangsamoro Investment Roadmap Development (BIRD) 2026–2035</strong>, 
+                        a 10-year framework designed to attract high-impact investments to complex economic landscapes.
+                    </p>
+                    
+                    <div class="glass-card rounded-xl p-6 border-l-4 border-yellow-500">
+                        <p class="text-xl font-serif italic text-gray-300 leading-relaxed">
+                            "Risk management should move beyond mere protection; it must serve as a catalyst for informed, courageous decision-making that drives national progress and long-term stability."
+                        </p>
+                        <div class="mt-4 flex items-center space-x-3">
+                            <div class="w-10 h-px bg-yellow-500"></div>
+                            <p class="text-yellow-500 font-medium">Alvin M. Silva, MDM</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="section-fade relative">
-                    <div class="absolute -inset-4 bg-gradient-to-r from-yellow-600/10 to-transparent rounded-2xl blur-xl"></div>
-                    <div class="relative navy-glass p-8 rounded-2xl border border-yellow-600/20">
-                        <span class="quote-mark font-serif gold-gradient-text">"</span>
-                        <p class="text-xl md:text-2xl font-serif italic text-gray-300 leading-relaxed relative z-10">
-                            Risk management should move beyond mere protection; it must serve as a catalyst for informed, courageous decision-making that drives national progress and long-term stability.
-                        </p>
-                        <div class="mt-6 flex items-center space-x-3">
-                            <div class="w-12 h-px gold-bg"></div>
-                            <p class="text-yellow-500 font-medium">Alvin Silva</p>
+                <div class="section-fade space-y-6">
+                    <!-- DDRiVE-M Platform Highlight -->
+                    <div class="glass-card rounded-xl p-6 card-hover border-glow cursor-pointer group">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-600 to-sky-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i data-lucide="cpu" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold mb-1 flex items-center gap-2">
+                                    DDRiVE-M Platform
+                                    <span class="px-2 py-0.5 rounded-full bg-yellow-500/20 text-yellow-500 text-xs font-condensed">FLAGSHIP</span>
+                                </h4>
+                                <p class="text-gray-400 text-sm">Data-Driven Risk & Vulnerability Evaluation and Management — AI-powered enterprise risk architecture</p>
+                            </div>
                         </div>
                     </div>
                     
-                    <!-- Key Credentials -->
-                    <div class="mt-8 space-y-4">
-                        <div class="flex items-start space-x-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-yellow-600 mt-0.5 flex-shrink-0"></i>
+                    <!-- Strat Planner Pro -->
+                    <div class="glass-card rounded-xl p-6 card-hover cursor-pointer group">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i data-lucide="layout-dashboard" class="w-6 h-6 text-white"></i>
+                            </div>
                             <div>
-                                <p class="text-white font-medium">Master in Development Management</p>
-                                <p class="text-sm text-gray-500">Asian Institute of Management</p>
+                                <h4 class="text-white font-semibold mb-1">Strat Planner Pro</h4>
+                                <p class="text-gray-400 text-sm">AI-powered strategic planning platform for deep systems diagnosis and disciplined execution</p>
                             </div>
                         </div>
-                        <div class="flex items-start space-x-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-yellow-600 mt-0.5 flex-shrink-0"></i>
+                    </div>
+                    
+                    <!-- Cognitio+ -->
+                    <div class="glass-card rounded-xl p-6 card-hover cursor-pointer group">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-yellow-500 to-yellow-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                                <i data-lucide="brain" class="w-6 h-6 text-navy-900"></i>
+                            </div>
                             <div>
-                                <p class="text-white font-medium">Certified Security Risk Management Professional</p>
-                                <p class="text-sm text-gray-500">Specializing in Emergency Response</p>
+                                <h4 class="text-white font-semibold mb-1">Cognitio+</h4>
+                                <p class="text-gray-400 text-sm">Digital ecosystem for resilience, growth, and wellness — rooted in culture, powered by awareness</p>
                             </div>
                         </div>
-                        <div class="flex items-start space-x-3">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-yellow-600 mt-0.5 flex-shrink-0"></i>
-                            <div>
-                                <p class="text-white font-medium">Published Author</p>
-                                <p class="text-sm text-gray-500">"Building Resilience" & "Personal Resilience"</p>
-                            </div>
+                    </div>
+                    
+                    <!-- Publications -->
+                    <div class="glass-card rounded-xl p-6 border border-yellow-500/30">
+                        <h4 class="text-yellow-500 font-condensed uppercase tracking-wider text-sm mb-3">Published Works</h4>
+                        <div class="space-y-2">
+                            <p class="text-white text-sm flex items-center gap-2">
+                                <i data-lucide="book-open" class="w-4 h-4 text-sky-400"></i>
+                                "Building Resilience: The Path to a More Fulfilling Life" (2023)
+                            </p>
+                            <p class="text-white text-sm flex items-center gap-2">
+                                <i data-lucide="book-open" class="w-4 h-4 text-sky-400"></i>
+                                "Personal Resilience: The Path to Oneness" (2025)
+                            </p>
+                            <p class="text-white text-sm flex items-center gap-2">
+                                <i data-lucide="book-open" class="w-4 h-4 text-sky-400"></i>
+                                "Resilient Futures: Nurturing Oneness in Education" (2024)
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -328,47 +566,47 @@
     </section>
 
     <!-- Philosophy Section -->
-    <section id="philosophy" class="relative py-24 md:py-32 bg-navy-800/30">
+    <section id="philosophy" class="relative py-24 bg-navy-800/30">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-16 section-fade">
                 <h2 class="font-serif text-4xl md:text-5xl font-light mb-4 text-white">
                     Risk as <span class="gold-gradient-text italic">Enabler</span>
                 </h2>
                 <p class="text-gray-400 max-w-2xl mx-auto">
-                    Navigating the polycrisis era requires reimagining risk management from defensive shield to strategic compass.
+                    Navigating the polycrisis era requires reimagining risk management from defensive shield to strategic compass
                 </p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="section-fade card-hover navy-glass p-8 rounded-xl border border-yellow-600/10 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 rounded-full blur-2xl group-hover:bg-yellow-500/10 transition-all"></div>
-                    <div class="w-12 h-12 rounded-lg gold-bg/10 border border-yellow-500/20 flex items-center justify-center mb-6">
-                        <i data-lucide="compass" class="w-6 h-6 text-yellow-500"></i>
+                <div class="section-fade glass-card rounded-xl p-8 card-hover relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all"></div>
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-600 to-sky-500 flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
+                        <i data-lucide="compass" class="w-7 h-7 text-white"></i>
                     </div>
                     <h3 class="font-serif text-2xl mb-3 text-white">Courageous Decision-Making</h3>
-                    <p class="text-gray-400 leading-relaxed">
+                    <p class="text-gray-400 leading-relaxed text-sm">
                         Risk management as a tool for enabling informed, courageous decisions—not just playing it safe. For MIC to fulfill its mandate, we must take calculated risks in a volatile global economy.
                     </p>
                 </div>
                 
-                <div class="section-fade card-hover navy-glass p-8 rounded-xl border border-yellow-600/10 relative overflow-hidden group" style="transition-delay: 100ms;">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 rounded-full blur-2xl group-hover:bg-yellow-500/10 transition-all"></div>
-                    <div class="w-12 h-12 rounded-lg gold-bg/10 border border-yellow-500/20 flex items-center justify-center mb-6">
-                        <i data-lucide="leaf" class="w-6 h-6 text-yellow-500"></i>
+                <div class="section-fade glass-card rounded-xl p-8 card-hover relative overflow-hidden group" style="transition-delay: 100ms;">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-green-500/10 rounded-full blur-2xl group-hover:bg-green-500/20 transition-all"></div>
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center mb-6 shadow-lg shadow-green-500/20">
+                        <i data-lucide="leaf" class="w-7 h-7 text-white"></i>
                     </div>
                     <h3 class="font-serif text-2xl mb-3 text-white">ESG as Core Guardrail</h3>
-                    <p class="text-gray-400 leading-relaxed">
-                        Climate risk is financial risk. With 15 years in CCA and DRR, I embed Environmental & Social accountability into financial operations—essential for state-led entities to maintain global trust.
+                    <p class="text-gray-400 leading-relaxed text-sm">
+                        Climate risk is financial risk. With 18 years in CCA and DRR, I embed Environmental & Social accountability into financial operations—essential for state-led entities to maintain global trust.
                     </p>
                 </div>
                 
-                <div class="section-fade card-hover navy-glass p-8 rounded-xl border border-yellow-600/10 relative overflow-hidden group" style="transition-delay: 200ms;">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/5 rounded-full blur-2xl group-hover:bg-yellow-500/10 transition-all"></div>
-                    <div class="w-12 h-12 rounded-lg gold-bg/10 border border-yellow-500/20 flex items-center justify-center mb-6">
-                        <i data-lucide="cpu" class="w-6 h-6 text-yellow-500"></i>
+                <div class="section-fade glass-card rounded-xl p-8 card-hover relative overflow-hidden group" style="transition-delay: 200ms;">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 rounded-full blur-2xl group-hover:bg-yellow-500/20 transition-all"></div>
+                    <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center mb-6 shadow-lg shadow-yellow-500/20">
+                        <i data-lucide="zap" class="w-7 h-7 text-navy-900"></i>
                     </div>
                     <h3 class="font-serif text-2xl mb-3 text-white">Systems Innovation</h3>
-                    <p class="text-gray-400 leading-relaxed">
+                    <p class="text-gray-400 leading-relaxed text-sm">
                         The DDRiVE-M platform represents the future: AI-driven, real-time risk architectures that provide the Board with foresight into portfolio volatility and institutional resilience.
                     </p>
                 </div>
@@ -376,7 +614,7 @@
             
             <!-- MIC Context -->
             <div class="mt-16 section-fade">
-                <div class="navy-glass rounded-2xl p-8 md:p-12 border border-yellow-600/10 relative overflow-hidden">
+                <div class="glass-card rounded-2xl p-8 md:p-12 relative overflow-hidden border-glow">
                     <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-500/50 to-transparent"></div>
                     <div class="grid md:grid-cols-2 gap-8 items-center">
                         <div>
@@ -385,25 +623,25 @@
                                 The Maharlika Investment Corporation operates with a dual mandate: generating sustainable, optimal risk-adjusted financial returns while serving as a catalyst for long-term socioeconomic development [^1^].
                             </p>
                             <p class="text-gray-400 leading-relaxed">
-                                As CRO, I view this through the lens of <strong class="text-yellow-500">strategic safeguards</strong>—ensuring that risk management enables rather than constrains the fund's ability to fulfill its sovereign wealth mission.
+                                As CRO, I view this through the lens of <strong class="text-yellow-400">strategic safeguards</strong>—ensuring that risk management enables rather than constrains the fund's ability to fulfill its sovereign wealth mission.
                             </p>
                         </div>
                         <div class="space-y-4">
-                            <div class="flex justify-between items-center py-3 border-b border-yellow-600/10">
-                                <span class="text-gray-400">Established</span>
+                            <div class="flex justify-between items-center py-3 border-b border-white/10">
+                                <span class="text-gray-400 font-condensed">Established</span>
                                 <span class="text-white font-medium">July 2023</span>
                             </div>
-                            <div class="flex justify-between items-center py-3 border-b border-yellow-600/10">
-                                <span class="text-gray-400">2024 Comprehensive Income</span>
-                                <span class="text-white font-medium">PHP 2.68 Billion</span>
+                            <div class="flex justify-between items-center py-3 border-b border-white/10">
+                                <span class="text-gray-400 font-condensed">2024 Comprehensive Income</span>
+                                <span class="stat-number text-2xl font-bold">₱2.68B</span>
                             </div>
-                            <div class="flex justify-between items-center py-3 border-b border-yellow-600/10">
-                                <span class="text-gray-400">Dividends to National Treasury</span>
-                                <span class="text-white font-medium">PHP 1.45 Billion</span>
+                            <div class="flex justify-between items-center py-3 border-b border-white/10">
+                                <span class="text-gray-400 font-condensed">Dividends to National Treasury</span>
+                                <span class="text-white font-medium">₱1.45B</span>
                             </div>
                             <div class="flex justify-between items-center py-3">
-                                <span class="text-gray-400">Core Values</span>
-                                <span class="text-yellow-500 text-sm">Resilience • Integrity • Transparency • Excellence</span>
+                                <span class="text-gray-400 font-condensed">Core Values</span>
+                                <span class="text-yellow-500 text-xs font-condensed uppercase tracking-wider">Resilience • Integrity • Transparency • Excellence</span>
                             </div>
                         </div>
                     </div>
@@ -412,133 +650,108 @@
         </div>
     </section>
 
-    <!-- Competencies Section -->
-    <section id="competencies" class="relative py-24 md:py-32 grid-pattern">
+    <!-- Competencies Section with Timeline -->
+    <section id="competencies" class="relative py-24">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-16 section-fade">
                 <h2 class="font-serif text-4xl md:text-5xl font-light mb-4 text-white">
                     Core <span class="gold-gradient-text italic">Competencies</span>
                 </h2>
-                <p class="text-gray-400">Five pillars of expertise aligned with MIC's rigorous investment framework</p>
+                <p class="text-gray-400 font-condensed uppercase tracking-widest text-sm">Five pillars of expertise aligned with MIC's rigorous investment framework</p>
             </div>
             
-            <div class="space-y-6">
+            <div class="relative timeline max-w-4xl mx-auto section-fade">
                 <!-- Competency 1 -->
-                <div class="section-fade navy-glass rounded-xl border border-yellow-600/10 overflow-hidden card-hover">
-                    <div class="p-8 md:p-10">
-                        <div class="flex flex-col md:flex-row md:items-start gap-6">
-                            <div class="flex-shrink-0">
-                                <div class="w-16 h-16 rounded-full gold-bg/10 border border-yellow-500/30 flex items-center justify-center">
-                                    <span class="font-serif text-2xl gold-gradient-text">01</span>
-                                </div>
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="font-serif text-2xl md:text-3xl mb-3 text-white">Strategic Risk Architecting & Investment Foresight</h3>
-                                <p class="text-gray-400 mb-4 leading-relaxed">
-                                    <span class="text-yellow-500 font-medium">Q:</span> "MIC is tasked with managing the Philippines' first sovereign wealth fund in a complex global economy. Can you demonstrate your ability to architect a long-term risk-informed investment framework for high-impact sectors?"
-                                </p>
-                                <div class="bg-navy-900/50 rounded-lg p-6 border-l-2 border-yellow-500">
-                                    <p class="text-gray-300 italic">
-                                        "I am currently architecting the <strong>Bangsamoro Investment Roadmap Development (BIRD) 2026–2035</strong>. This involves designing a 10-year strategic framework to secure investments in a complex, post-conflict landscape—a task that requires balancing aggressive growth with rigorous risk-informed safeguards."
-                                    </p>
-                                </div>
-                            </div>
+                <div class="timeline-item mb-12 relative">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card rounded-xl p-8 border-l-4 border-blue-500 card-hover">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold font-serif">01</span>
+                            <h3 class="font-serif text-2xl text-white">Strategic Risk Architecting</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 italic border-l-2 border-yellow-500/30 pl-4">
+                            "I am currently architecting the Bangsamoro Investment Roadmap Development (BIRD) 2026–2035. This involves designing a 10-year strategic framework to secure investments in a complex, post-conflict landscape—a task that requires balancing aggressive growth with rigorous risk-informed safeguards."
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-condensed">Investment Foresight</span>
+                            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-condensed">Strategic Planning</span>
+                            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-xs font-condensed">Post-Conflict Economics</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Competency 2 -->
-                <div class="section-fade navy-glass rounded-xl border border-yellow-600/10 overflow-hidden card-hover" style="transition-delay: 100ms;">
-                    <div class="p-8 md:p-10">
-                        <div class="flex flex-col md:flex-row md:items-start gap-6">
-                            <div class="flex-shrink-0">
-                                <div class="w-16 h-16 rounded-full gold-bg/10 border border-yellow-500/30 flex items-center justify-center">
-                                    <span class="font-serif text-2xl gold-gradient-text">02</span>
-                                </div>
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="font-serif text-2xl md:text-3xl mb-3 text-white">Enterprise Risk Management & Systems Innovation</h3>
-                                <p class="text-gray-400 mb-4 leading-relaxed">
-                                    <span class="text-yellow-500 font-medium">Q:</span> "As CRO, you must oversee a 'rigorous framework' for investment decisions. How have you utilized technology and systems innovation to institutionalize ERM principles?"
-                                </p>
-                                <div class="bg-navy-900/50 rounded-lg p-6 border-l-2 border-yellow-500">
-                                    <p class="text-gray-300 italic">
-                                        "I designed and deployed the <strong>DDRiVE-M platform</strong>—an ERM architecture built on Business Continuity Management principles. Beyond protection, risk management enables informed, courageous decision-making through AI-driven dashboards that track performance and risk in real-time."
-                                    </p>
-                                </div>
-                            </div>
+                <div class="timeline-item mb-12 relative">
+                    <div class="timeline-dot" style="animation-delay: 0.5s;"></div>
+                    <div class="glass-card rounded-xl p-8 border-l-4 border-sky-500 card-hover">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-10 h-10 rounded-full bg-sky-500/20 flex items-center justify-center text-sky-400 font-bold font-serif">02</span>
+                            <h3 class="font-serif text-2xl text-white">Enterprise Risk Management</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 italic border-l-2 border-yellow-500/30 pl-4">
+                            "I designed and deployed the DDRiVE-M platform—an ERM architecture built on Business Continuity Management principles. Beyond protection, risk management enables informed, courageous decision-making through AI-driven dashboards that track performance and risk in real-time."
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 text-xs font-condensed">DDRiVE-M Platform</span>
+                            <span class="px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 text-xs font-condensed">Business Continuity</span>
+                            <span class="px-3 py-1 rounded-full bg-sky-500/10 text-sky-400 text-xs font-condensed">AI/ML Integration</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Competency 3 -->
-                <div class="section-fade navy-glass rounded-xl border border-yellow-600/10 overflow-hidden card-hover" style="transition-delay: 200ms;">
-                    <div class="p-8 md:p-10">
-                        <div class="flex flex-col md:flex-row md:items-start gap-6">
-                            <div class="flex-shrink-0">
-                                <div class="w-16 h-16 rounded-full gold-bg/10 border border-yellow-500/30 flex items-center justify-center">
-                                    <span class="font-serif text-2xl gold-gradient-text">03</span>
-                                </div>
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="font-serif text-2xl md:text-3xl mb-3 text-white">ESG Leadership & Sustainability Integration</h3>
-                                <p class="text-gray-400 mb-4 leading-relaxed">
-                                    <span class="text-yellow-500 font-medium">Q:</span> "MIC prioritizes 'sustainable investments' and transparency. How will you integrate ESG principles into our core risk assessments to ensure we meet international standards?"
-                                </p>
-                                <div class="bg-navy-900/50 rounded-lg p-6 border-l-2 border-yellow-500">
-                                    <p class="text-gray-300 italic">
-                                        "Sustainability is at the core of my 15-year career in Climate Change Adaptation and Disaster Risk Reduction. I have embedded E&S accountability frameworks into financial operations for institutions like De La Salle University, ensuring portfolios generate returns while remaining resilient against climate-related vulnerabilities."
-                                    </p>
-                                </div>
-                            </div>
+                <div class="timeline-item mb-12 relative">
+                    <div class="timeline-dot" style="animation-delay: 1s;"></div>
+                    <div class="glass-card rounded-xl p-8 border-l-4 border-green-500 card-hover">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 font-bold font-serif">03</span>
+                            <h3 class="font-serif text-2xl text-white">ESG Leadership</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 italic border-l-2 border-yellow-500/30 pl-4">
+                            "Sustainability is at the core of my 18-year career in Climate Change Adaptation and Disaster Risk Reduction. I have embedded E&S accountability frameworks into financial operations for institutions like De La Salle University."
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="px-3 py-1 rounded-full bg-green-500/10 text-green-400 text-xs font-condensed">Climate Adaptation</span>
+                            <span class="px-3 py-1 rounded-full bg-green-500/10 text-green-400 text-xs font-condensed">ESG Reporting</span>
+                            <span class="px-3 py-1 rounded-full bg-green-500/10 text-green-400 text-xs font-condensed">Sustainability Policy</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Competency 4 -->
-                <div class="section-fade navy-glass rounded-xl border border-yellow-600/10 overflow-hidden card-hover" style="transition-delay: 300ms;">
-                    <div class="p-8 md:p-10">
-                        <div class="flex flex-col md:flex-row md:items-start gap-6">
-                            <div class="flex-shrink-0">
-                                <div class="w-16 h-16 rounded-full gold-bg/10 border border-yellow-500/30 flex items-center justify-center">
-                                    <span class="font-serif text-2xl gold-gradient-text">04</span>
-                                </div>
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="font-serif text-2xl md:text-3xl mb-3 text-white">Public Sector Governance & Stakeholder Engagement</h3>
-                                <p class="text-gray-400 mb-4 leading-relaxed">
-                                    <span class="text-yellow-500 font-medium">Q:</span> "The CRO must navigate the intersection of public policy and finance. How have you managed risk-informed planning while maintaining accountability to diverse government and international stakeholders?"
-                                </p>
-                                <div class="bg-navy-900/50 rounded-lg p-6 border-l-2 border-yellow-500">
-                                    <p class="text-gray-300 italic">
-                                        "I have trained senior officials from the Department of Finance and served as consultant at the Office of the Chairman of MMDA. My experience with multi-sector partnerships—including IFIs, NGOs, and the private sector—ensures MIC's risk strategies will be both inclusive and compliant with global standards."
-                                    </p>
-                                </div>
-                            </div>
+                <div class="timeline-item mb-12 relative">
+                    <div class="timeline-dot" style="animation-delay: 1.5s;"></div>
+                    <div class="glass-card rounded-xl p-8 border-l-4 border-yellow-500 card-hover">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center text-yellow-400 font-bold font-serif">04</span>
+                            <h3 class="font-serif text-2xl text-white">Public Sector Governance</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 italic border-l-2 border-yellow-500/30 pl-4">
+                            "I have trained senior officials from the Department of Finance and served as consultant at the Office of the Chairman of MMDA. My experience with multi-sector partnerships ensures MIC's risk strategies will be both inclusive and compliant with global standards."
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 text-xs font-condensed">DOF Training</span>
+                            <span class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 text-xs font-condensed">MMDA Advisory</span>
+                            <span class="px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-400 text-xs font-condensed">Multi-Stakeholder</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Competency 5 -->
-                <div class="section-fade navy-glass rounded-xl border border-yellow-600/10 overflow-hidden card-hover" style="transition-delay: 400ms;">
-                    <div class="p-8 md:p-10">
-                        <div class="flex flex-col md:flex-row md:items-start gap-6">
-                            <div class="flex-shrink-0">
-                                <div class="w-16 h-16 rounded-full gold-bg/10 border border-yellow-500/30 flex items-center justify-center">
-                                    <span class="font-serif text-2xl gold-gradient-text">05</span>
-                                </div>
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="font-serif text-2xl md:text-3xl mb-3 text-white">Adaptive Leadership & Institutional Resilience</h3>
-                                <p class="text-gray-400 mb-4 leading-relaxed">
-                                    <span class="text-yellow-500 font-medium">Q:</span> "Sovereign wealth funds often face sudden, volatile shifts. Describe your experience in building institutional resilience during a crisis."
-                                </p>
-                                <div class="bg-navy-900/50 rounded-lg p-6 border-l-2 border-yellow-500">
-                                    <p class="text-gray-300 italic">
-                                        "My expertise is in building resilience, documented in my books and applied through comprehensive health resilience programs for WHO and climate-smart projects worth PHP190M. For MIC, this means building systems that allow the corporation to thrive and pivot during global market disruptions."
-                                    </p>
-                                </div>
-                            </div>
+                <div class="timeline-item relative">
+                    <div class="timeline-dot" style="animation-delay: 2s;"></div>
+                    <div class="glass-card rounded-xl p-8 border-l-4 border-purple-500 card-hover">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 font-bold font-serif">05</span>
+                            <h3 class="font-serif text-2xl text-white">Adaptive Leadership</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 italic border-l-2 border-yellow-500/30 pl-4">
+                            "My expertise is in building resilience, documented in my books and applied through comprehensive health resilience programs for WHO and climate-smart projects worth ₱190M. For MIC, this means building systems that allow the corporation to thrive and pivot during global market disruptions."
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-condensed">Crisis Response</span>
+                            <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-condensed">Institutional Resilience</span>
+                            <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-condensed">Published Author</span>
                         </div>
                     </div>
                 </div>
@@ -546,10 +759,14 @@
         </div>
     </section>
 
-    <!-- Framework Section -->
-    <section id="framework" class="relative py-24 md:py-32 bg-navy-800/30">
+    <!-- DDRiVE-M Framework Section -->
+    <section id="framework" class="relative py-24 bg-navy-800/30">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-16 section-fade">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border-yellow-500/30 mb-4">
+                    <i data-lucide="cpu" class="w-4 h-4 text-yellow-500"></i>
+                    <span class="text-yellow-500 text-xs uppercase tracking-[0.2em] font-condensed">Flagship Innovation</span>
+                </div>
                 <h2 class="font-serif text-4xl md:text-5xl font-light mb-4 text-white">
                     The <span class="gold-gradient-text italic">DDRiVE-M</span> Architecture
                 </h2>
@@ -560,84 +777,115 @@
             
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="section-fade space-y-6">
-                    <div class="navy-glass p-6 rounded-xl border border-yellow-600/10 flex items-start space-x-4">
-                        <div class="w-10 h-10 rounded-lg gold-bg flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="database" class="w-5 h-5 text-navy-900"></i>
+                    <div class="glass-card rounded-xl p-6 card-hover flex items-start space-x-4 border-l-4 border-blue-500">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-blue-700 flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="database" class="w-6 h-6 text-white"></i>
                         </div>
                         <div>
-                            <h4 class="text-white font-medium mb-1">Data-Driven Evaluation</h4>
-                            <p class="text-gray-400 text-sm">Real-time risk architecture providing continuous monitoring of portfolio volatility and institutional resilience metrics.</p>
+                            <h4 class="text-white font-semibold mb-1">Data-Driven Evaluation</h4>
+                            <p class="text-gray-400 text-sm">Real-time risk architecture providing continuous monitoring of portfolio volatility and institutional resilience metrics using AI and machine learning.</p>
                         </div>
                     </div>
                     
-                    <div class="navy-glass p-6 rounded-xl border border-yellow-600/10 flex items-start space-x-4">
-                        <div class="w-10 h-10 rounded-lg gold-bg flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="users" class="w-5 h-5 text-navy-900"></i>
+                    <div class="glass-card rounded-xl p-6 card-hover flex items-start space-x-4 border-l-4 border-sky-500">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-sky-600 flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="users" class="w-6 h-6 text-white"></i>
                         </div>
                         <div>
-                            <h4 class="text-white font-medium mb-1">Multi-Stakeholder Collaboration</h4>
+                            <h4 class="text-white font-semibold mb-1">Multi-Stakeholder Collaboration</h4>
                             <p class="text-gray-400 text-sm">Built on Business Continuity Management principles to enable enterprise-scale mitigation across diverse institutional partners.</p>
                         </div>
                     </div>
                     
-                    <div class="navy-glass p-6 rounded-xl border border-yellow-600/10 flex items-start space-x-4">
-                        <div class="w-10 h-10 rounded-lg gold-bg flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="brain" class="w-5 h-5 text-navy-900"></i>
+                    <div class="glass-card rounded-xl p-6 card-hover flex items-start space-x-4 border-l-4 border-yellow-500">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500 to-yellow-600 flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="brain" class="w-6 h-6 text-navy-900"></i>
                         </div>
                         <div>
-                            <h4 class="text-white font-medium mb-1">AI & Machine Learning Integration</h4>
-                            <p class="text-gray-400 text-sm">Intuitive dashboards that leverage predictive analytics for foresight into emerging risks and opportunities.</p>
+                            <h4 class="text-white font-semibold mb-1">AI & Machine Learning</h4>
+                            <p class="text-gray-400 text-sm">Intuitive dashboards leveraging predictive analytics for foresight into emerging risks and investment opportunities.</p>
                         </div>
                     </div>
                     
-                    <div class="navy-glass p-6 rounded-xl border border-yellow-600/10 flex items-start space-x-4">
-                        <div class="w-10 h-10 rounded-lg gold-bg flex items-center justify-center flex-shrink-0">
-                            <i data-lucide="shield-check" class="w-5 h-5 text-navy-900"></i>
+                    <div class="glass-card rounded-xl p-6 card-hover flex items-start space-x-4 border-l-4 border-green-500">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
                         </div>
                         <div>
-                            <h4 class="text-white font-medium mb-1">BCM-Anchored Resilience</h4>
+                            <h4 class="text-white font-semibold mb-1">BCM-Anchored Resilience</h4>
                             <p class="text-gray-400 text-sm">Business Continuity Management principles ensure operational stability during global disruptions or national crises.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="section-fade relative">
-                    <div class="relative rounded-2xl overflow-hidden border border-yellow-600/20 bg-navy-900/50 p-8">
-                        <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent"></div>
+                    <div class="glass-card rounded-2xl overflow-hidden border border-yellow-500/20 p-8 relative">
+                        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent"></div>
                         
-                        <!-- Visual Representation -->
                         <div class="relative z-10">
                             <div class="text-center mb-8">
+                                <div class="w-20 h-20 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-blue-600 to-sky-500 flex items-center justify-center shadow-lg shadow-blue-500/30">
+                                    <i data-lucide="activity" class="w-10 h-10 text-white"></i>
+                                </div>
                                 <h3 class="font-serif text-3xl gold-gradient-text mb-2">DDRiVE-M</h3>
-                                <p class="text-xs text-yellow-600/60 uppercase tracking-widest">Platform Architecture</p>
+                                <p class="text-xs text-yellow-600/60 uppercase tracking-widest font-condensed">Platform Architecture</p>
                             </div>
                             
-                            <div class="space-y-4">
-                                <div class="flex items-center justify-between p-4 rounded-lg bg-navy-800/50 border border-yellow-600/10">
-                                    <span class="text-gray-300 text-sm">Data Ingestion Layer</span>
-                                    <div class="flex space-x-1">
-                                        <div class="w-2 h-2 rounded-full gold-bg animate-pulse"></div>
-                                        <div class="w-2 h-2 rounded-full gold-bg animate-pulse" style="animation-delay: 0.2s"></div>
-                                        <div class="w-2 h-2 rounded-full gold-bg animate-pulse" style="animation-delay: 0.4s"></div>
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between p-4 rounded-lg bg-navy-900/50 border border-white/5 group hover:border-blue-500/30 transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+                                        <span class="text-gray-300 text-sm">Data Ingestion Layer</span>
                                     </div>
+                                    <i data-lucide="arrow-right" class="w-4 h-4 text-gray-600 group-hover:text-blue-500 transition-colors"></i>
                                 </div>
-                                <div class="flex items-center justify-between p-4 rounded-lg bg-navy-800/50 border border-yellow-600/10">
-                                    <span class="text-gray-300 text-sm">Risk Analytics Engine</span>
-                                    <span class="text-xs text-yellow-500">AI/ML Powered</span>
+                                
+                                <div class="flex items-center justify-between p-4 rounded-lg bg-navy-900/50 border border-white/5 group hover:border-sky-500/30 transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-2 h-2 rounded-full bg-sky-500"></div>
+                                        <span class="text-gray-300 text-sm">Risk Analytics Engine</span>
+                                    </div>
+                                    <span class="text-xs text-sky-500 font-condensed">AI/ML Powered</span>
                                 </div>
-                                <div class="flex items-center justify-between p-4 rounded-lg bg-navy-800/50 border border-yellow-600/10">
-                                    <span class="text-gray-300 text-sm">Vulnerability Assessment</span>
-                                    <span class="text-xs text-green-500">Real-time</span>
+                                
+                                <div class="flex items-center justify-between p-4 rounded-lg bg-navy-900/50 border border-white/5 group hover:border-yellow-500/30 transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+                                        <span class="text-gray-300 text-sm">Vulnerability Assessment</span>
+                                    </div>
+                                    <span class="text-xs text-green-500 font-condensed">Real-time</span>
                                 </div>
-                                <div class="flex items-center justify-between p-4 rounded-lg bg-navy-800/50 border border-yellow-600/10">
-                                    <span class="text-gray-300 text-sm">Strategic Dashboard</span>
-                                    <span class="text-xs text-yellow-500">Executive View</span>
+                                
+                                <div class="flex items-center justify-between p-4 rounded-lg bg-navy-900/50 border border-white/5 group hover:border-green-500/30 transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                                        <span class="text-gray-300 text-sm">Strategic Dashboard</span>
+                                    </div>
+                                    <span class="text-xs text-yellow-500 font-condensed">Executive View</span>
                                 </div>
                             </div>
                             
-                            <div class="mt-8 pt-6 border-t border-yellow-600/10 text-center">
-                                <p class="text-sm text-gray-400">Enabling <span class="text-yellow-500">informed, courageous</span> decision-making through data transparency</p>
+                            <div class="mt-8 pt-6 border-t border-white/10 text-center">
+                                <p class="text-sm text-gray-400">Enabling <span class="text-yellow-400 font-medium">informed, courageous</span> decision-making through data transparency</p>
                             </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Certifications Badge -->
+                    <div class="mt-6 glass-card rounded-xl p-4 flex items-center justify-center gap-6">
+                        <div class="text-center">
+                            <i data-lucide="shield" class="w-6 h-6 text-yellow-500 mx-auto mb-1"></i>
+                            <p class="text-xs text-gray-400 font-condensed">SRMP Certified</p>
+                        </div>
+                        <div class="w-px h-8 bg-white/10"></div>
+                        <div class="text-center">
+                            <i data-lucide="award" class="w-6 h-6 text-yellow-500 mx-auto mb-1"></i>
+                            <p class="text-xs text-gray-400 font-condensed">MDM AIM</p>
+                        </div>
+                        <div class="w-px h-8 bg-white/10"></div>
+                        <div class="text-center">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-yellow-500 mx-auto mb-1"></i>
+                            <p class="text-xs text-gray-400 font-condensed">ISO 31000</p>
                         </div>
                     </div>
                 </div>
@@ -646,37 +894,40 @@
     </section>
 
     <!-- Recommendations Section -->
-    <section id="recommendations" class="relative py-24 md:py-32 grid-pattern">
+    <section id="recommendations" class="relative py-24">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-16 section-fade">
                 <h2 class="font-serif text-4xl md:text-5xl font-light mb-4 text-white">
                     Strategic <span class="gold-gradient-text italic">Recommendations</span>
                 </h2>
-                <p class="text-gray-400">Five instruments to institutionalize risk governance at MIC</p>
+                <p class="text-gray-400 font-condensed uppercase tracking-widest text-sm">Five instruments to institutionalize risk governance at MIC</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="section-fade navy-glass p-6 rounded-xl border border-yellow-600/10 card-hover lg:col-span-2">
+                <div class="section-fade glass-card rounded-xl p-6 card-hover lg:col-span-2 border-glow">
                     <div class="flex items-start space-x-4">
-                        <div class="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center flex-shrink-0 border border-yellow-500/20">
-                            <i data-lucide="layout-dashboard" class="w-6 h-6 text-yellow-500"></i>
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-sky-500 flex items-center justify-center flex-shrink-0 shadow-lg shadow-blue-500/20">
+                            <i data-lucide="layout-dashboard" class="w-6 h-6 text-white"></i>
                         </div>
                         <div>
-                            <h3 class="font-serif text-xl mb-2 text-white">1. DDRiVE-M Enterprise Deployment</h3>
+                            <h3 class="font-serif text-xl mb-2 text-white flex items-center gap-2">
+                                1. DDRiVE-M Enterprise Deployment
+                                <span class="px-2 py-0.5 rounded-full bg-yellow-500/20 text-yellow-500 text-xs font-condensed">PRIORITY</span>
+                            </h3>
                             <p class="text-gray-400 text-sm leading-relaxed mb-3">
                                 Adopt the Data-Driven Risk & Vulnerability Evaluation and Management platform as MIC's core ERM architecture. This provides a "rigorous framework" for real-time evaluation and mitigation at enterprise scale.
                             </p>
-                            <div class="flex items-center space-x-2 text-xs text-yellow-600/80">
-                                <i data-lucide="check" class="w-3 h-3"></i>
-                                <span>Real-time portfolio monitoring</span>
+                            <div class="flex gap-2">
+                                <span class="px-2 py-1 rounded bg-blue-500/10 text-blue-400 text-xs">Real-time Monitoring</span>
+                                <span class="px-2 py-1 rounded bg-blue-500/10 text-blue-400 text-xs">Portfolio Analytics</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="section-fade navy-glass p-6 rounded-xl border border-yellow-600/10 card-hover" style="transition-delay: 100ms;">
-                    <div class="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center mb-4 border border-yellow-500/20">
-                        <i data-lucide="leaf" class="w-6 h-6 text-yellow-500"></i>
+                <div class="section-fade glass-card rounded-xl p-6 card-hover" style="transition-delay: 100ms;">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center mb-4 shadow-lg shadow-green-500/20">
+                        <i data-lucide="leaf" class="w-6 h-6 text-white"></i>
                     </div>
                     <h3 class="font-serif text-xl mb-2 text-white">2. ESG Guardrails</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
@@ -684,9 +935,9 @@
                     </p>
                 </div>
                 
-                <div class="section-fade navy-glass p-6 rounded-xl border border-yellow-600/10 card-hover" style="transition-delay: 200ms;">
-                    <div class="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center mb-4 border border-yellow-500/20">
-                        <i data-lucide="map" class="w-6 h-6 text-yellow-500"></i>
+                <div class="section-fade glass-card rounded-xl p-6 card-hover" style="transition-delay: 200ms;">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center mb-4 shadow-lg shadow-yellow-500/20">
+                        <i data-lucide="map" class="w-6 h-6 text-navy-900"></i>
                     </div>
                     <h3 class="font-serif text-xl mb-2 text-white">3. Investment Roadmapping</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
@@ -694,9 +945,9 @@
                     </p>
                 </div>
                 
-                <div class="section-fade navy-glass p-6 rounded-xl border border-yellow-600/10 card-hover" style="transition-delay: 300ms;">
-                    <div class="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center mb-4 border border-yellow-500/20">
-                        <i data-lucide="refresh-cw" class="w-6 h-6 text-yellow-500"></i>
+                <div class="section-fade glass-card rounded-xl p-6 card-hover" style="transition-delay: 300ms;">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center mb-4 shadow-lg shadow-purple-500/20">
+                        <i data-lucide="refresh-cw" class="w-6 h-6 text-white"></i>
                     </div>
                     <h3 class="font-serif text-xl mb-2 text-white">4. BCM Integration</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
@@ -704,11 +955,11 @@
                     </p>
                 </div>
                 
-                <div class="section-fade navy-glass p-6 rounded-xl border border-yellow-600/10 card-hover" style="transition-delay: 400ms;">
-                    <div class="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center mb-4 border border-yellow-500/20">
-                        <i data-lucide="graduation-cap" class="w-6 h-6 text-yellow-500"></i>
+                <div class="section-fade glass-card rounded-xl p-6 card-hover" style="transition-delay: 400ms;">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-blue-600 flex items-center justify-center mb-4 shadow-lg shadow-sky-500/20">
+                        <i data-lucide="graduation-cap" class="w-6 h-6 text-white"></i>
                     </div>
-                    <h3 class="font-serif text-xl mb-2 text-white">5. Systems Thinking Training</h3>
+                    <h3 class="font-serif text-xl mb-2 text-white">5. Systems Thinking</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
                         Institutionalize Systems Thinking within the MIC board to align risk appetite with national development goals.
                     </p>
@@ -717,29 +968,41 @@
             
             <!-- Collaborative Questions -->
             <div class="mt-16 section-fade">
-                <div class="navy-glass rounded-2xl p-8 md:p-12 border border-yellow-600/10">
-                    <h3 class="font-serif text-3xl mb-8 text-center text-white">Questions for the MIC Board</h3>
+                <div class="glass-card rounded-2xl p-8 md:p-12 border-glow">
+                    <h3 class="font-serif text-3xl mb-8 text-center text-white">Strategic Questions for the MIC Board</h3>
                     <div class="grid md:grid-cols-2 gap-6">
                         <div class="space-y-4">
-                            <div class="p-4 rounded-lg bg-navy-900/30 border-l-2 border-yellow-500/50">
-                                <p class="text-gray-300 text-sm italic">"How does the Board envision the CRO collaborating with the investment team to quantify climate-related risks as core components of valuation?"</p>
+                            <div class="p-4 rounded-lg bg-navy-900/50 border-l-4 border-blue-500 hover:bg-navy-900/70 transition-colors cursor-pointer group">
+                                <p class="text-gray-300 text-sm italic group-hover:text-white transition-colors">
+                                    "How does the Board envision the CRO collaborating with the investment team to quantify climate-related risks as core components of valuation?"
+                                </p>
                             </div>
-                            <div class="p-4 rounded-lg bg-navy-900/30 border-l-2 border-yellow-500/50">
-                                <p class="text-gray-300 text-sm italic">"What is MIC's appetite for adopting automated, AI-driven risk architectures for real-time portfolio foresight?"</p>
+                            <div class="p-4 rounded-lg bg-navy-900/50 border-l-4 border-sky-500 hover:bg-navy-900/70 transition-colors cursor-pointer group">
+                                <p class="text-gray-300 text-sm italic group-hover:text-white transition-colors">
+                                    "What is MIC's appetite for adopting automated, AI-driven risk architectures for real-time portfolio foresight?"
+                                </p>
                             </div>
-                            <div class="p-4 rounded-lg bg-navy-900/30 border-l-2 border-yellow-500/50">
-                                <p class="text-gray-300 text-sm italic">"How does MIC define the risk-return threshold for national development projects with high social-resilience value?"</p>
+                            <div class="p-4 rounded-lg bg-navy-900/50 border-l-4 border-yellow-500 hover:bg-navy-900/70 transition-colors cursor-pointer group">
+                                <p class="text-gray-300 text-sm italic group-hover:text-white transition-colors">
+                                    "How does MIC define the risk-return threshold for national development projects with high social-resilience value?"
+                                </p>
                             </div>
                         </div>
                         <div class="space-y-4">
-                            <div class="p-4 rounded-lg bg-navy-900/30 border-l-2 border-yellow-500/50">
-                                <p class="text-gray-300 text-sm italic">"What role do you see the CRO playing in communicating risk transparency to global investors?"</p>
+                            <div class="p-4 rounded-lg bg-navy-900/50 border-l-4 border-green-500 hover:bg-navy-900/70 transition-colors cursor-pointer group">
+                                <p class="text-gray-300 text-sm italic group-hover:text-white transition-colors">
+                                    "What role do you see the CRO playing in communicating risk transparency to global investors?"
+                                </p>
                             </div>
-                            <div class="p-4 rounded-lg bg-navy-900/30 border-l-2 border-yellow-500/50">
-                                <p class="text-gray-300 text-sm italic">"How should the CRO's office collaborate with the COO to ensure risk management enables growth rather than constraining it?"</p>
+                            <div class="p-4 rounded-lg bg-navy-900/50 border-l-4 border-purple-500 hover:bg-navy-900/70 transition-colors cursor-pointer group">
+                                <p class="text-gray-300 text-sm italic group-hover:text-white transition-colors">
+                                    "How should the CRO's office collaborate with the COO to ensure risk management enables growth?"
+                                </p>
                             </div>
-                            <div class="p-4 rounded-lg bg-navy-900/30 border-l-2 border-yellow-500/50">
-                                <p class="text-gray-300 text-sm italic">"How will we measure the success of the risk function—through loss minimization or successful execution of complex partnerships?"</p>
+                            <div class="p-4 rounded-lg bg-navy-900/50 border-l-4 border-pink-500 hover:bg-navy-900/70 transition-colors cursor-pointer group">
+                                <p class="text-gray-300 text-sm italic group-hover:text-white transition-colors">
+                                    "How will we measure the success of the risk function—through loss minimization or successful execution of complex partnerships?"
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -748,39 +1011,95 @@
         </div>
     </section>
 
-    <!-- Closing Section -->
-    <section class="relative py-24 md:py-32 bg-navy-800/30">
+    <!-- Contact Section -->
+    <section id="contact" class="relative py-24 bg-navy-800/30">
         <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center section-fade">
-            <div class="w-20 h-px gold-bg mx-auto mb-8"></div>
+            <div class="w-20 h-1 bg-gradient-to-r from-yellow-500 to-sky-500 mx-auto mb-8"></div>
             <h2 class="font-serif text-4xl md:text-5xl font-light mb-6 text-white">
                 Ready to Serve the <span class="gold-gradient-text italic">Philippines</span>
             </h2>
-            <p class="text-gray-400 text-lg leading-relaxed mb-8">
+            <p class="text-gray-400 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
                 As Chief Risk Officer, I commit to ensuring that MIC's risk management function serves as a strategic catalyst—enabling the fund to navigate the polycrisis era while fulfilling its mandate to generate sustainable returns and foster national socioeconomic development.
             </p>
-            <div class="flex flex-col md:flex-row items-center justify-center gap-6 text-sm text-gray-500">
-                <div class="flex items-center space-x-2">
-                    <i data-lucide="mail" class="w-4 h-4 text-yellow-600"></i>
-                    <span>Professional Credentials Available Upon Request</span>
+            
+            <div class="glass-card rounded-2xl p-8 max-w-2xl mx-auto">
+                <div class="grid grid-cols-2 gap-6 text-left">
+                    <a href="tel:+639178555134" class="flex items-center space-x-3 p-4 rounded-lg bg-navy-900/30 hover:bg-navy-900/50 transition-colors group">
+                        <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
+                            <i data-lucide="smartphone" class="w-5 h-5 text-blue-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 font-condensed uppercase">Mobile</p>
+                            <p class="text-white text-sm">+63 917 855 5134</p>
+                        </div>
+                    </a>
+                    
+                    <a href="tel:+632879151796" class="flex items-center space-x-3 p-4 rounded-lg bg-navy-900/30 hover:bg-navy-900/50 transition-colors group">
+                        <div class="w-10 h-10 rounded-full bg-sky-500/20 flex items-center justify-center group-hover:bg-sky-500/30 transition-colors">
+                            <i data-lucide="phone" class="w-5 h-5 text-sky-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 font-condensed uppercase">Landline</p>
+                            <p class="text-white text-sm">(028) 7915-1796</p>
+                        </div>
+                    </a>
+                    
+                    <a href="mailto:alvin.silva@asilvainnovations.com" class="flex items-center space-x-3 p-4 rounded-lg bg-navy-900/30 hover:bg-navy-900/50 transition-colors group">
+                        <div class="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center group-hover:bg-yellow-500/30 transition-colors">
+                            <i data-lucide="mail" class="w-5 h-5 text-yellow-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 font-condensed uppercase">Email</p>
+                            <p class="text-white text-sm text-xs">alvin.silva@asilvainnovations.com</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://alvin.asilvainnovations.com" target="_blank" class="flex items-center space-x-3 p-4 rounded-lg bg-navy-900/30 hover:bg-navy-900/50 transition-colors group">
+                        <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center group-hover:bg-green-500/30 transition-colors">
+                            <i data-lucide="globe" class="w-5 h-5 text-green-400"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500 font-condensed uppercase">Website</p>
+                            <p class="text-white text-sm text-xs">alvin.asilvainnovations.com</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="mt-8 pt-6 border-t border-white/10 flex justify-center space-x-4">
+                    <a href="https://www.linkedin.com/in/alvinsilva777/" target="_blank" class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-sky-500 flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg shadow-blue-500/30">
+                        <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    </a>
+                    <a href="https://www.facebook.com/a7vinsi7va/" target="_blank" class="w-12 h-12 rounded-full bg-gradient-to-br from-blue-800 to-blue-600 flex items-center justify-center text-white hover:scale-110 transition-transform shadow-lg shadow-blue-800/30">
+                        <i data-lucide="facebook" class="w-5 h-5"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-yellow-600/10 py-12 bg-navy-900">
+    <footer class="border-t border-yellow-500/10 py-12 bg-navy-900">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
             <div class="flex items-center space-x-3 mb-4 md:mb-0">
-                <div class="w-8 h-8 rounded-full gold-bg flex items-center justify-center">
-                    <span class="text-navy-900 font-bold text-sm font-serif">AS</span>
+                <img src="https://appimize.app/assets/apps/user_1097/images/288dd899974a_850_1097.png" 
+                     alt="Alvin Silva Logo" 
+                     class="w-10 h-10 rounded-full border-2 border-yellow-500">
+                <div>
+                    <span class="text-gray-400 text-sm">Alvin M. Silva, MDM</span>
+                    <p class="text-xs text-gray-600 font-condensed">Chief Risk Officer Application</p>
                 </div>
-                <span class="text-gray-500 text-sm">Alvin Silva for MIC Chief Risk Officer</span>
             </div>
-            <div class="text-gray-600 text-xs">
-                <p>Application for Maharlika Investment Corporation • 2025</p>
+            <div class="text-gray-600 text-xs text-center md:text-right">
+                <p>Maharlika Investment Corporation • 2025</p>
+                <p class="mt-1">Resilience • Integrity • Transparency • Excellence</p>
             </div>
         </div>
     </footer>
+
+    <!-- Back to top button -->
+    <button class="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-gradient-to-br from-yellow-500 to-yellow-600 text-navy-900 shadow-lg shadow-yellow-500/30 opacity-0 invisible transition-all duration-300 hover:scale-110 z-50 flex items-center justify-center" id="backToTop" aria-label="Back to top">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
 
     <script>
         // Initialize Lucide icons
@@ -797,33 +1116,11 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    
-                    // Animate counters if present
-                    const counters = entry.target.querySelectorAll('.stat-number[data-target]');
-                    counters.forEach(counter => {
-                        const target = parseInt(counter.getAttribute('data-target'));
-                        animateCounter(counter, target);
-                    });
                 }
             });
         }, observerOptions);
         
         document.querySelectorAll('.section-fade').forEach((el) => observer.observe(el));
-        
-        // Counter animation
-        function animateCounter(element, target) {
-            let current = 0;
-            const increment = target / 50;
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    element.textContent = target;
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(current);
-                }
-            }, 30);
-        }
         
         // Mobile menu toggle
         function toggleMobileMenu() {
@@ -831,30 +1128,42 @@
             menu.classList.toggle('hidden');
         }
         
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('backToTop');
+            
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(10, 14, 39, 0.95)';
+                navbar.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.4)';
+            } else {
+                navbar.style.background = 'rgba(26, 31, 58, 0.7)';
+                navbar.style.boxShadow = '0 8px 32px 0 rgba(0, 102, 255, 0.3)';
+            }
+            
+            if (window.scrollY > 500) {
+                backToTop.classList.remove('opacity-0', 'invisible');
+                backToTop.classList.add('opacity-100', 'visible');
+            } else {
+                backToTop.classList.add('opacity-0', 'invisible');
+                backToTop.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        // Back to top functionality
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
-        });
-        
-        // Navbar background on scroll
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-lg');
-                navbar.style.background = 'rgba(10, 14, 31, 0.95)';
-            } else {
-                navbar.classList.remove('shadow-lg');
-                navbar.style.background = 'rgba(15, 23, 42, 0.7)';
-            }
         });
     </script>
 </body>
