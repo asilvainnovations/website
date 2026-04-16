@@ -3,1067 +3,942 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ASilva Innovations Terms and Conditions - Legal agreement governing the use of our AI-powered resilience platforms, services, and digital solutions.">
-  <meta name="keywords" content="ASilva Innovations terms, terms and conditions, legal agreement, service terms, user agreement, platform usage">
-  <title>Terms and Conditions - ASilva Innovations</title>
-  
+  <meta name="description" content="ASilva Innovations Terms of Service - Comprehensive terms and conditions for using our disaster resilience platform, AI solutions, and consulting services.">
+  <meta name="keywords" content="ASilva Innovations terms, terms of service, terms and conditions, legal agreement, disaster resilience terms, AI platform terms">
+  <title>Terms of Service - ASilva Innovations</title>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png" sizes="32x32">
   <style>
     :root {
-      --primary-blue: #0047AB;
-      --secondary-teal: #00A896;
-      --accent-orange: #FF6B35;
-      --dark-navy: #001F3F;
-      --light-gray: #F5F7FA;
-      --white: #FFFFFF;
-      --text-dark: #1A1A1A;
-      --text-medium: #4A4A4A;
-      --border-color: #E0E4E8;
-      --shadow-sm: 0 2px 8px rgba(0, 71, 171, 0.08);
-      --shadow-md: 0 4px 16px rgba(0, 71, 171, 0.12);
-      --shadow-lg: 0 8px 32px rgba(0, 71, 171, 0.16);
+      --primary: #1e40af;
+      --primary-dark: #1d3693;
+      --secondary: #f59e0b;
+      --accent: #0f766e;
+      --light: #f8fafc;
+      --dark: #0f172a;
+      --gray: #64748b;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --card-shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
     }
-    
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
-    body {
-      font-family: 'Roboto Condensed', sans-serif;
-      background: var(--light-gray);
-      color: var(--text-dark);
-      line-height: 1.8;
-      font-size: 16px;
+
+    html {
+      scroll-behavior: smooth;
     }
-    
-    /* Skip Link */
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: var(--accent-orange);
-      color: var(--white);
-      padding: 8px 16px;
-      text-decoration: none;
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Poppins', sans-serif;
       font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* =====================
+       Header & Navigation
+    ===================== */
+    header {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
       z-index: 100;
     }
-    
-    .skip-link:focus {
-      top: 0;
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+      position: relative;
     }
-    
-    /* Header */
-    header {
-      background: linear-gradient(135deg, var(--dark-navy) 0%, var(--primary-blue) 100%);
-      color: var(--white);
-      padding: 60px 20px;
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #e2e8f0;
+      flex-shrink: 0;
+      background: white;
+    }
+
+    .logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .logo-text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--dark);
+    }
+
+    .logo-subtext {
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-top: -0.25rem;
+    }
+
+    /* Desktop nav links */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.4rem;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+      background-color: #eff6ff;
+    }
+
+    .nav-links a.nav-btn-dashboard {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      font-weight: 700;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links a.nav-btn-dashboard:hover {
+      background: linear-gradient(135deg, var(--primary-dark), #162c7a);
+      color: white;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+    }
+
+    /* Hamburger button */
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      width: 42px;
+      height: 42px;
+      background: none;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      padding: 8px;
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+
+    .mobile-menu-btn:hover {
+      border-color: var(--primary);
+      background-color: #eff6ff;
+    }
+
+    .hamburger-bar {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background-color: var(--dark);
+      border-radius: 2px;
+      transition: var(--transition);
+      transform-origin: center;
+    }
+
+    .mobile-menu-btn.is-open .hamburger-bar:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .mobile-menu-btn.is-open .hamburger-bar:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    .mobile-menu-btn.is-open .hamburger-bar:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile drawer */
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 0.25rem;
+      background: white;
+      border-top: 1px solid #e2e8f0;
+      padding: 1rem 1.5rem 1.25rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      animation: slideDown 0.22s ease;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .mobile-nav.is-open {
+      display: flex;
+    }
+
+    .mobile-nav a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 0.7rem 0.75rem;
+      border-radius: 0.5rem;
+      transition: var(--transition);
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .mobile-nav a:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-nav a:hover {
+      background: #eff6ff;
+      color: var(--primary);
+    }
+
+    .mobile-nav a.nav-btn-dashboard {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      font-weight: 700;
       text-align: center;
+      margin-top: 0.5rem;
+      border-bottom: none;
+    }
+
+    .mobile-nav a.nav-btn-dashboard:hover {
+      background: linear-gradient(135deg, var(--primary-dark), #162c7a);
+      color: white;
+    }
+
+    /* =====================
+       Hero Section
+    ===================== */
+    .hero {
+      background: linear-gradient(135deg, #1e3a8a 0%, #0c4a6e 100%);
+      color: white;
+      padding: 4rem 0;
       position: relative;
       overflow: hidden;
     }
-    
-    header::before {
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 70%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero .effective-date {
+      font-size: 1.125rem;
+      opacity: 0.9;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero .last-updated {
+      font-size: 1rem;
+      color: var(--secondary);
+      font-weight: 600;
+    }
+
+    .compliance-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 2rem;
+      justify-content: center;
+    }
+
+    .badge {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 50px;
+      padding: 0.35rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    /* =====================
+       Main Content
+    ===================== */
+    .section {
+      padding: 5rem 0;
+    }
+
+    .intro-box {
+      background: white;
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      box-shadow: var(--card-shadow);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-box::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(circle at 20% 50%, rgba(0, 168, 150, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.15) 0%, transparent 50%);
-      pointer-events: none;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
     }
-    
-    .header-content {
-      position: relative;
-      z-index: 1;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    
-    .logo {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-    
-    h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-    
-    .last-updated {
-      font-size: 0.95rem;
-      opacity: 0.9;
-      font-weight: 300;
-      margin-top: 8px;
-    }
-    
-    .effective-date {
-      font-size: 1rem;
-      opacity: 0.85;
-      margin-top: 4px;
-    }
-    
-    /* Main Content */
-    main {
-      max-width: 900px;
-      margin: -40px auto 60px;
-      padding: 0 20px;
-      position: relative;
-    }
-    
-    .content-container {
-      background: var(--white);
-      border-radius: 16px;
-      padding: 60px;
-      box-shadow: var(--shadow-lg);
-    }
-    
-    /* Introduction Box */
-    .intro-box {
-      background: linear-gradient(135deg, #E8F4F8 0%, #F0F9FF 100%);
-      border-left: 4px solid var(--primary-blue);
-      padding: 28px;
-      border-radius: 8px;
-      margin-bottom: 40px;
-    }
-    
+
     .intro-box p {
-      margin-bottom: 12px;
-      font-size: 1.05rem;
+      margin-bottom: 1rem;
+      color: var(--gray);
+      font-size: 1.1rem;
+      line-height: 1.7;
     }
-    
+
     .intro-box p:last-child {
       margin-bottom: 0;
-    }
-    
-    /* Table of Contents */
-    .toc {
-      background: var(--light-gray);
-      border-left: 4px solid var(--secondary-teal);
-      padding: 24px 28px;
-      border-radius: 8px;
-      margin-bottom: 40px;
-    }
-    
-    .toc h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--dark-navy);
-      margin-bottom: 16px;
-      border: none;
-      padding: 0;
-    }
-    
-    .toc ol {
-      margin-left: 20px;
-      line-height: 2;
-    }
-    
-    .toc a {
-      color: var(--primary-blue);
-      text-decoration: none;
       font-weight: 600;
-      transition: color 0.2s ease;
+      color: var(--dark);
     }
-    
-    .toc a:hover,
-    .toc a:focus {
-      color: var(--secondary-teal);
-      text-decoration: underline;
+
+    .intro-box strong {
+      color: var(--primary);
     }
-    
-    /* Section Styling */
-    .section {
-      margin-bottom: 48px;
-      scroll-margin-top: 20px;
+
+    /* Terms Content */
+    .terms-content {
+      background: white;
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      box-shadow: var(--card-shadow);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 2rem;
     }
-    
-    h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--dark-navy);
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 3px solid var(--secondary-teal);
+
+    .terms-section {
+      margin-bottom: 2rem;
     }
-    
-    h3 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--primary-blue);
-      margin: 28px 0 16px;
-    }
-    
-    h4 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--text-dark);
-      margin: 20px 0 12px;
-    }
-    
-    p {
-      margin-bottom: 16px;
-      color: var(--text-dark);
-    }
-    
-    ul, ol {
-      margin: 16px 0 16px 28px;
-    }
-    
-    li {
-      margin-bottom: 12px;
-      color: var(--text-dark);
-    }
-    
-    strong {
-      color: var(--dark-navy);
-      font-weight: 700;
-    }
-    
-    em {
-      font-style: italic;
-      color: var(--text-medium);
-    }
-    
-    /* Highlight Boxes */
-    .highlight-box {
-      background: linear-gradient(135deg, #FFF4E6 0%, #FFF9F0 100%);
-      border-left: 4px solid var(--accent-orange);
-      padding: 24px;
-      border-radius: 8px;
-      margin: 24px 0;
-    }
-    
-    .highlight-box p:last-child {
+
+    .terms-section:last-child {
       margin-bottom: 0;
     }
-    
-    .info-box {
-      background: var(--light-gray);
-      border: 2px solid var(--border-color);
-      padding: 24px;
-      border-radius: 8px;
-      margin: 24px 0;
-    }
-    
-    /* Contact Box */
-    .contact-box {
-      background: var(--light-gray);
-      padding: 32px;
-      border-radius: 12px;
-      margin: 32px 0;
-      border: 2px solid var(--border-color);
-    }
-    
-    .contact-box h3 {
-      margin-top: 0;
-      color: var(--dark-navy);
-    }
-    
-    .contact-info {
-      display: grid;
-      gap: 12px;
-      margin-top: 16px;
-    }
-    
-    .contact-item {
+
+    .terms-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
       display: flex;
-      align-items: baseline;
-      gap: 12px;
-    }
-    
-    .contact-label {
-      font-weight: 700;
-      color: var(--primary-blue);
-      min-width: 100px;
-    }
-    
-    /* Links */
-    a {
-      color: var(--secondary-teal);
-      text-decoration: none;
-      font-weight: 600;
-      border-bottom: 2px solid transparent;
-      transition: all 0.2s ease;
-    }
-    
-    a:hover,
-    a:focus {
-      color: var(--primary-blue);
-      border-bottom-color: var(--primary-blue);
-    }
-    
-    /* Policy Links */
-    .policy-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin: 24px 0;
-      padding: 20px;
-      background: var(--light-gray);
-      border-radius: 8px;
-    }
-    
-    .policy-link {
-      display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 10px 20px;
-      background: var(--white);
-      border: 2px solid var(--border-color);
-      border-radius: 8px;
-      font-weight: 600;
-      transition: all 0.3s ease;
+      gap: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e2e8f0;
     }
-    
-    .policy-link:hover {
-      border-color: var(--secondary-teal);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-sm);
+
+    .terms-section h3 {
+      font-size: 1.25rem;
+      margin: 1.5rem 0 0.75rem;
+      color: var(--dark);
     }
-    
-    /* Footer */
-    footer {
-      background: linear-gradient(135deg, var(--dark-navy) 0%, var(--primary-blue) 100%);
-      color: var(--white);
-      padding: 40px 20px;
-      text-align: center;
+
+    .terms-section p {
+      color: var(--gray);
+      margin-bottom: 1rem;
+      line-height: 1.7;
     }
-    
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
+
+    .terms-section ul {
+      margin: 1rem 0 1.5rem 1.5rem;
+      color: var(--gray);
+      padding-left: 1.5rem;
     }
-    
-    .footer-link {
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 600;
-      transition: opacity 0.2s ease;
+
+    .terms-section li {
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+    }
+
+    .terms-section strong {
+      color: var(--dark);
+    }
+
+    .terms-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .terms-list li {
+      padding: 0.75rem 0 0.75rem 1.5rem;
+      position: relative;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .terms-list li::before {
+      content: '•';
+      color: var(--primary);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .terms-list li:last-child {
       border-bottom: none;
     }
-    
-    .footer-link:hover,
-    .footer-link:focus {
-      opacity: 0.8;
-      text-decoration: underline;
-      color: var(--white);
+
+    /* Highlight Box */
+    .highlight-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 1rem 1rem 0;
+      padding: 1.5rem;
+      margin: 2rem 0;
     }
-    
-    /* Responsive Design */
+
+    .highlight-box p {
+      color: var(--dark);
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .highlight-box strong {
+      color: var(--primary);
+    }
+
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      text-align: center;
+      padding: 4rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -10%;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .cta p {
+      font-size: 1.125rem;
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+      opacity: 0.9;
+      position: relative;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+      text-align: center;
+      font-size: 1rem;
+      border: none;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: white;
+      border: 2px solid rgba(255,255,255,0.7);
+    }
+
+    .btn-secondary:hover {
+      background-color: rgba(255,255,255,0.15);
+      border-color: white;
+      transform: translateY(-2px);
+    }
+
+    /* =====================
+       Floating Action Button
+    ===================== */
+    .floating-dashboard {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 1000;
+      background: linear-gradient(135deg, var(--secondary), #eab308);
+      color: white;
+      padding: 0.65rem 1.4rem 0.65rem 0.65rem;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+    }
+
+    .floating-dashboard:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 15px 30px -5px rgba(245, 158, 11, 0.5);
+    }
+
+    .floating-logo-circle {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 2px solid rgba(255,255,255,0.7);
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .floating-logo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* =====================
+       Footer
+    ===================== */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 3rem 0 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-col h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .footer-col h3::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--secondary);
+      border-radius: 3px;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: white;
+      padding-left: 5px;
+    }
+
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid #334155;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    /* =====================
+       Responsive Design
+    ===================== */
+    @media (max-width: 992px) {
+      .floating-dashboard {
+        bottom: 1.5rem;
+        right: 1.5rem;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: flex;
+      }
+    }
+
     @media (max-width: 768px) {
-      h1 {
+      .hero h1 {
         font-size: 2rem;
       }
-      
-      .content-container {
-        padding: 40px 24px;
+
+      .section {
+        padding: 3rem 0;
       }
-      
-      h2 {
-        font-size: 1.5rem;
+
+      .terms-content {
+        padding: 1.75rem;
       }
-      
-      h3 {
-        font-size: 1.2rem;
+
+      .terms-section h2 {
+        font-size: 1.25rem;
       }
-      
-      .contact-item {
-        flex-direction: column;
-        gap: 4px;
+
+      .floating-dashboard {
+        font-size: 0.8rem;
+        padding: 0.55rem 1.1rem 0.55rem 0.55rem;
+        gap: 0.5rem;
       }
-      
-      .contact-label {
-        min-width: auto;
-      }
-      
-      .policy-links {
-        flex-direction: column;
+
+      .floating-logo-circle {
+        width: 28px;
+        height: 28px;
       }
     }
-    
-    /* Print Styles */
-    @media print {
-      body {
-        background: white;
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.75rem;
       }
-      
-      header {
-        background: none;
-        color: black;
-      }
-      
-      .content-container {
-        box-shadow: none;
-      }
-      
-      a {
-        color: black;
-        text-decoration: underline;
-      }
-    }
-    
-    /* Focus Styles */
-    *:focus {
-      outline: 3px solid var(--accent-orange);
-      outline-offset: 2px;
-    }
-    
-    /* Reduced Motion */
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
+
+      .terms-content {
+        padding: 1.25rem;
       }
     }
   </style>
+<base target="_blank">
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  
-  <header role="banner">
-    <div class="header-content">
-      <div class="logo">ASilva Innovations</div>
-      <h1>Terms and Conditions</h1>
-      <p class="effective-date">Effective Date: February 1, 2026</p>
-      <p class="last-updated">Last Updated: February 9, 2026</p>
+  <!-- Floating Dashboard Button -->
+  <a href="https://strategic-collaborative-auditable.deploypad.app/" class="floating-dashboard">
+    <div class="floating-logo-circle">
+      <img src="https://ddrive-erm.appimize.app/assets/apps/user_1097/app_12127/draft/icon/app_logo.png?1767510419" alt="DDRiVE-M Logo">
+    </div>
+    LAUNCH DASHBOARD
+  </a>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <a href="https://asilvainnovations.com" class="logo">
+          <div class="logo-icon">
+            <img src="https://appimize.app/assets/apps/user_1097/images/b4e60d94a143_503_1097.png" alt="ASilva Innovations Logo">
+          </div>
+          <div>
+            <div class="logo-text">ASilva</div>
+            <div class="logo-subtext">Innovations</div>
+          </div>
+        </a>
+
+        <ul class="nav-links" id="desktopNav">
+          <li><a href="https://strategic-collaborative-auditable.deploypad.app/" class="nav-btn-dashboard">Dashboard</a></li>
+          <li><a href="https://asilvainnovations.github.io/ddrive-m/about.html">About</a></li>
+          <li><a href="https://asilvainnovations.github.io/ddrive-m/faq.html">FAQ</a></li>
+          <li><a href="https://asilvainnovations.github.io/website/policies.html">Policies</a></li>
+          <li><a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a></li>
+          <li><a href="https://asilvainnovations.github.io/website/contact.html">Contact</a></li>
+        </ul>
+
+        <button class="mobile-menu-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </nav>
+
+      <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+        <a href="https://strategic-collaborative-auditable.deploypad.app/" class="nav-btn-dashboard">Dashboard</a>
+        <a href="https://asilvainnovations.github.io/ddrive-m/about.html">About</a>
+        <a href="https://asilvainnovations.github.io/ddrive-m/faq.html">FAQ</a>
+        <a href="https://asilvainnovations.github.io/website/policies.html">Policies</a>
+        <a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a>
+        <a href="https://asilvainnovations.github.io/website/contact.html">Contact</a>
+      </nav>
     </div>
   </header>
-  
-  <main id="main-content" role="main">
-    <div class="content-container">
-      <!-- Introduction -->
-      <div class="intro-box">
-        <p><strong>Welcome to ASilva Innovations.</strong></p>
-        <p>These Terms and Conditions ("Terms", "Agreement") constitute a legally binding agreement between you ("User", "you", "your") and ASilva Innovations ("Company", "we", "us", "our") governing your access to and use of our website, platforms, applications, and services (collectively, the "Platform" or "Services").</p>
-        <p><strong>By accessing or using our Platform, you acknowledge that you have read, understood, and agree to be bound by these Terms, together with our <a href="https://asilvainnovations.com/privacy-policy">Privacy Policy</a> and <a href="https://asilvainnovations.com/cookie-policy">Cookie Policy</a>. If you do not agree to these Terms, you must discontinue use of the Platform immediately.</strong></p>
-      </div>
-      
-      <!-- Related Policies -->
-      <div class="policy-links" role="navigation" aria-label="Related Policies">
-        <a href="https://asilvainnovations.com/privacy-policy" class="policy-link">
-          <span>📋</span>
-          <span>Privacy Policy</span>
-        </a>
-        <a href="https://asilvainnovations.com/cookie-policy" class="policy-link">
-          <span>🍪</span>
-          <span>Cookie Policy</span>
-        </a>
-        <a href="https://asilvainnovations.com/accessibility" class="policy-link">
-          <span>♿</span>
-          <span>Accessibility Policy</span>
-        </a>
-      </div>
-      
-      <!-- Table of Contents -->
-      <nav class="toc" aria-label="Table of Contents">
-        <h2>Table of Contents</h2>
-        <ol>
-          <li><a href="#acceptance">Acceptance of Terms</a></li>
-          <li><a href="#definitions">Definitions</a></li>
-          <li><a href="#eligibility">Eligibility and Account Registration</a></li>
-          <li><a href="#services">Services Provided</a></li>
-          <li><a href="#user-responsibilities">User Responsibilities and Conduct</a></li>
-          <li><a href="#subscription">Subscription Plans and Payments</a></li>
-          <li><a href="#intellectual-property">Intellectual Property Rights</a></li>
-          <li><a href="#data-privacy">Data Privacy and Security</a></li>
-          <li><a href="#third-party">Third-Party Services and Links</a></li>
-          <li><a href="#warranties">Warranties and Disclaimers</a></li>
-          <li><a href="#limitation">Limitation of Liability</a></li>
-          <li><a href="#indemnification">Indemnification</a></li>
-          <li><a href="#termination">Termination and Suspension</a></li>
-          <li><a href="#dispute">Dispute Resolution</a></li>
-          <li><a href="#compliance">Legal Compliance</a></li>
-          <li><a href="#modifications">Modifications to Terms</a></li>
-          <li><a href="#general">General Provisions</a></li>
-          <li><a href="#contact">Contact Information</a></li>
-        </ol>
-      </nav>
-      
-      <!-- Section 1 -->
-      <section id="acceptance" class="section">
-        <h2>1. Acceptance of Terms</h2>
-        <p>
-          By accessing, browsing, or using the ASilva Innovations Platform, you agree to be legally bound by these Terms and Conditions, all applicable laws, regulations, and policies referenced herein, including our Privacy Policy and Cookie Policy.
-        </p>
-        <p>
-          Your continued use of the Platform following any modifications to these Terms constitutes acceptance of such changes. If you do not agree with any part of these Terms, you must immediately cease all use of our Services.
-        </p>
-        <div class="highlight-box">
-          <p><strong>Important:</strong> These Terms apply to all users of the Platform, including but not limited to visitors, registered users, subscribers, Local Government Units (LGUs), non-governmental organizations (NGOs), small and medium enterprises (SMEs), educational institutions, and corporate clients.</p>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Terms of Service</h1>
+        <p class="effective-date">Effective Date: February 24, 2026</p>
+        <p class="last-updated">Last Updated: February 24, 2026</p>
+        <div class="compliance-badges">
+          <span class="badge">GDPR Compliant</span>
+          <span class="badge">ISO 27001</span>
+          <span class="badge">WCAG 2.1</span>
+          <span class="badge">RA 10173</span>
         </div>
-      </section>
-      
-      <!-- Section 2 -->
-      <section id="definitions" class="section">
-        <h2>2. Definitions</h2>
-        <p>For the purposes of these Terms, the following definitions apply:</p>
-        <ul>
-          <li><strong>"Platform"</strong> refers to all ASilva Innovations websites, web applications, mobile applications, software, tools, and digital services, including but not limited to DDRiVE-M, Strategic Planner Pro, Real-Time Leadership (RTL) programs, SPARC assessments, and all related documentation and resources.</li>
-          <li><strong>"Services"</strong> means all products, services, features, content, applications, and functionality provided through the Platform, including AI-powered resilience solutions, disaster risk reduction tools, strategic planning software, leadership training, consulting services, and technical support.</li>
-          <li><strong>"User", "you", "your"</strong> refers to any individual or entity that accesses or uses the Platform.</li>
-          <li><strong>"Account"</strong> means the unique profile created by a User to access certain features of the Platform.</li>
-          <li><strong>"Content"</strong> includes all text, graphics, images, software, code, data, information, materials, and other content available on or through the Platform.</li>
-          <li><strong>"User Content"</strong> refers to any data, information, or materials uploaded, submitted, or transmitted by Users through the Platform.</li>
-          <li><strong>"Intellectual Property"</strong> means all patents, trademarks, service marks, copyrights, trade secrets, proprietary information, and other intellectual property rights.</li>
-        </ul>
-      </section>
-      
-      <!-- Section 3 -->
-      <section id="eligibility" class="section">
-        <h2>3. Eligibility and Account Registration</h2>
-        
-        <h3>3.1 Age and Capacity Requirements</h3>
-        <p>
-          You must be at least <strong>18 years of age</strong> or the age of legal majority in your jurisdiction to use the Platform. By using the Platform, you represent and warrant that you meet all eligibility requirements and have the legal capacity to enter into these Terms.
-        </p>
-        <p>
-          If you are accessing the Platform on behalf of an organization, you represent that you have the authority to bind that organization to these Terms.
-        </p>
-        
-        <h3>3.2 Account Creation</h3>
-        <p>
-          Certain features of the Platform require you to create an Account. When creating an Account, you agree to:
-        </p>
-        <ul>
-          <li>Provide accurate, current, and complete information</li>
-          <li>Maintain and promptly update your Account information</li>
-          <li>Maintain the security and confidentiality of your login credentials</li>
-          <li>Accept responsibility for all activities that occur under your Account</li>
-          <li>Immediately notify us of any unauthorized use of your Account</li>
-        </ul>
-        
-        <h3>3.3 Account Security</h3>
-        <p>
-          You are solely responsible for maintaining the confidentiality of your Account password and for all activities under your Account. ASilva Innovations cannot and will not be liable for any loss or damage arising from your failure to maintain Account security.
-        </p>
-        <p>
-          We reserve the right to disable any Account or username at any time if, in our reasonable opinion, you have violated any provision of these Terms.
-        </p>
-      </section>
-      
-      <!-- Section 4 -->
-      <section id="services" class="section">
-        <h2>4. Services Provided</h2>
-        
-        <h3>4.1 Platform Services</h3>
-        <p>
-          ASilva Innovations provides the following categories of Services:
-        </p>
-        <ul>
-          <li><strong>DDRiVE-M Platform:</strong> Enterprise risk management system with real-time risk indexing, compliance tracking, vulnerability mapping, and customizable dashboards</li>
-          <li><strong>Strategic Planner Pro:</strong> AI-powered planning suite with SWOT analysis, balanced scorecards, and portfolio tracking</li>
-          <li><strong>Real-Time Leadership (RTL):</strong> Leadership development programs based on the MOVE framework</li>
-          <li><strong>SPARC Assessments:</strong> AI-driven resilience and risk assessment tools</li>
-          <li><strong>Consulting Services:</strong> Professional advisory services for disaster resilience, strategic planning, and organizational development</li>
-          <li><strong>Training and Education:</strong> Courses, workshops, webinars, and certification programs</li>
-          <li><strong>Technical Support:</strong> Customer support, implementation assistance, and platform maintenance</li>
-        </ul>
-        
-        <h3>4.2 Service Availability</h3>
-        <p>
-          We strive to maintain continuous availability of the Platform. However, we reserve the right to modify, suspend, or discontinue any part of the Services at any time, with or without notice, for reasons including but not limited to:
-        </p>
-        <ul>
-          <li>Scheduled maintenance and upgrades</li>
-          <li>Emergency repairs or security updates</li>
-          <li>Changes in technology or business strategy</li>
-          <li>Legal or regulatory requirements</li>
-          <li>Force majeure events beyond our reasonable control</li>
-        </ul>
-        
-        <h3>4.3 Service Modifications</h3>
-        <p>
-          We may update, enhance, or modify the Services from time to time. We will use commercially reasonable efforts to notify Users of material changes that significantly affect Service functionality. Continued use of the Services following such modifications constitutes acceptance of the changes.
-        </p>
-      </section>
-      
-      <!-- Section 5 -->
-      <section id="user-responsibilities" class="section">
-        <h2>5. User Responsibilities and Conduct</h2>
-        
-        <h3>5.1 Acceptable Use</h3>
-        <p>
-          When using the Platform, you agree to comply with all applicable laws and regulations and to use the Services only for lawful purposes. You agree NOT to:
-        </p>
-        <ul>
-          <li>Violate any local, national, or international law or regulation</li>
-          <li>Infringe upon or violate the intellectual property rights of ASilva Innovations or any third party</li>
-          <li>Transmit any content that is unlawful, harmful, threatening, abusive, harassing, defamatory, vulgar, obscene, or otherwise objectionable</li>
-          <li>Impersonate any person or entity or misrepresent your affiliation with any person or entity</li>
-          <li>Interfere with or disrupt the Platform or servers or networks connected to the Platform</li>
-          <li>Attempt to gain unauthorized access to any portion of the Platform, other Accounts, computer systems, or networks</li>
-          <li>Use any automated system, including "robots," "spiders," or "scrapers" to access the Platform without our express written permission</li>
-          <li>Introduce viruses, malware, or any other harmful code to the Platform</li>
-          <li>Collect or harvest personal information about other Users without their consent</li>
-          <li>Use the Platform for any competitive or commercial purpose not expressly authorized by us</li>
-        </ul>
-        
-        <h3>5.2 User Content</h3>
-        <p>
-          You are solely responsible for all User Content you upload, post, or transmit through the Platform. You represent and warrant that:
-        </p>
-        <ul>
-          <li>You own or have the necessary rights and permissions to use and share your User Content</li>
-          <li>Your User Content does not violate any intellectual property rights, privacy rights, or other rights of third parties</li>
-          <li>Your User Content complies with all applicable laws and these Terms</li>
-        </ul>
-        
-        <h3>5.3 Data Accuracy</h3>
-        <p>
-          You are responsible for ensuring the accuracy, quality, and legality of User Content and the means by which you acquire it. ASilva Innovations is not responsible for the accuracy or reliability of any User Content.
-        </p>
-      </section>
-      
-      <!-- Section 6 -->
-      <section id="subscription" class="section">
-        <h2>6. Subscription Plans and Payments</h2>
-        
-        <h3>6.1 Subscription Plans</h3>
-        <p>
-          Certain Services require a paid subscription. Subscription plans may vary by features, usage limits, support levels, and pricing. Current subscription options and pricing are available on our website at <a href="https://asilvainnovations.com">asilvainnovations.com</a>.
-        </p>
-        
-        <h3>6.2 Billing and Payment</h3>
-        <p>
-          By subscribing to paid Services, you agree to:
-        </p>
-        <ul>
-          <li>Provide accurate and complete billing information</li>
-          <li>Authorize us to charge the applicable subscription fees to your designated payment method</li>
-          <li>Pay all applicable taxes and fees</li>
-          <li>Maintain a valid payment method on file</li>
-        </ul>
-        <p>
-          Subscription fees are charged on a recurring basis (monthly, quarterly, or annually as selected) until cancelled. You authorize us to automatically charge your payment method for renewal unless you cancel before the renewal date.
-        </p>
-        
-        <h3>6.3 Refunds and Cancellations</h3>
-        <p>
-          <strong>All subscription fees are non-refundable except as required by law or as specifically stated in your subscription agreement.</strong> You may cancel your subscription at any time, but you will not receive a refund for any fees already paid. Upon cancellation, your access to paid Services will continue until the end of your current billing period.
-        </p>
-        
-        <h3>6.4 Free Trials</h3>
-        <p>
-          We may offer free trial periods for certain Services. At the end of the trial period, you will be automatically charged for the subscription unless you cancel before the trial ends. We reserve the right to limit or modify free trial offers at any time.
-        </p>
-        
-        <h3>6.5 Price Changes</h3>
-        <p>
-          We reserve the right to modify subscription pricing at any time. Price changes will be communicated to you at least 30 days in advance and will take effect at your next billing cycle. Your continued use of the Services after a price change constitutes acceptance of the new pricing.
-        </p>
-      </section>
-      
-      <!-- Section 7 -->
-      <section id="intellectual-property" class="section">
-        <h2>7. Intellectual Property Rights</h2>
-        
-        <h3>7.1 Ownership of Platform Content</h3>
-        <p>
-          All Content on the Platform, including but not limited to text, graphics, logos, icons, images, audio clips, video clips, data compilations, software, code, and the compilation thereof, is the exclusive property of ASilva Innovations or its licensors and is protected by Philippine and international copyright, trademark, patent, trade secret, and other intellectual property laws.
-        </p>
-        
-        <h3>7.2 Trademarks</h3>
-        <p>
-          "ASilva Innovations," "DDRiVE-M," "Strategic Planner Pro," "Real-Time Leadership," "RTL," "SPARC," and all related logos, product and service names, designs, and slogans are trademarks of ASilva Innovations. You may not use these marks without our prior written permission.
-        </p>
-        
-        <h3>7.3 Limited License</h3>
-        <p>
-          Subject to your compliance with these Terms, ASilva Innovations grants you a limited, non-exclusive, non-transferable, revocable license to access and use the Platform for your personal or internal business purposes. This license does not include:
-        </p>
-        <ul>
-          <li>Any resale or commercial use of the Platform or its Content</li>
-          <li>Any collection or use of product listings, descriptions, or prices</li>
-          <li>Any derivative use of the Platform or its Content</li>
-          <li>Any downloading or copying of account information for the benefit of another party</li>
-          <li>Any use of data mining, robots, or similar data gathering and extraction tools</li>
-        </ul>
-        
-        <h3>7.4 User Content License</h3>
-        <p>
-          By submitting User Content to the Platform, you grant ASilva Innovations a worldwide, non-exclusive, royalty-free, perpetual, irrevocable, and fully sublicensable license to use, reproduce, modify, adapt, publish, translate, create derivative works from, distribute, and display such User Content for the purpose of providing and improving the Services.
-        </p>
-        
-        <h3>7.5 Feedback</h3>
-        <p>
-          Any feedback, comments, or suggestions you provide regarding the Platform or Services ("Feedback") will be owned by ASilva Innovations, and we may use such Feedback for any purpose without obligation to you.
-        </p>
-      </section>
-      
-      <!-- Section 8 -->
-      <section id="data-privacy" class="section">
-        <h2>8. Data Privacy and Security</h2>
-        
-        <h3>8.1 Privacy Policy</h3>
-        <p>
-          Your use of the Platform is subject to our <a href="https://asilvainnovations.com/privacy-policy">Privacy Policy</a>, which is incorporated into these Terms by reference. The Privacy Policy explains how we collect, use, disclose, and protect your personal information.
-        </p>
-        
-        <h3>8.2 Data Protection Compliance</h3>
-        <p>
-          ASilva Innovations complies with applicable data protection laws, including:
-        </p>
-        <ul>
-          <li>Republic Act No. 10173 (Data Privacy Act of 2012) - Philippines</li>
-          <li>General Data Protection Regulation (GDPR) - European Union</li>
-          <li>Other applicable international data protection regulations</li>
-        </ul>
-        
-        <h3>8.3 Data Security</h3>
-        <p>
-          We implement industry-standard security measures to protect your data, including encryption, access controls, and regular security audits. However, no method of transmission over the Internet or electronic storage is 100% secure. While we strive to protect your information, we cannot guarantee its absolute security.
-        </p>
-        
-        <h3>8.4 Data Retention</h3>
-        <p>
-          We retain your data only for as long as necessary to provide Services and comply with legal obligations. Upon Account termination, we will delete or anonymize your personal data in accordance with our Privacy Policy and applicable law, subject to certain retention requirements.
-        </p>
-      </section>
-      
-      <!-- Section 9 -->
-      <section id="third-party" class="section">
-        <h2>9. Third-Party Services and Links</h2>
-        
-        <h3>9.1 Third-Party Links</h3>
-        <p>
-          The Platform may contain links to third-party websites, applications, or services that are not owned or controlled by ASilva Innovations. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party sites or services.
-        </p>
-        
-        <h3>9.2 Third-Party Integrations</h3>
-        <p>
-          The Platform may integrate with third-party services (such as payment processors, analytics providers, or cloud storage services). Your use of these third-party services is subject to their respective terms and privacy policies.
-        </p>
-        
-        <h3>9.3 No Endorsement</h3>
-        <p>
-          The inclusion of any link or integration does not imply endorsement, approval, or recommendation by ASilva Innovations. You acknowledge and agree that ASilva Innovations shall not be responsible or liable for any damages or losses caused by your use of third-party services.
-        </p>
-      </section>
-      
-      <!-- Section 10 -->
-      <section id="warranties" class="section">
-        <h2>10. Warranties and Disclaimers</h2>
-        
-        <h3>10.1 "AS IS" and "AS AVAILABLE" Basis</h3>
-        <div class="highlight-box">
-          <p>
-            <strong>THE PLATFORM AND SERVICES ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.</strong> ASilva Innovations disclaims all warranties, including but not limited to implied warranties of merchantability, fitness for a particular purpose, title, and non-infringement.
-          </p>
-        </div>
-        
-        <h3>10.2 No Warranty of Accuracy</h3>
-        <p>
-          We do not warrant that:
-        </p>
-        <ul>
-          <li>The Platform will be uninterrupted, timely, secure, or error-free</li>
-          <li>The results obtained from use of the Platform will be accurate or reliable</li>
-          <li>The quality of any products, services, information, or other material obtained through the Platform will meet your expectations</li>
-          <li>Any errors in the Platform will be corrected</li>
-        </ul>
-        
-        <h3>10.3 Professional Advice Disclaimer</h3>
-        <p>
-          The information and Services provided through the Platform are for informational purposes only and do not constitute professional advice (legal, financial, medical, or otherwise). You should consult with appropriate professionals for specific advice tailored to your situation.
-        </p>
-        
-        <h3>10.4 Risk Assessment Disclaimer</h3>
-        <p>
-          While our AI-powered risk assessment and resilience tools are designed to provide valuable insights, they should not be relied upon as the sole basis for critical decisions. All assessments and recommendations should be reviewed by qualified professionals in conjunction with other information sources.
-        </p>
-      </section>
-      
-      <!-- Section 11 -->
-      <section id="limitation" class="section">
-        <h2>11. Limitation of Liability</h2>
-        
-        <div class="highlight-box">
-          <p>
-            <strong>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, ASILVA INNOVATIONS, ITS OFFICERS, DIRECTORS, EMPLOYEES, AGENTS, AND AFFILIATES SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES, RESULTING FROM:</strong>
-          </p>
-          <ul>
-            <li>Your access to or use of or inability to access or use the Platform</li>
-            <li>Any conduct or content of any third party on the Platform</li>
-            <li>Any content obtained from the Platform</li>
-            <li>Unauthorized access, use, or alteration of your transmissions or content</li>
-          </ul>
-        </div>
-        
-        <p>
-          <strong>IN NO EVENT SHALL ASILVA INNOVATIONS' TOTAL LIABILITY TO YOU FOR ALL DAMAGES, LOSSES, OR CAUSES OF ACTION EXCEED THE AMOUNT YOU HAVE PAID ASILVA INNOVATIONS IN THE LAST SIX (6) MONTHS, OR, IF GREATER, ONE HUNDRED US DOLLARS ($100).</strong>
-        </p>
-        
-        <p>
-          Some jurisdictions do not allow the exclusion of certain warranties or the limitation or exclusion of liability for incidental or consequential damages. Accordingly, some of the above limitations may not apply to you.
-        </p>
-      </section>
-      
-      <!-- Section 12 -->
-      <section id="indemnification" class="section">
-        <h2>12. Indemnification</h2>
-        <p>
-          You agree to indemnify, defend, and hold harmless ASilva Innovations, its officers, directors, employees, agents, affiliates, and partners from and against any and all claims, liabilities, damages, losses, costs, expenses, fees (including reasonable attorneys' fees) arising from or relating to:
-        </p>
-        <ul>
-          <li>Your violation of these Terms</li>
-          <li>Your violation of any rights of another party, including any other User</li>
-          <li>Your violation of any applicable laws, rules, or regulations</li>
-          <li>Your User Content or any content you submit, post, or transmit through the Platform</li>
-          <li>Your use or misuse of the Platform or Services</li>
-          <li>Your breach of any representation or warranty contained herein</li>
-        </ul>
-        <p>
-          ASilva Innovations reserves the right, at its own expense, to assume the exclusive defense and control of any matter otherwise subject to indemnification by you, in which event you will cooperate with ASilva Innovations in asserting any available defenses.
-        </p>
-      </section>
-      
-      <!-- Section 13 -->
-      <section id="termination" class="section">
-        <h2>13. Termination and Suspension</h2>
-        
-        <h3>13.1 Termination by User</h3>
-        <p>
-          You may terminate your Account at any time by:
-        </p>
-        <ul>
-          <li>Using the account deletion feature in your Account settings</li>
-          <li>Contacting customer support at <a href="mailto:admin@asilvainnovations.com">admin@asilvainnovations.com</a></li>
-        </ul>
-        <p>
-          Upon termination, your right to use the Platform will immediately cease. You will remain liable for all charges accrued prior to termination.
-        </p>
-        
-        <h3>13.2 Termination by ASilva Innovations</h3>
-        <p>
-          We reserve the right to suspend or terminate your Account and access to the Platform, with or without notice, for any reason, including but not limited to:
-        </p>
-        <ul>
-          <li>Violation of these Terms</li>
-          <li>Fraudulent, abusive, or illegal activity</li>
-          <li>Prolonged inactivity</li>
-          <li>Failure to pay applicable fees</li>
-          <li>At our sole discretion for any other reason</li>
-        </ul>
-        
-        <h3>13.3 Effect of Termination</h3>
-        <p>
-          Upon termination of your Account:
-        </p>
-        <ul>
-          <li>Your right to access and use the Platform will immediately cease</li>
-          <li>We may delete your Account and User Content</li>
-          <li>You will remain bound by provisions of these Terms that by their nature should survive termination (including intellectual property provisions, warranties, disclaimers, and limitations of liability)</li>
-        </ul>
-        
-        <h3>13.4 Data Retrieval</h3>
-        <p>
-          You are responsible for retrieving your User Content before termination. We are not obligated to retain or provide copies of User Content after Account termination.
-        </p>
-      </section>
-      
-      <!-- Section 14 -->
-      <section id="dispute" class="section">
-        <h2>14. Dispute Resolution</h2>
-        
-        <h3>14.1 Informal Resolution</h3>
-        <p>
-          In the event of any dispute, claim, or controversy arising from or relating to these Terms or the Platform, you agree to first contact us at <a href="mailto:admin@asilvainnovations.com">admin@asilvainnovations.com</a> to attempt to resolve the dispute informally. We will attempt to resolve disputes in good faith within thirty (30) days.
-        </p>
-        
-        <h3>14.2 Arbitration</h3>
-        <p>
-          If informal resolution is unsuccessful, any dispute shall be resolved through binding arbitration in accordance with the arbitration rules of the Philippine Dispute Resolution Center, Inc. (PDRCI) or a mutually agreed alternative dispute resolution provider. The arbitration shall be conducted in Metro Manila, Philippines, in the English language.
-        </p>
-        
-        <h3>14.3 Class Action Waiver</h3>
-        <p>
-          You agree to resolve disputes with ASilva Innovations on an individual basis. You waive any right to pursue claims on a class or representative basis or to participate in a class action or representative proceeding.
-        </p>
-        
-        <h3>14.4 Exceptions</h3>
-        <p>
-          Notwithstanding the arbitration provisions, either party may bring a claim in court for:
-        </p>
-        <ul>
-          <li>Intellectual property infringement or misappropriation</li>
-          <li>Injunctive or equitable relief</li>
-          <li>Claims within the jurisdiction of small claims court</li>
-        </ul>
-      </section>
-      
-      <!-- Section 15 -->
-      <section id="compliance" class="section">
-        <h2>15. Legal Compliance</h2>
-        
-        <h3>15.1 Governing Law</h3>
-        <p>
-          These Terms shall be governed by and construed in accordance with the laws of the Republic of the Philippines, without regard to its conflict of law provisions.
-        </p>
-        
-        <h3>15.2 Jurisdiction and Venue</h3>
-        <p>
-          Any legal action or proceeding arising from these Terms shall be brought exclusively in the courts of Metro Manila, Philippines, and you consent to the personal jurisdiction of such courts.
-        </p>
-        
-        <h3>15.3 Compliance with Laws</h3>
-        <p>
-          You agree to comply with all applicable local, national, and international laws, regulations, and ordinances when using the Platform, including but not limited to:
-        </p>
-        <ul>
-          <li>Data Privacy Act of 2012 (RA 10173) - Philippines</li>
-          <li>Cybercrime Prevention Act of 2012 (RA 10175) - Philippines</li>
-          <li>Disaster Risk Reduction and Management Act (RA 10121) - Philippines</li>
-          <li>Export control laws and regulations</li>
-          <li>Anti-corruption laws</li>
-        </ul>
-        
-        <h3>15.4 Government Users</h3>
-        <p>
-          If you are a government entity or using the Platform on behalf of a government entity, you agree that the Services are "Commercial Items" as defined by applicable procurement regulations.
-        </p>
-      </section>
-      
-      <!-- Section 16 -->
-      <section id="modifications" class="section">
-        <h2>16. Modifications to Terms</h2>
-        
-        <h3>16.1 Right to Modify</h3>
-        <p>
-          ASilva Innovations reserves the right to modify, amend, or update these Terms at any time at our sole discretion. When we make changes, we will:
-        </p>
-        <ul>
-          <li>Update the "Last Updated" date at the top of this page</li>
-          <li>Post the revised Terms on the Platform</li>
-          <li>For material changes, provide notice through email, Platform notification, or other reasonable means</li>
-        </ul>
-        
-        <h3>16.2 Acceptance of Modifications</h3>
-        <p>
-          Your continued use of the Platform following the posting of revised Terms constitutes your acceptance of such changes. If you do not agree to the modified Terms, you must discontinue use of the Platform.
-        </p>
-        
-        <h3>16.3 Review Responsibility</h3>
-        <p>
-          It is your responsibility to review these Terms periodically for changes. We recommend checking this page regularly to stay informed of any updates.
-        </p>
-      </section>
-      
-      <!-- Section 17 -->
-      <section id="general" class="section">
-        <h2>17. General Provisions</h2>
-        
-        <h3>17.1 Entire Agreement</h3>
-        <p>
-          These Terms, together with the Privacy Policy and Cookie Policy, constitute the entire agreement between you and ASilva Innovations regarding the use of the Platform and supersede all prior agreements and understandings.
-        </p>
-        
-        <h3>17.2 Severability</h3>
-        <p>
-          If any provision of these Terms is found to be invalid or unenforceable, that provision shall be enforced to the maximum extent possible, and the remaining provisions shall remain in full force and effect.
-        </p>
-        
-        <h3>17.3 Waiver</h3>
-        <p>
-          No waiver of any term or condition of these Terms shall be deemed a further or continuing waiver of such term or any other term. Our failure to assert any right or provision under these Terms shall not constitute a waiver of such right or provision.
-        </p>
-        
-        <h3>17.4 Assignment</h3>
-        <p>
-          You may not assign or transfer these Terms or your rights hereunder without our prior written consent. ASilva Innovations may assign these Terms without restriction. Any attempted assignment in violation of this section shall be void.
-        </p>
-        
-        <h3>17.5 Force Majeure</h3>
-        <p>
-          ASilva Innovations shall not be liable for any failure to perform its obligations under these Terms where such failure results from circumstances beyond our reasonable control, including but not limited to acts of God, war, terrorism, riots, embargoes, acts of civil or military authorities, fire, floods, accidents, epidemics, pandemics, strikes, or shortages of transportation, facilities, fuel, energy, labor, or materials.
-        </p>
-        
-        <h3>17.6 No Agency</h3>
-        <p>
-          No agency, partnership, joint venture, or employment relationship is created as a result of these Terms, and you do not have any authority to bind ASilva Innovations in any respect.
-        </p>
-        
-        <h3>17.7 Headings</h3>
-        <p>
-          The section headings in these Terms are for convenience only and have no legal or contractual effect.
-        </p>
-        
-        <h3>17.8 Language</h3>
-        <p>
-          These Terms may be translated into other languages for your convenience. In the event of any conflict between the English version and a translated version, the English version shall prevail.
-        </p>
-      </section>
-      
-      <!-- Section 18 -->
-      <section id="contact" class="section">
-        <h2>18. Contact Information</h2>
-        <p>
-          If you have any questions, concerns, or feedback regarding these Terms and Conditions, please contact us:
-        </p>
-        
-        <div class="contact-box">
-          <h3>ASilva Innovations</h3>
-          <div class="contact-info">
-            <div class="contact-item">
-              <span class="contact-label">Email:</span>
-              <a href="mailto:admin@asilvainnovations.com">admin@asilvainnovations.com</a>
-            </div>
-            <div class="contact-item">
-              <span class="contact-label">Website:</span>
-              <a href="https://asilvainnovations.com" target="_blank" rel="noopener noreferrer">asilvainnovations.com</a>
-            </div>
-            <div class="contact-item">
-              <span class="contact-label">Contact Page:</span>
-              <a href="https://asilvainnovations.com/contact" target="_blank" rel="noopener noreferrer">asilvainnovations.com/contact</a>
-            </div>
-            <div class="contact-item">
-              <span class="contact-label">Address:</span>
-              <span>Alabang Muntinlupa City, Philippines</span>
-            </div>
-          </div>
-        </div>
-        
-        <p>
-          We aim to respond to all inquiries within 2-3 business days. For urgent matters, please indicate "URGENT" in your subject line.
-        </p>
-      </section>
-      
-      <!-- Acknowledgment -->
-      <div class="info-box">
-        <p><strong>Acknowledgment:</strong> By using the ASilva Innovations Platform, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions, our Privacy Policy, and our Cookie Policy.</p>
       </div>
     </div>
+  </section>
+
+  <!-- Main Content -->
+  <main>
+    <div class="container">
+      <!-- Introduction -->
+      <section class="section">
+        <div class="intro-box">
+          <p><strong>Agreement to Terms</strong></p>
+          <p>By accessing or using ASilva Innovations websites, applications, disaster resilience platforms, AI solutions, or consulting services (collectively, "Services"), you agree to be bound by these Terms of Service. Please read these terms carefully before using our Services.</p>
+          <p><strong>"Clear terms create strong partnerships. These Terms of Service protect both our users and our mission to build resilient communities."</strong><br>— ASilva Innovations Legal Team</p>
+        </div>
+
+        <!-- Terms Content -->
+        <div class="terms-content">
+          <div class="terms-section">
+            <h2>1. Acceptance of Terms</h2>
+            <p>By accessing or using our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to all terms and conditions, you must immediately discontinue use of our Services.</p>
+            <p>We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting to this page, with the "Last Updated" date revised accordingly.</p>
+          </div>
+
+          <div class="terms-section">
+            <h2>2. Use of Services</h2>
+            <h3>2.1 Eligibility</h3>
+            <p>You must be at least 18 years old to use our Services. By using our Services, you represent and warrant that you meet this eligibility requirement.</p>
+            <h3>2.2 Account Registration</h3>
+            <p>Some Services require account registration. You agree to provide accurate, current, and complete information during registration and to update such information to keep it accurate and current.</p>
+            <h3>2.3 Acceptable Use</h3>
+            <p>You agree not to use our Services for any unlawful purpose or in any way that could damage, disable, overburden, or impair our infrastructure. Prohibited activities include but are not limited to:</p>
+            <ul class="terms-list">
+              <li>Unauthorized access to systems or data</li>
+              <li>Interference with service operation</li>
+              <li>Distribution of malware or harmful code</li>
+              <li>Spam, phishing, or fraudulent activities</li>
+              <li>Violation of intellectual property rights</li>
+              <li>Harassment or harmful conduct toward others</li>
+            </ul>
+          </div>
+
+          <div class="terms-section">
+            <h2>3. Intellectual Property</h2>
+            <h3>3.1 Our Intellectual Property</h3>
+            <p>All content, features, and functionality on our Services—including text, graphics, logos, icons, images, audio clips, digital downloads, and software—are owned by ASilva Innovations or its licensors and are protected by intellectual property laws.</p>
+            <h3>3.2 License to Use</h3>
+            <p>Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to access and use our Services for their intended purposes.</p>
+            <h3>3.3 Feedback</h3>
+            <p>Any feedback you provide regarding our Services may be used by us without restriction or compensation to you. You grant us a perpetual, irrevocable license to use such feedback.</p>
+          </div>
+
+          <div class="terms-section">
+            <h2>4. Disclaimer of Warranties</h2>
+            <p>Our Services are provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, either express or implied. We do not guarantee that our Services will be uninterrupted, timely, secure, or error-free.</p>
+          </div>
+
+          <div class="terms-section">
+            <h2>5. Limitation of Liability</h2>
+            <p>To the fullest extent permitted by law, ASilva Innovations shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our Services.</p>
+          </div>
+
+          <div class="terms-section">
+            <h2>6. Indemnification</h2>
+            <p>You agree to indemnify, defend, and hold harmless ASilva Innovations and its officers, directors, employees, and agents from any claims, liabilities, damages, losses, and expenses arising from your use of our Services or violation of these Terms.</p>
+          </div>
+
+          <div class="terms-section">
+            <h2>7. Governing Law</h2>
+            <p>These Terms shall be governed by and construed in accordance with the laws of the Republic of the Philippines, without regard to its conflict of law provisions.</p>
+          </div>
+
+          <div class="terms-section">
+            <h2>8. Contact Information</h2>
+            <p>For questions about these Terms, please contact us at:</p>
+            <p><strong>Email:</strong> legal@asilvainnovations.com<br>
+            <strong>Address:</strong> ASilva Innovations Legal Department, Makati City, Philippines</p>
+          </div>
+
+          <div class="terms-section">
+            <h2>9. Severability</h2>
+            <p>If any provision of these Terms is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary, and the remaining provisions will remain in full force and effect.</p>
+          </div>
+        </div>
+
+        <!-- Acknowledgment -->
+        <div class="highlight-box">
+          <p><strong>Entire Agreement:</strong> These Terms of Service, together with our Privacy Policy and any other legal notices published by us on our Services, constitute the entire agreement between you and ASilva Innovations regarding your use of our Services.</p>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta">
+        <div class="container">
+          <h2>Have Questions About Our Terms?</h2>
+          <p>Our legal team is here to help. If you have any questions about these Terms of Service or how they apply to your use of our Services, please reach out.</p>
+          <a href="https://asilvainnovations.github.io/website/contact.html" class="btn btn-secondary">Contact Legal Team</a>
+        </div>
+      </section>
+    </div>
   </main>
-  
-  <footer role="contentinfo">
-    <nav class="footer-links" aria-label="Footer Navigation">
-      <a href="https://asilvainnovations.com" class="footer-link">Home</a>
-      <a href="https://asilvainnovations.com/privacy-policy" class="footer-link">Privacy Policy</a>
-      <a href="https://asilvainnovations.com/cookie-policy" class="footer-link">Cookie Policy</a>
-      <a href="https://asilvainnovations.com/accessibility" class="footer-link">Accessibility</a>
-      <a href="https://asilvainnovations.com/contact" class="footer-link">Contact</a>
-    </nav>
-    <p></p>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>ASilva Innovations</h3>
+          <ul class="footer-links">
+            <li><a href="https://asilvainnovations.com">Home</a></li>
+            <li><a href="https://asilvainnovations.github.io/ddrive-m/about.html">About Us</a></li>
+            <li><a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a></li>
+            <li><a href="https://asilvainnovations.github.io/website/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Products</h3>
+          <ul class="footer-links">
+            <li><a href="https://strategic-collaborative-auditable.deploypad.app/">DDRiVE-M</a></li>
+            <li><a href="https://asilvainnovations.github.io/ddrive-m/features.html">Features</a></li>
+            <li><a href="https://asilvainnovations.github.io/ddrive-m/faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Legal</h3>
+          <ul class="footer-links">
+            <li><a href="#terms">Terms of Service</a></li>
+            <li><a href="#policies">Policies</a></li>
+            <li><a href="#privacy-policy">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="https://asilvainnovations.github.io/website/cookies.html">Cookie Policy</a></li>
+            <li><a href="https://asilvainnovations.github.io/website/accessibility.html">Accessibility</a></li>
+            <li><a href="https://asilvainnovations.github.io/ddrive-m/faq.html">Help Center</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2026 ASilva Innovations. All rights reserved. Building resilient communities through ethical AI and human-centered design.</p>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    // Mobile hamburger toggle
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNav = document.getElementById('mobileNav');
+
+    hamburgerBtn.addEventListener('click', function () {
+      const isOpen = mobileNav.classList.toggle('is-open');
+      hamburgerBtn.classList.toggle('is-open', isOpen);
+      hamburgerBtn.setAttribute('aria-expanded', isOpen);
+    });
+
+    mobileNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileNav.classList.remove('is-open');
+        hamburgerBtn.classList.remove('is-open');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!hamburgerBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+        mobileNav.classList.remove('is-open');
+        hamburgerBtn.classList.remove('is-open');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Smooth scrolling for anchor link
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
