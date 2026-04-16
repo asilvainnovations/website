@@ -343,18 +343,103 @@
                 border-color: hsl(var(--primary) / 0.3);
             }
             
-            .pricing-card,
-            .addon-card,
-            .faq-item,
-            .comparison-table {
-                background: hsl(var(--surface-1-light));
-                border-color: hsl(var(--border-light));
-            }
-            
-            .pricing-card.featured {
-                background: hsl(var(--surface-2-light));
-                border-color: hsl(var(--primary) / 0.3);
-            }
+    /* ===========================================
+   ACCESSIBILITY FIX: Force proper text contrast
+   on pricing cards - Dark text on light bg OR
+   Light text on dark bg
+   =========================================== */
+
+/* Ensure pricing cards have explicit light text on dark backgrounds */
+.pricing-card,
+.pricing-card * {
+    color: var(--text-primary) !important; /* Light text: #f1f5f9 */
+}
+
+/* Specific elements that need guaranteed contrast */
+.pricing-card .plan-name,
+.pricing-card .plan-description,
+.pricing-card .plan-features li,
+.pricing-card .price-period,
+.pricing-card .price-note,
+.pricing-card .feature-icon {
+    color: var(--text-primary) !important;
+}
+
+.pricing-card .feature-icon.disabled {
+    color: var(--text-tertiary) !important; /* Lighter gray for disabled */
+    opacity: 0.6 !important;
+}
+
+/* Ensure CTA buttons have proper contrast */
+.pricing-card .cta-button.secondary {
+    color: var(--text-primary) !important;
+    background: hsl(var(--surface-3)) !important;
+    border-color: hsl(var(--border-strong)) !important;
+}
+
+/* Fix comparison table text */
+.comparison-table td,
+.comparison-table th {
+    color: var(--text-primary) !important;
+}
+
+.comparison-table td:first-child,
+.comparison-table th:first-child {
+    color: var(--text-primary) !important;
+    font-weight: 600 !important;
+}
+
+/* Ensure glass card background has sufficient opacity for contrast */
+.pricing-card.glass-card,
+.addon-card.glass-card,
+.faq-item.glass-card {
+    background: hsl(210 35% 12% / 0.85) !important; /* Darker, more opaque */
+    border-color: hsl(217 91% 60% / 0.25) !important;
+}
+
+/* Fallback for browsers without backdrop-filter support */
+@supports not (backdrop-filter: blur(1px)) {
+    .pricing-card.glass-card,
+    .addon-card.glass-card,
+    .faq-item.glass-card {
+        background: hsl(210 35% 10%) !important; /* Solid dark fallback */
+        backdrop-filter: none !important;
+    }
+}
+
+/* Light mode: Ensure dark text on light backgrounds */
+@media (prefers-color-scheme: light) {
+    .pricing-card,
+    .pricing-card * {
+        color: var(--text-primary-light) !important; /* Dark text: #0f172a */
+    }
+    
+    .pricing-card.glass-card,
+    .addon-card.glass-card,
+    .faq-item.glass-card {
+        background: hsl(210 40% 96% / 0.95) !important; /* Light opaque bg */
+        border-color: hsl(214 32% 91% / 0.7) !important;
+    }
+    
+    .pricing-card .cta-button.secondary {
+        color: var(--text-primary-light) !important;
+        background: hsl(var(--surface-2-light)) !important;
+    }
+}
+
+/* High contrast mode override */
+@media (prefers-contrast: high) {
+    .pricing-card,
+    .pricing-card * {
+        color: #ffffff !important; /* Force white text */
+    }
+    
+    .pricing-card.glass-card {
+        background: #0a1628 !important; /* Solid dark bg */
+        border: 2px solid #3b82f6 !important;
+        backdrop-filter: none !important;
+    }
+}
             
             /* Text colors for light mode */
             .text-primary { color: var(--text-primary-light); }
