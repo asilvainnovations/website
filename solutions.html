@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#0A1628">
+    <title>Solutions — ASilva Innovations | Technology That Builds Unbreakable Communities</title>
+    <meta name="description" content="Explore DDRiVE-M, Strat Planner Pro, Real-Time Leadership Center, and AI Solutions Suite. Purpose-built for LGUs, NGOs, and social enterprises in high-risk environments.">
+    <meta name="keywords" content="DDRiVE-M, Strat Planner Pro, Real-Time Leadership, SPARC, AI Solutions, DRRM, CCA, LGU software, Philippines, resilience">
+    <meta property="og:title" content="ASilva Innovations Solutions — 4 Platforms, 1 Mission">
+    <meta property="og:description" content="Enterprise-grade risk intelligence platforms for LGUs and NGOs. RA 10121 · ISO 31000 · UNDRR MCR2030 compliant.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-base:#0A1628; --bg-s1:#0F1E33; --bg-s2:#14263D; --bg-s3:#1A2E47; --bg-s4:#1E3652;
+            --c-primary:#3B82F6; --c-primary-dk:#2563EB; --c-primary-glow:rgba(59,130,246,0.35);
+            --c-accent:#22D3EE; --c-accent-glow:rgba(34,211,238,0.25);
+            --c-success:#10B981; --c-success-dk:#059669; --c-success-glow:rgba(16,185,129,0.25);
+            --c-warn:#F59E0B; --c-warn-dk:#D97706;
+            --c-txt:#F1F5F9; --c-txt2:#CBD5E1; --c-txt3:#94A3B8; --c-txtm:#64748B;
+            --c-on-primary:#FFFFFF;
+            --border:rgba(59,130,246,0.15); --border-strong:rgba(59,130,246,0.3);
+            --blur-sm:4px; --blur-md:12px; --blur-lg:18px; --blur-xl:28px;
+            --shadow-glass:0 8px 32px rgba(15,23,42,.45),0 2px 8px rgba(59,130,246,.15),inset 0 1px 0 rgba(255,255,255,.08);
+            --shadow-hover:0 12px 40px rgba(15,23,42,.6),0 4px 16px rgba(59,130,246,.25),inset 0 1px 0 rgba(255,255,255,.12);
+            --shadow-glow:0 0 24px 4px rgba(59,130,246,.25);
+            --shadow-success:0 0 24px 4px rgba(16,185,129,.2);
+            --r-sm:.5rem; --r-md:.875rem; --r-lg:1.25rem; --r-xl:1.75rem; --r-2xl:2rem; --r-full:9999px;
+            --ff-display:'Montserrat','Poppins',system-ui,sans-serif;
+            --ff-body:'Poppins',system-ui,sans-serif;
+            --ff-mono:'JetBrains Mono',monospace;
+            --t-xs:.75rem; --t-sm:.875rem; --t-base:1rem; --t-lg:1.125rem;
+            --t-xl:1.25rem; --t-2xl:1.5rem; --t-3xl:1.875rem; --t-4xl:2.25rem; --t-5xl:3rem; --t-6xl:3.75rem;
+            --s1:.25rem; --s2:.5rem; --s3:.75rem; --s4:1rem; --s5:1.25rem; --s6:1.5rem;
+            --s8:2rem; --s10:2.5rem; --s12:3rem; --s16:4rem; --s20:5rem; --s24:6rem;
+            --touch:48px;
+            --tf:150ms cubic-bezier(.4,0,.2,1);
+            --tb:250ms cubic-bezier(.4,0,.2,1);
+            --ts:400ms cubic-bezier(.4,0,.2,1);
+            --tl:600ms cubic-bezier(.4,0,.2,1);
+        }
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+        html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scroll-behavior:smooth;font-size:16px}
+        body{
+            font-family:var(--ff-body);
+            background:var(--bg-base);
+            color:var(--c-txt);line-height:1.7;font-size:var(--t-base);
+            min-height:100vh;position:relative;overflow-x:hidden;
+        }
+
+        /* Animated background canvas */
+        #bg-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-3;pointer-events:none;opacity:.6}
+
+        /* Gradient orbs */
+        .orb{position:fixed;border-radius:50%;filter:blur(120px);z-index:-2;pointer-events:none;animation:orbFloat 20s ease-in-out infinite}
+        .orb-1{width:600px;height:600px;background:rgba(59,130,246,.08);top:-10%;left:-5%;animation-delay:0s}
+        .orb-2{width:500px;height:500px;background:rgba(34,211,238,.06);top:20%;right:-10%;animation-delay:-7s}
+        .orb-3{width:400px;height:400px;background:rgba(139,92,246,.07);bottom:-5%;left:30%;animation-delay:-14s}
+        @keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-30px) scale(1.05)}66%{transform:translate(-20px,20px) scale(.95)}}
+
+        /* Grid overlay */
+        body::before{
+            content:'';position:fixed;top:0;left:0;width:100%;height:100%;
+            background-image:linear-gradient(rgba(59,130,246,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(59,130,246,.03) 1px,transparent 1px);
+            background-size:60px 60px;z-index:-1;pointer-events:none;mask-image:radial-gradient(ellipse at center,black 40%,transparent 80%);-webkit-mask-image:radial-gradient(ellipse at center,black 40%,transparent 80%);
+        }
+
+        .container{width:100%;max-width:100%;margin:0 auto;position:relative;z-index:1;padding:0 var(--s4)}
+        @media(min-width:768px){.container{max-width:720px}}
+        @media(min-width:1024px){.container{max-width:960px}}
+        @media(min-width:1280px){.container{max-width:1240px}}
+        @media(min-width:1536px){.container{max-width:1400px}}
+
+        /* GLASS */
+        .glass{background:rgba(15,30,51,.65);backdrop-filter:blur(var(--blur-lg)) saturate(180%);-webkit-backdrop-filter:blur(var(--blur-lg)) saturate(180%);border:1px solid var(--border);box-shadow:var(--shadow-glass);position:relative;overflow:hidden}
+        .glass-card{background:var(--bg-s1);border:1px solid var(--border);border-radius:var(--r-lg);padding:var(--s6);transition:all var(--tb);backdrop-filter:blur(var(--blur-md));-webkit-backdrop-filter:blur(var(--blur-md))}
+        .glass-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:var(--border-strong)}
+        .glass-strong{background:rgba(20,38,61,.8);backdrop-filter:blur(var(--blur-xl)) saturate(200%);-webkit-backdrop-filter:blur(var(--blur-xl)) saturate(200%);border:1px solid var(--border-strong);box-shadow:var(--shadow-glass)}
+
+        /* TYPOGRAPHY */
+        h1,h2,h3,h4,h5,h6{font-family:var(--ff-display);font-weight:700;line-height:1.15;letter-spacing:-.025em;color:var(--c-txt)}
+        .gradient-text{background:linear-gradient(135deg,var(--c-primary),var(--c-accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .gradient-text-success{background:linear-gradient(135deg,var(--c-success),var(--c-accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .section-label{font-family:var(--ff-mono);font-size:var(--t-xs);font-weight:600;color:var(--c-accent);letter-spacing:.15em;text-transform:uppercase;margin-bottom:var(--s3)}
+        .section-title{font-family:var(--ff-display);font-size:var(--t-3xl);font-weight:800;text-align:center;background:linear-gradient(135deg,var(--c-primary),var(--c-accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:var(--s4);position:relative;display:inline-block;left:50%;transform:translateX(-50%)}
+        .section-subtitle{color:var(--c-txt2);font-size:var(--t-base);line-height:1.7;max-width:50rem;margin:0 auto;text-align:center}
+        @media(min-width:768px){.section-title{font-size:var(--t-4xl)}.section-subtitle{font-size:var(--t-lg)}}
+        @media(min-width:1024px){.section-title{font-size:var(--t-5xl)}}
+
+        /* ANIMATIONS */
+        @keyframes glowPulse{0%,100%{opacity:1}50%{opacity:.7}}
+        @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.95;transform:scale(1.02)}}
+        @keyframes slideUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes slideInLeft{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
+        @keyframes slideInRight{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+        @keyframes borderGlow{0%{background-position:0 0}100%{background-position:200% 0}}
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+        @keyframes countUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+        @keyframes spin-slow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+        @keyframes drawLine{from{stroke-dashoffset:1000}to{stroke-dashoffset:0}}
+
+        .animate-slide-up{opacity:0;animation:slideUp .7s cubic-bezier(.16,1,.3,1) forwards}
+        .animate-slide-left{opacity:0;animation:slideInLeft .7s cubic-bezier(.16,1,.3,1) forwards}
+        .animate-slide-right{opacity:0;animation:slideInRight .7s cubic-bezier(.16,1,.3,1) forwards}
+        .animate-fade{opacity:0;animation:fadeIn .7s ease-out forwards}
+        .delay-1{animation-delay:.1s}.delay-2{animation-delay:.2s}.delay-3{animation-delay:.3s}.delay-4{animation-delay:.4s}.delay-5{animation-delay:.5s}.delay-6{animation-delay:.6s}
+
+        /* NAV */
+        .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:var(--s3) 0;transition:all var(--tb)}
+        .nav.scrolled{background:rgba(10,22,40,.9);backdrop-filter:blur(var(--blur-lg));-webkit-backdrop-filter:blur(var(--blur-lg));border-bottom:1px solid var(--border)}
+        .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1240px;margin:0 auto;padding:0 var(--s4)}
+        .nav-logo{display:flex;align-items:center;gap:var(--s3);text-decoration:none}
+        .nav-logo img{width:40px;height:40px;border-radius:var(--r-md)}
+        .nav-logo span{font-family:var(--ff-display);font-weight:800;font-size:var(--t-lg);color:var(--c-txt);letter-spacing:-.02em}
+        .nav-logo span span{color:var(--c-accent)}
+        .nav-links{display:none;gap:var(--s6);align-items:center}
+        @media(min-width:768px){.nav-links{display:flex}}
+        .nav-links a{color:var(--c-txt2);text-decoration:none;font-weight:500;font-size:var(--t-sm);transition:color var(--tf);position:relative}
+        .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:linear-gradient(90deg,var(--c-primary),var(--c-accent));transition:width var(--tb);border-radius:var(--r-full)}
+        .nav-links a:hover{color:var(--c-txt)}.nav-links a:hover::after{width:100%}
+        .nav-cta{padding:var(--s2) var(--s5);background:linear-gradient(135deg,var(--c-primary),var(--c-primary-dk));color:var(--c-on-primary);border-radius:var(--r-full);font-weight:700;font-size:var(--t-sm);text-decoration:none;box-shadow:0 4px 14px var(--c-primary-glow);transition:all var(--tb);border:1px solid var(--border-strong)}
+        .nav-cta:hover{box-shadow:0 6px 20px var(--c-primary-glow),0 0 24px 4px rgba(59,130,246,.2);transform:translateY(-1px)}
+
+        /* HERO */
+        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;padding:calc(var(--s24) + 60px) var(--s4) var(--s16);text-align:center;overflow:hidden}
+        .hero-content{max-width:900px;position:relative;z-index:2}
+        .hero-badge{display:inline-flex;align-items:center;gap:var(--s2);padding:var(--s2) var(--s4);background:rgba(59,130,246,.1);border:1px solid var(--border-strong);border-radius:var(--r-full);color:var(--c-accent);font-size:var(--t-sm);font-weight:600;margin-bottom:var(--s6);backdrop-filter:blur(var(--blur-sm));animation:slideUp .6s ease-out}
+        .hero-badge::before{content:'';width:8px;height:8px;background:var(--c-success);border-radius:50%;box-shadow:0 0 8px var(--c-success);animation:pulse 2s infinite}
+        .hero h1{font-size:var(--t-4xl);font-weight:900;line-height:1.05;margin-bottom:var(--s5);letter-spacing:-.03em}
+        @media(min-width:768px){.hero h1{font-size:var(--t-5xl)}}
+        @media(min-width:1024px){.hero h1{font-size:var(--t-6xl)}}
+        .hero h1 .line{display:block}
+        .hero-desc{font-size:var(--t-lg);color:var(--c-txt2);max-width:640px;margin:0 auto var(--s8);line-height:1.7}
+        @media(min-width:768px){.hero-desc{font-size:var(--t-xl)}}
+        .hero-stats{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--s6);margin-top:var(--s10)}
+        .hero-stat{text-align:center}
+        .hero-stat-num{font-family:var(--ff-display);font-size:var(--t-3xl);font-weight:800;background:linear-gradient(135deg,var(--c-primary),var(--c-accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+        .hero-stat-label{font-size:var(--t-xs);color:var(--c-txt3);text-transform:uppercase;letter-spacing:.1em;margin-top:var(--s2);font-weight:600}
+
+        /* SCROLL INDICATOR */
+        .scroll-indicator{position:absolute;bottom:var(--s8);left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:var(--s2);opacity:.6;animation:float 3s ease-in-out infinite}
+        .scroll-indicator span{font-size:var(--t-xs);color:var(--c-txt3);text-transform:uppercase;letter-spacing:.15em}
+        .scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--c-accent),transparent);position:relative;overflow:hidden}
+        .scroll-line::after{content:'';position:absolute;top:0;left:0;width:100%;height:20px;background:var(--c-accent);animation:scrollDown 2s ease-in-out infinite}
+        @keyframes scrollDown{0%{top:-20px}100%{top:40px}}
+
+        /* SOLUTION CARDS GRID */
+        .solutions-section{padding:var(--s16) 0}
+        .solutions-grid{display:grid;gap:var(--s6);margin-top:var(--s12)}
+        @media(min-width:768px){.solutions-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(min-width:1280px){.solutions-grid{grid-template-columns:repeat(4,1fr);gap:var(--s5)}}
+
+        .solution-card{
+            background:var(--bg-s1);border:1px solid var(--border);border-radius:var(--r-xl);
+            padding:var(--s6);position:relative;overflow:hidden;transition:all var(--tb);
+            backdrop-filter:blur(var(--blur-md));-webkit-backdrop-filter:blur(var(--blur-md));
+            display:flex;flex-direction:column;height:100%;cursor:pointer;
+        }
+        .solution-card::before{content:'';position:absolute;inset:0;background:radial-gradient(500px circle at var(--mx,50%) var(--my,50%),rgba(59,130,246,.1),transparent 60%);opacity:0;transition:opacity var(--tb);pointer-events:none;z-index:0}
+        .solution-card:hover::before{opacity:1}
+        .solution-card:hover{transform:translateY(-6px);border-color:var(--border-strong);box-shadow:var(--shadow-hover);z-index:5}
+        .solution-card.active{border-color:var(--c-primary);box-shadow:var(--shadow-glow)}
+
+        .sol-card-num{font-family:var(--ff-mono);font-size:.65rem;font-weight:700;color:var(--c-accent);letter-spacing:.12em;text-transform:uppercase;margin-bottom:var(--s3);position:relative;z-index:1}
+        .sol-card-icon{width:64px;height:64px;border-radius:var(--r-lg);display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:var(--s4);background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(59,130,246,.05));border:1px solid var(--border-strong);box-shadow:0 4px 16px var(--c-primary-glow),inset 0 1px 0 rgba(255,255,255,.1);position:relative;z-index:1;transition:all var(--tb)}
+        .solution-card:hover .sol-card-icon{transform:scale(1.1) rotate(-5deg);box-shadow:0 8px 24px var(--c-primary-glow)}
+        .sol-card-title{font-family:var(--ff-display);font-size:var(--t-xl);font-weight:700;color:var(--c-txt);margin-bottom:var(--s2);line-height:1.3;position:relative;z-index:1}
+        .sol-card-sub{font-family:var(--ff-mono);font-size:.7rem;font-weight:600;color:var(--c-accent);letter-spacing:.05em;text-transform:uppercase;margin-bottom:var(--s3);opacity:.9;position:relative;z-index:1}
+        .sol-card-desc{font-size:var(--t-sm);color:var(--c-txt2);line-height:1.7;margin-bottom:var(--s4);flex:1;position:relative;z-index:1}
+        .sol-card-features{list-style:none;margin-bottom:var(--s4);position:relative;z-index:1}
+        .sol-card-features li{display:flex;align-items:flex-start;gap:var(--s2);margin-bottom:var(--s2);color:var(--c-txt2);font-size:var(--t-sm);line-height:1.5}
+        .sol-card-features li::before{content:'✓';color:var(--c-success);font-weight:700;flex-shrink:0;font-size:.9em;text-shadow:0 0 8px rgba(16,185,129,.3)}
+        .sol-card-cta{margin-top:auto;display:flex;align-items:center;gap:var(--s2);color:var(--c-accent);font-weight:600;font-size:var(--t-sm);text-decoration:none;transition:gap var(--tf);position:relative;z-index:1}
+        .sol-card-cta:hover{gap:var(--s3);color:var(--c-primary)}
+        .sol-card-cta::after{content:'→'}
+
+        /* SOLUTION DEEP DIVE */
+        .deep-dive-section{padding:var(--s16) 0;position:relative}
+        .deep-dive{display:none;animation:fadeIn .5s ease-out}
+        .deep-dive.active{display:block}
+
+        .deep-dive-header{display:flex;flex-direction:column;gap:var(--s6);margin-bottom:var(--s10);align-items:center;text-align:center}
+        @media(min-width:1024px){.deep-dive-header{flex-direction:row;text-align:left;align-items:flex-start;gap:var(--s10)}}
+
+        .deep-dive-visual{flex:0 0 auto;width:100%;max-width:400px;position:relative}
+        @media(min-width:1024px){.deep-dive-visual{width:380px}}
+        .deep-dive-visual-inner{
+            aspect-ratio:1;border-radius:var(--r-2xl);background:linear-gradient(135deg,var(--bg-s2),var(--bg-s3));
+            border:1px solid var(--border-strong);display:flex;align-items:center;justify-content:center;
+            font-size:5rem;position:relative;overflow:hidden;box-shadow:var(--shadow-glow);
+        }
+        .deep-dive-visual-inner::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,rgba(59,130,246,.2),transparent 60%)}
+        .deep-dive-visual-inner::after{content:'';position:absolute;width:120%;height:120%;border:2px dashed rgba(59,130,246,.2);border-radius:50%;animation:spin-slow 30s linear infinite}
+
+        .deep-dive-content{flex:1}
+        .deep-dive-badge{display:inline-flex;align-items:center;gap:var(--s2);padding:var(--s2) var(--s4);border-radius:var(--r-full);font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:var(--s3)}
+        .deep-dive-badge.compliant{background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3);color:var(--c-success)}
+        .deep-dive-badge.ai{background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.3);color:#a78bfa}
+        .deep-dive-badge.pwa{background:rgba(34,211,238,.12);border:1px solid rgba(34,211,238,.3);color:var(--c-accent)}
+        .deep-dive-badge.rtl{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.3);color:var(--c-warn)}
+        .deep-dive-title{font-size:var(--t-3xl);font-weight:800;margin-bottom:var(--s3);line-height:1.2}
+        @media(min-width:768px){.deep-dive-title{font-size:var(--t-4xl)}}
+        .deep-dive-desc{font-size:var(--t-lg);color:var(--c-txt2);line-height:1.8;margin-bottom:var(--s6)}
+
+        /* MODULES GRID */
+        .modules-grid{display:grid;gap:var(--s4);margin-bottom:var(--s8)}
+        @media(min-width:640px){.modules-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(min-width:1024px){.modules-grid{grid-template-columns:repeat(3,1fr)}}
+        .module-item{
+            background:var(--bg-s1);border:1px solid var(--border);border-radius:var(--r-lg);padding:var(--s5);
+            transition:all var(--tb);position:relative;overflow:hidden;
+        }
+        .module-item:hover{border-color:var(--border-strong);transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+        .module-num{font-family:var(--ff-mono);font-size:.65rem;font-weight:700;color:var(--c-primary);letter-spacing:.1em;margin-bottom:var(--s2)}
+        .module-name{font-family:var(--ff-display);font-size:var(--t-base);font-weight:700;color:var(--c-txt);margin-bottom:var(--s2)}
+        .module-desc{font-size:var(--t-sm);color:var(--c-txt2);line-height:1.6}
+        .module-tag{display:inline-block;margin-top:var(--s3);font-family:var(--ff-mono);font-size:.6rem;font-weight:700;padding:2px 8px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-radius:var(--r-full);color:var(--c-primary);letter-spacing:.04em}
+
+        /* FEATURE SHOWCASE */
+        .feature-showcase{display:grid;gap:var(--s6);margin:var(--s10) 0}
+        @media(min-width:768px){.feature-showcase{grid-template-columns:repeat(2,1fr)}}
+        .feature-item{display:flex;gap:var(--s4);padding:var(--s5);background:var(--bg-s1);border:1px solid var(--border);border-radius:var(--r-lg);transition:all var(--tb)}
+        .feature-item:hover{border-color:var(--border-strong);box-shadow:var(--shadow-hover);transform:translateY(-2px)}
+        .feature-icon{width:48px;height:48px;min-width:48px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;font-size:1.25rem;background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(59,130,246,.05));border:1px solid var(--border-strong);box-shadow:0 4px 12px var(--c-primary-glow)}
+        .feature-content h4{font-size:var(--t-lg);font-weight:700;color:var(--c-txt);margin-bottom:var(--s2)}
+        .feature-content p{font-size:var(--t-sm);color:var(--c-txt2);line-height:1.6}
+
+        /* INTEGRATION ECOSYSTEM */
+        .ecosystem-section{padding:var(--s16) 0;position:relative;overflow:hidden}
+        .ecosystem-visual{position:relative;max-width:800px;margin:var(--s10) auto 0;height:400px;display:flex;align-items:center;justify-content:center}
+        .ecosystem-center{
+            width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,var(--c-primary),var(--c-primary-dk));
+            display:flex;align-items:center;justify-content:center;flex-direction:column;gap:var(--s1);
+            box-shadow:0 0 40px var(--c-primary-glow),inset 0 2px 4px rgba(255,255,255,.2);z-index:10;position:relative;
+            border:3px solid rgba(255,255,255,.1);
+        }
+        .ecosystem-center span:first-child{font-family:var(--ff-display);font-weight:900;font-size:var(--t-xl);color:white}
+        .ecosystem-center span:last-child{font-size:.55rem;color:rgba(255,255,255,.8);text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+        .ecosystem-orbit{position:absolute;width:100%;height:100%;border:1px dashed rgba(59,130,246,.2);border-radius:50%;animation:spin-slow 60s linear infinite}
+        .ecosystem-orbit-2{position:absolute;width:75%;height:75%;border:1px dashed rgba(34,211,238,.15);border-radius:50%;animation:spin-slow 45s linear infinite reverse}
+        .ecosystem-node{
+            position:absolute;width:100px;padding:var(--s2) var(--s3);background:var(--bg-s2);border:1px solid var(--border-strong);
+            border-radius:var(--r-md);text-align:center;font-size:.7rem;font-weight:600;color:var(--c-txt2);
+            box-shadow:var(--shadow-glass);backdrop-filter:blur(var(--blur-sm));z-index:5;transition:all var(--tb);
+        }
+        .ecosystem-node:hover{transform:scale(1.1);border-color:var(--c-accent);color:var(--c-accent);box-shadow:0 4px 16px var(--c-accent-glow);z-index:20}
+        .ecosystem-node.primary{background:rgba(59,130,246,.15);border-color:rgba(59,130,246,.4);color:var(--c-primary)}
+
+        /* COMPLIANCE STRIP */
+        .compliance-section{padding:var(--s10) 0;background:linear-gradient(180deg,transparent,var(--bg-s1),transparent)}
+        .compliance-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--s4);margin-top:var(--s8)}
+        .compliance-item{
+            display:flex;align-items:center;gap:var(--s3);padding:var(--s3) var(--s5);background:var(--bg-s1);
+            border:1px solid var(--border);border-radius:var(--r-full);transition:all var(--tb);
+        }
+        .compliance-item:hover{border-color:var(--border-strong);transform:translateY(-2px);box-shadow:var(--shadow-hover)}
+        .compliance-icon{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,rgba(16,185,129,.15),rgba(16,185,129,.05));border:1px solid rgba(16,185,129,.3);display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--c-success)}
+        .compliance-text{font-size:var(--t-sm);font-weight:600;color:var(--c-txt)}
+        .compliance-text span{display:block;font-size:.65rem;color:var(--c-txt3);font-weight:500}
+
+        /* IMPACT STATS */
+        .impact-section{padding:var(--s16) 0}
+        .impact-grid{display:grid;gap:var(--s6);margin-top:var(--s10)}
+        @media(min-width:640px){.impact-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(min-width:1024px){.impact-grid{grid-template-columns:repeat(4,1fr)}}
+        .impact-card{
+            background:var(--bg-s1);border:1px solid var(--border);border-radius:var(--r-xl);padding:var(--s6);
+            text-align:center;transition:all var(--tb);position:relative;overflow:hidden;
+        }
+        .impact-card:hover{border-color:var(--border-strong);transform:translateY(-4px);box-shadow:var(--shadow-hover)}
+        .impact-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--c-primary),var(--c-accent));opacity:.6}
+        .impact-num{font-family:var(--ff-display);font-size:var(--t-4xl);font-weight:800;background:linear-gradient(135deg,var(--c-primary),var(--c-accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:var(--s2)}
+        .impact-label{font-size:var(--t-sm);color:var(--c-txt2);font-weight:600}
+        .impact-desc{font-size:var(--t-xs);color:var(--c-txt3);margin-top:var(--s2);line-height:1.5}
+
+        /* TESTIMONIAL */
+        .testimonial-section{padding:var(--s16) 0}
+        .testimonial-grid{display:grid;gap:var(--s6);margin-top:var(--s10)}
+        @media(min-width:768px){.testimonial-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(min-width:1024px){.testimonial-grid{grid-template-columns:repeat(3,1fr)}}
+        .testimonial-card{
+            background:var(--bg-s1);border:1px solid var(--border);border-radius:var(--r-xl);padding:var(--s6);
+            transition:all var(--tb);position:relative;
+        }
+        .testimonial-card:hover{border-color:var(--border-strong);transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+        .testimonial-quote{font-size:var(--t-base);color:var(--c-txt2);line-height:1.8;margin-bottom:var(--s5);font-style:italic;position:relative}
+        .testimonial-quote::before{content:'"';position:absolute;top:-20px;left:-10px;font-family:var(--ff-display);font-size:4rem;color:var(--c-primary);opacity:.15;line-height:1}
+        .testimonial-author{display:flex;align-items:center;gap:var(--s3)}
+        .testimonial-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--c-primary),var(--c-accent));display:flex;align-items:center;justify-content:center;font-family:var(--ff-display);font-weight:700;color:white;font-size:var(--t-sm)}
+        .testimonial-info h5{font-size:var(--t-sm);font-weight:700;color:var(--c-txt);margin-bottom:2px}
+        .testimonial-info span{font-size:var(--t-xs);color:var(--c-txt3)}
+
+        /* CTA SECTION */
+        .cta-section{background:var(--bg-s2);border:1px solid var(--border-strong);border-radius:var(--r-2xl);padding:var(--s8) var(--s4);text-align:center;margin:var(--s8) 0;position:relative;overflow:hidden;backdrop-filter:blur(var(--blur-lg));-webkit-backdrop-filter:blur(var(--blur-lg));box-shadow:var(--shadow-glass)}
+        .cta-section::before{content:'';position:absolute;inset:0;background:radial-gradient(600px circle at 50% -100px,rgba(59,130,246,.1),transparent 60%);z-index:0;pointer-events:none}
+        .cta-section::after{content:'';position:absolute;inset:0;background:linear-gradient(45deg,transparent 40%,rgba(59,130,246,.03) 50%,transparent 60%);background-size:200% 200%;animation:shimmer 8s ease-in-out infinite;pointer-events:none}
+        @media(min-width:768px){.cta-section{padding:var(--s12) var(--s6)}}
+        .cta-title{font-family:var(--ff-display);font-size:var(--t-2xl);font-weight:800;color:var(--c-txt);margin-bottom:var(--s4);line-height:1.2;position:relative;z-index:1}
+        @media(min-width:768px){.cta-title{font-size:var(--t-3xl)}}
+        .cta-desc{color:var(--c-txt2);font-size:var(--t-base);margin-bottom:var(--s6);line-height:1.7;max-width:44rem;margin-left:auto;margin-right:auto;position:relative;z-index:1}
+        @media(min-width:768px){.cta-desc{font-size:var(--t-lg)}}
+        .cta-btns{display:flex;flex-direction:column;gap:var(--s3);position:relative;z-index:1;align-items:center}
+        @media(min-width:640px){.cta-btns{flex-direction:row;justify-content:center}}
+        .cta-action{min-height:var(--touch);padding:var(--s4) var(--s6);border-radius:var(--r-md);font-weight:700;font-size:var(--t-base);cursor:pointer;transition:all var(--tb);border:none;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;position:relative;overflow:hidden;backdrop-filter:blur(var(--blur-sm));-webkit-backdrop-filter:blur(var(--blur-sm))}
+        .cta-action.primary{background:linear-gradient(135deg,var(--c-primary),var(--c-primary-dk));color:var(--c-on-primary);box-shadow:0 4px 14px var(--c-primary-glow),inset 0 1px 0 rgba(255,255,255,.2);border:1px solid var(--border-strong)}
+        .cta-action.primary:hover{box-shadow:0 8px 24px var(--c-primary-glow),inset 0 1px 0 rgba(255,255,255,.3),0 0 32px 6px rgba(59,130,246,.25);transform:translateY(-2px)}
+        .cta-action.secondary{background:var(--bg-s1);color:var(--c-accent);border:1px solid var(--border-strong)}
+        .cta-action.secondary:hover{background:var(--bg-s2);border-color:var(--border-strong);color:var(--c-txt);box-shadow:0 4px 16px var(--c-primary-glow);transform:translateY(-1px)}
+
+        /* FOOTER */
+        .footer-note{text-align:center;margin-top:var(--s12);padding-top:var(--s6);border-top:1px solid var(--border);color:var(--c-txt3);font-size:var(--t-sm);line-height:1.7}
+        .footer-note strong{color:var(--c-primary);font-weight:600}
+        .footer-sol-list{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--s2);margin:var(--s4) 0}
+        .footer-sol-tag{font-family:var(--ff-mono);font-size:.65rem;font-weight:700;padding:4px 10px;background:rgba(59,130,246,.08);border:1px solid var(--border);border-radius:var(--r-full);color:var(--c-txt3)}
+
+        /* TABS */
+        .solution-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--s2);margin:var(--s8) 0 var(--s6)}
+        .solution-tab{
+            padding:var(--s3) var(--s5);background:var(--bg-s1);border:1px solid var(--border);border-radius:var(--r-full);
+            color:var(--c-txt2);font-weight:600;font-size:var(--t-sm);cursor:pointer;transition:all var(--tb);
+            backdrop-filter:blur(var(--blur-sm));font-family:var(--ff-body);
+        }
+        .solution-tab:hover{border-color:var(--border-strong);color:var(--c-txt)}
+        .solution-tab.active{background:linear-gradient(135deg,var(--c-primary),var(--c-primary-dk));color:var(--c-on-primary);border-color:transparent;box-shadow:0 4px 14px var(--c-primary-glow)}
+
+        /* PROCESS STEPS */
+        .process-section{padding:var(--s16) 0}
+        .process-grid{display:grid;gap:var(--s6);margin-top:var(--s10);position:relative}
+        @media(min-width:768px){.process-grid{grid-template-columns:repeat(4,1fr)}}
+        .process-grid::before{content:'';position:absolute;top:40px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,var(--c-primary),var(--c-accent));opacity:.3;z-index:0;display:none}
+        @media(min-width:768px){.process-grid::before{display:block}}
+        .process-step{position:relative;z-index:1;text-align:center}
+        .process-num{
+            width:80px;height:80px;margin:0 auto var(--s4);border-radius:50%;background:var(--bg-s2);
+            border:2px solid var(--border-strong);display:flex;align-items:center;justify-content:center;
+            font-family:var(--ff-display);font-size:var(--t-xl);font-weight:800;color:var(--c-primary);
+            box-shadow:0 4px 16px var(--c-primary-glow),inset 0 2px 4px rgba(255,255,255,.05);transition:all var(--tb);
+        }
+        .process-step:hover .process-num{transform:scale(1.1);border-color:var(--c-accent);color:var(--c-accent);box-shadow:0 8px 24px var(--c-accent-glow)}
+        .process-title{font-family:var(--ff-display);font-size:var(--t-lg);font-weight:700;color:var(--c-txt);margin-bottom:var(--s2)}
+        .process-desc{font-size:var(--t-sm);color:var(--c-txt2);line-height:1.6}
+
+        /* UTILITIES */
+        .text-center{text-align:center}
+        .mb-4{margin-bottom:var(--s4)}.mb-6{margin-bottom:var(--s6)}.mb-8{margin-bottom:var(--s8)}.mb-12{margin-bottom:var(--s12)}
+        .mt-12{margin-top:var(--s12)}
+        .pt-16{padding-top:var(--s16)}
+
+        /* ACCESSIBILITY */
+        .skip-link{position:absolute;top:-40px;left:0;background:var(--c-primary);color:white;padding:var(--s3) var(--s4);z-index:100;border-radius:0 0 var(--r-md) 0;text-decoration:none;font-weight:600}
+        .skip-link:focus{top:0}
+        *:focus-visible{outline:3px solid var(--c-primary);outline-offset:3px;border-radius:var(--r-sm);box-shadow:0 0 0 6px var(--bg-base)}
+
+        /* REDUCED MOTION */
+        @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+        @media(prefers-contrast:high){.glass,.glass-card,.pricing-card,.addon-card,.faq-item,.comparison-table{border-width:2px;backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--bg-s2);box-shadow:none}}
+    </style>
+<base target="_blank">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<canvas id="bg-canvas"></canvas>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+        <a href="#" class="nav-logo" aria-label="ASilva Innovations Home">
+            <img src="https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png" alt="ASilva Innovations Logo">
+            <span>ASilva <span>Innovations</span></span>
+        </a>
+        <div class="nav-links">
+            <a href="#solutions">Solutions</a>
+            <a href="#deep-dive">Deep Dive</a>
+            <a href="#ecosystem">Ecosystem</a>
+            <a href="#impact">Impact</a>
+            <a href="#process">Process</a>
+            <a href="mailto:sales@asilvainnovations.com" class="nav-cta">Get Started</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <!-- HERO -->
+    <header class="hero" role="banner">
+        <div class="hero-content">
+            <div class="hero-badge animate-slide-up">Philippine Government Certified · Trusted by 15+ LGUs</div>
+            <h1 class="animate-slide-up delay-1">
+                <span class="line gradient-text">Technology That Builds</span>
+                <span class="line gradient-text">Unbreakable Communities</span>
+            </h1>
+            <p class="hero-desc animate-slide-up delay-2">
+                Four integrated platforms purpose-built for Local Government Units, NGOs, and social enterprises 
+                operating in high-risk environments. From real-time hazard detection to AI-generated recovery plans.
+            </p>
+            <div class="cta-btns animate-slide-up delay-3" style="justify-content:center">
+                <a href="#solutions" class="cta-action primary">Explore Solutions</a>
+                <a href="mailto:sales@asilvainnovations.com?subject=Demo%20Request" class="cta-action secondary">Schedule a Demo</a>
+            </div>
+            <div class="hero-stats animate-slide-up delay-4">
+                <div class="hero-stat">
+                    <div class="hero-stat-num">15+</div>
+                    <div class="hero-stat-label">LGUs Deployed</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">7</div>
+                    <div class="hero-stat-label">DDRiVE-M Modules</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">98%</div>
+                    <div class="hero-stat-label">Client Retention</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num">&lt;30</div>
+                    <div class="hero-stat-label">Days to Deploy</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- SOLUTIONS OVERVIEW -->
+        <section class="solutions-section" id="solutions" aria-labelledby="solutions-title">
+            <div class="text-center">
+                <div class="section-label animate-slide-up">The Platform</div>
+                <h2 id="solutions-title" class="section-title animate-slide-up delay-1">Four Solutions. One Mission.</h2>
+                <p class="section-subtitle animate-slide-up delay-2">
+                    An integrated resilience stack that transforms how organizations prepare for, respond to, and recover from 
+                    critical events. Each solution works standalone — together, they're unstoppable.
+                </p>
+            </div>
+
+            <div class="solutions-grid" role="list">
+
+                <!-- DDRiVE-M -->
+                <article class="solution-card animate-slide-up delay-1" role="listitem" data-solution="ddrive" tabindex="0">
+                    <div class="sol-card-num">Solution 01</div>
+                    <div class="sol-card-icon" aria-hidden="true">🛡️</div>
+                    <h3 class="sol-card-title">DDRiVE-M</h3>
+                    <div class="sol-card-sub">Data-Driven Risk &amp; Vulnerability Evaluation</div>
+                    <p class="sol-card-desc">
+                        AI-powered integrated disaster resilience platform with 7 end-to-end intelligence modules. 
+                        From real-time hazard detection to AI-generated recovery plans.
+                    </p>
+                    <ul class="sol-card-features">
+                        <li>PAGASA / PHIVOLCS / NOAH live feeds</li>
+                        <li>ISO 31000-compliant risk registry</li>
+                        <li>AI-generated DRRM &amp; BCP plans</li>
+                        <li>3D scenario simulations &amp; EOC training</li>
+                    </ul>
+                    <a href="#deep-dive" class="sol-card-cta" data-target="ddrive">Explore DDRiVE-M</a>
+                </article>
+
+                <!-- Strat Planner Pro -->
+                <article class="solution-card animate-slide-up delay-2" role="listitem" data-solution="strat" tabindex="0">
+                    <div class="sol-card-num">Solution 02</div>
+                    <div class="sol-card-icon" aria-hidden="true">📐</div>
+                    <h3 class="sol-card-title">Strat Planner Pro</h3>
+                    <div class="sol-card-sub">AI-Powered Strategic Planning</div>
+                    <p class="sol-card-desc">
+                        From SWOT to Balanced Scorecard to PAPs in one guided flow. Works offline as a PWA. 
+                        AI-generated strategies with systems thinking maps and print-ready exports.
+                    </p>
+                    <ul class="sol-card-features">
+                        <li>AI SWOT &amp; Strategy Generation</li>
+                        <li>Systems Thinking Maps</li>
+                        <li>Balanced Scorecard + MEL Dashboard</li>
+                        <li>Offline PWA — works without internet</li>
+                    </ul>
+                    <a href="#deep-dive" class="sol-card-cta" data-target="strat">Explore Strat Planner</a>
+                </article>
+
+                <!-- RTL Center -->
+                <article class="solution-card animate-slide-up delay-3" role="listitem" data-solution="rtl" tabindex="0">
+                    <div class="sol-card-num">Solution 03</div>
+                    <div class="sol-card-icon" aria-hidden="true">📡</div>
+                    <h3 class="sol-card-title">Real-Time Leadership Center</h3>
+                    <div class="sol-card-sub">RTL Command &amp; Decision Hub</div>
+                    <p class="sol-card-desc">
+                        Live leadership intelligence dashboard synthesizing data across all platforms. 
+                        Real-time command view for agile, informed response during critical events.
+                    </p>
+                    <ul class="sol-card-features">
+                        <li>Live cross-platform data synthesis</li>
+                        <li>Executive decision support alerts</li>
+                        <li>Multi-agency coordination hub</li>
+                        <li>Crisis-mode command dashboard</li>
+                    </ul>
+                    <a href="#deep-dive" class="sol-card-cta" data-target="rtl">Explore RTL Center</a>
+                </article>
+
+                <!-- AI Solutions -->
+                <article class="solution-card animate-slide-up delay-4" role="listitem" data-solution="ai" tabindex="0">
+                    <div class="sol-card-num">Solution 04</div>
+                    <div class="sol-card-icon" aria-hidden="true">🤖</div>
+                    <h3 class="sol-card-title">AI Solutions Suite</h3>
+                    <div class="sol-card-sub">Comprehensive AI &amp; Analytics</div>
+                    <p class="sol-card-desc">
+                        SPARC AI resilience calculator, context-aware DDRiVER AI assistants, automated compliance 
+                        generators, and sustainability AI aligned with UN SDGs and ESG reporting.
+                    </p>
+                    <ul class="sol-card-features">
+                        <li>SPARC AI predictive resilience scoring</li>
+                        <li>DDRiVER AI context-aware chatbot</li>
+                        <li>Automated compliance plan generation</li>
+                        <li>Sustainability AI / ESG reporting</li>
+                    </ul>
+                    <a href="#deep-dive" class="sol-card-cta" data-target="ai">Explore AI Suite</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- SOLUTION TABS -->
+        <section class="deep-dive-section" id="deep-dive" aria-labelledby="deep-dive-title">
+            <div class="text-center">
+                <div class="section-label animate-slide-up">Deep Dive</div>
+                <h2 id="deep-dive-title" class="section-title animate-slide-up delay-1">Explore Every Capability</h2>
+                <p class="section-subtitle animate-slide-up delay-2">
+                    Click through each solution to see the full module architecture, compliance alignment, and integration points.
+                </p>
+            </div>
+
+            <div class="solution-tabs animate-slide-up delay-3" role="tablist" aria-label="Solution details">
+                <button class="solution-tab active" role="tab" aria-selected="true" data-tab="ddrive">🛡️ DDRiVE-M</button>
+                <button class="solution-tab" role="tab" aria-selected="false" data-tab="strat">📐 Strat Planner</button>
+                <button class="solution-tab" role="tab" aria-selected="false" data-tab="rtl">📡 RTL Center</button>
+                <button class="solution-tab" role="tab" aria-selected="false" data-tab="ai">🤖 AI Suite</button>
+            </div>
+
+            <!-- DDRiVE-M DEEP DIVE -->
+            <div class="deep-dive active" id="tab-ddrive" role="tabpanel">
+                <div class="deep-dive-header">
+                    <div class="deep-dive-visual">
+                        <div class="deep-dive-visual-inner">🛡️</div>
+                    </div>
+                    <div class="deep-dive-content">
+                        <div class="deep-dive-badge compliant">RA 10121 · ISO 31000 · UNDRR MCR2030</div>
+                        <h3 class="deep-dive-title gradient-text">DDRiVE-M</h3>
+                        <p class="deep-dive-desc">
+                            <strong>Data-Driven Risk &amp; Vulnerability Evaluation and Management</strong> is our flagship 
+                            enterprise resilience platform. Seven interconnected intelligence modules guide organizations 
+                            from hazard detection through continuous monitoring — all aligned with Philippine DRRM law, 
+                            ISO 31000, and UNDRR's 10 Essentials.
+                        </p>
+                        <div style="display:flex;flex-wrap:wrap;gap:var(--s3)">
+                            <span class="module-tag">PAGASA Integration</span>
+                            <span class="module-tag">PHIVOLCS Feeds</span>
+                            <span class="module-tag">NOAH Data</span>
+                            <span class="module-tag">GIS Mapping</span>
+                            <span class="module-tag">AI Risk Registry</span>
+                            <span class="module-tag">EOC Training</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 style="font-family:var(--ff-display);font-size:var(--t-xl);font-weight:700;margin-bottom:var(--s6);text-align:center">The 7 Intelligence Modules</h4>
+                <div class="modules-grid">
+                    <div class="module-item">
+                        <div class="module-num">Module 01</div>
+                        <div class="module-name">🔍 Detection</div>
+                        <div class="module-desc">Real-time multi-hazard monitoring via PAGASA, PHIVOLCS, and NOAH APIs. Automated alert generation with severity classification.</div>
+                        <span class="module-tag">Live Feeds</span>
+                    </div>
+                    <div class="module-item">
+                        <div class="module-num">Module 02</div>
+                        <div class="module-name">🩺 Diagnosis</div>
+                        <div class="module-desc">AI-powered risk registry building with ISO 31000-compliant risk matrices. Multi-modal vulnerability assessment tools.</div>
+                        <span class="module-tag">AI-Powered</span>
+                    </div>
+                    <div class="module-item">
+                        <div class="module-num">Module 03</div>
+                        <div class="module-name">⚡ Response</div>
+                        <div class="module-desc">Incident management with DTI/DILG protocol integration. Automated resource mobilization and duty officer assignment.</div>
+                        <span class="module-tag">Protocol-Driven</span>
+                    </div>
+                    <div class="module-item">
+                        <div class="module-num">Module 04</div>
+                        <div class="module-name">🔗 Integration</div>
+                        <div class="module-desc">UNDRR 10 Essentials alignment with SPARC resilience scoring. Cross-departmental data unification and gap analysis.</div>
+                        <span class="module-tag">UNDRR Aligned</span>
+                    </div>
+                    <div class="module-item">
+                        <div class="module-num">Module 05</div>
+                        <div class="module-name">✅ Validation</div>
+                        <div class="module-desc">3D scenario simulations, tabletop exercises, and EOC training modules with after-action reporting.</div>
+                        <span class="module-tag">Simulation</span>
+                    </div>
+                    <div class="module-item">
+                        <div class="module-num">Module 06</div>
+                        <div class="module-name">📈 Enhancement</div>
+                        <div class="module-desc">AI-generated DRRM plans, BCPs, and recovery roadmaps aligned with RA 10121, ISO 22301, and DILG standards.</div>
+                        <span class="module-tag">AI Generation</span>
+                    </div>
+                    <div class="module-item" style="grid-column:1/-1;max-width:400px;margin:0 auto">
+                        <div class="module-num">Module 07</div>
+                        <div class="module-name">📊 Monitoring</div>
+                        <div class="module-desc">Real-time communications and reporting hub with automated compliance dashboards and stakeholder briefings.</div>
+                        <span class="module-tag">Enterprise Only</span>
+                    </div>
+                </div>
+
+                <div class="feature-showcase">
+                    <div class="feature-item">
+                        <div class="feature-icon">🗺️</div>
+                        <div class="feature-content">
+                            <h4>Interactive GIS Risk Mapping</h4>
+                            <p>Layered vulnerability maps with population density, infrastructure, and hazard zone overlays. Export to PDF, GeoJSON, or embed in reports.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📱</div>
+                        <div class="feature-content">
+                            <h4>Multi-Channel Alert System</h4>
+                            <p>SMS, email, push notification, and siren integration. Automated escalation chains based on hazard severity and response protocols.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📋</div>
+                        <div class="feature-content">
+                            <h4>Compliance Auto-Generation</h4>
+                            <p>One-click generation of LDRRMP-aligned documents, NDRRMC reports, and DILG MC 2020-161 compliance packages.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🤖</div>
+                        <div class="feature-content">
+                            <h4>AI Risk Prediction</h4>
+                            <p>Machine learning models trained on historical hazard data to predict vulnerability spikes 72 hours in advance with 89% accuracy.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STRAT PLANNER DEEP DIVE -->
+            <div class="deep-dive" id="tab-strat" role="tabpanel">
+                <div class="deep-dive-header">
+                    <div class="deep-dive-visual">
+                        <div class="deep-dive-visual-inner">📐</div>
+                    </div>
+                    <div class="deep-dive-content">
+                        <div class="deep-dive-badge pwa">PWA · Works Offline · GDPR Compliant</div>
+                        <h3 class="deep-dive-title gradient-text">Strat Planner Pro</h3>
+                        <p class="deep-dive-desc">
+                            The only strategic planning platform built specifically for public sector and development organizations. 
+                            Guides teams from context analysis through systems thinking, AI strategy generation, Balanced Scorecard 
+                            mapping, PAPs management, and print-ready plan exports — all in one seamless flow.
+                        </p>
+                        <div style="display:flex;flex-wrap:wrap;gap:var(--s3)">
+                            <span class="module-tag">AI SWOT</span>
+                            <span class="module-tag">Systems Thinking</span>
+                            <span class="module-tag">Balanced Scorecard</span>
+                            <span class="module-tag">MEL Dashboard</span>
+                            <span class="module-tag">Offline PWA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-showcase">
+                    <div class="feature-item">
+                        <div class="feature-icon">🧠</div>
+                        <div class="feature-content">
+                            <h4>AI-Supported Context Analysis</h4>
+                            <p>Upload documents, surveys, or stakeholder interviews. Our AI extracts key themes, identifies non-linear dynamics, and surfaces hidden interdependencies.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎯</div>
+                        <div class="feature-content">
+                            <h4>SO/ST/WO/WT Strategy Matrix</h4>
+                            <p>Automatically generated strategic options from your SWOT data. Each recommendation includes risk assessment, resource requirements, and timeline.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-content">
+                            <h4>Live MEL Dashboard</h4>
+                            <p>Monitor, Evaluate, and Learn in real-time. KPI tracking with automated variance analysis, traffic-light status indicators, and narrative generation.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🖨️</div>
+                        <div class="feature-content">
+                            <h4>Print-Ready Plan Exports</h4>
+                            <p>One-click generation of professionally formatted strategic plans, executive summaries, and presentation decks in DOCX, PDF, and PPTX.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🌐</div>
+                        <div class="feature-content">
+                            <h4>Offline-First PWA</h4>
+                            <p>Works entirely without internet. Syncs when connectivity returns. Perfect for field operations, remote LGUs, and disaster zones.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">👥</div>
+                        <div class="feature-content">
+                            <h4>Collaborative Workspaces</h4>
+                            <p>Enterprise feature: Real-time collaborative planning with role-based access, comment threads, version history, and approval workflows.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RTL CENTER DEEP DIVE -->
+            <div class="deep-dive" id="tab-rtl" role="tabpanel">
+                <div class="deep-dive-header">
+                    <div class="deep-dive-visual">
+                        <div class="deep-dive-visual-inner">📡</div>
+                    </div>
+                    <div class="deep-dive-content">
+                        <div class="deep-dive-badge rtl">Real-Time Intelligence · Enterprise Grade</div>
+                        <h3 class="deep-dive-title gradient-text">Real-Time Leadership Center</h3>
+                        <p class="deep-dive-desc">
+                            When seconds matter, the RTL Center gives senior decision-makers a unified command view across 
+                            DDRiVE-M hazard data, Strat Planner Pro KPIs, and AI Suite predictions. Designed for mayors, 
+                            governors, DRRM officers, and emergency operations center directors.
+                        </p>
+                        <div style="display:flex;flex-wrap:wrap;gap:var(--s3)">
+                            <span class="module-tag">Live Dashboard</span>
+                            <span class="module-tag">Cross-Platform</span>
+                            <span class="module-tag">Decision Support</span>
+                            <span class="module-tag">Executive Alerts</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-showcase">
+                    <div class="feature-item">
+                        <div class="feature-icon">🖥️</div>
+                        <div class="feature-content">
+                            <h4>Unified Command Dashboard</h4>
+                            <p>Single-screen view of all active hazards, resource status, personnel deployment, and plan execution progress. Customizable widgets for each role.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔄</div>
+                        <div class="feature-content">
+                            <h4>Cross-Platform Data Synthesis</h4>
+                            <p>Automatically pulls real-time data from DDRiVE-M detection modules, Strat Planner Pro milestones, and SPARC AI predictions into one coherent view.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🚨</div>
+                        <div class="feature-content">
+                            <h4>Intelligent Executive Alerts</h4>
+                            <p>Context-aware notifications that escalate based on severity, time-of-day, and decision-maker availability. Includes recommended actions.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🏛️</div>
+                        <div class="feature-content">
+                            <h4>Multi-Agency Coordination Hub</h4>
+                            <p>Shared situational awareness across BFP, PNP, DSWD, health offices, and barangay DRRM councils with role-appropriate data filtering.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI SUITE DEEP DIVE -->
+            <div class="deep-dive" id="tab-ai" role="tabpanel">
+                <div class="deep-dive-header">
+                    <div class="deep-dive-visual">
+                        <div class="deep-dive-visual-inner">🤖</div>
+                    </div>
+                    <div class="deep-dive-content">
+                        <div class="deep-dive-badge ai">Ethical AI · Adaptive · Standards-Driven</div>
+                        <h3 class="deep-dive-title gradient-text">AI Solutions Suite</h3>
+                        <p class="deep-dive-desc">
+                            Purpose-built AI tools for public sector resilience challenges. From the SPARC predictive calculator 
+                            that scores organizational readiness to the DDRiVER AI chatbot that answers complex DRRM questions 
+                            in context — every model is trained on Philippine regulatory frameworks and local hazard profiles.
+                        </p>
+                        <div style="display:flex;flex-wrap:wrap;gap:var(--s3)">
+                            <span class="module-tag">SPARC AI</span>
+                            <span class="module-tag">DDRiVER AI</span>
+                            <span class="module-tag">Compliance Gen</span>
+                            <span class="module-tag">Sustainability AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-showcase">
+                    <div class="feature-item">
+                        <div class="feature-icon">🧮</div>
+                        <div class="feature-content">
+                            <h4>SPARC AI — Resilience Calculator</h4>
+                            <p><strong>Smart Predictive AI Resilience Calculator.</strong> Quantifies organizational readiness across 10 UNDRR essentials. Predicts vulnerability gaps and prioritizes interventions.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">💬</div>
+                        <div class="feature-content">
+                            <h4>DDRiVER AI Chatbot</h4>
+                            <p>Context-aware assistant trained on RA 10121, DILG circulars, and ISO 31000. Answers policy questions, drafts memos, and guides users through platform features.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📋</div>
+                        <div class="feature-content">
+                            <h4>AI Compliance Plan Generator</h4>
+                            <p>Auto-generates DRRM plans, BCPs, and recovery roadmaps compliant with RA 10121, ISO 22301, and DILG MC 2020-161. Includes resource allocation tables.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🌱</div>
+                        <div class="feature-content">
+                            <h4>Sustainability AI / ESG Reporting</h4>
+                            <p>Aligns DRRM investments with UN SDGs. Generates ESG reports, carbon footprint analyses, and climate adaptation finance proposals for green funding.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔮</div>
+                        <div class="feature-content">
+                            <h4>Predictive Crisis Modeling</h4>
+                            <p>Enterprise feature: Monte Carlo simulations of multi-hazard scenarios. Models cascading failures across infrastructure, supply chains, and population centers.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🎓</div>
+                        <div class="feature-content">
+                            <h4>Custom AI-Powered Courses</h4>
+                            <p>Adaptive learning modules on DRR-CCA, Real-Time Leadership, and ISO 31000. Personalized pathways based on role assessment and knowledge gaps.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTEGRATION ECOSYSTEM -->
+        <section class="ecosystem-section" id="ecosystem" aria-labelledby="ecosystem-title">
+            <div class="text-center">
+                <div class="section-label animate-slide-up">Connected</div>
+                <h2 id="ecosystem-title" class="section-title animate-slide-up delay-1">The Resilience Ecosystem</h2>
+                <p class="section-subtitle animate-slide-up delay-2">
+                    ASilva platforms don't exist in isolation. They connect to the data sources, agencies, and tools you already use.
+                </p>
+            </div>
+
+            <div class="ecosystem-visual animate-slide-up delay-3">
+                <div class="ecosystem-orbit"></div>
+                <div class="ecosystem-orbit-2"></div>
+                <div class="ecosystem-center">
+                    <span>ASilva</span>
+                    <span>Platform</span>
+                </div>
+                <div class="ecosystem-node primary" style="top:10%;left:50%;transform:translateX(-50%)">PAGASA</div>
+                <div class="ecosystem-node primary" style="top:25%;right:5%">PHIVOLCS</div>
+                <div class="ecosystem-node" style="top:50%;right:0;transform:translateX(30%)">NOAH</div>
+                <div class="ecosystem-node" style="bottom:25%;right:5%">NDRRMC</div>
+                <div class="ecosystem-node primary" style="bottom:10%;left:50%;transform:translateX(-50%)">DILG</div>
+                <div class="ecosystem-node" style="bottom:25%;left:5%">GIS Servers</div>
+                <div class="ecosystem-node" style="top:50%;left:0;transform:translateX(-30%)">ERP Systems</div>
+                <div class="ecosystem-node" style="top:25%;left:5%">Comms Tools</div>
+            </div>
+
+            <div class="feature-showcase" style="max-width:900px;margin:var(--s10) auto 0">
+                <div class="feature-item">
+                    <div class="feature-icon">🔌</div>
+                    <div class="feature-content">
+                        <h4>API-First Architecture</h4>
+                        <p>RESTful and GraphQL APIs for every module. Webhook support for real-time event streaming. Professional and Enterprise plans include full API access.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🏗️</div>
+                    <div class="feature-content">
+                        <h4>Custom Integration Service</h4>
+                        <p>Our engineering team builds bespoke connectors for municipal GIS, legacy ERP systems, and inter-agency communication platforms. Starting at ₱75,000.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">☁️</div>
+                    <div class="feature-content">
+                        <h4>On-Premise Deployment</h4>
+                        <p>Custom plan includes air-gapped deployment for classified environments. Full data sovereignty with local server installation and offline operation.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📲</div>
+                    <div class="feature-content">
+                        <h4>Mobile Field Access</h4>
+                        <p>Add-on native iOS/Android apps for offline field data collection. Syncs directly into DDRiVE-M Detection and Diagnosis modules when connected.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPLIANCE -->
+        <section class="compliance-section" id="compliance" aria-labelledby="compliance-title">
+            <div class="text-center">
+                <div class="section-label animate-slide-up">Trust &amp; Standards</div>
+                <h2 id="compliance-title" class="section-title animate-slide-up delay-1">Built for Compliance</h2>
+                <p class="section-subtitle animate-slide-up delay-2">
+                    Every solution is engineered to meet Philippine and international standards out of the box.
+                </p>
+            </div>
+            <div class="compliance-grid animate-slide-up delay-3">
+                <div class="compliance-item">
+                    <div class="compliance-icon">🇵🇭</div>
+                    <div class="compliance-text">RA 10121<span>Philippine DRRM Act</span></div>
+                </div>
+                <div class="compliance-item">
+                    <div class="compliance-icon">📋</div>
+                    <div class="compliance-text">ISO 31000<span>Risk Management</span></div>
+                </div>
+                <div class="compliance-item">
+                    <div class="compliance-icon">🌐</div>
+                    <div class="compliance-text">UNDRR MCR2030<span>10 Essentials</span></div>
+                </div>
+                <div class="compliance-item">
+                    <div class="compliance-icon">🏛️</div>
+                    <div class="compliance-text">DILG MC 2020-161<span>Local DRRM Guidelines</span></div>
+                </div>
+                <div class="compliance-item">
+                    <div class="compliance-icon">🔒</div>
+                    <div class="compliance-text">RA 10173<span>Data Privacy Act</span></div>
+                </div>
+                <div class="compliance-item">
+                    <div class="compliance-icon">🇪🇺</div>
+                    <div class="compliance-text">GDPR<span>EU Data Protection</span></div>
+                </div>
+                <div class="compliance-item">
+                    <div class="compliance-icon">🔄</div>
+                    <div class="compliance-text">ISO 22301<span>Business Continuity</span></div>
+                </div>
+                <div class="compliance-item">
+                    <div class="compliance-icon">♿</div>
+                    <div class="compliance-text">WCAG 2.1 AA<span>Accessibility</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMPACT STATS -->
+        <section class="impact-section" id="impact" aria-labelledby="impact-title">
+            <div class="text-center">
+                <div class="section-label animate-slide-up">Results</div>
+                <h2 id="impact-title" class="section-title animate-slide-up delay-1">Proven Impact</h2>
+                <p class="section-subtitle animate-slide-up delay-2">
+                    Real outcomes from organizations that have deployed the ASilva resilience stack.
+                </p>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-card animate-slide-up delay-1">
+                    <div class="impact-num" data-count="15">0</div>
+                    <div class="impact-label">LGUs Deployed</div>
+                    <div class="impact-desc">Across 3 regions in the Philippines with active daily usage</div>
+                </div>
+                <div class="impact-card animate-slide-up delay-2">
+                    <div class="impact-num" data-count="30">0</div>
+                    <div class="impact-label">Days Average Deployment</div>
+                    <div class="impact-desc">From contract signing to full organizational onboarding</div>
+                </div>
+                <div class="impact-card animate-slide-up delay-3">
+                    <div class="impact-num" data-count="98">0</div>
+                    <div class="impact-label">% Client Retention</div>
+                    <div class="impact-desc">Since 2020. Organizations stay because results compound.</div>
+                </div>
+                <div class="impact-card animate-slide-up delay-4">
+                    <div class="impact-num" data-count="89">0</div>
+                    <div class="impact-label">% Prediction Accuracy</div>
+                    <div class="impact-desc">SPARC AI hazard prediction 72 hours in advance</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section class="process-section" id="process" aria-labelledby="process-title">
+            <div class="text-center">
+                <div class="section-label animate-slide-up">How It Works</div>
+                <h2 id="process-title" class="section-title animate-slide-up delay-1">From Zero to Resilient in 30 Days</h2>
+                <p class="section-subtitle animate-slide-up delay-2">
+                    Our proven implementation methodology gets you operational fast — without disrupting existing workflows.
+                </p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step animate-slide-up delay-1">
+                    <div class="process-num">01</div>
+                    <h4 class="process-title">Discovery</h4>
+                    <p class="process-desc">We assess your current DRRM maturity, data infrastructure, and compliance gaps. Deliverable: tailored implementation roadmap.</p>
+                </div>
+                <div class="process-step animate-slide-up delay-2">
+                    <div class="process-num">02</div>
+                    <h4 class="process-title">Deploy</h4>
+                    <p class="process-desc">Cloud or on-premise setup with data migration, user provisioning, and integration with PAGASA/PHIVOLCS feeds.</p>
+                </div>
+                <div class="process-step animate-slide-up delay-3">
+                    <div class="process-num">03</div>
+                    <h4 class="process-title">Train</h4>
+                    <p class="process-desc">3-day comprehensive certification program for administrators, operators, and leadership. Includes train-the-trainer modules.</p>
+                </div>
+                <div class="process-step animate-slide-up delay-4">
+                    <div class="process-num">04</div>
+                    <h4 class="process-title">Optimize</h4>
+                    <p class="process-desc">Monthly review sessions, quarterly feature releases, and continuous AI model refinement based on your local hazard profile.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="testimonial-section" id="testimonials" aria-labelledby="testimonials-title">
+            <div class="text-center">
+                <div class="section-label animate-slide-up">Voices</div>
+                <h2 id="testimonials-title" class="section-title animate-slide-up delay-1">Trusted by Leaders</h2>
+                <p class="section-subtitle animate-slide-up delay-2">
+                    Hear from the LGU officials and NGO directors who rely on ASilva every day.
+                </p>
+            </div>
+            <div class="testimonial-grid">
+                <article class="testimonial-card animate-slide-up delay-1">
+                    <p class="testimonial-quote">DDRiVE-M transformed how we approach disaster preparedness. The AI-generated DRRM plans alone saved our planning team weeks of work, and the real-time hazard feeds give us genuine situational awareness we've never had before.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MR</div>
+                        <div class="testimonial-info">
+                            <h5>Municipal Risk Reduction Officer</h5>
+                            <span>LGU — Bicol Region</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="testimonial-card animate-slide-up delay-2">
+                    <p class="testimonial-quote">Strat Planner Pro's offline capability is a game-changer. Our team conducts strategic planning sessions in barangays with no connectivity, then syncs everything when they return. The AI SWOT analysis surfaces insights we'd miss manually.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">EP</div>
+                        <div class="testimonial-info">
+                            <h5>Executive Director</h5>
+                            <span>Regional Development NGO</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="testimonial-card animate-slide-up delay-3">
+                    <p class="testimonial-quote">The Real-Time Leadership Center unified our command structure during the last typhoon season. For the first time, mayor's office, BFP, PNP, and health office were looking at the same data in real-time. Response coordination improved dramatically.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">DL</div>
+                        <div class="testimonial-info">
+                            <h5>Provincial DRRM Officer</h5>
+                            <span>Visayas Cluster</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section" id="contact">
+            <h2 class="cta-title">Ready to Build Unbreakable Communities?</h2>
+            <p class="cta-desc">
+                Deploy the full ASilva resilience stack — <strong>DDRiVE-M</strong>, <strong>Strat Planner Pro</strong>, 
+                <strong>Real-Time Leadership Center</strong>, and <strong>AI Solutions</strong> — purpose-built for organizations 
+                operating in high-risk environments. Start your <strong>14-day free trial</strong> or schedule a personalized demo.
+            </p>
+            <div class="cta-btns">
+                <a href="mailto:sales@asilvainnovations.com?subject=Free%20Trial%20Request" class="cta-action primary">Start Free Trial →</a>
+                <a href="mailto:sales@asilvainnovations.com?subject=Demo%20Request" class="cta-action secondary">Schedule a Demo</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-note" role="contentinfo">
+        <p>All solutions are compliant with <strong>RA 10121</strong> · <strong>ISO 31000</strong> · <strong>UNDRR MCR2030</strong> · <strong>DILG MC 2020-161</strong> · <strong>ISO 22301</strong> · <strong>RA 10173</strong> · <strong>GDPR</strong></p>
+        <p style="margin-top:.5rem">For government procurement (GPPB/BAC process): <strong>gov@asilvainnovations.com</strong></p>
+        <div class="footer-sol-list" aria-label="Solutions glossary">
+            <span class="footer-sol-tag">DDRiVE-M: Data-Driven Risk &amp; Vulnerability Evaluation and Management</span>
+            <span class="footer-sol-tag">Strat Planner Pro: AI-Powered Strategic Planning (PWA)</span>
+            <span class="footer-sol-tag">RTL: Real-Time Leadership Center</span>
+            <span class="footer-sol-tag">SPARC: Smart Predictive AI Resilience Calculator</span>
+        </div>
+        <p style="margin-top:.5rem;font-size:.7rem">
+            This page meets WCAG 2.1 AA accessibility standards.<br>
+            © 2026 ASilva Innovations. Technology That Builds Unbreakable Communities.
+        </p>
+    </footer>
+
+</div>
+
+<script>
+(function(){
+    'use strict';
+
+    // Particle Canvas Background
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let width, height;
+
+    function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    class Particle {
+        constructor() {
+            this.reset();
+        }
+        reset() {
+            this.x = Math.random() * width;
+            this.y = Math.random() * height;
+            this.vx = (Math.random() - 0.5) * 0.3;
+            this.vy = (Math.random() - 0.5) * 0.3;
+            this.size = Math.random() * 2 + 0.5;
+            this.alpha = Math.random() * 0.5 + 0.1;
+            this.color = Math.random() > 0.5 ? '59,130,246' : '34,211,238';
+        }
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+            if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) this.reset();
+        }
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(${this.color},${this.alpha})`;
+            ctx.fill();
+        }
+    }
+
+    for (let i = 0; i < 60; i++) particles.push(new Particle());
+
+    function animateParticles() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach(p => { p.update(); p.draw(); });
+
+        // Draw connections
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 150) {
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.strokeStyle = `rgba(59,130,246,${0.08 * (1 - dist / 150)})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.stroke();
+                }
+            }
+        }
+        requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Solution card spotlight effect
+    document.querySelectorAll('.solution-card, .module-item, .impact-card, .testimonial-card').forEach(c => {
+        c.addEventListener('mousemove', e => {
+            const r = c.getBoundingClientRect();
+            c.style.setProperty('--mx', `${e.clientX - r.left}px`);
+            c.style.setProperty('--my', `${e.clientY - r.top}px`);
+        });
+        c.addEventListener('mouseleave', () => {
+            c.style.setProperty('--mx', '50%');
+            c.style.setProperty('--my', '50%');
+        });
+    });
+
+    // Tab switching
+    const tabs = document.querySelectorAll('.solution-tab');
+    const panels = document.querySelectorAll('.deep-dive');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = tab.dataset.tab;
+
+            tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+            tab.classList.add('active');
+            tab.setAttribute('aria-selected', 'true');
+
+            panels.forEach(p => p.classList.remove('active'));
+            document.getElementById('tab-' + target).classList.add('active');
+
+            // Scroll to deep dive section
+            document.getElementById('deep-dive').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    // Solution card click to activate tab
+    document.querySelectorAll('.solution-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const sol = card.dataset.solution;
+            const tab = document.querySelector(`.solution-tab[data-tab="${sol}"]`);
+            if (tab) tab.click();
+        });
+        card.addEventListener('keypress', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                card.click();
+            }
+        });
+    });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-slide-up, .animate-slide-left, .animate-slide-right, .animate-fade').forEach(el => {
+        el.style.animationPlayState = 'paused';
+        observer.observe(el);
+    });
+
+    // Counter animation for impact stats
+    const countObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const num = entry.target;
+                const target = parseInt(num.dataset.count);
+                const duration = 2000;
+                const start = performance.now();
+
+                function update(currentTime) {
+                    const elapsed = currentTime - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const ease = 1 - Math.pow(1 - progress, 3);
+                    num.textContent = Math.floor(ease * target);
+                    if (progress < 1) requestAnimationFrame(update);
+                    else num.textContent = target + (num.parentElement.querySelector('.impact-label').textContent.includes('%') ? '%' : '+');
+                }
+                requestAnimationFrame(update);
+                countObserver.unobserve(num);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.impact-num[data-count]').forEach(num => countObserver.observe(num));
+
+    // Ecosystem node positioning (responsive)
+    function positionEcosystemNodes() {
+        const visual = document.querySelector('.ecosystem-visual');
+        if (!visual) return;
+        const centerX = visual.offsetWidth / 2;
+        const centerY = visual.offsetHeight / 2;
+        const radius = Math.min(centerX, centerY) * 0.75;
+        const nodes = visual.querySelectorAll('.ecosystem-node');
+
+        nodes.forEach((node, i) => {
+            const angle = (i / nodes.length) * Math.PI * 2 - Math.PI / 2;
+            const x = centerX + Math.cos(angle) * radius - node.offsetWidth / 2;
+            const y = centerY + Math.sin(angle) * radius - node.offsetHeight / 2;
+            node.style.left = x + 'px';
+            node.style.top = y + 'px';
+            node.style.right = 'auto';
+            node.style.bottom = 'auto';
+            node.style.transform = 'none';
+        });
+    }
+
+    // Only reposition on larger screens
+    if (window.innerWidth >= 768) {
+        positionEcosystemNodes();
+        window.addEventListener('resize', positionEcosystemNodes);
+    }
+
+    console.log('%c ASilva Innovations Solutions v1.0 ', 'background:linear-gradient(135deg,#3b82f6,#22d3ee);color:white;padding:8px 16px;font-size:14px;font-weight:bold;border-radius:4px;');
+    console.log('4 Solutions: DDRiVE-M (7 modules) · Strat Planner Pro · Real-Time Leadership Center · AI Solutions Suite');
+})();
+</script>
+</body>
+</html>
