@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ASilva Innovations About Us - Empowering SMEs, LGUs, and organizations with AI-driven resilience strategies and sustainable growth solutions.">
+    <meta name="keywords" content="ASilva Innovations about us, AI analytics, resilience strategy, SME solutions, LGU technology, strategic planning, DDRiVE-M">
+    <title>About Us - ASilva Innovations</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png" sizes="32x32">
+    
+    <style>
+        /* ===========================================
+           DESIGN SYSTEM (Synced with DDRiVE-M Index)
+           =========================================== */
+        :root {
+            --primary: #1e40af;       /* Deep Blue */
+            --primary-dark: #1d3693;  /* Darker Blue */
+            --secondary: #f59e0b;     /* Amber/Orange Accent */
+            --accent: #0f766e;        /* Teal Accent */
+            --light: #f8fafc;         /* Light Gray Background */
+            --dark: #0f172a;          /* Dark Slate Text */
+            --gray: #64748b;          /* Medium Gray */
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            
+            /* Shadows & Transitions */
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --card-shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Base Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            text-align: center;
+            font-size: 1rem;
+            border: none;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.7);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.15);
+            border-color: white;
+        }
+
+        .btn-dashboard {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 0.85rem 1.75rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-dashboard:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -5px rgba(30, 64, 175, 0.4);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 0.85rem 1.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.3);
+        }
+
+        .btn-secondary-theme {
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 0.85rem 1.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-secondary-theme:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        /* =====================
+           Header & Navigation
+           ===================== */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        /* Circular Logo Icon */
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;           
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #e2e8f0;
+            flex-shrink: 0;
+            background: white;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+
+        .logo-subtext {
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-top: -0.25rem;
+        }
+
+        /* Desktop nav links */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.4rem;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            background-color: #eff6ff;
+        }
+
+        .nav-links a.nav-btn-dashboard {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links a.nav-btn-dashboard:hover {
+            background: linear-gradient(135deg, var(--primary-dark), #162c7a);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+        }
+
+        .nav-links a.active-page {
+            color: var(--primary);
+            background-color: #eff6ff;
+            font-weight: 600;
+        }
+
+        /* Hamburger button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            width: 42px;
+            height: 42px;
+            background: none;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            padding: 8px;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .mobile-menu-btn:hover {
+            border-color: var(--primary);
+            background-color: #eff6ff;
+        }
+
+        .hamburger-bar {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: var(--dark);
+            border-radius: 2px;
+            transition: var(--transition);
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.is-open .hamburger-bar:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .mobile-menu-btn.is-open .hamburger-bar:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .mobile-menu-btn.is-open .hamburger-bar:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Mobile drawer */
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            gap: 0.25rem;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            padding: 1rem 1.5rem 1.25rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            animation: slideDown 0.22s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .mobile-nav.is-open {
+            display: flex;
+        }
+
+        .mobile-nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.7rem 0.75rem;
+            border-radius: 0.5rem;
+            transition: var(--transition);
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .mobile-nav a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-nav a:hover {
+            background: #eff6ff;
+            color: var(--primary);
+        }
+
+        .mobile-nav a.nav-btn-dashboard {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 0.5rem;
+            border-bottom: none;
+        }
+
+        .mobile-nav a.nav-btn-dashboard:hover {
+            background: linear-gradient(135deg, var(--primary-dark), #162c7a);
+            color: white;
+        }
+
+        /* =====================
+           Hero Section
+           ===================== */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0c4a6e 100%);
+            color: white;
+            padding: 4.5rem 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            text-align: center;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 1.5rem 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-tagline {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.9);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .last-updated {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            font-weight: 500;
+        }
+
+        .compliance-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 0.35rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Floating Button */
+        .floating-dashboard {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            background: linear-gradient(135deg, var(--secondary), #eab308);
+            color: white;
+            padding: 0.65rem 1.4rem 0.65rem 0.65rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+        }
+
+        .floating-dashboard:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 30px -5px rgba(245, 158, 11, 0.5);
+        }
+
+        .floating-logo-circle {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 2px solid rgba(255,255,255,0.7);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .floating-logo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Main Content Styling */
+        .content-card {
+            background: white;
+            border-radius: 1.25rem;
+            padding: 2.5rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(59, 130, 246, 0.1);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin: 2rem 0 1rem;
+        }
+
+        p, li {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1rem 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        strong {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            color: var(--gray);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: white;
+            border-radius: 1.25rem;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #e2e8f0;
+            margin: 2rem 0;
+        }
+
+        .toc h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        .toc ol {
+            padding-left: 1.5rem;
+            list-style-position: inside;
+            color: var(--gray);
+        }
+
+        .toc a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color var(--transition);
+        }
+
+        .toc a:hover {
+            color: var(--secondary);
+        }
+
+        /* Card Grid Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: var(--light);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+            transition: var(--transition);
+            box-shadow: var(--card-shadow);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+            border-color: var(--primary);
+        }
+
+        .feature-card h4 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+        }
+
+        /* Features with Icons */
+        .features-with-icons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .icon-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .icon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .mission-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-radius: 1.25rem;
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .mission-section h3 {
+            color: white;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .mission-section p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: var(--primary);
+            color: white;
+            border-radius: 1.25rem;
+            padding: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .contact-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .contact-box p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .contact-link:hover {
+            color: var(--secondary);
+        }
+
+        .contact-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+        }
+
+        .label {
+            font-weight: 700;
+            color: var(--secondary);
+            min-width: 120px;
+        }
+
+        /* Policy Cards */
+        .policy-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .policy-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .policy-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .policy-card h4 {
+            color: var(--dark);
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+
+        .policy-card p {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* Solutions Nav */
+        .solutions-nav {
+            background: var(--primary-dark);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .solutions-nav h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .solutions-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .solutions-links a {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .solutions-links a:hover {
+            background: rgba(255,255,255,0.2);
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-col h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 3px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Back to Home Button */
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .back-home:hover {
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .floating-dashboard {
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+        }
+
+        @media (max-width: 860px) {
+            .nav-links {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .content-card {
+                padding: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .floating-dashboard {
+                font-size: 0.8rem;
+                padding: 0.55rem 1.1rem 0.55rem 0.55rem;
+                gap: 0.5rem;
+            }
+
+            .floating-logo-circle {
+                width: 28px;
+                height: 28px;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .label {
+                min-width: auto;
+            }
+            
+            .mission-section {
+                padding: 2rem 1.5rem;
+            }
+            
+            .mission-section h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            
+            .feature-card {
+                padding: 1.5rem;
+            }
+            
+            .icon-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+    <base target="_blank">
+</head>
+<body>
+    <!-- Floating Dashboard Button -->
+    <a href="https://strategic-collaborative-auditable.deploypad.app/" class="floating-dashboard">
+        <div class="floating-logo-circle">
+            <img src="https://ddrive-erm.appimize.app/assets/apps/user_1097/app_12127/draft/icon/app_logo.png?1767510419" alt="DDRiVE-M Logo">
+        </div>
+        LAUNCH DASHBOARD
+    </a>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="https://asilvainnovations.com" class="logo">
+                    <div class="logo-icon">
+                        <img src="https://appimize.app/assets/apps/user_1097/images/b4e60d94a143_503_1097.png" alt="ASilva Innovations Logo">
+                    </div>
+                    <div>
+                        <div class="logo-text">ASilva</div>
+                        <div class="logo-subtext">Innovations</div>
+                    </div>
+                </a>
+
+                <ul class="nav-links" id="desktopNav">
+                    <li><a href="https://strategic-collaborative-auditable.deploypad.app/" class="nav-btn-dashboard">Dashboard</a></li>
+                    <li><a href="https://asilvainnovations.github.io/website/about-us.html" class="active-page">About</a></li>
+                    <li><a href="https://asilvainnovations.github.io/ddrive-m/faq.html">FAQ</a></li>
+                    <li><a href="https://asilvainnovations.github.io/website/policies.html">Policies</a></li>
+                    <li><a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a></li>
+                    <li><a href="https://asilvainnovations.github.io/website/contact.html">Contact</a></li>
+                </ul>
+
+                <button class="mobile-menu-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+            </nav>
+
+            <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+                <a href="https://strategic-collaborative-auditable.deploypad.app/" class="nav-btn-dashboard">Dashboard</a>
+                <a href="https://asilvainnovations.github.io/website/about-us.html" class="active-page">About</a>
+                <a href="https://asilvainnovations.github.io/ddrive-m/faq.html">FAQ</a>
+                <a href="https://asilvainnovations.github.io/website/policies.html">Policies</a>
+                <a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a>
+                <a href="https://asilvainnovations.github.io/website/contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <a href="https://asilvainnovations.com" class="back-home">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back To Home
+                </a>
+                
+                <h1>About ASilva Innovations</h1>
+                <p class="hero-tagline">Empowering Resilience, Driving Sustainable Growth</p>
+                <p class="last-updated">Last Updated: April 29, 2026</p>
+                
+                <div class="compliance-badges">
+                    <span class="badge">🎯 Purpose-Driven</span>
+                    <span class="badge">🤖 AI-Powered Solutions</span>
+                    <span class="badge">🌍 Data-Driven Strategies</span>
+                    <span class="badge">📈 Sustainable Growth</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container" style="margin-top: -2rem;">
+            <div class="content-card">
+                
+                <!-- Table of Contents -->
+                <nav class="toc" aria-label="Table of Contents">
+                    <ol>
+                        <li><a href="#introduction">Who We Are</a></li>
+                        <li><a href="#services">What We Do</a></li>
+                        <li><a href="#mission">Our Mission</a></li>
+                        <li><a href="#approach">Our Approach</a></li>
+                        <li><a href="#why-us">Why Choose Us</a></li>
+                        <li><a href="#commitment">Commitment to Impact</a></li>
+                        <li><a href="#policies">Our Policies</a></li>
+                        <li><a href="#solutions">Solutions Overview</a></li>
+                        <li><a href="#contact">Get in Touch</a></li>
+                    </ol>
+                </nav>
+
+                <!-- Section 1: Introduction -->
+                <section id="introduction" class="section">
+                    <h2>Who We Are</h2>
+                    <p>ASilva Innovations is a purpose-driven technology and advisory firm dedicated to empowering small and medium enterprises (SMEs), local government units (LGUs), and organizations with data-driven resilience strategies and sustainable growth solutions.</p>
+                    
+                    <div class="mission-section">
+                        <h3>We combine artificial intelligence, analytics, and real-time leadership tools to help clients navigate uncertainty, mitigate risk, and unlock strategic performance potential.</h3>
+                    </div>
+                    
+                    <p>In today's rapidly evolving landscape, organizations face unprecedented challenges—from economic volatility and climate change impacts to technological disruption and resource constraints. ASilva Innovations stands as a trusted partner, providing the insights, tools, and expertise needed to build resilient systems capable of not just surviving but thriving in complex environments.</p>
+                    
+                    <p>Our team comprises seasoned technologists, strategic advisors, and data scientists committed to creating meaningful impact through innovative solutions that bridge the gap between cutting-edge technology and practical organizational needs.</p>
+                </section>
+
+                <!-- Section 2: What We Do -->
+                <section id="services" class="section">
+                    <h2>What We Do</h2>
+                    <p>We deliver comprehensive solutions across four core service areas, each designed to address specific pain points while contributing to broader organizational resilience:</p>
+                    
+                    <div class="features-with-icons">
+                        <div class="icon-card">
+                            <div class="icon-circle">📊</div>
+                            <h4>AI-Driven Analytics Platforms</h4>
+                            <p>Tools designed to transform performance data into strategic decisions, enhance operational visibility, and optimize outcomes through intelligent insights.</p>
+                        </div>
+                        
+                        <div class="icon-card">
+                            <div class="icon-circle">🛡️</div>
+                            <h4>Resilience & Risk Assessment Frameworks</h4>
+                            <p>Diagnostic and predictive systems that empower clients to identify vulnerabilities, anticipate disruptions, and plan with confidence.</p>
+                        </div>
+                        
+                        <div class="icon-card">
+                            <div class="icon-circle">👔</div>
+                            <h4>Leadership Enablement Tools</h4>
+                            <p>Adaptive, real-time leadership resources that strengthen decision-making agility and organizational responsiveness under pressure.</p>
+                        </div>
+                        
+                        <div class="icon-card">
+                            <div class="icon-circle">💼</div>
+                            <h4>Strategic Advisory Services</h4>
+                            <p>Customized support to integrate resilience thinking into business strategy, policy, and operational planning.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: Our Mission -->
+                <section id="mission" class="section">
+                    <h2>Our Mission</h2>
+                    
+                    <div class="mission-section">
+                        <h3>Empowering Organizations to Thrive in Dynamic Environments</h3>
+                        <p>We enable organizations to thrive in complex, dynamic environments by providing innovative digital solutions, expert guidance, and actionable insights that improve resilience, competitiveness, and long-term impact.</p>
+                    </div>
+                    
+                    <div class="feature-card" style="margin-top: 2rem;">
+                        <h4>Our Strategic Goals</h4>
+                        <ul style="margin-top: 1rem;">
+                            <li>CLOSE THE DIGITAL DIVIDE — Ensuring equitable access to advanced technology and data capabilities</li>
+                            <li>STRENGTHEN ORGANIZATIONAL CAPACITY — Building internal skills and infrastructure for sustained performance</li>
+                            <li>FOSTER SUSTAINABLE DEVELOPMENT — Creating solutions that balance growth with long-term viability</li>
+                            <li>PROMOTE TECHNOLOGY WITH PURPOSE — Applying innovation responsibly to solve real-world challenges</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Section 4: Our Approach -->
+                <section id="approach" class="section">
+                    <h2>Our Approach</h2>
+                    
+                    <div class="feature-card" style="background: linear-gradient(135deg, var(--light) 0%, #e0f2fe 100%);">
+                        <h3>Model • Test • Prioritize</h3>
+                        <p style="margin-top: 1rem; color: var(--gray);">We use a methodology that aligns innovation with real-world needs:</p>
+                    </div>
+                    
+                    <div class="grid-container" style="margin-top: 1.5rem;">
+                        <div class="feature-card">
+                            <h4>📋 Model</h4>
+                            <p>Develop frameworks and prototypes tailored to client contexts, ensuring theoretical soundness and practical applicability.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h4>🔬 Test</h4>
+                            <p>Validate solutions through pilot implementations, gathering feedback and measuring actual performance against objectives.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h4>⭐ Prioritize</h4>
+                            <p>Scale what works, refine what doesn't, and focus resources on high-impact initiatives with measurable ROI.</p>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 2rem;"><strong>Co-Design Philosophy:</strong> Every solution we develop is co-created with stakeholders to ensure relevance, feasibility, and measurable impact. We recognize that the most innovative technology fails without proper adoption, so our frameworks balance strategic insights with practical execution, helping clients move from planning to performance.</p>
+                </section>
+
+                <!-- Section 5: Why Choose Us -->
+                <section id="why-us" class="section">
+                    <h2>Why Choose ASilva Innovations?</h2>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Competitive Advantage</th>
+                                <th>How It Benefits You</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Data-Informed Decision Support</strong></td>
+                                <td>We leverage artificial intelligence and real-time analytics to surface insights that matter — helping you make choices backed by evidence, not intuition.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Customized for SMEs and LGUs</strong></td>
+                                <td>Solutions are adapted to the scale, context, and capacity requirements of each client, avoiding one-size-fits-all pitfalls.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sustainable Resilience Focus</strong></td>
+                                <td>Our work emphasizes long-term performance, risk reduction, and adaptive capability rather than quick fixes that don't last.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Commitment to Impact</strong></td>
+                                <td>We measure success not just by delivery but by tangible improvements in your organization's resilience and performance metrics.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Section 6: Commitment to Impact -->
+                <section id="commitment" class="section">
+                    <h2>Commitment to Impact</h2>
+                    
+                    <div class="mission-section" style="background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);">
+                        <h3>Building Resilient Systems That Withstand Uncertainty</h3>
+                        <p>ASilva Innovations is committed to building resilient systems that withstand uncertainty and drive growth. Through strategic partnership, ongoing innovation, and a focus on equitable access to technology, we help organizations transform challenges into opportunities.</p>
+                    </div>
+                    
+                    <div class="feature-card" style="margin-top: 2rem;">
+                        <h4>Our Core Values</h4>
+                        <ul style="margin-top: 1rem;">
+                            <li><strong>Integrity:</strong> Operating with transparency and ethical standards in all client engagements</li>
+                            <li><strong>Innovation:</strong> Continuously pushing boundaries to deliver cutting-edge solutions</li>
+                            <li><strong>Collaboration:</strong> Working alongside clients as true partners, not just service providers</li>
+                            <li><strong>Equity:</strong> Ensuring marginalized communities have access to transformative technology</li>
+                            <li><strong>Accountability:</strong> Taking responsibility for the impact of our solutions on society</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Section 7: ASilva Innovations Policies -->
+                <section id="policies" class="section">
+                    <h2>ASilva Innovations Policies</h2>
+                    <p>Your guide to our Terms, Privacy, Accessibility, Cookies, and AI Ethics commitments.</p>
+                    
+                    <p style="margin-top: 1rem;">At ASilva Innovations, we believe innovation must be built on integrity. Our Policies page outlines clear standards for how we operate—covering Terms and Conditions, Privacy safeguards, Cookies usage, Accessibility practices, and our AI Ethics framework. We are committed to protecting your data, ensuring inclusivity, and developing technology responsibly. Explore our policies to understand how we prioritize compliance, fairness, and trust in every solution we deliver.</p>
+                    
+                    <div class="policy-cards">
+                        <div class="policy-card">
+                            <h4>Terms & Conditions</h4>
+                            <p>Legal agreements governing use of our services</p>
+                        </div>
+                        
+                        <div class="policy-card">
+                            <h4>Privacy Policy</h4>
+                            <p>How we collect, use, and protect your data</p>
+                        </div>
+                        
+                        <div class="policy-card">
+                            <h4>Accessibility Policy</h4>
+                            <p>WCAG 2.1 AA compliance commitment</p>
+                        </div>
+                        
+                        <div class="policy-card">
+                            <h4>Cookie Policy</h4>
+                            <p>Transparency on cookies and tracking</p>
+                        </div>
+                        
+                        <div class="policy-card">
+                            <h4>AI Ethics Policy</h4>
+                            <p>Responsible AI development guidelines</p>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="https://asilvainnovations.github.io/website/policies.html" class="btn btn-primary">LEARN MORE</a>
+                    </div>
+                </section>
+
+                <!-- Section 8: Solutions -->
+                <section id="solutions" class="section">
+                    <h2>Solutions Overview</h2>
+                    <p>Explore our flagship products designed to deliver measurable results:</p>
+                    
+                    <div class="solutions-nav">
+                        <h4>Our Core Platforms</h4>
+                        <div class="solutions-links">
+                            <a href="https://asilvainnovations.github.io/website/solutions.html">🚀 DDRiVE-M</a>
+                            <a href="#">📐 RTL</a>
+                            <a href="#">💼 Strat Planner Pro</a>
+                        </div>
+                    </div>
+                    
+                    <div class="grid-container" style="margin-top: 1.5rem;">
+                        <div class="feature-card">
+                            <h4>DDRiVE-M</h4>
+                            <p>Dynamic Resilience and Vulnerability Evaluation — A comprehensive platform for assessing and building organizational resilience through data-driven insights.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h4>RTL (Risk Tool Library)</h4>
+                            <p>A curated collection of risk assessment tools and methodologies adapted for various sectors and organizational types.</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <h4>Strat Planner Pro</h4>
+                            <p>Advanced strategic planning software that integrates scenario analysis, resource allocation, and performance tracking.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 9: Get in Touch -->
+                <section id="contact" class="section">
+                    <h2>Get in Touch</h2>
+                    
+                    <p>Learn how we can support your resilience and performance goals. Contact us through our Contact page or request a consultation to discover tailored solutions.</p>
+                    
+                    <div class="contact-box">
+                        <h3>Contact Information</h3>
+                        <div class="contact-grid">
+                            <div class="contact-item">
+                                <span class="label">Email:</span>
+                                <a href="mailto:info@asilvainnovations.com" class="contact-link">info@asilvainnovations.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="label">Phone:</span>
+                                <span>+63 (2) 8XXX-XXXX</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="label">Address:</span>
+                                <span>ASilva Innovations<br>Quezon City, Metro Manila, Philippines</span>
+                            </div>
+                        </div>
+                        <p style="margin-top: 1.5rem;">We aim to respond to all inquiries within <strong>1 business day</strong> during office hours.</p>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="https://asilvainnovations.github.io/website/contact.html" class="btn btn-secondary-theme">CONTACT US</a>
+                    </div>
+                </section>
+
+                <!-- Legal Disclaimer -->
+                <section class="section">
+                    <h2>Additional Information</h2>
+                    
+                    <h3>About This Page</h3>
+                    <p>This About Us page provides an overview of ASilva Innovations' mission, services, approach, and values. Our offerings evolve continuously to meet emerging challenges and leverage new technological capabilities.</p>
+                    
+                    <h3>Updates & Changes</h3>
+                    <p>We may update this content periodically to reflect changes in our services, partnerships, or organizational structure. The date shown above indicates when the most recent revision was published.</p>
+                    
+                    <h3>Certifications & Compliance</h3>
+                    <ul>
+                        <li>Registered Business Entity in the Republic of the Philippines</li>
+                        <li>Compliant with Data Privacy Act (RA 10173)</li>
+                        <li>Aligned with ISO 27001 Information Security Standards</li>
+                        <li>WCAG 2.1 AA Accessible Digital Platform</li>
+                    </ul>
+                    
+                    <h3>Related Resources</h3>
+                    <ul>
+                        <li><a href="https://asilvainnovations.github.io/website/solutions.html">Our Solutions</a> — Detailed product information</li>
+                        <li><a href="#">Case Studies</a> — Real-world impact examples</li>
+                        <li><a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing Plans</a> — Transparent service costs</li>
+                        <li><a href="https://asilvainnovations.github.io/website/policies.html">All Policies</a> — Complete policy documentation</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>ASilva Innovations</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://asilvainnovations.com">Home</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/about-us.html">About Us</a></li>
+                        <li><a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Solutions</h3>
+                    <ul class="footer-links">
+                        <li><a href="">DDRiVE-M</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/rtl.html">Real-Time Leadership</a></li>
+                        <li><a href="">Strat Planner Pro</a></li>
+                        <li><a href="#">Consulting Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">White Papers</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://asilvainnovations.github.io/website/terms.html">Terms & Conditions</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/accessibility-policy.html">Accessibility Policy</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/ai-ethics.html">AI Ethics Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 ASilva Innovations. All rights reserved. Building resilient communities through ethical AI and human-centered design.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile hamburger toggle
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileNav = document.getElementById('mobileNav');
+
+        hamburgerBtn.addEventListener('click', function () {
+            const isOpen = mobileNav.classList.toggle('is-open');
+            hamburgerBtn.classList.toggle('is-open', isOpen);
+            hamburgerBtn.setAttribute('aria-expanded', isOpen);
+        });
+
+        mobileNav.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                mobileNav.classList.remove('is-open');
+                hamburgerBtn.classList.remove('is-open');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!hamburgerBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+                mobileNav.classList.remove('is-open');
+                hamburgerBtn.classList.remove('is-open');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Active state for navigation
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a:not(.nav-btn-dashboard)');
+            
+            let current = '';
+            sections.forEach(function(section) {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(function(link) {
+                link.classList.remove('active-page');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active-page');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
