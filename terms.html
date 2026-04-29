@@ -1,944 +1,2777 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="ASilva Innovations Terms of Service - Comprehensive terms and conditions for using our disaster resilience platform, AI solutions, and consulting services.">
-  <meta name="keywords" content="ASilva Innovations terms, terms of service, terms and conditions, legal agreement, disaster resilience terms, AI platform terms">
-  <title>Terms of Service - ASilva Innovations</title>
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png" sizes="32x32">
-  <style>
-    :root {
-      --primary: #1e40af;
-      --primary-dark: #1d3693;
-      --secondary: #f59e0b;
-      --accent: #0f766e;
-      --light: #f8fafc;
-      --dark: #0f172a;
-      --gray: #64748b;
-      --success: #10b981;
-      --warning: #f59e0b;
-      --danger: #ef4444;
-      --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-      --card-shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s ease;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-      overflow-x: hidden;
-      min-height: 100vh;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* =====================
-       Header & Navigation
-    ===================== */
-    header {
-      background-color: white;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.25rem 0;
-      position: relative;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-      flex-shrink: 0;
-    }
-
-    .logo-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid #e2e8f0;
-      flex-shrink: 0;
-      background: white;
-    }
-
-    .logo-icon img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .logo-text {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 800;
-      font-size: 1.5rem;
-      color: var(--dark);
-    }
-
-    .logo-subtext {
-      font-size: 0.75rem;
-      color: var(--gray);
-      margin-top: -0.25rem;
-    }
-
-    /* Desktop nav links */
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: 500;
-      font-size: 0.95rem;
-      padding: 0.5rem 0.75rem;
-      border-radius: 0.4rem;
-      transition: var(--transition);
-      white-space: nowrap;
-    }
-
-    .nav-links a:hover {
-      color: var(--primary);
-      background-color: #eff6ff;
-    }
-
-    .nav-links a.nav-btn-dashboard {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white;
-      font-weight: 700;
-      padding: 0.5rem 1rem;
-      font-size: 0.875rem;
-      letter-spacing: 0.3px;
-    }
-
-    .nav-links a.nav-btn-dashboard:hover {
-      background: linear-gradient(135deg, var(--primary-dark), #162c7a);
-      color: white;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
-    }
-
-    /* Hamburger button */
-    .mobile-menu-btn {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 5px;
-      width: 42px;
-      height: 42px;
-      background: none;
-      border: 1.5px solid #e2e8f0;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      padding: 8px;
-      transition: var(--transition);
-      flex-shrink: 0;
-    }
-
-    .mobile-menu-btn:hover {
-      border-color: var(--primary);
-      background-color: #eff6ff;
-    }
-
-    .hamburger-bar {
-      display: block;
-      width: 20px;
-      height: 2px;
-      background-color: var(--dark);
-      border-radius: 2px;
-      transition: var(--transition);
-      transform-origin: center;
-    }
-
-    .mobile-menu-btn.is-open .hamburger-bar:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-    .mobile-menu-btn.is-open .hamburger-bar:nth-child(2) {
-      opacity: 0;
-      transform: scaleX(0);
-    }
-    .mobile-menu-btn.is-open .hamburger-bar:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    /* Mobile drawer */
-    .mobile-nav {
-      display: none;
-      flex-direction: column;
-      gap: 0.25rem;
-      background: white;
-      border-top: 1px solid #e2e8f0;
-      padding: 1rem 1.5rem 1.25rem;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      animation: slideDown 0.22s ease;
-    }
-
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-8px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .mobile-nav.is-open {
-      display: flex;
-    }
-
-    .mobile-nav a {
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: 500;
-      font-size: 1rem;
-      padding: 0.7rem 0.75rem;
-      border-radius: 0.5rem;
-      transition: var(--transition);
-      border-bottom: 1px solid #f1f5f9;
-    }
-
-    .mobile-nav a:last-child {
-      border-bottom: none;
-    }
-
-    .mobile-nav a:hover {
-      background: #eff6ff;
-      color: var(--primary);
-    }
-
-    .mobile-nav a.nav-btn-dashboard {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white;
-      font-weight: 700;
-      text-align: center;
-      margin-top: 0.5rem;
-      border-bottom: none;
-    }
-
-    .mobile-nav a.nav-btn-dashboard:hover {
-      background: linear-gradient(135deg, var(--primary-dark), #162c7a);
-      color: white;
-    }
-
-    /* =====================
-       Hero Section
-    ===================== */
-    .hero {
-      background: linear-gradient(135deg, #1e3a8a 0%, #0c4a6e 100%);
-      color: white;
-      padding: 4rem 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      right: -10%;
-      width: 800px;
-      height: 800px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 70%);
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
-      font-size: 2.75rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero .effective-date {
-      font-size: 1.125rem;
-      opacity: 0.9;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero .last-updated {
-      font-size: 1rem;
-      color: var(--secondary);
-      font-weight: 600;
-    }
-
-    .compliance-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 2rem;
-      justify-content: center;
-    }
-
-    .badge {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      border-radius: 50px;
-      padding: 0.35rem 1rem;
-      font-size: 0.875rem;
-      font-weight: 600;
-    }
-
-    /* =====================
-       Main Content
-    ===================== */
-    .section {
-      padding: 5rem 0;
-    }
-
-    .intro-box {
-      background: white;
-      border-radius: 1.25rem;
-      padding: 2.5rem;
-      box-shadow: var(--card-shadow);
-      border: 1px solid #e2e8f0;
-      margin-bottom: 3rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .intro-box::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-    }
-
-    .intro-box p {
-      margin-bottom: 1rem;
-      color: var(--gray);
-      font-size: 1.1rem;
-      line-height: 1.7;
-    }
-
-    .intro-box p:last-child {
-      margin-bottom: 0;
-      font-weight: 600;
-      color: var(--dark);
-    }
-
-    .intro-box strong {
-      color: var(--primary);
-    }
-
-    /* Terms Content */
-    .terms-content {
-      background: white;
-      border-radius: 1.25rem;
-      padding: 2.5rem;
-      box-shadow: var(--card-shadow);
-      border: 1px solid #e2e8f0;
-      margin-bottom: 2rem;
-    }
-
-    .terms-section {
-      margin-bottom: 2rem;
-    }
-
-    .terms-section:last-child {
-      margin-bottom: 0;
-    }
-
-    .terms-section h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      color: var(--dark);
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid #e2e8f0;
-    }
-
-    .terms-section h3 {
-      font-size: 1.25rem;
-      margin: 1.5rem 0 0.75rem;
-      color: var(--dark);
-    }
-
-    .terms-section p {
-      color: var(--gray);
-      margin-bottom: 1rem;
-      line-height: 1.7;
-    }
-
-    .terms-section ul {
-      margin: 1rem 0 1.5rem 1.5rem;
-      color: var(--gray);
-      padding-left: 1.5rem;
-    }
-
-    .terms-section li {
-      margin-bottom: 0.75rem;
-      line-height: 1.6;
-    }
-
-    .terms-section strong {
-      color: var(--dark);
-    }
-
-    .terms-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .terms-list li {
-      padding: 0.75rem 0 0.75rem 1.5rem;
-      position: relative;
-      border-bottom: 1px solid #f1f5f9;
-    }
-
-    .terms-list li::before {
-      content: '•';
-      color: var(--primary);
-      font-weight: bold;
-      position: absolute;
-      left: 0;
-    }
-
-    .terms-list li:last-child {
-      border-bottom: none;
-    }
-
-    /* Highlight Box */
-    .highlight-box {
-      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-      border-left: 4px solid var(--primary);
-      border-radius: 0 1rem 1rem 0;
-      padding: 1.5rem;
-      margin: 2rem 0;
-    }
-
-    .highlight-box p {
-      color: var(--dark);
-      font-weight: 500;
-      margin: 0;
-    }
-
-    .highlight-box strong {
-      color: var(--primary);
-    }
-
-    /* CTA Section */
-    .cta {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white;
-      text-align: center;
-      padding: 4rem 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -10%;
-      width: 800px;
-      height: 800px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
-    }
-
-    .cta h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      position: relative;
-    }
-
-    .cta p {
-      font-size: 1.125rem;
-      max-width: 600px;
-      margin: 0 auto 1.5rem;
-      opacity: 0.9;
-      position: relative;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      border-radius: 0.5rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: var(--transition);
-      cursor: pointer;
-      text-align: center;
-      font-size: 1rem;
-      border: none;
-    }
-
-    .btn-secondary {
-      background-color: transparent;
-      color: white;
-      border: 2px solid rgba(255,255,255,0.7);
-    }
-
-    .btn-secondary:hover {
-      background-color: rgba(255,255,255,0.15);
-      border-color: white;
-      transform: translateY(-2px);
-    }
-
-    /* =====================
-       Floating Action Button
-    ===================== */
-    .floating-dashboard {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      z-index: 1000;
-      background: linear-gradient(135deg, var(--secondary), #eab308);
-      color: white;
-      padding: 0.65rem 1.4rem 0.65rem 0.65rem;
-      border-radius: 50px;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
-      transition: var(--transition);
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      font-size: 0.9rem;
-      letter-spacing: 0.3px;
-    }
-
-    .floating-dashboard:hover {
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 15px 30px -5px rgba(245, 158, 11, 0.5);
-    }
-
-    .floating-logo-circle {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      overflow: hidden;
-      flex-shrink: 0;
-      border: 2px solid rgba(255,255,255,0.7);
-      background: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .floating-logo-circle img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* =====================
-       Footer
-    ===================== */
-    footer {
-      background-color: var(--dark);
-      color: white;
-      padding: 3rem 0 2rem;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .footer-col h3 {
-      font-size: 1.25rem;
-      margin-bottom: 1.5rem;
-      position: relative;
-      padding-bottom: 0.5rem;
-    }
-
-    .footer-col h3::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 40px;
-      height: 3px;
-      background: var(--secondary);
-      border-radius: 3px;
-    }
-
-    .footer-links {
-      list-style: none;
-    }
-
-    .footer-links li {
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-links a {
-      color: #94a3b8;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    .footer-links a:hover {
-      color: white;
-      padding-left: 5px;
-    }
-
-    .copyright {
-      text-align: center;
-      padding-top: 2rem;
-      border-top: 1px solid #334155;
-      color: #94a3b8;
-      font-size: 0.9rem;
-    }
-
-    /* =====================
-       Responsive Design
-    ===================== */
-    @media (max-width: 992px) {
-      .floating-dashboard {
-        bottom: 1.5rem;
-        right: 1.5rem;
-      }
-    }
-
-    @media (max-width: 860px) {
-      .nav-links {
-        display: none;
-      }
-      .mobile-menu-btn {
-        display: flex;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .section {
-        padding: 3rem 0;
-      }
-
-      .terms-content {
-        padding: 1.75rem;
-      }
-
-      .terms-section h2 {
-        font-size: 1.25rem;
-      }
-
-      .floating-dashboard {
-        font-size: 0.8rem;
-        padding: 0.55rem 1.1rem 0.55rem 0.55rem;
-        gap: 0.5rem;
-      }
-
-      .floating-logo-circle {
-        width: 28px;
-        height: 28px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 1.75rem;
-      }
-
-      .terms-content {
-        padding: 1.25rem;
-      }
-    }
-  </style>
-<base target="_blank">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ASilva Innovations Terms of Service - Comprehensive terms and conditions for using our disaster resilience platform, AI solutions, and consulting services.">
+    <meta name="keywords" content="ASilva Innovations terms, terms of service, terms and conditions, legal agreement, disaster resilience terms, AI platform terms">
+    <title>Terms of Service - ASilva Innovations</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1777440983" sizes="32x32">
+    
+    <style>
+        /* ===========================================
+           DESIGN SYSTEM (Synced with DDRiVE-M Index)
+           =========================================== */
+        :root {
+            --primary: #1e40af;       /* Deep Blue */
+            --primary-dark: #1d3693;  /* Darker Blue */
+            --secondary: #f59e0b;     /* Amber/Orange Accent */
+            --accent: #0f766e;        /* Teal Accent */
+            --light: #f8fafc;         /* Light Gray Background */
+            --dark: #0f172a;          /* Dark Slate Text */
+            --gray: #64748b;          /* Medium Gray */
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            
+            /* Shadows & Transitions */
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --card-shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Base Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            text-align: center;
+            font-size: 1rem;
+            border: none;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.7);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.15);
+            border-color: white;
+        }
+
+        .btn-dashboard {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 0.85rem 1.75rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-dashboard:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -5px rgba(30, 64, 175, 0.4);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 0.85rem 1.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.3);
+        }
+
+        .btn-secondary-theme {
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 0.85rem 1.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-secondary-theme:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        /* =====================
+           Header & Navigation
+           ===================== */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        /* Circular Logo Icon */
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;           
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #e2e8f0;
+            flex-shrink: 0;
+            background: white;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+
+        .logo-subtext {
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-top: -0.25rem;
+        }
+
+        /* Desktop nav links */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.4rem;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            background-color: #eff6ff;
+        }
+
+        .nav-links a.nav-btn-dashboard {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links a.nav-btn-dashboard:hover {
+            background: linear-gradient(135deg, var(--primary-dark), #162c7a);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+        }
+
+        .nav-links a.active-page {
+            color: var(--primary);
+            background-color: #eff6ff;
+            font-weight: 600;
+        }
+
+        /* Hamburger button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            width: 42px;
+            height: 42px;
+            background: none;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            padding: 8px;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .mobile-menu-btn:hover {
+            border-color: var(--primary);
+            background-color: #eff6ff;
+        }
+
+        .hamburger-bar {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: var(--dark);
+            border-radius: 2px;
+            transition: var(--transition);
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.is-open .hamburger-bar:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .mobile-menu-btn.is-open .hamburger-bar:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .mobile-menu-btn.is-open .hamburger-bar:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Mobile drawer */
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            gap: 0.25rem;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            padding: 1rem 1.5rem 1.25rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            animation: slideDown 0.22s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .mobile-nav.is-open {
+            display: flex;
+        }
+
+        .mobile-nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.7rem 0.75rem;
+            border-radius: 0.5rem;
+            transition: var(--transition);
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .mobile-nav a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-nav a:hover {
+            background: #eff6ff;
+            color: var(--primary);
+        }
+
+        .mobile-nav a.nav-btn-dashboard {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 0.5rem;
+            border-bottom: none;
+        }
+
+        .mobile-nav a.nav-btn-dashboard:hover {
+            background: linear-gradient(135deg, var(--primary-dark), #162c7a);
+            color: white;
+        }
+
+        /* =====================
+           Hero Section
+           ===================== */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0c4a6e 100%);
+            color: white;
+            padding: 4.5rem 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            text-align: center;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 1.5rem 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .last-updated {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            font-weight: 500;
+        }
+
+        .effective-date {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.8);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .compliance-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 0.35rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Floating Button */
+        .floating-dashboard {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            background: linear-gradient(135deg, var(--secondary), #eab308);
+            color: white;
+            padding: 0.65rem 1.4rem 0.65rem 0.65rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+        }
+
+        .floating-dashboard:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 30px -5px rgba(245, 158, 11, 0.5);
+        }
+
+        .floating-logo-circle {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 2px solid rgba(255,255,255,0.7);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .floating-logo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Main Content Styling */
+        .content-card {
+            background: white;
+            border-radius: 1.25rem;
+            padding: 2.5rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(59, 130, 246, 0.1);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin: 2rem 0 1rem;
+        }
+
+        p, li {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1rem 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        strong {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            color: var(--gray);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: white;
+            border-radius: 1.25rem;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #e2e8f0;
+            margin: 2rem 0;
+        }
+
+        .toc h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        .toc ol {
+            padding-left: 1.5rem;
+            list-style-position: inside;
+            color: var(--gray);
+        }
+
+        .toc a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color var(--transition);
+        }
+
+        .toc a:hover {
+            color: var(--secondary);
+        }
+
+        /* Card Grid Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: var(--light);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+            transition: var(--transition);
+            box-shadow: var(--card-shadow);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+            border-color: var(--primary);
+        }
+
+        .feature-card h4 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+        }
+
+        /* Features with Icons */
+        .features-with-icons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .icon-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .icon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .mission-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-radius: 1.25rem;
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .mission-section h3 {
+            color: white;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .mission-section p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: var(--primary);
+            color: white;
+            border-radius: 1.25rem;
+            padding: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .contact-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .contact-box p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .contact-link:hover {
+            color: var(--secondary);
+        }
+
+        .contact-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+        }
+
+        .label {
+            font-weight: 700;
+            color: var(--secondary);
+            min-width: 120px;
+        }
+
+        /* Compliance Tags */
+        .compliance-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .compliance-tag {
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .compliance-tag.primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .compliance-tag.success {
+            background: var(--success);
+            color: white;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 1rem 1rem 0;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box p {
+            color: var(--dark);
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .highlight-box strong {
+            color: var(--primary);
+        }
+
+        /* Back to Home Button */
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .back-home:hover {
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-col h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 3px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .floating-dashboard {
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+        }
+
+        @media (max-width: 860px) {
+            .nav-links {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .content-card {
+                padding: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .floating-dashboard {
+                font-size: 0.8rem;
+                padding: 0.55rem 1.1rem 0.55rem 0.55rem;
+                gap: 0.5rem;
+            }
+
+            .floating-logo-circle {
+                width: 28px;
+                height: 28px;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .label {
+                min-width: auto;
+            }
+            
+            .mission-section {
+                padding: 2rem 1.5rem;
+            }
+            
+            .mission-section h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            
+            .feature-card {
+                padding: 1.5rem;
+            }
+            
+            .icon-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+    <base target="_blank">
 </head>
 <body>
-  <!-- Floating Dashboard Button -->
-  <a href="https://strategic-collaborative-auditable.deploypad.app/" class="floating-dashboard">
-    <div class="floating-logo-circle">
-      <img src="https://ddrive-erm.appimize.app/assets/apps/user_1097/app_12127/draft/icon/app_logo.png?1767510419" alt="DDRiVE-M Logo">
-    </div>
-    LAUNCH DASHBOARD
-  </a>
-
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <nav class="navbar">
-        <a href="https://asilvainnovations.com" class="logo">
-          <div class="logo-icon">
-            <img src="https://appimize.app/assets/apps/user_1097/images/b4e60d94a143_503_1097.png" alt="ASilva Innovations Logo">
-          </div>
-          <div>
-            <div class="logo-text">ASilva</div>
-            <div class="logo-subtext">Innovations</div>
-          </div>
-        </a>
-
-        <ul class="nav-links" id="desktopNav">
-          <li><a href="https://strategic-collaborative-auditable.deploypad.app/" class="nav-btn-dashboard">Dashboard</a></li>
-          <li><a href="https://asilvainnovations.github.io/ddrive-m/about.html">About</a></li>
-          <li><a href="https://asilvainnovations.github.io/ddrive-m/faq.html">FAQ</a></li>
-          <li><a href="https://asilvainnovations.github.io/website/policies.html">Policies</a></li>
-          <li><a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a></li>
-          <li><a href="https://asilvainnovations.github.io/website/contact.html">Contact</a></li>
-        </ul>
-
-        <button class="mobile-menu-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav">
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-          <span class="hamburger-bar"></span>
-        </button>
-      </nav>
-
-      <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-        <a href="https://strategic-collaborative-auditable.deploypad.app/" class="nav-btn-dashboard">Dashboard</a>
-        <a href="https://asilvainnovations.github.io/ddrive-m/about.html">About</a>
-        <a href="https://asilvainnovations.github.io/ddrive-m/faq.html">FAQ</a>
-        <a href="https://asilvainnovations.github.io/website/policies.html">Policies</a>
-        <a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a>
-        <a href="https://asilvainnovations.github.io/website/contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1>Terms of Service</h1>
-        <p class="effective-date">Effective Date: February 24, 2026</p>
-        <p class="last-updated">Last Updated: February 24, 2026</p>
-        <div class="compliance-badges">
-          <span class="badge">GDPR Compliant</span>
-          <span class="badge">ISO 27001</span>
-          <span class="badge">WCAG 2.1</span>
-          <span class="badge">RA 10173</span>
+    <!-- Floating Dashboard Button -->
+    <a href="https://asilvainnovations-website-version77.bolt.host/" class="floating-dashboard">
+        <div class="floating-logo-circle">
+            <img src="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1777440983" alt="ASilva Innovations Logo">
         </div>
-      </div>
-    </div>
-  </section>
+        HOME
+    </a>
 
-  <!-- Main Content -->
-  <main>
-    <div class="container">
-      <!-- Introduction -->
-      <section class="section">
-        <div class="intro-box">
-          <p><strong>Agreement to Terms</strong></p>
-          <p>By accessing or using ASilva Innovations websites, applications, disaster resilience platforms, AI solutions, or consulting services (collectively, "Services"), you agree to be bound by these Terms of Service. Please read these terms carefully before using our Services.</p>
-          <p><strong>"Clear terms create strong partnerships. These Terms of Service protect both our users and our mission to build resilient communities."</strong><br>— ASilva Innovations Legal Team</p>
-        </div>
-
-        <!-- Terms Content -->
-        <div class="terms-content">
-          <div class="terms-section">
-            <h2>1. Acceptance of Terms</h2>
-            <p>By accessing or using our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to all terms and conditions, you must immediately discontinue use of our Services.</p>
-            <p>We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting to this page, with the "Last Updated" date revised accordingly.</p>
-          </div>
-
-          <div class="terms-section">
-            <h2>2. Use of Services</h2>
-            <h3>2.1 Eligibility</h3>
-            <p>You must be at least 18 years old to use our Services. By using our Services, you represent and warrant that you meet this eligibility requirement.</p>
-            <h3>2.2 Account Registration</h3>
-            <p>Some Services require account registration. You agree to provide accurate, current, and complete information during registration and to update such information to keep it accurate and current.</p>
-            <h3>2.3 Acceptable Use</h3>
-            <p>You agree not to use our Services for any unlawful purpose or in any way that could damage, disable, overburden, or impair our infrastructure. Prohibited activities include but are not limited to:</p>
-            <ul class="terms-list">
-              <li>Unauthorized access to systems or data</li>
-              <li>Interference with service operation</li>
-              <li>Distribution of malware or harmful code</li>
-              <li>Spam, phishing, or fraudulent activities</li>
-              <li>Violation of intellectual property rights</li>
-              <li>Harassment or harmful conduct toward others</li>
-            </ul>
-          </div>
-
-          <div class="terms-section">
-            <h2>3. Intellectual Property</h2>
-            <h3>3.1 Our Intellectual Property</h3>
-            <p>All content, features, and functionality on our Services—including text, graphics, logos, icons, images, audio clips, digital downloads, and software—are owned by ASilva Innovations or its licensors and are protected by intellectual property laws.</p>
-            <h3>3.2 License to Use</h3>
-            <p>Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to access and use our Services for their intended purposes.</p>
-            <h3>3.3 Feedback</h3>
-            <p>Any feedback you provide regarding our Services may be used by us without restriction or compensation to you. You grant us a perpetual, irrevocable license to use such feedback.</p>
-          </div>
-
-          <div class="terms-section">
-            <h2>4. Disclaimer of Warranties</h2>
-            <p>Our Services are provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, either express or implied. We do not guarantee that our Services will be uninterrupted, timely, secure, or error-free.</p>
-          </div>
-
-          <div class="terms-section">
-            <h2>5. Limitation of Liability</h2>
-            <p>To the fullest extent permitted by law, ASilva Innovations shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our Services.</p>
-          </div>
-
-          <div class="terms-section">
-            <h2>6. Indemnification</h2>
-            <p>You agree to indemnify, defend, and hold harmless ASilva Innovations and its officers, directors, employees, and agents from any claims, liabilities, damages, losses, and expenses arising from your use of our Services or violation of these Terms.</p>
-          </div>
-
-          <div class="terms-section">
-            <h2>7. Governing Law</h2>
-            <p>These Terms shall be governed by and construed in accordance with the laws of the Republic of the Philippines, without regard to its conflict of law provisions.</p>
-          </div>
-
-          <div class="terms-section">
-            <h2>8. Contact Information</h2>
-            <p>For questions about these Terms, please contact us at:</p>
-            <p><strong>Email:</strong> legal@asilvainnovations.com<br>
-            <strong>Address:</strong> ASilva Innovations Legal Department, Makati City, Philippines</p>
-          </div>
-
-          <div class="terms-section">
-            <h2>9. Severability</h2>
-            <p>If any provision of these Terms is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary, and the remaining provisions will remain in full force and effect.</p>
-          </div>
-        </div>
-
-        <!-- Acknowledgment -->
-        <div class="highlight-box">
-          <p><strong>Entire Agreement:</strong> These Terms of Service, together with our Privacy Policy and any other legal notices published by us on our Services, constitute the entire agreement between you and ASilva Innovations regarding your use of our Services.</p>
-        </div>
-      </section>
-
-      <!-- CTA Section -->
-      <section class="cta">
+    <!-- Header -->
+    <header>
         <div class="container">
-          <h2>Have Questions About Our Terms?</h2>
-          <p>Our legal team is here to help. If you have any questions about these Terms of Service or how they apply to your use of our Services, please reach out.</p>
-          <a href="https://asilvainnovations.github.io/website/contact.html" class="btn btn-secondary">Contact Legal Team</a>
+            <nav class="navbar">
+                <a href="https://asilvainnovations.com" class="logo">
+                    <div class="logo-icon">
+                        <img src="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1777440983" alt="ASilva Innovations Logo">
+                    </div>
+                    <div>
+                        <div class="logo-text">ASilva</div>
+                        <div class="logo-subtext">Innovations</div>
+                    </div>
+                </a>
+
+                <ul class="nav-links" id="desktopNav">
+                    <li><a href="https://strategic-collaborative-auditable.deploypad.app/" class="nav-btn-dashboard">Home</a></li>
+                    <li><a href="https://asilvainnovations.github.io/website/about-us.html">About</a></li>
+                    <li><a href="https://asilvainnovations.github.io/website/faq.html">FAQ</a></li>
+                    <li><a href="https://asilvainnovations.github.io/website/policies.html">Policies</a></li>
+                    <li><a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a></li>
+                    <li><a href="https://asilvainnovations.github.io/website/contact.html">Contact</a></li>
+                </ul>
+
+                <button class="mobile-menu-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+            </nav>
+
+            <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+                <a href="https://strategic-collaborative-auditable.deploypad.app/" class="nav-btn-dashboard">Home</a>
+                <a href="https://asilvainnovations.github.io/website/about-us.html">About</a>
+                <a href="https://asilvainnovations.github.io/website/faq.html">FAQ</a>
+                <a href="https://asilvainnovations.github.io/website/policies.html">Policies</a>
+                <a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a>
+                <a href="https://asilvainnovations.github.io/website/contact.html">Contact</a>
+            </nav>
         </div>
-      </section>
-    </div>
-  </main>
+    </header>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h3>ASilva Innovations</h3>
-          <ul class="footer-links">
-            <li><a href="https://asilvainnovations.com">Home</a></li>
-            <li><a href="https://asilvainnovations.github.io/ddrive-m/about.html">About Us</a></li>
-            <li><a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a></li>
-            <li><a href="https://asilvainnovations.github.io/website/contact.html">Contact</a></li>
-          </ul>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <a href="https://asilvainnovations.com" class="back-home">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back To Home
+                </a>
+                
+                <h1>Terms of Service</h1>
+                <p class="effective-date">Effective Date: February 24, 2026</p>
+                <p class="last-updated">Last Updated: April 29, 2026</p>
+                <div class="compliance-badges">
+                    <span class="badge">⚖️ Legally Compliant</span>
+                    <span class="badge">🔐 Security First</span>
+                    <span class="badge">🌏 Global Standards</span>
+                    <span class="badge">💼 User Protection</span>
+                </div>
+            </div>
         </div>
-        <div class="footer-col">
-          <h3>Products</h3>
-          <ul class="footer-links">
-            <li><a href="https://strategic-collaborative-auditable.deploypad.app/">DDRiVE-M</a></li>
-            <li><a href="https://asilvainnovations.github.io/ddrive-m/features.html">Features</a></li>
-            <li><a href="https://asilvainnovations.github.io/ddrive-m/faq.html">FAQ</a></li>
-          </ul>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container" style="margin-top: -2rem;">
+            <div class="content-card">
+                
+                <!-- Introduction -->
+                <section class="section">
+                    <h2>Our Commitment to Transparency</h2>
+                    <p>Welcome to ASilva Innovations. These Terms of Service ("Terms") govern your use of our website, applications, platforms, and services, including our disaster resilience solutions, AI-powered analytics tools, and strategic advisory services.</p>
+                    
+                    <div class="compliance-tags">
+                        <span class="compliance-tag primary">Philippines Law</span>
+                        <span class="compliance-tag success">GDPR Aligned</span>
+                        <span class="compliance-tag primary">RA 10173</span>
+                        <span class="compliance-tag success">International</span>
+                    </div>
+                    
+                    <div class="mission-section" style="background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);">
+                        <h3>Clear Terms Create Strong Partnerships</h3>
+                        <p>These Terms of Service protect both our users and our mission to build resilient communities through ethical technology and human-centered design.</p>
+                    </div>
+                </section>
+
+                <!-- Table of Contents -->
+                <nav class="toc" aria-label="Table of Contents">
+                    <ol>
+                        <li><a href="#acceptance">Acceptance of Terms</a></li>
+                        <li><a href="#eligibility">Eligibility & Account Registration</a></li>
+                        <li><a href="#intellectual-property">Intellectual Property Rights</a></li>
+                        <li><a href="#acceptable-use">Acceptable Use</a></li>
+                        <li><a href="#disclaimer">Disclaimer of Warranties</a></li>
+                        <li><a href="#limitation">Limitation of Liability</a></li>
+                        <li><a href="#indemnification">Indemnification</a></li>
+                        <li><a href="#governing-law">Governing Law & Jurisdiction</a></li>
+                        <li><a href="#contact-info">Contact Information</a></li>
+                    </ol>
+                </nav>
+
+                <!-- Section 1: Acceptance -->
+                <section id="acceptance" class="section">
+                    <h2>1. Acceptance of Terms</h2>
+                    <p>By accessing or using our Services (collectively referred to as "Services"), you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to all terms and conditions, you must immediately discontinue use of our Services.</p>
+                    
+                    <div class="feature-card">
+                        <h4>We Reserve the Right to Modify</h4>
+                        <p>We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting to this page, with the "Last Updated" date revised accordingly. Continued use of our Services after such changes constitutes acceptance of the modified Terms.</p>
+                    </div>
+                </section>
+
+                <!-- Section 2: Eligibility -->
+                <section id="eligibility" class="section">
+                    <h2>2. Eligibility & Account Registration</h2>
+                    
+                    <div class="features-with-icons">
+                        <div class="icon-card">
+                            <div class="icon-circle">🔞</div>
+                            <h4>Age Requirement</h4>
+                            <p>You must be at least 18 years old to use our Services. By using our Services, you represent and warrant that you meet this eligibility requirement.</p>
+                        </div>
+                        
+                        <div class="icon-card">
+                            <div class="icon-circle">📝</div>
+                            <h4>Account Information</h4>
+                            <p>Some Services require account registration. You agree to provide accurate, current, and complete information during registration and to update such information promptly.</p>
+                        </div>
+                        
+                        <div class="icon-card">
+                            <div class="icon-circle">🔒</div>
+                            <h4>Account Security</h4>
+                            <p>You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: Intellectual Property -->
+                <section id="intellectual-property" class="section">
+                    <h2>3. Intellectual Property Rights</h2>
+                    <p>All content, features, and functionality on our Services—including text, graphics, logos, icons, images, audio clips, digital downloads, software, and documentation—are owned by ASilva Innovations or its licensors and are protected by intellectual property laws.</p>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Ownership Status</th>
+                                <th>Usage Limitations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Platform Software</strong></td>
+                                <td>Proprietary Code</td>
+                                <td>Limited license only</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Analytics Data</strong></td>
+                                <td>User Generated</td>
+                                <td>Your rights preserved</td>
+                            </tr>
+                            <tr>
+                                <td><strong>AI Models</strong></td>
+                                <td>Trade Secrets</td>
+                                <td>No reverse engineering</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Documentation</strong></td>
+                                <td>Coprighted Works</td>
+                                <td>Personal use allowed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3>Feedback</h3>
+                    <p>Any feedback you provide regarding our Services may be used by us without restriction or compensation to you. You grant us a perpetual, irrevocable license to use such feedback for product improvement.</p>
+                </section>
+
+                <!-- Section 4: Acceptable Use -->
+                <section id="acceptable-use" class="section">
+                    <h2>4. Acceptable Use</h2>
+                    <p>You agree not to use our Services for any unlawful purpose or in any way that could damage, disable, overburden, or impair our infrastructure. Prohibited activities include but are not limited to:</p>
+                    
+                    <div class="grid-container">
+                        <div class="feature-card">
+                            <h4>🚫 System Access</h4>
+                            <p>Unauthorized access to systems, data, or other user accounts.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>🚫 Interference</h4>
+                            <p>Attempting to interfere with service operation, security, or performance.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>🦠 Malware</h4>
+                            <p>Transmitting malicious code, viruses, worms, Trojan horses, or other harmful programs.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>📧 Spam</h4>
+                            <p>Distributing spam, phishing attempts, fraudulent activities, or unsolicited commercial messages.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>📜 IP Violation</h4>
+                            <p>Infringing, misappropriating, or violating intellectual property rights.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>😤 Harassment</h4>
+                            <p>Harming or attempting to harm minors, engaging in harassment, threats, or abusive conduct.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 5: Disclaimer -->
+                <section id="disclaimer" class="section">
+                    <h2>5. Disclaimer of Warranties</h2>
+                    <p>Our Services are provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+                    
+                    <div class="highlight-box">
+                        <p>We do not guarantee that our Services will be uninterrupted, timely, secure, or error-free. You acknowledge that your use of our Services is solely at your own risk.</p>
+                    </div>
+                </section>
+
+                <!-- Section 6: Limitation -->
+                <section id="limitation" class="section">
+                    <h2>6. Limitation of Liability</h2>
+                    <p>To the fullest extent permitted by applicable law, ASilva Innovations shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our Services, including loss of data, loss of revenue, or business interruption.</p>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Liability Type</th>
+                                <th>Maximum Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Direct Damages</td>
+                                <td>Amount paid for service in last 12 months</td>
+                            </tr>
+                            <tr>
+                                <td>Consequential Damages</td>
+                                <td>Not Exceed $100 USD</td>
+                            </tr>
+                            <tr>
+                                <td>Punitive Damages</td>
+                                <td>Excluded entirely</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Section 7: Indemnification -->
+                <section id="indemnification" class="section">
+                    <h2>7. Indemnification</h2>
+                    <p>You agree to indemnify, defend, and hold harmless ASilva Innovations and its officers, directors, employees, agents, and partners from any claims, liabilities, damages, losses, and expenses (including reasonable legal fees) arising from your use of our Services, violation of these Terms, or infringement of any third-party rights.</p>
+                </section>
+
+                <!-- Section 8: Governing Law -->
+                <section id="governing-law" class="section">
+                    <h2>8. Governing Law & Jurisdiction</h2>
+                    <p>These Terms shall be governed by and construed in accordance with the laws of the Republic of the Philippines, without regard to its conflict of law provisions.</p>
+                    
+                    <p>Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts located in Metro Manila, Philippines, except as otherwise required by applicable local laws.</p>
+                </section>
+
+                <!-- Section 9: Contact -->
+                <section id="contact-info" class="section">
+                    <h2>9. Contact Information</h2>
+                    <p>For questions about these Terms of Service, please contact us:</p>
+                    
+                    <div class="contact-box">
+                        <h3>Legal Department</h3>
+                        <div class="contact-grid">
+                            <div class="contact-item">
+                                <span class="label">Email:</span>
+                                <a href="mailto:legal@asilvainnovations.com" class="contact-link">legal@asilvainnovations.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="label">Data Officer:</span>
+                                <a href="mailto:dataofficer@asilvainnovations.com" class="contact-link">dataofficer@asilvainnovations.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="label">Phone:</span>
+                                <span>+639178555134</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="label">Address:</span>
+                                <span>ASilva Innovations Legal Dept.<br>Muntinlupa City, Metro Manila, Philippines</span>
+                            </div>
+                        </div>
+                        <p style="margin-top: 1.5rem;">We aim to respond to legal inquiries within <strong>5 business days</strong>.</p>
+                    </div>
+                </section>
+
+                <!-- Entire Agreement -->
+                <section class="section">
+                    <h2>Entire Agreement</h2>
+                    <div class="highlight-box">
+                        <p><strong>Severability:</strong> If any provision of these Terms is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary, and the remaining provisions will remain in full force and effect.</p>
+                        <p style="margin-top: 1rem;"><strong>Waiver:</strong> Our failure to enforce any right or provision of these Terms will not be deemed a waiver of such right or provision.</p>
+                    </div>
+                </section>
+
+                <!-- Related Resources -->
+                <section class="section">
+                    <h2>Related Documents</h2>
+                    <p>For complete understanding of our legal framework, you may also review:</p>
+                    
+                    <div class="grid-container">
+                        <div class="feature-card">
+                            <h4>🔒 Privacy Policy</h4>
+                            <p>How we collect, use, and protect your personal information.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>🍪 Cookie Policy</h4>
+                            <p>How we use cookies and tracking technologies.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>♿ Accessibility Policy</h4>
+                            <p>Our commitment to WCAG compliance and inclusive design.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>🤖 AI Ethics Policy</h4>
+                            <p>Guidelines for ethical AI development and deployment.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Acknowledgment -->
+                <section class="section">
+                    <h2>Acknowledgment</h2>
+                    <p>By using ASilva Innovations platforms and services, you acknowledge that you have read, understood, and agree to be bound by all policies referenced herein, including our Terms and Conditions, Privacy Policy, Cookie Policy, Accessibility Policy, and AI Ethics Policy.</p>
+                </section>
+
+                <!-- CTA -->
+                <section class="mission-section">
+                    <h2>Questions About Our Terms?</h2>
+                    <p>If you have any questions about these Terms of Service or how they apply to your use of our Services, please reach out to our legal team.</p>
+                    <a href="https://asilvainnovations.github.io/website/contact.html" class="btn btn-secondary-theme" style="margin-top: 1rem;">CONTACT LEGAL TEAM</a>
+                </section>
+            </div>
         </div>
-        <div class="footer-col">
-          <h3>Legal</h3>
-          <ul class="footer-links">
-            <li><a href="#terms">Terms of Service</a></li>
-            <li><a href="#policies">Policies</a></li>
-            <li><a href="#privacy-policy">Privacy Policy</a></li>
-          </ul>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>ASilva Innovations</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://asilvainnovations.com">Home</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/solutions.html">Solutions</a></li>
+                        <li><a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Solutions</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://asilvainnovations.github.io/ddrive-m/">DDRiVE-M</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/rtl.html">Real-Time Leadership</a></li>
+                        <li><a href="https://asilvainnovations.github.io/strat-planner-pwa/public/index.html">Strat Planner Pro</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/ai-solutions.html">AI-Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://blog-leadership-analytics.deploypad.app/">Blog</a></li>
+                        <li><a href="https://asilvainnovations.github.io/case-studies/">Case Studies</a></li>
+                        <li><a href="https://asilvainnovations.github.io/white-papers/">White Papers</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://asilvainnovations.github.io/website/terms.html">Terms & Conditions</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/accessibility-policy.html">Accessibility Policy</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/ai-ethics.html">AI Ethics Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 ASilva Innovations. All rights reserved. Building resilient communities through ethical AI and human-centered design.</p>
+            </div>
         </div>
-        <div class="footer-col">
-          <h3>Resources</h3>
-          <ul class="footer-links">
-            <li><a href="https://asilvainnovations.github.io/website/cookies.html">Cookie Policy</a></li>
-            <li><a href="https://asilvainnovations.github.io/website/accessibility.html">Accessibility</a></li>
-            <li><a href="https://asilvainnovations.github.io/ddrive-m/faq.html">Help Center</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="copyright">
-        <p>&copy; 2026 ASilva Innovations. All rights reserved. Building resilient communities through ethical AI and human-centered design.</p>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script>
-    // Mobile hamburger toggle
-    const hamburgerBtn = document.getElementById('hamburgerBtn');
-    const mobileNav = document.getElementById('mobileNav');
+    <script>
+        // Mobile hamburger toggle
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileNav = document.getElementById('mobileNav');
 
-    hamburgerBtn.addEventListener('click', function () {
-      const isOpen = mobileNav.classList.toggle('is-open');
-      hamburgerBtn.classList.toggle('is-open', isOpen);
-      hamburgerBtn.setAttribute('aria-expanded', isOpen);
-    });
+        hamburgerBtn.addEventListener('click', function () {
+            const isOpen = mobileNav.classList.toggle('is-open');
+            hamburgerBtn.classList.toggle('is-open', isOpen);
+            hamburgerBtn.setAttribute('aria-expanded', isOpen);
+        });
 
-    mobileNav.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        mobileNav.classList.remove('is-open');
-        hamburgerBtn.classList.remove('is-open');
-        hamburgerBtn.setAttribute('aria-expanded', 'false');
-      });
-    });
+        mobileNav.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                mobileNav.classList.remove('is-open');
+                hamburgerBtn.classList.remove('is-open');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
 
-    document.addEventListener('click', function (e) {
-      if (!hamburgerBtn.contains(e.target) && !mobileNav.contains(e.target)) {
-        mobileNav.classList.remove('is-open');
-        hamburgerBtn.classList.remove('is-open');
-        hamburgerBtn.setAttribute('aria-expanded', 'false');
-      }
-    });
+        document.addEventListener('click', function (e) {
+            if (!hamburgerBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+                mobileNav.classList.remove('is-open');
+                hamburgerBtn.classList.remove('is-open');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
 
-    // Smooth scrolling for anchor link
-    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-      anchor.addEventListener('click', function (e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Active state for navigation
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a:not(.nav-btn-dashboard)');
+            
+            let current = '';
+            sections.forEach(function(section) {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(function(link) {
+                link.classList.remove('active-page');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active-page');
+                }
+            });
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ASilva Innovations Terms of Service - Comprehensive terms and conditions for using our disaster resilience platform, AI solutions, and consulting services.">
+    <meta name="keywords" content="ASilva Innovations terms, terms of service, terms and conditions, legal agreement, disaster resilience terms, AI platform terms">
+    <title>Terms of Service - ASilva Innovations</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1777440983" sizes="32x32">
+    
+    <style>
+        /* ===========================================
+           DESIGN SYSTEM (Synced with DDRiVE-M Index)
+           =========================================== */
+        :root {
+            --primary: #1e40af;       /* Deep Blue */
+            --primary-dark: #1d3693;  /* Darker Blue */
+            --secondary: #f59e0b;     /* Amber/Orange Accent */
+            --accent: #0f766e;        /* Teal Accent */
+            --light: #f8fafc;         /* Light Gray Background */
+            --dark: #0f172a;          /* Dark Slate Text */
+            --gray: #64748b;          /* Medium Gray */
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            
+            /* Shadows & Transitions */
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --card-shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
         }
-      });
-    });
-  </script>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Base Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            text-align: center;
+            font-size: 1rem;
+            border: none;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.7);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.15);
+            border-color: white;
+        }
+
+        .btn-dashboard {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 0.85rem 1.75rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-dashboard:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -5px rgba(30, 64, 175, 0.4);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 0.85rem 1.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.3);
+        }
+
+        .btn-secondary-theme {
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 0.85rem 1.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-secondary-theme:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        /* =====================
+           Header & Navigation
+           ===================== */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0;
+            position: relative;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        /* Circular Logo Icon */
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;           
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #e2e8f0;
+            flex-shrink: 0;
+            background: white;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+
+        .logo-subtext {
+            font-size: 0.75rem;
+            color: var(--gray);
+            margin-top: -0.25rem;
+        }
+
+        /* Desktop nav links */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.4rem;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            background-color: #eff6ff;
+        }
+
+        .nav-links a.nav-btn-dashboard {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links a.nav-btn-dashboard:hover {
+            background: linear-gradient(135deg, var(--primary-dark), #162c7a);
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+        }
+
+        .nav-links a.active-page {
+            color: var(--primary);
+            background-color: #eff6ff;
+            font-weight: 600;
+        }
+
+        /* Hamburger button */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            width: 42px;
+            height: 42px;
+            background: none;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            padding: 8px;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+
+        .mobile-menu-btn:hover {
+            border-color: var(--primary);
+            background-color: #eff6ff;
+        }
+
+        .hamburger-bar {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: var(--dark);
+            border-radius: 2px;
+            transition: var(--transition);
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.is-open .hamburger-bar:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .mobile-menu-btn.is-open .hamburger-bar:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .mobile-menu-btn.is-open .hamburger-bar:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Mobile drawer */
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            gap: 0.25rem;
+            background: white;
+            border-top: 1px solid #e2e8f0;
+            padding: 1rem 1.5rem 1.25rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            animation: slideDown 0.22s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .mobile-nav.is-open {
+            display: flex;
+        }
+
+        .mobile-nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 1rem;
+            padding: 0.7rem 0.75rem;
+            border-radius: 0.5rem;
+            transition: var(--transition);
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .mobile-nav a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-nav a:hover {
+            background: #eff6ff;
+            color: var(--primary);
+        }
+
+        .mobile-nav a.nav-btn-dashboard {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 0.5rem;
+            border-bottom: none;
+        }
+
+        .mobile-nav a.nav-btn-dashboard:hover {
+            background: linear-gradient(135deg, var(--primary-dark), #162c7a);
+            color: white;
+        }
+
+        /* =====================
+           Hero Section
+           ===================== */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0c4a6e 100%);
+            color: white;
+            padding: 4.5rem 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            text-align: center;
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 0 1.5rem 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .last-updated {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            font-weight: 500;
+        }
+
+        .effective-date {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.8);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .compliance-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 0.35rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Floating Button */
+        .floating-dashboard {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            background: linear-gradient(135deg, var(--secondary), #eab308);
+            color: white;
+            padding: 0.65rem 1.4rem 0.65rem 0.65rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+        }
+
+        .floating-dashboard:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 30px -5px rgba(245, 158, 11, 0.5);
+        }
+
+        .floating-logo-circle {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 2px solid rgba(255,255,255,0.7);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .floating-logo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Main Content Styling */
+        .content-card {
+            background: white;
+            border-radius: 1.25rem;
+            padding: 2.5rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(59, 130, 246, 0.1);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin: 2rem 0 1rem;
+        }
+
+        p, li {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 1rem 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        strong {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
+
+        th {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            color: var(--gray);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: white;
+            border-radius: 1.25rem;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #e2e8f0;
+            margin: 2rem 0;
+        }
+
+        .toc h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        .toc ol {
+            padding-left: 1.5rem;
+            list-style-position: inside;
+            color: var(--gray);
+        }
+
+        .toc a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color var(--transition);
+        }
+
+        .toc a:hover {
+            color: var(--secondary);
+        }
+
+        /* Card Grid Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: var(--light);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+            transition: var(--transition);
+            box-shadow: var(--card-shadow);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+            border-color: var(--primary);
+        }
+
+        .feature-card h4 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+        }
+
+        /* Features with Icons */
+        .features-with-icons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .icon-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .icon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .mission-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border-radius: 1.25rem;
+            padding: 3rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .mission-section h3 {
+            color: white;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .mission-section p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: var(--primary);
+            color: white;
+            border-radius: 1.25rem;
+            padding: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .contact-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .contact-box p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .contact-link:hover {
+            color: var(--secondary);
+        }
+
+        .contact-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+        }
+
+        .label {
+            font-weight: 700;
+            color: var(--secondary);
+            min-width: 120px;
+        }
+
+        /* Compliance Tags */
+        .compliance-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .compliance-tag {
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .compliance-tag.primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .compliance-tag.success {
+            background: var(--success);
+            color: white;
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 1rem 1rem 0;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box p {
+            color: var(--dark);
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .highlight-box strong {
+            color: var(--primary);
+        }
+
+        /* Back to Home Button */
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .back-home:hover {
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-col h3::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 3px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .floating-dashboard {
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+        }
+
+        @media (max-width: 860px) {
+            .nav-links {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .content-card {
+                padding: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .floating-dashboard {
+                font-size: 0.8rem;
+                padding: 0.55rem 1.1rem 0.55rem 0.55rem;
+                gap: 0.5rem;
+            }
+
+            .floating-logo-circle {
+                width: 28px;
+                height: 28px;
+            }
+            
+            .contact-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .label {
+                min-width: auto;
+            }
+            
+            .mission-section {
+                padding: 2rem 1.5rem;
+            }
+            
+            .mission-section h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+            
+            .feature-card {
+                padding: 1.5rem;
+            }
+            
+            .icon-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+    <base target="_blank">
+</head>
+<body>
+    <!-- Floating Dashboard Button -->
+    <a href="https://asilvainnovations-website-version77.bolt.host/" class="floating-dashboard">
+        <div class="floating-logo-circle">
+            <img src="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1777440983" alt="ASilva Innovations Logo">
+        </div>
+        HOME
+    </a>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="https://asilvainnovations.com" class="logo">
+                    <div class="logo-icon">
+                        <img src="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1777440983" alt="ASilva Innovations Logo">
+                    </div>
+                    <div>
+                        <div class="logo-text">ASilva</div>
+                        <div class="logo-subtext">Innovations</div>
+                    </div>
+                </a>
+
+                <ul class="nav-links" id="desktopNav">
+                    <li><a href="https://strategic-collaborative-auditable.deploypad.app/" class="nav-btn-dashboard">Home</a></li>
+                    <li><a href="https://asilvainnovations.github.io/website/about-us.html">About</a></li>
+                    <li><a href="https://asilvainnovations.github.io/website/faq.html">FAQ</a></li>
+                    <li><a href="https://asilvainnovations.github.io/website/policies.html">Policies</a></li>
+                    <li><a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a></li>
+                    <li><a href="https://asilvainnovations.github.io/website/contact.html">Contact</a></li>
+                </ul>
+
+                <button class="mobile-menu-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+            </nav>
+
+            <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+                <a href="https://strategic-collaborative-auditable.deploypad.app/" class="nav-btn-dashboard">Home</a>
+                <a href="https://asilvainnovations.github.io/website/about-us.html">About</a>
+                <a href="https://asilvainnovations.github.io/website/faq.html">FAQ</a>
+                <a href="https://asilvainnovations.github.io/website/policies.html">Policies</a>
+                <a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a>
+                <a href="https://asilvainnovations.github.io/website/contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <a href="https://asilvainnovations.com" class="back-home">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back To Home
+                </a>
+                
+                <h1>Terms of Service</h1>
+                <p class="effective-date">Effective Date: February 24, 2026</p>
+                <p class="last-updated">Last Updated: April 29, 2026</p>
+                <div class="compliance-badges">
+                    <span class="badge">⚖️ Legally Compliant</span>
+                    <span class="badge">🔐 Security First</span>
+                    <span class="badge">🌏 Global Standards</span>
+                    <span class="badge">💼 User Protection</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container" style="margin-top: -2rem;">
+            <div class="content-card">
+                
+                <!-- Introduction -->
+                <section class="section">
+                    <h2>Our Commitment to Transparency</h2>
+                    <p>Welcome to ASilva Innovations. These Terms of Service ("Terms") govern your use of our website, applications, platforms, and services, including our disaster resilience solutions, AI-powered analytics tools, and strategic advisory services.</p>
+                    
+                    <div class="compliance-tags">
+                        <span class="compliance-tag primary">Philippines Law</span>
+                        <span class="compliance-tag success">GDPR Aligned</span>
+                        <span class="compliance-tag primary">RA 10173</span>
+                        <span class="compliance-tag success">International</span>
+                    </div>
+                    
+                    <div class="mission-section" style="background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);">
+                        <h3>Clear Terms Create Strong Partnerships</h3>
+                        <p>These Terms of Service protect both our users and our mission to build resilient communities through ethical technology and human-centered design.</p>
+                    </div>
+                </section>
+
+                <!-- Table of Contents -->
+                <nav class="toc" aria-label="Table of Contents">
+                    <ol>
+                        <li><a href="#acceptance">Acceptance of Terms</a></li>
+                        <li><a href="#eligibility">Eligibility & Account Registration</a></li>
+                        <li><a href="#intellectual-property">Intellectual Property Rights</a></li>
+                        <li><a href="#acceptable-use">Acceptable Use</a></li>
+                        <li><a href="#disclaimer">Disclaimer of Warranties</a></li>
+                        <li><a href="#limitation">Limitation of Liability</a></li>
+                        <li><a href="#indemnification">Indemnification</a></li>
+                        <li><a href="#governing-law">Governing Law & Jurisdiction</a></li>
+                        <li><a href="#contact-info">Contact Information</a></li>
+                    </ol>
+                </nav>
+
+                <!-- Section 1: Acceptance -->
+                <section id="acceptance" class="section">
+                    <h2>1. Acceptance of Terms</h2>
+                    <p>By accessing or using our Services (collectively referred to as "Services"), you acknowledge that you have read, understood, and agree to be bound by these Terms of Service and our Privacy Policy. If you do not agree to all terms and conditions, you must immediately discontinue use of our Services.</p>
+                    
+                    <div class="feature-card">
+                        <h4>We Reserve the Right to Modify</h4>
+                        <p>We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting to this page, with the "Last Updated" date revised accordingly. Continued use of our Services after such changes constitutes acceptance of the modified Terms.</p>
+                    </div>
+                </section>
+
+                <!-- Section 2: Eligibility -->
+                <section id="eligibility" class="section">
+                    <h2>2. Eligibility & Account Registration</h2>
+                    
+                    <div class="features-with-icons">
+                        <div class="icon-card">
+                            <div class="icon-circle">🔞</div>
+                            <h4>Age Requirement</h4>
+                            <p>You must be at least 18 years old to use our Services. By using our Services, you represent and warrant that you meet this eligibility requirement.</p>
+                        </div>
+                        
+                        <div class="icon-card">
+                            <div class="icon-circle">📝</div>
+                            <h4>Account Information</h4>
+                            <p>Some Services require account registration. You agree to provide accurate, current, and complete information during registration and to update such information promptly.</p>
+                        </div>
+                        
+                        <div class="icon-card">
+                            <div class="icon-circle">🔒</div>
+                            <h4>Account Security</h4>
+                            <p>You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 3: Intellectual Property -->
+                <section id="intellectual-property" class="section">
+                    <h2>3. Intellectual Property Rights</h2>
+                    <p>All content, features, and functionality on our Services—including text, graphics, logos, icons, images, audio clips, digital downloads, software, and documentation—are owned by ASilva Innovations or its licensors and are protected by intellectual property laws.</p>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Component</th>
+                                <th>Ownership Status</th>
+                                <th>Usage Limitations</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Platform Software</strong></td>
+                                <td>Proprietary Code</td>
+                                <td>Limited license only</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Analytics Data</strong></td>
+                                <td>User Generated</td>
+                                <td>Your rights preserved</td>
+                            </tr>
+                            <tr>
+                                <td><strong>AI Models</strong></td>
+                                <td>Trade Secrets</td>
+                                <td>No reverse engineering</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Documentation</strong></td>
+                                <td>Coprighted Works</td>
+                                <td>Personal use allowed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h3>Feedback</h3>
+                    <p>Any feedback you provide regarding our Services may be used by us without restriction or compensation to you. You grant us a perpetual, irrevocable license to use such feedback for product improvement.</p>
+                </section>
+
+                <!-- Section 4: Acceptable Use -->
+                <section id="acceptable-use" class="section">
+                    <h2>4. Acceptable Use</h2>
+                    <p>You agree not to use our Services for any unlawful purpose or in any way that could damage, disable, overburden, or impair our infrastructure. Prohibited activities include but are not limited to:</p>
+                    
+                    <div class="grid-container">
+                        <div class="feature-card">
+                            <h4>🚫 System Access</h4>
+                            <p>Unauthorized access to systems, data, or other user accounts.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>🚫 Interference</h4>
+                            <p>Attempting to interfere with service operation, security, or performance.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>🦠 Malware</h4>
+                            <p>Transmitting malicious code, viruses, worms, Trojan horses, or other harmful programs.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>📧 Spam</h4>
+                            <p>Distributing spam, phishing attempts, fraudulent activities, or unsolicited commercial messages.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>📜 IP Violation</h4>
+                            <p>Infringing, misappropriating, or violating intellectual property rights.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>😤 Harassment</h4>
+                            <p>Harming or attempting to harm minors, engaging in harassment, threats, or abusive conduct.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 5: Disclaimer -->
+                <section id="disclaimer" class="section">
+                    <h2>5. Disclaimer of Warranties</h2>
+                    <p>Our Services are provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement.</p>
+                    
+                    <div class="highlight-box">
+                        <p>We do not guarantee that our Services will be uninterrupted, timely, secure, or error-free. You acknowledge that your use of our Services is solely at your own risk.</p>
+                    </div>
+                </section>
+
+                <!-- Section 6: Limitation -->
+                <section id="limitation" class="section">
+                    <h2>6. Limitation of Liability</h2>
+                    <p>To the fullest extent permitted by applicable law, ASilva Innovations shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our Services, including loss of data, loss of revenue, or business interruption.</p>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Liability Type</th>
+                                <th>Maximum Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Direct Damages</td>
+                                <td>Amount paid for service in last 12 months</td>
+                            </tr>
+                            <tr>
+                                <td>Consequential Damages</td>
+                                <td>Not Exceed $100 USD</td>
+                            </tr>
+                            <tr>
+                                <td>Punitive Damages</td>
+                                <td>Excluded entirely</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Section 7: Indemnification -->
+                <section id="indemnification" class="section">
+                    <h2>7. Indemnification</h2>
+                    <p>You agree to indemnify, defend, and hold harmless ASilva Innovations and its officers, directors, employees, agents, and partners from any claims, liabilities, damages, losses, and expenses (including reasonable legal fees) arising from your use of our Services, violation of these Terms, or infringement of any third-party rights.</p>
+                </section>
+
+                <!-- Section 8: Governing Law -->
+                <section id="governing-law" class="section">
+                    <h2>8. Governing Law & Jurisdiction</h2>
+                    <p>These Terms shall be governed by and construed in accordance with the laws of the Republic of the Philippines, without regard to its conflict of law provisions.</p>
+                    
+                    <p>Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts located in Metro Manila, Philippines, except as otherwise required by applicable local laws.</p>
+                </section>
+
+                <!-- Section 9: Contact -->
+                <section id="contact-info" class="section">
+                    <h2>9. Contact Information</h2>
+                    <p>For questions about these Terms of Service, please contact us:</p>
+                    
+                    <div class="contact-box">
+                        <h3>Legal Department</h3>
+                        <div class="contact-grid">
+                            <div class="contact-item">
+                                <span class="label">Email:</span>
+                                <a href="mailto:legal@asilvainnovations.com" class="contact-link">legal@asilvainnovations.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="label">Data Officer:</span>
+                                <a href="mailto:dataofficer@asilvainnovations.com" class="contact-link">dataofficer@asilvainnovations.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="label">Phone:</span>
+                                <span>+639178555134</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="label">Address:</span>
+                                <span>ASilva Innovations Legal Dept.<br>Muntinlupa City, Metro Manila, Philippines</span>
+                            </div>
+                        </div>
+                        <p style="margin-top: 1.5rem;">We aim to respond to legal inquiries within <strong>5 business days</strong>.</p>
+                    </div>
+                </section>
+
+                <!-- Entire Agreement -->
+                <section class="section">
+                    <h2>Entire Agreement</h2>
+                    <div class="highlight-box">
+                        <p><strong>Severability:</strong> If any provision of these Terms is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary, and the remaining provisions will remain in full force and effect.</p>
+                        <p style="margin-top: 1rem;"><strong>Waiver:</strong> Our failure to enforce any right or provision of these Terms will not be deemed a waiver of such right or provision.</p>
+                    </div>
+                </section>
+
+                <!-- Related Resources -->
+                <section class="section">
+                    <h2>Related Documents</h2>
+                    <p>For complete understanding of our legal framework, you may also review:</p>
+                    
+                    <div class="grid-container">
+                        <div class="feature-card">
+                            <h4>🔒 Privacy Policy</h4>
+                            <p>How we collect, use, and protect your personal information.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>🍪 Cookie Policy</h4>
+                            <p>How we use cookies and tracking technologies.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>♿ Accessibility Policy</h4>
+                            <p>Our commitment to WCAG compliance and inclusive design.</p>
+                        </div>
+                        <div class="feature-card">
+                            <h4>🤖 AI Ethics Policy</h4>
+                            <p>Guidelines for ethical AI development and deployment.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Acknowledgment -->
+                <section class="section">
+                    <h2>Acknowledgment</h2>
+                    <p>By using ASilva Innovations platforms and services, you acknowledge that you have read, understood, and agree to be bound by all policies referenced herein, including our Terms and Conditions, Privacy Policy, Cookie Policy, Accessibility Policy, and AI Ethics Policy.</p>
+                </section>
+
+                <!-- CTA -->
+                <section class="mission-section">
+                    <h2>Questions About Our Terms?</h2>
+                    <p>If you have any questions about these Terms of Service or how they apply to your use of our Services, please reach out to our legal team.</p>
+                    <a href="https://asilvainnovations.github.io/website/contact.html" class="btn btn-secondary-theme" style="margin-top: 1rem;">CONTACT LEGAL TEAM</a>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>ASilva Innovations</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://asilvainnovations.com">Home</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/solutions.html">Solutions</a></li>
+                        <li><a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Solutions</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://asilvainnovations.github.io/ddrive-m/">DDRiVE-M</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/rtl.html">Real-Time Leadership</a></li>
+                        <li><a href="https://asilvainnovations.github.io/strat-planner-pwa/public/index.html">Strat Planner Pro</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/ai-solutions.html">AI-Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://blog-leadership-analytics.deploypad.app/">Blog</a></li>
+                        <li><a href="https://asilvainnovations.github.io/case-studies/">Case Studies</a></li>
+                        <li><a href="https://asilvainnovations.github.io/white-papers/">White Papers</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://asilvainnovations.github.io/website/terms.html">Terms & Conditions</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/accessibility-policy.html">Accessibility Policy</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/ai-ethics.html">AI Ethics Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 ASilva Innovations. All rights reserved. Building resilient communities through ethical AI and human-centered design.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile hamburger toggle
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const mobileNav = document.getElementById('mobileNav');
+
+        hamburgerBtn.addEventListener('click', function () {
+            const isOpen = mobileNav.classList.toggle('is-open');
+            hamburgerBtn.classList.toggle('is-open', isOpen);
+            hamburgerBtn.setAttribute('aria-expanded', isOpen);
+        });
+
+        mobileNav.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function () {
+                mobileNav.classList.remove('is-open');
+                hamburgerBtn.classList.remove('is-open');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!hamburgerBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+                mobileNav.classList.remove('is-open');
+                hamburgerBtn.classList.remove('is-open');
+                hamburgerBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Active state for navigation
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a:not(.nav-btn-dashboard)');
+            
+            let current = '';
+            sections.forEach(function(section) {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(function(link) {
+                link.classList.remove('active-page');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active-page');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
