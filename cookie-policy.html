@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1777440983" sizes="32x32">
     
     <style>
         /* ===========================================
@@ -109,6 +109,45 @@
             box-shadow: 0 10px 20px -5px rgba(30, 64, 175, 0.4);
         }
 
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 0.85rem 1.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.3);
+        }
+
+        .btn-secondary-theme {
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 0.85rem 1.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-secondary-theme:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
+        }
+
         .section {
             padding: 5rem 0;
         }
@@ -144,7 +183,7 @@
         .logo-icon {
             width: 44px;
             height: 44px;
-            border-radius: 50%;           /* Circular */
+            border-radius: 50%;           
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -211,6 +250,12 @@
             color: white;
             transform: translateY(-1px);
             box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+        }
+
+        .nav-links a.active-page {
+            color: var(--primary);
+            background-color: #eff6ff;
+            font-weight: 600;
         }
 
         /* Hamburger button */
@@ -350,9 +395,9 @@
         }
 
         .last-updated {
-            font-size: 1rem;
-            color: var(--secondary);
-            font-weight: 600;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            font-weight: 500;
         }
 
         .compliance-badges {
@@ -370,6 +415,9 @@
             padding: 0.35rem 1rem;
             font-size: 0.875rem;
             font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         /* Floating Button */
@@ -499,6 +547,39 @@
             border-bottom: none;
         }
 
+        /* Table of Contents */
+        .toc {
+            background: white;
+            border-radius: 1.25rem;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #e2e8f0;
+            margin: 2rem 0;
+        }
+
+        .toc h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        .toc ol {
+            padding-left: 1.5rem;
+            list-style-position: inside;
+            color: var(--gray);
+        }
+
+        .toc a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color var(--transition);
+        }
+
+        .toc a:hover {
+            color: var(--secondary);
+        }
+
         /* Contact Box */
         .contact-box {
             background: var(--primary);
@@ -510,7 +591,7 @@
 
         .contact-box h3 {
             color: white;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .contact-box p {
@@ -545,37 +626,68 @@
             min-width: 120px;
         }
 
-        /* Table of Contents */
-        .toc {
-            background: white;
-            border-radius: 1.25rem;
-            padding: 2rem;
-            box-shadow: var(--card-shadow);
-            border: 1px solid #e2e8f0;
+        /* Policy Cards */
+        .policy-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
             margin: 2rem 0;
         }
 
-        .toc h3 {
-            font-size: 1.25rem;
-            color: var(--primary);
-            margin-top: 0;
+        .policy-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
         }
 
-        .toc ol {
-            padding-left: 1.5rem;
-            list-style-position: inside;
+        .policy-card:hover {
+            border-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .policy-card h4 {
+            color: var(--dark);
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+
+        .policy-card p {
+            font-size: 0.85rem;
             color: var(--gray);
         }
 
-        .toc a {
-            color: var(--primary);
-            text-decoration: none;
+        /* Cookie Type Badges */
+        .cookie-type {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
             font-weight: 600;
-            transition: color var(--transition);
+            margin-right: 0.5rem;
         }
 
-        .toc a:hover {
-            color: var(--secondary);
+        .type-necessary {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .type-functional {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .type-analytics {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .type-marketing {
+            background: #fee2e2;
+            color: #991b1b;
         }
 
         /* Footer */
@@ -635,6 +747,22 @@
             border-top: 1px solid #334155;
             color: #94a3b8;
             font-size: 0.9rem;
+        }
+
+        /* Back to Home Button */
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .back-home:hover {
+            color: white;
         }
 
         /* Responsive Design */
@@ -697,46 +825,16 @@
                 font-size: 1.75rem;
             }
         }
-
-        /* Cookie Type Badges */
-        .cookie-type {
-            display: inline-block;
-            padding: 0.25rem 0.75rem;
-            border-radius: 1rem;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-right: 0.5rem;
-        }
-
-        .type-necessary {
-            background: #dcfce7;
-            color: #166534;
-        }
-
-        .type-functional {
-            background: #dbeafe;
-            color: #1e40af;
-        }
-
-        .type-analytics {
-            background: #fef3c7;
-            color: #92400e;
-        }
-
-        .type-marketing {
-            background: #fee2e2;
-            color: #991b1b;
-        }
     </style>
     <base target="_blank">
 </head>
 <body>
-    <!-- Floating Dashboard Button -->
-    <a href="https://strategic-collaborative-auditable.deploypad.app/" class="floating-dashboard">
+    <!-- Floating Home Button -->
+    <a href="https://asilvainnovations-website-version77.bolt.host/" class="floating-home">
         <div class="floating-logo-circle">
-            <img src="https://ddrive-erm.appimize.app/assets/apps/user_1097/app_12127/draft/icon/app_logo.png?1767510419" alt="DDRiVE-M Logo">
+            <img src="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1777440983" alt="ASilva Innovations Logo">
         </div>
-        LAUNCH DASHBOARD
+        HOME
     </a>
 
     <!-- Header -->
@@ -745,7 +843,7 @@
             <nav class="navbar">
                 <a href="https://asilvainnovations.com" class="logo">
                     <div class="logo-icon">
-                        <img src="https://appimize.app/assets/apps/user_1097/images/b4e60d94a143_503_1097.png" alt="ASilva Innovations Logo">
+                        <img src="https://asilvainnovations.com/assets/apps/user_1097/app_13212/draft/icon/app_logo.png?1777440983" alt="ASilva Innovations Logo">
                     </div>
                     <div>
                         <div class="logo-text">ASilva</div>
@@ -754,9 +852,9 @@
                 </a>
 
                 <ul class="nav-links" id="desktopNav">
-                    <li><a href="https://strategic-collaborative-auditable.deploypad.app/" class="nav-btn-dashboard">Dashboard</a></li>
-                    <li><a href="https://asilvainnovations.github.io/ddrive-m/about.html">About</a></li>
-                    <li><a href="https://asilvainnovations.github.io/ddrive-m/faq.html">FAQ</a></li>
+                    <li><a href="https://asilvainnovations-website-version77.bolt.host/" class="nav-btn-home">Home</a></li>
+                    <li><a href="https://asilvainnovations.github.io/website/solutions.html">Solutions</a></li>
+                    <li><a href="https://asilvainnovations.github.io/website/faq.html">FAQ</a></li>
                     <li><a href="https://asilvainnovations.github.io/website/policies.html">Policies</a></li>
                     <li><a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a></li>
                     <li><a href="https://asilvainnovations.github.io/website/contact.html">Contact</a></li>
@@ -770,9 +868,9 @@
             </nav>
 
             <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
-                <a href="https://strategic-collaborative-auditable.deploypad.app/" class="nav-btn-dashboard">Dashboard</a>
-                <a href="https://asilvainnovations.github.io/ddrive-m/about.html">About</a>
-                <a href="https://asilvainnovations.github.io/ddrive-m/faq.html">FAQ</a>
+                <a href="https://asilvainnovations-website-version77.bolt.host/" class="nav-btn-home">Home</a>
+                <a href="https://asilvainnovations.github.io/website/solutions.html">Solutionst</a>
+                <a href="https://asilvainnovations.github.io/website/faq.html">FAQ</a>
                 <a href="https://asilvainnovations.github.io/website/policies.html">Policies</a>
                 <a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a>
                 <a href="https://asilvainnovations.github.io/website/contact.html">Contact</a>
@@ -784,12 +882,19 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
+                <a href="https://asilvainnovations.com" class="back-home">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back to Home
+                </a>
+                
                 <h1>Cookie Policy</h1>
                 <p class="last-updated">Last Updated: April 29, 2026</p>
                 <div class="compliance-badges">
-                    <span class="badge">GDPR Compliant</span>
-                    <span class="badge">RA 10173 Data Privacy</span>
-                    <span class="badge">Privacy by Design</span>
+                    <span class="badge">🛡️ GDPR Compliant</span>
+                    <span class="badge">🇵🇭 RA 10173 Data Privacy</span>
+                    <span class="badge">🔒 Privacy by Design</span>
                 </div>
             </div>
         </div>
@@ -1323,7 +1428,7 @@
                     
                     <h3>Related Policies</h3>
                     <ul>
-                        <li><a href="#">Privacy Policy</a> — Comprehensive overview of our data protection practices</li>
+                        <li><a href="https://asilvainnovations.github.io/website/privacy-policy.html">Privacy Policy</a> — Comprehensive overview of our data protection practices</li>
                         <li><a href="#">Terms of Service</a> — Legal terms governing your use of our services</li>
                         <li><a href="#">Accessibility Policy</a> — Our commitment to digital accessibility</li>
                         <li><a href="#">AI Ethics Policy</a> — Guidelines for ethical AI development and deployment</li>
@@ -1350,26 +1455,37 @@
                     <h3>ASilva Innovations</h3>
                     <ul class="footer-links">
                         <li><a href="https://asilvainnovations.com">Home</a></li>
-                        <li><a href="https://asilvainnovations.github.io/ddrive-m/about.html">About Us</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/about-us.html">About Us</a></li>
                         <li><a href="https://asilvainnovations.github.io/ddrive-m/pricing.html">Pricing</a></li>
                         <li><a href="https://asilvainnovations.github.io/website/contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h3>Products</h3>
+                    <h3>Solutions</h3>
                     <ul class="footer-links">
-                        <li><a href="https://strategic-collaborative-auditable.deploypad.app/">DDRiVE-M</a></li>
-                        <li><a href="https://asilvainnovations.github.io/ddrive-m/features.html">Features</a></li>
-                        <li><a href="https://asilvainnovations.github.io/ddrive-m/faq.html">FAQ</a></li>
+                        <li><a href="https://asilvainnovations.github.io/ddrive-m/">DDRiVE-M</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/rtl.html">Real-Time Leadership</a></li>
+                        <li><a href="https://asilvainnovations.github.io/strat-planner-pwa/public/index.html">Strat Planner Pro</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/ai-solutions.html">AI-Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://blog-leadership-analytics.deploypad.app/">Blog</a></li>
+                        <li><a href="https://asilvainnovations.github.io/case-studies/">Case Studies</a></li>
+                        <li><a href="https://asilvainnovations.github.io/white-papers/">White Papers</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/faq.html">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Legal</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">AI Ethics Policy</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/terms.html">Terms & Conditions</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/cookie-policy.html">Cookie Policy</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/accessibility-policy.html">Accessibility Policy</a></li>
+                        <li><a href="https://asilvainnovations.github.io/website/ai-ethics.html">AI Ethics Policy</a></li>
                     </ul>
                 </div>
             </div>
