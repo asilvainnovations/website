@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="https://appimize.app">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
   <!-- SEO Meta Tags -->
   <title>ASilva Innovations | Real-Time, AI-Powered Analytics for Resilience Solutions</title>
@@ -40,6 +41,9 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Swiper.js CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -972,6 +976,222 @@
       color: var(--color-slate-400);
       font-size: 0.9rem;
       font-weight: 500;
+    }
+
+    /* ============================================
+       RECENT PARTNERS SECTION - NEW
+    ============================================ */
+    #partners {
+      padding: 5rem 1.25rem 6rem;
+      background: linear-gradient(180deg, var(--color-slate-900) 0%, var(--brand-dark) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (min-width: 640px) { #partners { padding: 6rem 1.5rem; } }
+
+    .partners-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .partners-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--brand-accent) 0%, var(--brand-cyan) 50%, var(--brand-accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.025em;
+      margin-bottom: 1rem;
+    }
+
+    .partners-subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      color: var(--color-slate-300);
+      max-width: 44rem;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .partners-swiper {
+      width: 100%;
+      padding: 1.5rem 0 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5rem;
+    }
+
+    .partner-logo-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 160px;
+      aspect-ratio: 1;
+      background: rgba(30, 41, 59, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      padding: 0.75rem;
+      transition: all var(--transition-normal);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .partner-logo-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 30%, rgba(0, 180, 216, 0.15), transparent 70%);
+      opacity: 0;
+      transition: opacity var(--transition-normal);
+      border-radius: 50%;
+    }
+
+    .partner-logo-card:hover {
+      transform: scale(1.08);
+      border-color: rgba(0, 180, 216, 0.4);
+      box-shadow: 0 8px 32px rgba(0, 180, 216, 0.25);
+      z-index: 10;
+    }
+
+    .partner-logo-card:hover::before {
+      opacity: 1;
+    }
+
+    .partner-logo-wrapper {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.5rem;
+    }
+
+    .partner-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+      filter: brightness(0) saturate(100%) invert(92%) sepia(4%) saturate(362%) hue-rotate(175deg) brightness(97%) contrast(93%);
+      transition: filter var(--transition-normal), transform var(--transition-normal);
+    }
+
+    .partner-logo-card:hover .partner-logo {
+      filter: none;
+      transform: scale(1.05);
+    }
+
+    .partner-name {
+      position: absolute;
+      bottom: -2.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.75rem;
+      color: var(--color-slate-300);
+      text-align: center;
+      white-space: nowrap;
+      opacity: 0;
+      transition: all var(--transition-normal);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-full);
+      max-width: 140px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      pointer-events: none;
+      z-index: 5;
+      font-weight: 500;
+    }
+
+    .partner-logo-card:hover .partner-name {
+      opacity: 1;
+      bottom: -2.5rem;
+    }
+
+    /* Swiper Navigation */
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: var(--brand-accent) !important;
+      width: 2.5rem !important;
+      height: 2.5rem !important;
+      background: rgba(15, 23, 42, 0.8);
+      border-radius: 50%;
+      border: 1px solid rgba(0, 180, 216, 0.3);
+      transition: all var(--transition-normal);
+      z-index: 10;
+    }
+
+    .swiper-button-prev:hover,
+    .swiper-button-next:hover {
+      background: rgba(0, 180, 216, 0.2);
+      transform: scale(1.1);
+    }
+
+    .swiper-button-prev:after,
+    .swiper-button-next:after {
+      font-size: 1.1rem !important;
+      font-weight: 700;
+    }
+
+    .swiper-pagination {
+      position: relative !important;
+      bottom: 0 !important;
+      margin-top: 1.5rem !important;
+      z-index: 10;
+    }
+
+    .swiper-pagination-bullet {
+      width: 0.6rem !important;
+      height: 0.6rem !important;
+      background: rgba(255, 255, 255, 0.3) !important;
+      opacity: 1 !important;
+      transition: all var(--transition-normal);
+      margin: 0 0.3rem !important;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: var(--brand-accent) !important;
+      transform: scale(1.2);
+      box-shadow: 0 0 0 2px rgba(0, 180, 216, 0.3);
+    }
+
+    /* Partners section decorative elements */
+    .partners-bg-accent {
+      position: absolute;
+      width: 40rem;
+      height: 40rem;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .partners-bg-accent-1 {
+      top: -10rem;
+      left: -10rem;
+      background: var(--brand-accent);
+    }
+
+    .partners-bg-accent-2 {
+      bottom: -10rem;
+      right: -10rem;
+      background: var(--color-blue-500);
     }
 
     /* ============================================
@@ -2206,8 +2426,15 @@
       .service-card:hover,
       .stat-card:hover,
       .btn-hero-primary:hover,
-      .btn-hero-secondary:hover {
+      .btn-hero-secondary:hover,
+      .partner-logo-card:hover {
         transform: none;
+      }
+      
+      .partner-name {
+        opacity: 1 !important;
+        bottom: -2.5rem !important;
+        background: rgba(15, 23, 42, 0.95);
       }
     }
 
@@ -2263,7 +2490,7 @@
 
       <!-- Desktop Links -->
       <div class="nav-links" role="list">
-        <a href="#services" class="nav-link" role="listitem">Soluitons</a>
+        <a href="#services" class="nav-link" role="listitem">Solutions</a>
         <a href="#impact" class="nav-link" role="listitem">Impact</a>
         <a href="#contact" class="nav-link" role="listitem">Contact</a>
         <a href="https://blog-leadership-analytics.deploypad.app/" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-external" role="listitem">
@@ -2431,6 +2658,351 @@
     </div>
   </section>
 
+  <!-- ===================== RECENT PARTNERS SECTION - NEW ===================== -->
+  <section id="partners" aria-labelledby="partners-heading">
+    <div class="partners-bg-accent partners-bg-accent-1" aria-hidden="true"></div>
+    <div class="partners-bg-accent partners-bg-accent-2" aria-hidden="true"></div>
+    
+    <div class="container">
+      <div class="partners-header">
+        <h2 id="partners-heading" class="partners-title">Recent Partners</h2>
+        <p class="partners-subtitle">Proud to collaborate with leading organizations committed to building resilient communities across Southeast Asia and beyond.</p>
+      </div>
+      
+      <!-- Swiper Carousel -->
+      <div class="partners-swiper swiper">
+        <div class="swiper-wrapper">
+          <!-- Partner 1: Bureau of Investments - MTIT -->
+          <div class="swiper-slide">
+            <div class="partner-logo-card">
+              <div class="partner-logo-wrapper">
+                <img 
+                  src="https://tse2.mm.bing.net/th/id/OIP.Y7AB0SsInVZU9_jcu9dyCgHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                  alt="Bureau of Investments - MTIT logo" 
+                  class="partner-logo"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%231e293b%27/%3E%3Ctext x=%2750%27 y=%2755%27 text-anchor=%27middle%27 fill=%27%2394a3b8%27 font-size=%2712%27%3EMTIT%3C/text%3E%3C/svg%3E'"
+                >
+              </div>
+              <span class="partner-name">Bureau of Investments - MTIT</span>
+            </div>
+          </div>
+          
+          <!-- Partner 2: German Red Cross -->
+          <div class="swiper-slide">
+            <div class="partner-logo-card">
+              <div class="partner-logo-wrapper">
+                <img 
+                  src="https://c8.alamy.com/comp/CR6979/logo-of-the-deutsches-rotes-kreuz-or-german-red-cross-CR6979.jpg" 
+                  alt="German Red Cross logo" 
+                  class="partner-logo"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%231e293b%27/%3E%3Ctext x=%2750%27 y=%2755%27 text-anchor=%27middle%27 fill=%27%2394a3b8%27 font-size=%2712%27%3EGRC%3C/text%3E%3C/svg%3E'"
+                >
+              </div>
+              <span class="partner-name">German Red Cross</span>
+            </div>
+          </div>
+          
+          <!-- Partner 3: Philippine Red Cross -->
+          <div class="swiper-slide">
+            <div class="partner-logo-card">
+              <div class="partner-logo-wrapper">
+                <img 
+                  src="https://www.clipartbest.com/cliparts/acq/roj/acqrojjcM.jpeg" 
+                  alt="Philippine Red Cross logo" 
+                  class="partner-logo"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%231e293b%27/%3E%3Ctext x=%2750%27 y=%2755%27 text-anchor=%27middle%27 fill=%27%2394a3b8%27 font-size=%2712%27%3EPRC%3C/text%3E%3C/svg%3E'"
+                >
+              </div>
+              <span class="partner-name">Philippine Red Cross</span>
+            </div>
+          </div>
+          
+          <!-- Partner 4: World Skills Philippines -->
+          <div class="swiper-slide">
+            <div class="partner-logo-card">
+              <div class="partner-logo-wrapper">
+                <img 
+                  src="https://tse2.mm.bing.net/th/id/OIP.cZccvDq_NHeIF2Af_t3woAAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                  alt="World Skills Philippines logo" 
+                  class="partner-logo"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%231e293b%27/%3E%3Ctext x=%2750%27 y=%2755%27 text-anchor=%27middle%27 fill=%27%2394a3b8%27 font-size=%2712%27%3EWSP%3C/text%3E%3C/svg%3E'"
+                >
+              </div>
+              <span class="partner-name">World Skills Philippines</span>
+            </div>
+          </div>
+          
+          <!-- Partner 5: TESDA -->
+          <div class="swiper-slide">
+            <div class="partner-logo-card">
+              <div class="partner-logo-wrapper">
+                <img 
+                  src="https://depedph.com/wp-content/uploads/2024/01/tesda-logo.png" 
+                  alt="TESDA logo" 
+                  class="partner-logo"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%231e293b%27/%3E%3Ctext x=%2750%27 y=%2755%27 text-anchor=%27middle%27 fill=%27%2394a3b8%27 font-size=%2712%27%3ETESDA%3C/text%3E%3C/svg%3E'"
+                >
+              </div>
+              <span class="partner-name">TESDA</span>
+            </div>
+          </div>
+          
+          <!-- Partner 6: Moropreneur -->
+          <div class="swiper-slide">
+            <div class="partner-logo-card">
+              <div class="partner-logo-wrapper">
+                <img 
+                  src="https://themoropreneur.appimize.app/assets/apps/user_1097/app_13204/draft/icon/app_logo.png?1777590874" 
+                  alt="Moropreneur logo" 
+                  class="partner-logo"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%231e293b%27/%3E%3Ctext x=%2750%27 y=%2755%27 text-anchor=%27middle%27 fill=%27%2394a3b8%27 font-size=%2712%27%3EMoropreneur%3C/text%3E%3C/svg%3E'"
+                >
+              </div>
+              <span class="partner-name">Moropreneur</span>
+            </div>
+          </div>
+          
+          <!-- Partner 7: Cognitio+ -->
+          <div class="swiper-slide">
+            <div class="partner-logo-card">
+              <div class="partner-logo-wrapper">
+                <img 
+                  src="https://cognitio-plus.com/assets/apps/user_1097/app_3046/draft/icon/app_logo.png?1777591278" 
+                  alt="Cognitio+ logo" 
+                  class="partner-logo"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%231e293b%27/%3E%3Ctext x=%2750%27 y=%2755%27 text-anchor=%27middle%27 fill=%27%2394a3b8%27 font-size=%2712%27%3ECognitio+%3C/text%3E%3C/svg%3E'"
+                >
+              </div>
+              <span class="partner-name">Cognitio+</span>
+            </div>
+          </div>
+          
+          <!-- Partner 8: Development Academy of Bangsamoro -->
+          <div class="swiper-slide">
+            <div class="partner-logo-card">
+              <div class="partner-logo-wrapper">
+                <img 
+                  src="https://tse3.mm.bing.net/th/id/OIP.C1MNq3OySg0J27pdcMiUYgHaHa?r=0&pid=ImgDet&w=188&h=188&c=7&dpr=2&o=7&rm=3" 
+                  alt="Development Academy of Bangsamoro logo" 
+                  class="partner-logo"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%231e293b%27/%3E%3Ctext x=%2750%27 y=%2755%27 text-anchor=%27middle%27 fill=%27%2394a3b8%27 font-size=%2712%27%3EDAB%3C/text%3E%3C/svg%3E'"
+                >
+              </div>
+              <span class="partner-name">Development Academy of Bangsamoro</span>
+            </div>
+          </div>
+          
+          <!-- Partner 9: Bangsamoro Development Agency -->
+          <div class="swiper-slide">
+            <div class="partner-logo-card">
+              <div class="partner-logo-wrapper">
+                <img 
+                  src="https://th.bing.com/th/id/OIP.GAgtQBerCyVHmmLliGy5_wAAAA?r=0&o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                  alt="Bangsamoro Development Agency logo" 
+                  class="partner-logo"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%231e293b%27/%3E%3Ctext x=%2750%27 y=%2755%27 text-anchor=%27middle%27 fill=%27%2394a3b8%27 font-size=%2712%27%3EBDA%3C/text%3E%3C/svg%3E'"
+                >
+              </div>
+              <span class="partner-name">Bangsamoro Development Agency</span>
+            </div>
+          </div>
+          
+          <!-- Partner 10: The Asia Foundation -->
+          <div class="swiper-slide">
+            <div class="partner-logo-card">
+              <div class="partner-logo-wrapper">
+                <img 
+                  src="https://www.womensfundingnetwork.org/wp-content/uploads/1970/01/The-Asia-Foundation.png" 
+                  alt="The Asia Foundation logo" 
+                  class="partner-logo"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%231e293b%27/%3E%3Ctext x=%2750%27 y=%2755%27 text-anchor=%27middle%27 fill=%27%2394a3b8%27 font-size=%2712%27%3ETAF%3C/text%3E%3C/svg%3E'"
+                >
+              </div>
+              <span class="partner-name">The Asia Foundation</span>
+            </div>
+          </div>
+          
+          <!-- Partner 11: LGU of Balatan, Camarines Sur -->
+          <div class="swiper-slide">
+            <div class="partner-logo-card">
+              <div class="partner-logo-wrapper">
+                <img 
+                  src="https://tse4.mm.bing.net/th/id/OIP.UhC-TEOPTtR1Ts0G3MSijAAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                  alt="LGU of Balatan, Camarines Sur logo" 
+                  class="partner-logo"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%231e293b%27/%3E%3Ctext x=%2750%27 y=%2755%27 text-anchor=%27middle%27 fill=%27%2394a3b8%27 font-size=%2712%27%3ELGU Balatan%3C/text%3E%3C/svg%3E'"
+                >
+              </div>
+              <span class="partner-name">LGU of Balatan</span>
+            </div>
+          </div>
+          
+          <!-- Partner 12: LGU of Ormoc City -->
+          <div class="swiper-slide">
+            <div class="partner-logo-card">
+              <div class="partner-logo-wrapper">
+                <img 
+                  src="https://cmci.dti.gov.ph/img/seals/lgu/Ormoc.png" 
+                  alt="LGU of Ormoc City logo" 
+                  class="partner-logo"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%231e293b%27/%3E%3Ctext x=%2750%27 y=%2755%27 text-anchor=%27middle%27 fill=%27%2394a3b8%27 font-size=%2712%27%3ELGU Ormoc%3C/text%3E%3C/svg%3E'"
+                >
+              </div>
+              <span class="partner-name">LGU of Ormoc City</span>
+            </div>
+          </div>
+          
+          <!-- Partner 13: LGU of Salcedo, Eastern Samar -->
+          <div class="swiper-slide">
+            <div class="partner-logo-card">
+              <div class="partner-logo-wrapper">
+                <img 
+                  src="https://images.seeklogo.com/logo-png/42/1/salcedo-eastern-samar-logo-png_seeklogo-425888.png" 
+                  alt="LGU of Salcedo, Eastern Samar logo" 
+                  class="partner-logo"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%231e293b%27/%3E%3Ctext x=%2750%27 y=%2755%27 text-anchor=%27middle%27 fill=%27%2394a3b8%27 font-size=%2712%27%3ELGU Salcedo%3C/text%3E%3C/svg%3E'"
+                >
+              </div>
+              <span class="partner-name">LGU of Salcedo</span>
+            </div>
+          </div>
+          
+          <!-- Partner 14: Kidapawan City -->
+          <div class="swiper-slide">
+            <div class="partner-logo-card">
+              <div class="partner-logo-wrapper">
+                <img 
+                  src="https://files01.pna.gov.ph/ograph/2019/06/20/kidapawan-city.jpg" 
+                  alt="Kidapawan City logo" 
+                  class="partner-logo"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%231e293b%27/%3E%3Ctext x=%2750%27 y=%2755%27 text-anchor=%27middle%27 fill=%27%2394a3b8%27 font-size=%2712%27%3EKidapawan%3C/text%3E%3C/svg%3E'"
+                >
+              </div>
+              <span class="partner-name">Kidapawan City</span>
+            </div>
+          </div>
+          
+          <!-- Partner 15: General Trias City -->
+          <div class="swiper-slide">
+            <div class="partner-logo-card">
+              <div class="partner-logo-wrapper">
+                <img 
+                  src="https://cmci.dti.gov.ph/img/seals/lgu/General%20Trias.png" 
+                  alt="General Trias City logo" 
+                  class="partner-logo"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%231e293b%27/%3E%3Ctext x=%2750%27 y=%2755%27 text-anchor=%27middle%27 fill=%27%2394a3b8%27 font-size=%2712%27%3ELGU Gen. Trias%3C/text%3E%3C/svg%3E'"
+                >
+              </div>
+              <span class="partner-name">General Trias City</span>
+            </div>
+          </div>
+          
+          <!-- Partner 16: Talkshop -->
+          <div class="swiper-slide">
+            <div class="partner-logo-card">
+              <div class="partner-logo-wrapper">
+                <img 
+                  src="https://talkshop.ph/blog/wp-content/uploads/2014/02/Talkshop-logo-with-Contact-details.png" 
+                  alt="Talkshop logo" 
+                  class="partner-logo"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%231e293b%27/%3E%3Ctext x=%2750%27 y=%2755%27 text-anchor=%27middle%27 fill=%27%2394a3b8%27 font-size=%2712%27%3ETalkshop%3C/text%3E%3C/svg%3E'"
+                >
+              </div>
+              <span class="partner-name">Talkshop</span>
+            </div>
+          </div>
+          
+          <!-- Partner 17: Action Against Hunger -->
+          <div class="swiper-slide">
+            <div class="partner-logo-card">
+              <div class="partner-logo-wrapper">
+                <img 
+                  src="https://tse2.mm.bing.net/th/id/OIP.PeBozVeR06KVtq1jOvw0iQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" 
+                  alt="Action Against Hunger logo" 
+                  class="partner-logo"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%231e293b%27/%3E%3Ctext x=%2750%27 y=%2755%27 text-anchor=%27middle%27 fill=%27%2394a3b8%27 font-size=%2712%27%3EAAH%3C/text%3E%3C/svg%3E'"
+                >
+              </div>
+              <span class="partner-name">Action Against Hunger</span>
+            </div>
+          </div>
+          
+          <!-- Partner 18: ECHO -->
+          <div class="swiper-slide">
+            <div class="partner-logo-card">
+              <div class="partner-logo-wrapper">
+                <img 
+                  src="https://www.acted.org/wp-content/uploads/2018/03/eu-cp-ha-en.png" 
+                  alt="ECHO logo" 
+                  class="partner-logo"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%231e293b%27/%3E%3Ctext x=%2750%27 y=%2755%27 text-anchor=%27middle%27 fill=%27%2394a3b8%27 font-size=%2712%27%3EECHO%3C/text%3E%3C/svg%3E'"
+                >
+              </div>
+              <span class="partner-name">ECHO</span>
+            </div>
+          </div>
+          
+          <!-- Partner 19: Greenscape -->
+          <div class="swiper-slide">
+            <div class="partner-logo-card">
+              <div class="partner-logo-wrapper">
+                <img 
+                  src="https://assets.cdn.filesafe.space/CGKWNfriXZ8NUuOW7FLb/media/685a93a2b6ee7a5ea4103a6d.png" 
+                  alt="Greenscape logo" 
+                  class="partner-logo"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%231e293b%27/%3E%3Ctext x=%2750%27 y=%2755%27 text-anchor=%27middle%27 fill=%27%2394a3b8%27 font-size=%2712%27%3EGreenscape%3C/text%3E%3C/svg%3E'"
+                >
+              </div>
+              <span class="partner-name">Greenscape</span>
+            </div>
+          </div>
+          
+          <!-- Partner 20: MCR2030 -->
+          <div class="swiper-slide">
+            <div class="partner-logo-card">
+              <div class="partner-logo-wrapper">
+                <img 
+                  src="https://mcr2030.undrr.org/sites/default/files/styles/landscape_16_9/public/2020-10/Facebook%20Profile.png.jpg?itok=jKzFET7F" 
+                  alt="MCR2030 logo" 
+                  class="partner-logo"
+                  loading="lazy"
+                  onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2745%27 fill=%27%231e293b%27/%3E%3Ctext x=%2750%27 y=%2755%27 text-anchor=%27middle%27 fill=%27%2394a3b8%27 font-size=%2712%27%3EMCR2030%3C/text%3E%3C/svg%3E'"
+                >
+              </div>
+              <span class="partner-name">MCR2030</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Navigation Buttons -->
+        <div class="swiper-button-prev" aria-label="Previous partner"></div>
+        <div class="swiper-button-next" aria-label="Next partner"></div>
+        
+        <!-- Pagination Dots -->
+        <div class="swiper-pagination" aria-label="Partner carousel pagination"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- ===================== SERVICES ===================== -->
   <section id="services" aria-labelledby="services-heading">
     <div class="container">
@@ -2555,7 +3127,7 @@
             <div class="service-img-label" aria-hidden="true">✊ ESH</div>
           </div>
           <div class="service-icon-box" aria-hidden="true">✊</div>
-          <h3 id="service-rtl" class="service-name">Electoral Strategy Hub </h3>
+          <h3 id="service-esh" class="service-name">Electoral Strategy Hub</h3>
           <p class="service-desc">
             Evidence-Based Democracy:From Assessment to Action. Empower leaders to plan evidence-based strategies, design capacity-strengthening programs, and craft effective electoral interventions.
           </p>
@@ -2570,7 +3142,7 @@
             target="_blank"
             rel="noopener noreferrer"
             class="service-cta"
-            aria-label="Explore the Electoral Strategy Hub "
+            aria-label="Explore the Electoral Strategy Hub"
           >
             Explore Solution <span aria-hidden="true">→</span>
           </a>
@@ -3065,6 +3637,9 @@
   </footer>
 
   <!-- ===================== SCRIPTS ===================== -->
+  <!-- Swiper.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
   <script>
     (function () {
       'use strict';
@@ -3246,6 +3821,99 @@
       if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
         document.documentElement.classList.add('touch-device');
       }
+      
+      /* ---- Initialize Swiper Carousel for Partners Section ---- */
+      document.addEventListener('DOMContentLoaded', function() {
+        // Initialize Swiper only if the partners section exists
+        if (document.querySelector('.partners-swiper')) {
+          const partnersSwiper = new Swiper('.partners-swiper', {
+            // Basic parameters
+            loop: true,
+            speed: 600,
+            autoplay: {
+              delay: 3500,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            },
+            
+            // Responsive breakpoints
+            breakpoints: {
+              // Mobile: show 2.5 slides
+              320: {
+                slidesPerView: 2.2,
+                spaceBetween: 15,
+              },
+              // Tablet: show 4 slides
+              640: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+              },
+              // Desktop: show 5-6 slides
+              1024: {
+                slidesPerView: 5.5,
+                spaceBetween: 25,
+              },
+              // Large desktop: show 7 slides
+              1440: {
+                slidesPerView: 7,
+                spaceBetween: 30,
+              }
+            },
+            
+            // Navigation arrows
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            },
+            
+            // Pagination dots
+            pagination: {
+              el: '.swiper-pagination',
+              clickable: true,
+              dynamicBullets: true,
+            },
+            
+            // Accessibility
+            a11y: {
+              enabled: true,
+              prevSlideMessage: 'Previous partner',
+              nextSlideMessage: 'Next partner',
+              firstSlideMessage: 'This is the first partner',
+              lastSlideMessage: 'This is the last partner',
+              paginationBulletMessage: 'Go to slide {{index}}',
+            },
+            
+            // Lazy loading for images
+            lazy: {
+              loadPrevNext: true,
+              loadPrevNextAmount: 2,
+            },
+            
+            // Keyboard navigation
+            keyboard: {
+              enabled: true,
+              onlyInViewport: true,
+            },
+            
+            // Mousewheel control
+            mousewheel: {
+              invert: false,
+              forceToAxis: true,
+            },
+          });
+          
+          // Pause autoplay on hover for better UX
+          const swiperEl = document.querySelector('.partners-swiper');
+          if (swiperEl) {
+            swiperEl.addEventListener('mouseenter', () => {
+              partnersSwiper.autoplay.stop();
+            });
+            swiperEl.addEventListener('mouseleave', () => {
+              partnersSwiper.autoplay.start();
+            });
+          }
+        }
+      });
     })();
   </script>
 
