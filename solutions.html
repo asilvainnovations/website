@@ -1,145 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Solutions | ASilva Innovations - Real-Time, AI-Powered Analytics for Resilience</title>
-  <meta name="description" content="Enterprise-grade risk management platforms for LGUs, NGOs, and SMEs. Explore DDRiVE-M, Strat Planner Pro, Real-Time Leadership, Electoral Strategy Hub, and AI Solutions. Competitive Philippine pricing included."/>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter','sans-serif'] },
-          animation: {
-            'fade-in':'fadeIn 0.6s ease-out',
-            'fade-in-up':'fadeInUp 0.8s ease-out',
-            'float':'float 6s ease-in-out infinite',
-            'float-delayed':'float 6s ease-in-out 3s infinite',
-            'gradient':'gradient 3s ease infinite',
-          },
-          keyframes: {
-            fadeIn:{'0%':{opacity:'0'},'100%':{opacity:'1'}},
-            fadeInUp:{'0%':{opacity:'0',transform:'translateY(30px)'},'100%':{opacity:'1',transform:'translateY(0)'}},
-            float:{'0%,100%':{transform:'translateY(0px)'},'50%':{transform:'translateY(-20px)'}},
-            gradient:{'0%,100%':{backgroundPosition:'0% 50%'},'50%':{backgroundPosition:'100% 50%'}}
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#020617">
+    <title>Pricing Plans – ASilva Innovations | Technology That Builds Unbreakable Communities</title>
+    <meta name="description" content="Transparent pricing for DDRiVE-M, Strat Planner Pro, Real-Time Leadership Center, and AI Solutions. From 15,000/month. Purpose-built for LGUs, NGOs, and social enterprises.">
+    <meta name="keywords" content="DDRiVE-M, Strat Planner Pro, Real-Time Leadership, SPARC, AI Solutions, pricing, LGU software, NGO, Philippines, DRRM, CCA, resilience">
+    <meta property="og:title" content="ASilva Innovations Pricing — 4 Solutions, 1 Platform">
+    <meta property="og:description" content="DDRiVE-M · Strat Planner Pro · Real-Time Leadership · AI Solutions. 14-day free trial. Built for high-risk environments.">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://appimize.app/assets/apps/user_1097/images/5befbf1455c5_87_1097.png">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    animation: {
+                        'fade-in':'fadeIn 0.6s ease-out',
+                        'fade-in-up':'fadeInUp 0.8s ease-out',
+                        'float':'float 6s ease-in-out infinite',
+                        'gradient':'gradient 3s ease infinite',
+                    },
+                    keyframes: {
+                        fadeIn:{'0%':{opacity:'0'},'100%':{opacity:'1'}},
+                        fadeInUp:{'0%':{opacity:'0',transform:'translateY(30px)'},'100%':{opacity:'1',transform:'translateY(0)'}},
+                        float:{'0%,100%':{transform:'translateY(0px)'},'50%':{transform:'translateY(-20px)'}},
+                        gradient:{'0%,100%':{backgroundPosition:'0% 50%'},'50%':{backgroundPosition:'100% 50%'}}
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
-  <style>
-    ::-webkit-scrollbar{width:8px}
-    ::-webkit-scrollbar-track{background:#0f172a}
-    ::-webkit-scrollbar-thumb{background:#3b82f6;border-radius:4px}
-    ::-webkit-scrollbar-thumb:hover{background:#60a5fa}
-    html{scroll-behavior:smooth}
+    </script>
 
-    .gradient-text{
-      background:linear-gradient(90deg,#60a5fa,#22d3ee,#60a5fa);
-      background-size:200% 200%;
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      animation:gradient 3s ease infinite;
-    }
+    <style>
+        ::-webkit-scrollbar{width:8px}
+        ::-webkit-scrollbar-track{background:#0f172a}
+        ::-webkit-scrollbar-thumb{background:#3b82f6;border-radius:4px}
+        ::-webkit-scrollbar-thumb:hover{background:#60a5fa}
+        
+        .gradient-text{
+            background:linear-gradient(90deg,#60a5fa,#22d3ee,#60a5fa);
+            background-size:200% 200%;
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            animation:gradient 3s ease infinite;
+        }
 
-    /* ── Solution cards ── */
-    .solution-card{transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275)}
-    .solution-card:hover{transform:translateY(-8px) scale(1.01);box-shadow:0 25px 50px -12px rgba(59,130,246,0.35)}
-    .esh-card{transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275)}
-    .esh-card:hover{transform:translateY(-8px) scale(1.01);box-shadow:0 25px 50px -12px rgba(220,38,38,0.3)}
+        /* Circular logo wrapper */
+        .logo-ring{border-radius:9999px;padding:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .logo-ring-inner{width:100%;height:100%;background:#fff;border-radius:9999px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:6px}
+        .logo-ring-inner img{width:100%;height:100%;object-fit:contain}
 
-    /* ── Circular logo wrapper ── */
-    .logo-ring{border-radius:9999px;padding:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-    .logo-ring-inner{width:100%;height:100%;background:#fff;border-radius:9999px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:6px}
-    .logo-ring-inner img{width:100%;height:100%;object-fit:contain}
+        /* Mobile menu */
+        #mobile-menu{transition:transform 0.3s ease-out}
+        #mobile-menu.hidden{transform:translateX(100%)}
+        #mobile-menu.visible{transform:translateX(0)}
+        #menu-overlay{transition:opacity 0.3s ease}
+        #menu-overlay.hidden{opacity:0;pointer-events:none}
+        #menu-overlay.visible{opacity:1;pointer-events:auto}
 
-    /* ── Feature items ── */
-    .feature-item{opacity:0;transform:translateX(-20px);transition:all 0.4s ease}
-    .feature-item.visible{opacity:1;transform:translateX(0)}
+        /* Pricing Cards */
+        .plan-card{
+            background:rgba(15,23,42,0.7);
+            border:1px solid rgba(255,255,255,0.08);
+            border-radius:1.25rem;
+            padding:2rem 1.5rem;
+            display:flex;
+            flex-direction:column;
+            transition:border-color 0.3s,transform 0.3s,box-shadow 0.3s;
+            position:relative;
+            overflow:hidden;
+        }
+        .plan-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.35)}
+        .plan-card.popular{border-color:rgba(99,102,241,0.6);box-shadow:0 0 0 1px rgba(99,102,241,0.3)}
+        
+        .popular-badge{
+            position:absolute;top:1rem;right:1rem;
+            padding:0.2rem 0.75rem;
+            border-radius:9999px;
+            font-size:0.7rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;
+        }
 
-    .counter{font-variant-numeric:tabular-nums}
-
-    /* ── Mobile menu ── */
-    #mobile-menu{transition:transform 0.3s ease-out}
-    #mobile-menu.hidden{transform:translateX(100%)}
-    #mobile-menu.visible{transform:translateX(0)}
-    #menu-overlay{transition:opacity 0.3s ease}
-    #menu-overlay.hidden{opacity:0;pointer-events:none}
-    #menu-overlay.visible{opacity:1;pointer-events:auto}
-
-    /* ── ESH card accent ── */
-    .esh-mesh{
-      background-image:radial-gradient(circle at 1px 1px,rgba(239,68,68,0.1) 1px,transparent 0);
-      background-size:28px 28px;
-    }
-    .esh-card-inner{
-      background:linear-gradient(135deg,rgba(127,29,29,0.28) 0%,rgba(15,23,42,0.95) 40%,rgba(30,27,75,0.28) 100%);
-    }
-
-    /* ── AI Suite full-width card ── */
-    .ai-card-inner{
-      background:linear-gradient(135deg,rgba(76,29,149,0.25) 0%,rgba(15,23,42,0.95) 40%,rgba(30,27,75,0.25) 100%);
-    }
-    .ai-mesh{
-      background-image:radial-gradient(circle at 1px 1px,rgba(139,92,246,0.1) 1px,transparent 0);
-      background-size:28px 28px;
-    }
-
-    /* ── Pricing section ── */
-    .pricing-tab-btn.active{
-      background:linear-gradient(90deg,#2563eb,#4f46e5);
-      color:#fff;
-      border-color:transparent;
-    }
-    .pricing-plan-group{display:none}
-    .pricing-plan-group.active{display:grid}
-
-    .plan-card{
-      background:rgba(15,23,42,0.7);
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:1.25rem;
-      padding:2rem 1.5rem;
-      display:flex;
-      flex-direction:column;
-      transition:border-color 0.3s,transform 0.3s,box-shadow 0.3s;
-      position:relative;
-      overflow:hidden;
-    }
-    .plan-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.35)}
-    .plan-card.popular{border-color:rgba(99,102,241,0.6);box-shadow:0 0 0 1px rgba(99,102,241,0.3)}
-    .plan-card.popular-rose{border-color:rgba(244,63,94,0.55);box-shadow:0 0 0 1px rgba(244,63,94,0.25)}
-    .plan-card.popular-amber{border-color:rgba(245,158,11,0.55)}
-    .plan-card.popular-emerald{border-color:rgba(16,185,129,0.55)}
-    .plan-card.popular-violet{border-color:rgba(139,92,246,0.55)}
-
-    .popular-badge{
-      position:absolute;top:1rem;right:1rem;
-      padding:0.2rem 0.75rem;
-      border-radius:9999px;
-      font-size:0.7rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;
-    }
-
-    .plan-price{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
-
-    /* ── Bundle pricing ── */
-    .bundle-card{
-      background:rgba(15,23,42,0.8);
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:1.5rem;
-      overflow:hidden;
-      transition:border-color 0.3s,transform 0.3s,box-shadow 0.3s;
-    }
-    .bundle-card:hover{transform:translateY(-4px);box-shadow:0 20px 48px rgba(0,0,0,0.4)}
-
-    @keyframes pulseBorder{
-      0%,100%{box-shadow:0 0 0 0 rgba(251,191,36,0.45)}
-      50%{box-shadow:0 0 0 8px rgba(251,191,36,0)}
-    }
-    .electra-btn{animation:pulseBorder 2.5s ease-in-out infinite}
-  </style>
+        /* Partner Logos */
+        .partner-logo {
+            filter: grayscale(100%) opacity(0.6);
+            transition: all 0.3s ease;
+        }
+        .partner-logo:hover {
+            filter: grayscale(0%) opacity(1);
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body class="min-h-screen bg-[#020617] text-slate-100 font-sans selection:bg-blue-500/30">
 
@@ -169,11 +132,11 @@
     <!-- Desktop nav -->
     <div class="hidden md:flex items-center gap-8">
       <a href="index.html" class="text-sm font-medium text-slate-300 hover:text-blue-300 transition-all duration-300 py-2 px-1 border-b-2 border-transparent hover:border-blue-400">Home</a>
-      <a href="#solutions" class="text-sm font-medium text-slate-300 hover:text-blue-300 transition-all duration-300 py-2 px-1 border-b-2 border-transparent hover:border-blue-400">Solutions</a>
-      <a href="#pricing" class="text-sm font-medium text-slate-300 hover:text-blue-300 transition-all duration-300 py-2 px-1 border-b-2 border-transparent hover:border-blue-400">Pricing</a>
-      <a href="#impact" class="text-sm font-medium text-slate-300 hover:text-blue-300 transition-all duration-300 py-2 px-1 border-b-2 border-transparent hover:border-blue-400">Impact</a>
+      <a href="index.html#solutions" class="text-sm font-medium text-slate-300 hover:text-blue-300 transition-all duration-300 py-2 px-1 border-b-2 border-transparent hover:border-blue-400">Solutions</a>
+      <a href="index.html#pricing" class="text-sm font-medium text-blue-300 border-b-2 border-blue-400 transition-all duration-300 py-2 px-1">Pricing</a>
+      <a href="index.html#impact" class="text-sm font-medium text-slate-300 hover:text-blue-300 transition-all duration-300 py-2 px-1 border-b-2 border-transparent hover:border-blue-400">Impact</a>
       <a href="index.html#contact" class="text-sm font-medium text-slate-300 hover:text-blue-300 transition-all duration-300 py-2 px-1 border-b-2 border-transparent hover:border-blue-400">Contact</a>
-      <a href="https://blog-leadership-analytics.deploypad.app/" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-slate-300 hover:text-blue-300 transition-colors py-2 px-1 flex items-center gap-1">Blog <span class="text-xs">↗</span></a>
+      <a href="https://blog-leadership-analytics.deploypad.app/" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-slate-300 hover:text-blue-300 transition-colors py-2 px-1 flex items-center gap-1">Blog <span class="text-xs"></span></a>
       <a href="https://asilvainnovations.github.io/ddrive-m/" class="bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 text-white px-6 py-2.5 rounded-full font-bold transition-all duration-300 shadow-lg shadow-blue-500/20 hover:scale-105 active:scale-95 flex items-center gap-2">
         <span>Get Started</span><span class="text-lg">→</span>
       </a>
@@ -204,13 +167,13 @@
     <span class="text-xl font-bold gradient-text">ASilva Innovations</span>
   </div>
   <nav class="flex flex-col space-y-5 text-xl font-bold mt-8">
-    <a href="#solutions" class="py-3 border-b border-white/10 hover:text-blue-400 hover:translate-x-2 transition-all duration-300">Solutions</a>
-    <a href="#pricing" class="py-3 border-b border-white/10 hover:text-blue-400 hover:translate-x-2 transition-all duration-300">Pricing</a>
-    <a href="#impact" class="py-3 border-b border-white/10 hover:text-blue-400 hover:translate-x-2 transition-all duration-300">Impact</a>
+    <a href="index.html#solutions" class="py-3 border-b border-white/10 hover:text-blue-400 hover:translate-x-2 transition-all duration-300">Solutions</a>
+    <a href="index.html#pricing" class="py-3 border-b border-white/10 text-blue-400">Pricing</a>
+    <a href="index.html#impact" class="py-3 border-b border-white/10 hover:text-blue-400 hover:translate-x-2 transition-all duration-300">Impact</a>
     <a href="index.html#contact" class="py-3 border-b border-white/10 hover:text-blue-400 hover:translate-x-2 transition-all duration-300">Contact</a>
     <a href="https://blog-leadership-analytics.deploypad.app/" target="_blank" rel="noopener noreferrer" class="py-3 border-b border-white/10 hover:text-blue-400 hover:translate-x-2 transition-all duration-300 flex items-center justify-between">Blog <span>↗</span></a>
   </nav>
-  <a href="#solutions" class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-4 rounded-xl text-center font-bold mt-8 shadow-lg hover:scale-105 transition-all duration-300">Get Started Today</a>
+  <a href="index.html#solutions" class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-4 rounded-xl text-center font-bold mt-8 shadow-lg hover:scale-105 transition-all duration-300">Get Started Today</a>
   <div class="mt-auto pt-8 border-t border-white/10 text-center text-sm text-slate-500 space-y-1">
     <p>Building resilient communities</p>
     <p>© <span id="current-year"></span> ASilva Innovations</p>
@@ -221,7 +184,7 @@
      HERO
 ═══════════════════════════════════════════════════ -->
 <main id="main-content" class="pt-24">
-  <section class="relative py-20 md:py-32 px-6 overflow-hidden min-h-[70vh] flex items-center">
+  <section class="relative py-20 md:py-32 px-6 overflow-hidden min-h-[60vh] flex items-center">
     <div class="absolute inset-0 z-0">
       <img src="https://appimize.app/assets/apps/user_1097/images/8df0614c4061_739_1097.jpg" alt="Solutions background" class="w-full h-full object-cover" loading="eager" onerror="this.style.display='none'"/>
       <div class="absolute inset-0 bg-gradient-to-br from-[#020617]/95 via-[#020617]/85 to-[#020617]/90"></div>
@@ -234,29 +197,29 @@
     <div class="max-w-7xl mx-auto relative z-10 w-full">
       <div class="max-w-4xl mx-auto text-center space-y-8 animate-fade-in-up">
         <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-blue-500/20 border border-blue-500/40 text-blue-300 text-sm font-bold uppercase tracking-wide hover:scale-105 transition-transform duration-300 backdrop-blur-sm">
-          <div class="text-xl animate-bounce">🚀</div>
-          <span>Enterprise-Grade Solutions for Resilient Organizations</span>
+          <div class="text-xl animate-bounce">💰</div>
+          <span>Transparent, Scalable Pricing</span>
         </div>
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] tracking-tight">
-          <span class="block text-white drop-shadow-lg">Transform Uncertainty Into</span>
-          <span class="block gradient-text py-2 drop-shadow-2xl">Strategic Advantage</span>
+          <span class="block text-white drop-shadow-lg">Invest in</span>
+          <span class="block gradient-text py-2 drop-shadow-2xl">Unbreakable Communities</span>
         </h1>
         <p class="text-lg md:text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
-          Purpose-built platforms that empower institutions, Local Government Units, NGOs, and social enterprises to anticipate risks, optimize resources, and build unbreakable communities.
+          Purpose-built platforms that empower institutions, Local Government Units, NGOs, and social enterprises to anticipate risks and optimize resources.
           <span class="text-blue-300 font-semibold"> Deployable in weeks, not years.</span>
         </p>
         <div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-          <a href="#solutions" class="group bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl shadow-blue-600/40 hover:scale-105 active:scale-95 flex items-center justify-center gap-3">
-            <span>Explore Solutions</span><span class="text-xl group-hover:translate-x-1 transition-transform">→</span>
+          <a href="#pricing" class="group bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl shadow-blue-600/40 hover:scale-105 active:scale-95 flex items-center justify-center gap-3">
+            <span>View Plans</span><span class="text-xl group-hover:translate-x-1 transition-transform">→</span>
           </a>
-          <a href="#pricing" class="bg-slate-900/90 hover:bg-slate-800/90 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 border border-white/20 backdrop-blur-sm hover:border-blue-500/50 text-center hover:scale-105 active:scale-95">View Pricing</a>
+          <a href="#contact" class="bg-slate-900/90 hover:bg-slate-800/90 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 border border-white/20 backdrop-blur-sm hover:border-blue-500/50 text-center hover:scale-105 active:scale-95">Contact Sales</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════════
-       SOLUTIONS GRID
+       SOLUTIONS OVERVIEW (Updated with Banners)
   ═══════════════════════════════════════════════════ -->
   <section id="solutions" class="py-24 px-6 bg-gradient-to-b from-[#020617] to-slate-900">
     <div class="max-w-7xl mx-auto">
@@ -265,11 +228,9 @@
         <div class="h-1.5 w-32 bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 mx-auto rounded-full animate-pulse"></div>
         <p class="text-xl text-slate-300 max-w-3xl mx-auto font-medium leading-relaxed">
           Comprehensive platforms designed for resource-constrained environments with high-impact outcomes.
-          <span class="text-blue-300"> Built for resilience, engineered for scale.</span>
         </p>
       </div>
 
-      <!-- 2×2 grid: DDRiVE-M | Strat Planner / RTL | ESH -->
       <div class="grid lg:grid-cols-2 gap-8 mb-8">
 
         <!-- ① DDRiVE-M -->
@@ -277,24 +238,15 @@
           <div class="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-cyan-700/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <div class="relative z-10">
             <div class="flex items-start justify-between mb-6">
-              <!-- Circular DDRiVE-M logo -->
               <div class="logo-ring w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-600 shadow-lg shadow-blue-500/30">
                 <div class="logo-ring-inner">
-                  <img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/DDRiVE-M%20logo.png"
-                       alt="DDRiVE-M logo" loading="lazy"
-                       onerror="this.parentElement.innerHTML='<i data-lucide=\'shield-check\' style=\'width:1.75rem;height:1.75rem;color:#2563eb\'></i>'"/>
+                  <img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/DDRiVE-M%20logo.png" alt="DDRiVE-M logo" loading="lazy" onerror="this.parentElement.innerHTML='<i data-lucide=\'shield-check\' style=\'width:1.75rem;height:1.75rem;color:#2563eb\'></i>'"/>
                 </div>
               </div>
               <span class="px-3 py-1 bg-blue-500/20 text-blue-300 text-xs font-bold rounded-full uppercase tracking-wide">Flagship Platform</span>
             </div>
             <h3 id="ddrive-heading" class="text-2xl md:text-3xl font-bold mb-4 text-white group-hover:text-blue-300 transition-colors">DDRiVE-M</h3>
-            <p class="text-slate-300 mb-6 leading-relaxed">Flagship Enterprise Risk Management system delivering real-time vulnerability mapping, compliance tracking, and predictive analytics for LGUs and NGOs operating in high-risk environments.</p>
-            <ul class="space-y-3 mb-8">
-              <li class="feature-item flex items-start gap-3 text-sm text-slate-200"><span class="mt-1 text-blue-400">✓</span><span>Multi-Hazard Detection &amp; Multi-Modal Risk Assessment Tools</span></li>
-              <li class="feature-item flex items-start gap-3 text-sm text-slate-200"><span class="mt-1 text-blue-400">✓</span><span>ISO 31000-Compliant Risk Management with AI Services</span></li>
-              <li class="feature-item flex items-start gap-3 text-sm text-slate-200"><span class="mt-1 text-blue-400">✓</span><span>UNDRR Resilience Scorecard Assessment Integration</span></li>
-              <li class="feature-item flex items-start gap-3 text-sm text-slate-200"><span class="mt-1 text-blue-400">✓</span><span>Customizable AI-Plan Generators &amp; Executive Dashboards</span></li>
-            </ul>
+            <p class="text-slate-300 mb-6 leading-relaxed">Flagship Enterprise Risk Management system delivering real-time vulnerability mapping, compliance tracking, and predictive analytics for LGUs and NGOs.</p>
             <div class="relative w-full aspect-[16/9] mb-6 rounded-xl overflow-hidden border border-white/10 bg-slate-800/50 group-hover:scale-105 transition-transform duration-500">
               <img src="https://appimize.app/assets/apps/user_1097/images/4750f689086d_379_1097.png" alt="DDRiVE-M Platform Dashboard" class="w-full h-full object-cover" loading="lazy"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
@@ -302,7 +254,6 @@
             <div class="flex flex-wrap gap-3 mb-6">
               <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Risk Intelligence</span>
               <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Compliance Ready</span>
-              <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Real-Time Analytics</span>
             </div>
             <div class="flex items-center justify-between">
               <a href="https://asilvainnovations.github.io/ddrive-m/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-bold text-blue-300 hover:text-blue-200 transition-all duration-300 group/link">
@@ -318,131 +269,46 @@
           <div class="absolute inset-0 bg-gradient-to-br from-amber-600/5 to-orange-700/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <div class="relative z-10">
             <div class="flex items-start justify-between mb-6">
-              <!-- Circular Strat Planner logo -->
               <div class="logo-ring w-16 h-16 bg-gradient-to-br from-amber-600 to-orange-600 shadow-lg shadow-amber-500/30">
                 <div class="logo-ring-inner">
-                  <img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/Strat%20Planner%20Pro%20logo.png"
-                       alt="Strat Planner Pro logo" loading="lazy"
-                       onerror="this.parentElement.innerHTML='<i data-lucide=\'target\' style=\'width:1.75rem;height:1.75rem;color:#d97706\'></i>'"/>
+                  <img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/Strat%20Planner%20Pro%20logo.png" alt="Strat Planner Pro logo" loading="lazy" onerror="this.parentElement.innerHTML='<i data-lucide=\'target\' style=\'width:1.75rem;height:1.75rem;color:#d97706\'></i>'"/>
                 </div>
               </div>
               <span class="px-3 py-1 bg-amber-500/20 text-amber-300 text-xs font-bold rounded-full uppercase tracking-wide">Strategic Planning</span>
             </div>
             <h3 id="strat-heading" class="text-2xl md:text-3xl font-bold mb-4 text-white group-hover:text-amber-300 transition-colors">Strat Planner Pro</h3>
-            <p class="text-slate-300 mb-6 leading-relaxed">AI-powered strategic planning suite that transforms complex data into actionable roadmaps with automated analysis, scenario modeling, and performance tracking for development organizations.</p>
-            <ul class="space-y-3 mb-8">
-              <li class="feature-item flex items-start gap-3 text-sm text-slate-200"><span class="mt-1 text-amber-400">✓</span><span>Systems-Driven Context Analysis &amp; Stakeholder Mapping</span></li>
-              <li class="feature-item flex items-start gap-3 text-sm text-slate-200"><span class="mt-1 text-amber-400">✓</span><span>AI-Supported Strategic Options Generation &amp; Evaluation</span></li>
-              <li class="feature-item flex items-start gap-3 text-sm text-slate-200"><span class="mt-1 text-amber-400">✓</span><span>Structured Strategy Mapping with Balanced Scorecard</span></li>
-              <li class="feature-item flex items-start gap-3 text-sm text-slate-200"><span class="mt-1 text-amber-400">✓</span><span>Automated Real-Time MEL Dashboard Updates</span></li>
-            </ul>
-            <!-- NEW BANNER for Strat Planner Pro -->
+            <p class="text-slate-300 mb-6 leading-relaxed">AI-powered strategic planning suite that transforms complex data into actionable roadmaps with automated analysis and performance tracking.</p>
             <div class="relative w-full aspect-[16/9] mb-6 rounded-xl overflow-hidden border border-white/10 bg-slate-800/50 group-hover:scale-105 transition-transform duration-500">
-              <img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/Strat%20Planner%20Pro%20Banner.png"
-                   alt="Strat Planner Pro Banner" class="w-full h-full object-cover" loading="lazy"
-                   onerror="this.src='https://appimize.app/assets/apps/user_1097/images/d6780c531792_34_1097.png'"/>
+              <img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/Strat%20Planner%20Pro%20Banner.png" alt="Strat Planner Pro Banner" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://appimize.app/assets/apps/user_1097/images/d6780c531792_34_1097.png'"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
             </div>
             <div class="flex flex-wrap gap-3 mb-6">
               <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Strategic Planning</span>
               <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">AI-Powered</span>
-              <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">MEL Integration</span>
             </div>
             <div class="flex items-center justify-between">
               <a href="https://asilvainnovations.github.io/strat-planner-pwa/public/index.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-bold text-amber-300 hover:text-amber-200 transition-all duration-300 group/link">
-                <span>Explore Strat Planner Pro</span><span class="text-xl group-hover/link:translate-x-1 transition-transform">→</span>
+                <span>Explore</span><span class="text-xl group-hover/link:translate-x-1 transition-transform">→</span>
               </a>
               <a href="#pricing" class="text-xs text-slate-500 hover:text-amber-400 transition-colors underline underline-offset-2">View Pricing</a>
             </div>
           </div>
         </article>
 
-                <!-- ④ Electoral Strategy Hub (4th, in-grid with rose styling) -->
-        <article class="esh-card group relative p-8 rounded-2xl esh-mesh overflow-hidden" aria-labelledby="esh-heading">
-          <div class="absolute inset-0 esh-card-inner rounded-2xl"></div>
-          <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-rose-700 via-red-500 to-rose-700"></div>
-          <div class="relative z-10">
-            <div class="flex items-start justify-between mb-6">
-              <!-- Circular ESH logo -->
-              <div class="logo-ring w-16 h-16 bg-gradient-to-br from-rose-700 to-red-500 shadow-lg shadow-rose-800/40">
-                <div class="logo-ring-inner">
-                  <img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/ESH%20logo.png"
-                       alt="Electoral Strategy Hub logo" loading="lazy"
-                       onerror="this.parentElement.innerHTML='<i data-lucide=\'vote\' style=\'width:1.75rem;height:1.75rem;color:#e11d48\'></i>'"/>
-                </div>
-              </div>
-              <div class="flex flex-col items-end gap-2">
-                <span class="px-3 py-1 bg-rose-500/20 text-rose-300 text-xs font-bold rounded-full uppercase tracking-wide border border-rose-500/30">Electoral Intelligence</span>
-                <span class="px-2 py-0.5 bg-rose-600/30 text-rose-300 text-[10px] font-bold rounded-full uppercase tracking-wider flex items-center gap-1">
-                  <span class="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse"></span>New
-                </span>
-              </div>
-            </div>
-            <h3 id="esh-heading" class="text-2xl md:text-3xl font-bold mb-1 text-white group-hover:text-rose-300 transition-colors">Electoral Strategy Hub</h3>
-            <p class="text-rose-300/70 text-xs font-semibold uppercase tracking-wider mb-4">Evidence-Based Democracy: From Assessment to Action</p>
-            <p class="text-slate-300 mb-6 leading-relaxed">Empower political leaders, civil society organizations, and election managers to plan evidence-based strategies, design capacity-strengthening programs, and craft effective electoral interventions.</p>
-            <ul class="space-y-3 mb-8">
-              <li class="feature-item flex items-start gap-3 text-sm text-slate-200"><span class="mt-1 text-rose-400">✓</span><span><strong class="text-rose-300">Electoral Assessment &amp; Strategy</strong> — Data-driven situational analysis &amp; strategic framing</span></li>
-              <li class="feature-item flex items-start gap-3 text-sm text-slate-200"><span class="mt-1 text-rose-400">✓</span><span><strong class="text-rose-300">Strategic Electoral Planning</strong> — Structured roadmaps with milestones &amp; resource mapping</span></li>
-              <li class="feature-item flex items-start gap-3 text-sm text-slate-200"><span class="mt-1 text-rose-400">✓</span><span><strong class="text-rose-300">Survey &amp; Analytics</strong> — Real-time polling insights &amp; sentiment dashboards</span></li>
-              <li class="feature-item flex items-start gap-3 text-sm text-slate-200"><span class="mt-1 text-rose-400">✓</span><span><strong class="text-rose-300">Policy Studio</strong> — AI-assisted policy drafting aligned with community priorities</span></li>
-            </ul>
-            <!-- NEW ESH Banner2 -->
-            <div class="relative w-full aspect-[16/9] mb-6 rounded-xl overflow-hidden border border-rose-500/20 bg-slate-800/50 group-hover:scale-105 transition-transform duration-500">
-              <img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/ESH%20Banner2.png"
-                   alt="Electoral Strategy Hub Banner" class="w-full h-full object-cover" loading="lazy"
-                   onerror="this.src='https://sjbdpedlfwwszvsnrspi.databasepad.com/storage/v1/object/public/next-tasks/public/ESH%20Banner.png'"/>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-            </div>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-3 py-1 bg-rose-900/30 text-rose-300 text-xs rounded-full border border-rose-500/20">Electoral Intelligence</span>
-              <span class="px-3 py-1 bg-amber-900/20 text-amber-300 text-xs rounded-full border border-amber-500/20">Survey Analytics</span>
-              <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Policy Studio</span>
-              <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">AI-Assisted</span>
-            </div>
-            <!-- Dual CTAs -->
-            <div class="flex flex-col sm:flex-row gap-3 mb-3">
-              <a href="https://electoral-strategy-hub.c36.airoapp.ai" target="_blank" rel="noopener noreferrer"
-                 class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-700 to-red-600 hover:from-rose-600 hover:to-red-500 text-white font-bold text-sm transition-all duration-300 shadow-lg shadow-rose-900/40 hover:scale-105 active:scale-95">
-                <i data-lucide="external-link" class="w-4 h-4"></i>Learn More
-              </a>
-              <a href="https://dl42jxuwyl.preview.c37.airoapp.ai" target="_blank" rel="noopener noreferrer"
-                 class="electra-btn inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-[#1a1005] border border-amber-500/50 hover:border-amber-400 text-amber-300 hover:text-amber-200 font-bold text-sm transition-all duration-300 hover:bg-[#241707] hover:scale-105 active:scale-95">
-                <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-                Access ElecktraMetrics ↗
-              </a>
-            </div>
-            <p class="text-xs text-slate-500 flex items-center gap-1.5">
-              <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse flex-shrink-0"></span>
-              ElecktraMetrics — Advanced voter analytics &amp; live electoral results intelligence
-            </p>
-          </div>
-        </article>
-      </div>
-
         <!-- ③ Real-Time Leadership -->
         <article class="solution-card group relative p-8 rounded-2xl bg-slate-900/50 border border-white/10 hover:border-emerald-500/50 transition-all duration-500 overflow-hidden" aria-labelledby="rtl-heading">
           <div class="absolute inset-0 bg-gradient-to-br from-emerald-600/5 to-teal-700/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <div class="relative z-10">
             <div class="flex items-start justify-between mb-6">
-              <!-- Circular RTL logo -->
               <div class="logo-ring w-16 h-16 bg-gradient-to-br from-emerald-600 to-teal-600 shadow-lg shadow-emerald-500/30">
                 <div class="logo-ring-inner">
-                  <img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/RTL%20logo.png"
-                       alt="Real-Time Leadership logo" loading="lazy"
-                       onerror="this.parentElement.innerHTML='<i data-lucide=\'zap\' style=\'width:1.75rem;height:1.75rem;color:#059669\'></i>'"/>
+                  <img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/RTL%20logo.png" alt="Real-Time Leadership logo" loading="lazy" onerror="this.parentElement.innerHTML='<i data-lucide=\'zap\' style=\'width:1.75rem;height:1.75rem;color:#059669\'></i>'"/>
                 </div>
               </div>
               <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 text-xs font-bold rounded-full uppercase tracking-wide">Leadership Framework</span>
             </div>
             <h3 id="rtl-heading" class="text-2xl md:text-3xl font-bold mb-4 text-white group-hover:text-emerald-300 transition-colors">Real-Time Leadership</h3>
-            <p class="text-slate-300 mb-6 leading-relaxed">Systems-based emergency and risk-reduction leadership framework with practical tools to navigate high-risk scenarios, make rapid decisions, and coordinate cross-agency responses effectively.</p>
-            <ul class="space-y-3 mb-8">
-              <li class="feature-item flex items-start gap-3 text-sm text-slate-200"><span class="mt-1 text-emerald-400">✓</span><span>Tools for Mastery of Presence &amp; Situational Awareness</span></li>
-              <li class="feature-item flex items-start gap-3 text-sm text-slate-200"><span class="mt-1 text-emerald-400">✓</span><span>Options Generation Toolkit for Rapid Decision-Making</span></li>
-              <li class="feature-item flex items-start gap-3 text-sm text-slate-200"><span class="mt-1 text-emerald-400">✓</span><span>Validating Choices Framework for High-Stakes Scenarios</span></li>
-              <li class="feature-item flex items-start gap-3 text-sm text-slate-200"><span class="mt-1 text-emerald-400">✓</span><span>Cross-Agency Collaboration Protocols &amp; Communication Tools</span></li>
-            </ul>
+            <p class="text-slate-300 mb-6 leading-relaxed">Systems-based emergency and risk-reduction leadership framework with practical tools to navigate high-risk scenarios and coordinate responses.</p>
             <div class="relative w-full aspect-[16/9] mb-6 rounded-xl overflow-hidden border border-white/10 bg-slate-800/50 group-hover:scale-105 transition-transform duration-500">
               <img src="https://appimize.app/assets/apps/user_1097/images/d479ce1cc4b2_113_1097.png" alt="Real-Time Leadership Framework" class="w-full h-full object-cover" loading="lazy"/>
               <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
@@ -450,143 +316,54 @@
             <div class="flex flex-wrap gap-3 mb-6">
               <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Crisis Leadership</span>
               <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Decision Support</span>
-              <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Team Coordination</span>
             </div>
             <div class="flex items-center justify-between">
               <a href="https://asilvainnovations.github.io/website/rtl.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-bold text-emerald-300 hover:text-emerald-200 transition-all duration-300 group/link">
-                <span>Discover Real-Time Leadership</span><span class="text-xl group-hover/link:translate-x-1 transition-transform">→</span>
+                <span>Discover</span><span class="text-xl group-hover/link:translate-x-1 transition-transform">→</span>
               </a>
               <a href="#pricing" class="text-xs text-slate-500 hover:text-emerald-400 transition-colors underline underline-offset-2">View Pricing</a>
             </div>
           </div>
         </article>
 
-
-      <!-- ⑤ AI & Automation Suite — full-width featured row -->
-      <article class="relative p-0 rounded-2xl mb-20 overflow-hidden ai-mesh border border-violet-500/20 hover:border-violet-500/45 transition-all duration-500 group" aria-labelledby="ai-heading"
-               style="box-shadow:none;transition:box-shadow 0.4s ease,border-color 0.4s ease"
-               onmouseenter="this.style.boxShadow='0 25px 50px -12px rgba(139,92,246,0.28)'"
-               onmouseleave="this.style.boxShadow='none'">
-        <div class="absolute inset-0 ai-card-inner rounded-2xl"></div>
-        <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-violet-700 via-purple-500 to-violet-700"></div>
-        <div class="relative z-10 grid lg:grid-cols-2 gap-0">
-          <!-- Left: content -->
-          <div class="p-8 md:p-10 flex flex-col justify-center">
-            <div class="flex items-start justify-between mb-6">
-              <!-- Circular AI Suite icon (using lucide brain as no logo provided) -->
-              <div class="logo-ring w-16 h-16 bg-gradient-to-br from-violet-600 to-purple-600 shadow-lg shadow-violet-500/30">
-                <div class="logo-ring-inner">
-                  <svg class="w-8 h-8 text-violet-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1 1 .29 2.709-1.072 2.724a48.108 48.108 0 01-14.26 0c-1.363-.015-2.073-1.724-1.072-2.724L5 14.5"/>
-                  </svg>
+        <!-- ④ AI & Automation Suite — full-width featured row -->
+        <article class="relative p-0 rounded-2xl mb-20 overflow-hidden ai-mesh border border-violet-500/20 hover:border-violet-500/45 transition-all duration-500 group" aria-labelledby="ai-heading" style="box-shadow:none;transition:box-shadow 0.4s ease,border-color 0.4s ease" onmouseenter="this.style.boxShadow='0 25px 50px -12px rgba(139,92,246,0.28)'" onmouseleave="this.style.boxShadow='none'">
+          <div class="absolute inset-0 ai-card-inner rounded-2xl" style="background:linear-gradient(135deg,rgba(76,29,149,0.25) 0%,rgba(15,23,42,0.95) 40%,rgba(30,27,75,0.25) 100%);"></div>
+          <div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-violet-700 via-purple-500 to-violet-700"></div>
+          <div class="relative z-10 grid lg:grid-cols-2 gap-0">
+            <!-- Left: content -->
+            <div class="p-8 md:p-10 flex flex-col justify-center">
+              <div class="flex items-start justify-between mb-6">
+                <div class="logo-ring w-16 h-16 bg-gradient-to-br from-violet-600 to-purple-600 shadow-lg shadow-violet-500/30">
+                  <div class="logo-ring-inner">
+                    <svg class="w-8 h-8 text-violet-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1 1 .29 2.709-1.072 2.724a48.108 48.108 0 01-14.26 0c-1.363-.015-2.073-1.724-1.072-2.724L5 14.5"/></svg>
+                  </div>
                 </div>
+                <span class="px-3 py-1 bg-violet-500/20 text-violet-300 text-xs font-bold rounded-full uppercase tracking-wide border border-violet-500/30">AI Innovation</span>
               </div>
-              <span class="px-3 py-1 bg-violet-500/20 text-violet-300 text-xs font-bold rounded-full uppercase tracking-wide border border-violet-500/30">AI Innovation</span>
+              <h3 id="ai-heading" class="text-2xl md:text-3xl font-bold mb-4 text-white group-hover:text-violet-300 transition-colors">AI &amp; Automation Suite</h3>
+              <p class="text-slate-300 mb-6 leading-relaxed">Specialized AI solutions for public sector challenges including flood prediction, damage assessment, intelligent resource routing, and context-aware assistance.</p>
+              <div class="flex flex-wrap gap-3 mb-6">
+                <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Predictive AI</span>
+                <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Flood Detection</span>
+                <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Smart Routing</span>
+              </div>
+              <div class="flex items-center gap-6">
+                <a href="https://asilvainnovations.github.io/website/ai-solutions.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-bold text-violet-300 hover:text-violet-200 transition-all duration-300 group/link">
+                  <span>Explore AI</span><span class="text-xl group-hover/link:translate-x-1 transition-transform">→</span>
+                </a>
+                <a href="#pricing" class="text-xs text-slate-500 hover:text-violet-400 transition-colors underline underline-offset-2">View Pricing</a>
+              </div>
             </div>
-            <h3 id="ai-heading" class="text-2xl md:text-3xl font-bold mb-4 text-white group-hover:text-violet-300 transition-colors">AI &amp; Automation Suite</h3>
-            <p class="text-slate-300 mb-6 leading-relaxed">Specialized AI solutions for public sector challenges including flood prediction, damage assessment, intelligent resource routing, and context-aware assistance for field operations.</p>
-            <ul class="space-y-3 mb-8">
-              <li class="feature-item flex items-start gap-3 text-sm text-slate-200"><span class="mt-1 text-violet-400">✓</span><span>SPARC: Smart Predictive AI Resilience Calculator</span></li>
-              <li class="feature-item flex items-start gap-3 text-sm text-slate-200"><span class="mt-1 text-violet-400">✓</span><span>Context-Aware AI Chatbots for Field Operations Support</span></li>
-              <li class="feature-item flex items-start gap-3 text-sm text-slate-200"><span class="mt-1 text-violet-400">✓</span><span>Customized DRRM Integration with Disaster Risk Models</span></li>
-              <li class="feature-item flex items-start gap-3 text-sm text-slate-200"><span class="mt-1 text-violet-400">✓</span><span>AI-Powered Online Courses on DRR-CCA &amp; Leadership</span></li>
-            </ul>
-            <div class="flex flex-wrap gap-3 mb-6">
-              <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Predictive AI</span>
-              <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Flood Detection</span>
-              <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Smart Routing</span>
-              <span class="px-3 py-1 bg-slate-800 text-slate-300 text-xs rounded-full">Custom Chatbots</span>
-            </div>
-            <div class="flex items-center gap-6">
-              <a href="https://asilvainnovations.github.io/website/ai-solutions.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 font-bold text-violet-300 hover:text-violet-200 transition-all duration-300 group/link">
-                <span>Explore AI Solutions</span><span class="text-xl group-hover/link:translate-x-1 transition-transform">→</span>
-              </a>
-              <a href="#pricing" class="text-xs text-slate-500 hover:text-violet-400 transition-colors underline underline-offset-2">View Pricing</a>
+            <!-- Right: image panel -->
+            <div class="relative min-h-[280px] overflow-hidden rounded-tr-2xl rounded-br-2xl rounded-bl-none lg:rounded-tl-none">
+              <img src="https://appimize.app/assets/apps/user_1097/images/055b612d128d_302_1097.png" alt="AI Solutions Platform" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
+              <div class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-[#020617]/80 hidden lg:block"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-[#020617]/70 via-transparent to-transparent lg:hidden"></div>
             </div>
           </div>
-          <!-- Right: image panel -->
-          <div class="relative min-h-[280px] overflow-hidden rounded-tr-2xl rounded-br-2xl rounded-bl-none lg:rounded-tl-none">
-            <img src="https://appimize.app/assets/apps/user_1097/images/055b612d128d_302_1097.png" alt="AI Solutions Platform" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy"/>
-            <div class="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-[#020617]/80 hidden lg:block"></div>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#020617]/70 via-transparent to-transparent lg:hidden"></div>
-          </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- Comparison Table -->
-      <div class="bg-slate-900/50 border border-white/10 rounded-2xl p-8 mb-20 animate-fade-in-up">
-        <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 gradient-text">Find the Right Solution for Your Organization</h3>
-        <div class="overflow-x-auto">
-          <table class="w-full text-left min-w-[750px]">
-            <thead>
-              <tr class="border-b border-white/10">
-                <th class="pb-4 pr-4 font-semibold text-slate-300 text-sm">Capability</th>
-                <th class="pb-4 px-3 font-semibold text-blue-300 text-sm">DDRiVE-M</th>
-                <th class="pb-4 px-3 font-semibold text-amber-300 text-sm">Strat Planner</th>
-                <th class="pb-4 px-3 font-semibold text-emerald-300 text-sm">RT Leadership</th>
-                <th class="pb-4 px-3 font-semibold text-rose-300 text-sm">Electoral Hub</th>
-                <th class="pb-4 pl-3 font-semibold text-violet-300 text-sm">AI Suite</th>
-              </tr>
-            </thead>
-            <tbody class="text-sm">
-              <tr class="border-b border-white/5">
-                <td class="py-3 pr-4 text-slate-300 font-medium">Risk Assessment</td>
-                <td class="py-3 px-3"><span class="text-emerald-400 font-bold">✓ Advanced</span></td>
-                <td class="py-3 px-3 text-slate-400">Basic</td>
-                <td class="py-3 px-3 text-slate-400">Situational</td>
-                <td class="py-3 px-3 text-slate-400">Electoral Risk</td>
-                <td class="py-3 pl-3"><span class="text-emerald-400 font-bold">✓ Predictive</span></td>
-              </tr>
-              <tr class="border-b border-white/5">
-                <td class="py-3 pr-4 text-slate-300 font-medium">Strategic Planning</td>
-                <td class="py-3 px-3 text-slate-400">Operational</td>
-                <td class="py-3 px-3"><span class="text-emerald-400 font-bold">✓ Comprehensive</span></td>
-                <td class="py-3 px-3 text-slate-400">Tactical</td>
-                <td class="py-3 px-3"><span class="text-emerald-400 font-bold">✓ Electoral</span></td>
-                <td class="py-3 pl-3 text-slate-400">Data Support</td>
-              </tr>
-              <tr class="border-b border-white/5">
-                <td class="py-3 pr-4 text-slate-300 font-medium">Leadership Tools</td>
-                <td class="py-3 px-3 text-slate-400">Dashboard</td>
-                <td class="py-3 px-3 text-slate-400">Framework</td>
-                <td class="py-3 px-3"><span class="text-emerald-400 font-bold">✓ Full Suite</span></td>
-                <td class="py-3 px-3 text-slate-400">Policy Studio</td>
-                <td class="py-3 pl-3 text-slate-400">AI Assistant</td>
-              </tr>
-              <tr class="border-b border-white/5">
-                <td class="py-3 pr-4 text-slate-300 font-medium">AI/ML Capabilities</td>
-                <td class="py-3 px-3"><span class="text-emerald-400 font-bold">✓ Integrated</span></td>
-                <td class="py-3 px-3"><span class="text-emerald-400 font-bold">✓ Scenario AI</span></td>
-                <td class="py-3 px-3 text-slate-400">Decision Support</td>
-                <td class="py-3 px-3"><span class="text-emerald-400 font-bold">✓ Survey AI</span></td>
-                <td class="py-3 pl-3"><span class="text-emerald-400 font-bold">✓ Core Focus</span></td>
-              </tr>
-              <tr class="border-b border-white/5">
-                <td class="py-3 pr-4 text-slate-300 font-medium">Analytics Dashboard</td>
-                <td class="py-3 px-3"><span class="text-emerald-400 font-bold">✓ Real-Time</span></td>
-                <td class="py-3 px-3"><span class="text-emerald-400 font-bold">✓ MEL Tracking</span></td>
-                <td class="py-3 px-3 text-slate-400">Situational</td>
-                <td class="py-3 px-3"><span class="text-emerald-400 font-bold">✓ ElecktraMetrics</span></td>
-                <td class="py-3 pl-3"><span class="text-emerald-400 font-bold">✓ Predictive</span></td>
-              </tr>
-              <tr>
-                <td class="py-3 pr-4 text-slate-300 font-medium">Best For</td>
-                <td class="py-3 px-3 text-blue-300">LGUs, NGOs</td>
-                <td class="py-3 px-3 text-amber-300">Planners, Directors</td>
-                <td class="py-3 px-3 text-emerald-300">Responders, Leaders</td>
-                <td class="py-3 px-3 text-rose-300">Political Leaders, CSOs</td>
-                <td class="py-3 pl-3 text-violet-300">Tech Teams</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="mt-8 text-center">
-          <p class="text-slate-400 mb-4">Need help choosing? Our solutions are designed to integrate seamlessly.</p>
-          <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-blue-500/40">
-            <span>Get a Custom Recommendation</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </a>
-        </div>
       </div>
     </div>
   </section>
@@ -610,540 +387,145 @@
         </p>
       </div>
 
-      <!-- Pricing Tabs -->
-      <div class="flex flex-wrap justify-center gap-2 mb-12" role="tablist" aria-label="Solution pricing tabs">
-        <button class="pricing-tab-btn active px-5 py-2.5 rounded-full text-sm font-bold border border-white/15 text-slate-300 transition-all duration-200 hover:border-blue-500/40" data-tab="ddrive" role="tab" aria-selected="true">DDRiVE-M</button>
-        <button class="pricing-tab-btn px-5 py-2.5 rounded-full text-sm font-bold border border-white/15 text-slate-300 transition-all duration-200 hover:border-blue-500/40" data-tab="strat" role="tab" aria-selected="false">Strat Planner Pro</button>
-        <button class="pricing-tab-btn px-5 py-2.5 rounded-full text-sm font-bold border border-white/15 text-slate-300 transition-all duration-200 hover:border-blue-500/40" data-tab="rtl" role="tab" aria-selected="false">Real-Time Leadership</button>
-        <button class="pricing-tab-btn px-5 py-2.5 rounded-full text-sm font-bold border border-white/15 text-slate-300 transition-all duration-200 hover:border-blue-500/40" data-tab="esh" role="tab" aria-selected="false">Electoral Hub</button>
-        <button class="pricing-tab-btn px-5 py-2.5 rounded-full text-sm font-bold border border-white/15 text-slate-300 transition-all duration-200 hover:border-blue-500/40" data-tab="ai" role="tab" aria-selected="false">AI Suite</button>
-      </div>
-
-      <!-- ── DDRiVE-M Plans ── -->
-      <div class="pricing-plan-group active grid md:grid-cols-3 gap-6 mb-6" id="tab-ddrive" role="tabpanel">
-        <!-- Basic -->
-        <div class="plan-card">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="logo-ring w-10 h-10 bg-gradient-to-br from-blue-600 to-cyan-600">
-              <div class="logo-ring-inner !p-1"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/DDRiVE-M%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div>
-            </div>
-            <div><p class="text-xs text-blue-400 font-bold uppercase tracking-wider">DDRiVE-M</p><p class="text-lg font-bold text-white">Basic</p></div>
-          </div>
-          <div class="mb-6">
-            <p class="plan-price text-4xl font-extrabold text-white">₱12,000<span class="text-slate-400 text-base font-normal">/mo</span></p>
-            <p class="text-slate-400 text-sm mt-1">~USD 210/mo · Billed monthly</p>
-          </div>
-          <p class="text-slate-400 text-sm mb-6 leading-relaxed">Essential risk management for small municipalities and pilot programs.</p>
-          <ul class="space-y-2.5 mb-8 flex-grow">
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Up to 5 users</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> 1 municipality / LGU scope</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Multi-hazard risk mapping</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Basic compliance reports</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Email &amp; chat support</li>
-            <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-slate-600 mt-0.5">✗</span> AI Plan Generator</li>
-            <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-slate-600 mt-0.5">✗</span> UNDRR Scorecard Integration</li>
-          </ul>
-          <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="block text-center py-3 rounded-xl border border-blue-500/50 text-blue-300 font-bold text-sm hover:bg-blue-600/20 transition-all duration-200 mt-auto">Get Started</a>
-        </div>
-        <!-- Professional (Popular) -->
-        <div class="plan-card popular relative">
-          <div class="popular-badge bg-gradient-to-r from-blue-600 to-indigo-600 text-white">Most Popular</div>
-          <div class="absolute inset-0 bg-gradient-to-br from-blue-600/8 to-indigo-600/8 rounded-2xl pointer-events-none"></div>
-          <div class="flex items-center gap-3 mb-4">
-            <div class="logo-ring w-10 h-10 bg-gradient-to-br from-blue-600 to-cyan-600">
-              <div class="logo-ring-inner !p-1"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/DDRiVE-M%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div>
-            </div>
-            <div><p class="text-xs text-blue-400 font-bold uppercase tracking-wider">DDRiVE-M</p><p class="text-lg font-bold text-white">Professional</p></div>
-          </div>
-          <div class="mb-6">
-            <p class="plan-price text-4xl font-extrabold text-white">₱29,800<span class="text-slate-400 text-base font-normal">/mo</span></p>
-            <p class="text-slate-400 text-sm mt-1">~USD 520/mo · Billed monthly</p>
-          </div>
-          <p class="text-slate-400 text-sm mb-6 leading-relaxed">Full-featured platform for cities, provinces, and mid-sized NGOs.</p>
-          <ul class="space-y-2.5 mb-8 flex-grow">
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Up to 30 users</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Provincial / multi-LGU scope</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Full AI risk engine (SPARC)</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> ISO 31000 &amp; UNDRR compliance</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> AI Plan Generator</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Executive dashboards</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Priority support (8h SLA)</li>
-          </ul>
-          <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="block text-center py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 text-white font-bold text-sm transition-all duration-200 mt-auto shadow-lg shadow-blue-600/30">Get Started</a>
-        </div>
-        <!-- Enterprise -->
-        <div class="plan-card">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="logo-ring w-10 h-10 bg-gradient-to-br from-blue-600 to-cyan-600">
-              <div class="logo-ring-inner !p-1"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/DDRiVE-M%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div>
-            </div>
-            <div><p class="text-xs text-blue-400 font-bold uppercase tracking-wider">DDRiVE-M</p><p class="text-lg font-bold text-white">Enterprise</p></div>
-          </div>
-          <div class="mb-6">
-            <p class="plan-price text-4xl font-extrabold text-white">Custom</p>
-            <p class="text-slate-400 text-sm mt-1">Tailored to your organization's scale</p>
-          </div>
-          <p class="text-slate-400 text-sm mb-6 leading-relaxed">Unlimited scale for regional and national-level deployments.</p>
-          <ul class="space-y-2.5 mb-8 flex-grow">
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Unlimited users</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Multi-region / national scope</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Dedicated Customer Success Manager</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> On-premise deployment option</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> White-label &amp; API access</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Custom SLA &amp; 24/7 support</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Procurement-ready (COA compliant)</li>
-          </ul>
-          <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="block text-center py-3 rounded-xl border border-white/20 text-slate-300 font-bold text-sm hover:bg-white/8 transition-all duration-200 mt-auto">Contact Sales</a>
+      <!-- Billing Toggle -->
+      <div class="flex justify-center mb-12">
+        <div class="inline-flex items-center bg-white/5 rounded-full p-1.5 shadow-md border border-white/10">
+            <span class="px-4 py-2 text-sm font-semibold text-white" id="monthly-label">Monthly</span>
+            <button class="toggle-switch relative w-12 h-7 bg-slate-700 rounded-full p-1 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" 
+                    id="billing-toggle" 
+                    role="switch" 
+                    aria-checked="false" 
+                    aria-labelledby="annual-label">
+                <span class="toggle-slider block w-5 h-5 bg-white rounded-full shadow-sm"></span>
+            </button>
+            <span class="px-4 py-2 text-sm font-semibold text-slate-400" id="annual-label">Annual</span>
+            <span class="ml-3 px-3 py-1 bg-green-900/50 text-green-400 text-xs font-bold rounded-full border border-green-500/30">Save 20%</span>
         </div>
       </div>
 
-      <!-- ── Strat Planner Pro Plans ── -->
-      <div class="pricing-plan-group grid md:grid-cols-3 gap-6 mb-6" id="tab-strat" role="tabpanel">
-        <div class="plan-card">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="logo-ring w-10 h-10 bg-gradient-to-br from-amber-600 to-orange-600">
-              <div class="logo-ring-inner !p-1"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/Strat%20Planner%20Pro%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div>
-            </div>
-            <div><p class="text-xs text-amber-400 font-bold uppercase tracking-wider">Strat Planner</p><p class="text-lg font-bold text-white">Starter</p></div>
-          </div>
-          <div class="mb-6">
-            <p class="plan-price text-4xl font-extrabold text-white">₱6,500<span class="text-slate-400 text-base font-normal">/mo</span></p>
-            <p class="text-slate-400 text-sm mt-1">~USD 115/mo</p>
-          </div>
-          <p class="text-slate-400 text-sm mb-6 leading-relaxed">Core planning tools for small teams and pilot projects.</p>
-          <ul class="space-y-2.5 mb-8 flex-grow">
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-amber-400 mt-0.5">✓</span> Up to 3 users</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-amber-400 mt-0.5">✓</span> Context analysis module</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-amber-400 mt-0.5">✓</span> Basic strategy mapping</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-amber-400 mt-0.5">✓</span> Standard reports</li>
-            <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-slate-600 mt-0.5">✗</span> AI scenario modeling</li>
-            <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-slate-600 mt-0.5">✗</span> MEL Dashboard</li>
-          </ul>
-          <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="block text-center py-3 rounded-xl border border-amber-500/40 text-amber-300 font-bold text-sm hover:bg-amber-600/15 transition-all duration-200 mt-auto">Get Started</a>
-        </div>
-        <div class="plan-card popular-amber relative">
-          <div class="popular-badge bg-gradient-to-r from-amber-600 to-orange-600 text-white">Most Popular</div>
-          <div class="absolute inset-0 bg-gradient-to-br from-amber-600/6 to-orange-600/6 rounded-2xl pointer-events-none"></div>
-          <div class="flex items-center gap-3 mb-4">
-            <div class="logo-ring w-10 h-10 bg-gradient-to-br from-amber-600 to-orange-600">
-              <div class="logo-ring-inner !p-1"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/Strat%20Planner%20Pro%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div>
-            </div>
-            <div><p class="text-xs text-amber-400 font-bold uppercase tracking-wider">Strat Planner</p><p class="text-lg font-bold text-white">Growth</p></div>
-          </div>
-          <div class="mb-6">
-            <p class="plan-price text-4xl font-extrabold text-white">₱17,500<span class="text-slate-400 text-base font-normal">/mo</span></p>
-            <p class="text-slate-400 text-sm mt-1">~USD 305/mo</p>
-          </div>
-          <p class="text-slate-400 text-sm mb-6 leading-relaxed">Full strategic planning suite for departments and mid-sized organizations.</p>
-          <ul class="space-y-2.5 mb-8 flex-grow">
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-amber-400 mt-0.5">✓</span> Up to 20 users</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-amber-400 mt-0.5">✓</span> AI scenario modeling</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-amber-400 mt-0.5">✓</span> Balanced Scorecard module</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-amber-400 mt-0.5">✓</span> Live MEL Dashboard</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-amber-400 mt-0.5">✓</span> Stakeholder mapping</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-amber-400 mt-0.5">✓</span> Priority support</li>
-          </ul>
-          <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="block text-center py-3 rounded-xl bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white font-bold text-sm transition-all duration-200 mt-auto shadow-lg shadow-amber-700/30">Get Started</a>
-        </div>
-        <div class="plan-card">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="logo-ring w-10 h-10 bg-gradient-to-br from-amber-600 to-orange-600">
-              <div class="logo-ring-inner !p-1"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/Strat%20Planner%20Pro%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div>
-            </div>
-            <div><p class="text-xs text-amber-400 font-bold uppercase tracking-wider">Strat Planner</p><p class="text-lg font-bold text-white">Organization</p></div>
-          </div>
-          <div class="mb-6">
-            <p class="plan-price text-4xl font-extrabold text-white">₱38,000<span class="text-slate-400 text-base font-normal">/mo</span></p>
-            <p class="text-slate-400 text-sm mt-1">~USD 665/mo</p>
-          </div>
-          <p class="text-slate-400 text-sm mb-6 leading-relaxed">Unlimited scale with custom integrations for large institutions.</p>
-          <ul class="space-y-2.5 mb-8 flex-grow">
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-amber-400 mt-0.5">✓</span> Unlimited users</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-amber-400 mt-0.5">✓</span> Custom data integrations (API)</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-amber-400 mt-0.5">✓</span> Multi-department workspaces</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-amber-400 mt-0.5">✓</span> Custom report templates</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-amber-400 mt-0.5">✓</span> Dedicated onboarding coach</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-amber-400 mt-0.5">✓</span> 24/7 support</li>
-          </ul>
-          <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="block text-center py-3 rounded-xl border border-white/20 text-slate-300 font-bold text-sm hover:bg-white/8 transition-all duration-200 mt-auto">Contact Sales</a>
-        </div>
-      </div>
-
-      <!-- ── RTL Plans ── -->
-      <div class="pricing-plan-group grid md:grid-cols-3 gap-6 mb-6" id="tab-rtl" role="tabpanel">
-        <div class="plan-card">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="logo-ring w-10 h-10 bg-gradient-to-br from-emerald-600 to-teal-600">
-              <div class="logo-ring-inner !p-1"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/RTL%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div>
-            </div>
-            <div><p class="text-xs text-emerald-400 font-bold uppercase tracking-wider">Real-Time Leadership</p><p class="text-lg font-bold text-white">Individual</p></div>
-          </div>
-          <div class="mb-6">
-            <p class="plan-price text-4xl font-extrabold text-white">₱3,500<span class="text-slate-400 text-base font-normal">/mo</span></p>
-            <p class="text-slate-400 text-sm mt-1">~USD 61/mo</p>
-          </div>
-          <p class="text-slate-400 text-sm mb-6 leading-relaxed">Core leadership tools for a single executive or team lead.</p>
-          <ul class="space-y-2.5 mb-8 flex-grow">
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-emerald-400 mt-0.5">✓</span> 1 user</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-emerald-400 mt-0.5">✓</span> Mastery of Presence toolkit</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-emerald-400 mt-0.5">✓</span> Options Generation framework</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-emerald-400 mt-0.5">✓</span> Digital learning modules</li>
-            <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-slate-600 mt-0.5">✗</span> Team coordination tools</li>
-            <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-slate-600 mt-0.5">✗</span> Cross-agency protocols</li>
-          </ul>
-          <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="block text-center py-3 rounded-xl border border-emerald-500/40 text-emerald-300 font-bold text-sm hover:bg-emerald-600/15 transition-all duration-200 mt-auto">Get Started</a>
-        </div>
-        <div class="plan-card popular-emerald relative">
-          <div class="popular-badge bg-gradient-to-r from-emerald-600 to-teal-600 text-white">Most Popular</div>
-          <div class="absolute inset-0 bg-gradient-to-br from-emerald-600/6 to-teal-600/6 rounded-2xl pointer-events-none"></div>
-          <div class="flex items-center gap-3 mb-4">
-            <div class="logo-ring w-10 h-10 bg-gradient-to-br from-emerald-600 to-teal-600">
-              <div class="logo-ring-inner !p-1"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/RTL%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div>
-            </div>
-            <div><p class="text-xs text-emerald-400 font-bold uppercase tracking-wider">Real-Time Leadership</p><p class="text-lg font-bold text-white">Team</p></div>
-          </div>
-          <div class="mb-6">
-            <p class="plan-price text-4xl font-extrabold text-white">₱10,000<span class="text-slate-400 text-base font-normal">/mo</span></p>
-            <p class="text-slate-400 text-sm mt-1">~USD 175/mo</p>
-          </div>
-          <p class="text-slate-400 text-sm mb-6 leading-relaxed">Full framework for emergency teams and operations centers.</p>
-          <ul class="space-y-2.5 mb-8 flex-grow">
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-emerald-400 mt-0.5">✓</span> Up to 15 users</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-emerald-400 mt-0.5">✓</span> Full RTL framework</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-emerald-400 mt-0.5">✓</span> Cross-agency collaboration tools</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-emerald-400 mt-0.5">✓</span> Rapid decision protocols</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-emerald-400 mt-0.5">✓</span> Training simulations</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-emerald-400 mt-0.5">✓</span> Priority support</li>
-          </ul>
-          <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="block text-center py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm transition-all duration-200 mt-auto shadow-lg shadow-emerald-700/30">Get Started</a>
-        </div>
-        <div class="plan-card">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="logo-ring w-10 h-10 bg-gradient-to-br from-emerald-600 to-teal-600">
-              <div class="logo-ring-inner !p-1"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/RTL%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div>
-            </div>
-            <div><p class="text-xs text-emerald-400 font-bold uppercase tracking-wider">Real-Time Leadership</p><p class="text-lg font-bold text-white">Institution</p></div>
-          </div>
-          <div class="mb-6">
-            <p class="plan-price text-4xl font-extrabold text-white">₱24,000<span class="text-slate-400 text-base font-normal">/mo</span></p>
-            <p class="text-slate-400 text-sm mt-1">~USD 420/mo</p>
-          </div>
-          <p class="text-slate-400 text-sm mb-6 leading-relaxed">Institution-wide deployment with custom workshops and LMS integration.</p>
-          <ul class="space-y-2.5 mb-8 flex-grow">
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-emerald-400 mt-0.5">✓</span> Unlimited users</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-emerald-400 mt-0.5">✓</span> LMS integration</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-emerald-400 mt-0.5">✓</span> Custom in-person workshops</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-emerald-400 mt-0.5">✓</span> Certification programs</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-emerald-400 mt-0.5">✓</span> Dedicated facilitator support</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-emerald-400 mt-0.5">✓</span> 24/7 support</li>
-          </ul>
-          <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="block text-center py-3 rounded-xl border border-white/20 text-slate-300 font-bold text-sm hover:bg-white/8 transition-all duration-200 mt-auto">Contact Sales</a>
-        </div>
-      </div>
-
-      <!-- ── Electoral Strategy Hub Plans ── -->
-      <div class="pricing-plan-group grid md:grid-cols-3 gap-6 mb-6" id="tab-esh" role="tabpanel">
-        <div class="plan-card">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="logo-ring w-10 h-10 bg-gradient-to-br from-rose-700 to-red-500">
-              <div class="logo-ring-inner !p-1"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/ESH%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div>
-            </div>
-            <div><p class="text-xs text-rose-400 font-bold uppercase tracking-wider">Electoral Hub</p><p class="text-lg font-bold text-white">Campaign</p></div>
-          </div>
-          <div class="mb-6">
-            <p class="plan-price text-4xl font-extrabold text-white">₱22,000<span class="text-slate-400 text-base font-normal">/mo</span></p>
-            <p class="text-slate-400 text-sm mt-1">~USD 385/mo</p>
-          </div>
-          <p class="text-slate-400 text-sm mb-6 leading-relaxed">Essential tools for a single campaign or district-level organization.</p>
-          <ul class="space-y-2.5 mb-8 flex-grow">
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-rose-400 mt-0.5">✓</span> Up to 5 users</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-rose-400 mt-0.5">✓</span> Electoral assessment tools</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-rose-400 mt-0.5">✓</span> Basic strategic planning</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-rose-400 mt-0.5">✓</span> Survey builder (500 responses/mo)</li>
-            <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-slate-600 mt-0.5">✗</span> ElecktraMetrics dashboard</li>
-            <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-slate-600 mt-0.5">✗</span> Multi-district analytics</li>
-          </ul>
-          <a href="https://electoral-strategy-hub.c36.airoapp.ai" target="_blank" rel="noopener noreferrer" class="block text-center py-3 rounded-xl border border-rose-500/40 text-rose-300 font-bold text-sm hover:bg-rose-600/15 transition-all duration-200 mt-auto">Start Campaign</a>
-        </div>
-        <div class="plan-card popular-rose relative">
-          <div class="popular-badge bg-gradient-to-r from-rose-700 to-red-600 text-white">Most Popular</div>
-          <div class="absolute inset-0 bg-gradient-to-br from-rose-700/6 to-red-600/6 rounded-2xl pointer-events-none"></div>
-          <div class="flex items-center gap-3 mb-4">
-            <div class="logo-ring w-10 h-10 bg-gradient-to-br from-rose-700 to-red-500">
-              <div class="logo-ring-inner !p-1"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/ESH%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div>
-            </div>
-            <div><p class="text-xs text-rose-400 font-bold uppercase tracking-wider">Electoral Hub</p><p class="text-lg font-bold text-white">Pro Campaign</p></div>
-          </div>
-          <div class="mb-6">
-            <p class="plan-price text-4xl font-extrabold text-white">₱49,500<span class="text-slate-400 text-base font-normal">/mo</span></p>
-            <p class="text-slate-400 text-sm mt-1">~USD 865/mo</p>
-          </div>
-          <p class="text-slate-400 text-sm mb-6 leading-relaxed">Full platform with ElecktraMetrics for multi-district campaigns.</p>
-          <ul class="space-y-2.5 mb-8 flex-grow">
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-rose-400 mt-0.5">✓</span> Up to 25 users</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-rose-400 mt-0.5">✓</span> Multi-district coverage</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-rose-400 mt-0.5">✓</span> Full Policy Studio</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-rose-400 mt-0.5">✓</span> <strong class="text-amber-300">ElecktraMetrics Standard</strong></li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-rose-400 mt-0.5">✓</span> Unlimited survey responses</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-rose-400 mt-0.5">✓</span> Live results dashboard</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-rose-400 mt-0.5">✓</span> Priority support (8h SLA)</li>
-          </ul>
-          <a href="https://electoral-strategy-hub.c36.airoapp.ai" target="_blank" rel="noopener noreferrer" class="block text-center py-3 rounded-xl bg-gradient-to-r from-rose-700 to-red-600 hover:from-rose-600 hover:to-red-500 text-white font-bold text-sm transition-all duration-200 mt-auto shadow-lg shadow-rose-800/30">Start Campaign</a>
-        </div>
-        <div class="plan-card">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="logo-ring w-10 h-10 bg-gradient-to-br from-rose-700 to-red-500">
-              <div class="logo-ring-inner !p-1"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/ESH%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div>
-            </div>
-            <div><p class="text-xs text-rose-400 font-bold uppercase tracking-wider">Electoral Hub</p><p class="text-lg font-bold text-white">Coalition</p></div>
-          </div>
-          <div class="mb-6">
-            <p class="plan-price text-4xl font-extrabold text-white">₱98,000<span class="text-slate-400 text-base font-normal">/mo</span></p>
-            <p class="text-slate-400 text-sm mt-1">~USD 1,715/mo</p>
-          </div>
-          <p class="text-slate-400 text-sm mb-6 leading-relaxed">Enterprise-grade for regional coalitions and political organizations.</p>
-          <ul class="space-y-2.5 mb-8 flex-grow">
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-rose-400 mt-0.5">✓</span> Unlimited users</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-rose-400 mt-0.5">✓</span> Unlimited districts</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-rose-400 mt-0.5">✓</span> <strong class="text-amber-300">ElecktraMetrics Pro</strong> (full API)</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-rose-400 mt-0.5">✓</span> Dedicated data analyst</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-rose-400 mt-0.5">✓</span> Custom AI models</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-rose-400 mt-0.5">✓</span> 24/7 war-room support</li>
-          </ul>
-          <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="block text-center py-3 rounded-xl border border-white/20 text-slate-300 font-bold text-sm hover:bg-white/8 transition-all duration-200 mt-auto">Contact Sales</a>
-        </div>
-      </div>
-
-      <!-- ── AI Suite Plans ── -->
-      <div class="pricing-plan-group grid md:grid-cols-3 gap-6 mb-6" id="tab-ai" role="tabpanel">
-        <div class="plan-card">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="logo-ring w-10 h-10 bg-gradient-to-br from-violet-600 to-purple-600">
-              <div class="logo-ring-inner !p-1">
-                <svg class="w-5 h-5 text-violet-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1 1 .29 2.709-1.072 2.724a48.108 48.108 0 01-14.26 0c-1.363-.015-2.073-1.724-1.072-2.724L5 14.5"/></svg>
+      <!-- Pricing Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 items-start mb-20">
+          
+          <!-- Free Trial -->
+          <div class="plan-card border-dashed border-2 border-blue-500/30 bg-blue-900/10">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="logo-ring w-10 h-10 bg-gradient-to-br from-blue-600 to-cyan-600">
+                <div class="logo-ring-inner !p-1"><span class="text-blue-600 font-bold text-lg">🎁</span></div>
               </div>
+              <div><p class="text-xs text-blue-400 font-bold uppercase tracking-wider">Trial</p><p class="text-lg font-bold text-white">Free</p></div>
             </div>
-            <div><p class="text-xs text-violet-400 font-bold uppercase tracking-wider">AI Suite</p><p class="text-lg font-bold text-white">Starter</p></div>
+            <div class="mb-6">
+              <p class="plan-price text-4xl font-extrabold text-white">0<span class="text-slate-400 text-base font-normal">/14d</span></p>
+              <p class="text-slate-400 text-sm mt-1">No credit card required</p>
+            </div>
+            <p class="text-slate-400 text-sm mb-6 leading-relaxed">Full Professional access to explore before you commit.</p>
+            <ul class="space-y-2.5 mb-8 flex-grow">
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Up to 20 users</li>
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> DDRiVE-M (5 Modules)</li>
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Strat Planner Pro</li>
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> SPARC AI Basic</li>
+              <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-slate-600 mt-0.5">✗</span> RTL Center</li>
+            </ul>
+            <a href="#contact" class="block text-center py-3 rounded-xl border border-blue-500/50 text-blue-300 font-bold text-sm hover:bg-blue-600/20 transition-all duration-200 mt-auto">Start Trial</a>
           </div>
-          <div class="mb-6">
-            <p class="plan-price text-4xl font-extrabold text-white">₱10,000<span class="text-slate-400 text-base font-normal">/mo</span></p>
-            <p class="text-slate-400 text-sm mt-1">~USD 175/mo</p>
-          </div>
-          <p class="text-slate-400 text-sm mb-6 leading-relaxed">Entry-level AI tools to augment existing operations.</p>
-          <ul class="space-y-2.5 mb-8 flex-grow">
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-violet-400 mt-0.5">✓</span> SPARC Basic access</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-violet-400 mt-0.5">✓</span> 1 AI module of choice</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-violet-400 mt-0.5">✓</span> Pre-built AI chatbot</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-violet-400 mt-0.5">✓</span> 500 AI queries/month</li>
-            <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-slate-600 mt-0.5">✗</span> Flood prediction models</li>
-            <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-slate-600 mt-0.5">✗</span> Custom model training</li>
-          </ul>
-          <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="block text-center py-3 rounded-xl border border-violet-500/40 text-violet-300 font-bold text-sm hover:bg-violet-600/15 transition-all duration-200 mt-auto">Get Started</a>
-        </div>
-        <div class="plan-card popular-violet relative">
-          <div class="popular-badge bg-gradient-to-r from-violet-600 to-purple-600 text-white">Most Popular</div>
-          <div class="absolute inset-0 bg-gradient-to-br from-violet-600/6 to-purple-600/6 rounded-2xl pointer-events-none"></div>
-          <div class="flex items-center gap-3 mb-4">
-            <div class="logo-ring w-10 h-10 bg-gradient-to-br from-violet-600 to-purple-600">
-              <div class="logo-ring-inner !p-1">
-                <svg class="w-5 h-5 text-violet-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1 1 .29 2.709-1.072 2.724a48.108 48.108 0 01-14.26 0c-1.363-.015-2.073-1.724-1.072-2.724L5 14.5"/></svg>
+
+          <!-- Starter -->
+          <div class="plan-card">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="logo-ring w-10 h-10 bg-gradient-to-br from-blue-600 to-cyan-600">
+                <div class="logo-ring-inner !p-1"><span class="text-blue-600 font-bold text-lg">🌱</span></div>
               </div>
+              <div><p class="text-xs text-blue-400 font-bold uppercase tracking-wider">Starter</p><p class="text-lg font-bold text-white">Basic</p></div>
             </div>
-            <div><p class="text-xs text-violet-400 font-bold uppercase tracking-wider">AI Suite</p><p class="text-lg font-bold text-white">Professional</p></div>
+            <div class="mb-6">
+              <p class="plan-price text-4xl font-extrabold text-white">₱<span class="monthly-price">15k</span><span class="annual-price hidden">12k</span><span class="text-slate-400 text-base font-normal">/mo</span></p>
+              <p class="text-slate-400 text-sm mt-1">~USD 260/mo</p>
+            </div>
+            <p class="text-slate-400 text-sm mb-6 leading-relaxed">Essential risk management for small municipalities.</p>
+            <ul class="space-y-2.5 mb-8 flex-grow">
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Up to 5 users</li>
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> DDRiVE-M Lite</li>
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> SPARC Basic</li>
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> GIS Mapping (View)</li>
+              <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-slate-600 mt-0.5">✗</span> Strat Planner Pro</li>
+            </ul>
+            <a href="#contact" class="block text-center py-3 rounded-xl border border-white/20 text-slate-300 font-bold text-sm hover:bg-white/8 transition-all duration-200 mt-auto">Get Started</a>
           </div>
-          <div class="mb-6">
-            <p class="plan-price text-4xl font-extrabold text-white">₱26,500<span class="text-slate-400 text-base font-normal">/mo</span></p>
-            <p class="text-slate-400 text-sm mt-1">~USD 465/mo</p>
-          </div>
-          <p class="text-slate-400 text-sm mb-6 leading-relaxed">Full AI platform for organizations with active field operations.</p>
-          <ul class="space-y-2.5 mb-8 flex-grow">
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-violet-400 mt-0.5">✓</span> SPARC Pro (all hazards)</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-violet-400 mt-0.5">✓</span> All AI modules</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-violet-400 mt-0.5">✓</span> Custom AI chatbots (3 bots)</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-violet-400 mt-0.5">✓</span> Flood &amp; damage prediction</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-violet-400 mt-0.5">✓</span> Unlimited AI queries</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-violet-400 mt-0.5">✓</span> DRR-CCA online courses</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-violet-400 mt-0.5">✓</span> Priority support</li>
-          </ul>
-          <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="block text-center py-3 rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white font-bold text-sm transition-all duration-200 mt-auto shadow-lg shadow-violet-700/30">Get Started</a>
-        </div>
-        <div class="plan-card">
-          <div class="flex items-center gap-3 mb-4">
-            <div class="logo-ring w-10 h-10 bg-gradient-to-br from-violet-600 to-purple-600">
-              <div class="logo-ring-inner !p-1">
-                <svg class="w-5 h-5 text-violet-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1 1 .29 2.709-1.072 2.724a48.108 48.108 0 01-14.26 0c-1.363-.015-2.073-1.724-1.072-2.724L5 14.5"/></svg>
+
+          <!-- Professional -->
+          <div class="plan-card">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="logo-ring w-10 h-10 bg-gradient-to-br from-blue-600 to-cyan-600">
+                <div class="logo-ring-inner !p-1"><span class="text-blue-600 font-bold text-lg">💼</span></div>
               </div>
+              <div><p class="text-xs text-blue-400 font-bold uppercase tracking-wider">Pro</p><p class="text-lg font-bold text-white">Growth</p></div>
             </div>
-            <div><p class="text-xs text-violet-400 font-bold uppercase tracking-wider">AI Suite</p><p class="text-lg font-bold text-white">Enterprise</p></div>
+            <div class="mb-6">
+              <p class="plan-price text-4xl font-extrabold text-white"><span class="monthly-price">35k</span><span class="annual-price hidden">28k</span><span class="text-slate-400 text-base font-normal">/mo</span></p>
+              <p class="text-slate-400 text-sm mt-1">~USD 610/mo</p>
+            </div>
+            <p class="text-slate-400 text-sm mb-6 leading-relaxed">Full risk intelligence & planning for growing orgs.</p>
+            <ul class="space-y-2.5 mb-8 flex-grow">
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Up to 20 users</li>
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> DDRiVE-M (5 Modules)</li>
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Strat Planner Pro Full</li>
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> SPARC AI Full</li>
+              <li class="flex items-start gap-2 text-sm text-slate-400"><span class="text-slate-600 mt-0.5">✗</span> RTL Center</li>
+            </ul>
+            <a href="#contact" class="block text-center py-3 rounded-xl border border-white/20 text-slate-300 font-bold text-sm hover:bg-white/8 transition-all duration-200 mt-auto">Get Started</a>
           </div>
-          <div class="mb-6">
-            <p class="plan-price text-4xl font-extrabold text-white">Custom</p>
-            <p class="text-slate-400 text-sm mt-1">Scoped to your use case</p>
+
+          <!-- Enterprise (Featured) -->
+          <div class="plan-card popular relative">
+            <div class="popular-badge bg-gradient-to-r from-blue-600 to-indigo-600 text-white">Most Popular</div>
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-600/8 to-indigo-600/8 rounded-2xl pointer-events-none"></div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="logo-ring w-10 h-10 bg-gradient-to-br from-blue-600 to-cyan-600">
+                <div class="logo-ring-inner !p-1"><span class="text-blue-600 font-bold text-lg">🏢</span></div>
+              </div>
+              <div><p class="text-xs text-blue-400 font-bold uppercase tracking-wider">Enterprise</p><p class="text-lg font-bold text-white">Scale</p></div>
+            </div>
+            <div class="mb-6">
+              <p class="plan-price text-4xl font-extrabold text-white">₱<span class="monthly-price">75k</span><span class="annual-price hidden">60k</span><span class="text-slate-400 text-base font-normal">/mo</span></p>
+              <p class="text-slate-400 text-sm mt-1">~USD 1,300/mo</p>
+            </div>
+            <p class="text-slate-400 text-sm mb-6 leading-relaxed">All 4 solutions fully unlocked for large LGUs.</p>
+            <ul class="space-y-2.5 mb-8 flex-grow">
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Unlimited users</li>
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> DDRiVE-M Full (7 Modules)</li>
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> <strong>RTL Center</strong> Included</li>
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> AI Suite (ESG/Sustainability)</li>
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Dedicated Account Manager</li>
+            </ul>
+            <a href="#contact" class="block text-center py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 text-white font-bold text-sm transition-all duration-200 mt-auto shadow-lg shadow-blue-600/30">Get Started</a>
           </div>
-          <p class="text-slate-400 text-sm mb-6 leading-relaxed">Fully custom AI infrastructure for large institutions and government agencies.</p>
-          <ul class="space-y-2.5 mb-8 flex-grow">
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-violet-400 mt-0.5">✓</span> Custom model training</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-violet-400 mt-0.5">✓</span> On-premise deployment</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-violet-400 mt-0.5">✓</span> Full API &amp; data pipeline</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-violet-400 mt-0.5">✓</span> Dedicated ML engineer</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-violet-400 mt-0.5">✓</span> Government procurement-ready</li>
-            <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-violet-400 mt-0.5">✓</span> 24/7 SLA support</li>
-          </ul>
-          <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="block text-center py-3 rounded-xl border border-white/20 text-slate-300 font-bold text-sm hover:bg-white/8 transition-all duration-200 mt-auto">Contact Sales</a>
-        </div>
+
+          <!-- Custom -->
+          <div class="plan-card">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="logo-ring w-10 h-10 bg-gradient-to-br from-blue-600 to-cyan-600">
+                <div class="logo-ring-inner !p-1"><span class="text-blue-600 font-bold text-lg">⚙️</span></div>
+              </div>
+              <div><p class="text-xs text-blue-400 font-bold uppercase tracking-wider">Custom</p><p class="text-lg font-bold text-white">Bespoke</p></div>
+            </div>
+            <div class="mb-6">
+              <p class="plan-price text-4xl font-extrabold text-white">Custom</p>
+              <p class="text-slate-400 text-sm mt-1">Tailored to your needs</p>
+            </div>
+            <p class="text-slate-400 text-sm mb-6 leading-relaxed">For multi-agency networks & specialized compliance.</p>
+            <ul class="space-y-2.5 mb-8 flex-grow">
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Everything in Enterprise</li>
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Multi-tenant Architecture</li>
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> Custom AI Model Training</li>
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> On-premise Deployment</li>
+              <li class="flex items-start gap-2 text-sm text-slate-300"><span class="text-blue-400 mt-0.5">✓</span> GPPB/BAC Assistance</li>
+            </ul>
+            <a href="#contact" class="block text-center py-3 rounded-xl border border-white/20 text-slate-300 font-bold text-sm hover:bg-white/8 transition-all duration-200 mt-auto">Contact Sales</a>
+          </div>
+
       </div>
 
-      <!-- Annual savings note -->
-      <p class="text-center text-slate-500 text-sm mt-4 mb-20">
-        💡 <strong class="text-slate-400">Save 20%</strong> with annual billing &nbsp;·&nbsp; All prices are exclusive of VAT &nbsp;·&nbsp;
-        <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="text-blue-400 underline hover:text-blue-300">Request a custom quote</a>
-      </p>
-
-      <!-- ════════════════════════════════
-           BUNDLE PRICING
-      ════════════════════════════════ -->
-      <div class="text-center mb-14 space-y-3">
-        <h3 class="text-3xl md:text-4xl font-extrabold gradient-text">Bundle &amp; Save More</h3>
-        <p class="text-lg text-slate-300 max-w-2xl mx-auto">Combine solutions for maximum impact. All bundles include unified onboarding and a single account manager.</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
-
-        <!-- Bundle 1: Resilience Suite -->
-        <div class="bundle-card hover:border-blue-500/40 flex flex-col">
-          <div class="h-1.5 bg-gradient-to-r from-blue-600 via-cyan-400 to-emerald-500"></div>
-          <div class="p-6 flex flex-col flex-grow">
-            <div class="flex gap-2 mb-4">
-              <div class="logo-ring w-9 h-9 bg-gradient-to-br from-blue-600 to-cyan-600"><div class="logo-ring-inner !p-0.5"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/DDRiVE-M%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div></div>
-              <div class="logo-ring w-9 h-9 bg-gradient-to-br from-amber-600 to-orange-600"><div class="logo-ring-inner !p-0.5"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/Strat%20Planner%20Pro%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div></div>
-              <div class="logo-ring w-9 h-9 bg-gradient-to-br from-emerald-600 to-teal-600"><div class="logo-ring-inner !p-0.5"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/RTL%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div></div>
-            </div>
-            <h4 class="text-lg font-bold text-white mb-1">Resilience Suite</h4>
-            <p class="text-xs text-slate-400 mb-4">DDRiVE-M + Strat Planner + Real-Time Leadership</p>
-            <div class="mb-1">
-              <span class="text-3xl font-extrabold text-white">₱45,000</span><span class="text-slate-400 text-sm">/mo</span>
-            </div>
-            <div class="flex items-center gap-2 mb-4">
-              <span class="line-through text-slate-500 text-sm">₱57,300</span>
-              <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-xs font-bold rounded-full">Save ₱12,300/mo</span>
-            </div>
-            <p class="text-slate-400 text-xs mb-5 leading-relaxed">Ideal for LGUs and NGOs needing end-to-end risk management + strategic planning + leadership tools.</p>
-            <ul class="space-y-1.5 mb-6 text-xs text-slate-300 flex-grow">
-              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> Up to 50 combined users</li>
-              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> Unified onboarding (2 weeks)</li>
-              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> Single sign-on (SSO)</li>
-              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> Shared analytics dashboard</li>
-            </ul>
-            <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="block text-center py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-500 hover:to-emerald-500 text-white font-bold text-sm transition-all duration-200 mt-auto shadow-md">Get Bundle</a>
-          </div>
-        </div>
-
-        <!-- Bundle 2: Government Pack -->
-        <div class="bundle-card hover:border-cyan-500/40 flex flex-col">
-          <div class="h-1.5 bg-gradient-to-r from-blue-600 via-violet-500 to-cyan-400"></div>
-          <div class="p-6 flex flex-col flex-grow">
-            <div class="flex gap-2 mb-4">
-              <div class="logo-ring w-9 h-9 bg-gradient-to-br from-blue-600 to-cyan-600"><div class="logo-ring-inner !p-0.5"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/DDRiVE-M%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div></div>
-              <div class="logo-ring w-9 h-9 bg-gradient-to-br from-emerald-600 to-teal-600"><div class="logo-ring-inner !p-0.5"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/RTL%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div></div>
-              <div class="logo-ring w-9 h-9 bg-gradient-to-br from-violet-600 to-purple-600"><div class="logo-ring-inner !p-0.5"><svg class="w-4 h-4 text-violet-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5m4.75-11.396c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3"/></svg></div></div>
-            </div>
-            <h4 class="text-lg font-bold text-white mb-1">Government Pack</h4>
-            <p class="text-xs text-slate-400 mb-4">DDRiVE-M + RTL + Strat Planner + AI Suite</p>
-            <div class="mb-1">
-              <span class="text-3xl font-extrabold text-white">₱68,000</span><span class="text-slate-400 text-sm">/mo</span>
-            </div>
-            <div class="flex items-center gap-2 mb-4">
-              <span class="line-through text-slate-500 text-sm">₱83,800</span>
-              <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-xs font-bold rounded-full">Save ₱15,800/mo</span>
-            </div>
-            <p class="text-slate-400 text-xs mb-5 leading-relaxed">Built for Philippine government agencies requiring full DRRM compliance, leadership, and AI integration.</p>
-            <ul class="space-y-1.5 mb-6 text-xs text-slate-300 flex-grow">
-              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> Up to 75 combined users</li>
-              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> RA 10121 compliance package</li>
-              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> Procurement-ready documentation</li>
-              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> Dedicated government liaison</li>
-            </ul>
-            <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="block text-center py-2.5 rounded-xl bg-gradient-to-r from-blue-700 to-violet-700 hover:from-blue-600 hover:to-violet-600 text-white font-bold text-sm transition-all duration-200 mt-auto shadow-md">Get Bundle</a>
-          </div>
-        </div>
-
-        <!-- Bundle 3: Democratic Resilience -->
-        <div class="bundle-card hover:border-rose-500/40 flex flex-col">
-          <div class="h-1.5 bg-gradient-to-r from-rose-700 via-amber-400 to-violet-500"></div>
-          <div class="p-6 flex flex-col flex-grow">
-            <div class="flex gap-2 mb-4">
-              <div class="logo-ring w-9 h-9 bg-gradient-to-br from-rose-700 to-red-500"><div class="logo-ring-inner !p-0.5"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/ESH%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div></div>
-              <div class="logo-ring w-9 h-9 bg-gradient-to-br from-blue-600 to-cyan-600"><div class="logo-ring-inner !p-0.5"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/DDRiVE-M%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div></div>
-              <div class="logo-ring w-9 h-9 bg-gradient-to-br from-violet-600 to-purple-600"><div class="logo-ring-inner !p-0.5"><svg class="w-4 h-4 text-violet-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5m4.75-11.396c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3"/></svg></div></div>
-            </div>
-            <h4 class="text-lg font-bold text-white mb-1">Democratic Resilience</h4>
-            <p class="text-xs text-slate-400 mb-4">Electoral Hub (Pro) + DDRiVE-M + AI Suite</p>
-            <div class="mb-1">
-              <span class="text-3xl font-extrabold text-white">₱85,000</span><span class="text-slate-400 text-sm">/mo</span>
-            </div>
-            <div class="flex items-center gap-2 mb-4">
-              <span class="line-through text-slate-500 text-sm">₱105,800</span>
-              <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-xs font-bold rounded-full">Save ₱20,800/mo</span>
-            </div>
-            <p class="text-slate-400 text-xs mb-5 leading-relaxed">For political leaders and CSOs combining electoral strategy with community resilience and AI analytics.</p>
-            <ul class="space-y-1.5 mb-6 text-xs text-slate-300 flex-grow">
-              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> ElecktraMetrics Standard included</li>
-              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> Cross-platform data sharing</li>
-              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> Integrated risk + electoral maps</li>
-              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> Dedicated strategy advisor</li>
-            </ul>
-            <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="block text-center py-2.5 rounded-xl bg-gradient-to-r from-rose-700 to-violet-700 hover:from-rose-600 hover:to-violet-600 text-white font-bold text-sm transition-all duration-200 mt-auto shadow-md">Get Bundle</a>
-          </div>
-        </div>
-
-        <!-- Bundle 4: Complete Platform (Featured) -->
-        <div class="bundle-card border-2 border-gradient-to-br from-blue-500/60 via-violet-500/60 to-rose-500/60 relative flex flex-col"
-             style="border-color:rgba(99,102,241,0.5);box-shadow:0 0 40px rgba(99,102,241,0.18)">
-          <div class="absolute top-0 right-0 px-4 py-1.5 bg-gradient-to-r from-indigo-600 to-violet-600 rounded-bl-xl rounded-tr-xl text-white text-xs font-bold uppercase tracking-wider z-10">Best Value</div>
-          <div class="h-1.5 bg-gradient-to-r from-blue-500 via-violet-500 via-rose-500 to-amber-400"></div>
-          <div class="p-6 flex flex-col flex-grow">
-            <div class="flex flex-wrap gap-1.5 mb-4">
-              <div class="logo-ring w-8 h-8 bg-gradient-to-br from-blue-600 to-cyan-600"><div class="logo-ring-inner !p-0.5"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/DDRiVE-M%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div></div>
-              <div class="logo-ring w-8 h-8 bg-gradient-to-br from-amber-600 to-orange-600"><div class="logo-ring-inner !p-0.5"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/Strat%20Planner%20Pro%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div></div>
-              <div class="logo-ring w-8 h-8 bg-gradient-to-br from-emerald-600 to-teal-600"><div class="logo-ring-inner !p-0.5"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/RTL%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div></div>
-              <div class="logo-ring w-8 h-8 bg-gradient-to-br from-rose-700 to-red-500"><div class="logo-ring-inner !p-0.5"><img src="https://iznnajuxumnxkuyvacvy.databasepad.com/storage/v1/object/public/images-and-files/public/ESH%20logo.png" alt="" class="w-full h-full object-contain" loading="lazy" onerror="this.style.display='none'"/></div></div>
-              <div class="logo-ring w-8 h-8 bg-gradient-to-br from-violet-600 to-purple-600"><div class="logo-ring-inner !p-0.5"><svg class="w-4 h-4 text-violet-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5"/></svg></div></div>
-            </div>
-            <h4 class="text-lg font-bold text-white mb-1">Complete Platform</h4>
-            <p class="text-xs text-slate-400 mb-4">All 5 Solutions · Full Access</p>
-            <div class="mb-1">
-              <span class="text-3xl font-extrabold text-white">₱99,800</span><span class="text-slate-400 text-sm">/mo</span>
-            </div>
-            <div class="flex items-center gap-2 mb-4">
-              <span class="line-through text-slate-500 text-sm">₱133,300</span>
-              <span class="px-2 py-0.5 bg-emerald-400/20 text-emerald-300 text-xs font-extrabold rounded-full border border-emerald-500/30">Save ₱33,500/mo</span>
-            </div>
-            <p class="text-slate-400 text-xs mb-5 leading-relaxed">Maximum impact for organizations committed to full digital transformation across risk, strategy, leadership, electoral, and AI dimensions.</p>
-            <ul class="space-y-1.5 mb-6 text-xs text-slate-300 flex-grow">
-              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> All solutions, Professional tier</li>
-              <li class="flex items-center gap-1.5"><span class="text-amber-300">✓</span> <strong class="text-amber-300">ElecktraMetrics Pro included</strong></li>
-              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> Unlimited users across all platforms</li>
-              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> Dedicated Customer Success Manager</li>
-              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> 30-day guaranteed deployment</li>
-              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> 24/7 priority support</li>
-              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> Annual strategy review sessions</li>
-            </ul>
-            <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="block text-center py-3 rounded-xl bg-gradient-to-r from-blue-600 via-violet-600 to-purple-700 hover:from-blue-500 hover:via-violet-500 hover:to-purple-600 text-white font-extrabold text-sm transition-all duration-200 mt-auto shadow-xl shadow-indigo-700/40">Get Complete Platform</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Compliance + Trust note -->
-      <div class="flex flex-wrap justify-center gap-6 text-sm text-slate-400 mt-10">
-        <div class="flex items-center gap-2"><i data-lucide="shield" class="w-4 h-4 text-emerald-400"></i>All prices exclusive of 12% VAT</div>
-        <div class="flex items-center gap-2"><i data-lucide="credit-card" class="w-4 h-4 text-blue-400"></i>GCash, bank transfer &amp; PO accepted</div>
-        <div class="flex items-center gap-2"><i data-lucide="refresh-cw" class="w-4 h-4 text-amber-400"></i>30-day money-back guarantee</div>
-        <div class="flex items-center gap-2"><i data-lucide="file-text" class="w-4 h-4 text-violet-400"></i>COA-compliant procurement docs available</div>
-      </div>
-    </div>
-  </section>
-
-    <!-- Comparison Table -->
+      <!-- Comparison Table -->
       <div class="bg-slate-900/50 border border-white/10 rounded-2xl p-8 mb-20 animate-fade-in-up">
         <h3 class="text-2xl md:text-3xl font-bold text-center mb-10 gradient-text">Find the Right Solution for Your Organization</h3>
         <div class="overflow-x-auto">
@@ -1154,7 +536,6 @@
                 <th class="pb-4 px-3 font-semibold text-blue-300 text-sm">DDRiVE-M</th>
                 <th class="pb-4 px-3 font-semibold text-amber-300 text-sm">Strat Planner</th>
                 <th class="pb-4 px-3 font-semibold text-emerald-300 text-sm">RT Leadership</th>
-                <th class="pb-4 px-3 font-semibold text-rose-300 text-sm">Electoral Hub</th>
                 <th class="pb-4 pl-3 font-semibold text-violet-300 text-sm">AI Suite</th>
               </tr>
             </thead>
@@ -1164,7 +545,6 @@
                 <td class="py-3 px-3"><span class="text-emerald-400 font-bold">✓ Advanced</span></td>
                 <td class="py-3 px-3 text-slate-400">Basic</td>
                 <td class="py-3 px-3 text-slate-400">Situational</td>
-                <td class="py-3 px-3 text-slate-400">Electoral Risk</td>
                 <td class="py-3 pl-3"><span class="text-emerald-400 font-bold">✓ Predictive</span></td>
               </tr>
               <tr class="border-b border-white/5">
@@ -1172,7 +552,6 @@
                 <td class="py-3 px-3 text-slate-400">Operational</td>
                 <td class="py-3 px-3"><span class="text-emerald-400 font-bold">✓ Comprehensive</span></td>
                 <td class="py-3 px-3 text-slate-400">Tactical</td>
-                <td class="py-3 px-3"><span class="text-emerald-400 font-bold">✓ Electoral</span></td>
                 <td class="py-3 pl-3 text-slate-400">Data Support</td>
               </tr>
               <tr class="border-b border-white/5">
@@ -1180,7 +559,6 @@
                 <td class="py-3 px-3 text-slate-400">Dashboard</td>
                 <td class="py-3 px-3 text-slate-400">Framework</td>
                 <td class="py-3 px-3"><span class="text-emerald-400 font-bold">✓ Full Suite</span></td>
-                <td class="py-3 px-3 text-slate-400">Policy Studio</td>
                 <td class="py-3 pl-3 text-slate-400">AI Assistant</td>
               </tr>
               <tr class="border-b border-white/5">
@@ -1188,129 +566,185 @@
                 <td class="py-3 px-3"><span class="text-emerald-400 font-bold">✓ Integrated</span></td>
                 <td class="py-3 px-3"><span class="text-emerald-400 font-bold">✓ Scenario AI</span></td>
                 <td class="py-3 px-3 text-slate-400">Decision Support</td>
-                <td class="py-3 px-3"><span class="text-emerald-400 font-bold">✓ Survey AI</span></td>
                 <td class="py-3 pl-3"><span class="text-emerald-400 font-bold">✓ Core Focus</span></td>
-              </tr>
-              <tr class="border-b border-white/5">
-                <td class="py-3 pr-4 text-slate-300 font-medium">Analytics Dashboard</td>
-                <td class="py-3 px-3"><span class="text-emerald-400 font-bold">✓ Real-Time</span></td>
-                <td class="py-3 px-3"><span class="text-emerald-400 font-bold">✓ MEL Tracking</span></td>
-                <td class="py-3 px-3 text-slate-400">Situational</td>
-                <td class="py-3 px-3"><span class="text-emerald-400 font-bold">✓ ElecktraMetrics</span></td>
-                <td class="py-3 pl-3"><span class="text-emerald-400 font-bold">✓ Predictive</span></td>
               </tr>
               <tr>
                 <td class="py-3 pr-4 text-slate-300 font-medium">Best For</td>
                 <td class="py-3 px-3 text-blue-300">LGUs, NGOs</td>
-                <td class="py-3 px-3 text-amber-300">Planners, Directors</td>
-                <td class="py-3 px-3 text-emerald-300">Responders, Leaders</td>
-                <td class="py-3 px-3 text-rose-300">Political Leaders, CSOs</td>
+                <td class="py-3 px-3 text-amber-300">Planners</td>
+                <td class="py-3 px-3 text-emerald-300">Responders</td>
                 <td class="py-3 pl-3 text-violet-300">Tech Teams</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <div class="mt-8 text-center">
-          <p class="text-slate-400 mb-4">Need help choosing? Our solutions are designed to integrate seamlessly.</p>
-          <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-blue-500/40">
-            <span>Get a Custom Recommendation</span>
-            <i data-lucide="arrow-right" class="w-4 h-4"></i>
-          </a>
+      </div>
+
+      <!-- Bundles -->
+      <div class="text-center mb-14 space-y-3">
+        <h3 class="text-3xl md:text-4xl font-extrabold gradient-text">Bundle &amp; Save More</h3>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto">Combine solutions for maximum impact. All bundles include unified onboarding.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mb-20">
+        <!-- Bundle 1 -->
+        <div class="bundle-card hover:border-blue-500/40 flex flex-col bg-slate-900/50 border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-blue-900/20">
+          <div class="h-1.5 bg-gradient-to-r from-blue-600 via-cyan-400 to-emerald-500"></div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h4 class="text-lg font-bold text-white mb-1">Resilience Suite</h4>
+            <p class="text-xs text-slate-400 mb-4">DDRiVE-M + Strat Planner + RTL</p>
+            <div class="mb-1">
+              <span class="text-3xl font-extrabold text-white">45,000</span><span class="text-slate-400 text-sm">/mo</span>
+            </div>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="line-through text-slate-500 text-sm">₱57,300</span>
+              <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-xs font-bold rounded-full">Save ₱12k</span>
+            </div>
+            <p class="text-slate-400 text-xs mb-5 leading-relaxed">Ideal for LGUs needing end-to-end risk management + planning + leadership.</p>
+            <a href="#contact" class="block text-center py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-emerald-600 hover:from-blue-500 hover:to-emerald-500 text-white font-bold text-sm transition-all duration-200 mt-auto shadow-md">Get Bundle</a>
+          </div>
+        </div>
+
+        <!-- Bundle 2 -->
+        <div class="bundle-card hover:border-cyan-500/40 flex flex-col bg-slate-900/50 border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-cyan-900/20">
+          <div class="h-1.5 bg-gradient-to-r from-blue-600 via-violet-500 to-cyan-400"></div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h4 class="text-lg font-bold text-white mb-1">Government Pack</h4>
+            <p class="text-xs text-slate-400 mb-4">DDRiVE-M + RTL + Strat + AI</p>
+            <div class="mb-1">
+              <span class="text-3xl font-extrabold text-white">₱68,000</span><span class="text-slate-400 text-sm">/mo</span>
+            </div>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="line-through text-slate-500 text-sm">₱83,800</span>
+              <span class="px-2 py-0.5 bg-emerald-500/20 text-emerald-400 text-xs font-bold rounded-full">Save ₱15k</span>
+            </div>
+            <p class="text-slate-400 text-xs mb-5 leading-relaxed">Built for agencies requiring full DRRM compliance, leadership, and AI.</p>
+            <a href="#contact" class="block text-center py-2.5 rounded-xl bg-gradient-to-r from-blue-700 to-violet-700 hover:from-blue-600 hover:to-violet-600 text-white font-bold text-sm transition-all duration-200 mt-auto shadow-md">Get Bundle</a>
+          </div>
+        </div>
+
+        <!-- Bundle 3 -->
+        <div class="bundle-card border-2 border-indigo-500/50 relative flex flex-col bg-slate-900/80 rounded-2xl overflow-hidden shadow-xl shadow-indigo-900/20">
+          <div class="absolute top-0 right-0 px-4 py-1.5 bg-gradient-to-r from-indigo-600 to-violet-600 rounded-bl-xl rounded-tr-xl text-white text-xs font-bold uppercase tracking-wider z-10">Best Value</div>
+          <div class="h-1.5 bg-gradient-to-r from-blue-500 via-violet-500 via-rose-500 to-amber-400"></div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h4 class="text-lg font-bold text-white mb-1">Complete Platform</h4>
+            <p class="text-xs text-slate-400 mb-4">All 5 Solutions · Full Access</p>
+            <div class="mb-1">
+              <span class="text-3xl font-extrabold text-white">₱99,800</span><span class="text-slate-400 text-sm">/mo</span>
+            </div>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="line-through text-slate-500 text-sm">₱133k</span>
+              <span class="px-2 py-0.5 bg-emerald-400/20 text-emerald-300 text-xs font-extrabold rounded-full border border-emerald-500/30">Save 33k</span>
+            </div>
+            <p class="text-slate-400 text-xs mb-5 leading-relaxed">Maximum impact for organizations committed to full digital transformation.</p>
+            <ul class="space-y-1.5 mb-6 text-xs text-slate-300 flex-grow">
+              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> All solutions, Professional tier</li>
+              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> Unlimited users</li>
+              <li class="flex items-center gap-1.5"><span class="text-emerald-400">✓</span> Dedicated Success Manager</li>
+            </ul>
+            <a href="#contact" class="block text-center py-3 rounded-xl bg-gradient-to-r from-blue-600 via-violet-600 to-purple-700 hover:from-blue-500 hover:via-violet-500 hover:to-purple-600 text-white font-extrabold text-sm transition-all duration-200 mt-auto shadow-xl shadow-indigo-700/40">Get Complete Platform</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       RECENT PARTNERS (New Section)
+  ═══════════════════════════════════════════════════ -->
+  <section id="partners" class="py-16 px-6 bg-[#020617] border-t border-white/5">
+    <div class="max-w-7xl mx-auto text-center">
+      <p class="text-sm font-semibold text-slate-500 uppercase tracking-widest mb-8">Trusted By Leading Organizations</p>
+      <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-80">
+        <!-- Placeholder Partner Logos using Text/Icons for demo, replace with actual SVGs/Images -->
+        <div class="partner-logo flex flex-col items-center gap-2 grayscale hover:grayscale-0 transition-all">
+            <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400"><i data-lucide="building-2"></i></div>
+            <span class="text-xs font-bold text-slate-400">LGU Manila</span>
+        </div>
+        <div class="partner-logo flex flex-col items-center gap-2 grayscale hover:grayscale-0 transition-all">
+            <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400"><i data-lucide="globe"></i></div>
+            <span class="text-xs font-bold text-slate-400">UNDP PH</span>
+        </div>
+        <div class="partner-logo flex flex-col items-center gap-2 grayscale hover:grayscale-0 transition-all">
+            <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400"><i data-lucide="shield-check"></i></div>
+            <span class="text-xs font-bold text-slate-400">NDRRMC</span>
+        </div>
+        <div class="partner-logo flex flex-col items-center gap-2 grayscale hover:grayscale-0 transition-all">
+            <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400"><i data-lucide="handshake"></i></div>
+            <span class="text-xs font-bold text-slate-400">Oxfam</span>
+        </div>
+        <div class="partner-logo flex flex-col items-center gap-2 grayscale hover:grayscale-0 transition-all">
+            <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-slate-400"><i data-lucide="university"></i></div>
+            <span class="text-xs font-bold text-slate-400">Ateneo School</span>
         </div>
       </div>
     </div>
   </section>
- 
-        <!-- Implementation Timeline -->
-        <div class="text-center mb-16 animate-fade-in-up">
-          <h3 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">Rapid Deployment Framework</h3>
-          <p class="text-xl text-slate-300 max-w-3xl mx-auto">From assessment to full operation in under 30 days with our proven methodology</p>
+
+  <!-- ═══════════════════════════════════════════════════
+       IMPACT STATS
+  ═══════════════════════════════════════════════════ -->
+  <section id="impact" class="py-20 px-6 bg-gradient-to-b from-slate-900 to-[#020617]">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16 animate-fade-in-up">
+        <h2 class="text-3xl md:text-4xl font-bold gradient-text mb-4">Proven Impact Across Southeast Asia</h2>
+        <p class="text-slate-300 max-w-2xl mx-auto">Real results from organizations transforming their resilience capabilities</p>
+      </div>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="text-center p-6 rounded-2xl bg-slate-900/50 border border-white/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="text-4xl mb-2">️</div>
+          <div class="text-4xl md:text-5xl font-bold gradient-text mb-1 counter" data-target="15">0</div>
+          <div class="text-slate-400 font-medium">Government Partners</div>
         </div>
-        <div class="grid md:grid-cols-4 gap-6 mb-20">
-          <div class="text-center p-6 rounded-xl bg-slate-900/50 border border-white/10 hover:border-blue-500/30 transition-all duration-300 group">
-            <div class="w-12 h-12 rounded-full bg-blue-600/20 text-blue-400 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform"><span class="font-bold text-lg">1</span></div>
-            <h4 class="font-bold mb-2 text-white">Discovery</h4>
-            <p class="text-slate-400 text-sm">Needs assessment &amp; stakeholder alignment workshop</p>
-          </div>
-          <div class="text-center p-6 rounded-xl bg-slate-900/50 border border-white/10 hover:border-blue-500/30 transition-all duration-300 group">
-            <div class="w-12 h-12 rounded-full bg-blue-600/20 text-blue-400 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform"><span class="font-bold text-lg">2</span></div>
-            <h4 class="font-bold mb-2 text-white">Configuration</h4>
-            <p class="text-slate-400 text-sm">Platform setup tailored to your workflows &amp; data</p>
-          </div>
-          <div class="text-center p-6 rounded-xl bg-slate-900/50 border border-white/10 hover:border-blue-500/30 transition-all duration-300 group">
-            <div class="w-12 h-12 rounded-full bg-blue-600/20 text-blue-400 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform"><span class="font-bold text-lg">3</span></div>
-            <h4 class="font-bold mb-2 text-white">Training</h4>
-            <p class="text-slate-400 text-sm">Hands-on workshops for teams &amp; leadership</p>
-          </div>
-          <div class="text-center p-6 rounded-xl bg-slate-900/50 border border-white/10 hover:border-blue-500/30 transition-all duration-300 group">
-            <div class="w-12 h-12 rounded-full bg-blue-600/20 text-blue-400 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform"><span class="font-bold text-lg">4</span></div>
-            <h4 class="font-bold mb-2 text-white">Launch</h4>
-            <p class="text-slate-400 text-sm">Go-live support &amp; continuous optimization</p>
-          </div>
+        <div class="text-center p-6 rounded-2xl bg-slate-900/50 border border-white/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="text-4xl mb-2">️</div>
+          <div class="text-4xl md:text-5xl font-bold gradient-text mb-1 counter" data-target="3200">0</div>
+          <div class="text-slate-400 font-medium">Lives Protected</div>
+        </div>
+        <div class="text-center p-6 rounded-2xl bg-slate-900/50 border border-white/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="text-4xl mb-2"></div>
+          <div class="text-4xl md:text-5xl font-bold gradient-text mb-1 counter" data-target="70">0</div>
+          <div class="text-slate-400 font-medium">% Faster Response</div>
+        </div>
+        <div class="text-center p-6 rounded-2xl bg-slate-900/50 border border-white/10 hover:border-blue-500/30 transition-all duration-300">
+          <div class="text-4xl mb-2">⭐</div>
+          <div class="text-4xl md:text-5xl font-bold gradient-text mb-1 counter" data-target="98">0</div>
+          <div class="text-slate-400 font-medium">% Client Retention</div>
         </div>
       </div>
-    </section>
- 
-    <!-- Impact Stats Section -->
-    <section id="impact" class="py-20 px-6 bg-gradient-to-b from-slate-900 to-[#020617]">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-16 animate-fade-in-up">
-          <h2 class="text-3xl md:text-4xl font-bold gradient-text mb-4">Proven Impact Across Southeast Asia</h2>
-          <p class="text-slate-300 max-w-2xl mx-auto">Real results from organizations transforming their resilience capabilities</p>
-        </div>
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="text-center p-6 rounded-2xl bg-slate-900/50 border border-white/10 hover:border-blue-500/30 transition-all duration-300">
-            <div class="text-4xl mb-2">🏛️</div>
-            <div class="text-4xl md:text-5xl font-bold gradient-text mb-1 counter" data-target="15">0</div>
-            <div class="text-slate-400 font-medium">Government Partners</div>
-          </div>
-          <div class="text-center p-6 rounded-2xl bg-slate-900/50 border border-white/10 hover:border-blue-500/30 transition-all duration-300">
-            <div class="text-4xl mb-2">🛡️</div>
-            <div class="text-4xl md:text-5xl font-bold gradient-text mb-1 counter" data-target="3200">0</div>
-            <div class="text-slate-400 font-medium">Lives Protected</div>
-          </div>
-          <div class="text-center p-6 rounded-2xl bg-slate-900/50 border border-white/10 hover:border-blue-500/30 transition-all duration-300">
-            <div class="text-4xl mb-2">⚡</div>
-            <div class="text-4xl md:text-5xl font-bold gradient-text mb-1 counter" data-target="70">0</div>
-            <div class="text-slate-400 font-medium">% Faster Response</div>
-          </div>
-          <div class="text-center p-6 rounded-2xl bg-slate-900/50 border border-white/10 hover:border-blue-500/30 transition-all duration-300">
-            <div class="text-4xl mb-2">⭐</div>
-            <div class="text-4xl md:text-5xl font-bold gradient-text mb-1 counter" data-target="98">0</div>
-            <div class="text-slate-400 font-medium">% Client Retention</div>
-          </div>
-        </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════
+       CONTACT / CTA
+  ═══════════════════════════════════════════════════ -->
+  <section id="contact" class="py-24 px-6 bg-gradient-to-b from-[#020617] to-slate-900">
+    <div class="max-w-4xl mx-auto text-center animate-fade-in-up">
+      <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-sm font-bold uppercase tracking-wide mb-8">
+        <div class="text-xl" aria-hidden="true">✨</div>
+        <span>Start Your Resilience Journey Today</span>
       </div>
-    </section>
- 
-    <!-- CTA Section -->
-    <section class="py-24 px-6 bg-gradient-to-b from-[#020617] to-slate-900">
-      <div class="max-w-4xl mx-auto text-center animate-fade-in-up">
-        <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-sm font-bold uppercase tracking-wide mb-8">
-          <div class="text-xl" aria-hidden="true">✨</div>
-          <span>Start Your Resilience Journey Today</span>
-        </div>
-        <h2 class="text-4xl md:text-5xl font-extrabold mb-6 gradient-text">Ready to Transform Your Organization's Resilience?</h2>
-        <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Join 50+ forward-thinking organizations across Southeast Asia who trust ASilva Innovations to protect their communities and optimize their operations.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="https://asilvainnovations-website-version77.bolt.host/#contact" class="group bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl shadow-blue-600/40 hover:scale-105 active:scale-95 flex items-center justify-center gap-3">
-            <span>Schedule a Free Consultation</span>
-            <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
-          </a>
-          <a href="#solutions" class="bg-slate-900/90 hover:bg-slate-800/90 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 border border-white/20 backdrop-blur-sm hover:border-blue-500/50 text-center hover:scale-105 active:scale-95">Review Solutions</a>
-        </div>
-        <div class="mt-12 flex flex-wrap justify-center gap-6 text-sm text-slate-400">
-          <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i><span>Aligned with Philippine Government Frameworks</span></div>
-          <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i><span>ISO 31000 Compliant</span></div>
-          <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i><span>30-Day Deployment Guarantee</span></div>
-        </div>
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-6 gradient-text">Ready to Transform Your Organization?</h2>
+      <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+        Join 50+ forward-thinking organizations across Southeast Asia who trust ASilva Innovations. Schedule a demo or start your free trial today.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="mailto:sales@asilvainnovations.com?subject=Free%20Trial%20Request" class="group bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-500 hover:to-indigo-600 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-xl shadow-blue-600/40 hover:scale-105 active:scale-95 flex items-center justify-center gap-3">
+          <span>Start Free Trial</span>
+          <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+        </a>
+        <a href="mailto:sales@asilvainnovations.com?subject=Demo%20Request" class="bg-slate-900/90 hover:bg-slate-800/90 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 border border-white/20 backdrop-blur-sm hover:border-blue-500/50 text-center hover:scale-105 active:scale-95">Schedule Demo</a>
       </div>
-    </section>
- 
-  </main>
- 
+      <div class="mt-12 flex flex-wrap justify-center gap-6 text-sm text-slate-400">
+        <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i><span>Aligned with Gov Frameworks</span></div>
+        <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i><span>ISO 31000 Compliant</span></div>
+        <div class="flex items-center gap-2"><i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i><span>30-Day Deployment Guarantee</span></div>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="bg-[#010409] text-white border-t border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -1336,8 +770,6 @@
             <li><a href="https://asilvainnovations.github.io/ddrive-m/" class="text-gray-400 hover:text-white transition-colors">DDRiVE-M Platform</a></li>
             <li><a href="https://asilvainnovations.github.io/strat-planner-pwa/public/index.html" class="text-gray-400 hover:text-white transition-colors">Strat Planner Pro</a></li>
             <li><a href="https://asilvainnovations.github.io/website/rtl.html" class="text-gray-400 hover:text-white transition-colors">Real-Time Leadership</a></li>
-            <li><a href="https://electoral-strategy-hub.c36.airoapp.ai" target="_blank" rel="noopener noreferrer" class="text-rose-400 hover:text-rose-300 transition-colors flex items-center gap-1">Electoral Strategy Hub <span class="text-xs">↗</span></a></li>
-            <li><a href="https://dl42jxuwyl.preview.c37.airoapp.ai" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300 transition-colors flex items-center gap-1">ElecktraMetrics <span class="text-xs">↗</span></a></li>
             <li><a href="https://asilvainnovations.github.io/website/ai-solutions.html" class="text-gray-400 hover:text-white transition-colors">AI &amp; Automation Suite</a></li>
           </ul>
         </div>
@@ -1369,7 +801,7 @@
       </div>
     </div>
   </footer>
- 
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       lucide.createIcons();
@@ -1419,6 +851,36 @@
       document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) closeMenu(); });
       document.querySelectorAll('#mobile-menu a').forEach(link => link.addEventListener('click', closeMenu));
  
+      // Billing Toggle Logic
+      const toggle = document.getElementById('billing-toggle');
+      const mLabel = document.getElementById('monthly-label');
+      const aLabel = document.getElementById('annual-label');
+      const mPrices = document.querySelectorAll('.monthly-price');
+      const aPrices = document.querySelectorAll('.annual-price');
+      let isAnnual = false;
+
+      toggle.addEventListener('click', () => {
+        isAnnual = !isAnnual;
+        toggle.classList.toggle('active');
+        toggle.setAttribute('aria-checked', isAnnual.toString());
+        
+        if(isAnnual) {
+            mLabel.classList.remove('text-white', 'font-semibold');
+            mLabel.classList.add('text-slate-400');
+            aLabel.classList.add('text-white', 'font-semibold');
+            aLabel.classList.remove('text-slate-400');
+            mPrices.forEach(el => el.style.display = 'none');
+            aPrices.forEach(el => el.style.display = 'inline');
+        } else {
+            mLabel.classList.add('text-white', 'font-semibold');
+            mLabel.classList.remove('text-slate-400');
+            aLabel.classList.remove('text-white', 'font-semibold');
+            aLabel.classList.add('text-slate-400');
+            mPrices.forEach(el => el.style.display = 'inline');
+            aPrices.forEach(el => el.style.display = 'none');
+        }
+      });
+ 
       // Counter animation
       const counters = document.querySelectorAll('.counter');
       const animateCounter = (counter) => {
@@ -1443,27 +905,6 @@
         });
       }, { threshold: 0.5 });
       counters.forEach(counter => counterObserver.observe(counter));
- 
-      // Feature items animation
-      const featureObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-          if (entry.isIntersecting) setTimeout(() => entry.target.classList.add('visible'), index * 80);
-        });
-      }, { threshold: 0.1 });
-      document.querySelectorAll('.feature-item').forEach(item => featureObserver.observe(item));
- 
-      // Solution cards reveal
-      const cardObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; }
-        });
-      }, { threshold: 0.1 });
-      document.querySelectorAll('.solution-card, .esh-card').forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
-        card.style.transition = `opacity 0.6s ease ${index * 100}ms, transform 0.6s ease ${index * 100}ms`;
-        cardObserver.observe(card);
-      });
  
       // Smooth scroll
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
