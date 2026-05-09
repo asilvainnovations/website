@@ -6,1664 +6,1116 @@
 <meta name="description" content="Alvin M. Silva, MDM - Development Management Professional & Resilience Expert with 18+ years of global experience in climate change adaptation, disaster risk reduction, and systems innovation.">
 <meta name="keywords" content="Development Management, Resilience Consultant, Climate Change Adaptation, Disaster Risk Reduction, Systems Innovation, Alvin Silva">
 <meta name="author" content="Alvin M. Silva, MDM">
-
-<!-- Open Graph / Social Media -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://alvin.asilvainnovations.com">
 <meta property="og:title" content="Alvin M. Silva, MDM | Development Management Professional & Resilience Expert">
 <meta property="og:description" content="Development management professional, systems innovator, and certified international humanitarian practitioner dedicated to co-creating policies and solutions for growth and sustainability.">
 <meta property="og:image" content="https://appimize.app/assets/apps/user_1097/images/288dd899974a_850_1097.png">
-
-<!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://alvin.asilvainnovations.com">
 <meta property="twitter:title" content="Alvin M. Silva, MDM | Development Management Professional & Resilience Expert">
 <meta property="twitter:description" content="Development management professional, systems innovator, and certified international humanitarian practitioner.">
 <meta property="twitter:image" content="https://appimize.app/assets/apps/user_1097/images/288dd899974a_850_1097.png">
-
 <title>Alvin M. Silva, MDM | Development Management Professional & Resilience Expert</title>
-
-<!-- Preconnect for performance -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://appimize.app">
-
-<!-- Preload critical fonts -->
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" as="style">
-
-<!-- Favicon -->
 <link rel="icon" type="image/png" href="https://appimize.app/assets/apps/user_1097/images/288dd899974a_850_1097.png">
-
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
-}
-
+/* ============================================
+   ROOT DESIGN TOKENS — synced with index.css
+   ============================================ */
 :root {
---electric-blue: #0066FF;
---sky-blue: #00BFFF;
---gold: #FFD700;
---dark-bg: #0a0e27;
---card-bg: #1a1f3a;
---text-primary: #ffffff;
---text-secondary: #e0e6ed;
---contrast-bg: #0d1224;
---glass-bg: rgba(26, 31, 58, 0.7);
---glass-border: rgba(255, 255, 255, 0.18);
---focus-color: #FFD700;
+  /* Brand palette */
+  --electric-blue:     #0066FF;
+  --sky-blue:          #00BFFF;
+  --gold:              #FFD700;
+  --dark-bg:           #0a0e27;
+  --card-bg:           #1a1f3a;
+  --contrast-bg:       #0d1224;
+  --text-primary:      #ffffff;
+  --text-secondary:    #e0e6ed;
+  --glass-bg:          rgba(26, 31, 58, 0.70);
+  --glass-border:      rgba(255, 255, 255, 0.18);
+  --focus-color:       #FFD700;
+
+  /* Shadcn-style tokens (mirrors index.css) */
+  --background:        210 40% 98%;
+  --foreground:        222.2 84% 4.9%;
+  --primary:           221 83% 53%;
+  --primary-foreground:210 40% 98%;
+  --secondary:         210 40% 96.1%;
+  --muted:             210 40% 96.1%;
+  --muted-foreground:  215.4 16.3% 46.9%;
+  --border:            214.3 31.8% 91.4%;
+  --ring:              221 83% 53%;
+  --radius:            0.5rem;
+
+  /* Sidebar tokens */
+  --sidebar-background:    220 23% 95%;
+  --sidebar-foreground:    215 25% 27%;
+  --sidebar-primary:       221 83% 53%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent:        220 14% 90%;
+  --sidebar-accent-foreground: 215 25% 27%;
+  --sidebar-border:        220 13% 91%;
+  --sidebar-ring:          221 83% 53%;
+
+  /* Typography — matches index.css font stack */
+  --font-sans:   'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display:'Montserrat', sans-serif;
+  --font-condensed:'Roboto Condensed', sans-serif;
+  --font-mono:   'JetBrains Mono', monospace;
 }
 
-html {
-scroll-behavior: smooth;
-}
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
 
 body {
-font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-background: linear-gradient(135deg, var(--dark-bg) 0%, #0f1428 100%);
-color: var(--text-primary);
-overflow-x: hidden;
-line-height: 1.6;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #0f1428 100%);
+  color: var(--text-primary);
+  overflow-x: hidden;
 }
 
+/* Heading hierarchy — Montserrat (matches index.css h1-h6 font-sans font-semibold) */
 h1, h2, h3, h4, h5, h6 {
-font-family: 'Montserrat', sans-serif;
-font-weight: 700;
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-.subtitle, .stat-label, .nav-links {
-font-family: 'Roboto Condensed', sans-serif;
+/* Condensed labels (stat-label, nav-links, subtitles) */
+.label, .stat-label, .nav-links li a, .subtitle {
+  font-family: var(--font-condensed);
 }
 
-/* Skip to content link for accessibility */
+/* Mono for code-like stat numbers */
+.stat-number {
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+
+/* Scrollbar — from index.css */
+::-webkit-scrollbar          { width: 8px; height: 8px; }
+::-webkit-scrollbar-track    { background: transparent; }
+::-webkit-scrollbar-thumb    { background: rgba(100,116,139,0.3); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(100,116,139,0.5); }
+
+/* Focus */
+*:focus-visible { outline: 3px solid var(--focus-color); outline-offset: 2px; }
+*:focus:not(:focus-visible) { outline: none; }
+
+/* Skip link */
 .skip-link {
-position: absolute;
-top: -40px;
-left: 0;
-background: var(--gold);
-color: var(--dark-bg);
-padding: 8px 16px;
-text-decoration: none;
-font-weight: 600;
-z-index: 10000;
-transition: top 0.3s;
+  position: absolute; top: -40px; left: 0;
+  background: var(--gold); color: var(--dark-bg);
+  padding: 8px 16px; text-decoration: none;
+  font-family: var(--font-display); font-weight: 600;
+  z-index: 10000; transition: top .3s;
+}
+.skip-link:focus { top: 0; }
+
+/* Screen-reader only */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0;
+  margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
 }
 
-.skip-link:focus {
-top: 0;
-}
-
-/* Animated Background */
+/* ============================================
+   ANIMATED BACKGROUND
+   ============================================ */
 .bg-animation {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: -1;
-overflow: hidden;
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%; z-index: -1; overflow: hidden;
 }
-
 .bg-animation::before {
-content: '';
-position: absolute;
-width: 200%;
-height: 200%;
-background: radial-gradient(circle, var(--electric-blue) 1px, transparent 1px);
-background-size: 50px 50px;
-animation: backgroundMove 20s linear infinite;
-opacity: 0.1;
+  content: '';
+  position: absolute; width: 200%; height: 200%;
+  background: radial-gradient(circle, var(--electric-blue) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: backgroundMove 20s linear infinite; opacity: 0.08;
 }
-
 @keyframes backgroundMove {
-0% { transform: translate(0, 0); }
-100% { transform: translate(50px, 50px); }
+  0%   { transform: translate(0,0); }
+  100% { transform: translate(50px,50px); }
 }
-
-/* Floating particles */
 .particle {
-position: absolute;
-background: var(--sky-blue);
-border-radius: 50%;
-opacity: 0.3;
-animation: float 6s infinite ease-in-out;
+  position: absolute; background: var(--sky-blue); border-radius: 50%;
+  opacity: 0.25; animation: floatParticle 6s infinite ease-in-out;
+}
+@keyframes floatParticle {
+  0%,100% { transform: translateY(0) translateX(0); }
+  50%     { transform: translateY(-30px) translateX(20px); }
 }
 
-@keyframes float {
-0%, 100% { transform: translateY(0) translateX(0); }
-50% { transform: translateY(-30px) translateX(20px); }
-}
-
-/* Header */
+/* ============================================
+   HEADER / NAV
+   ============================================ */
 header {
-padding: 2rem 5%;
-background: rgba(10, 14, 39, 0.85);
-backdrop-filter: blur(20px) saturate(180%);
--webkit-backdrop-filter: blur(20px) saturate(180%);
-position: sticky;
-top: 0;
-z-index: 1000;
-border-bottom: 2px solid var(--electric-blue);
-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-animation: slideDown 0.8s ease-out;
+  padding: 1.5rem 5%;
+  background: rgba(10,14,39,0.88);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  position: sticky; top: 0; z-index: 1000;
+  border-bottom: 2px solid var(--electric-blue);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  animation: slideDown .7s ease-out;
 }
-
 @keyframes slideDown {
-from {
-transform: translateY(-100%);
-opacity: 0;
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(0);     opacity: 1; }
 }
-to {
-transform: translateY(0);
-opacity: 1;
-}
-}
-
 nav {
-display: flex;
-justify-content: space-between;
-align-items: center;
-max-width: 1400px;
-margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  max-width: 1400px; margin: 0 auto;
 }
-
-.logo-container {
-display: flex;
-align-items: center;
-gap: 1rem;
-}
-
+.logo-container { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
 .logo {
-width: 60px;
-height: 60px;
-border-radius: 50%;
-border: 3px solid var(--gold);
-padding: 5px;
-background: white;
-animation: rotateLogo 10s linear infinite;
+  width: 54px; height: 54px; border-radius: 50%;
+  border: 2px solid var(--gold); padding: 4px; background: #fff;
+  animation: rotateLogo 12s linear infinite;
 }
-
 @keyframes rotateLogo {
-0% { transform: rotate(0deg); }
-100% { transform: rotate(360deg); }
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
-
 .brand-name {
-font-size: 1.5rem;
-font-weight: bold;
-background: linear-gradient(45deg, var(--electric-blue), var(--sky-blue), var(--gold));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
+  font-family: var(--font-display);
+  font-size: 1.35rem; font-weight: 800; letter-spacing: .04em;
+  background: linear-gradient(45deg, var(--electric-blue), var(--sky-blue), var(--gold));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.brand-subtitle {
+  font-family: var(--font-condensed);
+  font-size: .72rem; font-weight: 400; color: var(--text-secondary);
+  letter-spacing: .06em; text-transform: uppercase;
 }
 
-/* Mobile menu button */
+/* Mobile toggle */
 .mobile-menu-btn {
-display: none;
-background: none;
-border: none;
-cursor: pointer;
-padding: 0.5rem;
-z-index: 1001;
+  display: none; background: none; border: none;
+  cursor: pointer; padding: .5rem; z-index: 1001;
 }
-
 .mobile-menu-btn span {
-display: block;
-width: 25px;
-height: 3px;
-background: var(--text-primary);
-margin: 5px 0;
-transition: all 0.3s ease;
-border-radius: 2px;
+  display: block; width: 25px; height: 3px;
+  background: var(--text-primary); margin: 5px 0;
+  transition: all .3s ease; border-radius: 2px;
 }
+.mobile-menu-btn[aria-expanded="true"] span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.mobile-menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.mobile-menu-btn[aria-expanded="true"] span:nth-child(3) { transform: rotate(-45deg) translate(7px,-6px); }
 
-.mobile-menu-btn[aria-expanded="true"] span:nth-child(1) {
-transform: rotate(45deg) translate(5px, 5px);
-}
-
-.mobile-menu-btn[aria-expanded="true"] span:nth-child(2) {
-opacity: 0;
-}
-
-.mobile-menu-btn[aria-expanded="true"] span:nth-child(3) {
-transform: rotate(-45deg) translate(7px, -6px);
-}
-
-.nav-links {
-display: flex;
-gap: 2rem;
-list-style: none;
-}
-
+/* Nav links — Roboto Condensed per index.css */
+.nav-links { display: flex; gap: 1.75rem; list-style: none; }
 .nav-links a {
-color: var(--text-primary);
-text-decoration: none;
-padding: 0.5rem 1rem;
-border-radius: 5px;
-transition: all 0.3s ease;
-position: relative;
+  font-family: var(--font-condensed);
+  font-size: .95rem; font-weight: 500; letter-spacing: .05em;
+  color: var(--text-primary); text-decoration: none;
+  padding: .45rem .9rem; border-radius: 4px;
+  transition: color .3s ease; position: relative;
 }
-
 .nav-links a::after {
-content: '';
-position: absolute;
-bottom: 0;
-left: 50%;
-width: 0;
-height: 2px;
-background: var(--gold);
-transition: all 0.3s ease;
-transform: translateX(-50%);
+  content: ''; position: absolute; bottom: 0; left: 50%;
+  width: 0; height: 2px; background: var(--gold);
+  transition: all .3s ease; transform: translateX(-50%);
 }
-
 .nav-links a:hover::after,
-.nav-links a:focus::after {
-width: 100%;
-}
-
+.nav-links a:focus::after  { width: 100%; }
 .nav-links a:hover,
-.nav-links a:focus {
-color: var(--gold);
-}
+.nav-links a:focus          { color: var(--gold); }
 
-/* Hero Section */
+/* ============================================
+   HERO
+   ============================================ */
 .hero {
-min-height: 90vh;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 4rem 5%;
-position: relative;
+  min-height: 90vh; display: flex;
+  align-items: center; justify-content: center;
+  padding: 4rem 5%; position: relative; overflow: hidden;
 }
-
 .hero-banner {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 60%;
-overflow: hidden;
-z-index: 0;
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 60%; z-index: 0; overflow: hidden;
 }
-
 .banner-image {
-width: 100%;
-height: 100%;
-object-fit: cover;
-object-position: center;
-animation: bannerZoom 20s ease-in-out infinite alternate;
-filter: brightness(0.9);
+  width: 100%; height: 100%; object-fit: cover; object-position: center;
+  animation: bannerZoom 18s ease-in-out infinite alternate; filter: brightness(.85);
 }
-
 @keyframes bannerZoom {
-0% { transform: scale(1); }
-100% { transform: scale(1.05); }
+  0%   { transform: scale(1);    }
+  100% { transform: scale(1.05); }
 }
-
 .banner-overlay {
-position: absolute;
-bottom: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: linear-gradient(to bottom, transparent 0%, rgba(10, 14, 39, 0.3) 40%, rgba(10, 14, 39, 0.95) 100%);
-pointer-events: none;
+  position: absolute; bottom: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to bottom,
+    transparent 0%, rgba(10,14,39,.4) 40%, rgba(10,14,39,.96) 100%);
+  pointer-events: none;
 }
-
 .hero-content {
-max-width: 1400px;
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 4rem;
-align-items: center;
-animation: fadeInUp 1s ease-out;
-position: relative;
-z-index: 1;
-margin-top: 20%;
+  max-width: 1400px; width: 100%;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+  align-items: center; position: relative; z-index: 1;
+  margin-top: 18%; animation: fadeInUp .9s ease-out;
 }
-
 @keyframes fadeInUp {
-from {
-opacity: 0;
-transform: translateY(40px);
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0);    }
 }
-to {
-opacity: 1;
-transform: translateY(0);
-}
-}
-
 .hero-text h1 {
-font-size: 3.5rem;
-margin-bottom: 1rem;
-color: #ffffff;
-animation: shimmer 3s infinite;
+  font-family: var(--font-display);
+  font-size: 3.4rem; font-weight: 800; letter-spacing: -.01em;
+  color: #fff; margin-bottom: .75rem;
 }
-
-@keyframes shimmer {
-0%, 100% { opacity: 1; }
-50% { opacity: 0.7; }
-}
-
 .hero-text .subtitle {
-font-size: 1.3rem;
-color: var(--gold);
-margin-bottom: 1.5rem;
-font-weight: 600;
+  font-family: var(--font-condensed);
+  font-size: 1.15rem; font-weight: 600; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem;
 }
-
 .hero-text p {
-font-size: 1.1rem;
-color: #e0e6ed;
-margin-bottom: 2rem;
-line-height: 1.8;
+  font-family: var(--font-sans);
+  font-size: 1.05rem; font-weight: 300; color: var(--text-secondary);
+  line-height: 1.85; margin-bottom: 2.25rem;
 }
 
-.cta-buttons {
-display: flex;
-gap: 1.5rem;
-flex-wrap: wrap;
-}
-
+/* CTA buttons */
+.cta-buttons { display: flex; gap: 1.25rem; flex-wrap: wrap; }
 .btn {
-padding: 1rem 2.5rem;
-border-radius: 50px;
-text-decoration: none;
-font-weight: 600;
-transition: all 0.3s ease;
-position: relative;
-overflow: hidden;
-display: inline-block;
-cursor: pointer;
-border: none;
-font-family: inherit;
-font-size: 1rem;
+  font-family: var(--font-display);
+  padding: .9rem 2.25rem; border-radius: 50px;
+  text-decoration: none; font-weight: 600; font-size: .95rem;
+  letter-spacing: .03em; transition: all .3s ease;
+  position: relative; overflow: hidden;
+  display: inline-block; cursor: pointer; border: none;
 }
-
 .btn-primary {
-background: linear-gradient(45deg, var(--electric-blue), var(--sky-blue));
-color: white;
+  background: linear-gradient(45deg, var(--electric-blue), var(--sky-blue));
+  color: #fff;
 }
-
 .btn-primary::before {
-content: '';
-position: absolute;
-top: 0;
-left: -100%;
-width: 100%;
-height: 100%;
-background: linear-gradient(45deg, var(--sky-blue), var(--gold));
-transition: left 0.3s ease;
+  content: ''; position: absolute; top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(45deg, var(--sky-blue), var(--gold));
+  transition: left .3s ease;
 }
-
 .btn-primary:hover::before,
-.btn-primary:focus::before {
-left: 0;
-}
-
-.btn-primary span {
-position: relative;
-z-index: 1;
-}
-
+.btn-primary:focus::before { left: 0; }
+.btn-primary span { position: relative; z-index: 1; }
 .btn-secondary {
-background: transparent;
-color: var(--gold);
-border: 2px solid var(--gold);
+  background: transparent; color: var(--gold);
+  border: 2px solid var(--gold);
 }
-
 .btn-secondary:hover,
 .btn-secondary:focus {
-background: var(--gold);
-color: var(--dark-bg);
-transform: translateY(-3px);
-box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+  background: var(--gold); color: var(--dark-bg);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255,215,0,.3);
 }
 
-.hero-image {
-position: relative;
-animation: floatImage 3s ease-in-out infinite;
-}
-
+/* Hero stats card */
+.hero-image { position: relative; animation: floatImage 3s ease-in-out infinite; }
 @keyframes floatImage {
-0%, 100% { transform: translateY(0); }
-50% { transform: translateY(-20px); }
+  0%,100% { transform: translateY(0);   }
+  50%     { transform: translateY(-18px); }
 }
-
 .hero-card {
-background: rgba(26, 31, 58, 0.6);
-backdrop-filter: blur(20px) saturate(180%);
--webkit-backdrop-filter: blur(20px) saturate(180%);
-padding: 3rem;
-border-radius: 20px;
-border: 2px solid rgba(255, 255, 255, 0.2);
-box-shadow: 0 8px 32px 0 rgba(0, 102, 255, 0.4),
-0 20px 60px 0 rgba(0, 0, 0, 0.5);
-position: relative;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  padding: 2.75rem; border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px rgba(0,102,255,.35), 0 20px 60px rgba(0,0,0,.5);
+  position: relative; transition: box-shadow .3s ease;
 }
-
-.hero-card::before {
-content: '';
-position: absolute;
-top: -2px;
-left: -2px;
-right: -2px;
-bottom: -2px;
-background: linear-gradient(45deg, var(--electric-blue), var(--sky-blue), var(--gold));
-border-radius: 20px;
-z-index: -1;
-opacity: 0;
-transition: opacity 0.3s ease;
-}
-
-.hero-card:hover::before,
-.hero-card:focus-within::before {
-opacity: 1;
-animation: borderGlow 2s linear infinite;
-}
-
-@keyframes borderGlow {
-0%, 100% { filter: hue-rotate(0deg); }
-50% { filter: hue-rotate(180deg); }
-}
-
-.stat-item {
-margin-bottom: 1.5rem;
-}
-
+.hero-card:hover { box-shadow: 0 12px 48px rgba(0,102,255,.55), 0 24px 72px rgba(0,0,0,.6); }
+.stat-item { margin-bottom: 1.5rem; }
 .stat-number {
-font-size: 2.5rem;
-font-weight: bold;
-background: linear-gradient(45deg, var(--gold), var(--sky-blue));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
+  font-family: var(--font-display);
+  font-size: 2.4rem; font-weight: 800;
+  background: linear-gradient(45deg, var(--gold), var(--sky-blue));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
-
 .stat-label {
-color: var(--text-secondary);
-font-size: 0.95rem;
+  font-family: var(--font-condensed);
+  font-size: .9rem; font-weight: 500;
+  letter-spacing: .05em; color: var(--text-secondary);
+  text-transform: uppercase;
 }
 
-/* Tooltip - Accessible */
-.tooltip {
-position: relative;
-display: inline-block;
-cursor: help;
-border-bottom: 2px dotted var(--sky-blue);
-}
-
+/* Tooltip */
+.tooltip { position: relative; display: inline-block; cursor: help; border-bottom: 2px dotted var(--sky-blue); }
 .tooltip .tooltiptext {
-visibility: hidden;
-width: 300px;
-max-width: 90vw;
-background: rgba(10, 14, 39, 0.95);
-backdrop-filter: blur(20px) saturate(180%);
--webkit-backdrop-filter: blur(20px) saturate(180%);
-color: var(--text-primary);
-text-align: left;
-border-radius: 10px;
-padding: 1rem;
-position: absolute;
-z-index: 100;
-bottom: 125%;
-left: 50%;
-margin-left: -150px;
-opacity: 0;
-transition: opacity 0.3s, visibility 0.3s;
-border: 1px solid rgba(255, 255, 255, 0.2);
-box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6),
-0 4px 16px rgba(0, 102, 255, 0.3);
+  visibility: hidden; width: 300px; max-width: 90vw;
+  background: rgba(10,14,39,.96); backdrop-filter: blur(16px);
+  color: var(--text-primary); text-align: left;
+  font-family: var(--font-sans); font-size: .88rem; line-height: 1.6;
+  border-radius: 10px; padding: 1rem;
+  position: absolute; z-index: 100; bottom: 130%; left: 50%;
+  margin-left: -150px; opacity: 0;
+  transition: opacity .3s, visibility .3s;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px rgba(0,0,0,.6), 0 4px 16px rgba(0,102,255,.3);
 }
-
 .tooltip:hover .tooltiptext,
 .tooltip:focus .tooltiptext,
-.tooltip:focus-within .tooltiptext {
-visibility: visible;
-opacity: 1;
-animation: tooltipFade 0.3s ease-in;
-}
+.tooltip:focus-within .tooltiptext { visibility: visible; opacity: 1; }
 
-@keyframes tooltipFade {
-from { opacity: 0; transform: translateY(10px); }
-to { opacity: 1; transform: translateY(0); }
-}
-
-/* Expertise Section */
-.expertise {
-padding: 5rem 5%;
-background: rgba(15, 20, 40, 0.5);
-}
-
+/* ============================================
+   SECTION TITLE (shared)
+   ============================================ */
 .section-title {
-text-align: center;
-font-size: 2.5rem;
-margin-bottom: 3rem;
-font-family: 'Montserrat', sans-serif;
-font-weight: 800;
-background: linear-gradient(45deg, var(--electric-blue), var(--gold));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-text-shadow: 0 2px 10px rgba(0, 102, 255, 0.3);
+  font-family: var(--font-display);
+  text-align: center; font-size: 2.4rem; font-weight: 800;
+  letter-spacing: -.01em; margin-bottom: 3rem;
+  background: linear-gradient(45deg, var(--electric-blue), var(--gold));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 
+/* ============================================
+   EXPERTISE
+   ============================================ */
+.expertise { padding: 5rem 5%; background: rgba(15,20,40,.5); }
 .expertise-grid {
-max-width: 1400px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-gap: 2rem;
+  max-width: 1400px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 2rem;
 }
-
 .expertise-card {
-background: rgba(26, 31, 58, 0.6);
-backdrop-filter: blur(20px) saturate(180%);
--webkit-backdrop-filter: blur(20px) saturate(180%);
-padding: 2.5rem;
-border-radius: 15px;
-border: 1px solid rgba(255, 255, 255, 0.18);
-box-shadow: 0 8px 32px 0 rgba(0, 102, 255, 0.3),
-0 4px 16px 0 rgba(0, 0, 0, 0.4);
-transition: all 0.3s ease;
-position: relative;
-overflow: hidden;
-animation: fadeInUp 0.8s ease-out backwards;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  padding: 2.5rem; border-radius: 16px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px rgba(0,102,255,.25), 0 4px 16px rgba(0,0,0,.4);
+  transition: all .35s ease; position: relative; overflow: hidden;
+  animation: fadeInUp .8s ease-out backwards;
 }
-
-.expertise-card:nth-child(1) { animation-delay: 0.1s; }
-.expertise-card:nth-child(2) { animation-delay: 0.2s; }
-.expertise-card:nth-child(3) { animation-delay: 0.3s; }
-.expertise-card:nth-child(4) { animation-delay: 0.4s; }
-.expertise-card:nth-child(5) { animation-delay: 0.5s; }
-.expertise-card:nth-child(6) { animation-delay: 0.6s; }
-.expertise-card:nth-child(7) { animation-delay: 0.7s; }
-
+.expertise-card:nth-child(1) { animation-delay: .1s; }
+.expertise-card:nth-child(2) { animation-delay: .2s; }
+.expertise-card:nth-child(3) { animation-delay: .3s; }
+.expertise-card:nth-child(4) { animation-delay: .4s; }
+.expertise-card:nth-child(5) { animation-delay: .5s; }
+.expertise-card:nth-child(6) { animation-delay: .6s; }
+.expertise-card:nth-child(7) { animation-delay: .7s; }
 .expertise-card::before {
-content: '';
-position: absolute;
-top: 0;
-left: -100%;
-width: 100%;
-height: 100%;
-background: linear-gradient(90deg, transparent, rgba(0, 191, 255, 0.3), transparent);
-transition: left 0.5s ease;
+  content: ''; position: absolute; top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0,191,255,.15), transparent);
+  transition: left .5s ease;
 }
-
 .expertise-card:hover::before,
-.expertise-card:focus-within::before {
-left: 100%;
-}
-
+.expertise-card:focus-within::before { left: 100%; }
 .expertise-card:hover,
 .expertise-card:focus-within {
-transform: translateY(-10px);
-box-shadow: 0 20px 40px rgba(0, 102, 255, 0.5),
-0 8px 20px rgba(0, 191, 255, 0.4);
-border-color: rgba(255, 215, 0, 0.5);
-background: rgba(26, 31, 58, 0.8);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,102,255,.4), 0 8px 20px rgba(0,191,255,.3);
+  border-color: rgba(255,215,0,.45);
+  background: rgba(26,31,58,.88);
 }
-
 .expertise-icon {
-font-size: 3rem;
-margin-bottom: 1rem;
-display: inline-block;
-animation: pulse 2s infinite;
+  font-size: 2.75rem; margin-bottom: 1rem;
+  display: inline-block; animation: pulse 2.5s infinite;
 }
-
 @keyframes pulse {
-0%, 100% { transform: scale(1); }
-50% { transform: scale(1.1); }
+  0%,100% { transform: scale(1);   }
+  50%     { transform: scale(1.1); }
 }
-
 .expertise-card h3 {
-color: #4ddbff;
-margin-bottom: 1rem;
-font-size: 1.4rem;
-font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--sky-blue); margin-bottom: .75rem;
+  font-size: 1.25rem; font-weight: 700; letter-spacing: -.01em;
 }
-
 .expertise-card p {
-color: var(--text-secondary);
-line-height: 1.8;
+  font-family: var(--font-sans);
+  color: var(--text-secondary); line-height: 1.8; font-size: .96rem; font-weight: 300;
 }
 
-/* Achievements Section */
-.achievements {
-padding: 5rem 5%;
-}
-
-.timeline {
-max-width: 1200px;
-margin: 0 auto;
-position: relative;
-}
-
+/* ============================================
+   ACHIEVEMENTS TIMELINE
+   ============================================ */
+.achievements { padding: 5rem 5%; }
+.timeline { max-width: 1200px; margin: 0 auto; position: relative; }
 .timeline::before {
-content: '';
-position: absolute;
-left: 50%;
-transform: translateX(-50%);
-width: 3px;
-height: 100%;
-background: linear-gradient(180deg, var(--electric-blue), var(--sky-blue), var(--gold));
+  content: ''; position: absolute;
+  left: 50%; transform: translateX(-50%);
+  width: 3px; height: 100%;
+  background: linear-gradient(180deg, var(--electric-blue), var(--sky-blue), var(--gold));
 }
-
 .timeline-item {
-margin-bottom: 3rem;
-position: relative;
-animation: fadeInUp 0.8s ease-out backwards;
+  margin-bottom: 3rem; position: relative;
+  animation: fadeInUp .8s ease-out backwards;
 }
-
-.timeline-item:nth-child(odd) {
-padding-right: 55%;
-text-align: right;
-}
-
-.timeline-item:nth-child(even) {
-padding-left: 55%;
-}
-
+.timeline-item:nth-child(odd)  { padding-right: 55%; text-align: right; }
+.timeline-item:nth-child(even) { padding-left: 55%; }
 .timeline-content {
-background: rgba(26, 31, 58, 0.6);
-backdrop-filter: blur(20px) saturate(180%);
--webkit-backdrop-filter: blur(20px) saturate(180%);
-padding: 2rem;
-border-radius: 15px;
-border: 1px solid rgba(255, 255, 255, 0.18);
-box-shadow: 0 8px 32px 0 rgba(0, 102, 255, 0.3),
-0 4px 16px 0 rgba(0, 0, 0, 0.4);
-position: relative;
-transition: all 0.3s ease;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  padding: 2rem; border-radius: 16px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px rgba(0,102,255,.25), 0 4px 16px rgba(0,0,0,.4);
+  position: relative; transition: all .3s ease;
 }
-
 .timeline-content:hover,
 .timeline-content:focus-within {
-transform: scale(1.05);
-box-shadow: 0 15px 40px rgba(0, 191, 255, 0.4),
-0 8px 24px rgba(0, 102, 255, 0.5);
-border-color: rgba(255, 215, 0, 0.4);
-background: rgba(26, 31, 58, 0.8);
+  transform: scale(1.04);
+  box-shadow: 0 15px 40px rgba(0,191,255,.35), 0 8px 24px rgba(0,102,255,.4);
+  border-color: rgba(255,215,0,.35);
+  background: rgba(26,31,58,.88);
 }
-
 .timeline-content h3 {
-color: #ffffff;
-margin-bottom: 0.5rem;
-font-weight: 700;
+  font-family: var(--font-display);
+  color: #fff; margin-bottom: .4rem; font-size: 1.1rem; font-weight: 700;
 }
-
 .timeline-content p {
-color: var(--text-secondary);
-line-height: 1.8;
+  font-family: var(--font-sans);
+  color: var(--text-secondary); line-height: 1.8; font-size: .94rem; font-weight: 300;
 }
-
 .timeline-date {
-color: var(--gold);
-font-size: 0.875rem;
-font-weight: 600;
-display: block;
-margin-top: 0.5rem;
+  font-family: var(--font-condensed);
+  color: var(--gold); font-size: .82rem; font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase;
+  display: block; margin-top: .5rem;
 }
-
 .timeline-dot {
-position: absolute;
-left: 50%;
-transform: translateX(-50%);
-width: 20px;
-height: 20px;
-background: var(--gold);
-border-radius: 50%;
-border: 4px solid var(--dark-bg);
-top: 0;
-animation: dotPulse 2s infinite;
+  position: absolute; left: 50%; transform: translateX(-50%);
+  width: 18px; height: 18px; background: var(--gold); border-radius: 50%;
+  border: 4px solid var(--dark-bg); top: 0;
+  animation: dotPulse 2s infinite;
 }
-
 @keyframes dotPulse {
-0%, 100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
-50% { box-shadow: 0 0 0 15px rgba(255, 215, 0, 0); }
+  0%,100% { box-shadow: 0 0 0 0   rgba(255,215,0,.7); }
+  50%     { box-shadow: 0 0 0 14px rgba(255,215,0,0);  }
 }
 
-/* Contact Section */
+/* ============================================
+   CONTACT
+   ============================================ */
 .contact {
-padding: 5rem 5%;
-background: linear-gradient(135deg, rgba(0, 102, 255, 0.1), rgba(0, 191, 255, 0.1));
+  padding: 5rem 5%;
+  background: linear-gradient(135deg, rgba(0,102,255,.08), rgba(0,191,255,.08));
 }
-
 .contact-container {
-max-width: 1200px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 4rem;
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
 }
-
-.contact-info {
-animation: fadeInLeft 1s ease-out;
-}
-
+.contact-info { animation: fadeInLeft .9s ease-out; }
 @keyframes fadeInLeft {
-from {
-opacity: 0;
-transform: translateX(-50px);
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0);     }
 }
-to {
-opacity: 1;
-transform: translateX(0);
+.contact-section-title {
+  font-family: var(--font-display);
+  color: var(--sky-blue); margin-bottom: 2rem;
+  font-size: 1.7rem; font-weight: 700;
 }
-}
-
 .contact-item {
-display: flex;
-align-items: center;
-gap: 1.5rem;
-margin-bottom: 2rem;
-padding: 1.5rem;
-background: rgba(26, 31, 58, 0.6);
-backdrop-filter: blur(20px) saturate(180%);
--webkit-backdrop-filter: blur(20px) saturate(180%);
-border-radius: 10px;
-border: 1px solid rgba(255, 255, 255, 0.18);
-border-left: 4px solid var(--gold);
-box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.3);
-transition: all 0.3s ease;
+  display: flex; align-items: center; gap: 1.5rem; margin-bottom: 1.75rem;
+  padding: 1.4rem 1.6rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 12px; border: 1px solid var(--glass-border);
+  border-left: 4px solid var(--gold);
+  box-shadow: 0 4px 16px rgba(0,0,0,.3);
+  transition: all .3s ease;
 }
-
 .contact-item:hover,
 .contact-item:focus-within {
-transform: translateX(10px);
-background: rgba(26, 31, 58, 0.85);
-box-shadow: 0 8px 24px 0 rgba(0, 102, 255, 0.3);
-border-left-color: var(--electric-blue);
+  transform: translateX(10px);
+  background: rgba(26,31,58,.88);
+  box-shadow: 0 8px 24px rgba(0,102,255,.3);
+  border-left-color: var(--electric-blue);
 }
-
 .contact-item h4 {
-color: var(--gold);
-margin-bottom: 0.5rem;
+  font-family: var(--font-display);
+  color: var(--gold); margin-bottom: .3rem; font-size: .92rem; font-weight: 600;
+  letter-spacing: .04em; text-transform: uppercase;
 }
-
 .contact-item p {
-color: var(--text-secondary);
+  font-family: var(--font-sans);
+  color: var(--text-secondary); font-size: .95rem;
 }
-
 .contact-item a {
-color: var(--sky-blue);
-text-decoration: none;
-transition: color 0.3s ease;
+  color: var(--sky-blue); text-decoration: none; transition: color .3s ease;
 }
-
 .contact-item a:hover,
-.contact-item a:focus {
-color: var(--gold);
-text-decoration: underline;
-}
+.contact-item a:focus { color: var(--gold); text-decoration: underline; }
+.contact-icon { font-size: 1.85rem; color: var(--sky-blue); flex-shrink: 0; }
 
-.contact-icon {
-font-size: 2rem;
-color: #4ddbff;
-flex-shrink: 0;
-}
-
-.contact-form {
-animation: fadeInRight 1s ease-out;
-}
-
+/* Form */
+.contact-form { animation: fadeInRight .9s ease-out; }
 @keyframes fadeInRight {
-from {
-opacity: 0;
-transform: translateX(50px);
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0);    }
 }
-to {
-opacity: 1;
-transform: translateX(0);
-}
-}
-
-.form-group {
-margin-bottom: 1.5rem;
-}
-
+.form-group { margin-bottom: 1.5rem; }
 .form-group label {
-display: block;
-margin-bottom: 0.5rem;
-color: #4ddbff;
-font-weight: 600;
-font-family: 'Montserrat', sans-serif;
+  display: block; margin-bottom: .45rem;
+  font-family: var(--font-display);
+  color: var(--sky-blue); font-size: .9rem; font-weight: 600; letter-spacing: .04em;
 }
-
 .form-group input,
 .form-group textarea {
-width: 100%;
-padding: 1rem;
-background: rgba(26, 31, 58, 0.7);
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
-border: 2px solid rgba(255, 255, 255, 0.2);
-border-radius: 10px;
-color: var(--text-primary);
-font-size: 1rem;
-font-family: 'Poppins', sans-serif;
-transition: all 0.3s ease;
+  width: 100%; padding: .95rem 1.1rem;
+  background: rgba(26,31,58,.7); backdrop-filter: blur(10px);
+  border: 2px solid var(--glass-border); border-radius: 10px;
+  color: var(--text-primary);
+  font-family: var(--font-sans); font-size: .96rem;
+  transition: all .3s ease;
 }
-
 .form-group input::placeholder,
-.form-group textarea::placeholder {
-color: rgba(224, 230, 237, 0.6);
-}
-
+.form-group textarea::placeholder { color: rgba(224,230,237,.5); }
 .form-group input:focus,
 .form-group textarea:focus {
-outline: none;
-border-color: var(--gold);
-background: rgba(26, 31, 58, 0.9);
-box-shadow: 0 0 20px rgba(255, 215, 0, 0.3),
-0 4px 16px rgba(0, 102, 255, 0.2);
+  outline: none; border-color: var(--gold);
+  background: rgba(26,31,58,.9);
+  box-shadow: 0 0 18px rgba(255,215,0,.25), 0 4px 16px rgba(0,102,255,.15);
 }
-
-.form-group textarea {
-min-height: 150px;
-resize: vertical;
-}
-
+.form-group textarea { min-height: 150px; resize: vertical; }
 .form-status {
-margin-top: 1rem;
-padding: 1rem;
-border-radius: 10px;
-display: none;
+  margin-top: 1rem; padding: 1rem; border-radius: 10px;
+  font-family: var(--font-sans); display: none;
 }
+.form-status.success { background: rgba(0,255,0,.1); border: 1px solid #00ff00; color: #00ff00; display: block; }
+.form-status.error   { background: rgba(255,0,0,.1); border: 1px solid #ff0000; color: #ff0000; display: block; }
 
-.form-status.success {
-background: rgba(0, 255, 0, 0.1);
-border: 1px solid #00ff00;
-color: #00ff00;
-display: block;
-}
-
-.form-status.error {
-background: rgba(255, 0, 0, 0.1);
-border: 1px solid #ff0000;
-color: #ff0000;
-display: block;
-}
-
-/* Footer */
+/* ============================================
+   FOOTER
+   ============================================ */
 footer {
-padding: 3rem 5%;
-background: rgba(10, 14, 39, 0.95);
-backdrop-filter: blur(20px) saturate(180%);
--webkit-backdrop-filter: blur(20px) saturate(180%);
-border-top: 2px solid var(--electric-blue);
-box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.4);
-text-align: center;
+  padding: 2.5rem 5%;
+  background: rgba(10,14,39,.96);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-top: 2px solid var(--electric-blue);
+  box-shadow: 0 -4px 16px rgba(0,0,0,.4);
+  text-align: center;
 }
-
-.social-links {
-display: flex;
-justify-content: center;
-gap: 2rem;
-margin-bottom: 2rem;
-}
-
+.social-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.75rem; }
 .social-links a {
-width: 50px;
-height: 50px;
-border-radius: 50%;
-background: linear-gradient(45deg, var(--electric-blue), var(--sky-blue));
-display: flex;
-align-items: center;
-justify-content: center;
-color: white;
-font-size: 1.5rem;
-text-decoration: none;
-transition: all 0.3s ease;
+  width: 48px; height: 48px; border-radius: 50%;
+  background: linear-gradient(45deg, var(--electric-blue), var(--sky-blue));
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 1.35rem; text-decoration: none;
+  transition: all .3s ease;
 }
-
 .social-links a:hover,
 .social-links a:focus {
-transform: translateY(-5px) rotate(360deg);
-box-shadow: 0 10px 30px rgba(0, 191, 255, 0.5);
+  transform: translateY(-5px) rotate(360deg);
+  box-shadow: 0 10px 30px rgba(0,191,255,.5);
 }
-
 .footer-text {
-color: var(--text-secondary);
+  font-family: var(--font-sans);
+  color: var(--text-secondary); font-size: .9rem; font-weight: 300;
 }
-
 .footer-subtext {
-color: var(--text-secondary);
-margin-top: 1rem;
-font-size: 0.9rem;
+  font-family: var(--font-sans);
+  color: var(--text-secondary); margin-top: .75rem; font-size: .82rem;
 }
 
-/* Back to top button */
+/* Back to top */
 .back-to-top {
-position: fixed;
-bottom: 30px;
-right: 30px;
-width: 50px;
-height: 50px;
-border-radius: 50%;
-background: linear-gradient(45deg, var(--electric-blue), var(--sky-blue));
-border: none;
-cursor: pointer;
-display: flex;
-align-items: center;
-justify-content: center;
-opacity: 0;
-visibility: hidden;
-transition: all 0.3s ease;
-z-index: 999;
-box-shadow: 0 4px 16px rgba(0, 102, 255, 0.4);
+  position: fixed; bottom: 30px; right: 30px;
+  width: 48px; height: 48px; border-radius: 50%;
+  background: linear-gradient(45deg, var(--electric-blue), var(--sky-blue));
+  border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transition: all .3s ease;
+  z-index: 999; box-shadow: 0 4px 16px rgba(0,102,255,.4);
 }
-
-.back-to-top.visible {
-opacity: 1;
-visibility: visible;
-}
-
+.back-to-top.visible { opacity: 1; visibility: visible; }
 .back-to-top:hover,
-.back-to-top:focus {
-transform: translateY(-5px);
-box-shadow: 0 8px 24px rgba(0, 191, 255, 0.5);
+.back-to-top:focus { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,191,255,.5); }
+.back-to-top svg { width: 22px; height: 22px; fill: #fff; }
+
+/* Flagship timeline entry — BIRD & top-tier achievements */
+.timeline-item:first-child .timeline-content {
+  border: 1px solid rgba(255, 215, 0, 0.45);
+  background: rgba(26, 31, 58, 0.82);
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.12), 0 4px 16px rgba(0, 102, 255, 0.3);
+}
+.timeline-item:first-child .timeline-dot {
+  width: 24px; height: 24px;
+  background: linear-gradient(135deg, var(--gold), var(--sky-blue));
+  box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.25);
+}
+.timeline-item:first-child .timeline-content h3 {
+  color: var(--gold);
+  font-size: 1.15rem;
+}
+.timeline-deliverables {
+  margin-top: .85rem;
+  padding: .85rem 1rem;
+  background: rgba(0, 102, 255, 0.08);
+  border-left: 3px solid var(--sky-blue);
+  border-radius: 0 8px 8px 0;
+}
+.timeline-deliverables p {
+  font-family: var(--font-condensed);
+  font-size: .85rem; font-weight: 600;
+  letter-spacing: .05em; text-transform: uppercase;
+  color: var(--sky-blue); margin-bottom: .5rem;
+}
+.timeline-deliverables ul {
+  list-style: none; padding: 0; margin: 0;
+}
+.timeline-deliverables ul li {
+  font-family: var(--font-sans);
+  font-size: .88rem; font-weight: 300;
+  color: var(--text-secondary); line-height: 1.7;
+  padding: .25rem 0 .25rem 1.2rem;
+  position: relative;
+}
+.timeline-deliverables ul li::before {
+  content: '▸';
+  position: absolute; left: 0;
+  color: var(--gold); font-size: .75rem;
 }
 
-.back-to-top svg {
-width: 24px;
-height: 24px;
-fill: white;
-}
+/* ============================================
+   SCROLL REVEAL
+   ============================================ */
+.scroll-reveal { opacity: 0; transform: translateY(50px); transition: all .8s ease-out; }
+.scroll-reveal.active { opacity: 1; transform: translateY(0); }
 
-/* Responsive */
+/* ============================================
+   RESPONSIVE
+   ============================================ */
 @media (max-width: 1024px) {
-.hero-content {
-grid-template-columns: 1fr;
-text-align: center;
-margin-top: 25%;
+  .hero-content { grid-template-columns: 1fr; text-align: center; margin-top: 24%; }
+  .hero-banner  { height: 50%; }
+  .hero-text h1 { font-size: 2.5rem; }
+  .contact-container { grid-template-columns: 1fr; }
+  .timeline::before { left: 20px; }
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) { padding-left: 60px; padding-right: 0; text-align: left; }
+  .timeline-dot { left: 20px; transform: translateX(-50%); }
 }
-
-.hero-banner {
-height: 50%;
-}
-
-.hero-text h1 {
-font-size: 2.5rem;
-}
-
-.contact-container {
-grid-template-columns: 1fr;
-}
-
-.timeline::before {
-left: 20px;
-}
-
-.timeline-item:nth-child(odd),
-.timeline-item:nth-child(even) {
-padding-left: 60px;
-padding-right: 0;
-text-align: left;
-}
-
-.timeline-dot {
-left: 20px;
-transform: translateX(-50%);
-}
-}
-
 @media (max-width: 768px) {
-.mobile-menu-btn {
-display: block;
+  .mobile-menu-btn { display: block; }
+  .nav-links {
+    display: none; position: fixed; top: 0; left: 0;
+    width: 100%; height: 100vh; background: rgba(10,14,39,.98);
+    flex-direction: column; justify-content: center; align-items: center;
+    gap: 1.5rem; z-index: 999;
+  }
+  .nav-links.active { display: flex; }
+  .nav-links a { font-size: 1.4rem; padding: 1rem 2rem; }
+  .hero-banner  { height: 40%; }
+  .hero-content { margin-top: 30%; }
+  .hero-text h1 { font-size: 2rem; }
+  .section-title { font-size: 2rem; }
+  .cta-buttons  { flex-direction: column; }
+  .btn          { width: 100%; text-align: center; }
+  .brand-name   { font-size: 1.15rem; }
+  .logo         { width: 46px; height: 46px; }
+  .tooltip .tooltiptext { width: 250px; margin-left: -125px; }
 }
 
-.nav-links {
-display: none;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100vh;
-background: rgba(10, 14, 39, 0.98);
-flex-direction: column;
-justify-content: center;
-align-items: center;
-gap: 2rem;
-z-index: 999;
-}
-
-.nav-links.active {
-display: flex;
-}
-
-.nav-links a {
-font-size: 1.5rem;
-padding: 1rem 2rem;
-}
-
-.hero-banner {
-height: 40%;
-}
-
-.hero-content {
-margin-top: 30%;
-}
-
-.hero-text h1 {
-font-size: 2rem;
-}
-
-.section-title {
-font-size: 2rem;
-}
-
-.cta-buttons {
-flex-direction: column;
-}
-
-.btn {
-width: 100%;
-text-align: center;
-}
-
-.brand-name {
-font-size: 1.2rem;
-}
-
-.logo {
-width: 50px;
-height: 50px;
-}
-
-.tooltip .tooltiptext {
-width: 250px;
-margin-left: -125px;
-}
-}
-
-/* Scroll animations */
-.scroll-reveal {
-opacity: 0;
-transform: translateY(50px);
-transition: all 0.8s ease-out;
-}
-
-.scroll-reveal.active {
-opacity: 1;
-transform: translateY(0);
-}
-
-/* Accessibility improvements */
-*:focus-visible {
-outline: 3px solid var(--focus-color);
-outline-offset: 2px;
-}
-
-*:focus:not(:focus-visible) {
-outline: none;
-}
-
-.btn:focus-visible,
-.nav-links a:focus-visible {
-outline: 3px solid var(--focus-color);
-outline-offset: 4px;
-}
-
-/* High contrast mode support */
-@media (prefers-contrast: high) {
-.hero-text p,
-.expertise-card p,
-.timeline-content p {
-color: #ffffff;
-}
-
-.hero-card,
-.expertise-card,
-.timeline-content,
-.contact-item {
-border-width: 2px;
-border-color: rgba(255, 255, 255, 0.4);
-}
-}
-
-/* Reduced motion support */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-*,
-*::before,
-*::after {
-animation-duration: 0.01ms !important;
-animation-iteration-count: 1 !important;
-transition-duration: 0.01ms !important;
-scroll-behavior: auto !important;
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
-
-.bg-animation::before,
-.particle,
-.logo,
-.banner-image,
-.hero-image,
-.tooltip .tooltiptext {
-animation: none !important;
+/* High contrast */
+@media (prefers-contrast: high) {
+  .hero-text p, .expertise-card p, .timeline-content p { color: #fff; }
+  .hero-card, .expertise-card, .timeline-content, .contact-item {
+    border-width: 2px; border-color: rgba(255,255,255,.4);
+  }
 }
-}
-
-/* Print styles */
+/* Print */
 @media print {
-.bg-animation,
-.particle,
-.hero-banner,
-.back-to-top,
-.mobile-menu-btn {
-display: none !important;
-}
-
-body {
-background: white;
-color: black;
-}
-
-header {
-position: static;
-background: white;
-border-bottom: 1px solid #000;
-}
-
-.hero {
-min-height: auto;
-padding: 2rem;
-}
-
-.hero-content {
-margin-top: 0;
-}
-
-.expertise-card,
-.timeline-content,
-.contact-item {
-background: white;
-border: 1px solid #000;
-box-shadow: none;
-}
-
-.btn {
-background: white;
-color: black;
-border: 1px solid #000;
-}
+  .bg-animation, .particle, .hero-banner, .back-to-top, .mobile-menu-btn { display: none !important; }
+  body { background: #fff; color: #000; }
+  header { position: static; background: #fff; border-bottom: 1px solid #000; }
+  .hero { min-height: auto; padding: 2rem; }
+  .hero-content { margin-top: 0; }
+  .expertise-card, .timeline-content, .contact-item {
+    background: #fff; border: 1px solid #000; box-shadow: none;
+  }
+  .btn { background: #fff; color: #000; border: 1px solid #000; }
 }
 </style>
 <base target="_blank">
 </head>
 <body>
-<!-- Skip to content link for screen readers -->
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
 <div class="bg-animation" aria-hidden="true">
-<div class="particle" style="width: 4px; height: 4px; top: 20%; left: 10%;"></div>
-<div class="particle" style="width: 6px; height: 6px; top: 60%; left: 80%; animation-delay: 2s;"></div>
-<div class="particle" style="width: 3px; height: 3px; top: 40%; left: 50%; animation-delay: 4s;"></div>
-<div class="particle" style="width: 5px; height: 5px; top: 80%; left: 20%; animation-delay: 1s;"></div>
-<div class="particle" style="width: 4px; height: 4px; top: 30%; left: 70%; animation-delay: 3s;"></div>
+  <div class="particle" style="width:4px;height:4px;top:20%;left:10%;"></div>
+  <div class="particle" style="width:6px;height:6px;top:60%;left:80%;animation-delay:2s;"></div>
+  <div class="particle" style="width:3px;height:3px;top:40%;left:50%;animation-delay:4s;"></div>
+  <div class="particle" style="width:5px;height:5px;top:80%;left:20%;animation-delay:1s;"></div>
+  <div class="particle" style="width:4px;height:4px;top:30%;left:70%;animation-delay:3s;"></div>
 </div>
 
 <header role="banner">
-<nav role="navigation" aria-label="Main navigation">
-<div class="logo-container">
-<img src="https://appimize.app/assets/apps/user_1097/images/288dd899974a_850_1097.png" alt="Alvin Silva Logo" class="logo" width="60" height="60" loading="eager">
-<div class="brand-name">ALVIN M. SILVA</div>
-</div>
-
-<button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
-<span></span>
-<span></span>
-<span></span>
-</button>
-
-<ul class="nav-links" id="nav-menu" role="menubar">
-<li role="none"><a href="#about" role="menuitem">About</a></li>
-<li role="none"><a href="#expertise" role="menuitem">Expertise</a></li>
-<li role="none"><a href="#achievements" role="menuitem">Achievements</a></li>
-<li role="none"><a href="https://asilvainnovations.github.io/website/portfolio.html" target="_blank" rel="noopener noreferrer" role="menuitem">Portfolio</a></li>
-<li role="none"><a href="#contact" role="menuitem">Contact</a></li>
-</ul>
-</nav>
+  <nav role="navigation" aria-label="Main navigation">
+    <div class="logo-container">
+      <img src="https://appimize.app/assets/apps/user_1097/images/288dd899974a_850_1097.png" alt="Alvin Silva Logo" class="logo" width="54" height="54" loading="eager">
+      <div>
+        <div class="brand-name">ALVIN M. SILVA</div>
+        <div class="brand-subtitle">MDM · Development Management · Systems Innovator</div>
+      </div>
+    </div>
+    <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-menu" role="menubar">
+      <li role="none"><a href="#about"         role="menuitem">About</a></li>
+      <li role="none"><a href="#expertise"     role="menuitem">Expertise</a></li>
+      <li role="none"><a href="#achievements"  role="menuitem">Achievements</a></li>
+      <li role="none"><a href="https://asilvainnovations.github.io/website/portfolio.html" target="_blank" rel="noopener noreferrer" role="menuitem">Portfolio</a></li>
+      <li role="none"><a href="#contact"       role="menuitem">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
 <main id="main-content">
-<section class="hero" id="about" aria-labelledby="hero-heading">
-<div class="hero-banner" aria-hidden="true">
-<img src="https://appimize.app/assets/apps/user_1097/images/102a77146921_587_1097.png" alt="" class="banner-image" width="1200" height="400" loading="eager">
-<div class="banner-overlay"></div>
-</div>
-<div class="hero-content">
-<div class="hero-text">
-<h1 id="hero-heading">Alvin M. Silva, MDM</h1>
-<p class="subtitle">Development Management Professional & Resilience Consultant</p>
-<p>Development management professional, systems innovator, and certified international humanitarian practitioner dedicated to co-creating policies and solutions for 
-<span class="tooltip" tabindex="0" role="tooltip" aria-describedby="tooltip-growth">growth and sustainability
-<span class="tooltiptext" id="tooltip-growth">Almost 20 years of global experience in CCA, Integrated Risk Management, DRR, and resilience-building with organizations including ECHO, USAID, World Bank, UNICEF, and more.</span>
-</span>, 
-<span class="tooltip" tabindex="0" role="tooltip" aria-describedby="tooltip-drr">disaster risk reduction
-<span class="tooltiptext" id="tooltip-drr">Active contributions in cultivating and innovating DRR strategies with diverse institutions and communities worldwide.</span>
-</span>, and 
-<span class="tooltip" tabindex="0" role="tooltip" aria-describedby="tooltip-innovation">social innovation
-<span class="tooltiptext" id="tooltip-innovation">Author of "Building Resilience: The Path To A More Fulfilling and Resilient Life" and founder of multiple innovation platforms.</span>
-</span>.</p>
-<div class="cta-buttons">
-<a href="#contact" class="btn btn-primary"><span>Get In Touch</span></a>
-<a href="#expertise" class="btn btn-secondary">Explore Expertise</a>
-</div>
-</div>
-<div class="hero-image">
-<div class="hero-card" role="region" aria-label="Key Statistics">
-<div class="stat-item">
-<div class="stat-number" aria-label="18 plus years">18+</div>
-<div class="stat-label">Years of Global Experience</div>
-</div>
-<div class="stat-item">
-<div class="stat-number" aria-label="50 plus projects">50+</div>
-<div class="stat-label">International Projects</div>
-</div>
-<div class="stat-item">
-<div class="stat-number" aria-label="100 plus organizations">100+</div>
-<div class="stat-label">Organizations Served</div>
-</div>
-<div class="stat-item">
-<div class="stat-number" aria-label="10 plus publications">10+</div>
-<div class="stat-label">Published Books & Research</div>
-</div>
-</div>
-</div>
-</div>
-</section>
 
-<section class="expertise" id="expertise" aria-labelledby="expertise-heading">
-<h2 class="section-title" id="expertise-heading">Core Expertise</h2>
-<div class="expertise-grid">
-<article class="expertise-card" tabindex="0">
-<div class="expertise-icon" aria-hidden="true">🌍</div>
-<h3>Climate Change Adaptation</h3>
-<p>More than 15 years of global experience in CCA strategies, working with ECHO, USAID, World Bank, and international organizations to develop sustainable climate solutions.</p>
-</article>
-<article class="expertise-card" tabindex="0">
-<div class="expertise-icon" aria-hidden="true">🛡️</div>
-<h3>Disaster Risk Reduction</h3>
-<p>Certified DRR practitioner with proven track record in implementing resilience projects across communities, institutions, and government agencies worldwide.</p>
-</article>
-<article class="expertise-card" tabindex="0">
-<div class="expertise-icon" aria-hidden="true">💡</div>
-<h3>Systems Innovation</h3>
-<p>Designer and developer of DDRiVE-M platform, Strategic Planner Pro, and Cognitio+ digital ecosystem for data-driven risk management and evaluation.</p>
-</article>
-<article class="expertise-card" tabindex="0">
-<div class="expertise-icon" aria-hidden="true">📊</div>
-<h3>Organizational Development</h3>
-<p>Expert in organizational development, performance management with intuitive dashboard for government agencies, NGOs, and international development organizations.</p>
-</article>
-<article class="expertise-card" tabindex="0">
-<div class="expertise-icon" aria-hidden="true">🎯</div>
-<h3>Strategic Thinking and Planning</h3>
-<p>Leads in anticipating future challenges and opportunities to set clear, long-term goals requiring aligning resources, partnerships, and actions to achieve sustainable impact. He emphasizes foresight, adaptability, and collaboration to drive meaningful outcomes.</p>
-</article>
-<article class="expertise-card" tabindex="0">
-<div class="expertise-icon" aria-hidden="true">🎓</div>
-<h3>Capacity Building</h3>
-<p>Experienced trainer and facilitator with MDM from Asian Institute of Management, conducting workshops and mentoring programs globally.</p>
-</article>
-<article class="expertise-card" tabindex="0">
-<div class="expertise-icon" aria-hidden="true">🔒</div>
-<h3>Security Risk Management</h3>
-<p>Certified Security Risk Management Professional (SRMP) specializing in humanitarian operations and emergency response coordination.</p>
-</article>
-</div>
-</section>
+  <!-- HERO -->
+  <section class="hero" id="about" aria-labelledby="hero-heading">
+    <div class="hero-banner" aria-hidden="true">
+      <img src="https://appimize.app/assets/apps/user_1097/images/102a77146921_587_1097.png" alt="" class="banner-image" width="1200" height="400" loading="eager">
+      <div class="banner-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 id="hero-heading">Alvin M. Silva, MDM</h1>
+        <p class="subtitle">Development Management Professional &amp; Resilience Consultant</p>
+        <p>Development management professional, systems innovator, and certified international humanitarian practitioner dedicated to co-creating policies and solutions for
+          <span class="tooltip" tabindex="0" role="tooltip" aria-describedby="tt-growth">growth and sustainability
+            <span class="tooltiptext" id="tt-growth">Almost 20 years of global experience in CCA, Integrated Risk Management, DRR, and resilience-building with organizations including ECHO, USAID, World Bank, UNICEF, and more.</span>
+          </span>,
+          <span class="tooltip" tabindex="0" role="tooltip" aria-describedby="tt-drr">disaster risk reduction
+            <span class="tooltiptext" id="tt-drr">Active contributions in cultivating and innovating DRR strategies with diverse institutions and communities worldwide.</span>
+          </span>, and
+          <span class="tooltip" tabindex="0" role="tooltip" aria-describedby="tt-innovation">social innovation
+            <span class="tooltiptext" id="tt-innovation">Author of "Building Resilience: The Path To A More Fulfilling and Resilient Life" and founder of multiple innovation platforms.</span>
+          </span>.
+        </p>
+        <div class="cta-buttons">
+          <a href="#contact"   class="btn btn-primary"><span>Get In Touch</span></a>
+          <a href="#expertise" class="btn btn-secondary">Explore Expertise</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-card" role="region" aria-label="Key Statistics">
+          <div class="stat-item">
+            <div class="stat-number" aria-label="18 plus years">18+</div>
+            <div class="stat-label">Years of Global Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" aria-label="15 plus countries">15+</div>
+            <div class="stat-label">Countries of Engagement</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" aria-label="PHP 190 Million">₱190M</div>
+            <div class="stat-label">Project Value Designed</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" aria-label="10 plus publications">10+</div>
+            <div class="stat-label">Published Works &amp; Platforms</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="achievements" id="achievements" aria-labelledby="achievements-heading">
-<h2 class="section-title" id="achievements-heading">Key Achievements & Milestones</h2>
-<div class="timeline" role="list">
-<div class="timeline-item" role="listitem">
-<div class="timeline-dot" aria-hidden="true"></div>
-<div class="timeline-content">
-<h3>WorldSkills Philippines - TESDA Strategic Plan 2026-2030</h3>
-<p>Authored and developed strategic options and strategy map for WSP-TESDA, integrating current context and national priorities for skills development excellence.</p>
-<span class="timeline-date">2026</span>
-</div>
-</div>
-<div class="timeline-item" role="listitem">
-<div class="timeline-dot" aria-hidden="true"></div>
-<div class="timeline-content">
-<h3>Published "Personal Resilience: The Path to Oneness"</h3>
-<p>Latest contribution to resilience literature, empowering individuals and organizations with transformative approaches to building personal and collective resilience.</p>
-<span class="timeline-date">April 2025</span>
-</div>
-</div>
-<div class="timeline-item" role="listitem">
-<div class="timeline-dot" aria-hidden="true"></div>
-<div class="timeline-content">
-<h3>Climate-Smart Resilience Project Design</h3>
-<p>Developed innovative community-based climate-smart resilience project worth PHP190M for Balatan, Camarines Sur in partnership with SOLHUM.</p>
-<span class="timeline-date">2024-2025</span>
-</div>
-</div>
-<div class="timeline-item" role="listitem">
-<div class="timeline-dot" aria-hidden="true"></div>
-<div class="timeline-content">
-<h3>WHO Emergency Medical Responders Program</h3>
-<p>Developed comprehensive Mental Health and Psychosocial Support intervention module for PEMAT members in collaboration with Department of Health.</p>
-<span class="timeline-date">2023</span>
-</div>
-</div>
-<div class="timeline-item" role="listitem">
-<div class="timeline-dot" aria-hidden="true"></div>
-<div class="timeline-content">
-<h3>Published "Building Resilience"</h3>
-<p>Authored groundbreaking book "Building Resilience: The Path To A More Fulfilling and Resilient Life" through Cognitio+.</p>
-<span class="timeline-date">September 2023</span>
-</div>
-</div>
-<div class="timeline-item" role="listitem">
-<div class="timeline-dot" aria-hidden="true"></div>
-<div class="timeline-content">
-<h3>BARMM Integrated Risk and Resilience Management</h3>
-<p>Led systems innovation for Food Security, Livelihoods, DRR and WASH in Bangsamoro region, partnering with USAID and Action Against Hunger.</p>
-<span class="timeline-date">2022</span>
-</div>
-</div>
-<div class="timeline-item" role="listitem">
-<div class="timeline-dot" aria-hidden="true"></div>
-<div class="timeline-content">
-<h3>MMDA Development Management Consultant</h3>
-<p>Provided strategic guidance on DRRM, urban resiliency, and corporate planning for Metro Manila Development Authority for over 3 years.</p>
-<span class="timeline-date">2017-2020</span>
-</div>
-</div>
-</div>
-</section>
+  <!-- EXPERTISE -->
+  <section class="expertise" id="expertise" aria-labelledby="expertise-heading">
+    <h2 class="section-title" id="expertise-heading">Core Expertise</h2>
+    <div class="expertise-grid">
+      <article class="expertise-card" tabindex="0">
+        <div class="expertise-icon" aria-hidden="true">🌍</div>
+        <h3>Climate Change Adaptation</h3>
+        <p>More than 15 years of global experience in CCA strategies, working with ECHO, USAID, World Bank, and international organizations to develop sustainable climate solutions.</p>
+      </article>
+      <article class="expertise-card" tabindex="0">
+        <div class="expertise-icon" aria-hidden="true">🛡️</div>
+        <h3>Disaster Risk Reduction</h3>
+        <p>Certified DRR practitioner with proven track record in implementing resilience projects across communities, institutions, and government agencies worldwide.</p>
+      </article>
+      <article class="expertise-card" tabindex="0">
+        <div class="expertise-icon" aria-hidden="true">💡</div>
+        <h3>Systems Innovation</h3>
+        <p>Designer and developer of DDRiVE-M platform, Strategic Planner Pro, and Cognitio+ digital ecosystem for data-driven risk management and evaluation.</p>
+      </article>
+      <article class="expertise-card" tabindex="0">
+        <div class="expertise-icon" aria-hidden="true">📊</div>
+        <h3>Organizational Development</h3>
+        <p>Expert in organizational development, performance management with intuitive dashboard for government agencies, NGOs, and international development organizations.</p>
+      </article>
+      <article class="expertise-card" tabindex="0">
+        <div class="expertise-icon" aria-hidden="true">🎯</div>
+        <h3>Strategic Thinking and Planning</h3>
+        <p>Leads in anticipating future challenges and opportunities to set clear, long-term goals requiring aligning resources, partnerships, and actions to achieve sustainable impact.</p>
+      </article>
+      <article class="expertise-card" tabindex="0">
+        <div class="expertise-icon" aria-hidden="true">🎓</div>
+        <h3>Capacity Building</h3>
+        <p>Experienced trainer and facilitator with MDM from Asian Institute of Management, conducting workshops and mentoring programs globally.</p>
+      </article>
+      <article class="expertise-card" tabindex="0">
+        <div class="expertise-icon" aria-hidden="true">🔒</div>
+        <h3>Security Risk Management</h3>
+        <p>Certified Security Risk Management Professional (SRMP) specializing in humanitarian operations and emergency response coordination.</p>
+      </article>
+    </div>
+  </section>
 
-<section class="contact" id="contact" aria-labelledby="contact-heading">
-<h2 class="section-title" id="contact-heading">Let's Connect</h2>
-<div class="contact-container">
-<div class="contact-info">
-<h3 style="color: #4ddbff; margin-bottom: 2rem; font-size: 1.8rem; font-family: 'Montserrat', sans-serif; font-weight: 700;">Get in Touch</h3>
-<div class="contact-item">
-<div class="contact-icon" aria-hidden="true">📱</div>
-<div>
-<h4>Mobile</h4>
-<p><a href="tel:+639178555134">+639178555134</a></p>
-</div>
-</div>
-<div class="contact-item">
-<div class="contact-icon" aria-hidden="true">📞</div>
-<div>
-<h4>Landline</h4>
-<p><a href="tel:+632879151796">(028) 7915-1796</a></p>
-</div>
-</div>
-<div class="contact-item">
-<div class="contact-icon" aria-hidden="true">✉️</div>
-<div>
-<h4>Email</h4>
-<p><a href="mailto:alvin.silva@asilvainnovations.com">alvin.silva@asilvainnovations.com</a></p>
-</div>
-</div>
-<div class="contact-item">
-<div class="contact-icon" aria-hidden="true">🌐</div>
-<div>
-<h4>Web Page</h4>
-<p><a href="https://alvin.asilvainnovations.com" target="_blank" rel="noopener noreferrer">alvin.asilvainnovations.com</a></p>
-</div>
-</div>
-</div>
-<div class="contact-form">
-<h3 style="color: #4ddbff; margin-bottom: 2rem; font-size: 1.8rem; font-family: 'Montserrat', sans-serif; font-weight: 700;">Send a Message</h3>
-<form id="contact-form" aria-label="Contact form" novalidate>
-<div class="form-group">
-<label for="name-input">Your Name <span aria-label="required">*</span></label>
-<input type="text" id="name-input" name="name" placeholder="Enter your name" required aria-required="true" autocomplete="name">
-</div>
-<div class="form-group">
-<label for="email-input">Email Address <span aria-label="required">*</span></label>
-<input type="email" id="email-input" name="email" placeholder="Enter your email" required aria-required="true" autocomplete="email">
-</div>
-<div class="form-group">
-<label for="message-input">Message <span aria-label="required">*</span></label>
-<textarea id="message-input" name="message" placeholder="How can I help you?" required aria-required="true" minlength="10"></textarea>
-</div>
-<button type="submit" class="btn btn-primary" aria-label="Send message"><span>Send Message</span></button>
-<div class="form-status" id="form-status" role="status" aria-live="polite"></div>
-</form>
-</div>
-</div>
-</section>
+  <!-- ACHIEVEMENTS -->
+  <section class="achievements" id="achievements" aria-labelledby="achievements-heading">
+    <h2 class="section-title" id="achievements-heading">Key Achievements &amp; Milestones</h2>
+    <div class="timeline" role="list">
+      <div class="timeline-item" role="listitem">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <h3>Co-Architect — Bangsamoro Investment Roadmap (BIRD) 2026–2035 · BoI–MTIT</h3>
+          <p>Engaged by the Bureau of Investments–MTIT as lead technical architect for the decade-long Bangsamoro Investment and Roadmap for Development. Held end-to-end ownership from workshop design through final publication — a binding investment framework for the Bangsamoro Autonomous Region.</p>
+          <div class="timeline-deliverables">
+            <p>Key Deliverables</p>
+            <ul>
+              <li>End-to-end design, technical management, and execution of high-level multi-stakeholder consultative workshops (government, private sector, civil society)</li>
+              <li>Comprehensive Workshop Design Package — the technical engine driving the entire BIRD formulation process</li>
+              <li>Regular synthesis reports and updates submitted to the Bureau of Investments</li>
+              <li>Final BIRD 2026–2035 Report in professional book format — including all technical annexes, investment profiles, and executive summaries</li>
+            </ul>
+          </div>
+          <span class="timeline-date">2025–2026</span>
+        </div>
+      </div>
+      <div class="timeline-item" role="listitem">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <h3>WorldSkills Philippines – TESDA Strategic Plan 2026–2030</h3>
+          <p>Sole author of a national institutional framework guiding the Philippines' premier technical-vocational body for half a decade. Designed the full strategy map and strategic options integrating risk-informed governance, ESG alignment, and the national TVET landscape.</p>
+          <span class="timeline-date">2025–2026</span>
+        </div>
+      </div>
+      <div class="timeline-item" role="listitem">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <h3>Published "Personal Resilience: The Path to Oneness"</h3>
+          <p>Latest contribution to resilience literature, empowering individuals and organizations with transformative approaches to building personal and collective resilience.</p>
+          <span class="timeline-date">April 2025</span>
+        </div>
+      </div>
+      <div class="timeline-item" role="listitem">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <h3>Climate-Smart Resilience Project Design</h3>
+          <p>Developed innovative community-based climate-smart resilience project worth PHP 190M for Balatan, Camarines Sur in partnership with SOLHUM.</p>
+          <span class="timeline-date">2024–2025</span>
+        </div>
+      </div>
+      <div class="timeline-item" role="listitem">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <h3>WHO Emergency Medical Responders Program</h3>
+          <p>Developed comprehensive Mental Health and Psychosocial Support intervention module for PEMAT members in collaboration with Department of Health.</p>
+          <span class="timeline-date">2023</span>
+        </div>
+      </div>
+      <div class="timeline-item" role="listitem">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <h3>Published "Building Resilience"</h3>
+          <p>Authored groundbreaking book "Building Resilience: The Path To A More Fulfilling and Resilient Life" through Cognitio+.</p>
+          <span class="timeline-date">September 2023</span>
+        </div>
+      </div>
+      <div class="timeline-item" role="listitem">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <h3>BARMM Integrated Risk and Resilience Management</h3>
+          <p>Led systems innovation for Food Security, Livelihoods, DRR and WASH in Bangsamoro region, partnering with USAID and Action Against Hunger.</p>
+          <span class="timeline-date">2022</span>
+        </div>
+      </div>
+      <div class="timeline-item" role="listitem">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-content">
+          <h3>Development Management Consultant — Metro Manila Development Authority (MMDA)</h3>
+          <p>Provided three years of strategic advisory to the MMDA Chairman's Office on corporate governance, DRR-CCA policy integration, and regional urban resilience planning — directly influencing policies affecting over 13 million Metro Manila residents. Conducted high-level policy reviews and evaluation studies aligned with national disaster resilience and environmental standards.</p>
+          <span class="timeline-date">2017–2020</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact" aria-labelledby="contact-heading">
+    <h2 class="section-title" id="contact-heading">Let's Connect</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3 class="contact-section-title">Get in Touch</h3>
+        <div class="contact-item">
+          <div class="contact-icon" aria-hidden="true">📱</div>
+          <div><h4>Mobile</h4><p><a href="tel:+639178555134">+63 917 855 5134</a></p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon" aria-hidden="true">📞</div>
+          <div><h4>Landline</h4><p><a href="tel:+632879151796">(028) 7915-1796</a></p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon" aria-hidden="true">✉️</div>
+          <div><h4>Email</h4><p><a href="mailto:alvin.silva@asilvainnovations.com">alvin.silva@asilvainnovations.com</a></p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon" aria-hidden="true">🌐</div>
+          <div><h4>Web Page</h4><p><a href="https://alvin.asilvainnovations.com" target="_blank" rel="noopener noreferrer">alvin.asilvainnovations.com</a></p></div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3 class="contact-section-title">Send a Message</h3>
+        <form id="contact-form" aria-label="Contact form" novalidate>
+          <div class="form-group">
+            <label for="name-input">Your Name <span aria-label="required">*</span></label>
+            <input type="text" id="name-input" name="name" placeholder="Enter your name" required aria-required="true" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="email-input">Email Address <span aria-label="required">*</span></label>
+            <input type="email" id="email-input" name="email" placeholder="Enter your email" required aria-required="true" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="message-input">Message <span aria-label="required">*</span></label>
+            <textarea id="message-input" name="message" placeholder="How can I help you?" required aria-required="true" minlength="10"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" aria-label="Send message"><span>Send Message</span></button>
+          <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer role="contentinfo">
-<div class="social-links" aria-label="Social media links">
-<a href="https://www.linkedin.com/in/alvinsilva777/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-<path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-</svg>
-</a>
-<a href="https://www.facebook.com/a7vinsi7va/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-</svg>
-</a>
-<a href="mailto:alvin.silva@asilvainnovations.com" aria-label="Send Email">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-</svg>
-</a>
-<a href="https://alvin.asilvainnovations.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Website">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-</svg>
-</a>
-</div>
-<p class="footer-text">&copy; 2026 Alvin M. Silva, MDM. All rights reserved.</p>
-<p class="footer-subtext"></p>
+  <div class="social-links" aria-label="Social media links">
+    <a href="https://www.linkedin.com/in/alvinsilva777/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/a7vinsi7va/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+    </a>
+    <a href="mailto:alvin.silva@asilvainnovations.com" aria-label="Send Email">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    </a>
+    <a href="https://alvin.asilvainnovations.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Website">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+    </a>
+  </div>
+  <p class="footer-text">&copy; 2026 Alvin M. Silva, MDM. All rights reserved.</p>
+  <p class="footer-subtext"></p>
 </footer>
 
-<!-- Back to top button -->
 <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
-<svg viewBox="0 0 24 24" aria-hidden="true">
-<path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
-</svg>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
 </button>
 
 <script>
-// Mobile menu toggle
+// Mobile menu
 const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
-
 mobileMenuBtn.addEventListener('click', () => {
-const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
-mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
-navLinks.classList.toggle('active');
-document.body.style.overflow = isExpanded ? '' : 'hidden';
+  const exp = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+  mobileMenuBtn.setAttribute('aria-expanded', !exp);
+  navLinks.classList.toggle('active');
+  document.body.style.overflow = exp ? '' : 'hidden';
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    mobileMenuBtn.setAttribute('aria-expanded','false');
+    navLinks.classList.remove('active');
+    document.body.style.overflow = '';
+  });
 });
 
-// Close mobile menu when clicking on links
-navLinks.querySelectorAll('a').forEach(link => {
-link.addEventListener('click', () => {
-mobileMenuBtn.setAttribute('aria-expanded', 'false');
-navLinks.classList.remove('active');
-document.body.style.overflow = '';
-});
-});
-
-// Scroll reveal animation
+// Scroll reveal
 const scrollReveal = () => {
-const reveals = document.querySelectorAll('.scroll-reveal');
-reveals.forEach(element => {
-const windowHeight = window.innerHeight;
-const elementTop = element.getBoundingClientRect().top;
-const elementVisible = 150;
-if (elementTop < windowHeight - elementVisible) {
-element.classList.add('active');
-}
-});
+  document.querySelectorAll('.scroll-reveal').forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 150) el.classList.add('active');
+  });
 };
-
 window.addEventListener('scroll', scrollReveal);
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function (e) {
-e.preventDefault();
-const targetId = this.getAttribute('href');
-const target = document.querySelector(targetId);
-if (target) {
-target.scrollIntoView({
-behavior: 'smooth',
-block: 'start'
-});
-// Update URL without jumping
-history.pushState(null, null, targetId);
-}
-});
-});
-
-// Add scroll reveal class to elements
 document.addEventListener('DOMContentLoaded', () => {
-document.querySelectorAll('.expertise-card, .timeline-item').forEach(el => {
-el.classList.add('scroll-reveal');
-});
-scrollReveal();
+  document.querySelectorAll('.expertise-card, .timeline-item').forEach(el => el.classList.add('scroll-reveal'));
+  scrollReveal();
 });
 
-// Back to top button
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { t.scrollIntoView({ behavior:'smooth', block:'start' }); history.pushState(null,null,a.getAttribute('href')); }
+  });
+});
+
+// Back to top
 const backToTopBtn = document.getElementById('backToTop');
-
 window.addEventListener('scroll', () => {
-if (window.pageYOffset > 300) {
-backToTopBtn.classList.add('visible');
-} else {
-backToTopBtn.classList.remove('visible');
-}
+  backToTopBtn.classList.toggle('visible', window.pageYOffset > 300);
 });
+backToTopBtn.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
 
-backToTopBtn.addEventListener('click', () => {
-window.scrollTo({
-top: 0,
-behavior: 'smooth'
-});
-});
-
-// Form validation and submission
-const contactForm = document.getElementById('contact-form');
+// Form
+const form = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');
-
-contactForm.addEventListener('submit', async (e) => {
-e.preventDefault();
-
-const name = document.getElementById('name-input').value.trim();
-const email = document.getElementById('email-input').value.trim();
-const message = document.getElementById('message-input').value.trim();
-
-// Validation
-if (!name || !email || !message) {
-showFormStatus('Please fill in all required fields.', 'error');
-return;
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const name = document.getElementById('name-input').value.trim();
+  const email = document.getElementById('email-input').value.trim();
+  const message = document.getElementById('message-input').value.trim();
+  if (!name||!email||!message) { showStatus('Please fill in all required fields.','error'); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showStatus('Please enter a valid email address.','error'); return; }
+  if (message.length < 10) { showStatus('Message must be at least 10 characters long.','error'); return; }
+  const btn = form.querySelector('button[type="submit"]');
+  const orig = btn.innerHTML;
+  btn.innerHTML = '<span>Sending…</span>'; btn.disabled = true;
+  try {
+    await new Promise(r => setTimeout(r, 1500));
+    showStatus('Thank you! Your message has been sent successfully.','success');
+    form.reset();
+  } catch { showStatus('Sorry, there was an error. Please try again.','error'); }
+  finally { btn.innerHTML = orig; btn.disabled = false; }
+});
+function showStatus(msg, type) {
+  formStatus.textContent = msg; formStatus.className = `form-status ${type}`;
+  setTimeout(() => { formStatus.className = 'form-status'; formStatus.textContent = ''; }, 5000);
 }
 
-if (!isValidEmail(email)) {
-showFormStatus('Please enter a valid email address.', 'error');
-return;
-}
-
-if (message.length < 10) {
-showFormStatus('Message must be at least 10 characters long.', 'error');
-return;
-}
-
-// Show loading state
-const submitBtn = contactForm.querySelector('button[type="submit"]');
-const originalText = submitBtn.innerHTML;
-submitBtn.innerHTML = '<span>Sending...</span>';
-submitBtn.disabled = true;
-
-// Simulate form submission (replace with actual endpoint)
-try {
-// Here you would normally send to your backend
-// const response = await fetch('/api/contact', { method: 'POST', body: formData });
-
-await new Promise(resolve => setTimeout(resolve, 1500));
-
-showFormStatus('Thank you! Your message has been sent successfully.', 'success');
-contactForm.reset();
-} catch (error) {
-showFormStatus('Sorry, there was an error sending your message. Please try again.', 'error');
-} finally {
-submitBtn.innerHTML = originalText;
-submitBtn.disabled = false;
-}
+// Tooltip keyboard
+document.querySelectorAll('.tooltip').forEach(t => {
+  t.addEventListener('keydown', e => {
+    if (e.key==='Enter'||e.key===' ') { e.preventDefault(); t.classList.toggle('active'); }
+  });
 });
 
-function isValidEmail(email) {
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-return emailRegex.test(email);
-}
-
-function showFormStatus(message, type) {
-formStatus.textContent = message;
-formStatus.className = `form-status ${type}`;
-
-// Clear status after 5 seconds
-setTimeout(() => {
-formStatus.className = 'form-status';
-formStatus.textContent = '';
-}, 5000);
-}
-
-// Keyboard accessibility for tooltips
-document.querySelectorAll('.tooltip').forEach(tooltip => {
-tooltip.addEventListener('keydown', (e) => {
-if (e.key === 'Enter' || e.key === ' ') {
-e.preventDefault();
-tooltip.classList.toggle('active');
-}
-});
-});
-
-// Close mobile menu on escape key
-document.addEventListener('keydown', (e) => {
-if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-mobileMenuBtn.setAttribute('aria-expanded', 'false');
-navLinks.classList.remove('active');
-document.body.style.overflow = '';
-mobileMenuBtn.focus();
-}
-});
-
-// Announce page load to screen readers
-window.addEventListener('load', () => {
-const announcement = document.createElement('div');
-announcement.setAttribute('role', 'status');
-announcement.setAttribute('aria-live', 'polite');
-announcement.className = 'sr-only';
-announcement.textContent = 'Page loaded successfully. Welcome to Alvin M. Silva\'s professional website.';
-document.body.appendChild(announcement);
-
-setTimeout(() => {
-announcement.remove();
-}, 1000);
+// Escape closes menu
+document.addEventListener('keydown', e => {
+  if (e.key==='Escape' && navLinks.classList.contains('active')) {
+    mobileMenuBtn.setAttribute('aria-expanded','false');
+    navLinks.classList.remove('active');
+    document.body.style.overflow = '';
+    mobileMenuBtn.focus();
+  }
 });
 </script>
-
-<!-- Screen reader only styles -->
-<style>
-.sr-only {
-position: absolute;
-width: 1px;
-height: 1px;
-padding: 0;
-margin: -1px;
-overflow: hidden;
-clip: rect(0, 0, 0, 0);
-white-space: nowrap;
-border: 0;
-}
-</style>
 </body>
 </html>
